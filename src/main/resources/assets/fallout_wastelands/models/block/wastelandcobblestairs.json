@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/wastelandrock",
+    "top": "fallout_wastelands:blocks/wastelandrock",
+    "side": "fallout_wastelands:blocks/wastelandrock"
+  }
+}

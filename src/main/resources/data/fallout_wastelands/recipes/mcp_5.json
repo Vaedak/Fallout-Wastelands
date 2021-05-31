@@ -1,0 +1,13 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:militaryplatedground"
+    }
+  ],
+  "result": {
+    "item": "fallout_wastelands:militaryplated",
+    "count": 1
+  }
+}

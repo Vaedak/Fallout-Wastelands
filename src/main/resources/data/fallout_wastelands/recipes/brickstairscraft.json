@@ -1,0 +1,33 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "3": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "4": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "6": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "7": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "8": {
+      "item": "fallout_wastelands:wastelandbrick"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:wastelandbrickstairs",
+    "count": 4
+  }
+}

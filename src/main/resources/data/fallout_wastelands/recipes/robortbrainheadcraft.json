@@ -1,0 +1,36 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:glass"
+    },
+    "3": {
+      "item": "minecraft:glass"
+    },
+    "4": {
+      "item": "fallout_wastelands:humanbrain"
+    },
+    "5": {
+      "item": "minecraft:glass"
+    },
+    "6": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "7": {
+      "item": "fallout_wastelands:rotativepart"
+    },
+    "8": {
+      "item": "fallout_wastelands:steelingot"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:robobrainhead",
+    "count": 1
+  }
+}

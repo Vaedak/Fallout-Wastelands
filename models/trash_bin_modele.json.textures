@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "trash_bin_texture"
+      },
+      "name": "default"
+    }
+  }
+}

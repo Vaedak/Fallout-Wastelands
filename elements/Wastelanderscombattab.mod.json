@@ -1,0 +1,11 @@
+{
+  "_fv": 18,
+  "_type": "tab",
+  "definition": {
+    "name": "Wastelanders Combat",
+    "icon": {
+      "value": "CUSTOM:Themachinegun"
+    },
+    "showSearch": false
+  }
+}

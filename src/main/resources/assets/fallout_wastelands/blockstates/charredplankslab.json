@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fallout_wastelands:block/charredplankslab"
+    },
+    "type=top": {
+      "model": "fallout_wastelands:block/charredplankslab_top"
+    },
+    "type=double": {
+      "model": "fallout_wastelands:block/charredplankslab_full"
+    }
+  }
+}

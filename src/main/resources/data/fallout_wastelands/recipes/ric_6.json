@@ -1,0 +1,13 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:redindustrialrivetdown"
+    }
+  ],
+  "result": {
+    "item": "fallout_wastelands:industrialredwalkway",
+    "count": 1
+  }
+}

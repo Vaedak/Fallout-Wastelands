@@ -1,0 +1,70 @@
+{
+  "_fv": 18,
+  "_type": "plant",
+  "definition": {
+    "renderType": 12,
+    "texture": "wastelandcharredgrass2",
+    "textureBottom": "",
+    "customModelName": "Cross model",
+    "itemTexture": "",
+    "particleTexture": "",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "plantType": "normal",
+    "staticPlantGenerationType": "Flower",
+    "growapableSpawnType": "Plains",
+    "growapableMaxHeight": 3,
+    "doublePlantGenerationType": "Flower",
+    "customBoundingBox": false,
+    "disableOffset": false,
+    "boundingBoxes": [],
+    "name": "Wasteland Dead Roots",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:BlocsW"
+    },
+    "hardness": 0.5,
+    "resistance": 0.5,
+    "luminance": 0,
+    "unbreakable": false,
+    "soundOnStep": {
+      "value": "GROUND"
+    },
+    "useLootTableForDrops": false,
+    "customDrop": {
+      "value": "Items.STICK"
+    },
+    "dropAmount": 1,
+    "forceTicking": false,
+    "emissiveRendering": false,
+    "hasTileEntity": true,
+    "isReplaceable": false,
+    "colorOnMap": "DEFAULT",
+    "creativePickItem": {
+      "value": ""
+    },
+    "offsetType": "XZ",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 2,
+    "fireSpreadSpeed": 3,
+    "jumpFactor": 1.0,
+    "speedFactor": 1.0,
+    "canBePlacedOn": [],
+    "frequencyOnChunks": 2,
+    "spawnWorldTypes": [
+      "Surface",
+      "CUSTOM:Wasteland"
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:Capitalwastelandeast"
+      },
+      {
+        "value": "CUSTOM:Desertwastland"
+      },
+      {
+        "value": "CUSTOM:Capitalwasteland"
+      }
+    ]
+  }
+}

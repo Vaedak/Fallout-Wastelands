@@ -1,0 +1,23 @@
+{
+  "_fv": 18,
+  "_type": "food",
+  "definition": {
+    "renderType": 0,
+    "texture": "mirelurk_scallops",
+    "customModelName": "Normal",
+    "name": "Mirlurk Steak",
+    "rarity": "COMMON",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelandersitems"
+    },
+    "stackSize": 64,
+    "nutritionalValue": 6,
+    "saturation": 1.0,
+    "eatingSpeed": 40,
+    "forDogs": true,
+    "isAlwaysEdible": false,
+    "animation": "eat",
+    "hasGlow": false
+  }
+}

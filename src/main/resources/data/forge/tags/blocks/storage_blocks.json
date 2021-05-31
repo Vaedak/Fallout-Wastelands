@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "fallout_wastelands:copperblock",
+    "fallout_wastelands:tinblock",
+    "fallout_wastelands:aluminiumblock",
+    "fallout_wastelands:leadblock",
+    "fallout_wastelands:steelblock",
+    "fallout_wastelands:uraniumblock"
+  ]
+}

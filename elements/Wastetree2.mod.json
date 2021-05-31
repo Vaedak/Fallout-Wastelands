@@ -1,0 +1,37 @@
+{
+  "_fv": 18,
+  "_type": "structure",
+  "definition": {
+    "structure": "wastelandtree2",
+    "randomlyRotateStructure": true,
+    "surfaceDetectionType": "First motion blocking block",
+    "spawnProbability": 500,
+    "minCountPerChunk": 1,
+    "maxCountPerChunk": 2,
+    "spawnLocation": "Ground",
+    "spawnHeightOffset": 0,
+    "spawnXOffset": 0,
+    "spawnZOffset": 0,
+    "spawnWorldTypes": [
+      "Surface",
+      "CUSTOM:Wasteland"
+    ],
+    "restrictionBlocks": [
+      {
+        "value": "CUSTOM:Wastelanddirt"
+      }
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:Capitalwasteland"
+      },
+      {
+        "value": "CUSTOM:Desertwastland"
+      },
+      {
+        "value": "CUSTOM:Capitalwastelandeast"
+      }
+    ],
+    "ignoreBlocks": "STRUCTURE_BLOCK"
+  }
+}

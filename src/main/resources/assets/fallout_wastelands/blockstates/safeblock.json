@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "fallout_wastelands:block/safeblock"
+    },
+    "facing=north": {
+      "model": "fallout_wastelands:block/safeblock"
+    },
+    "facing=east": {
+      "model": "fallout_wastelands:block/safeblock",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "fallout_wastelands:block/safeblock",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "fallout_wastelands:block/safeblock",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "fallout_wastelands:block/safeblock",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

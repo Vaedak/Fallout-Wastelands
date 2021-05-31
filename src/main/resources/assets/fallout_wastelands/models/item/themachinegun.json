@@ -1,0 +1,7 @@
+{
+  "parent": "fallout_wastelands:custom/stripfedmg",
+  "textures": {
+    "0": "fallout_wastelands:blocks/sfmg",
+    "particle": "fallout_wastelands:items/sfmg"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/wastelandcoalore",
+    "up": "fallout_wastelands:blocks/wastelandcoalore",
+    "north": "fallout_wastelands:blocks/wastelandcoalore",
+    "east": "fallout_wastelands:blocks/wastelandcoalore",
+    "south": "fallout_wastelands:blocks/wastelandcoalore",
+    "west": "fallout_wastelands:blocks/wastelandcoalore",
+    "particle": "fallout_wastelands:blocks/wastelandcoalore"
+  }
+}

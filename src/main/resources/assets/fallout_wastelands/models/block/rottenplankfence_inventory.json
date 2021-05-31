@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "fallout_wastelands:blocks/wastelandplanks",
+    "particle": "fallout_wastelands:blocks/wastelandplanks"
+  }
+}

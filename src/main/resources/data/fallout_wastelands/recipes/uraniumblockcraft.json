@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:uraniumingot"
+    },
+    "1": {
+      "item": "fallout_wastelands:uraniumingot"
+    },
+    "2": {
+      "item": "fallout_wastelands:uraniumingot"
+    },
+    "3": {
+      "item": "fallout_wastelands:uraniumingot"
+    },
+    "4": {
+      "item": "fallout_wastelands:uraniumingot"
+    },
+    "5": {
+      "item": "fallout_wastelands:uraniumingot"
+    },
+    "6": {
+      "item": "fallout_wastelands:uraniumingot"
+    },
+    "7": {
+      "item": "fallout_wastelands:uraniumingot"
+    },
+    "8": {
+      "item": "fallout_wastelands:uraniumingot"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:uraniumblock",
+    "count": 1
+  }
+}

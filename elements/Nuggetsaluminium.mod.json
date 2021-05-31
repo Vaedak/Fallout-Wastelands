@@ -1,0 +1,16 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Aluminiumnugget"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "nuggets/aluminium",
+    "namespace": "forge"
+  }
+}

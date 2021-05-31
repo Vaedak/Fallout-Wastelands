@@ -1,0 +1,124 @@
+{
+  "_fv": 18,
+  "_type": "mob",
+  "definition": {
+    "mobName": "Highwayman",
+    "mobLabel": "",
+    "mobModelName": "Modelhighwayman",
+    "mobModelTexture": "highwaytwo.png",
+    "mobModelGlowTexture": "highwaylights.png",
+    "modelWidth": 5.0,
+    "modelHeight": 3.0,
+    "modelShadowSize": 1.0,
+    "mountedYOffset": -2.0,
+    "hasSpawnEgg": true,
+    "spawnEggBaseColor": {
+      "value": -13750738,
+      "falpha": 0.0
+    },
+    "spawnEggDotColor": {
+      "value": -13094874,
+      "falpha": 0.0
+    },
+    "creativeTab": {
+      "value": "MISC"
+    },
+    "isBoss": false,
+    "bossBarColor": "PINK",
+    "bossBarType": "PROGRESS",
+    "equipmentMainHand": {
+      "value": ""
+    },
+    "equipmentOffHand": {
+      "value": ""
+    },
+    "equipmentHelmet": {
+      "value": ""
+    },
+    "equipmentBody": {
+      "value": ""
+    },
+    "equipmentLeggings": {
+      "value": ""
+    },
+    "equipmentBoots": {
+      "value": ""
+    },
+    "mobBehaviourType": "Creature",
+    "mobCreatureType": "UNDEFINED",
+    "attackStrength": 1,
+    "attackKnockback": 0.0,
+    "knockbackResistance": 50.0,
+    "movementSpeed": 0.5,
+    "armorBaseValue": 20.0,
+    "trackingRange": 1,
+    "health": 200,
+    "xpAmount": 0,
+    "waterMob": false,
+    "flyingMob": false,
+    "guiBoundTo": "Highwaymantrunk",
+    "inventorySize": 67,
+    "inventoryStackSize": 64,
+    "disableCollisions": false,
+    "ridable": true,
+    "canControlForward": true,
+    "canControlStrafe": false,
+    "immuneToFire": false,
+    "immuneToArrows": true,
+    "immuneToFallDamage": false,
+    "immuneToCactus": true,
+    "immuneToDrowning": true,
+    "immuneToLightning": false,
+    "immuneToPotions": true,
+    "immuneToPlayer": false,
+    "immuneToExplosion": false,
+    "immuneToTrident": false,
+    "immuneToAnvil": false,
+    "immuneToWither": false,
+    "immuneToDragonBreath": false,
+    "mobDrop": {
+      "value": ""
+    },
+    "livingSound": {
+      "value": ""
+    },
+    "hurtSound": {
+      "value": "block.metal.break"
+    },
+    "deathSound": {
+      "value": "entity.enderdragon_fireball.explode"
+    },
+    "stepSound": {
+      "value": "CUSTOM:highwaymanstep"
+    },
+    "spawnParticles": true,
+    "particleToSpawn": {
+      "value": "TOWN_AURA"
+    },
+    "particleSpawningShape": "Spread",
+    "particleSpawningRadious": 0.09999999850988389,
+    "particleAmount": 2,
+    "onRightClickedOn": {
+      "name": "HighwaymanOnEntityTickUpdatetest2"
+    },
+    "hasAI": true,
+    "aiBase": "(none)",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">CUSTOM:Chromeraider</field><field name=\"condition\">null,null</field></block></next></block></xml>",
+    "breedable": false,
+    "tameable": false,
+    "breedTriggerItems": [],
+    "ranged": false,
+    "rangedAttackItem": {
+      "value": ""
+    },
+    "rangedItemType": "Default item",
+    "spawnThisMob": false,
+    "doesDespawnWhenIdle": false,
+    "spawningProbability": 1,
+    "mobSpawningType": "monster",
+    "minNumberOfMobsPerGroup": 1,
+    "maxNumberOfMobsPerGroup": 1,
+    "restrictionBiomes": [],
+    "spawnInDungeons": false
+  }
+}

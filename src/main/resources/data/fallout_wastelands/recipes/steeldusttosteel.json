@@ -1,0 +1,12 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:smelting",
+  "experience": 3,
+  "cookingtime": 400,
+  "ingredient": {
+    "item": "fallout_wastelands:steeldust"
+  },
+  "result": {
+    "item": "fallout_wastelands:steelingot"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "_fv": 18,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Fuel",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "Fuel",
+          "x": 132,
+          "y": 48
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:Fueljerrican"
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": false,
+          "name": "Slot #0",
+          "x": 132,
+          "y": 57
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "storage",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "storage",
+          "x": 132,
+          "y": 75
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "open",
+          "width": 40,
+          "height": 20,
+          "name": "open",
+          "x": 132,
+          "y": 84
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "close",
+          "onClick": {
+            "name": "CloseGUI"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "close",
+          "x": 249,
+          "y": 84
+        }
+      }
+    ]
+  }
+}

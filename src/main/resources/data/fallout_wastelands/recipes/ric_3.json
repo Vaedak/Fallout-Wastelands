@@ -1,0 +1,13 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:redindustrialblockwarning"
+    }
+  ],
+  "result": {
+    "item": "fallout_wastelands:redindusrivetmid",
+    "count": 1
+  }
+}

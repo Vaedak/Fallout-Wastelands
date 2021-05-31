@@ -1,0 +1,33 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:bosbasemetalplating"
+    },
+    "3": {
+      "item": "fallout_wastelands:bosbasemetalplating"
+    },
+    "4": {
+      "item": "fallout_wastelands:bosbasemetalplating"
+    },
+    "6": {
+      "item": "fallout_wastelands:bosbasemetalplating"
+    },
+    "7": {
+      "item": "fallout_wastelands:bosbasemetalplating"
+    },
+    "8": {
+      "item": "fallout_wastelands:bosbasemetalplating"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:bo_ssteelplatingstairs",
+    "count": 4
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "_fv": 18,
+  "_type": "gun",
+  "definition": {
+    "renderType": 1,
+    "texture": "nailgun",
+    "customModelName": "nailgunfix:default",
+    "name": "Nailgun",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:Nails"
+    },
+    "shootConstantly": false,
+    "usageCount": 500,
+    "actionSound": {
+      "value": "block.anvil.hit"
+    },
+    "hasGlow": false,
+    "animation": "none",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "bulletPower": 1.0,
+    "bulletDamage": 1.5,
+    "bulletKnockback": 1,
+    "bulletParticles": true,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "CUSTOM:Bulletmobs"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": ""
+  }
+}

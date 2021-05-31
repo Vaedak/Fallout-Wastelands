@@ -1,0 +1,13 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:enclavebunkerblock"
+    }
+  ],
+  "result": {
+    "item": "fallout_wastelands:enclavebunkerblockwall",
+    "count": 1
+  }
+}

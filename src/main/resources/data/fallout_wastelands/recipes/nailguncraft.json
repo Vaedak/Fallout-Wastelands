@@ -1,0 +1,29 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "1": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "2": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "3": {
+      "item": "minecraft:stone_button"
+    },
+    "5": {
+      "item": "minecraft:lever"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:nailgun",
+    "count": 1
+  }
+}

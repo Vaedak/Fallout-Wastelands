@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "fallout_wastelands:blocks/grass2",
+    "particle": "fallout_wastelands:blocks/grass2"
+  }
+}

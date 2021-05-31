@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fallout_wastelands:block/coreunit"
+    },
+    "facing=east": {
+      "model": "fallout_wastelands:block/coreunit",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fallout_wastelands:block/coreunit",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fallout_wastelands:block/coreunit",
+      "y": 270
+    }
+  }
+}

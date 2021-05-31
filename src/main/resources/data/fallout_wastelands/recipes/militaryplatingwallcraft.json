@@ -1,0 +1,32 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "1": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "2": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "3": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "4": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "5": {
+      "item": "fallout_wastelands:militaryplated"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:militaryplatingwall",
+    "count": 6
+  }
+}

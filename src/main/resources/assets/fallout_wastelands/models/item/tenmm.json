@@ -1,0 +1,7 @@
+{
+  "parent": "fallout_wastelands:custom/tenmm",
+  "textures": {
+    "0": "fallout_wastelands:blocks/10mm_2",
+    "particle": "fallout_wastelands:items/10mm_2"
+  }
+}

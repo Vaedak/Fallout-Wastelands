@@ -1,0 +1,39 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "67 "
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:bossteelplating"
+    },
+    "1": {
+      "item": "fallout_wastelands:bossteelplating"
+    },
+    "2": {
+      "item": "minecraft:light_gray_dye"
+    },
+    "3": {
+      "item": "fallout_wastelands:bossteelplating"
+    },
+    "4": {
+      "item": "fallout_wastelands:bossteelplating"
+    },
+    "5": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "6": {
+      "item": "fallout_wastelands:bossteelplating"
+    },
+    "7": {
+      "item": "fallout_wastelands:bossteelplating"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:bo_sdoor",
+    "count": 3
+  }
+}

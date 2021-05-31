@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fallout_wastelands:block/rottenplanksslab"
+    },
+    "type=top": {
+      "model": "fallout_wastelands:block/rottenplanksslab_top"
+    },
+    "type=double": {
+      "model": "fallout_wastelands:block/rottenplanksslab_full"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "fallout_wastelands:track"
+    },
+    "3": {
+      "item": "fallout_wastelands:track"
+    },
+    "4": {
+      "item": "fallout_wastelands:rotativepart"
+    },
+    "5": {
+      "item": "fallout_wastelands:track"
+    },
+    "6": {
+      "item": "fallout_wastelands:rotativepart"
+    },
+    "7": {
+      "item": "fallout_wastelands:track"
+    },
+    "8": {
+      "item": "fallout_wastelands:rotativepart"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:robobraintrack",
+    "count": 1
+  }
+}

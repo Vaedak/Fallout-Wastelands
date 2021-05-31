@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "fallout_wastelands:block/wasteland_portal_ew"
+    },
+    "axis=x": {
+      "model": "fallout_wastelands:block/wasteland_portal_ns"
+    }
+  }
+}

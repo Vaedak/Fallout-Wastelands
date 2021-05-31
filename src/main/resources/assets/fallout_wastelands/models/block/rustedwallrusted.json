@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/iwrusted",
+    "up": "fallout_wastelands:blocks/iwrusted",
+    "north": "fallout_wastelands:blocks/iwrusted",
+    "east": "fallout_wastelands:blocks/iwrusted",
+    "south": "fallout_wastelands:blocks/iwrusted",
+    "west": "fallout_wastelands:blocks/iwrusted",
+    "particle": "fallout_wastelands:blocks/iwrusted"
+  }
+}

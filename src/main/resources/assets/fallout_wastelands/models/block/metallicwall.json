@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/ironwallsb",
+    "up": "fallout_wastelands:blocks/ironwallsb",
+    "north": "fallout_wastelands:blocks/ironwallsb",
+    "east": "fallout_wastelands:blocks/ironwallsb",
+    "south": "fallout_wastelands:blocks/ironwallsb",
+    "west": "fallout_wastelands:blocks/ironwallsb",
+    "particle": "fallout_wastelands:blocks/ironwallsb"
+  }
+}

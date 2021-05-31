@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "fallout_wastelands:blocks/xander_3",
+    "particle": "fallout_wastelands:blocks/xander_3"
+  }
+}

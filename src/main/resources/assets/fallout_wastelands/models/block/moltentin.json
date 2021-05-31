@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/moltentin",
+    "up": "fallout_wastelands:blocks/moltentin",
+    "north": "fallout_wastelands:blocks/moltentin",
+    "east": "fallout_wastelands:blocks/moltentin",
+    "south": "fallout_wastelands:blocks/moltentin",
+    "west": "fallout_wastelands:blocks/moltentin",
+    "particle": "fallout_wastelands:blocks/moltentin"
+  }
+}

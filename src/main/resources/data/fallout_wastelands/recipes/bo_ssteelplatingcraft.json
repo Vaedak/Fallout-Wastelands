@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:bossteelplate"
+    },
+    "1": {
+      "item": "fallout_wastelands:bossteelplate"
+    },
+    "2": {
+      "item": "fallout_wastelands:bossteelplate"
+    },
+    "3": {
+      "item": "fallout_wastelands:bossteelplate"
+    },
+    "4": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "5": {
+      "item": "fallout_wastelands:bossteelplate"
+    },
+    "6": {
+      "item": "fallout_wastelands:bossteelplate"
+    },
+    "7": {
+      "item": "fallout_wastelands:bossteelplate"
+    },
+    "8": {
+      "item": "fallout_wastelands:bossteelplate"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:bosbasemetalplating",
+    "count": 16
+  }
+}

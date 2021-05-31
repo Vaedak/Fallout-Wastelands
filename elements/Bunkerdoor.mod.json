@@ -1,0 +1,46 @@
+{
+  "_fv": 18,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 3,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Militaryplatingglass"
+      },
+      {
+        "value": "CUSTOM:Militaryplatingglass"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Militaryplated"
+      },
+      {
+        "value": "CUSTOM:Militaryplated"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Militaryplatingblockhazard"
+      },
+      {
+        "value": "CUSTOM:Militaryplatingblockhazard"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Testbunkerdoor"
+    },
+    "name": "bunkerdoor",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 12",
+    "345",
+    "67 "
+  ],
+  "key": {
+    "1": {
+      "item": "fallout_wastelands:aluminiumnugget"
+    },
+    "2": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "3": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "4": {
+      "item": "fallout_wastelands:robobrainengine"
+    },
+    "5": {
+      "item": "fallout_wastelands:aluminiumnugget"
+    },
+    "6": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "fallout_wastelands:militaryhull"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:reaper",
+    "count": 1
+  }
+}

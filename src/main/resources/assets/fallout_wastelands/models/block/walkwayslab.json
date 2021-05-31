@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/walkwaysidedown",
+    "top": "fallout_wastelands:blocks/walkwaytop",
+    "side": "fallout_wastelands:blocks/walkwaysideone"
+  }
+}

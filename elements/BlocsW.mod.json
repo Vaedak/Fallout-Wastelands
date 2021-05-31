@@ -1,0 +1,11 @@
+{
+  "_fv": 18,
+  "_type": "tab",
+  "definition": {
+    "name": "Wastlanders Blocks",
+    "icon": {
+      "value": "CUSTOM:Militaryplatedradiationwarrior"
+    },
+    "showSearch": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_fv": 18,
+  "_type": "item",
+  "definition": {
+    "renderType": 1,
+    "texture": "pipboy",
+    "customModelName": "pipboy:default",
+    "name": "Pipboy-3000",
+    "rarity": "COMMON",
+    "creativeTab": {
+      "value": "CUSTOM:Wastelandersitems"
+    },
+    "stackSize": 1,
+    "enchantability": 0,
+    "useDuration": 0,
+    "toolType": 3.0,
+    "damageCount": 0,
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInfo": [
+      "You personal computer"
+    ],
+    "hasGlow": false,
+    "guiBoundTo": "Pipboygui",
+    "inventorySize": 45,
+    "inventoryStackSize": 64
+  }
+}

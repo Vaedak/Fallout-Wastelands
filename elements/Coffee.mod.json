@@ -1,0 +1,26 @@
+{
+  "_fv": 18,
+  "_type": "food",
+  "definition": {
+    "renderType": 0,
+    "texture": "coffee",
+    "customModelName": "Normal",
+    "name": "Coffee",
+    "rarity": "COMMON",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelandersitems"
+    },
+    "stackSize": 1,
+    "nutritionalValue": 4,
+    "saturation": 7.0,
+    "eatingSpeed": 5,
+    "forDogs": false,
+    "isAlwaysEdible": true,
+    "animation": "drink",
+    "hasGlow": false,
+    "onEaten": {
+      "name": "CoffeeFoodEaten"
+    }
+  }
+}

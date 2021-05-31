@@ -1,0 +1,40 @@
+{
+  "_fv": 18,
+  "_type": "gun",
+  "definition": {
+    "renderType": 1,
+    "texture": "plasmarifle",
+    "customModelName": "fusil_plasma_v2_f5:default",
+    "name": "Plasma Rifle",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:Fusionmicrocell"
+    },
+    "shootConstantly": false,
+    "usageCount": 600,
+    "actionSound": {
+      "value": "CUSTOM:plasmarifle"
+    },
+    "hasGlow": false,
+    "animation": "bow",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "bulletPower": 4.0,
+    "bulletDamage": 1.7999999999999998,
+    "bulletKnockback": 0,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "CUSTOM:Plasmas"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": "",
+    "onBulletFlyingTick": {
+      "name": "PlasmarifleWhileBulletFlyingTick"
+    }
+  }
+}

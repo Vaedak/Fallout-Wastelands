@@ -1,0 +1,13 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:crushedcan"
+    }
+  ],
+  "result": {
+    "item": "minecraft:iron_nugget",
+    "count": 2
+  }
+}

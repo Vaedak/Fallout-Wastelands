@@ -1,0 +1,13 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:militaryplatedradiationwarrior"
+    }
+  ],
+  "result": {
+    "item": "fallout_wastelands:militaryplatingblockhazard",
+    "count": 1
+  }
+}

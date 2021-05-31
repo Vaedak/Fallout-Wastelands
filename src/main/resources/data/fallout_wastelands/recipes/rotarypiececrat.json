@@ -1,0 +1,30 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "3": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "4": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "5": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "7": {
+      "item": "fallout_wastelands:steelingot"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:rotativepart",
+    "count": 1
+  }
+}

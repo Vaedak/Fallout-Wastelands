@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_glass_pane_side",
+  "textures": {
+    "edge": "fallout_wastelands:blocks/oldpapers",
+    "pane": "fallout_wastelands:blocks/oldpapers"
+  }
+}

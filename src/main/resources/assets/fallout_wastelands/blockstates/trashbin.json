@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fallout_wastelands:block/trashbin"
+    },
+    "facing=east": {
+      "model": "fallout_wastelands:block/trashbin",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fallout_wastelands:block/trashbin",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fallout_wastelands:block/trashbin",
+      "y": 270
+    }
+  }
+}

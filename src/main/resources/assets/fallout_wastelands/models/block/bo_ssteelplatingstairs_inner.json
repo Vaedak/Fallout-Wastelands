@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/bosmetalplating",
+    "top": "fallout_wastelands:blocks/bosmetalplating",
+    "side": "fallout_wastelands:blocks/bosmetalplatingside"
+  }
+}

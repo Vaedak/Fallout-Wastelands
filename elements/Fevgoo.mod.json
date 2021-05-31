@@ -1,0 +1,24 @@
+{
+  "_fv": 18,
+  "_type": "fluid",
+  "definition": {
+    "name": "Fevgoo",
+    "textureStill": "fev2bf",
+    "textureFlowing": "fev2bf",
+    "luminosity": 100,
+    "density": 500,
+    "viscosity": 100000,
+    "isGas": false,
+    "type": "WATER",
+    "generateBucket": true,
+    "creativeTab": {
+      "value": "CUSTOM:BlocsW"
+    },
+    "frequencyOnChunks": 5,
+    "spawnWorldTypes": [],
+    "restrictionBiomes": [],
+    "onEntityCollides": {
+      "name": "FevgooMobplayerCollidesBlock"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/greenmetalplatinghazard",
+    "up": "fallout_wastelands:blocks/greenmetalplatinghazard",
+    "north": "fallout_wastelands:blocks/greenmetalplatinghazard",
+    "east": "fallout_wastelands:blocks/greenmetalplatinghazard",
+    "south": "fallout_wastelands:blocks/greenmetalplatinghazard",
+    "west": "fallout_wastelands:blocks/greenmetalplatinghazard",
+    "particle": "fallout_wastelands:blocks/greenmetalplatinghazard"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:bossteelplating"
+    },
+    "1": {
+      "item": "fallout_wastelands:bossteelplating"
+    },
+    "2": {
+      "item": "fallout_wastelands:bossteelplating"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:bossteelstructureslab",
+    "count": 6
+  }
+}

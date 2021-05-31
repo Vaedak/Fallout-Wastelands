@@ -1,0 +1,46 @@
+{
+  "_fv": 18,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 6,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Militaryplated"
+      },
+      {
+        "value": "CUSTOM:Militaryplated"
+      },
+      {
+        "value": "CUSTOM:Militaryplated"
+      },
+      {
+        "value": "CUSTOM:Militaryplated"
+      },
+      {
+        "value": "CUSTOM:Militaryplated"
+      },
+      {
+        "value": "CUSTOM:Militaryplated"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Militaryplatingwall"
+    },
+    "name": "militaryplatingwallcraft",
+    "namespace": "mod"
+  }
+}

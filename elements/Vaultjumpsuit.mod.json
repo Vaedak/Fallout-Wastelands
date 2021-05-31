@@ -1,0 +1,58 @@
+{
+  "_fv": 18,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": false,
+    "textureHelmet": "",
+    "enableBody": true,
+    "textureBody": "jumpsuit_torso",
+    "enableLeggings": true,
+    "textureLeggings": "jumpsuit_leggings",
+    "enableBoots": true,
+    "textureBoots": "jumpsuit_boots",
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "armorTextureFile": "vaultjumpb_",
+    "helmetName": "Vaultjumpsuit Helmet",
+    "bodyName": "Vault Jumpsuit Body (male)",
+    "leggingsName": "Vault Jumpsuit Leggings (male)",
+    "bootsName": "Vault Jumpsuit Boots (male)",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Modelvaultjumpsuit",
+    "helmetModelPart": "jumpsuit",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Modelvaultjumpsuit",
+    "bodyModelPart": "body",
+    "armsModelPartL": "leftarm",
+    "armsModelPartR": "rightarm",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Modelvaultjumpsuit",
+    "leggingsModelPartL": "leftleg",
+    "leggingsModelPartR": "rightleg",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Modelvaultjumpsuit",
+    "bootsModelPartL": "leftleg",
+    "bootsModelPartR": "rightleg",
+    "bootsModelTexture": "From armor",
+    "maxDamage": 10,
+    "damageValueHelmet": 2,
+    "damageValueBody": 2,
+    "damageValueLeggings": 2,
+    "damageValueBoots": 2,
+    "enchantability": 9,
+    "toughness": 5.0,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": "block.cloth.step"
+    },
+    "repairItems": [
+      {
+        "value": "Items.LEATHER"
+      }
+    ]
+  }
+}

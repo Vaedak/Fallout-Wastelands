@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom_rh",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/bosdoordownfixed3",
+    "top": "fallout_wastelands:blocks/bosdoorupfixed3"
+  }
+}

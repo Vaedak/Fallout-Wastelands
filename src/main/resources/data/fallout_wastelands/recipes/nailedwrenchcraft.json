@@ -1,0 +1,20 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1",
+    "2 "
+  ],
+  "key": {
+    "1": {
+      "item": "fallout_wastelands:nails"
+    },
+    "2": {
+      "item": "fallout_wastelands:wrench"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:nailedwrench",
+    "count": 1
+  }
+}

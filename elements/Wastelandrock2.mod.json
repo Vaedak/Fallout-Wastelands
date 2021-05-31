@@ -1,0 +1,31 @@
+{
+  "_fv": 18,
+  "_type": "structure",
+  "definition": {
+    "structure": "wastelandrock2",
+    "randomlyRotateStructure": true,
+    "surfaceDetectionType": "First motion blocking block",
+    "spawnProbability": 50000,
+    "minCountPerChunk": 1,
+    "maxCountPerChunk": 4,
+    "spawnLocation": "Ground",
+    "spawnHeightOffset": -4,
+    "spawnXOffset": 0,
+    "spawnZOffset": 0,
+    "spawnWorldTypes": [
+      "Surface",
+      "CUSTOM:Wasteland"
+    ],
+    "restrictionBlocks": [
+      {
+        "value": "CUSTOM:Wastelanddirt"
+      }
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:Desertwastland"
+      }
+    ],
+    "ignoreBlocks": "STRUCTURE_BLOCK"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "fallout_wastelands:coppernugget",
+    "fallout_wastelands:leadnugget",
+    "fallout_wastelands:aluminiumnugget",
+    "fallout_wastelands:tinnugget",
+    "fallout_wastelands:uraniumnugget"
+  ]
+}

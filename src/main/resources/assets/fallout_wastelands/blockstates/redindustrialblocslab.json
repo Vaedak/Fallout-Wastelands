@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fallout_wastelands:block/redindustrialblocslab"
+    },
+    "type=top": {
+      "model": "fallout_wastelands:block/redindustrialblocslab_top"
+    },
+    "type=double": {
+      "model": "fallout_wastelands:block/redindustrialblocslab_full"
+    }
+  }
+}

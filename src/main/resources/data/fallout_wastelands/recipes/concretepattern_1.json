@@ -1,0 +1,13 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:concretepattern"
+    }
+  ],
+  "result": {
+    "item": "fallout_wastelands:wastelandconcretevent",
+    "count": 1
+  }
+}

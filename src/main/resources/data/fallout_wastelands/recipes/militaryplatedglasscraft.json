@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "1": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "2": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "3": {
+      "item": "minecraft:iron_ingot"
+    },
+    "4": {
+      "item": "minecraft:glass"
+    },
+    "5": {
+      "item": "minecraft:iron_ingot"
+    },
+    "6": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "7": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "8": {
+      "item": "fallout_wastelands:militaryplated"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:militaryplatingglass",
+    "count": 4
+  }
+}

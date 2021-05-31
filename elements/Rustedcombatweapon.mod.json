@@ -1,0 +1,29 @@
+{
+  "_fv": 18,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "junksword",
+    "customModelName": "Normal",
+    "name": "Junk sword",
+    "specialInfo": [
+      "Metal parts assembled into a brutal melee weapon ."
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 1,
+    "efficiency": 4.0,
+    "attackSpeed": 0.7,
+    "enchantability": 2,
+    "damageVsEntity": 6.0,
+    "usageCount": 80,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Printedchip"
+      },
+      {
+        "value": "CUSTOM:Robobrainengine"
+      },
+      {
+        "value": "CUSTOM:Coffepot"
+      },
+      {
+        "value": "CUSTOM:Cigarettepack"
+      },
+      {
+        "value": "CUSTOM:Crushedcan"
+      },
+      {
+        "value": "CUSTOM:Nuclearwaste"
+      },
+      {
+        "value": "CUSTOM:Whitepaintcan"
+      },
+      {
+        "value": "CUSTOM:Redpaintcan"
+      },
+      {
+        "value": "CUSTOM:Blackpaintcan"
+      },
+      {
+        "value": "CUSTOM:Yellowpaintcan"
+      },
+      {
+        "value": "CUSTOM:Greenpaintcan"
+      },
+      {
+        "value": "CUSTOM:Bluepaintcan"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "junk",
+    "namespace": "forge"
+  }
+}

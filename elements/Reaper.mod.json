@@ -1,0 +1,30 @@
+{
+  "_fv": 18,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "reaper",
+    "customModelName": "Normal",
+    "name": "Ripper",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "toolType": "Axe",
+    "harvestLevel": 2,
+    "efficiency": 5.0,
+    "attackSpeed": 10.0,
+    "enchantability": 2,
+    "damageVsEntity": 4.5,
+    "usageCount": 500,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "ReaperLivingEntityIsHitWithTool"
+    }
+  }
+}

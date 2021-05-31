@@ -1,0 +1,32 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:sheetmetal"
+    },
+    "1": {
+      "item": "fallout_wastelands:sheetmetal"
+    },
+    "2": {
+      "item": "fallout_wastelands:sheetmetal"
+    },
+    "3": {
+      "item": "fallout_wastelands:sheetmetal"
+    },
+    "4": {
+      "item": "fallout_wastelands:sheetmetal"
+    },
+    "5": {
+      "item": "fallout_wastelands:sheetmetal"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:sheetmetalwall",
+    "count": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/copperblock",
+    "up": "fallout_wastelands:blocks/copperblock",
+    "north": "fallout_wastelands:blocks/copperblock",
+    "east": "fallout_wastelands:blocks/copperblock",
+    "south": "fallout_wastelands:blocks/copperblock",
+    "west": "fallout_wastelands:blocks/copperblock",
+    "particle": "fallout_wastelands:blocks/copperblock"
+  }
+}

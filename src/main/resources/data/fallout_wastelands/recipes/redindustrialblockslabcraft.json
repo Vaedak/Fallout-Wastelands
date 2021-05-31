@@ -1,0 +1,22 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "1": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "2": {
+      "item": "fallout_wastelands:redindustrialblock"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:redindustrialblocslab",
+    "count": 6
+  }
+}

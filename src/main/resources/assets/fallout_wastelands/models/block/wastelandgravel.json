@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/wastelandgravel",
+    "up": "fallout_wastelands:blocks/wastelandgravel",
+    "north": "fallout_wastelands:blocks/wastelandgravel",
+    "east": "fallout_wastelands:blocks/wastelandgravel",
+    "south": "fallout_wastelands:blocks/wastelandgravel",
+    "west": "fallout_wastelands:blocks/wastelandgravel",
+    "particle": "fallout_wastelands:blocks/wastelandgravel"
+  }
+}

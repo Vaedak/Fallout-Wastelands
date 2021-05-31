@@ -1,0 +1,30 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "lighttub",
+	"texture_size": [64, 64],
+	"textures": {
+		"1": "block/texture"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 0],
+			"to": [9, 2, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 8, 8]},
+			"faces": {
+				"north": {"uv": [4, 4, 4.5, 4.5], "texture": "#1"},
+				"east": {"uv": [0, 4, 4, 4.5], "texture": "#1"},
+				"south": {"uv": [8.5, 4, 9, 4.5], "texture": "#1"},
+				"west": {"uv": [4.5, 4, 8.5, 4.5], "texture": "#1"},
+				"up": {"uv": [4.5, 4, 4, 0], "texture": "#1"},
+				"down": {"uv": [5, 0, 4.5, 4], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [15, 8, 8],
+			"children": [0]
+		}
+	]
+}

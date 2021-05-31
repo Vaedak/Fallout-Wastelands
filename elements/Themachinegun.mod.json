@@ -1,0 +1,51 @@
+{
+  "_fv": 18,
+  "_type": "gun",
+  "definition": {
+    "renderType": 1,
+    "texture": "sfmg",
+    "customModelName": "stripfedmg:default",
+    "name": "Butcher Mk1",
+    "specialInfo": [
+      "7.62"
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:Septammo"
+    },
+    "shootConstantly": true,
+    "usageCount": 300,
+    "actionSound": {
+      "value": "CUSTOM:gun"
+    },
+    "hasGlow": false,
+    "animation": "bow",
+    "enableMeleeDamage": true,
+    "damageVsEntity": 1.0,
+    "onRangedItemUsed": {
+      "name": "ThemachinegunRangedItemUsed"
+    },
+    "bulletPower": 3.0,
+    "bulletDamage": 1.0,
+    "bulletKnockback": 0,
+    "bulletParticles": true,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "CUSTOM:Bulletmobs"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": "",
+    "onBulletHitsBlock": {
+      "name": "ThemachinegunBulletHitsBlock"
+    },
+    "onBulletHitsPlayer": {
+      "name": "ThemachinegunBulletHitsPlayer"
+    },
+    "onBulletHitsEntity": {
+      "name": "ThemachinegunBulletHitsLivingEntity"
+    }
+  }
+}

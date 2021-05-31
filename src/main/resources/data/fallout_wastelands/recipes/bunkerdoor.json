@@ -1,0 +1,33 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23",
+    "45"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:militaryplatingglass"
+    },
+    "1": {
+      "item": "fallout_wastelands:militaryplatingglass"
+    },
+    "2": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "3": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "4": {
+      "item": "fallout_wastelands:militaryplatingblockhazard"
+    },
+    "5": {
+      "item": "fallout_wastelands:militaryplatingblockhazard"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:testbunkerdoor",
+    "count": 3
+  }
+}

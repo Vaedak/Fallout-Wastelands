@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/blastwindows",
+    "up": "fallout_wastelands:blocks/blastwindows",
+    "north": "fallout_wastelands:blocks/blastwindows",
+    "east": "fallout_wastelands:blocks/blastwindows",
+    "south": "fallout_wastelands:blocks/blastwindows",
+    "west": "fallout_wastelands:blocks/blastwindows",
+    "particle": "fallout_wastelands:blocks/blastwindows"
+  }
+}

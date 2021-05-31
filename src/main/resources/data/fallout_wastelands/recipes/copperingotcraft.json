@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:coppernugget"
+    },
+    "1": {
+      "item": "fallout_wastelands:coppernugget"
+    },
+    "2": {
+      "item": "fallout_wastelands:coppernugget"
+    },
+    "3": {
+      "item": "fallout_wastelands:coppernugget"
+    },
+    "4": {
+      "item": "fallout_wastelands:coppernugget"
+    },
+    "5": {
+      "item": "fallout_wastelands:coppernugget"
+    },
+    "6": {
+      "item": "fallout_wastelands:coppernugget"
+    },
+    "7": {
+      "item": "fallout_wastelands:coppernugget"
+    },
+    "8": {
+      "item": "fallout_wastelands:coppernugget"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:ingotcopper",
+    "count": 1
+  }
+}

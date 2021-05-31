@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fallout_wastelands:block/bossteelplatingslabs"
+    },
+    "type=top": {
+      "model": "fallout_wastelands:block/bossteelplatingslabs_top"
+    },
+    "type=double": {
+      "model": "fallout_wastelands:block/bossteelplatingslabs_full"
+    }
+  }
+}

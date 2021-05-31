@@ -1,0 +1,7 @@
+{
+  "parent": "fallout_wastelands:custom/fusil_plasma_v2_f5",
+  "textures": {
+    "0": "fallout_wastelands:blocks/plasmarifle",
+    "particle": "fallout_wastelands:items/plasmarifle"
+  }
+}

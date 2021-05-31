@@ -1,0 +1,46 @@
+{
+  "_fv": 18,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Wastlandconcrete"
+      },
+      {
+        "value": "CUSTOM:Wastlandconcrete"
+      },
+      {
+        "value": "CUSTOM:Wastlandconcrete"
+      },
+      {
+        "value": "CUSTOM:Wastlandconcrete"
+      },
+      {
+        "value": "Blocks.TRAPPED_CHEST"
+      },
+      {
+        "value": "CUSTOM:Steelblock"
+      },
+      {
+        "value": "CUSTOM:Wastlandconcrete"
+      },
+      {
+        "value": "CUSTOM:Wastlandconcrete"
+      },
+      {
+        "value": "CUSTOM:Wastlandconcrete"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Safeblock"
+    },
+    "name": "concretesafecraft",
+    "namespace": "mod"
+  }
+}

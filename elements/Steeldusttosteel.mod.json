@@ -1,0 +1,20 @@
+{
+  "_fv": 18,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smelting",
+    "xpReward": 3.0,
+    "cookingTime": 400,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "smeltingInputStack": {
+      "value": "CUSTOM:Steeldust"
+    },
+    "smeltingReturnStack": {
+      "value": "CUSTOM:Steelingot"
+    },
+    "name": "steeldusttosteel",
+    "namespace": "mod"
+  }
+}

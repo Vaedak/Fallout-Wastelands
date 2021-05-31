@@ -1,0 +1,24 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  2",
+    " 4 ",
+    "6  "
+  ],
+  "key": {
+    "2": {
+      "item": "minecraft:stick"
+    },
+    "4": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "6": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:breadroller",
+    "count": 1
+  }
+}

@@ -1,0 +1,64 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "medicalstash",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "wastlanders1.15.2/medibox",
+		"particle": "wastlanders1.15.2/medibox"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 11],
+			"to": [15, 14, 16],
+			"rotation": {"angle": 0, "axis": "x", "origin": [9, 8, 19]},
+			"faces": {
+				"north": {"uv": [0, 0, 3.5, 3.5], "texture": "#0"},
+				"east": {"uv": [3.5, 3.5, 4.75, 7], "texture": "#0"},
+				"south": {"uv": [0, 3.5, 3.5, 7], "texture": "#0"},
+				"west": {"uv": [3.5, 0, 4.75, 3.5], "texture": "#0"},
+				"up": {"uv": [8.25, 6, 4.75, 4.75], "texture": "#0"},
+				"down": {"uv": [8.25, 0, 4.75, 1.25], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [83, -92, 3],
+			"translation": [2.5, -2.75, -2.75],
+			"scale": [0.45, 0.45, 0.45]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [76, -88, 0],
+			"translation": [2.5, -3.25, -2.75],
+			"scale": [0.46, 0.45, 0.47]
+		},
+		"firstperson_righthand": {
+			"rotation": [-39, -180, 2],
+			"translation": [10, -3.5, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-18, -180, 0],
+			"translation": [11, -4.75, 0]
+		},
+		"ground": {
+			"rotation": [90, 0, 0],
+			"translation": [0, 3, 1.25],
+			"scale": [0.72, 0.72, 0.72]
+		},
+		"gui": {
+			"rotation": [36, -143, 0],
+			"translation": [2, -0.5, 0],
+			"scale": [0.72, 0.72, 0.72]
+		},
+		"fixed": {
+			"translation": [0, 0, -5.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 8, 8],
+			"children": [0]
+		}
+	]
+}

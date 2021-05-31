@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fallout_wastelands:block/bossteelstructureslab"
+    },
+    "type=top": {
+      "model": "fallout_wastelands:block/bossteelstructureslab_top"
+    },
+    "type=double": {
+      "model": "fallout_wastelands:block/bossteelstructureslab_full"
+    }
+  }
+}

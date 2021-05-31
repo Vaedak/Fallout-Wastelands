@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/cbrick",
+    "up": "fallout_wastelands:blocks/cbrick",
+    "north": "fallout_wastelands:blocks/cbrick",
+    "east": "fallout_wastelands:blocks/cbrick",
+    "south": "fallout_wastelands:blocks/cbrick",
+    "west": "fallout_wastelands:blocks/cbrick",
+    "particle": "fallout_wastelands:blocks/cbrick"
+  }
+}

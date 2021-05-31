@@ -1,0 +1,16 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Uraniumingot"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "ingots/uranium",
+    "namespace": "forge"
+  }
+}

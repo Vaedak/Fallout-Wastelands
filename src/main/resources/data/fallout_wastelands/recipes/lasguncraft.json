@@ -1,0 +1,36 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "  8"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "1": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "2": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "3": {
+      "item": "minecraft:red_stained_glass_pane"
+    },
+    "4": {
+      "item": "minecraft:diamond"
+    },
+    "5": {
+      "item": "fallout_wastelands:steelblock"
+    },
+    "8": {
+      "item": "minecraft:lever"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:laserriffle",
+    "count": 1
+  }
+}

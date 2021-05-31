@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:robobrainarm"
+    },
+    "1": {
+      "item": "fallout_wastelands:robobrainhead"
+    },
+    "2": {
+      "item": "fallout_wastelands:robobrainarm"
+    },
+    "3": {
+      "item": "fallout_wastelands:metalclaw"
+    },
+    "4": {
+      "item": "fallout_wastelands:robobraintorso"
+    },
+    "5": {
+      "item": "fallout_wastelands:metalclaw"
+    },
+    "6": {
+      "item": "fallout_wastelands:robobraintrack"
+    },
+    "7": {
+      "item": "minecraft:iron_ingot"
+    },
+    "8": {
+      "item": "fallout_wastelands:robobraintrack"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:frbblock",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/dead_trunk",
+    "up": "fallout_wastelands:blocks/dead_trunk",
+    "north": "fallout_wastelands:blocks/dead_trunk",
+    "east": "fallout_wastelands:blocks/dead_trunk",
+    "south": "fallout_wastelands:blocks/dead_trunk",
+    "west": "fallout_wastelands:blocks/dead_trunk",
+    "particle": "fallout_wastelands:blocks/dead_trunk"
+  }
+}

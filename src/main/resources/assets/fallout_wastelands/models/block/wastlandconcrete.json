@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/vconcrete",
+    "up": "fallout_wastelands:blocks/vconcrete",
+    "north": "fallout_wastelands:blocks/vconcrete",
+    "east": "fallout_wastelands:blocks/vconcrete",
+    "south": "fallout_wastelands:blocks/vconcrete",
+    "west": "fallout_wastelands:blocks/vconcrete",
+    "particle": "fallout_wastelands:blocks/vconcrete"
+  }
+}

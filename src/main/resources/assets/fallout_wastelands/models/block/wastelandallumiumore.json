@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/alluminiumore",
+    "up": "fallout_wastelands:blocks/alluminiumore",
+    "north": "fallout_wastelands:blocks/alluminiumore",
+    "east": "fallout_wastelands:blocks/alluminiumore",
+    "south": "fallout_wastelands:blocks/alluminiumore",
+    "west": "fallout_wastelands:blocks/alluminiumore",
+    "particle": "fallout_wastelands:blocks/alluminiumore"
+  }
+}

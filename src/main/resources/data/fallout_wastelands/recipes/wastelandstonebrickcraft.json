@@ -1,0 +1,26 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:wastlandstone"
+    },
+    "1": {
+      "item": "fallout_wastelands:wastlandstone"
+    },
+    "2": {
+      "item": "fallout_wastelands:wastlandstone"
+    },
+    "3": {
+      "item": "fallout_wastelands:wastlandstone"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:wastelandstonebrick",
+    "count": 4
+  }
+}

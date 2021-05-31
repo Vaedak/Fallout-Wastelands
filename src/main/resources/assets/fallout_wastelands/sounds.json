@@ -1,0 +1,317 @@
+{
+  "machinegun": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:50_sniper_shot-liam-2028603980_1",
+        "stream": false
+      }
+    ]
+  },
+  "gun": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:50_sniper_shot-liam-2028603980a1_1",
+        "stream": false
+      }
+    ]
+  },
+  "bulletground": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:hitting",
+        "stream": false
+      }
+    ]
+  },
+  "shotwound": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:bone_crushing",
+        "stream": false
+      }
+    ]
+  },
+  "lasgun": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:lasergunf",
+        "stream": false
+      }
+    ]
+  },
+  "spf": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:specialforces",
+        "stream": false
+      }
+    ]
+  },
+  "uzi": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:uzi",
+        "stream": false
+      }
+    ]
+  },
+  "ak47": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:ak47",
+        "stream": false
+      }
+    ]
+  },
+  "ghoulliving": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:npc_feralghoul_aware_01",
+        "stream": false
+      }
+    ]
+  },
+  "ghoulinjured": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:npc_feralghoul_injured_02",
+        "stream": false
+      }
+    ]
+  },
+  "ghouldeath": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:npc_feralghoul_death_02",
+        "stream": false
+      }
+    ]
+  },
+  "playerdeath": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:death",
+        "stream": false
+      }
+    ]
+  },
+  "robobraintracks": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:robobrainbwalk",
+        "stream": false
+      }
+    ]
+  },
+  "robobrainliving": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:robobrainliving",
+        "stream": false
+      }
+    ]
+  },
+  "robobrainshoot": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:robotbrainshoot",
+        "stream": false
+      }
+    ]
+  },
+  "rbshoot": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:robotbrainshoot",
+        "stream": false
+      }
+    ]
+  },
+  "rblfix": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:robobrainlivingfix",
+        "stream": false
+      }
+    ]
+  },
+  "rbwfix": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:robobrainbwalkfix",
+        "stream": false
+      }
+    ]
+  },
+  "robotfireing": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:robotshoot",
+        "stream": false
+      }
+    ]
+  },
+  "lasershoot": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:lasershoot",
+        "stream": false
+      }
+    ]
+  },
+  "supermutantliving": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:supermutantliving",
+        "stream": false
+      }
+    ]
+  },
+  "bloatflydeath": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:blowfly_death_01",
+        "stream": false
+      }
+    ]
+  },
+  "bloatflyidle": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:blowfly_idle_lp",
+        "stream": false
+      }
+    ]
+  },
+  "bloatflyinjured": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:blowfly_injured_02",
+        "stream": false
+      }
+    ]
+  },
+  "bloatflyattack": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:blowfly_attack_01",
+        "stream": false
+      }
+    ]
+  },
+  "supermutant": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:supermutanthurt",
+        "stream": false
+      }
+    ]
+  },
+  "nailgunshooting": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:nailgunshooting",
+        "stream": false
+      }
+    ]
+  },
+  "reaper": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:reaperhit",
+        "stream": false
+      }
+    ]
+  },
+  "highwaymanmounting": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:highwaymanmounting",
+        "stream": false
+      }
+    ]
+  },
+  "highwaymanstep": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:highwaymanblocksound",
+        "stream": false
+      }
+    ]
+  },
+  "menutheme": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:fallout_3_main_theme",
+        "stream": true
+      }
+    ]
+  },
+  "tenmm": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:tenmm",
+        "stream": false
+      }
+    ]
+  },
+  "tenmmshot": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:10mmshoot",
+        "stream": false
+      }
+    ]
+  },
+  "plasmarifle": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:plasmashot",
+        "stream": false
+      }
+    ]
+  },
+  "wastelandwind": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:wasteland_wind_pt_01_1",
+        "stream": true
+      }
+    ]
+  }
+}

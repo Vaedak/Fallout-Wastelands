@@ -1,0 +1,28 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Coppernugget"
+      },
+      {
+        "value": "CUSTOM:Leadnugget"
+      },
+      {
+        "value": "CUSTOM:Aluminiumnugget"
+      },
+      {
+        "value": "CUSTOM:Tinnugget"
+      },
+      {
+        "value": "CUSTOM:Uraniumnugget"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "nuggets",
+    "namespace": "forge"
+  }
+}

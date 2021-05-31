@@ -1,0 +1,37 @@
+{
+  "_fv": 18,
+  "_type": "structure",
+  "definition": {
+    "structure": "maxgaragefixed3",
+    "randomlyRotateStructure": false,
+    "surfaceDetectionType": "First motion blocking block",
+    "spawnProbability": 200,
+    "minCountPerChunk": 1,
+    "maxCountPerChunk": 1,
+    "spawnLocation": "Ground",
+    "spawnHeightOffset": -3,
+    "spawnXOffset": 0,
+    "spawnZOffset": 0,
+    "spawnWorldTypes": [
+      "Surface",
+      "CUSTOM:Wasteland"
+    ],
+    "restrictionBlocks": [
+      {
+        "value": "CUSTOM:Wastelanddirt"
+      }
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:Capitalwastelandeast"
+      },
+      {
+        "value": "CUSTOM:Desertwastland"
+      },
+      {
+        "value": "CUSTOM:Capitalwasteland"
+      }
+    ],
+    "ignoreBlocks": "STRUCTURE_BLOCK"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:leadnugget"
+    },
+    "1": {
+      "item": "fallout_wastelands:leadnugget"
+    },
+    "2": {
+      "item": "fallout_wastelands:leadnugget"
+    },
+    "3": {
+      "item": "fallout_wastelands:leadnugget"
+    },
+    "4": {
+      "item": "fallout_wastelands:leadnugget"
+    },
+    "5": {
+      "item": "fallout_wastelands:leadnugget"
+    },
+    "6": {
+      "item": "fallout_wastelands:leadnugget"
+    },
+    "7": {
+      "item": "fallout_wastelands:leadnugget"
+    },
+    "8": {
+      "item": "fallout_wastelands:leadnugget"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:leadingot",
+    "count": 1
+  }
+}

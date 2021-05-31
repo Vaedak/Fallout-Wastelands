@@ -1,0 +1,20 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [
+      {
+        "value": "CUSTOM:Tinblock"
+      }
+    ],
+    "blocks": [
+      {
+        "value": "CUSTOM:Tinblock"
+      }
+    ],
+    "functions": [],
+    "name": "storage_block/tin",
+    "namespace": "forge"
+  }
+}

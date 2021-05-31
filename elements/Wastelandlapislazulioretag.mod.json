@@ -1,0 +1,16 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:Wastelandlapislazuli"
+      }
+    ],
+    "functions": [],
+    "name": "ore/lapis",
+    "namespace": "forge"
+  }
+}

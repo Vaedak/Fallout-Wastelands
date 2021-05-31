@@ -1,0 +1,7 @@
+{
+  "parent": "fallout_wastelands:custom/nailgunfix",
+  "textures": {
+    "0": "fallout_wastelands:blocks/nailgun",
+    "particle": "fallout_wastelands:items/nailgun"
+  }
+}

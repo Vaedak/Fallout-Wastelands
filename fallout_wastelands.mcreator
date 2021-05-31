@@ -1,0 +1,6926 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "Chromeraider",
+      "type": "mob",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chromeraider"
+    },
+    {
+      "name": "Rustedcombatweapon",
+      "type": "tool",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rustedcombatweapon"
+    },
+    {
+      "name": "Chromedraiderfemale",
+      "type": "mob",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chromedraiderfemale"
+    },
+    {
+      "name": "Themachinegun",
+      "type": "gun",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "themachinegun"
+    },
+    {
+      "name": "Septammo",
+      "type": "item",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "septammo"
+    },
+    {
+      "name": "Septammocraft",
+      "type": "recipe",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "septammocraft"
+    },
+    {
+      "name": "ThemachinegunBulletHitsBlock",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "themachinegun_bullet_hits_block",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ThemachinegunBulletHitsPlayer",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "themachinegun_bullet_hits_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ThemachinegunBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "themachinegun_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Laserriffle",
+      "type": "gun",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "laserriffle"
+    },
+    {
+      "name": "Fusionmicrocell",
+      "type": "item",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fusionmicrocell"
+    },
+    {
+      "name": "Lasguncraft",
+      "type": "recipe",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lasguncraft"
+    },
+    {
+      "name": "Microfusioncell",
+      "type": "recipe",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "microfusioncell"
+    },
+    {
+      "name": "Machineguncraft",
+      "type": "recipe",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "machineguncraft"
+    },
+    {
+      "name": "Bulletmobs",
+      "type": "item",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bulletmobs"
+    },
+    {
+      "name": "Mobmachinegun",
+      "type": "gun",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mobmachinegun"
+    },
+    {
+      "name": "Ak",
+      "type": "gun",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ak"
+    },
+    {
+      "name": "Militaryplated",
+      "type": "block",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplated"
+    },
+    {
+      "name": "Militaryplatedradiationwarrior",
+      "type": "block",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatedradiationwarrior"
+    },
+    {
+      "name": "Walkway",
+      "type": "block",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "walkway"
+    },
+    {
+      "name": "Mpc",
+      "type": "recipe",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mpc"
+    },
+    {
+      "name": "Mcp2",
+      "type": "recipe",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mcp_2"
+    },
+    {
+      "name": "Militaryplatingblockhazard",
+      "type": "block",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatingblockhazard"
+    },
+    {
+      "name": "Militaryplatingglass",
+      "type": "block",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatingglass"
+    },
+    {
+      "name": "Mirelurk",
+      "type": "mob",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mirelurk"
+    },
+    {
+      "name": "Rawmirlurk",
+      "type": "food",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rawmirlurk"
+    },
+    {
+      "name": "Mirlurksteak",
+      "type": "food",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mirlurksteak"
+    },
+    {
+      "name": "Testbunkerdoor",
+      "type": "block",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "testbunkerdoor"
+    },
+    {
+      "name": "Militaryplatedground",
+      "type": "block",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatedground"
+    },
+    {
+      "name": "Walkwaycraft",
+      "type": "recipe",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "walkwaycraft"
+    },
+    {
+      "name": "Mcp3",
+      "type": "recipe",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mcp_3"
+    },
+    {
+      "name": "Militaryplatedglasscraft",
+      "type": "recipe",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatedglasscraft"
+    },
+    {
+      "name": "Mcp4",
+      "type": "recipe",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mcp_4"
+    },
+    {
+      "name": "Bunkerdoor",
+      "type": "recipe",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bunkerdoor"
+    },
+    {
+      "name": "Bunkerdoor2",
+      "type": "recipe",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bunkerdoor_2"
+    },
+    {
+      "name": "Redindustrialblock",
+      "type": "block",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindustrialblock"
+    },
+    {
+      "name": "Redindustrialblockwarning",
+      "type": "block",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindustrialblockwarning"
+    },
+    {
+      "name": "Redindustrialdoor",
+      "type": "block",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindustrialdoor"
+    },
+    {
+      "name": "Redindusrivetmid",
+      "type": "block",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindusrivetmid"
+    },
+    {
+      "name": "Redindusupperrivet",
+      "type": "block",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindusupperrivet"
+    },
+    {
+      "name": "Redindustrialrivetdown",
+      "type": "block",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindustrialrivetdown"
+    },
+    {
+      "name": "Industrialredwalkway",
+      "type": "block",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "industrialredwalkway"
+    },
+    {
+      "name": "RIC1craft",
+      "type": "recipe",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ric_1craft"
+    },
+    {
+      "name": "RIC2",
+      "type": "recipe",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ric_2"
+    },
+    {
+      "name": "RIC3",
+      "type": "recipe",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ric_3"
+    },
+    {
+      "name": "RIC4",
+      "type": "recipe",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ric_4"
+    },
+    {
+      "name": "RIC5",
+      "type": "recipe",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ric_5"
+    },
+    {
+      "name": "RIC6",
+      "type": "recipe",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ric_6"
+    },
+    {
+      "name": "Redindusdoorcraft",
+      "type": "recipe",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindusdoorcraft"
+    },
+    {
+      "name": "RIC7",
+      "type": "recipe",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ric_7"
+    },
+    {
+      "name": "Mcp5",
+      "type": "recipe",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mcp_5"
+    },
+    {
+      "name": "Coockingmirlurk",
+      "type": "recipe",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coockingmirlurk"
+    },
+    {
+      "name": "Wastlandsand",
+      "type": "block",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastlandsand"
+    },
+    {
+      "name": "Wastlandconcrete",
+      "type": "block",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastlandconcrete"
+    },
+    {
+      "name": "Desertwastland",
+      "type": "biome",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "desertwastland"
+    },
+    {
+      "name": "Ghoul",
+      "type": "mob",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ghoul"
+    },
+    {
+      "name": "Enclavebuildingfirst",
+      "type": "structure",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavebuildingfirst"
+    },
+    {
+      "name": "Wastelanddirt",
+      "type": "block",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanddirt"
+    },
+    {
+      "name": "Wastelandbrick",
+      "type": "block",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandbrick"
+    },
+    {
+      "name": "Wastelandrock",
+      "type": "block",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandrock"
+    },
+    {
+      "name": "Walkwaystairs",
+      "type": "block",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "walkwaystairs"
+    },
+    {
+      "name": "Walkwaystairscraft",
+      "type": "recipe",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "walkwaystairscraft"
+    },
+    {
+      "name": "Craftwalkwaystairs",
+      "type": "recipe",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "craftwalkwaystairs"
+    },
+    {
+      "name": "Wastlandbrickcraft",
+      "type": "recipe",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastlandbrickcraft"
+    },
+    {
+      "name": "Wastlandstone",
+      "type": "block",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastlandstone"
+    },
+    {
+      "name": "Wastlandrocksmelting",
+      "type": "recipe",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastlandrocksmelting"
+    },
+    {
+      "name": "Redindustrialblockstairs",
+      "type": "block",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindustrialblockstairs"
+    },
+    {
+      "name": "Militaryplatedstairs",
+      "type": "block",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatedstairs"
+    },
+    {
+      "name": "Redindustrialstairscraft",
+      "type": "recipe",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindustrialstairscraft"
+    },
+    {
+      "name": "Militaryplatedstairscraft",
+      "type": "recipe",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatedstairscraft"
+    },
+    {
+      "name": "CoffeemixerOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coffeemixer_on_block_right_clicked",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Coffeemixer",
+      "type": "block",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coffeemixer"
+    },
+    {
+      "name": "Sheetmetal",
+      "type": "block",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheetmetal"
+    },
+    {
+      "name": "Rustbloc",
+      "type": "block",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rustbloc"
+    },
+    {
+      "name": "BlocsW",
+      "type": "tab",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blocs_w"
+    },
+    {
+      "name": "Plaster",
+      "type": "block",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plaster"
+    },
+    {
+      "name": "Tirestack",
+      "type": "block",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tirestack"
+    },
+    {
+      "name": "Wastelandrock1",
+      "type": "structure",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandrock_1"
+    },
+    {
+      "name": "Wastelandrock2",
+      "type": "structure",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandrock_2"
+    },
+    {
+      "name": "Wastelandrock3",
+      "type": "structure",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandrock_3"
+    },
+    {
+      "name": "Wastelandbrickstairs",
+      "type": "block",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandbrickstairs"
+    },
+    {
+      "name": "Wastelandbrickslab",
+      "type": "block",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandbrickslab"
+    },
+    {
+      "name": "Scaffolding",
+      "type": "block",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "scaffolding"
+    },
+    {
+      "name": "Barrelbarrel",
+      "type": "block",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "barrelbarrel"
+    },
+    {
+      "name": "Deadtrunk",
+      "type": "block",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "deadtrunk"
+    },
+    {
+      "name": "Scaffoldingcrossed",
+      "type": "block",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "scaffoldingcrossed"
+    },
+    {
+      "name": "Militaryplatingslab",
+      "type": "block",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatingslab"
+    },
+    {
+      "name": "Barrelcraft",
+      "type": "recipe",
+      "sortid": 103,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "barrelcraft"
+    },
+    {
+      "name": "Scaffoldingcraft",
+      "type": "recipe",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "scaffoldingcraft"
+    },
+    {
+      "name": "ScaffoldingcraftB",
+      "type": "recipe",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "scaffoldingcraft_b"
+    },
+    {
+      "name": "Militaryplatingslabcraft",
+      "type": "recipe",
+      "sortid": 106,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatingslabcraft"
+    },
+    {
+      "name": "Walkwayslab",
+      "type": "block",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "walkwayslab"
+    },
+    {
+      "name": "Walkwayslabcraft",
+      "type": "recipe",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "walkwayslabcraft"
+    },
+    {
+      "name": "Redindustrialblocslab",
+      "type": "block",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindustrialblocslab"
+    },
+    {
+      "name": "Redindustrialblockslabcraft",
+      "type": "recipe",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redindustrialblockslabcraft"
+    },
+    {
+      "name": "Neutronadebottle",
+      "type": "item",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "neutronadebottle"
+    },
+    {
+      "name": "Neutronadebottlecraft",
+      "type": "recipe",
+      "sortid": 112,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "neutronadebottlecraft"
+    },
+    {
+      "name": "Rottenplanks",
+      "type": "block",
+      "sortid": 113,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenplanks"
+    },
+    {
+      "name": "Rottenplanksstairs",
+      "type": "block",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenplanksstairs"
+    },
+    {
+      "name": "Rottenplanksslab",
+      "type": "block",
+      "sortid": 115,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenplanksslab"
+    },
+    {
+      "name": "Rottenplankfence",
+      "type": "block",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenplankfence"
+    },
+    {
+      "name": "Rottenplankstairscraft",
+      "type": "recipe",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenplankstairscraft"
+    },
+    {
+      "name": "Rottenplankslacraft",
+      "type": "recipe",
+      "sortid": 118,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenplankslacraft"
+    },
+    {
+      "name": "Rottenplankfencecraft",
+      "type": "recipe",
+      "sortid": 119,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenplankfencecraft"
+    },
+    {
+      "name": "Charredplank",
+      "type": "block",
+      "sortid": 120,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charredplank"
+    },
+    {
+      "name": "Charredplanksstairs",
+      "type": "block",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charredplanksstairs"
+    },
+    {
+      "name": "Charredplankslab",
+      "type": "block",
+      "sortid": 122,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charredplankslab"
+    },
+    {
+      "name": "Charredplankfence",
+      "type": "block",
+      "sortid": 123,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charredplankfence"
+    },
+    {
+      "name": "Charredplankblockcraft",
+      "type": "recipe",
+      "sortid": 124,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charredplankblockcraft"
+    },
+    {
+      "name": "Charredplankstairscraft",
+      "type": "recipe",
+      "sortid": 125,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charredplankstairscraft"
+    },
+    {
+      "name": "Charredplankslabcraft",
+      "type": "recipe",
+      "sortid": 126,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charredplankslabcraft"
+    },
+    {
+      "name": "Charredplankfencecraft",
+      "type": "recipe",
+      "sortid": 127,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charredplankfencecraft"
+    },
+    {
+      "name": "Wastelandconcretecraft",
+      "type": "recipe",
+      "sortid": 128,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandconcretecraft"
+    },
+    {
+      "name": "Wastelandconcretestairs",
+      "type": "block",
+      "sortid": 129,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandconcretestairs"
+    },
+    {
+      "name": "Wastelandconcreteslab",
+      "type": "block",
+      "sortid": 130,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandconcreteslab"
+    },
+    {
+      "name": "Wastelandconcretewall",
+      "type": "block",
+      "sortid": 131,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandconcretewall"
+    },
+    {
+      "name": "Wastelandconcretestairscraft",
+      "type": "recipe",
+      "sortid": 132,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandconcretestairscraft"
+    },
+    {
+      "name": "Wastelandconcreteslabcraft",
+      "type": "recipe",
+      "sortid": 133,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandconcreteslabcraft"
+    },
+    {
+      "name": "Wastelandconcretewallcraft",
+      "type": "recipe",
+      "sortid": 134,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandconcretewallcraft"
+    },
+    {
+      "name": "Militaryplatingwall",
+      "type": "block",
+      "sortid": 135,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatingwall"
+    },
+    {
+      "name": "Militaryplatingwallcraft",
+      "type": "recipe",
+      "sortid": 136,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryplatingwallcraft"
+    },
+    {
+      "name": "Neutronade",
+      "type": "food",
+      "sortid": 137,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "neutronade"
+    },
+    {
+      "name": "Nuclearwaste",
+      "type": "item",
+      "sortid": 138,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nuclearwaste"
+    },
+    {
+      "name": "Neutronadecraft",
+      "type": "recipe",
+      "sortid": 139,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "neutronadecraft"
+    },
+    {
+      "name": "Sheetmetalwall",
+      "type": "block",
+      "sortid": 140,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheetmetalwall"
+    },
+    {
+      "name": "Sheetmetalwallcraft",
+      "type": "recipe",
+      "sortid": 141,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheetmetalwallcraft"
+    },
+    {
+      "name": "Crushedcan",
+      "type": "item",
+      "sortid": 142,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "crushedcan"
+    },
+    {
+      "name": "Crushedcandecraft",
+      "type": "recipe",
+      "sortid": 143,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "crushedcandecraft"
+    },
+    {
+      "name": "Vaultjumpsuit",
+      "type": "armor",
+      "sortid": 144,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultjumpsuit",
+      "metadata": {
+        "eh": false,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Femalevaultjumpsuit",
+      "type": "armor",
+      "sortid": 145,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "femalevaultjumpsuit",
+      "metadata": {
+        "eh": false,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Plasterstairs",
+      "type": "block",
+      "sortid": 146,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasterstairs"
+    },
+    {
+      "name": "Plasterwall",
+      "type": "block",
+      "sortid": 147,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasterwall"
+    },
+    {
+      "name": "Plasterslab",
+      "type": "block",
+      "sortid": 148,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasterslab"
+    },
+    {
+      "name": "Rustediron",
+      "type": "block",
+      "sortid": 149,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rustediron"
+    },
+    {
+      "name": "Deathsound",
+      "type": "procedure",
+      "sortid": 150,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "deathsound",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rustedironslab",
+      "type": "block",
+      "sortid": 151,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rustedironslab"
+    },
+    {
+      "name": "Rustedironstairs",
+      "type": "block",
+      "sortid": 152,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rustedironstairs"
+    },
+    {
+      "name": "Rustedironwalls",
+      "type": "block",
+      "sortid": 153,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rustedironwalls"
+    },
+    {
+      "name": "Ruin1",
+      "type": "structure",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ruin_1"
+    },
+    {
+      "name": "Ruinedhouse1",
+      "type": "structure",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ruinedhouse_1"
+    },
+    {
+      "name": "Redrocket1",
+      "type": "structure",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redrocket_1"
+    },
+    {
+      "name": "Raiderraidrocket",
+      "type": "structure",
+      "sortid": 157,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "raiderraidrocket"
+    },
+    {
+      "name": "StimpackRightClickedInAir",
+      "type": "procedure",
+      "sortid": 158,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "stimpack_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stimpack",
+      "type": "item",
+      "sortid": 158,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "stimpack"
+    },
+    {
+      "name": "FevgooMobplayerCollidesBlock",
+      "type": "procedure",
+      "sortid": 159,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fevgoo_mobplayer_collides_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fevgoo",
+      "type": "fluid",
+      "sortid": 159,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fevgoo"
+    },
+    {
+      "name": "T45powerarmor",
+      "type": "armor",
+      "sortid": 160,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "t_45powerarmor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Capitalwasteland",
+      "type": "biome",
+      "sortid": 161,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalwasteland"
+    },
+    {
+      "name": "Capitalruin1",
+      "type": "structure",
+      "sortid": 162,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalruin_1"
+    },
+    {
+      "name": "Capitalruin2",
+      "type": "structure",
+      "sortid": 163,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalruin_2"
+    },
+    {
+      "name": "Capitalruin3",
+      "type": "structure",
+      "sortid": 164,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalruin_3"
+    },
+    {
+      "name": "Capitalruin4",
+      "type": "structure",
+      "sortid": 165,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalruin_4"
+    },
+    {
+      "name": "Capitalruin5",
+      "type": "structure",
+      "sortid": 166,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalruin_5"
+    },
+    {
+      "name": "Capitalruin6",
+      "type": "structure",
+      "sortid": 167,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalruin_6"
+    },
+    {
+      "name": "Capitalruin7",
+      "type": "structure",
+      "sortid": 168,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalruin_7"
+    },
+    {
+      "name": "Wastelandruin4",
+      "type": "structure",
+      "sortid": 169,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandruin_4"
+    },
+    {
+      "name": "T45powerarmorBodyTickEvent",
+      "type": "procedure",
+      "sortid": 170,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "t_45powerarmor_body_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "T45powerarmorHelmetTickEvent",
+      "type": "procedure",
+      "sortid": 171,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "t_45powerarmor_helmet_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "T45powerarmorLeggingsTickEvent",
+      "type": "procedure",
+      "sortid": 172,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "t_45powerarmor_leggings_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "T45powerarmorBootsTickEvent",
+      "type": "procedure",
+      "sortid": 173,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "t_45powerarmor_boots_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Capitalwastlandrock",
+      "type": "structure",
+      "sortid": 174,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalwastlandrock"
+    },
+    {
+      "name": "Vaultsuit",
+      "type": "procedure",
+      "sortid": 176,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultsuit",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jointheworld",
+      "type": "achievement",
+      "sortid": 177,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jointheworld"
+    },
+    {
+      "name": "Wastetree1",
+      "type": "structure",
+      "sortid": 178,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastetree_1"
+    },
+    {
+      "name": "Wastetree2",
+      "type": "structure",
+      "sortid": 179,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastetree_2"
+    },
+    {
+      "name": "Wastelandtree3",
+      "type": "structure",
+      "sortid": 180,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandtree_3"
+    },
+    {
+      "name": "Capitalwastelandeast",
+      "type": "biome",
+      "sortid": 181,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalwastelandeast"
+    },
+    {
+      "name": "Livintree",
+      "type": "structure",
+      "sortid": 182,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "livintree"
+    },
+    {
+      "name": "Brotherhoodofsteelmetalplating",
+      "type": "block",
+      "sortid": 183,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "brotherhoodofsteelmetalplating"
+    },
+    {
+      "name": "Bosbasemetalplating",
+      "type": "block",
+      "sortid": 184,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bosbasemetalplating"
+    },
+    {
+      "name": "BoSlights",
+      "type": "block",
+      "sortid": 185,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_slights"
+    },
+    {
+      "name": "Bossteelplating",
+      "type": "block",
+      "sortid": 186,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bossteelplating"
+    },
+    {
+      "name": "BoSdoor",
+      "type": "block",
+      "sortid": 187,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_sdoor"
+    },
+    {
+      "name": "BoSsteelplatingstairs",
+      "type": "block",
+      "sortid": 188,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_ssteelplatingstairs"
+    },
+    {
+      "name": "Bossteelplatingslabs",
+      "type": "block",
+      "sortid": 189,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bossteelplatingslabs"
+    },
+    {
+      "name": "Bossteelstructurestairs",
+      "type": "block",
+      "sortid": 190,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bossteelstructurestairs"
+    },
+    {
+      "name": "Bossteelstructureslab",
+      "type": "block",
+      "sortid": 191,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bossteelstructureslab"
+    },
+    {
+      "name": "Blastwindows",
+      "type": "block",
+      "sortid": 192,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blastwindows"
+    },
+    {
+      "name": "BoScrafting1",
+      "type": "recipe",
+      "sortid": 193,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_scrafting_1"
+    },
+    {
+      "name": "Boscrafting2",
+      "type": "recipe",
+      "sortid": 194,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "boscrafting_2"
+    },
+    {
+      "name": "Boslightcraft",
+      "type": "recipe",
+      "sortid": 195,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "boslightcraft"
+    },
+    {
+      "name": "BoScrafting3",
+      "type": "recipe",
+      "sortid": 196,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_scrafting_3"
+    },
+    {
+      "name": "BoSplatingstairscraft",
+      "type": "recipe",
+      "sortid": 197,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_splatingstairscraft"
+    },
+    {
+      "name": "BoSplatingslabcraft",
+      "type": "recipe",
+      "sortid": 198,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_splatingslabcraft"
+    },
+    {
+      "name": "Bossteelstairscraft",
+      "type": "recipe",
+      "sortid": 199,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bossteelstairscraft"
+    },
+    {
+      "name": "Bossteelslabcraft",
+      "type": "recipe",
+      "sortid": 200,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bossteelslabcraft"
+    },
+    {
+      "name": "Bossteelplate",
+      "type": "item",
+      "sortid": 201,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bossteelplate"
+    },
+    {
+      "name": "BoSsteelcraft",
+      "type": "recipe",
+      "sortid": 202,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_ssteelcraft"
+    },
+    {
+      "name": "BoSsteelplatingcraft",
+      "type": "recipe",
+      "sortid": 203,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_ssteelplatingcraft"
+    },
+    {
+      "name": "Plastercraft",
+      "type": "recipe",
+      "sortid": 204,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plastercraft"
+    },
+    {
+      "name": "BoSdoorcraft",
+      "type": "recipe",
+      "sortid": 205,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_sdoorcraft"
+    },
+    {
+      "name": "Wastelandcobblestairs",
+      "type": "block",
+      "sortid": 206,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcobblestairs"
+    },
+    {
+      "name": "Wastelandcobblestoneslab",
+      "type": "block",
+      "sortid": 207,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcobblestoneslab"
+    },
+    {
+      "name": "Wastelancobblestonewall",
+      "type": "block",
+      "sortid": 208,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelancobblestonewall"
+    },
+    {
+      "name": "Wastelandcobblestonestaircraft",
+      "type": "recipe",
+      "sortid": 209,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcobblestonestaircraft"
+    },
+    {
+      "name": "Wastelandcobblestoneslabcraft",
+      "type": "recipe",
+      "sortid": 210,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcobblestoneslabcraft"
+    },
+    {
+      "name": "Wastelandcobblestonewallcraft",
+      "type": "recipe",
+      "sortid": 211,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcobblestonewallcraft"
+    },
+    {
+      "name": "RadioactivwastebarrelPlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 212,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "radioactivwastebarrel_player_starts_to_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadioactivwastebarrelEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 213,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "radioactivwastebarrel_entity_collides_in_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Radioactivwastebarrel",
+      "type": "block",
+      "sortid": 212,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "radioactivwastebarrel"
+    },
+    {
+      "name": "Armyrobobrain",
+      "type": "mob",
+      "sortid": 214,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "armyrobobrain"
+    },
+    {
+      "name": "Robobrainrivetcanon",
+      "type": "gun",
+      "sortid": 215,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "robobrainrivetcanon"
+    },
+    {
+      "name": "BoSbunker",
+      "type": "structure",
+      "sortid": 216,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bo_sbunker"
+    },
+    {
+      "name": "WastelandPlayerEntersDimension",
+      "type": "procedure",
+      "sortid": 217,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wasteland_player_enters_dimension",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Wasteland",
+      "type": "dimension",
+      "sortid": 217,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wasteland",
+      "metadata": {
+        "ep": true
+      }
+    },
+    {
+      "name": "Wastlanddimkeycraft",
+      "type": "recipe",
+      "sortid": 218,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastlanddimkeycraft"
+    },
+    {
+      "name": "GECKBoSbunker",
+      "type": "block",
+      "sortid": 219,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "geck_bo_sbunker"
+    },
+    {
+      "name": "GECKBoSbunkerRedstoneOn",
+      "type": "procedure",
+      "sortid": 220,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "geck_bo_sbunker_redstone_on",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Deadgrass",
+      "type": "plant",
+      "sortid": 221,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "deadgrass"
+    },
+    {
+      "name": "Deadroots",
+      "type": "plant",
+      "sortid": 222,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "deadroots"
+    },
+    {
+      "name": "Brickstairscraft",
+      "type": "recipe",
+      "sortid": 223,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "brickstairscraft"
+    },
+    {
+      "name": "Brickslabcraft",
+      "type": "recipe",
+      "sortid": 224,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "brickslabcraft"
+    },
+    {
+      "name": "Wastelandersitems",
+      "type": "tab",
+      "sortid": 225,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandersitems"
+    },
+    {
+      "name": "Wastelanderscombattab",
+      "type": "tab",
+      "sortid": 226,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanderscombattab"
+    },
+    {
+      "name": "Roadbitumen",
+      "type": "block",
+      "sortid": 227,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "roadbitumen"
+    },
+    {
+      "name": "Moltensteel",
+      "type": "block",
+      "sortid": 228,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "moltensteel"
+    },
+    {
+      "name": "Ammunitionbox",
+      "type": "block",
+      "sortid": 229,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ammunitionbox"
+    },
+    {
+      "name": "Ammunitionboxgui",
+      "type": "gui",
+      "sortid": 230,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ammunitionboxgui"
+    },
+    {
+      "name": "ThemachinegunRangedItemUsed",
+      "type": "procedure",
+      "sortid": 231,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "themachinegun_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Roadmilitarytruck",
+      "type": "structure",
+      "sortid": 232,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "roadmilitarytruck"
+    },
+    {
+      "name": "Plasterstairscraft",
+      "type": "recipe",
+      "sortid": 233,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasterstairscraft"
+    },
+    {
+      "name": "Plasterslabcraft",
+      "type": "recipe",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasterslabcraft"
+    },
+    {
+      "name": "LaserriffleRangedItemUsed",
+      "type": "procedure",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "laserriffle_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rottenwooddoor",
+      "type": "block",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenwooddoor"
+    },
+    {
+      "name": "Rottenwoodplankcraft",
+      "type": "recipe",
+      "sortid": 237,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenwoodplankcraft"
+    },
+    {
+      "name": "Rottenwooddoorcraft",
+      "type": "recipe",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rottenwooddoorcraft"
+    },
+    {
+      "name": "AmmunitionboxOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 239,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ammunitionbox_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closecombatsupermutant",
+      "type": "mob",
+      "sortid": 240,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closecombatsupermutant"
+    },
+    {
+      "name": "Basesupermutant",
+      "type": "mob",
+      "sortid": 241,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "basesupermutant"
+    },
+    {
+      "name": "Rangedsupermutant",
+      "type": "mob",
+      "sortid": 242,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rangedsupermutant"
+    },
+    {
+      "name": "Gore",
+      "type": "block",
+      "sortid": 243,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gore"
+    },
+    {
+      "name": "Gorecraft",
+      "type": "recipe",
+      "sortid": 244,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gorecraft"
+    },
+    {
+      "name": "Friendlybrainbot",
+      "type": "mob",
+      "sortid": 245,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "friendlybrainbot"
+    },
+    {
+      "name": "Humanbrain",
+      "type": "item",
+      "sortid": 246,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "humanbrain"
+    },
+    {
+      "name": "Robobraintorso",
+      "type": "item",
+      "sortid": 247,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "robobraintorso"
+    },
+    {
+      "name": "Track",
+      "type": "item",
+      "sortid": 248,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "track"
+    },
+    {
+      "name": "Robobraintrack",
+      "type": "item",
+      "sortid": 249,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "robobraintrack"
+    },
+    {
+      "name": "Rotativepart",
+      "type": "item",
+      "sortid": 250,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rotativepart"
+    },
+    {
+      "name": "Robobrainhead",
+      "type": "item",
+      "sortid": 251,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "robobrainhead"
+    },
+    {
+      "name": "Robobrainarm",
+      "type": "item",
+      "sortid": 252,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "robobrainarm"
+    },
+    {
+      "name": "Metalclaw",
+      "type": "item",
+      "sortid": 253,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "metalclaw"
+    },
+    {
+      "name": "Obtainabrain",
+      "type": "procedure",
+      "sortid": 254,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obtainabrain",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Militarygradeaccessbadge",
+      "type": "item",
+      "sortid": 255,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militarygradeaccessbadge"
+    },
+    {
+      "name": "Frbcannon",
+      "type": "gun",
+      "sortid": 256,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "frbcannon"
+    },
+    {
+      "name": "Trackcraft",
+      "type": "recipe",
+      "sortid": 257,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trackcraft"
+    },
+    {
+      "name": "Fulltrackcraft",
+      "type": "recipe",
+      "sortid": 258,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fulltrackcraft"
+    },
+    {
+      "name": "Rotarypiececrat",
+      "type": "recipe",
+      "sortid": 259,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rotarypiececrat"
+    },
+    {
+      "name": "Robotbrainarmcraft",
+      "type": "recipe",
+      "sortid": 260,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "robotbrainarmcraft"
+    },
+    {
+      "name": "Robortbrainheadcraft",
+      "type": "recipe",
+      "sortid": 261,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "robortbrainheadcraft"
+    },
+    {
+      "name": "Robotbraintorsocraft",
+      "type": "recipe",
+      "sortid": 262,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "robotbraintorsocraft"
+    },
+    {
+      "name": "Metalclawcraft",
+      "type": "recipe",
+      "sortid": 263,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "metalclawcraft"
+    },
+    {
+      "name": "FrbblockBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 264,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "frbblock_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Frbblock",
+      "type": "block",
+      "sortid": 264,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "frbblock"
+    },
+    {
+      "name": "Frbblockcraft",
+      "type": "recipe",
+      "sortid": 265,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "frbblockcraft"
+    },
+    {
+      "name": "Robobrainengine",
+      "type": "item",
+      "sortid": 266,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "robobrainengine"
+    },
+    {
+      "name": "Printedchip",
+      "type": "item",
+      "sortid": 267,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "printedchip"
+    },
+    {
+      "name": "Itsalive",
+      "type": "achievement",
+      "sortid": 268,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "itsalive"
+    },
+    {
+      "name": "FrbblockPlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 269,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "frbblock_player_starts_to_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bloatflyshot",
+      "type": "gun",
+      "sortid": 270,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bloatflyshot"
+    },
+    {
+      "name": "Bloatfly",
+      "type": "mob",
+      "sortid": 270,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bloatfly"
+    },
+    {
+      "name": "BloatflyshotBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 271,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bloatflyshot_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fevgooonhuman",
+      "type": "procedure",
+      "sortid": 272,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fevgooonhuman",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BasesupermutantOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 273,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "basesupermutant_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ClosecombatsupermutantOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 274,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closecombatsupermutant_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RangedsupermutantOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 275,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rangedsupermutant_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Wastelandbrickbuilding1",
+      "type": "structure",
+      "sortid": 276,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandbrickbuilding_1"
+    },
+    {
+      "name": "Personalbunker",
+      "type": "structure",
+      "sortid": 278,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "personalbunker"
+    },
+    {
+      "name": "Garage1",
+      "type": "structure",
+      "sortid": 279,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "garage_1"
+    },
+    {
+      "name": "Blastwindowscraft",
+      "type": "recipe",
+      "sortid": 280,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blastwindowscraft"
+    },
+    {
+      "name": "Wrench",
+      "type": "tool",
+      "sortid": 281,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wrench"
+    },
+    {
+      "name": "Nailedwrench",
+      "type": "tool",
+      "sortid": 282,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nailedwrench"
+    },
+    {
+      "name": "Metallicwall",
+      "type": "block",
+      "sortid": 283,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "metallicwall"
+    },
+    {
+      "name": "Nails",
+      "type": "item",
+      "sortid": 284,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nails"
+    },
+    {
+      "name": "Nailedwrenchcraft",
+      "type": "recipe",
+      "sortid": 285,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nailedwrenchcraft"
+    },
+    {
+      "name": "Nailscraft",
+      "type": "recipe",
+      "sortid": 286,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nailscraft"
+    },
+    {
+      "name": "Nailgun",
+      "type": "gun",
+      "sortid": 287,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nailgun"
+    },
+    {
+      "name": "Floodedmetro",
+      "type": "structure",
+      "sortid": 288,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "floodedmetro"
+    },
+    {
+      "name": "Nailguncraft",
+      "type": "recipe",
+      "sortid": 289,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nailguncraft"
+    },
+    {
+      "name": "Nuclearbunker1",
+      "type": "structure",
+      "sortid": 290,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nuclearbunker_1"
+    },
+    {
+      "name": "LandminePlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 291,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "landmine_player_starts_to_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LandmineBlockDestroyedByExplosion",
+      "type": "procedure",
+      "sortid": 292,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "landmine_block_destroyed_by_explosion",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LandmineEntityWalksOnTheBlock",
+      "type": "procedure",
+      "sortid": 293,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "landmine_entity_walks_on_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LandmineEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 294,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "landmine_entity_collides_in_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LandmineRedstoneOn",
+      "type": "procedure",
+      "sortid": 295,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "landmine_redstone_on",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Landmine",
+      "type": "block",
+      "sortid": 291,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "landmine"
+    },
+    {
+      "name": "Abraxo",
+      "type": "item",
+      "sortid": 296,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "abraxo"
+    },
+    {
+      "name": "Cannedporkshop",
+      "type": "food",
+      "sortid": 297,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cannedporkshop"
+    },
+    {
+      "name": "Landminecraft",
+      "type": "recipe",
+      "sortid": 298,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "landminecraft"
+    },
+    {
+      "name": "Raidergunner",
+      "type": "mob",
+      "sortid": 299,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "raidergunner"
+    },
+    {
+      "name": "Purgingwood",
+      "type": "recipe",
+      "sortid": 302,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "purgingwood"
+    },
+    {
+      "name": "Pipboy",
+      "type": "item",
+      "sortid": 303,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pipboy"
+    },
+    {
+      "name": "Pipboygui",
+      "type": "gui",
+      "sortid": 305,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pipboygui"
+    },
+    {
+      "name": "Militaryhull",
+      "type": "item",
+      "sortid": 306,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryhull"
+    },
+    {
+      "name": "Militaryhullcraft",
+      "type": "recipe",
+      "sortid": 307,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "militaryhullcraft"
+    },
+    {
+      "name": "Tireiron",
+      "type": "tool",
+      "sortid": 308,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tireiron"
+    },
+    {
+      "name": "Combatknife",
+      "type": "tool",
+      "sortid": 309,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combatknife"
+    },
+    {
+      "name": "ReaperLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 310,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "reaper_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Reaper",
+      "type": "tool",
+      "sortid": 310,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "reaper"
+    },
+    {
+      "name": "Reapercraft",
+      "type": "recipe",
+      "sortid": 311,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "reapercraft"
+    },
+    {
+      "name": "Combatknifecraft",
+      "type": "recipe",
+      "sortid": 312,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combatknifecraft"
+    },
+    {
+      "name": "Tireironcraft",
+      "type": "recipe",
+      "sortid": 313,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tireironcraft"
+    },
+    {
+      "name": "Medicalbox",
+      "type": "block",
+      "sortid": 314,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "medicalbox"
+    },
+    {
+      "name": "MedicalboxGUI",
+      "type": "gui",
+      "sortid": 315,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "medicalbox_gui"
+    },
+    {
+      "name": "Lighttub",
+      "type": "block",
+      "sortid": 316,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lighttub"
+    },
+    {
+      "name": "Lighttubcraft",
+      "type": "recipe",
+      "sortid": 317,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lighttubcraft"
+    },
+    {
+      "name": "Wastelandiron",
+      "type": "block",
+      "sortid": 318,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandiron"
+    },
+    {
+      "name": "Wastelandcoal",
+      "type": "block",
+      "sortid": 319,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcoal"
+    },
+    {
+      "name": "Wastelanddiamond",
+      "type": "block",
+      "sortid": 320,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanddiamond"
+    },
+    {
+      "name": "Wastelandgold",
+      "type": "block",
+      "sortid": 321,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandgold"
+    },
+    {
+      "name": "Wastelandlapislazuli",
+      "type": "block",
+      "sortid": 322,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandlapislazuli"
+    },
+    {
+      "name": "Wastelandredstone",
+      "type": "block",
+      "sortid": 323,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandredstone"
+    },
+    {
+      "name": "Wastelandemerald",
+      "type": "block",
+      "sortid": 324,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandemerald"
+    },
+    {
+      "name": "Wastelandcopper",
+      "type": "block",
+      "sortid": 325,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcopper"
+    },
+    {
+      "name": "Wastelandallumiumore",
+      "type": "block",
+      "sortid": 326,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandallumiumore"
+    },
+    {
+      "name": "Wastelandtinore",
+      "type": "block",
+      "sortid": 327,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandtinore"
+    },
+    {
+      "name": "Tiningot",
+      "type": "item",
+      "sortid": 328,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ingot_tin"
+    },
+    {
+      "name": "Wastelandleadore",
+      "type": "block",
+      "sortid": 330,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandleadore"
+    },
+    {
+      "name": "Forgeingots",
+      "type": "tag",
+      "sortid": 331,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "forgeingots"
+    },
+    {
+      "name": "Forgeingotstin",
+      "type": "tag",
+      "sortid": 332,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "forgeingotstin"
+    },
+    {
+      "name": "Ingotcopper",
+      "type": "item",
+      "sortid": 333,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ingotcopper"
+    },
+    {
+      "name": "Copperingottag",
+      "type": "tag",
+      "sortid": 334,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copperingottag"
+    },
+    {
+      "name": "Aluminiumingot",
+      "type": "item",
+      "sortid": 335,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aluminiumingot"
+    },
+    {
+      "name": "Aluminiumingottag",
+      "type": "tag",
+      "sortid": 336,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aluminiumingottag"
+    },
+    {
+      "name": "Leadingot",
+      "type": "item",
+      "sortid": 337,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "leadingot"
+    },
+    {
+      "name": "Leadingottag",
+      "type": "tag",
+      "sortid": 338,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "leadingottag"
+    },
+    {
+      "name": "Tiningotsmelting",
+      "type": "recipe",
+      "sortid": 339,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tiningotsmelting"
+    },
+    {
+      "name": "Copperingotsmelting",
+      "type": "recipe",
+      "sortid": 340,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copperingotsmelting"
+    },
+    {
+      "name": "Aluminiumingotsmelting",
+      "type": "recipe",
+      "sortid": 341,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aluminiumingotsmelting"
+    },
+    {
+      "name": "Wastelandironsmelting",
+      "type": "recipe",
+      "sortid": 342,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandironsmelting"
+    },
+    {
+      "name": "Wastelandglodsmelting",
+      "type": "recipe",
+      "sortid": 343,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandglodsmelting"
+    },
+    {
+      "name": "Steelingot",
+      "type": "item",
+      "sortid": 344,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steelingot"
+    },
+    {
+      "name": "Steelingottag",
+      "type": "tag",
+      "sortid": 345,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steelingottag"
+    },
+    {
+      "name": "Steelsmelting",
+      "type": "recipe",
+      "sortid": 346,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steelsmelting"
+    },
+    {
+      "name": "Wastelandironoretag",
+      "type": "tag",
+      "sortid": 347,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandironoretag"
+    },
+    {
+      "name": "Wastelandcoaltag",
+      "type": "tag",
+      "sortid": 348,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcoaltag"
+    },
+    {
+      "name": "Wastelanddiamondtag",
+      "type": "tag",
+      "sortid": 349,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanddiamondtag"
+    },
+    {
+      "name": "Wastelandgoldoretag",
+      "type": "tag",
+      "sortid": 350,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandgoldoretag"
+    },
+    {
+      "name": "Wastelandlapislazulioretag",
+      "type": "tag",
+      "sortid": 351,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandlapislazulioretag"
+    },
+    {
+      "name": "Wastelandredstoneoretag",
+      "type": "tag",
+      "sortid": 352,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandredstoneoretag"
+    },
+    {
+      "name": "Wastelandemeraldoretag",
+      "type": "tag",
+      "sortid": 353,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandemeraldoretag"
+    },
+    {
+      "name": "Wastelandcopperoretag",
+      "type": "tag",
+      "sortid": 354,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcopperoretag"
+    },
+    {
+      "name": "Wastelandaluminiumoretag",
+      "type": "tag",
+      "sortid": 355,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandaluminiumoretag"
+    },
+    {
+      "name": "Wastelandtinoretag",
+      "type": "tag",
+      "sortid": 356,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandtinoretag"
+    },
+    {
+      "name": "Wastelandleadoretag",
+      "type": "tag",
+      "sortid": 357,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandleadoretag"
+    },
+    {
+      "name": "Leadblock",
+      "type": "block",
+      "sortid": 358,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "leadblock"
+    },
+    {
+      "name": "Copperblock",
+      "type": "block",
+      "sortid": 359,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copperblock"
+    },
+    {
+      "name": "Tinblock",
+      "type": "block",
+      "sortid": 360,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tinblock"
+    },
+    {
+      "name": "Aluminiumblock",
+      "type": "block",
+      "sortid": 361,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aluminiumblock"
+    },
+    {
+      "name": "Storageblocktag",
+      "type": "tag",
+      "sortid": 362,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "storageblocktag"
+    },
+    {
+      "name": "Storageblocktin",
+      "type": "tag",
+      "sortid": 364,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "storageblocktin"
+    },
+    {
+      "name": "Orestag",
+      "type": "tag",
+      "sortid": 365,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ores"
+    },
+    {
+      "name": "Storageblockcopper",
+      "type": "tag",
+      "sortid": 366,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "storageblockcopper"
+    },
+    {
+      "name": "Storageblocklead",
+      "type": "tag",
+      "sortid": 367,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "storageblocklead"
+    },
+    {
+      "name": "Storageblockaluminium",
+      "type": "tag",
+      "sortid": 368,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "storageblockaluminium"
+    },
+    {
+      "name": "Jerrican",
+      "type": "item",
+      "sortid": 369,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jerrican"
+    },
+    {
+      "name": "Jerricantag",
+      "type": "tag",
+      "sortid": 370,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jerricantag"
+    },
+    {
+      "name": "WastelandgravelBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 371,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandgravel_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Wastelandgravel",
+      "type": "block",
+      "sortid": 371,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandgravel"
+    },
+    {
+      "name": "Bitumencraft",
+      "type": "recipe",
+      "sortid": 372,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bitumencraft"
+    },
+    {
+      "name": "Sandtoglass",
+      "type": "recipe",
+      "sortid": 373,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandtoglass"
+    },
+    {
+      "name": "Sand",
+      "type": "tag",
+      "sortid": 374,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sand"
+    },
+    {
+      "name": "Sandcolorless",
+      "type": "tag",
+      "sortid": 375,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandcolorless"
+    },
+    {
+      "name": "Plankstag",
+      "type": "tag",
+      "sortid": 376,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plankstag"
+    },
+    {
+      "name": "Sheetmetalplating",
+      "type": "item",
+      "sortid": 377,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheetmetalplating"
+    },
+    {
+      "name": "Sheetmetalplatingcraft",
+      "type": "recipe",
+      "sortid": 378,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheetmetalplatingcraft"
+    },
+    {
+      "name": "Industrialsheetmetalblockcraft",
+      "type": "recipe",
+      "sortid": 379,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "industrialsheetmetalblockcraft"
+    },
+    {
+      "name": "Steeldust",
+      "type": "item",
+      "sortid": 380,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steeldust"
+    },
+    {
+      "name": "Steeldustcraft",
+      "type": "recipe",
+      "sortid": 381,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steeldustcraft"
+    },
+    {
+      "name": "Fueljerrican",
+      "type": "item",
+      "sortid": 382,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fueljerrican"
+    },
+    {
+      "name": "Fueljerricanfuel",
+      "type": "fuel",
+      "sortid": 383,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fueljerricanfuel"
+    },
+    {
+      "name": "Moltensteelsmelting",
+      "type": "recipe",
+      "sortid": 384,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "moltensteelsmelting"
+    },
+    {
+      "name": "Moltencopperblock",
+      "type": "block",
+      "sortid": 385,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "moltencopperblock"
+    },
+    {
+      "name": "Moltentin",
+      "type": "block",
+      "sortid": 386,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "moltentin"
+    },
+    {
+      "name": "Moltenironblock",
+      "type": "block",
+      "sortid": 387,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "moltenironblock"
+    },
+    {
+      "name": "Moltenaluminiumblock",
+      "type": "block",
+      "sortid": 388,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "moltenaluminiumblock"
+    },
+    {
+      "name": "Moltencoppersmelting",
+      "type": "recipe",
+      "sortid": 389,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "moltencoppersmelting"
+    },
+    {
+      "name": "Moltentinsmelting",
+      "type": "recipe",
+      "sortid": 390,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "moltentinsmelting"
+    },
+    {
+      "name": "Moltenironsmelting",
+      "type": "recipe",
+      "sortid": 391,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "moltenironsmelting"
+    },
+    {
+      "name": "Steelblock",
+      "type": "block",
+      "sortid": 392,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steelblock"
+    },
+    {
+      "name": "Storageblocksteeltag",
+      "type": "tag",
+      "sortid": 393,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "storageblocksteeltag"
+    },
+    {
+      "name": "Steelbloccraft",
+      "type": "recipe",
+      "sortid": 394,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steelbloccraft"
+    },
+    {
+      "name": "Steelblocdecraft",
+      "type": "recipe",
+      "sortid": 395,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steelblocdecraft"
+    },
+    {
+      "name": "Copperbloccraft",
+      "type": "recipe",
+      "sortid": 396,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copperbloccraft"
+    },
+    {
+      "name": "Copperblocdecraft",
+      "type": "recipe",
+      "sortid": 397,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copperblocdecraft"
+    },
+    {
+      "name": "Tinbloccraft",
+      "type": "recipe",
+      "sortid": 398,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tinbloccraft"
+    },
+    {
+      "name": "Tinblocdecraft",
+      "type": "recipe",
+      "sortid": 399,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tinblocdecraft"
+    },
+    {
+      "name": "Aluminiumbloccraft",
+      "type": "recipe",
+      "sortid": 400,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aluminiumbloccraft"
+    },
+    {
+      "name": "Aluminiumblocdecraft",
+      "type": "recipe",
+      "sortid": 401,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aluminiumblocdecraft"
+    },
+    {
+      "name": "Wastelandcobblestonecraft",
+      "type": "tag",
+      "sortid": 402,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandcobblestonecraft"
+    },
+    {
+      "name": "Stonetag",
+      "type": "tag",
+      "sortid": 403,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "stonetag"
+    },
+    {
+      "name": "Sheetmetalbloccraft",
+      "type": "recipe",
+      "sortid": 404,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheetmetalbloccraft"
+    },
+    {
+      "name": "Sheetmetalwallcraftrecipe",
+      "type": "recipe",
+      "sortid": 405,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheetmetalwallcraftrecipe"
+    },
+    {
+      "name": "Woodtocoal1",
+      "type": "recipe",
+      "sortid": 406,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "woodtocoal_1"
+    },
+    {
+      "name": "Breadroller",
+      "type": "tool",
+      "sortid": 407,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "breadroller"
+    },
+    {
+      "name": "Breadrollercraft",
+      "type": "recipe",
+      "sortid": 408,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "breadrollercraft"
+    },
+    {
+      "name": "Wrenchcraft",
+      "type": "recipe",
+      "sortid": 409,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wrenchcraft"
+    },
+    {
+      "name": "Bugmeat",
+      "type": "food",
+      "sortid": 410,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bugmeat"
+    },
+    {
+      "name": "CoffeeFoodEaten",
+      "type": "procedure",
+      "sortid": 411,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coffee_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Coffee",
+      "type": "food",
+      "sortid": 411,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coffee"
+    },
+    {
+      "name": "Cigarettepack",
+      "type": "item",
+      "sortid": 412,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cigarettepack"
+    },
+    {
+      "name": "Coffepot",
+      "type": "item",
+      "sortid": 413,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coffepot"
+    },
+    {
+      "name": "Nuggets",
+      "type": "tag",
+      "sortid": 414,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nuggets"
+    },
+    {
+      "name": "Nuggetsteel",
+      "type": "tag",
+      "sortid": 415,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nuggetsteel"
+    },
+    {
+      "name": "Nuggetscopper",
+      "type": "tag",
+      "sortid": 416,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nuggetscopper"
+    },
+    {
+      "name": "Nuggetstin",
+      "type": "tag",
+      "sortid": 417,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nuggetstin"
+    },
+    {
+      "name": "Nuggetsaluminium",
+      "type": "tag",
+      "sortid": 418,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nuggetsaluminium"
+    },
+    {
+      "name": "Nuggetslead",
+      "type": "tag",
+      "sortid": 419,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nuggetslead"
+    },
+    {
+      "name": "Leadblockcraft",
+      "type": "recipe",
+      "sortid": 420,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "leadblockcraft"
+    },
+    {
+      "name": "Leadblockdecraft",
+      "type": "recipe",
+      "sortid": 421,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "leadblockdecraft"
+    },
+    {
+      "name": "Coppernugget",
+      "type": "item",
+      "sortid": 422,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coppernugget"
+    },
+    {
+      "name": "Leadnugget",
+      "type": "item",
+      "sortid": 423,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "leadnugget"
+    },
+    {
+      "name": "Aluminiumnugget",
+      "type": "item",
+      "sortid": 424,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aluminiumnugget"
+    },
+    {
+      "name": "Tinnugget",
+      "type": "item",
+      "sortid": 425,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tinnugget"
+    },
+    {
+      "name": "Coppernuggetcraft",
+      "type": "recipe",
+      "sortid": 426,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coppernuggetcraft"
+    },
+    {
+      "name": "Copperingotcraft",
+      "type": "recipe",
+      "sortid": 427,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copperingotcraft"
+    },
+    {
+      "name": "Leadnuggetcraft",
+      "type": "recipe",
+      "sortid": 428,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "leadnuggetcraft"
+    },
+    {
+      "name": "Leadingotcraft",
+      "type": "recipe",
+      "sortid": 429,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "leadingotcraft"
+    },
+    {
+      "name": "Aluminiumnuggetcraft",
+      "type": "recipe",
+      "sortid": 430,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aluminiumnuggetcraft"
+    },
+    {
+      "name": "Aluminiumingotcraft",
+      "type": "recipe",
+      "sortid": 431,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aluminiumingotcraft"
+    },
+    {
+      "name": "Tiningotcraft",
+      "type": "recipe",
+      "sortid": 432,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tiningotcraft"
+    },
+    {
+      "name": "Tiningotcrafting",
+      "type": "recipe",
+      "sortid": 433,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tiningotcrafting"
+    },
+    {
+      "name": "Wastelanduraniumore",
+      "type": "block",
+      "sortid": 434,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanduraniumore"
+    },
+    {
+      "name": "Wastelanduraniuminggot",
+      "type": "tag",
+      "sortid": 435,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanduraniuminggot"
+    },
+    {
+      "name": "Oreuraniumtag",
+      "type": "tag",
+      "sortid": 436,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "oreuraniumtag"
+    },
+    {
+      "name": "Wastelanduraniumnuggettag",
+      "type": "tag",
+      "sortid": 437,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanduraniumnuggettag"
+    },
+    {
+      "name": "Uraniumingot",
+      "type": "item",
+      "sortid": 438,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumingot"
+    },
+    {
+      "name": "Uraniumnugget",
+      "type": "item",
+      "sortid": 439,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumnugget"
+    },
+    {
+      "name": "Uraniumingotcraft",
+      "type": "recipe",
+      "sortid": 440,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumingotcraft"
+    },
+    {
+      "name": "Uraniumnuggetcraft",
+      "type": "recipe",
+      "sortid": 441,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumnuggetcraft"
+    },
+    {
+      "name": "Coffeepotdecraft",
+      "type": "recipe",
+      "sortid": 442,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coffeepotdecraft"
+    },
+    {
+      "name": "Junktag",
+      "type": "tag",
+      "sortid": 443,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "junktag"
+    },
+    {
+      "name": "Cigarettepackdecraft",
+      "type": "recipe",
+      "sortid": 444,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cigarettepackdecraft"
+    },
+    {
+      "name": "WastelanduraniumoreEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 445,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanduraniumore_entity_collides_in_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WastelanduraniumorePlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 446,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanduraniumore_player_starts_to_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Uraniumblock",
+      "type": "block",
+      "sortid": 447,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumblock"
+    },
+    {
+      "name": "Uraniumblockcraft",
+      "type": "recipe",
+      "sortid": 448,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumblockcraft"
+    },
+    {
+      "name": "Uraniumblockdecraft",
+      "type": "recipe",
+      "sortid": 449,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumblockdecraft"
+    },
+    {
+      "name": "Uraniumblocktag",
+      "type": "tag",
+      "sortid": 450,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumblocktag"
+    },
+    {
+      "name": "Uraniumingottag",
+      "type": "tag",
+      "sortid": 451,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumingottag"
+    },
+    {
+      "name": "Uraniumnuggetsttag",
+      "type": "tag",
+      "sortid": 452,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumnuggetsttag"
+    },
+    {
+      "name": "Uraniumoretag",
+      "type": "tag",
+      "sortid": 453,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumoretag"
+    },
+    {
+      "name": "UraniumblockEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 454,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumblock_entity_collides_in_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UraniumblockEntityWalksOnTheBlock",
+      "type": "procedure",
+      "sortid": 455,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumblock_entity_walks_on_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UraniumblockPlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 456,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumblock_player_starts_to_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WastelanduraniumoreEntityWalksOnTheBlock",
+      "type": "procedure",
+      "sortid": 457,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelanduraniumore_entity_walks_on_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Wastlandsanddesert",
+      "type": "biome",
+      "sortid": 458,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastlandsanddesert"
+    },
+    {
+      "name": "Desertstructureone",
+      "type": "structure",
+      "sortid": 459,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "desertstructureone"
+    },
+    {
+      "name": "Desertstructuretwo",
+      "type": "structure",
+      "sortid": 460,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "desertstructuretwo"
+    },
+    {
+      "name": "Desertstructurethree",
+      "type": "structure",
+      "sortid": 461,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "desertstructurethree"
+    },
+    {
+      "name": "Desertstructurefour",
+      "type": "structure",
+      "sortid": 462,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "desertstructurefour"
+    },
+    {
+      "name": "Whitepaintcan",
+      "type": "item",
+      "sortid": 463,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whitepaintcan"
+    },
+    {
+      "name": "Redpaintcan",
+      "type": "item",
+      "sortid": 464,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redpaintcan"
+    },
+    {
+      "name": "Blackpaintcan",
+      "type": "item",
+      "sortid": 465,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blackpaintcan"
+    },
+    {
+      "name": "Yellowpaintcan",
+      "type": "item",
+      "sortid": 466,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "yellowpaintcan"
+    },
+    {
+      "name": "Greenpaintcan",
+      "type": "item",
+      "sortid": 467,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "greenpaintcan"
+    },
+    {
+      "name": "Bluepaintcan",
+      "type": "item",
+      "sortid": 468,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bluepaintcan"
+    },
+    {
+      "name": "Whitepaintcandecraft",
+      "type": "recipe",
+      "sortid": 469,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whitepaintcandecraft"
+    },
+    {
+      "name": "Redpaintdecraft",
+      "type": "recipe",
+      "sortid": 470,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redpaintdecraft"
+    },
+    {
+      "name": "Blackpaintdecraft",
+      "type": "recipe",
+      "sortid": 471,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blackpaintdecraft"
+    },
+    {
+      "name": "Yellowpaintdecraft",
+      "type": "recipe",
+      "sortid": 472,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "yellowpaintdecraft"
+    },
+    {
+      "name": "Greenpaintdecraft",
+      "type": "recipe",
+      "sortid": 473,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "greenpaintdecraft"
+    },
+    {
+      "name": "Bluepaintcraft",
+      "type": "recipe",
+      "sortid": 474,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bluepaintcraft"
+    },
+    {
+      "name": "Highwayman",
+      "type": "mob",
+      "sortid": 475,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highwayman"
+    },
+    {
+      "name": "HighwaymanGUImenu",
+      "type": "gui",
+      "sortid": 476,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highwayman_gu_imenu"
+    },
+    {
+      "name": "CloseGUI",
+      "type": "procedure",
+      "sortid": 477,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "close_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HighwaymanOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 478,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highwayman_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HighwaymanOnEntityTickUpdatetest2",
+      "type": "procedure",
+      "sortid": 479,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highwayman_on_entity_tick_updatetest_2",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Madmaxgarage",
+      "type": "structure",
+      "sortid": 480,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "madmaxgarage"
+    },
+    {
+      "name": "Raidercorvega",
+      "type": "structure",
+      "sortid": 481,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "raidercorvega"
+    },
+    {
+      "name": "Highwaymantrunk",
+      "type": "gui",
+      "sortid": 482,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highwaymantrunk"
+    },
+    {
+      "name": "Stonetostone",
+      "type": "recipe",
+      "sortid": 483,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "stonetostone"
+    },
+    {
+      "name": "Steeldusttosteel",
+      "type": "recipe",
+      "sortid": 484,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steeldusttosteel"
+    },
+    {
+      "name": "Smeltinglead",
+      "type": "recipe",
+      "sortid": 485,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "smeltinglead"
+    },
+    {
+      "name": "Orestin",
+      "type": "tag",
+      "sortid": 486,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orestin"
+    },
+    {
+      "name": "Wastelandwornmetalblock",
+      "type": "block",
+      "sortid": 487,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandwornmetalblock"
+    },
+    {
+      "name": "Wastelandwornmetal",
+      "type": "recipe",
+      "sortid": 488,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandwornmetal"
+    },
+    {
+      "name": "Wastelandtile",
+      "type": "block",
+      "sortid": 489,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandtile"
+    },
+    {
+      "name": "Wastelandtilecraft",
+      "type": "recipe",
+      "sortid": 490,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandtilecraft"
+    },
+    {
+      "name": "Safeblock",
+      "type": "block",
+      "sortid": 491,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "safeblock"
+    },
+    {
+      "name": "Concretesafecraft",
+      "type": "recipe",
+      "sortid": 492,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretesafecraft"
+    },
+    {
+      "name": "Concretepattern",
+      "type": "block",
+      "sortid": 493,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretepattern"
+    },
+    {
+      "name": "Concretepattern1",
+      "type": "recipe",
+      "sortid": 494,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretepattern_1"
+    },
+    {
+      "name": "Concretecraft2",
+      "type": "recipe",
+      "sortid": 495,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretecraft_2"
+    },
+    {
+      "name": "Wastelandstonebrick",
+      "type": "block",
+      "sortid": 496,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandstonebrick"
+    },
+    {
+      "name": "Wastelandstonebrickcraft",
+      "type": "recipe",
+      "sortid": 497,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandstonebrickcraft"
+    },
+    {
+      "name": "Highwaymandiscplaying",
+      "type": "procedure",
+      "sortid": 498,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highwaymandiscplaying",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Structuralmetalblock",
+      "type": "block",
+      "sortid": 499,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "structuralmetalblock"
+    },
+    {
+      "name": "Structuralmetalcraft",
+      "type": "recipe",
+      "sortid": 500,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "structuralmetalcraft"
+    },
+    {
+      "name": "Wastelandconcretevent",
+      "type": "block",
+      "sortid": 501,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandconcretevent"
+    },
+    {
+      "name": "Wastelandconcrete2ventcraft",
+      "type": "recipe",
+      "sortid": 503,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandconcrete_2ventcraft"
+    },
+    {
+      "name": "Wastelandbuilding5",
+      "type": "structure",
+      "sortid": 504,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wastelandbuilding_5"
+    },
+    {
+      "name": "Capitalironruin",
+      "type": "structure",
+      "sortid": 505,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "capitalironruin"
+    },
+    {
+      "name": "Roadmilitarytruckfuel",
+      "type": "structure",
+      "sortid": 506,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "roadmilitarytruckfuel"
+    },
+    {
+      "name": "Cigarettedecraft",
+      "type": "recipe",
+      "sortid": 507,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cigarettedecraft"
+    },
+    {
+      "name": "Tenmm",
+      "type": "gun",
+      "sortid": 508,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tenmm"
+    },
+    {
+      "name": "Tenmmammo",
+      "type": "item",
+      "sortid": 509,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tenmmammo"
+    },
+    {
+      "name": "Tenmmammocraft",
+      "type": "recipe",
+      "sortid": 510,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tenmmammocraft"
+    },
+    {
+      "name": "Tenmmcraft",
+      "type": "recipe",
+      "sortid": 511,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tenmmcraft"
+    },
+    {
+      "name": "Enclavebunkerblock",
+      "type": "block",
+      "sortid": 512,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavebunkerblock"
+    },
+    {
+      "name": "Enclavebunkerblocklogo",
+      "type": "block",
+      "sortid": 513,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavebunkerblocklogo"
+    },
+    {
+      "name": "Enclavebunkerfloor",
+      "type": "block",
+      "sortid": 514,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavebunkerfloor"
+    },
+    {
+      "name": "Enclavebunkerblockwall",
+      "type": "block",
+      "sortid": 515,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavebunkerblockwall"
+    },
+    {
+      "name": "Enclavebunkerwalllights",
+      "type": "block",
+      "sortid": 516,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavebunkerwalllights"
+    },
+    {
+      "name": "EnclaveX01pa",
+      "type": "armor",
+      "sortid": 517,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclave_x_01pa",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Plasma",
+      "type": "particle",
+      "sortid": 518,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasma"
+    },
+    {
+      "name": "PlasmarifleWhileBulletFlyingTick",
+      "type": "procedure",
+      "sortid": 519,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasmarifle_while_bullet_flying_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Plasmarifle",
+      "type": "gun",
+      "sortid": 519,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasmarifle"
+    },
+    {
+      "name": "Plasmas",
+      "type": "item",
+      "sortid": 520,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasmas"
+    },
+    {
+      "name": "Terminal",
+      "type": "block",
+      "sortid": 521,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "terminal"
+    },
+    {
+      "name": "Enclaveplating",
+      "type": "item",
+      "sortid": 522,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclaveplating"
+    },
+    {
+      "name": "Enclaveblockcrafting",
+      "type": "recipe",
+      "sortid": 523,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclaveblockcrafting"
+    },
+    {
+      "name": "Enclaveblockcrafting1",
+      "type": "recipe",
+      "sortid": 524,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclaveblockcrafting_1"
+    },
+    {
+      "name": "Enclaveblockcrafting3",
+      "type": "recipe",
+      "sortid": 525,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclaveblockcrafting_3"
+    },
+    {
+      "name": "Enclaveblockcrafting4",
+      "type": "recipe",
+      "sortid": 526,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclaveblockcrafting_4"
+    },
+    {
+      "name": "Enclavelightcrafting",
+      "type": "recipe",
+      "sortid": 527,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavelightcrafting"
+    },
+    {
+      "name": "Enclavelogoblockcraft",
+      "type": "recipe",
+      "sortid": 528,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavelogoblockcraft"
+    },
+    {
+      "name": "Enclavepowerarmorsoldier",
+      "type": "mob",
+      "sortid": 529,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavepowerarmorsoldier"
+    },
+    {
+      "name": "EnclaveX01paHelmetTickEvent",
+      "type": "procedure",
+      "sortid": 530,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclave_x_01pa_helmet_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnclaveX01paBodyTickEvent",
+      "type": "procedure",
+      "sortid": 531,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclave_x_01pa_body_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnclaveX01paLeggingsTickEvent",
+      "type": "procedure",
+      "sortid": 532,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclave_x_01pa_leggings_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnclaveX01paBootsTickEvent",
+      "type": "procedure",
+      "sortid": 533,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclave_x_01pa_boots_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Locker",
+      "type": "block",
+      "sortid": 534,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "locker"
+    },
+    {
+      "name": "Lockerop",
+      "type": "gui",
+      "sortid": 535,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lockerop"
+    },
+    {
+      "name": "Coreunit",
+      "type": "block",
+      "sortid": 536,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coreunit"
+    },
+    {
+      "name": "Enclavebunkerstairs",
+      "type": "block",
+      "sortid": 537,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavebunkerstairs"
+    },
+    {
+      "name": "Enclavedoors",
+      "type": "block",
+      "sortid": 538,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavedoors"
+    },
+    {
+      "name": "Enclavedoorcraft",
+      "type": "recipe",
+      "sortid": 539,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavedoorcraft"
+    },
+    {
+      "name": "Enclavestairscraft",
+      "type": "recipe",
+      "sortid": 540,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavestairscraft"
+    },
+    {
+      "name": "ENCLAVEofficier",
+      "type": "mob",
+      "sortid": 541,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclav_eofficier"
+    },
+    {
+      "name": "Enclaveofficierarmor",
+      "type": "armor",
+      "sortid": 542,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclaveofficierarmor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Bottlecaps",
+      "type": "item",
+      "sortid": 543,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bottlecaps"
+    },
+    {
+      "name": "NeutronadeFoodEaten",
+      "type": "procedure",
+      "sortid": 544,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "neutronade_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnclavecommcenterOnStructureInstanceGenerated",
+      "type": "procedure",
+      "sortid": 545,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavecommcenter_on_structure_instance_generated",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Enclavecommcenter",
+      "type": "structure",
+      "sortid": 545,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "enclavecommcenter"
+    },
+    {
+      "name": "Portalframe",
+      "type": "block",
+      "sortid": 546,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portalframe"
+    },
+    {
+      "name": "Portalframecraft",
+      "type": "recipe",
+      "sortid": 547,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portalframecraft"
+    },
+    {
+      "name": "Rustedwall",
+      "type": "block",
+      "sortid": 549,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rustedwall"
+    },
+    {
+      "name": "Rustedruinblockground",
+      "type": "block",
+      "sortid": 550,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rustedruinblockground"
+    },
+    {
+      "name": "Rustedwallrusted",
+      "type": "block",
+      "sortid": 551,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rustedwallrusted"
+    },
+    {
+      "name": "Downruinblock",
+      "type": "block",
+      "sortid": 552,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "downruinblock"
+    },
+    {
+      "name": "Trashbin",
+      "type": "block",
+      "sortid": 553,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trashbin"
+    },
+    {
+      "name": "Metalshelf",
+      "type": "block",
+      "sortid": 554,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "metalshelf"
+    },
+    {
+      "name": "Oldpapers",
+      "type": "block",
+      "sortid": 555,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "oldpapers"
+    },
+    {
+      "name": "HighwaymanParticleSpawningCondition",
+      "type": "procedure",
+      "sortid": 556,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highwayman_particle_spawning_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Xanderroot",
+      "type": "food",
+      "sortid": 557,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xanderroot"
+    },
+    {
+      "name": "Xander",
+      "type": "plant",
+      "sortid": 558,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander"
+    },
+    {
+      "name": "Xander5",
+      "type": "plant",
+      "sortid": 559,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_5"
+    },
+    {
+      "name": "Xander4",
+      "type": "plant",
+      "sortid": 560,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_4"
+    },
+    {
+      "name": "Xander3",
+      "type": "plant",
+      "sortid": 561,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_3"
+    },
+    {
+      "name": "Xander2",
+      "type": "plant",
+      "sortid": 562,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_2"
+    },
+    {
+      "name": "Xander1",
+      "type": "plant",
+      "sortid": 563,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_1"
+    },
+    {
+      "name": "Xander1UpdateTick",
+      "type": "procedure",
+      "sortid": 564,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_1_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Xander2UpdateTick",
+      "type": "procedure",
+      "sortid": 565,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_2_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Xander3UpdateTick",
+      "type": "procedure",
+      "sortid": 566,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_3_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Xander4UpdateTick",
+      "type": "procedure",
+      "sortid": 567,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_4_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "XanderrootRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 568,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xanderroot_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Xander5UpdateTick",
+      "type": "procedure",
+      "sortid": 569,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "xander_5_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Radiation",
+      "type": "potion",
+      "sortid": 570,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "radiation"
+    },
+    {
+      "name": "UraniumblockUpdateTick",
+      "type": "procedure",
+      "sortid": 571,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumblock_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UraniumblockUpdateTicktest1",
+      "type": "procedure",
+      "sortid": 572,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "uraniumblock_update_ticktest_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadioactiveairEntityWalksOnTheBlock",
+      "type": "procedure",
+      "sortid": 573,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "radioactiveair_entity_walks_on_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Radioactiveair",
+      "type": "block",
+      "sortid": 573,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "radioactiveair"
+    },
+    {
+      "name": "RadioactiveairEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 574,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "radioactiveair_entity_collides_in_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "Radioacitvity",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "Radioactivity1",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "Radiation2",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    }
+  ],
+  "sound_elements": [
+    {
+      "name": "machinegun",
+      "files": [
+        "50_sniper_shot-liam-2028603980_1"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "gun",
+      "files": [
+        "50_sniper_shot-liam-2028603980a1_1"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "bulletground",
+      "files": [
+        "hitting"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "shotwound",
+      "files": [
+        "bone_crushing"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "lasgun",
+      "files": [
+        "lasergunf"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "spf",
+      "files": [
+        "specialforces"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "uzi",
+      "files": [
+        "uzi"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "ak47",
+      "files": [
+        "ak47"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "ghoulliving",
+      "files": [
+        "npc_feralghoul_aware_01"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "ghoulinjured",
+      "files": [
+        "npc_feralghoul_injured_02"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "ghouldeath",
+      "files": [
+        "npc_feralghoul_death_02"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "playerdeath",
+      "files": [
+        "death"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "robobraintracks",
+      "files": [
+        "robobrainbwalk"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "robobrainliving",
+      "files": [
+        "robobrainliving"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "robobrainshoot",
+      "files": [
+        "robotbrainshoot"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "rbshoot",
+      "files": [
+        "robotbrainshoot"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "rblfix",
+      "files": [
+        "robobrainlivingfix"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "rbwfix",
+      "files": [
+        "robobrainbwalkfix"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "robotfireing",
+      "files": [
+        "robotshoot"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "lasershoot",
+      "files": [
+        "lasershoot"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "supermutantliving",
+      "files": [
+        "supermutantliving"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "bloatflydeath",
+      "files": [
+        "blowfly_death_01"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "bloatflyidle",
+      "files": [
+        "blowfly_idle_lp"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "bloatflyinjured",
+      "files": [
+        "blowfly_injured_02"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "bloatflyattack",
+      "files": [
+        "blowfly_attack_01"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "supermutant",
+      "files": [
+        "supermutanthurt"
+      ],
+      "category": "hostile"
+    },
+    {
+      "name": "nailgunshooting",
+      "files": [
+        "nailgunshooting"
+      ],
+      "category": "master"
+    },
+    {
+      "name": "reaper",
+      "files": [
+        "reaperhit"
+      ],
+      "category": "player"
+    },
+    {
+      "name": "highwaymanmounting",
+      "files": [
+        "highwaymanmounting"
+      ],
+      "category": "neutral"
+    },
+    {
+      "name": "highwaymanstep",
+      "files": [
+        "highwaymanblocksound"
+      ],
+      "category": "neutral"
+    },
+    {
+      "name": "menutheme",
+      "files": [
+        "fallout_3_main_theme"
+      ],
+      "category": "music",
+      "subtitle": ""
+    },
+    {
+      "name": "tenmm",
+      "files": [
+        "tenmm"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "tenmmshot",
+      "files": [
+        "10mmshoot"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "plasmarifle",
+      "files": [
+        "plasmashot"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "wastelandwind",
+      "files": [
+        "wasteland_wind_pt_01_1"
+      ],
+      "category": "music",
+      "subtitle": ""
+    }
+  ],
+  "language_map": {
+    "en_us": {
+      "item.wastlanders.steeldust": "Steel Dust",
+      "block.wastlanders.roadbitumen": "Road Bitumen",
+      "item.wastlanders.bluepaintcan": "Blue Paint Can",
+      "block.wastlanders.wastelandcobblestoneslab": "Wasteland Cobble Slab",
+      "block.fallout_wastelands.aluminiumblock": "Aluminium Block",
+      "item.fallout_wastelands.stimpack": "Stimpak",
+      "entity.fallout_wastelands.rangedsupermutant": "Supermutant Brute",
+      "item.fallout_wastelands.t_45powerarmor_chestplate": "T-45 Power Armor Body",
+      "block.fallout_wastelands.radioactiveair": "Radioactive Air",
+      "item.wastlanders.metalclaw": "Metal Claw",
+      "block.wastlanders.testbunkerdoor": "Military Plated Door",
+      "item.fallout_wastelands.tinnugget": "Tin Nugget",
+      "block.wastlanders.steelblock": "Steel Block",
+      "block.wastlanders.wastelanduraniumore": "Wasteland Uranium Ore",
+      "advancements.itsalive.title": "It\u0027s Alive !",
+      "block.wastlanders.bossteelplatingslabs": "Bos Steel Plating Slabs",
+      "item.fallout_wastelands.uraniumingot": "Uranium Ingot",
+      "block.fallout_wastelands.wastelandcobblestairs": "Wasteland Cobblestone Stairs",
+      "block.wastlanders.wastlandsand": "Wasteland Sand",
+      "block.fallout_wastelands.copperblock": "Copper Block",
+      "block.wastlanders.sheetmetalwall": "Sheet Metal Wall",
+      "block.wastlanders.charredplank": "Charred Plank",
+      "block.wastlanders.rustbloc": "Fully Rusted Iron",
+      "block.wastlanders.uraniumblock": "Uranium Block",
+      "item.fallout_wastelands.neutronade": "Nuka Cola",
+      "item.fallout_wastelands.ghoul_spawn_egg": "Ghoul Spawn Egg",
+      "item.fallout_wastelands.bluepaintcan": "Blue Paint Can",
+      "block.wastlanders.militaryplatingblockhazard": "Military Plating (Hazard)",
+      "item.wastlanders.tenmmammo": "10mm Ammunition ",
+      "item.fallout_wastelands.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
+      "item.wastlanders.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
+      "item.wastlanders.robobrainrivetcanon": "Robobrainrivetcanon",
+      "item.fallout_wastelands.enclavepowerarmorsoldier_spawn_egg": "Enclave Soldier (power armor) Spawn Egg",
+      "item.fallout_wastelands.mobmachinegun": "Mobmachinegun",
+      "block.fallout_wastelands.wastelandemerald": "Wasteland Emerald Ore",
+      "item.wastlanders.wasteland": "Wasteland Portal Igniter",
+      "block.fallout_wastelands.rottenplanksslab": "Rotten Plank Slab",
+      "item.wastlanders.pipboy": "Pipboy-3000",
+      "item.wastlanders.basesupermutant": "Super Mutant Grunt Spawn Egg",
+      "block.fallout_wastelands.coreunit": "Core Unit Block",
+      "block.fallout_wastelands.terminal": "Terminal",
+      "biome.wastlanders.wastlandsanddesert": "Wastlandsanddesert",
+      "block.fallout_wastelands.moltensteel": "Molten Steel Block",
+      "block.fallout_wastelands.scaffoldingcrossed": "Scaffolding (Crossed)",
+      "block.fallout_wastelands.xander": "Xander",
+      "item.fallout_wastelands.greenpaintcan": "Green Paint Can",
+      "block.fallout_wastelands.militaryplatingwall": "Military Plated Wall",
+      "block.fallout_wastelands.rottenplanksstairs": "Rotten Plank Stairs",
+      "block.wastlanders.geck_bo_sbunker": "GECK Bo Sbunker",
+      "item.wastlanders.ghoul": "Ghoul Spawn Egg",
+      "effect.radiation": "Radiation Poisoning",
+      "item.fallout_wastelands.tireiron": "Tire Iron",
+      "item.fallout_wastelands.jerrican": "Empty Jerrican",
+      "block.fallout_wastelands.wastelandallumiumore": "Wasteland Aluminium Ore",
+      "item.fallout_wastelands.enclaveofficierarmor_helmet": "Enclave Officier Armor Cap",
+      "item.wastlanders.rawmirlurk": "Raw Mirlurk",
+      "block.wastlanders.wastelandgold": "Wasteland Gold Ore",
+      "block.wastlanders.rustedironslab": "Rusted Iron Slab",
+      "item.wastlanders.leadnugget": "Lead Nugget",
+      "block.wastlanders.copperblock": "Copper Block",
+      "block.fallout_wastelands.metalshelf": "Metal Shelf",
+      "block.fallout_wastelands.wastelandleadore": "Wasteland Lead Ore",
+      "block.fallout_wastelands.roadbitumen": "Road Bitumen",
+      "entity.fallout_wastelands.ghoul": "Ghoul",
+      "item.wastlanders.uraniumingot": "Uranium Ingot",
+      "item.fallout_wastelands.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
+      "item.wastlanders.femalevaultjumpsuit_helmet": "Femalevaultjumpsuit Helmet",
+      "block.fallout_wastelands.rustedwallrusted": "Rusted Ruin Block (more rust)",
+      "block.fallout_wastelands.bossteelplatingslabs": "BoS Steel Plating Slab",
+      "item.wastlanders.bugmeat": "Bug Flesh",
+      "item.wastlanders.vaultjumpsuit_boots": "Vault Jumpsuit Boots (male)",
+      "block.fallout_wastelands.downruinblock": "Rusted Ruin Block (wall base)",
+      "block.fallout_wastelands.wastelandtile": "Wasteland Tile",
+      "block.wastlanders.rottenplanksstairs": "Rotten Plank Stairs",
+      "item.wastlanders.highwayman": "Highwayman Spawn Egg",
+      "item.fallout_wastelands.basesupermutant_spawn_egg": "Super Mutant Grunt Spawn Egg",
+      "block.fallout_wastelands.wastelandwornmetalblock": "Wasteland Worn Metal",
+      "item.minecraft.potion.effect.radiation": "Radiation Poisoning",
+      "itemGroup.tabwastelanderscombattab": "Wastelanders Combat",
+      "block.wastlanders.wastelandconcretewall": "Wasteland Concrete Wall",
+      "item.fallout_wastelands.combatknife": "Combat Knife",
+      "block.wastlanders.plasterslab": "Plaster Slab",
+      "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
+      "item.wastlanders.coffee": "Coffee",
+      "block.fallout_wastelands.xander_2": "Xander 2",
+      "item.wastlanders.mobmachinegun": "Mobmachinegun",
+      "block.fallout_wastelands.xander_3": "Xander 3",
+      "block.fallout_wastelands.xander_1": "Xander 1",
+      "item.fallout_wastelands.nailedwrench": "Nailed Wrench",
+      "block.fallout_wastelands.xander_4": "Xander 4",
+      "block.fallout_wastelands.xander_5": "Xander 5",
+      "item.wastlanders.rotativepart": "Rotary Piece",
+      "block.fallout_wastelands.wastlandstone": "Wasteland Stone",
+      "item.fallout_wastelands.highwayman_spawn_egg": "Highwayman Spawn Egg",
+      "block.wastlanders.bo_sdoor": "BoS Blast Door",
+      "item.wastlanders.raidergunner": "Raider Gunner Spawn Egg",
+      "item.wastlanders.bloatfly_spawn_egg": "Bloatfly Spawn Egg",
+      "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
+      "block.fallout_wastelands.sheetmetal": "Sheet metal",
+      "block.wastlanders.plaster": "Plaster",
+      "item.wastlanders.greenpaintcan": "Green Paint Can",
+      "block.wastlanders.redindustrialdoor": "Red Industrial Door",
+      "block.wastlanders.wastelandgravel": "Wasteland Gravel",
+      "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
+      "item.fallout_wastelands.chromeraider_spawn_egg": "Wasteland Raider Spawn Egg",
+      "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
+      "item.wastlanders.laserriffle": "Laser Rifle",
+      "item.fallout_wastelands.reaper": "Ripper",
+      "block.fallout_wastelands.redindustrialblocslab": "Red Industrial Block Slab",
+      "item.wastlanders.breadroller": "Bread Roller",
+      "item.fallout_wastelands.aluminiumingot": "Aluminium Ingot",
+      "item.wastlanders.redpaintcan": "Red Paint Can",
+      "block.wastlanders.safeblock": "Concrete (safe)",
+      "block.fallout_wastelands.wastelandtinore": "Wasteland Tin Ore",
+      "item.wastlanders.fueljerrican": "Fuel Jerrican",
+      "item.wastlanders.coppernugget": "Copper Nugget",
+      "block.wastlanders.rottenwooddoor": "Rotten Wood Door",
+      "entity.wastlanders.chromedraiderfemale": "Female Wasteland Raider",
+      "item.wastlanders.fusionmicrocell": "Fusion Cell",
+      "block.fallout_wastelands.steelblock": "Steel Block",
+      "block.wastlanders.tirestack": "Tire Stack",
+      "item.wastlanders.bossteelplate": "BoS Steelplate",
+      "item.minecraft.tipped_arrow.effect.radiation": "Arrow of Radiation Poisoning",
+      "item.fallout_wastelands.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
+      "item.fallout_wastelands.uraniumnugget": "Uranium Nugget",
+      "item.fallout_wastelands.ingot_tin": "Tin Ingot",
+      "block.wastlanders.militaryplatedradiationwarrior": "Military plating (radiation)",
+      "block.fallout_wastelands.lighttub": "Light Tub",
+      "advancements.jointheworld.descr": "Vault tec wish you a good luck ...",
+      "entity.fallout_wastelands.mirelurk": "Mirelurk",
+      "block.fallout_wastelands.plasterwall": "Plaster Wall",
+      "block.wastlanders.concretepattern": "Concrete Pattern",
+      "item.fallout_wastelands.steelingot": "Steel Ingot",
+      "item.fallout_wastelands.abraxo": "Abraxo ",
+      "item.wastlanders.septammo": "7.62 ammo",
+      "block.fallout_wastelands.wastelandredstone": "Wasteland Redstone Ore",
+      "block.fallout_wastelands.militaryplatingglass": "Military Plating Glass",
+      "block.fallout_wastelands.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
+      "block.fallout_wastelands.militaryplated": "Military plating",
+      "block.wastlanders.bossteelplating": "BoS Metal Plating (light)",
+      "block.fallout_wastelands.barrelbarrel": "Barrel",
+      "item.wastlanders.militaryhull": "Military Hull",
+      "block.fallout_wastelands.landmine": "Landmine",
+      "item.wastlanders.robobraintrack": "Robobrain Track",
+      "subtitles.tenmm": "",
+      "block.fallout_wastelands.deadtrunk": "Charred Log",
+      "itemGroup.tabwastelandersitems": "Wastelanders Items",
+      "block.wastlanders.sheetmetal": "Sheet metal",
+      "entity.wastlanders.closecombatsupermutant": "Closecombatsupermutant",
+      "block.fallout_wastelands.wastelandbrick": "Wasteland Brick",
+      "block.fallout_wastelands.wastelandlapislazuli": "Wasteland Lapis Lazuli Ore",
+      "item.wastlanders.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
+      "block.wastlanders.plasterwall": "Plaster Wall",
+      "block.wastlanders.bosbasemetalplating": "BoS Metal Plating",
+      "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
+      "item.wastlanders.combatknife": "Combat Knife",
+      "item.fallout_wastelands.mirlurksteak": "Mirlurk Steak",
+      "item.wastlanders.bulletmobs": "Bulletmobs",
+      "item.wastlanders.cigarettepack": "Cigarette Pack",
+      "block.wastlanders.scaffolding": "Scaffolding",
+      "item.fallout_wastelands.metalclaw": "Metal Claw",
+      "block.fallout_wastelands.wastelandbrickstairs": "Wasteland Brick Stairs",
+      "block.fallout_wastelands.frbblock": "Robotbrain In A package",
+      "block.fallout_wastelands.plaster": "Plaster",
+      "block.fallout_wastelands.redindustrialdoor": "Red Industrial Door",
+      "item.fallout_wastelands.bugmeat": "Bug Flesh",
+      "block.wastlanders.walkway": "Walkway",
+      "item.wastlanders.tinnugget": "Tin Nugget",
+      "block.fallout_wastelands.enclavedoors": "Enclave Door",
+      "block.wastlanders.rustediron": "Rusted Iron",
+      "item.fallout_wastelands.robobrainengine": "Engine",
+      "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
+      "item.fallout_wastelands.vaultjumpsuit_boots": "Vault Jumpsuit Boots (male)",
+      "block.fallout_wastelands.ammunitionbox": "Ammunition Box",
+      "block.fallout_wastelands.bossteelplating": "BoS Metal Plating (light)",
+      "item.fallout_wastelands.rustedcombatweapon": "Junk sword",
+      "item.fallout_wastelands.closecombatsupermutant_spawn_egg": "Close Combat Supermutant Spawn Egg",
+      "item.fallout_wastelands.coffee": "Coffee",
+      "item.fallout_wastelands.breadroller": "Bread Roller",
+      "item.fallout_wastelands.fusionmicrocell": "Fusion Cell",
+      "block.fallout_wastelands.bosbasemetalplating": "BoS Metal Plating",
+      "item.fallout_wastelands.rotativepart": "Rotary Piece",
+      "block.fallout_wastelands.portalframe": "Portal Frame",
+      "block.fallout_wastelands.redindustrialblock": "Red Industrial Block",
+      "block.fallout_wastelands.walkwaystairs": "Walkway Stairs",
+      "block.wastlanders.scaffoldingcrossed": "Scaffolding (Crossed)",
+      "block.fallout_wastelands.plasterstairs": "Plaster Stairs",
+      "item.wastlanders.wrench": "Wrench",
+      "block.wastlanders.wastlandstone": "Wasteland Stone",
+      "item.fallout_wastelands.t_45powerarmor_boots": "T-45 Power Armor Boots",
+      "item.wastlanders.highwayman_spawn_egg": "Highwayman Spawn Egg",
+      "item.fallout_wastelands.bulletmobs": "Bulletmobs",
+      "block.fallout_wastelands.enclavebunkerfloor": "Enclave Bunker Floor",
+      "item.fallout_wastelands.robobrainrivetcanon": "Robobrainrivetcanon",
+      "advancements.jointheworld.title": "Wasteland",
+      "item.fallout_wastelands.militaryhull": "Military Hull",
+      "block.wastlanders.blastwindows": "Blast Windows",
+      "item.wastlanders.femalevaultjumpsuit_chestplate": "Vault Jumpsuit Body (female)",
+      "item.wastlanders.nailgun": "Nailgun",
+      "block.wastlanders.redindusupperrivet": "Red Industrial Block (upper rivet)",
+      "block.wastlanders.wastlandconcrete": "Old Concrete",
+      "item.fallout_wastelands.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",
+      "item.fallout_wastelands.frbcannon": "Frbcannon",
+      "biome.wastlanders.capitalwasteland": "Capitalwasteland",
+      "block.wastlanders.rottenplanks": "Rotten Plank",
+      "entity.wastlanders.rangedsupermutant": "Supermutant Brute",
+      "item.fallout_wastelands.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
+      "block.wastlanders.gore": "Gore",
+      "item.wastlanders.frbcannon": "Frbcannon",
+      "block.wastlanders.militaryplated": "Military plating",
+      "item.fallout_wastelands.blackpaintcan": "Black Paint Can",
+      "item.fallout_wastelands.tenmm": "10mm Pistol ",
+      "block.wastlanders.wastelandbrickstairs": "Wasteland Brick Stairs",
+      "item.fallout_wastelands.fueljerrican": "Fuel Jerrican",
+      "block.fallout_wastelands.wastelandcobblestoneslab": "Wasteland Cobblestone Slab",
+      "item.fallout_wastelands.bloatflyshot": "Bloatflyshot",
+      "block.fallout_wastelands.redindusrivetmid": "Red Industrial Block (mid rivet)",
+      "item.fallout_wastelands.vaultjumpsuit_helmet": "Vaultjumpsuit Helmet",
+      "biome.fallout_wastelands.capitalwastelandeast": "Capitalwastelandeast",
+      "item.fallout_wastelands.enclav_eofficier_spawn_egg": "Enclave Officier Spawn Egg",
+      "item.wastlanders.cannedporkshop": "Canned Porkshop",
+      "biome.wastlanders.desertwastland": "Desertwastland",
+      "item.wastlanders.nailedwrench": "Nailed Wrench",
+      "item.fallout_wastelands.vaultjumpsuit_leggings": "Vault Jumpsuit Leggings (male)",
+      "block.fallout_wastelands.wastelandcoal": "Wasteland Coal Ore",
+      "entity.fallout_wastelands.highwayman": "Highwayman",
+      "block.fallout_wastelands.locker": "Locker",
+      "item.wastlanders.jerrican": "Empty Jerrican",
+      "entity.wastlanders.ghoul": "Ghoul",
+      "item.wastlanders.reaper": "Ripper",
+      "entity.wastlanders.raidergunner": "Raider Gunner",
+      "entity.fallout_wastelands.friendlybrainbot": "Robot Brain (Hackable)",
+      "block.wastlanders.walkwaystairs": "Walkway Stairs",
+      "item.fallout_wastelands.ingotcopper": "Copper ingot",
+      "block.fallout_wastelands.deadgrass": "Wasteland Dead Grass",
+      "item.fallout_wastelands.printedchip": "Computer chip ",
+      "item.wastlanders.robobrainengine": "Engine",
+      "block.wastlanders.industrialredwalkway": "Red Industrial Black (walk way)",
+      "block.wastlanders.wastelancobblestonewall": "Wasteland Cobble Wall",
+      "block.wastlanders.metallicwall": "Industrial Metal Plating",
+      "item.wastlanders.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
+      "item.wastlanders.fevgoo_bucket": "Fevgoo Bucket",
+      "entity.fallout_wastelands.armyrobobrain": "Army Robobrain",
+      "item.wastlanders.bloatfly": "Bloatfly Spawn Egg",
+      "item.wastlanders.ingotcopper": "Copper ingot",
+      "block.wastlanders.moltencopperblock": "Molten Copper Block",
+      "block.fallout_wastelands.wastelanddirt": "Wasteland Dirt",
+      "block.fallout_wastelands.rustedironstairs": "Rusted Iron Stairs",
+      "item.minecraft.lingering_potion.effect.radiation": "Lingering Radiation Poisoning",
+      "block.wastlanders.redindustrialrivetdown": "Red Industrial Block (rivet bottom)",
+      "block.wastlanders.wastelandiron": "Wasteland Iron Ore",
+      "item.fallout_wastelands.crushedcan": "Crushed Can",
+      "item.fallout_wastelands.enclaveplating": "Enclave Plating",
+      "block.wastlanders.aluminiumblock": "Aluminium Block",
+      "block.fallout_wastelands.wastelandconcretewall": "Wasteland Concrete Wall",
+      "item.wastlanders.blackpaintcan": "Black Paint Can",
+      "block.wastlanders.deadtrunk": "Chared Log",
+      "block.wastlanders.coffeemixer": "Coffee Brewer ",
+      "item.wastlanders.steelingot": "Steel Ingot",
+      "block.wastlanders.leadblock": "Lead Block",
+      "item.fallout_wastelands.sheetmetalplating": "Sheet Metal Plating",
+      "item.fallout_wastelands.plasmarifle": "Plasma Rifle",
+      "block.wastlanders.plasterstairs": "Plaster Stairs",
+      "block.wastlanders.wastelandcobblestairs": "Wasteland Cobble Stairs",
+      "block.wastlanders.wastelandleadore": "Wasteland Lead Ore",
+      "subtitles.wastelandwind": "",
+      "item.fallout_wastelands.enclaveofficierarmor_boots": "Enclave Officier Boots",
+      "block.fallout_wastelands.rustedruinblockground": "Rusted Ruin Ground Block",
+      "block.fallout_wastelands.bo_ssteelplatingstairs": "BoS Steel Plating Stairs",
+      "block.fallout_wastelands.safeblock": "Concrete Safe",
+      "block.fallout_wastelands.rustedironslab": "Rusted Iron Slab",
+      "block.wastlanders.militaryplatedground": "Military Plating (walk way)",
+      "item.fallout_wastelands.t_45powerarmor_helmet": "T-45 Power Armor Helmet",
+      "block.fallout_wastelands.wastelandconcretestairs": "Wasteland Concrete Stairs",
+      "block.fallout_wastelands.moltencopperblock": "Molten Copper Block",
+      "block.fallout_wastelands.trashbin": "Trash Bin",
+      "block.wastlanders.landmine": "Landmine",
+      "item.wastlanders.ghoul_spawn_egg": "Ghoul Spawn Egg",
+      "block.wastlanders.wastelandconcreteslab": "Wasteland Concrete Slab",
+      "block.fallout_wastelands.rustbloc": "Fully Rusted Iron",
+      "item.wastlanders.abraxo": "Abraxo ",
+      "item.fallout_wastelands.militarygradeaccessbadge": "Military Grade Access Badge",
+      "block.fallout_wastelands.wastelandconcretevent": "Wasteland Concrete Vent",
+      "item.fallout_wastelands.pipboy": "Pipboy-3000",
+      "block.wastlanders.wastelandemerald": "Wasteland Emerald Ore",
+      "biome.fallout_wastelands.desertwastland": "Desertwastland",
+      "item.wastlanders.printedchip": "Computer chip ",
+      "block.wastlanders.moltentin": "Molten Tin Block",
+      "item.wastlanders.chromeraider_spawn_egg": "Wasteland Raider Spawn Egg",
+      "item.wastlanders.robobrainarm": "Robobrain Arm",
+      "item.wastlanders.aluminiumnugget": "Aluminium Nugget",
+      "item.fallout_wastelands.cannedporkshop": "Canned Porkshop",
+      "item.wastlanders.tireiron": "Tire Iron",
+      "item.wastlanders.nails": "Nails",
+      "block.fallout_wastelands.concretepattern": "Concrete Pattern",
+      "block.fallout_wastelands.gore": "Gore",
+      "item.fallout_wastelands.septammo": "7.62 ammo",
+      "item.wastlanders.track": "Track Segment",
+      "fluid.fevgoo": "Fevgoo",
+      "entity.fallout_wastelands.chromedraiderfemale": "Female Wasteland Raider",
+      "block.fallout_wastelands.wastelanduraniumore": "Wasteland Uranium Ore",
+      "item.wastlanders.rustedcombatweapon": "Junk sword",
+      "item.fallout_wastelands.enclave_x_01pa_helmet": "Enclave APA Helmet",
+      "block.wastlanders.ammunitionbox": "Ammunition Box",
+      "item.wastlanders.t_45powerarmor_boots": "T-45 Power Armor Boots",
+      "item.fallout_wastelands.bottlecaps": "Bottlecaps",
+      "block.wastlanders.brotherhoodofsteelmetalplating": "BoS Metal Plating (lines)",
+      "block.fallout_wastelands.sheetmetalwall": "Sheet Metal Wall",
+      "block.wastlanders.charredplankfence": "Charred Plank Fence",
+      "item.fallout_wastelands.robobrainarm": "Robobrain Arm",
+      "block.fallout_wastelands.medicalbox": "Medical Box",
+      "entity.wastlanders.armyrobobrain": "Army Robobrain",
+      "block.fallout_wastelands.enclavebunkerwalllights": "Enclave Bunker Block Wall Light",
+      "block.fallout_wastelands.geck_bo_sbunker": "GECK Bo Sbunker",
+      "block.wastlanders.wastelandbrickslab": "Wasteland Brick Slab",
+      "item.wastlanders.uraniumnugget": "Uranium Nugget",
+      "item.fallout_wastelands.laserriffle": "Laser Rifle",
+      "block.fallout_wastelands.wastelandgravel": "Wasteland Gravel",
+      "item.fallout_wastelands.enclave_x_01pa_chestplate": "Enclave APA Body",
+      "block.fallout_wastelands.radioactivwastebarrel": "Radioactive barrel",
+      "item.fallout_wastelands.rawmirlurk": "Raw Mirlurk",
+      "block.fallout_wastelands.bo_sdoor": "BoS Blast Door",
+      "block.wastlanders.militaryplatingwall": "Military Plated Wall",
+      "entity.wastlanders.basesupermutant": "Super Mutant Grunt",
+      "item.fallout_wastelands.robobraintrack": "Robobrain Track",
+      "block.fallout_wastelands.charredplank": "Charred Plank",
+      "block.wastlanders.wastelandbrick": "Wasteland Brick",
+      "item.fallout_wastelands.leadnugget": "Lead Nugget",
+      "biome.fallout_wastelands.capitalwasteland": "Capitalwasteland",
+      "item.wastlanders.aluminiumingot": "Aluminium Ingot",
+      "block.fallout_wastelands.rottenplankfence": "Rotten Plank Fence",
+      "block.wastlanders.rustedironwalls": "Rusted Iron Walls",
+      "block.wastlanders.wastelandcoal": "Wasteland Coal Ore",
+      "advancements.itsalive.descr": "My creation is Allliiiiivee !!!",
+      "block.wastlanders.charredplankslab": "Charredplankslab",
+      "block.wastlanders.bo_ssteelplatingstairs": "BoS Steel Plating Stairs",
+      "item.fallout_wastelands.nuclearwaste": "Nuclear Waste",
+      "block.fallout_wastelands.redindustrialrivetdown": "Red Industrial Block (rivet bottom)",
+      "item.wastlanders.rangedsupermutant": "Supermutant Brute Spawn Egg",
+      "item.fallout_wastelands.nails": "Nails",
+      "block.fallout_wastelands.wastelandiron": "Wasteland Iron Ore",
+      "block.fallout_wastelands.wastlandsand": "Wasteland Sand",
+      "item.fallout_wastelands.femalevaultjumpsuit_chestplate": "Vault Jumpsuit Body (female)",
+      "block.wastlanders.radioactivwastebarrel": "Radioactive barrel",
+      "item.fallout_wastelands.themachinegun": "Butcher Mk1",
+      "item.fallout_wastelands.raidergunner_spawn_egg": "Raider Gunner Spawn Egg",
+      "item.wastlanders.crushedcan": "Crushed Can",
+      "block.wastlanders.wastelanddirt": "Wasteland Dirt",
+      "item.fallout_wastelands.nailgun": "Nailgun",
+      "block.fallout_wastelands.wastlandconcrete": "Old Concrete",
+      "item.wastlanders.robobrainhead": "Robobrain Head",
+      "block.fallout_wastelands.enclavebunkerblock": "Enclave Bunker Block",
+      "block.wastlanders.structuralmetalblock": "Structural Metal Block",
+      "block.wastlanders.deadgrass": "Wasteland Dead Grass",
+      "item.fallout_wastelands.plasmas": "Plasmas",
+      "item.wastlanders.humanbrain": "Human Brain",
+      "item.wastlanders.femalevaultjumpsuit_leggings": "Vault Jumpsuit Leggings (female)",
+      "item.wastlanders.themachinegun": "Butcher Mk1",
+      "entity.fallout_wastelands.chromeraider": "Wasteland Raider",
+      "item.fallout_wastelands.robobrainhead": "Robobrain Head",
+      "block.wastlanders.barrelbarrel": "Barrel",
+      "block.fallout_wastelands.wastelandbrickslab": "Wasteland Brick Slab",
+      "item.wastlanders.bloatflyshot": "Bloatflyshot",
+      "block.fallout_wastelands.enclavebunkerblocklogo": "Enclave Bunker Block Logo",
+      "entity.wastlanders.highwayman": "Highwayman",
+      "item.fallout_wastelands.track": "Track Segment",
+      "block.wastlanders.wastelandtinore": "Wasteland Tin Ore",
+      "block.fallout_wastelands.testbunkerdoor": "Military Plated Door",
+      "item.fallout_wastelands.wasteland": "Wasteland Portal Igniter",
+      "item.fallout_wastelands.cigarettepack": "Cigarette Pack",
+      "block.wastlanders.tinblock": "Tin Block",
+      "block.wastlanders.redindustrialblockstairs": "Red Industrial Stairs",
+      "item.fallout_wastelands.enclave_x_01pa_boots": "Enclave APA Boots",
+      "entity.fallout_wastelands.enclav_eofficier": "Enclave Officier",
+      "block.wastlanders.medicalbox": "Medical Box",
+      "block.wastlanders.wastelanddiamond": "Wasteland Diamond Ore",
+      "item.fallout_wastelands.enclaveofficierarmor_leggings": "Enclave Officier Pants ",
+      "item.wastlanders.vaultjumpsuit_helmet": "Vaultjumpsuit Helmet",
+      "entity.wastlanders.bloatfly": "Bloatfly",
+      "biome.fallout_wastelands.wastlandsanddesert": "Wastlandsanddesert",
+      "entity.wastlanders.chromeraider": "Wasteland Raider",
+      "block.fallout_wastelands.militaryplatedground": "Military Plating (walk way)",
+      "block.fallout_wastelands.bo_slights": "BoS Light",
+      "item.fallout_wastelands.redpaintcan": "Red Paint Can",
+      "item.fallout_wastelands.enclave_x_01pa_leggings": "Enclave APA Leggings",
+      "item.wastlanders.ingot_tin": "Tin Ingot",
+      "item.fallout_wastelands.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
+      "block.wastlanders.walkwayslab": "Walkway Slab",
+      "block.fallout_wastelands.wastelandgold": "Wasteland Gold Ore",
+      "block.fallout_wastelands.leadblock": "Lead Block",
+      "block.fallout_wastelands.enclavebunkerblockwall": "Enclave Bunker Block Wall",
+      "item.wastlanders.t_45powerarmor_chestplate": "T-45 Power Armor Body",
+      "block.fallout_wastelands.rustedwall": "Rusted Ruin Block",
+      "block.fallout_wastelands.deadroots": "Wasteland Dead Roots",
+      "block.wastlanders.wastelandredstone": "Wasteland Redstone Ore",
+      "entity.fallout_wastelands.closecombatsupermutant": "Close Combat Supermutant",
+      "item.fallout_wastelands.yellowpaintcan": "Yellow Paint Can",
+      "item.wastlanders.femalevaultjumpsuit_boots": "Vault Jumpsuit Boots (female)",
+      "block.wastlanders.militaryplatingglass": "Military Plating Glass",
+      "block.wastlanders.lighttub": "Light Tub",
+      "item.fallout_wastelands.neutronadebottle": "Nuka cola Bottle",
+      "block.fallout_wastelands.bossteelstructureslab": "BoS Steel Slab (light)",
+      "block.fallout_wastelands.militaryplatedradiationwarrior": "Military plating (radiation)",
+      "block.fallout_wastelands.metallicwall": "Industrial Metal Plating",
+      "block.wastlanders.frbblock": "Robotbrain In A package",
+      "item.fallout_wastelands.steeldust": "Steel Dust",
+      "item.wastlanders.whitepaintcan": "White Paint Can",
+      "item.fallout_wastelands.leadingot": "Lead Ingot",
+      "block.wastlanders.rustedironstairs": "Rusted Iron Stairs",
+      "item.wastlanders.robobraintorso": "Robobrain Torso",
+      "item.fallout_wastelands.robobraintorso": "Robobrain Torso",
+      "block.fallout_wastelands.wastelandcopper": "Wasteland Copper Ore",
+      "block.fallout_wastelands.walkway": "Walkway",
+      "entity.wastlanders.friendlybrainbot": "Robot Brain (Hackable)",
+      "item.fallout_wastelands.coffepot": "Coffee Pot",
+      "block.wastlanders.bo_slights": "BoS Light",
+      "block.fallout_wastelands.structuralmetalblock": "Structural Metal Block",
+      "block.fallout_wastelands.redindusupperrivet": "Red Industrial Block (upper rivet)",
+      "item.fallout_wastelands.bossteelplate": "BoS Steelplate",
+      "block.fallout_wastelands.redindustrialblockwarning": "Red Industrial Block (warning)",
+      "subtitles.tenmmshot": "",
+      "item.fallout_wastelands.femalevaultjumpsuit_boots": "Vault Jumpsuit Boots (female)",
+      "item.fallout_wastelands.ak": "Ak",
+      "block.fallout_wastelands.oldpapers": "Old Papers",
+      "item.wastlanders.yellowpaintcan": "Yellow Paint Can",
+      "item.wastlanders.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",
+      "block.wastlanders.militaryplatedstairs": "Military Plated Stairs",
+      "block.fallout_wastelands.industrialredwalkway": "Red Industrial Black (walk way)",
+      "entity.fallout_wastelands.basesupermutant": "Super Mutant Grunt",
+      "block.fallout_wastelands.militaryplatedstairs": "Military Plated Stairs",
+      "item.wastlanders.nuclearwaste": "Nuclear Waste",
+      "item.wastlanders.sheetmetalplating": "Sheet Metal Plating",
+      "block.fallout_wastelands.brotherhoodofsteelmetalplating": "BoS Metal Plating (lines)",
+      "block.fallout_wastelands.walkwayslab": "Walkway Slab",
+      "item.wastlanders.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
+      "block.fallout_wastelands.redindustrialblockstairs": "Red Industrial Stairs",
+      "block.fallout_wastelands.scaffolding": "Scaffolding",
+      "block.wastlanders.wastelandlapislazuli": "Wasteland Lapis Lazuli Ore",
+      "item.wastlanders.coffepot": "Coffee Pot",
+      "block.fallout_wastelands.moltenaluminiumblock": "Molten Aluminium Block",
+      "block.fallout_wastelands.plasterslab": "Plaster Slab",
+      "item.fallout_wastelands.wrench": "Wrench",
+      "item.fallout_wastelands.tenmmammo": "10mm Ammunition ",
+      "item.wastlanders.chromeraider": "Wasteland Raider Spawn Egg",
+      "block.fallout_wastelands.rottenwooddoor": "Rotten Wood Door",
+      "block.wastlanders.redindustrialblock": "Red Industrial Block",
+      "block.wastlanders.wastelandrock": "Wasteland Cobblestone",
+      "block.wastlanders.moltenaluminiumblock": "Molten Aluminium Block",
+      "subtitles.plasmarifle": "",
+      "item.wastlanders.armyrobobrain": "Army Robobrain Spawn Egg",
+      "item.wastlanders.closecombatsupermutant": "Closecombatsupermutant Spawn Egg",
+      "block.fallout_wastelands.wastelanddiamond": "Wasteland Diamond Ore",
+      "entity.fallout_wastelands.raidergunner": "Raider Gunner",
+      "entity.fallout_wastelands.enclavepowerarmorsoldier": "Enclave Soldier (power armor)",
+      "item.wastlanders.stimpack": "Stimpak",
+      "item.wastlanders.chromedraiderfemale": "Female Wasteland Raider Spawn Egg",
+      "block.wastlanders.bossteelstructureslab": "Bos Steel Slab (light)",
+      "block.wastlanders.wastelandconcretevent": "Wasteland Concrete Vent",
+      "item.fallout_wastelands.xanderroot": "Xander Root",
+      "itemGroup.tabblocs_w": "Wastlanders Blocks",
+      "block.fallout_wastelands.moltentin": "Molten Tin Block",
+      "block.fallout_wastelands.rustediron": "Rusted Iron",
+      "block.wastlanders.redindusrivetmid": "Red Industrial Block (mid rivet)",
+      "block.fallout_wastelands.tirestack": "Tire Stack",
+      "item.fallout_wastelands.rangedsupermutant_spawn_egg": "Supermutant Brute Spawn Egg",
+      "entity.fallout_wastelands.bloatfly": "Bloatfly",
+      "block.fallout_wastelands.wastelandconcreteslab": "Wasteland Concrete Slab",
+      "item.minecraft.splash_potion.effect.radiation": "Splash Radiation Poisoning",
+      "item.wastlanders.neutronadebottle": "Nuka cola Bottle",
+      "block.wastlanders.wastelandallumiumore": "Wasteland Aluminium Ore",
+      "block.fallout_wastelands.charredplankslab": "Charred Plank Slab",
+      "block.wastlanders.militaryplatingslab": "Military Plating Slab",
+      "block.fallout_wastelands.charredplankfence": "Charred Plank Fence",
+      "block.wastlanders.wastelandcopper": "Wasteland Copper Ore",
+      "item.fallout_wastelands.enclaveofficierarmor_chestplate": "Enclave Officier Coat ",
+      "item.fallout_wastelands.coppernugget": "Copper Nugget",
+      "item.wastlanders.basesupermutant_spawn_egg": "Super Mutant Grunt Spawn Egg",
+      "item.wastlanders.ak": "Ak",
+      "block.wastlanders.wastelandtile": "Wasteland Tile",
+      "block.wastlanders.wastelandconcretestairs": "Wasteland Concrete Stairs",
+      "block.fallout_wastelands.militaryplatingblockhazard": "Military Plating (Hazard)",
+      "block.wastlanders.charredplanksstairs": "Charred Plank Stairs",
+      "block.fallout_wastelands.enclavebunkerstairs": "Enclave Bunker Stairs",
+      "item.wastlanders.neutronade": "Nuka Cola",
+      "item.fallout_wastelands.humanbrain": "Human Brain",
+      "block.fallout_wastelands.moltenironblock": "Molten Iron Block",
+      "subtitles.menutheme": "",
+      "block.wastlanders.rottenplankfence": "Rotten Plank Fence",
+      "block.fallout_wastelands.blastwindows": "Blast Windows",
+      "block.wastlanders.moltensteel": "Molten Steel Block",
+      "item.fallout_wastelands.whitepaintcan": "White Paint Can",
+      "item.wastlanders.t_45powerarmor_helmet": "T-45 Power Armor Helmet",
+      "block.fallout_wastelands.wastelandstonebrick": "Wasteland Stonebrick",
+      "block.fallout_wastelands.uraniumblock": "Uranium Block",
+      "entity.wastlanders.mirelurk": "Mirelurk",
+      "item.wastlanders.friendlybrainbot": "Robot Brain (Hackable) Spawn Egg",
+      "block.wastlanders.redindustrialblockwarning": "Red Industrial Block (warning)",
+      "item.wastlanders.rangedsupermutant_spawn_egg": "Supermutant Brute Spawn Egg",
+      "item.fallout_wastelands.femalevaultjumpsuit_helmet": "Femalevaultjumpsuit Helmet",
+      "block.wastlanders.redindustrialblocslab": "Redindustrial Block Slab",
+      "item.wastlanders.vaultjumpsuit_leggings": "Vault Jumpsuit Leggings (male)",
+      "biome.wastlanders.capitalwastelandeast": "Capitalwastelandeast",
+      "item.wastlanders.tenmm": "10mm Pistol ",
+      "item.wastlanders.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
+      "item.wastlanders.raidergunner_spawn_egg": "Raider Gunner Spawn Egg",
+      "item.fallout_wastelands.aluminiumnugget": "Aluminium Nugget",
+      "item.wastlanders.militarygradeaccessbadge": "Military Grade Access Badge",
+      "block.fallout_wastelands.tinblock": "Tin Block",
+      "block.fallout_wastelands.wastelandrock": "Wasteland Cobblestone",
+      "block.fallout_wastelands.rottenplanks": "Rotten Plank",
+      "block.wastlanders.wastelandstonebrick": "Wasteland Stonebrick",
+      "block.wastlanders.moltenironblock": "Molten Iron Block",
+      "block.fallout_wastelands.militaryplatingslab": "Military Plating Slab",
+      "item.wastlanders.leadingot": "Lead Ingot",
+      "block.fallout_wastelands.charredplanksstairs": "Charred Plank Stairs",
+      "item.wastlanders.closecombatsupermutant_spawn_egg": "Closecombatsupermutant Spawn Egg",
+      "block.wastlanders.deadroots": "Wasteland Dead Roots",
+      "item.wastlanders.mirlurksteak": "Mirlurk Steak",
+      "block.wastlanders.rottenplanksslab": "Rotten Plank Slab",
+      "item.fallout_wastelands.femalevaultjumpsuit_leggings": "Vault Jumpsuit Leggings (female)",
+      "block.fallout_wastelands.wastelancobblestonewall": "Wasteland Cobblestone Wall",
+      "item.fallout_wastelands.bloatfly_spawn_egg": "Bloatfly Spawn Egg"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "fallout_wastelands",
+    "modName": "Fallout Wastelands",
+    "version": "Beta 0.5.8",
+    "description": "A Fallout game serie mod for minecraft , with vault-craft we assure you a calm and bright future !",
+    "author": "Vaedak,Mechanist1108,FoxysYT,Mcreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "modPicture": "falloutwastelandsiconrs",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.fallout_wastelands",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100118117
+}

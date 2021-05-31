@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/rustblock",
+    "up": "fallout_wastelands:blocks/rustblock",
+    "north": "fallout_wastelands:blocks/rustblock",
+    "east": "fallout_wastelands:blocks/rustblock",
+    "south": "fallout_wastelands:blocks/rustblock",
+    "west": "fallout_wastelands:blocks/rustblock",
+    "particle": "fallout_wastelands:blocks/rustblock"
+  }
+}

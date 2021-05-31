@@ -1,0 +1,58 @@
+{
+  "_fv": 18,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "enclaveofficeruniformcap",
+    "enableBody": true,
+    "textureBody": "enclaveofficercoat",
+    "enableLeggings": true,
+    "textureLeggings": "enclaveofficerleggings",
+    "enableBoots": true,
+    "textureBoots": "enclaveofficeruniformboots",
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "armorTextureFile": "2enclaveofficeruniform_",
+    "helmetName": "Enclave Officier Armor Cap",
+    "bodyName": "Enclave Officier Coat ",
+    "leggingsName": "Enclave Officier Pants ",
+    "bootsName": "Enclave Officier Boots",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Modelenclaveofficeruniform",
+    "helmetModelPart": "head",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Modelenclaveofficeruniform",
+    "bodyModelPart": "torso",
+    "armsModelPartL": "leftarm",
+    "armsModelPartR": "rightarm",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Modelenclaveofficeruniform",
+    "leggingsModelPartL": "leftleg",
+    "leggingsModelPartR": "rightleg",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Modelenclaveofficeruniform",
+    "bootsModelPartL": "leftleg",
+    "bootsModelPartR": "rightleg",
+    "bootsModelTexture": "From armor",
+    "maxDamage": 15,
+    "damageValueHelmet": 1,
+    "damageValueBody": 4,
+    "damageValueLeggings": 3,
+    "damageValueBoots": 1,
+    "enchantability": 9,
+    "toughness": 1.5,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": "block.snow.step"
+    },
+    "repairItems": [
+      {
+        "value": "Items.STRING"
+      }
+    ]
+  }
+}

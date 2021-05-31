@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "fallout_wastelands:blocks/wastelandplankscharred",
+    "particle": "fallout_wastelands:blocks/wastelandplankscharred"
+  }
+}

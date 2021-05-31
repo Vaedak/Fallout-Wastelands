@@ -1,0 +1,70 @@
+{
+  "_fv": 18,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "powerarmor_helmet",
+    "enableBody": true,
+    "textureBody": "powerarmorchestpiece",
+    "enableLeggings": true,
+    "textureLeggings": "powerarmorlegs",
+    "enableBoots": true,
+    "textureBoots": "powerarmorboots",
+    "onHelmetTick": {
+      "name": "T45powerarmorHelmetTickEvent"
+    },
+    "onBodyTick": {
+      "name": "T45powerarmorBodyTickEvent"
+    },
+    "onLeggingsTick": {
+      "name": "T45powerarmorLeggingsTickEvent"
+    },
+    "onBootsTick": {
+      "name": "T45powerarmorBootsTickEvent"
+    },
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "armorTextureFile": "pa45_",
+    "helmetName": "T-45 Power Armor Helmet",
+    "bodyName": "T-45 Power Armor Body",
+    "leggingsName": "T-45 Power Armor Leggings",
+    "bootsName": "T-45 Power Armor Boots",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Modeltfourtyfive",
+    "helmetModelPart": "head",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Modeltfourtyfive",
+    "bodyModelPart": "body",
+    "armsModelPartL": "leftarm",
+    "armsModelPartR": "rightarm",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Modeltfourtyfive",
+    "leggingsModelPartL": "leftleg",
+    "leggingsModelPartR": "rightleg",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Modeltfourtyfive",
+    "bootsModelPartL": "leftleg",
+    "bootsModelPartR": "rightleg",
+    "bootsModelTexture": "From armor",
+    "maxDamage": 40,
+    "damageValueHelmet": 4,
+    "damageValueBody": 6,
+    "damageValueLeggings": 6,
+    "damageValueBoots": 3,
+    "enchantability": 9,
+    "toughness": 5.0,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": "block.anvil.hit"
+    },
+    "repairItems": [
+      {
+        "value": "Blocks.IRON_BLOCK"
+      }
+    ]
+  }
+}

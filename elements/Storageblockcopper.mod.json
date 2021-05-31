@@ -1,0 +1,16 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:Copperblock"
+      }
+    ],
+    "functions": [],
+    "name": "storage_block/copper",
+    "namespace": "forge"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Wastelanduraniumore"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "ores/uranium",
+    "namespace": "forge"
+  }
+}

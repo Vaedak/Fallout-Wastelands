@@ -1,0 +1,8 @@
+{
+  "parent": "fallout_wastelands:custom/tirestack",
+  "textures": {
+    "all": "fallout_wastelands:blocks/tiretexture",
+    "particle": "fallout_wastelands:blocks/tiretexture",
+    "0": "fallout_wastelands:blocks/tiretexture"
+  }
+}

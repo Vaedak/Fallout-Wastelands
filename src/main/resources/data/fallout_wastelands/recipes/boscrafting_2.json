@@ -1,0 +1,13 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:brotherhoodofsteelmetalplating"
+    }
+  ],
+  "result": {
+    "item": "fallout_wastelands:bossteelplating",
+    "count": 1
+  }
+}

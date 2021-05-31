@@ -1,0 +1,30 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "  8"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:rail"
+    },
+    "3": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "4": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "5": {
+      "item": "fallout_wastelands:steelblock"
+    },
+    "8": {
+      "item": "minecraft:lever"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:themachinegun",
+    "count": 1
+  }
+}

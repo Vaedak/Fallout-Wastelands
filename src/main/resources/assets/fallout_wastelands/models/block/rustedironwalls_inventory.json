@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "fallout_wastelands:blocks/oxydedmetal",
+    "particle": "fallout_wastelands:blocks/oxydedmetal"
+  }
+}

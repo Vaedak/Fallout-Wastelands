@@ -1,0 +1,13 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:steelblock"
+    }
+  ],
+  "result": {
+    "item": "fallout_wastelands:steelingot",
+    "count": 9
+  }
+}

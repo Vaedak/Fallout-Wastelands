@@ -1,0 +1,31 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:Copperblock"
+      },
+      {
+        "value": "CUSTOM:Tinblock"
+      },
+      {
+        "value": "CUSTOM:Aluminiumblock"
+      },
+      {
+        "value": "CUSTOM:Leadblock"
+      },
+      {
+        "value": "CUSTOM:Steelblock"
+      },
+      {
+        "value": "CUSTOM:Uraniumblock"
+      }
+    ],
+    "functions": [],
+    "name": "storage_blocks",
+    "namespace": "forge"
+  }
+}

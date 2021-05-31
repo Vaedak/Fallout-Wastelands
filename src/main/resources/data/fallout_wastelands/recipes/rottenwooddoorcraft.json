@@ -1,0 +1,33 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23",
+    "45"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "1": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "2": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "3": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "4": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "5": {
+      "item": "fallout_wastelands:rottenplanks"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:rottenwooddoor",
+    "count": 6
+  }
+}

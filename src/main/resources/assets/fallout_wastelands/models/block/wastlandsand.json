@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/wastesandfix",
+    "up": "fallout_wastelands:blocks/wastesandfix",
+    "north": "fallout_wastelands:blocks/wastesandfix",
+    "east": "fallout_wastelands:blocks/wastesandfix",
+    "south": "fallout_wastelands:blocks/wastesandfix",
+    "west": "fallout_wastelands:blocks/wastesandfix",
+    "particle": "fallout_wastelands:blocks/wastesandfix"
+  }
+}

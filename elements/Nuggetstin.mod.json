@@ -1,0 +1,16 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Tinnugget"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "nuggets/tin",
+    "namespace": "forge"
+  }
+}

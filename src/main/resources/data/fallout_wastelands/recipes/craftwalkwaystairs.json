@@ -1,0 +1,33 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  2",
+    " 45",
+    "678"
+  ],
+  "key": {
+    "2": {
+      "item": "fallout_wastelands:walkway"
+    },
+    "4": {
+      "item": "fallout_wastelands:walkway"
+    },
+    "5": {
+      "item": "fallout_wastelands:walkway"
+    },
+    "6": {
+      "item": "fallout_wastelands:walkway"
+    },
+    "7": {
+      "item": "fallout_wastelands:walkway"
+    },
+    "8": {
+      "item": "fallout_wastelands:walkway"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:walkwaystairs",
+    "count": 4
+  }
+}

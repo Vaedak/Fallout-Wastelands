@@ -1,0 +1,32 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "1": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "2": {
+      "item": "fallout_wastelands:tinnugget"
+    },
+    "3": {
+      "item": "fallout_wastelands:aluminiumnugget"
+    },
+    "4": {
+      "item": "fallout_wastelands:aluminiumnugget"
+    },
+    "5": {
+      "item": "minecraft:lever"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:tenmm",
+    "count": 1
+  }
+}

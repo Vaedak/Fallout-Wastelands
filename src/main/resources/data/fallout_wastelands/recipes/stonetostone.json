@@ -1,0 +1,23 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1",
+    "23"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:flint"
+    },
+    "2": {
+      "item": "fallout_wastelands:wastelandrock"
+    },
+    "3": {
+      "item": "fallout_wastelands:wastelandrock"
+    }
+  },
+  "result": {
+    "item": "minecraft:cobblestone",
+    "count": 1
+  }
+}

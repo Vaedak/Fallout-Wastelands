@@ -1,0 +1,16 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Fueljerrican"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "fuel",
+    "namespace": "forge"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "fallout_wastelands:custom/etagere",
+  "textures": {
+    "all": "fallout_wastelands:blocks/etagere",
+    "particle": "fallout_wastelands:blocks/etagere",
+    "0": "fallout_wastelands:blocks/etagere"
+  }
+}

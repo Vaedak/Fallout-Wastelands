@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:charredplank"
+    },
+    "1": {
+      "item": "fallout_wastelands:charredplank"
+    },
+    "2": {
+      "item": "fallout_wastelands:charredplank"
+    },
+    "3": {
+      "item": "fallout_wastelands:charredplank"
+    },
+    "4": {
+      "item": "minecraft:water_bucket"
+    },
+    "5": {
+      "item": "fallout_wastelands:charredplank"
+    },
+    "6": {
+      "item": "fallout_wastelands:charredplank"
+    },
+    "7": {
+      "item": "fallout_wastelands:charredplank"
+    },
+    "8": {
+      "item": "fallout_wastelands:charredplank"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:rottenplanks",
+    "count": 8
+  }
+}

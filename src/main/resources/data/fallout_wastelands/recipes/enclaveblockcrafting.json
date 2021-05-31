@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:enclaveplating"
+    },
+    "1": {
+      "item": "fallout_wastelands:enclaveplating"
+    },
+    "2": {
+      "item": "fallout_wastelands:enclaveplating"
+    },
+    "3": {
+      "item": "fallout_wastelands:enclaveplating"
+    },
+    "4": {
+      "item": "fallout_wastelands:militaryplated"
+    },
+    "5": {
+      "item": "fallout_wastelands:enclaveplating"
+    },
+    "6": {
+      "item": "fallout_wastelands:enclaveplating"
+    },
+    "7": {
+      "item": "fallout_wastelands:enclaveplating"
+    },
+    "8": {
+      "item": "fallout_wastelands:enclaveplating"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:enclavebunkerblock",
+    "count": 16
+  }
+}

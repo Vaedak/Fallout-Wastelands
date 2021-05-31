@@ -1,0 +1,49 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:Wastelandgold"
+      },
+      {
+        "value": "CUSTOM:Wastelandlapislazuli"
+      },
+      {
+        "value": "CUSTOM:Wastelanddiamond"
+      },
+      {
+        "value": "CUSTOM:Wastelandcoal"
+      },
+      {
+        "value": "CUSTOM:Wastelandiron"
+      },
+      {
+        "value": "CUSTOM:Wastelandredstone"
+      },
+      {
+        "value": "CUSTOM:Wastelandemerald"
+      },
+      {
+        "value": "CUSTOM:Wastelandcopper"
+      },
+      {
+        "value": "CUSTOM:Wastelandallumiumore"
+      },
+      {
+        "value": "CUSTOM:Wastelandtinore"
+      },
+      {
+        "value": "CUSTOM:Wastelandleadore"
+      },
+      {
+        "value": "CUSTOM:Wastelanduraniumore"
+      }
+    ],
+    "functions": [],
+    "name": "ores",
+    "namespace": "forge"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01 ",
+    "345",
+    " 78"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "1": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "3": {
+      "item": "minecraft:iron_nugget"
+    },
+    "4": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "5": {
+      "item": "minecraft:red_dye"
+    },
+    "7": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "8": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:wrench",
+    "count": 1
+  }
+}

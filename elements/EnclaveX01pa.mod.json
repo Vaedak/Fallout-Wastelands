@@ -1,0 +1,70 @@
+{
+  "_fv": 18,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "apowerarmor_helmet",
+    "enableBody": true,
+    "textureBody": "apowerarmorchestpiece",
+    "enableLeggings": true,
+    "textureLeggings": "apowerarmorlegs",
+    "enableBoots": true,
+    "textureBoots": "apowerarmorboots",
+    "onHelmetTick": {
+      "name": "EnclaveX01paHelmetTickEvent"
+    },
+    "onBodyTick": {
+      "name": "EnclaveX01paBodyTickEvent"
+    },
+    "onLeggingsTick": {
+      "name": "EnclaveX01paLeggingsTickEvent"
+    },
+    "onBootsTick": {
+      "name": "EnclaveX01paBootsTickEvent"
+    },
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "armorTextureFile": "x01b_",
+    "helmetName": "Enclave APA Helmet",
+    "bodyName": "Enclave APA Body",
+    "leggingsName": "Enclave APA Leggings",
+    "bootsName": "Enclave APA Boots",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Modelxoone",
+    "helmetModelPart": "head",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Modelxoone",
+    "bodyModelPart": "body",
+    "armsModelPartL": "leftarm",
+    "armsModelPartR": "rightarm",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Modelxoone",
+    "leggingsModelPartL": "leftleg",
+    "leggingsModelPartR": "rightleg",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Modelxoone",
+    "bootsModelPartL": "leftleg",
+    "bootsModelPartR": "rightleg",
+    "bootsModelTexture": "From armor",
+    "maxDamage": 25,
+    "damageValueHelmet": 8,
+    "damageValueBody": 12,
+    "damageValueLeggings": 12,
+    "damageValueBoots": 8,
+    "enchantability": 0,
+    "toughness": 4.0,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": "block.anvil.place"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:Enclaveplating"
+      }
+    ]
+  }
+}

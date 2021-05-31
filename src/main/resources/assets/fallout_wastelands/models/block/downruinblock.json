@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/igside",
+    "up": "fallout_wastelands:blocks/iw",
+    "north": "fallout_wastelands:blocks/iwbrust",
+    "east": "fallout_wastelands:blocks/iwbrust",
+    "south": "fallout_wastelands:blocks/iwbrust",
+    "west": "fallout_wastelands:blocks/iwbrust",
+    "particle": "fallout_wastelands:blocks/igside"
+  }
+}

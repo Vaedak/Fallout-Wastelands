@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/bosmetalplatingtop",
+    "up": "fallout_wastelands:blocks/bosmetalplatingtop",
+    "north": "fallout_wastelands:blocks/bosmetalplatingside",
+    "east": "fallout_wastelands:blocks/bosmetalplatingside",
+    "south": "fallout_wastelands:blocks/bosmetalplatingside",
+    "west": "fallout_wastelands:blocks/bosmetalplatingside",
+    "particle": "fallout_wastelands:blocks/bosmetalplatingtop"
+  }
+}

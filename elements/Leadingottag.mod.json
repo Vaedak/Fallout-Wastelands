@@ -1,0 +1,16 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Leadingot"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "ingots/lead",
+    "namespace": "forge"
+  }
+}

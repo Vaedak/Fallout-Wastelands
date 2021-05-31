@@ -1,0 +1,44 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [
+      {
+        "value": "CUSTOM:Charredplank"
+      },
+      {
+        "value": "CUSTOM:Charredplanksstairs"
+      },
+      {
+        "value": "CUSTOM:Charredplankslab"
+      },
+      {
+        "value": "CUSTOM:Charredplankfence"
+      },
+      {
+        "value": "CUSTOM:Rottenplanks"
+      },
+      {
+        "value": "CUSTOM:Rottenplanksstairs"
+      },
+      {
+        "value": "CUSTOM:Rottenplanksslab"
+      },
+      {
+        "value": "CUSTOM:Rottenplankfence"
+      }
+    ],
+    "blocks": [
+      {
+        "value": "CUSTOM:Charredplank"
+      },
+      {
+        "value": "CUSTOM:Rottenplanks"
+      }
+    ],
+    "functions": [],
+    "name": "planks",
+    "namespace": "forge"
+  }
+}

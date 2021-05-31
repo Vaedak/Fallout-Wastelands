@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "1": {
+      "item": "minecraft:white_dye"
+    },
+    "2": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "3": {
+      "item": "minecraft:white_dye"
+    },
+    "4": {
+      "item": "fallout_wastelands:wastelandrock"
+    },
+    "5": {
+      "item": "minecraft:white_dye"
+    },
+    "6": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "7": {
+      "item": "minecraft:white_dye"
+    },
+    "8": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:plaster",
+    "count": 16
+  }
+}

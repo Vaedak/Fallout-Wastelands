@@ -1,0 +1,16 @@
+{
+  "_fv": 18,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Steelingot"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "name": "ingots/steel",
+    "namespace": "forge"
+  }
+}

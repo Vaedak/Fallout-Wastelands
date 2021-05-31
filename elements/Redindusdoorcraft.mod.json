@@ -1,0 +1,46 @@
+{
+  "_fv": 18,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 3,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.IRON_INGOT"
+      },
+      {
+        "value": "Items.IRON_INGOT"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Redindusrivetmid"
+      },
+      {
+        "value": "CUSTOM:Redindusrivetmid"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Redindustrialrivetdown"
+      },
+      {
+        "value": "CUSTOM:Redindustrialrivetdown"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Redindustrialdoor"
+    },
+    "name": "redindusdoorcraft",
+    "namespace": "mod"
+  }
+}

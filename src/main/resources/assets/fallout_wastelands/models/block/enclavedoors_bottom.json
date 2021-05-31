@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/enclavedoorblock2",
+    "top": "fallout_wastelands:blocks/enclavedoorblock"
+  }
+}

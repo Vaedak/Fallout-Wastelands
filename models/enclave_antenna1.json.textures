@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "enclave_antenna_texture"
+      },
+      "name": "default"
+    }
+  }
+}

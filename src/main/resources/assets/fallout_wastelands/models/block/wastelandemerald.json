@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/emeralwastelandore",
+    "up": "fallout_wastelands:blocks/emeralwastelandore",
+    "north": "fallout_wastelands:blocks/emeralwastelandore",
+    "east": "fallout_wastelands:blocks/emeralwastelandore",
+    "south": "fallout_wastelands:blocks/emeralwastelandore",
+    "west": "fallout_wastelands:blocks/emeralwastelandore",
+    "particle": "fallout_wastelands:blocks/emeralwastelandore"
+  }
+}

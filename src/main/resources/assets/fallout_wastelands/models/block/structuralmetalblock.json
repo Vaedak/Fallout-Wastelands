@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/metallicstructure1",
+    "up": "fallout_wastelands:blocks/metallicstructure1",
+    "north": "fallout_wastelands:blocks/metallicstructure1",
+    "east": "fallout_wastelands:blocks/metallicstructure1",
+    "south": "fallout_wastelands:blocks/metallicstructure1",
+    "west": "fallout_wastelands:blocks/metallicstructure1",
+    "particle": "fallout_wastelands:blocks/metallicstructure1"
+  }
+}
