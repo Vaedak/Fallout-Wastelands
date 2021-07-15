@@ -14,6 +14,7 @@ import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -73,6 +74,8 @@ public class HighwaymantrunkGuiWindow extends ContainerScreen<HighwaymantrunkGui
 		this.font.drawString(ms, "Fuel", 10, 191, -10066330);
 		this.font.drawString(ms, "Disc", 208, 191, -10066330);
 		this.font.drawString(ms, "Car Trunk", 1, 11, -10066330);
+		this.font.drawString(ms, "" + (int) ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Fuel) + "", 3, 223, -12829636);
 	}
 
 	@Override
@@ -89,6 +92,12 @@ public class HighwaymantrunkGuiWindow extends ContainerScreen<HighwaymantrunkGui
 			if (true) {
 				FalloutWastelandsMod.PACKET_HANDLER.sendToServer(new HighwaymantrunkGui.ButtonPressedMessage(0, x, y, z));
 				HighwaymantrunkGui.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 30, this.guiTop + 199, 30, 20, new StringTextComponent(" Add"), e -> {
+			if (true) {
+				FalloutWastelandsMod.PACKET_HANDLER.sendToServer(new HighwaymantrunkGui.ButtonPressedMessage(1, x, y, z));
+				HighwaymantrunkGui.handleButtonAction(entity, 1, x, y, z);
 			}
 		}));
 	}

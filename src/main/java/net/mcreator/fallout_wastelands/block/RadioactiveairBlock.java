@@ -93,6 +93,7 @@ public class RadioactiveairBlock extends FalloutWastelandsModElements.ModElement
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
+				$_dependencies.put("world", world);
 				RadioactiveairEntityCollidesInTheBlockProcedure.executeProcedure($_dependencies);
 			}
 		}
