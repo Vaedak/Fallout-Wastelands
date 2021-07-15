@@ -1003,7 +1003,43 @@
           "x": 312,
           "y": 93
         }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": " Add",
+          "onClick": {
+            "name": "AddFuel"
+          },
+          "width": 30,
+          "height": 20,
+          "name": " Add",
+          "x": 125,
+          "y": 200
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:integer:Fuel>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:integer:Fuel>",
+          "x": 98,
+          "y": 224
+        }
       }
-    ]
+    ],
+    "onOpen": {
+      "name": "HighwaymantrunkThisGUIIsOpened"
+    },
+    "onTick": {
+      "name": "HighwaymantrunkWhileThisGUIIsOpenTick"
+    },
+    "onClosed": {
+      "name": "HighwaymantrunkThisGUIIsOpened"
+    }
   }
 }

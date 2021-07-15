@@ -10,7 +10,9 @@ import net.minecraftforge.fml.network.IContainerFactory;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -28,8 +30,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.gui.ScreenManager;
 
+import net.mcreator.fallout_wastelands.procedures.HighwaymantrunkWhileThisGUIIsOpenTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.HighwaymantrunkThisGUIIsOpenedProcedure;
 import net.mcreator.fallout_wastelands.procedures.HighwaymandiscplayingProcedure;
 import net.mcreator.fallout_wastelands.procedures.CloseGUIProcedure;
+import net.mcreator.fallout_wastelands.procedures.AddFuelProcedure;
 import net.mcreator.fallout_wastelands.item.FueljerricanItem;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
@@ -50,6 +55,7 @@ public class HighwaymantrunkGui extends FalloutWastelandsModElements.ModElement 
 				GUISlotChangedMessage::handler);
 		containerType = new ContainerType<>(new GuiContainerModFactory());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ContainerRegisterHandler());
+		MinecraftForge.EVENT_BUS.register(this);
 	}
 	private static class ContainerRegisterHandler {
 		@SubscribeEvent
@@ -60,6 +66,26 @@ public class HighwaymantrunkGui extends FalloutWastelandsModElements.ModElement 
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
 		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, HighwaymantrunkGuiWindow::new));
+	}
+
+	@SubscribeEvent
+	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		PlayerEntity entity = event.player;
+		if (event.phase == TickEvent.Phase.END && entity.openContainer instanceof GuiContainerMod) {
+			World world = entity.world;
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				HighwaymantrunkWhileThisGUIIsOpenTickProcedure.executeProcedure($_dependencies);
+			}
+		}
 	}
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {
@@ -266,6 +292,11 @@ public class HighwaymantrunkGui extends FalloutWastelandsModElements.ModElement 
 					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 31 + 8 + sj * 18, 36 + 84 + si * 18));
 			for (si = 0; si < 9; ++si)
 				this.addSlot(new Slot(inv, si, 31 + 8 + si * 18, 36 + 142));
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				HighwaymantrunkThisGUIIsOpenedProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		public Map<Integer, Slot> get() {
@@ -398,6 +429,11 @@ public class HighwaymantrunkGui extends FalloutWastelandsModElements.ModElement 
 		@Override
 		public void onContainerClosed(PlayerEntity playerIn) {
 			super.onContainerClosed(playerIn);
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				HighwaymantrunkThisGUIIsOpenedProcedure.executeProcedure($_dependencies);
+			}
 			if (!bound && (playerIn instanceof ServerPlayerEntity)) {
 				if (!playerIn.isAlive() || playerIn instanceof ServerPlayerEntity && ((ServerPlayerEntity) playerIn).hasDisconnected()) {
 					for (int j = 0; j < internal.getSlots(); ++j) {
@@ -779,6 +815,17 @@ public class HighwaymantrunkGui extends FalloutWastelandsModElements.ModElement 
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
 				CloseGUIProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 1) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				AddFuelProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

@@ -56,7 +56,9 @@ import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.fallout_wastelands.procedures.HighwaymanPlayerCollidesWithThisEntityProcedure;
 import net.mcreator.fallout_wastelands.procedures.HighwaymanOnEntityTickUpdatetest2Procedure;
+import net.mcreator.fallout_wastelands.procedures.HighwaymanFuelUseTickProcedure;
 import net.mcreator.fallout_wastelands.gui.HighwaymantrunkGui;
 import net.mcreator.fallout_wastelands.entity.renderer.HighwaymanRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
@@ -73,8 +75,8 @@ import io.netty.buffer.Unpooled;
 @FalloutWastelandsModElements.ModElement.Tag
 public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(5f, 3f))
-					.build("highwayman").setRegistryName("highwayman");
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
+			.size(3.9999999999999996f, 3f)).build("highwayman").setRegistryName("highwayman");
 	public HighwaymanEntity(FalloutWastelandsModElements instance) {
 		super(instance, 475);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new HighwaymanRenderer.ModelRegisterHandler());
@@ -255,6 +257,38 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 				HighwaymanOnEntityTickUpdatetest2Procedure.executeProcedure($_dependencies);
 			}
 			return retval;
+		}
+
+		@Override
+		public void baseTick() {
+			super.baseTick();
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity entity = this;
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				HighwaymanFuelUseTickProcedure.executeProcedure($_dependencies);
+			}
+		}
+
+		@Override
+		public void onCollideWithPlayer(PlayerEntity sourceentity) {
+			super.onCollideWithPlayer(sourceentity);
+			Entity entity = this;
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("sourceentity", sourceentity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				HighwaymanPlayerCollidesWithThisEntityProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		@Override

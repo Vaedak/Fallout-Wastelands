@@ -7,7 +7,7 @@
     "mobModelName": "Modelhighwayman",
     "mobModelTexture": "highwaytwo.png",
     "mobModelGlowTexture": "highwaylights.png",
-    "modelWidth": 5.0,
+    "modelWidth": 3.9999999999999996,
     "modelHeight": 3.0,
     "modelShadowSize": 1.0,
     "mountedYOffset": -2.0,
@@ -100,6 +100,12 @@
     "particleAmount": 2,
     "onRightClickedOn": {
       "name": "HighwaymanOnEntityTickUpdatetest2"
+    },
+    "onMobTickUpdate": {
+      "name": "HighwaymanFuelUseTick"
+    },
+    "onPlayerCollidesWith": {
+      "name": "HighwaymanPlayerCollidesWithThisEntity"
     },
     "hasAI": true,
     "aiBase": "(none)",
