@@ -205,6 +205,7 @@ public class FalloutWastelandsModVariables {
 			CompoundNBT nbt = new CompoundNBT();
 			nbt.putBoolean("Radioactivity1", instance.Radioactivity1);
 			nbt.putString("Radiation2", instance.Radiation2);
+			nbt.putDouble("Fuel", instance.Fuel);
 			return nbt;
 		}
 
@@ -213,12 +214,14 @@ public class FalloutWastelandsModVariables {
 			CompoundNBT nbt = (CompoundNBT) inbt;
 			instance.Radioactivity1 = nbt.getBoolean("Radioactivity1");
 			instance.Radiation2 = nbt.getString("Radiation2");
+			instance.Fuel = nbt.getDouble("Fuel");
 		}
 	}
 
 	public static class PlayerVariables {
 		public boolean Radioactivity1 = false;
 		public String Radiation2 = "";
+		public double Fuel = 0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				FalloutWastelandsMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -252,6 +255,7 @@ public class FalloutWastelandsModVariables {
 				.orElse(new PlayerVariables()));
 		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 		clone.Radiation2 = original.Radiation2;
+		clone.Fuel = original.Fuel;
 		if (!event.isWasDeath()) {
 			clone.Radioactivity1 = original.Radioactivity1;
 		}
@@ -279,6 +283,7 @@ public class FalloutWastelandsModVariables {
 							.orElse(new PlayerVariables()));
 					variables.Radioactivity1 = message.data.Radioactivity1;
 					variables.Radiation2 = message.data.Radiation2;
+					variables.Fuel = message.data.Fuel;
 				}
 			});
 			context.setPacketHandled(true);
