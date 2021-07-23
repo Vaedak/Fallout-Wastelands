@@ -2,6 +2,7 @@
 package net.mcreator.fallout_wastelands.block;
 
 import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.common.ToolType;
 
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
@@ -33,7 +34,8 @@ public class Vaultwall1Block extends FalloutWastelandsModElements.ModElement {
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.ROCK).sound(SoundType.GROUND).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
+			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(6f, 25f).setLightLevel(s -> 0).harvestLevel(2)
+					.harvestTool(ToolType.PICKAXE).setRequiresTool());
 			setRegistryName("vaultwall_1");
 		}
 

@@ -1,0 +1,69 @@
+{
+  "_fv": 18,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "overseer1_0.png",
+          "use1Xscale": true,
+          "name": "overseer1_0.png",
+          "x": 42,
+          "y": -1
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 161
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 179
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 197
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 215
+        }
+      }
+    ]
+  }
+}

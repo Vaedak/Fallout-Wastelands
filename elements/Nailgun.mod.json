@@ -17,7 +17,7 @@
     "shootConstantly": false,
     "usageCount": 500,
     "actionSound": {
-      "value": "block.anvil.hit"
+      "value": "CUSTOM:rbshot"
     },
     "hasGlow": false,
     "animation": "none",

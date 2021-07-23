@@ -313,5 +313,59 @@
         "stream": true
       }
     ]
+  },
+  "ninemmshot": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:9mmshoot",
+        "stream": false
+      }
+    ]
+  },
+  "ninemmshotb": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:9mmshootb",
+        "stream": false
+      }
+    ]
+  },
+  "tenmmshootb": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:10mmshootb",
+        "stream": false
+      }
+    ]
+  },
+  "rbshot": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:robotbrainshootreworked",
+        "stream": false
+      }
+    ]
+  },
+  "tenmmc": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:10mmshootc",
+        "stream": false
+      }
+    ]
+  },
+  "portalentrance": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:portalb1",
+        "stream": false
+      }
+    ]
   }
 }

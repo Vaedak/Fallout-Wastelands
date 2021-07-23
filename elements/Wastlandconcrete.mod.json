@@ -34,7 +34,7 @@
     ],
     "name": "Old Concrete",
     "specialInfo": [],
-    "hardness": 7.0,
+    "hardness": 4.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,

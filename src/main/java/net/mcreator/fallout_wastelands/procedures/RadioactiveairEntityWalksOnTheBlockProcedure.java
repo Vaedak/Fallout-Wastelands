@@ -1,8 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.world.IWorld;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
@@ -25,19 +23,17 @@ public class RadioactiveairEntityWalksOnTheBlockProcedure extends FalloutWastela
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure RadioactiveairEntityWalksOnTheBlock!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure RadioactiveairEntityWalksOnTheBlock!");
-			return;
-		}
 		Entity entity = (Entity) dependencies.get("entity");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((entity instanceof PlayerEntity)) {
-			FalloutWastelandsModVariables.WorldVariables
-					.get(world).Radioacitvity = (double) ((FalloutWastelandsModVariables.WorldVariables.get(world).Radioacitvity) + 1);
-			FalloutWastelandsModVariables.WorldVariables.get(world).syncData(world);
+		{
+			double _setval = (double) (((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Radioacitvity) + 1);
+			entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.Radioacitvity = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
-		if (((FalloutWastelandsModVariables.WorldVariables.get(world).Radioacitvity) >= 1)) {
+		if ((((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Radioacitvity) >= 1)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotion.potion, (int) 600, (int) 1));
 		}

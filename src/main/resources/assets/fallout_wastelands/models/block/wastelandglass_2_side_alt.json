@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_glass_pane_side_alt",
+  "textures": {
+    "edge": "fallout_wastelands:blocks/wastelandglass1",
+    "pane": "fallout_wastelands:blocks/wastelandglass1"
+  }
+}

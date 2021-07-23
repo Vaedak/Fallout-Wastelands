@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/vaultfloora",
+    "up": "fallout_wastelands:blocks/vaultfloora",
+    "north": "fallout_wastelands:blocks/vaultfloora",
+    "east": "fallout_wastelands:blocks/vaultfloora",
+    "south": "fallout_wastelands:blocks/vaultfloora",
+    "west": "fallout_wastelands:blocks/vaultfloora",
+    "particle": "fallout_wastelands:blocks/vaultfloora"
+  }
+}

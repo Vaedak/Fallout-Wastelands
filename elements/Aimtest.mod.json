@@ -1,0 +1,12 @@
+{
+  "_fv": 18,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "SCROLL",
+    "keyBindingName": "Aimtest",
+    "keyBindingCategoryKey": "gameplay",
+    "onKeyPressed": {
+      "name": "AimtestOnKeyPressed"
+    }
+  }
+}

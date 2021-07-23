@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fallout_wastelands:block/metalchair"
+    },
+    "facing=east": {
+      "model": "fallout_wastelands:block/metalchair",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fallout_wastelands:block/metalchair",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fallout_wastelands:block/metalchair",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "fallout_wastelands:block/metalchair",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "fallout_wastelands:block/metalchair",
+      "x": 90
+    }
+  }
+}

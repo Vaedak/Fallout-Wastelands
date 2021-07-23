@@ -60,16 +60,13 @@
     "jumpFactor": 1.0,
     "speedFactor": 1.0,
     "canBePlacedOn": [],
-    "frequencyOnChunks": 3,
+    "frequencyOnChunks": 1,
     "spawnWorldTypes": [
       "CUSTOM:Wasteland"
     ],
     "restrictionBiomes": [
       {
         "value": "CUSTOM:Desertwastland"
-      },
-      {
-        "value": "CUSTOM:Capitalwastelandeast"
       }
     ]
   }

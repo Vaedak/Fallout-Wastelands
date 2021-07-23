@@ -1,0 +1,8 @@
+{
+  "parent": "fallout_wastelands:custom/vaultblastdoor",
+  "textures": {
+    "all": "fallout_wastelands:blocks/vault_blastdoorr",
+    "particle": "fallout_wastelands:blocks/vault_blastdoorr",
+    "0": "fallout_wastelands:blocks/vault_blastdoorr"
+  }
+}

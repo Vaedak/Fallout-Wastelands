@@ -17,7 +17,7 @@
     "shootConstantly": false,
     "usageCount": 100,
     "actionSound": {
-      "value": "CUSTOM:robotfireing"
+      "value": "CUSTOM:rbshot"
     },
     "hasGlow": false,
     "animation": "bow",

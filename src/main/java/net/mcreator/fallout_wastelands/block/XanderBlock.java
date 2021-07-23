@@ -99,7 +99,7 @@ public class XanderBlock extends FalloutWastelandsModElements.ModElement {
 					.withConfiguration(
 							(new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(block.getDefaultState()), new SimpleBlockPlacer()))
 									.tries(64).build())
-					.withPlacement(Features.Placements.VEGETATION_PLACEMENT).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).func_242731_b(3);
+					.withPlacement(Features.Placements.VEGETATION_PLACEMENT).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).func_242731_b(1);
 			event.getRegistry().register(feature.setRegistryName("xander"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("fallout_wastelands:xander"), configuredFeature);
 		}
@@ -108,8 +108,6 @@ public class XanderBlock extends FalloutWastelandsModElements.ModElement {
 	public void addFeatureToBiomes(BiomeLoadingEvent event) {
 		boolean biomeCriteria = false;
 		if (new ResourceLocation("fallout_wastelands:desertwastland").equals(event.getName()))
-			biomeCriteria = true;
-		if (new ResourceLocation("fallout_wastelands:capitalwastelandeast").equals(event.getName()))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;

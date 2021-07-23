@@ -1,0 +1,8 @@
+{
+  "parent": "fallout_wastelands:custom/filing_cabinets",
+  "textures": {
+    "all": "fallout_wastelands:blocks/filing_cabinets",
+    "particle": "fallout_wastelands:blocks/filing_cabinets",
+    "0": "fallout_wastelands:blocks/filing_cabinets"
+  }
+}
