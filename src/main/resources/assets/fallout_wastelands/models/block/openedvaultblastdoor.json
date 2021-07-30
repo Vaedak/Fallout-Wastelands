@@ -1,5 +1,5 @@
 {
-  "parent": "fallout_wastelands:custom/openvaultblastdoor",
+  "parent": "fallout_wastelands:custom/openvaultblastdoorfix",
   "textures": {
     "all": "fallout_wastelands:blocks/openblastdoor",
     "particle": "fallout_wastelands:blocks/openblastdoor",

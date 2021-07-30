@@ -1,5 +1,5 @@
 {
-  "parent": "fallout_wastelands:custom/metalchair",
+  "parent": "fallout_wastelands:custom/metalchairfixed",
   "textures": {
     "all": "fallout_wastelands:blocks/metalchair",
     "particle": "fallout_wastelands:blocks/metalchair",

@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:wastelandtile"
+    },
+    "1": {
+      "item": "fallout_wastelands:wastelandtile"
+    },
+    "2": {
+      "item": "fallout_wastelands:wastelandtile"
+    },
+    "3": {
+      "item": "fallout_wastelands:wastelandtile"
+    },
+    "4": {
+      "item": "fallout_wastelands:vaulttecplating"
+    },
+    "5": {
+      "item": "fallout_wastelands:wastelandtile"
+    },
+    "6": {
+      "item": "fallout_wastelands:wastelandtile"
+    },
+    "7": {
+      "item": "fallout_wastelands:wastelandtile"
+    },
+    "8": {
+      "item": "fallout_wastelands:wastelandtile"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:vaultkitchenblocks",
+    "count": 8
+  }
+}

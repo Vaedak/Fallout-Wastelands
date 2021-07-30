@@ -10,6 +10,7 @@
       }
     ],
     "functions": [],
+    "entities": [],
     "name": "ores/iron",
     "namespace": "forge"
   }

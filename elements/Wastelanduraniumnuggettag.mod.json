@@ -10,6 +10,7 @@
     ],
     "blocks": [],
     "functions": [],
+    "entities": [],
     "name": "nuggets/uranium",
     "namespace": "forge"
   }

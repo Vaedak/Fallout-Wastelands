@@ -64,6 +64,10 @@
     },
     "offsetType": "NONE",
     "aiPathNodeType": "DEFAULT",
+    "beaconColorModifier": {
+      "value": -8877707,
+      "falpha": 0.0
+    },
     "flammability": 0,
     "fireSpreadSpeed": 0,
     "isLadder": false,

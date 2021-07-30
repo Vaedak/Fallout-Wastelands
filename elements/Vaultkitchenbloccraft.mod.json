@@ -1,0 +1,46 @@
+{
+  "_fv": 18,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 8,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Wastelandtile"
+      },
+      {
+        "value": "CUSTOM:Wastelandtile"
+      },
+      {
+        "value": "CUSTOM:Wastelandtile"
+      },
+      {
+        "value": "CUSTOM:Wastelandtile"
+      },
+      {
+        "value": "CUSTOM:Vaulttecplating"
+      },
+      {
+        "value": "CUSTOM:Wastelandtile"
+      },
+      {
+        "value": "CUSTOM:Wastelandtile"
+      },
+      {
+        "value": "CUSTOM:Wastelandtile"
+      },
+      {
+        "value": "CUSTOM:Wastelandtile"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Vaultkitchenblocks"
+    },
+    "name": "vaultkitchenbloccraft",
+    "namespace": "mod"
+  }
+}

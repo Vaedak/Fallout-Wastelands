@@ -6,6 +6,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.loot.LootContext;
@@ -50,6 +51,11 @@ public class WastelandglassBlock extends FalloutWastelandsModElements.ModElement
 			super(Block.Properties.create(Material.GLASS).sound(SoundType.GLASS).hardnessAndResistance(0.5f, 0.4f).setLightLevel(s -> 0).notSolid()
 					.setOpaque((bs, br, bp) -> false));
 			setRegistryName("wastelandglass");
+		}
+
+		@Override
+		public float[] getBeaconColorMultiplier(BlockState state, IWorldReader world, BlockPos pos, BlockPos beaconPos) {
+			return new float[]{0.470588235294f, 0.537254901961f, 0.458823529412f};
 		}
 
 		@Override

@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "1": {
+      "item": "fallout_wastelands:sheetmetalplating"
+    },
+    "2": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "3": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "4": {
+      "item": "fallout_wastelands:sheetmetalplating"
+    },
+    "5": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "6": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "7": {
+      "item": "fallout_wastelands:sheetmetalplating"
+    },
+    "8": {
+      "item": "fallout_wastelands:aluminiumingot"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:fridge",
+    "count": 1
+  }
+}

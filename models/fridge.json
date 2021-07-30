@@ -1,0 +1,51 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "Desktop/Frigde",
+		"particle": "Desktop/Frigde"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 1],
+			"to": [15, 32, 15],
+			"faces": {
+				"north": {"uv": [0, 0, 3.5, 8], "texture": "#0"},
+				"east": {"uv": [3.5, 0, 7, 8], "texture": "#0"},
+				"south": {"uv": [7, 0, 10.5, 8], "texture": "#0"},
+				"west": {"uv": [0, 8, 3.5, 16], "texture": "#0"},
+				"up": {"uv": [7, 11.5, 3.5, 8], "texture": "#0"},
+				"down": {"uv": [10.5, 8, 7, 11.5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [80, 0, 0],
+			"scale": [0.34, 0.36, 0.34]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [77, 0, 0],
+			"scale": [0.36, 0.36, 0.36]
+		},
+		"firstperson_righthand": {
+			"translation": [7, -6.5, 0],
+			"scale": [0.59, 0.59, 0.59]
+		},
+		"firstperson_lefthand": {
+			"translation": [5, -6.25, 0],
+			"scale": [0.59, 0.59, 0.59]
+		},
+		"ground": {
+			"scale": [0.46, 0.44, 0.46]
+		},
+		"gui": {
+			"rotation": [39, -129, 1],
+			"translation": [0, -2, 0],
+			"scale": [0.36, 0.36, 0.38]
+		},
+		"fixed": {
+			"translation": [0, -8, 0]
+		}
+	}
+}

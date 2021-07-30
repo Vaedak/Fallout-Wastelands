@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:vaultwall_3"
+    },
+    "1": {
+      "item": "fallout_wastelands:vaultwall_3"
+    },
+    "2": {
+      "item": "fallout_wastelands:vaultwall_3"
+    },
+    "3": {
+      "item": "fallout_wastelands:vaultwall_3"
+    },
+    "4": {
+      "item": "fallout_wastelands:yellowpaintcan"
+    },
+    "5": {
+      "item": "fallout_wastelands:vaultwall_3"
+    },
+    "6": {
+      "item": "fallout_wastelands:vaultwall_3"
+    },
+    "7": {
+      "item": "fallout_wastelands:vaultwall_3"
+    },
+    "8": {
+      "item": "fallout_wastelands:vaultwall_3"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:vaultwall_2",
+    "count": 8
+  }
+}

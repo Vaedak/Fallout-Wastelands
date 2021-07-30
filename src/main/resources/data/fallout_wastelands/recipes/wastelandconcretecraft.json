@@ -6,6 +6,12 @@
       "item": "fallout_wastelands:wastlandstone"
     },
     {
+      "item": "fallout_wastelands:wastlandstone"
+    },
+    {
+      "item": "fallout_wastelands:wastlandstone"
+    },
+    {
       "item": "minecraft:flint"
     },
     {
@@ -14,6 +20,6 @@
   ],
   "result": {
     "item": "fallout_wastelands:wastlandconcrete",
-    "count": 16
+    "count": 32
   }
 }

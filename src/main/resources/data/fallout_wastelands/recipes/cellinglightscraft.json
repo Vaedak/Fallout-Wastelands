@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:iron_ingot"
+    },
+    "1": {
+      "item": "minecraft:redstone"
+    },
+    "2": {
+      "item": "minecraft:iron_ingot"
+    },
+    "3": {
+      "item": "minecraft:redstone_torch"
+    },
+    "4": {
+      "item": "minecraft:tripwire"
+    },
+    "5": {
+      "item": "minecraft:redstone_torch"
+    },
+    "6": {
+      "item": "fallout_wastelands:wastelandglassblock"
+    },
+    "7": {
+      "item": "fallout_wastelands:wastelandglassblock"
+    },
+    "8": {
+      "item": "fallout_wastelands:wastelandglassblock"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:cellinglights",
+    "count": 12
+  }
+}

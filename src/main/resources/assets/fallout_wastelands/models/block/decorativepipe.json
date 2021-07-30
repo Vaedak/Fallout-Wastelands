@@ -1,0 +1,8 @@
+{
+  "parent": "fallout_wastelands:custom/pipesfix",
+  "textures": {
+    "all": "fallout_wastelands:blocks/pipetexture",
+    "particle": "fallout_wastelands:blocks/pipetexture",
+    "0": "fallout_wastelands:blocks/pipetexture"
+  }
+}

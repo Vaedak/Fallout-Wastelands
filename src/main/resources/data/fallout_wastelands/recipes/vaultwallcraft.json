@@ -1,0 +1,42 @@
+{
+  "group": "fallout_wastelands",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "1": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "2": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "3": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "4": {
+      "item": "fallout_wastelands:vaulttecplating"
+    },
+    "5": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "6": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "7": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    },
+    "8": {
+      "item": "fallout_wastelands:wastlandconcrete"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:vaultwall_3",
+    "count": 32
+  }
+}

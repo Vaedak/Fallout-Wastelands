@@ -9,7 +9,7 @@
     "textureRight": "",
     "textureBack": "",
     "renderType": 2,
-    "customModelName": "metalchair:default",
+    "customModelName": "metalchairfixed:default",
     "rotationMode": 2,
     "emissiveRendering": false,
     "displayFluidOverlay": false,

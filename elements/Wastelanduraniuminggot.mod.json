@@ -10,6 +10,7 @@
     ],
     "blocks": [],
     "functions": [],
+    "entities": [],
     "name": "ingots/uranium",
     "namespace": "forge"
   }
