@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fallout_wastelands:block/vault_door_animation_0"
+    },
+    "facing=east": {
+      "model": "fallout_wastelands:block/vault_door_animation_0",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fallout_wastelands:block/vault_door_animation_0",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fallout_wastelands:block/vault_door_animation_0",
+      "y": 270
+    }
+  }
+}

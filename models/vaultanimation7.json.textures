@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "1": "vaultframeforanimationimportant",
+        "door out": "vaultgeardoorout"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -6786,6 +6786,4016 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "vaultkitchenbloccraft"
+    },
+    {
+      "name": "VaultDoor",
+      "type": "block",
+      "sortid": 636,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door"
+    },
+    {
+      "name": "VaultDoorBlockAdded",
+      "type": "procedure",
+      "sortid": 637,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VaultDoorTopPart",
+      "type": "block",
+      "sortid": 638,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_top_part"
+    },
+    {
+      "name": "VaultDoorFiller",
+      "type": "block",
+      "sortid": 639,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_filler"
+    },
+    {
+      "name": "VaultDoorUpdateTick",
+      "type": "procedure",
+      "sortid": 640,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VaultDoorFillerUpdateTick",
+      "type": "procedure",
+      "sortid": 641,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_filler_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VaultDoorTopPartUpdateTick",
+      "type": "procedure",
+      "sortid": 642,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_top_part_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VaultDoorAnimation0",
+      "type": "block",
+      "sortid": 643,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_animation_0"
+    },
+    {
+      "name": "VaultDoorAnimationControl",
+      "type": "procedure",
+      "sortid": 644,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_animation_control",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation1",
+      "type": "block",
+      "sortid": 645,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_1"
+    },
+    {
+      "name": "Vaultanimation2",
+      "type": "block",
+      "sortid": 646,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_2"
+    },
+    {
+      "name": "Vaultanimation3",
+      "type": "block",
+      "sortid": 647,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_3"
+    },
+    {
+      "name": "Vaultanimation4",
+      "type": "block",
+      "sortid": 648,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_4"
+    },
+    {
+      "name": "Vaultanimation5",
+      "type": "block",
+      "sortid": 649,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_5"
+    },
+    {
+      "name": "Vaultanimation6",
+      "type": "block",
+      "sortid": 650,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_6"
+    },
+    {
+      "name": "Vaultanimation7",
+      "type": "block",
+      "sortid": 651,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_7"
+    },
+    {
+      "name": "Vaultanimation8",
+      "type": "block",
+      "sortid": 652,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_8"
+    },
+    {
+      "name": "Vaultanimation10",
+      "type": "block",
+      "sortid": 653,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_10"
+    },
+    {
+      "name": "Vaultanimation9",
+      "type": "block",
+      "sortid": 654,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_9"
+    },
+    {
+      "name": "Vaultanimation11",
+      "type": "block",
+      "sortid": 655,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_11"
+    },
+    {
+      "name": "Vaultanimation12",
+      "type": "block",
+      "sortid": 656,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_12"
+    },
+    {
+      "name": "Vaultanimation13",
+      "type": "block",
+      "sortid": 657,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_13"
+    },
+    {
+      "name": "Vaultanimation14",
+      "type": "block",
+      "sortid": 658,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_14"
+    },
+    {
+      "name": "Vaultanimation15",
+      "type": "block",
+      "sortid": 659,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_15"
+    },
+    {
+      "name": "Vaultanimation16",
+      "type": "block",
+      "sortid": 660,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_16"
+    },
+    {
+      "name": "Vaultanimation17",
+      "type": "block",
+      "sortid": 661,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_17"
+    },
+    {
+      "name": "Vaultanimation18",
+      "type": "block",
+      "sortid": 662,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_18"
+    },
+    {
+      "name": "Vaultanimation19",
+      "type": "block",
+      "sortid": 663,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_19"
+    },
+    {
+      "name": "Vaultanimation20",
+      "type": "block",
+      "sortid": 664,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_20"
+    },
+    {
+      "name": "Vaultanimation1UpdateTick",
+      "type": "procedure",
+      "sortid": 665,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_1_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation2UpdateTick",
+      "type": "procedure",
+      "sortid": 666,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_2_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation3UpdateTick",
+      "type": "procedure",
+      "sortid": 667,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_3_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation4UpdateTick",
+      "type": "procedure",
+      "sortid": 668,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_4_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation5UpdateTick",
+      "type": "procedure",
+      "sortid": 669,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_5_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation6UpdateTick",
+      "type": "procedure",
+      "sortid": 670,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_6_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation7UpdateTick",
+      "type": "procedure",
+      "sortid": 671,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_7_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation8UpdateTick",
+      "type": "procedure",
+      "sortid": 672,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_8_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation9UpdateTick",
+      "type": "procedure",
+      "sortid": 673,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_9_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation10UpdateTick",
+      "type": "procedure",
+      "sortid": 674,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_10_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation11UpdateTick",
+      "type": "procedure",
+      "sortid": 675,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_11_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation12UpdateTick",
+      "type": "procedure",
+      "sortid": 676,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_12_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation13UpdateTick",
+      "type": "procedure",
+      "sortid": 677,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_13_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation14UpdateTick",
+      "type": "procedure",
+      "sortid": 678,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_14_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation15UpdateTick",
+      "type": "procedure",
+      "sortid": 679,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_15_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VaultDoorAnimation0UpdateTick",
+      "type": "procedure",
+      "sortid": 680,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_animation_0_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation21",
+      "type": "block",
+      "sortid": 681,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_21"
+    },
+    {
+      "name": "Vaultanimation22",
+      "type": "block",
+      "sortid": 682,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_22"
+    },
+    {
+      "name": "Vaultanimation23",
+      "type": "block",
+      "sortid": 683,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_23"
+    },
+    {
+      "name": "Vaultanimation24",
+      "type": "block",
+      "sortid": 684,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_24"
+    },
+    {
+      "name": "Vaultanimation25",
+      "type": "block",
+      "sortid": 685,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_25"
+    },
+    {
+      "name": "Vaultanimation26",
+      "type": "block",
+      "sortid": 686,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_26"
+    },
+    {
+      "name": "Vaultanimation27",
+      "type": "block",
+      "sortid": 687,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_27"
+    },
+    {
+      "name": "Vaultanimation28",
+      "type": "block",
+      "sortid": 688,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_28"
+    },
+    {
+      "name": "Vaultanimation29",
+      "type": "block",
+      "sortid": 689,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_29"
+    },
+    {
+      "name": "Vaultanimation30",
+      "type": "block",
+      "sortid": 690,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_30"
+    },
+    {
+      "name": "Vaultanimation31",
+      "type": "block",
+      "sortid": 691,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_31"
+    },
+    {
+      "name": "Vaultanimation32",
+      "type": "block",
+      "sortid": 692,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_32"
+    },
+    {
+      "name": "Vaultanimation33",
+      "type": "block",
+      "sortid": 693,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_33"
+    },
+    {
+      "name": "Vaultanimation34",
+      "type": "block",
+      "sortid": 694,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_34"
+    },
+    {
+      "name": "Vaultanimation35",
+      "type": "block",
+      "sortid": 695,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_35"
+    },
+    {
+      "name": "Vaultanimation36",
+      "type": "block",
+      "sortid": 696,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_36"
+    },
+    {
+      "name": "Vaultanimation37",
+      "type": "block",
+      "sortid": 697,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_37"
+    },
+    {
+      "name": "Vaultanimation38",
+      "type": "block",
+      "sortid": 698,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_38"
+    },
+    {
+      "name": "Vaultanimation39",
+      "type": "block",
+      "sortid": 699,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_39"
+    },
+    {
+      "name": "Vaultanimation40",
+      "type": "block",
+      "sortid": 700,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_40"
+    },
+    {
+      "name": "Vaultanimation21UpdateTick",
+      "type": "procedure",
+      "sortid": 701,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_21_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation22UpdateTick",
+      "type": "procedure",
+      "sortid": 702,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_22_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation23UpdateTick",
+      "type": "procedure",
+      "sortid": 703,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_23_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation24UpdateTick",
+      "type": "procedure",
+      "sortid": 704,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_24_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation25UpdateTick",
+      "type": "procedure",
+      "sortid": 705,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_25_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation26UpdateTick",
+      "type": "procedure",
+      "sortid": 706,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_26_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation27UpdateTick",
+      "type": "procedure",
+      "sortid": 707,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_27_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation28UpdateTick",
+      "type": "procedure",
+      "sortid": 708,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_28_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation29UpdateTick",
+      "type": "procedure",
+      "sortid": 709,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_29_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation30UpdateTick",
+      "type": "procedure",
+      "sortid": 710,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_30_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation31UpdateTick",
+      "type": "procedure",
+      "sortid": 711,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_31_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation32UpdateTick",
+      "type": "procedure",
+      "sortid": 712,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_32_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation33UpdateTick",
+      "type": "procedure",
+      "sortid": 713,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_33_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation34UpdateTick",
+      "type": "procedure",
+      "sortid": 714,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_34_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation35UpdateTick",
+      "type": "procedure",
+      "sortid": 715,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_35_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation36UpdateTick",
+      "type": "procedure",
+      "sortid": 716,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_36_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation37UpdateTick",
+      "type": "procedure",
+      "sortid": 717,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_37_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation38UpdateTick",
+      "type": "procedure",
+      "sortid": 718,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_38_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation39UpdateTick",
+      "type": "procedure",
+      "sortid": 719,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_39_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation40UpdateTick",
+      "type": "procedure",
+      "sortid": 720,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_40_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation20UpdateTick",
+      "type": "procedure",
+      "sortid": 721,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_20_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation41",
+      "type": "block",
+      "sortid": 722,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_41"
+    },
+    {
+      "name": "Vaultanimation42",
+      "type": "block",
+      "sortid": 723,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_42"
+    },
+    {
+      "name": "Vaultanimation43",
+      "type": "block",
+      "sortid": 724,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_43"
+    },
+    {
+      "name": "Vaultanimation44",
+      "type": "block",
+      "sortid": 725,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_44"
+    },
+    {
+      "name": "Vaultanimation45",
+      "type": "block",
+      "sortid": 726,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_45"
+    },
+    {
+      "name": "Vaultanimation46",
+      "type": "block",
+      "sortid": 727,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_46"
+    },
+    {
+      "name": "Vaultanimation47",
+      "type": "block",
+      "sortid": 728,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_47"
+    },
+    {
+      "name": "Vaultanimation48",
+      "type": "block",
+      "sortid": 729,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_48"
+    },
+    {
+      "name": "Vaultanimation49",
+      "type": "block",
+      "sortid": 730,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_49"
+    },
+    {
+      "name": "Vaultanimation50",
+      "type": "block",
+      "sortid": 731,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_50"
+    },
+    {
+      "name": "Vaultanimation51",
+      "type": "block",
+      "sortid": 732,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_51"
+    },
+    {
+      "name": "Vaultanimation52",
+      "type": "block",
+      "sortid": 733,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_52"
+    },
+    {
+      "name": "Vaultanimation53",
+      "type": "block",
+      "sortid": 734,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_53"
+    },
+    {
+      "name": "Vaultanimation54",
+      "type": "block",
+      "sortid": 735,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_54"
+    },
+    {
+      "name": "Vaultanimation55",
+      "type": "block",
+      "sortid": 736,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_55"
+    },
+    {
+      "name": "Vaultanimation56",
+      "type": "block",
+      "sortid": 737,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_56"
+    },
+    {
+      "name": "Vaultanimation57",
+      "type": "block",
+      "sortid": 738,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_57"
+    },
+    {
+      "name": "Vaultanimation58",
+      "type": "block",
+      "sortid": 739,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_58"
+    },
+    {
+      "name": "Vaultanimation59",
+      "type": "block",
+      "sortid": 740,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_59"
+    },
+    {
+      "name": "Vaultanimation60",
+      "type": "block",
+      "sortid": 741,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_60"
+    },
+    {
+      "name": "Vaultanimation61",
+      "type": "block",
+      "sortid": 742,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_61"
+    },
+    {
+      "name": "Vaultanimation62",
+      "type": "block",
+      "sortid": 743,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_62"
+    },
+    {
+      "name": "Vaultanimation63",
+      "type": "block",
+      "sortid": 744,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_63"
+    },
+    {
+      "name": "Vaultanimation64",
+      "type": "block",
+      "sortid": 745,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_64"
+    },
+    {
+      "name": "Vaultanimation65",
+      "type": "block",
+      "sortid": 746,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_65"
+    },
+    {
+      "name": "Vaultanimation66",
+      "type": "block",
+      "sortid": 747,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_66"
+    },
+    {
+      "name": "Vaultanimation67",
+      "type": "block",
+      "sortid": 748,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_67"
+    },
+    {
+      "name": "Vaultanimation68",
+      "type": "block",
+      "sortid": 749,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_68"
+    },
+    {
+      "name": "Vaultanimation69",
+      "type": "block",
+      "sortid": 750,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_69"
+    },
+    {
+      "name": "Vaultanimation70",
+      "type": "block",
+      "sortid": 751,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_70"
+    },
+    {
+      "name": "Vaultanimation71",
+      "type": "block",
+      "sortid": 752,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_71"
+    },
+    {
+      "name": "Vaultanimation72",
+      "type": "block",
+      "sortid": 753,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_72"
+    },
+    {
+      "name": "Vaultanimation73",
+      "type": "block",
+      "sortid": 754,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_73"
+    },
+    {
+      "name": "Vaultanimation74",
+      "type": "block",
+      "sortid": 755,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_74"
+    },
+    {
+      "name": "Vaultanimation75",
+      "type": "block",
+      "sortid": 756,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_75"
+    },
+    {
+      "name": "Vaultanimation76",
+      "type": "block",
+      "sortid": 757,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_76"
+    },
+    {
+      "name": "Vaultanimation77",
+      "type": "block",
+      "sortid": 758,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_77"
+    },
+    {
+      "name": "Vaultanimation78",
+      "type": "block",
+      "sortid": 759,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_78"
+    },
+    {
+      "name": "Vaultanimation79",
+      "type": "block",
+      "sortid": 760,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_79"
+    },
+    {
+      "name": "Vaultanimation80",
+      "type": "block",
+      "sortid": 761,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_80"
+    },
+    {
+      "name": "Vaultanimation81",
+      "type": "block",
+      "sortid": 762,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_81"
+    },
+    {
+      "name": "Vaultanimation82",
+      "type": "block",
+      "sortid": 763,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_82"
+    },
+    {
+      "name": "Vaultanimation83",
+      "type": "block",
+      "sortid": 764,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_83"
+    },
+    {
+      "name": "Vaultanimation84",
+      "type": "block",
+      "sortid": 765,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_84"
+    },
+    {
+      "name": "Vaultanimation85",
+      "type": "block",
+      "sortid": 766,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_85"
+    },
+    {
+      "name": "Vaultanimation86",
+      "type": "block",
+      "sortid": 767,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_86"
+    },
+    {
+      "name": "Vaultanimation87",
+      "type": "block",
+      "sortid": 768,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_87"
+    },
+    {
+      "name": "Vaultanimation88",
+      "type": "block",
+      "sortid": 769,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_88"
+    },
+    {
+      "name": "Vaultanimation89",
+      "type": "block",
+      "sortid": 770,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_89"
+    },
+    {
+      "name": "Vaultanimation90",
+      "type": "block",
+      "sortid": 771,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_90"
+    },
+    {
+      "name": "Vaultanimation91",
+      "type": "block",
+      "sortid": 772,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_91"
+    },
+    {
+      "name": "Vaultanimation92",
+      "type": "block",
+      "sortid": 773,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_92"
+    },
+    {
+      "name": "Vaultanimation93",
+      "type": "block",
+      "sortid": 774,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_93"
+    },
+    {
+      "name": "Vaultanimation94",
+      "type": "block",
+      "sortid": 775,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_94"
+    },
+    {
+      "name": "Vaultanimation95",
+      "type": "block",
+      "sortid": 776,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_95"
+    },
+    {
+      "name": "Vaultanimation96",
+      "type": "block",
+      "sortid": 777,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_96"
+    },
+    {
+      "name": "Vaultanimation97",
+      "type": "block",
+      "sortid": 778,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_97"
+    },
+    {
+      "name": "Vaultanimation98",
+      "type": "block",
+      "sortid": 779,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_98"
+    },
+    {
+      "name": "Vaultanimation99",
+      "type": "block",
+      "sortid": 780,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_99"
+    },
+    {
+      "name": "Vaultanimation100",
+      "type": "block",
+      "sortid": 781,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_100"
+    },
+    {
+      "name": "Vaultanimation41UpdateTick",
+      "type": "procedure",
+      "sortid": 782,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_41_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation42UpdateTick",
+      "type": "procedure",
+      "sortid": 783,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_42_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation43UpdateTick",
+      "type": "procedure",
+      "sortid": 784,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_43_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation44UpdateTick",
+      "type": "procedure",
+      "sortid": 785,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_44_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation45UpdateTick",
+      "type": "procedure",
+      "sortid": 786,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_45_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation46UpdateTick",
+      "type": "procedure",
+      "sortid": 787,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_46_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation47UpdateTick",
+      "type": "procedure",
+      "sortid": 788,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_47_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation48UpdateTick",
+      "type": "procedure",
+      "sortid": 789,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_48_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation49UpdateTick",
+      "type": "procedure",
+      "sortid": 790,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_49_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation50UpdateTick",
+      "type": "procedure",
+      "sortid": 791,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_50_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation51UpdateTick",
+      "type": "procedure",
+      "sortid": 792,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_51_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation52UpdateTick",
+      "type": "procedure",
+      "sortid": 793,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_52_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation53UpdateTick",
+      "type": "procedure",
+      "sortid": 794,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_53_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation54UpdateTick",
+      "type": "procedure",
+      "sortid": 795,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_54_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation55UpdateTick",
+      "type": "procedure",
+      "sortid": 796,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_55_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation56UpdateTick",
+      "type": "procedure",
+      "sortid": 797,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_56_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation57UpdateTick",
+      "type": "procedure",
+      "sortid": 798,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_57_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation58UpdateTick",
+      "type": "procedure",
+      "sortid": 799,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_58_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation59UpdateTick",
+      "type": "procedure",
+      "sortid": 800,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_59_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation60UpdateTick",
+      "type": "procedure",
+      "sortid": 801,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_60_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation61UpdateTick",
+      "type": "procedure",
+      "sortid": 802,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_61_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation62UpdateTick",
+      "type": "procedure",
+      "sortid": 803,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_62_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation63UpdateTick",
+      "type": "procedure",
+      "sortid": 804,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_63_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation64UpdateTick",
+      "type": "procedure",
+      "sortid": 805,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_64_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation65UpdateTick",
+      "type": "procedure",
+      "sortid": 806,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_65_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation66UpdateTick",
+      "type": "procedure",
+      "sortid": 807,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_66_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation67UpdateTick",
+      "type": "procedure",
+      "sortid": 808,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_67_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation68UpdateTick",
+      "type": "procedure",
+      "sortid": 809,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_68_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation69UpdateTick",
+      "type": "procedure",
+      "sortid": 810,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_69_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation70UpdateTick",
+      "type": "procedure",
+      "sortid": 811,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_70_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation71UpdateTick",
+      "type": "procedure",
+      "sortid": 812,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_71_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation72UpdateTick",
+      "type": "procedure",
+      "sortid": 813,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_72_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation73UpdateTick",
+      "type": "procedure",
+      "sortid": 814,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_73_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation74UpdateTick",
+      "type": "procedure",
+      "sortid": 815,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_74_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation75UpdateTick",
+      "type": "procedure",
+      "sortid": 816,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_75_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation76UpdateTick",
+      "type": "procedure",
+      "sortid": 817,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_76_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation77UpdateTick",
+      "type": "procedure",
+      "sortid": 818,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_77_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation78UpdateTick",
+      "type": "procedure",
+      "sortid": 819,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_78_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation79UpdateTick",
+      "type": "procedure",
+      "sortid": 820,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_79_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation80UpdateTick",
+      "type": "procedure",
+      "sortid": 821,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_80_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation81UpdateTick",
+      "type": "procedure",
+      "sortid": 822,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_81_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation82UpdateTick",
+      "type": "procedure",
+      "sortid": 823,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_82_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation83UpdateTick",
+      "type": "procedure",
+      "sortid": 824,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_83_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation84UpdateTick",
+      "type": "procedure",
+      "sortid": 825,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_84_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation85UpdateTick",
+      "type": "procedure",
+      "sortid": 826,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_85_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation86UpdateTick",
+      "type": "procedure",
+      "sortid": 827,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_86_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation87UpdateTick",
+      "type": "procedure",
+      "sortid": 828,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_87_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation88UpdateTick",
+      "type": "procedure",
+      "sortid": 829,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_88_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation89UpdateTick",
+      "type": "procedure",
+      "sortid": 830,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_89_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation90UpdateTick",
+      "type": "procedure",
+      "sortid": 831,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_90_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation91UpdateTick",
+      "type": "procedure",
+      "sortid": 832,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_91_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation92UpdateTick",
+      "type": "procedure",
+      "sortid": 833,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_92_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation93UpdateTick",
+      "type": "procedure",
+      "sortid": 834,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_93_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation94UpdateTick",
+      "type": "procedure",
+      "sortid": 835,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_94_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation95UpdateTick",
+      "type": "procedure",
+      "sortid": 836,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_95_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation96UpdateTick",
+      "type": "procedure",
+      "sortid": 837,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_96_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation97UpdateTick",
+      "type": "procedure",
+      "sortid": 838,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_97_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation98UpdateTick",
+      "type": "procedure",
+      "sortid": 839,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_98_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation99UpdateTick",
+      "type": "procedure",
+      "sortid": 840,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_99_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation100UpdateTick",
+      "type": "procedure",
+      "sortid": 841,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_100_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation16UpdateTick",
+      "type": "procedure",
+      "sortid": 842,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_16_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation17UpdateTick",
+      "type": "procedure",
+      "sortid": 843,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_17_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation18UpdateTick",
+      "type": "procedure",
+      "sortid": 844,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_18_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation19UpdateTick",
+      "type": "procedure",
+      "sortid": 845,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_19_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -7119,13 +11129,13 @@
       "item.wastlanders.steeldust": "Steel Dust",
       "block.wastlanders.roadbitumen": "Road Bitumen",
       "item.wastlanders.bluepaintcan": "Blue Paint Can",
-      "block.wastlanders.wastelandcobblestoneslab": "Wasteland Cobble Slab",
       "block.fallout_wastelands.aluminiumblock": "Aluminium Block",
+      "block.wastlanders.wastelandcobblestoneslab": "Wasteland Cobble Slab",
       "subtitles.ninemmshot": "",
       "item.fallout_wastelands.stimpack": "Stimpak",
       "entity.fallout_wastelands.rangedsupermutant": "Supermutant Brute",
-      "block.fallout_wastelands.radioactiveair": "Radioactive Air",
       "item.fallout_wastelands.t_45powerarmor_chestplate": "T-45 Power Armor Body",
+      "block.fallout_wastelands.radioactiveair": "Radioactive Air",
       "item.wastlanders.metalclaw": "Metal Claw",
       "block.wastlanders.testbunkerdoor": "Military Plated Door",
       "item.fallout_wastelands.tinnugget": "Tin Nugget",
@@ -7149,10 +11159,11 @@
       "item.wastlanders.tenmmammo": "10mm Ammunition ",
       "item.fallout_wastelands.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
       "item.wastlanders.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
+      "block.fallout_wastelands.vaultanimation_100": "Vault Door",
       "item.fallout_wastelands.vaulttecplating": "Vault Tec Plating",
       "item.wastlanders.robobrainrivetcanon": "Robobrainrivetcanon",
-      "item.fallout_wastelands.mobmachinegun": "Mobmachinegun",
       "item.fallout_wastelands.enclavepowerarmorsoldier_spawn_egg": "Enclave Soldier (power armor) Spawn Egg",
+      "item.fallout_wastelands.mobmachinegun": "Mobmachinegun",
       "block.fallout_wastelands.wastelandemerald": "Wasteland Emerald Ore",
       "item.wastlanders.wasteland": "Wasteland Portal Igniter",
       "block.fallout_wastelands.vaultwall_2": "Vaultwall 2",
@@ -7174,8 +11185,8 @@
       "item.fallout_wastelands.greenpaintcan": "Green Paint Can",
       "block.fallout_wastelands.militaryplatingwall": "Military Plated Wall",
       "block.fallout_wastelands.rottenplanksstairs": "Rotten Plank Stairs",
-      "item.wastlanders.ghoul": "Ghoul Spawn Egg",
       "block.wastlanders.geck_bo_sbunker": "GECK Bo Sbunker",
+      "item.wastlanders.ghoul": "Ghoul Spawn Egg",
       "effect.radiation": "Radiation Poisoning",
       "item.fallout_wastelands.tireiron": "Tire Iron",
       "item.fallout_wastelands.jerrican": "Empty Jerrican",
@@ -7195,43 +11206,65 @@
       "entity.fallout_wastelands.ghoul": "Ghoul",
       "item.wastlanders.uraniumingot": "Uranium Ingot",
       "entity.fallout_wastelands.malevaultdweller_1": "Vault Dweller ",
+      "block.fallout_wastelands.vaultanimation_30": "Vault Door",
       "entity.fallout_wastelands.malevaultdweller_2": "Vault Dweller ",
       "item.fallout_wastelands.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
       "item.wastlanders.femalevaultjumpsuit_helmet": "Femalevaultjumpsuit Helmet",
       "block.fallout_wastelands.rustedwallrusted": "Rusted Ruin Block (more rust)",
       "block.fallout_wastelands.bossteelplatingslabs": "BoS Steel Plating Slab",
+      "block.fallout_wastelands.vaultanimation_37": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_38": "Vault Door",
       "item.wastlanders.vaultjumpsuit_boots": "Vault Jumpsuit Boots (male)",
       "item.wastlanders.bugmeat": "Bug Flesh",
+      "block.fallout_wastelands.vaultanimation_35": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_36": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_33": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_34": "Vault Door",
       "block.fallout_wastelands.downruinblock": "Rusted Ruin Block (wall base)",
+      "block.fallout_wastelands.vaultanimation_31": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_32": "Vault Door",
       "block.fallout_wastelands.wastelandtile": "Wasteland Tile",
       "block.wastlanders.rottenplanksstairs": "Rotten Plank Stairs",
       "item.wastlanders.highwayman": "Highwayman Spawn Egg",
       "item.fallout_wastelands.basesupermutant_spawn_egg": "Super Mutant Grunt Spawn Egg",
       "block.fallout_wastelands.wastelandwornmetalblock": "Wasteland Worn Metal",
       "item.minecraft.potion.effect.radiation": "Radiation Poisoning",
+      "block.fallout_wastelands.vaultanimation_28": "Vault Door",
       "itemGroup.tabwastelanderscombattab": "Wastelanders Combat",
       "block.wastlanders.wastelandconcretewall": "Wasteland Concrete Wall",
+      "block.fallout_wastelands.vaultanimation_29": "Vault Door",
       "block.wastlanders.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.combatknife": "Combat Knife",
       "block.fallout_wastelands.vaultblastdoor": "Vaultblastdoor",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
       "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_2": "Xander 2",
+      "block.fallout_wastelands.vaultanimation_40": "Vault Door",
       "item.wastlanders.mobmachinegun": "Mobmachinegun",
       "block.fallout_wastelands.xander_3": "Xander 3",
+      "block.fallout_wastelands.vaultanimation_41": "Vault Door 41",
       "block.fallout_wastelands.xander_1": "Xander 1",
       "item.fallout_wastelands.nailedwrench": "Nailed Wrench",
       "block.fallout_wastelands.xander_4": "Xander 4",
       "block.fallout_wastelands.xander_5": "Xander 5",
+      "block.fallout_wastelands.vaultanimation_48": "Vault Door",
       "item.wastlanders.rotativepart": "Rotary Piece",
+      "block.fallout_wastelands.vaultanimation_49": "Vault Door",
       "block.fallout_wastelands.wastlandstone": "Wasteland Stone",
+      "block.fallout_wastelands.vaultanimation_46": "Vault Door",
       "item.fallout_wastelands.highwayman_spawn_egg": "Highwayman Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_47": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_44": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_45": "Vault Door",
       "block.wastlanders.bo_sdoor": "BoS Blast Door",
       "item.wastlanders.raidergunner": "Raider Gunner Spawn Egg",
       "item.wastlanders.bloatfly_spawn_egg": "Bloatfly Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_42": "Vault Door",
       "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_43": "Vault Door",
       "item.fallout_wastelands.ninemmammo": "9mm ammo",
       "block.fallout_wastelands.sheetmetal": "Sheet metal",
+      "block.fallout_wastelands.vaultanimation_39": "Vault Door",
       "block.wastlanders.plaster": "Plaster",
       "item.wastlanders.greenpaintcan": "Green Paint Can",
       "block.fallout_wastelands.decorativepipe": "Pipe",
@@ -7246,12 +11279,19 @@
       "block.fallout_wastelands.redindustrialblocslab": "Red Industrial Block Slab",
       "item.fallout_wastelands.aluminiumingot": "Aluminium Ingot",
       "item.wastlanders.redpaintcan": "Red Paint Can",
+      "block.fallout_wastelands.vaultanimation_15": "Vault Door",
       "block.wastlanders.safeblock": "Concrete (safe)",
       "block.fallout_wastelands.wastelandtinore": "Wasteland Tin Ore",
+      "block.fallout_wastelands.vaultanimation_16": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_13": "Vault Door",
       "item.wastlanders.fueljerrican": "Fuel Jerrican",
+      "block.fallout_wastelands.vaultanimation_14": "Vault Door",
       "item.wastlanders.coppernugget": "Copper Nugget",
       "block.wastlanders.rottenwooddoor": "Rotten Wood Door",
+      "block.fallout_wastelands.vaultanimation_11": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_12": "Vault Door",
       "entity.wastlanders.chromedraiderfemale": "Female Wasteland Raider",
+      "block.fallout_wastelands.vaultanimation_10": "Vault Door",
       "item.wastlanders.fusionmicrocell": "Fusion Cell",
       "block.fallout_wastelands.steelblock": "Steel Block",
       "block.wastlanders.tirestack": "Tire Stack",
@@ -7271,27 +11311,49 @@
       "item.wastlanders.septammo": "7.62 ammo",
       "block.fallout_wastelands.wastelandredstone": "Wasteland Redstone Ore",
       "item.fallout_wastelands.mmpistolnine": "9mm pistol",
+      "block.fallout_wastelands.vaultanimation_26": "Vault Door",
       "block.fallout_wastelands.militaryplatingglass": "Military Plating Glass",
+      "block.fallout_wastelands.vaultanimation_27": "Vault Door",
       "block.fallout_wastelands.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
       "block.fallout_wastelands.militaryplated": "Military plating",
+      "block.fallout_wastelands.vaultanimation_24": "Vault Door",
       "block.wastlanders.bossteelplating": "BoS Metal Plating (light)",
+      "block.fallout_wastelands.vaultanimation_25": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_22": "Vault Door",
       "block.fallout_wastelands.barrelbarrel": "Barrel",
+      "block.fallout_wastelands.vaultanimation_23": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_20": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_21": "Vault Door",
       "item.wastlanders.militaryhull": "Military Hull",
+      "block.fallout_wastelands.vaultanimation_19": "Vault Door",
       "block.fallout_wastelands.landmine": "Landmine",
+      "block.fallout_wastelands.vaultanimation_17": "Vault Door",
       "item.wastlanders.robobraintrack": "Robobrain Track",
       "subtitles.tenmm": "",
+      "block.fallout_wastelands.vaultanimation_18": "Vault Door",
       "block.fallout_wastelands.deadtrunk": "Charred Log",
       "itemGroup.tabwastelandersitems": "Wastelanders Items",
       "block.wastlanders.sheetmetal": "Sheet metal",
       "entity.wastlanders.closecombatsupermutant": "Closecombatsupermutant",
       "block.fallout_wastelands.wastelandbrick": "Wasteland Brick",
+      "block.fallout_wastelands.vaultanimation_73": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_74": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_71": "Vault Door",
       "block.fallout_wastelands.wastelandlapislazuli": "Wasteland Lapis Lazuli Ore",
+      "block.fallout_wastelands.vaultanimation_72": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_70": "Vault Door",
       "item.wastlanders.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.wastlanders.plasterwall": "Plaster Wall",
+      "block.fallout_wastelands.vaultanimation_79": "Vault Door",
       "block.wastlanders.bosbasemetalplating": "BoS Metal Plating",
       "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
+      "block.fallout_wastelands.vault_door_animation_0": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_77": "Vault Door",
       "item.wastlanders.combatknife": "Combat Knife",
       "item.fallout_wastelands.femalevaultdweller_2_spawn_egg": "Vault Dweller Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_78": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_75": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_76": "Vault Door",
       "item.fallout_wastelands.mirlurksteak": "Mirlurk Steak",
       "item.wastlanders.bulletmobs": "Bulletmobs",
       "item.wastlanders.cigarettepack": "Cigarette Pack",
@@ -7300,8 +11362,14 @@
       "block.fallout_wastelands.wastelandbrickstairs": "Wasteland Brick Stairs",
       "block.fallout_wastelands.frbblock": "Robotbrain In A package",
       "block.fallout_wastelands.plaster": "Plaster",
+      "block.fallout_wastelands.vaultanimation_84": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_85": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_82": "Vault Door",
       "block.fallout_wastelands.redindustrialdoor": "Red Industrial Door",
+      "block.fallout_wastelands.vaultanimation_83": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_80": "Vault Door",
       "item.fallout_wastelands.bugmeat": "Bug Flesh",
+      "block.fallout_wastelands.vaultanimation_81": "Vault Door",
       "block.wastlanders.walkway": "Walkway",
       "item.wastlanders.tinnugget": "Tin Nugget",
       "block.fallout_wastelands.enclavedoors": "Enclave Door",
@@ -7309,7 +11377,11 @@
       "item.fallout_wastelands.robobrainengine": "Engine",
       "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
       "item.fallout_wastelands.vaultjumpsuit_boots": "Vault Jumpsuit Boots (male)",
+      "block.fallout_wastelands.vaultanimation_88": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_89": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_86": "Vault Door",
       "block.fallout_wastelands.ammunitionbox": "Ammunition Box",
+      "block.fallout_wastelands.vaultanimation_87": "Vault Door",
       "block.fallout_wastelands.bossteelplating": "BoS Metal Plating (light)",
       "item.fallout_wastelands.rustedcombatweapon": "Junk sword",
       "item.fallout_wastelands.closecombatsupermutant_spawn_egg": "Close Combat Supermutant Spawn Egg",
@@ -7319,13 +11391,23 @@
       "item.fallout_wastelands.breadroller": "Bread Roller",
       "item.fallout_wastelands.fusionmicrocell": "Fusion Cell",
       "block.fallout_wastelands.bosbasemetalplating": "BoS Metal Plating",
+      "block.fallout_wastelands.vaultanimation_51": "Vault Door",
       "item.fallout_wastelands.rotativepart": "Rotary Piece",
+      "block.fallout_wastelands.vaultanimation_52": "Vault Door",
       "block.fallout_wastelands.openedvaultblastdoor": "Vault Blast Door",
       "block.fallout_wastelands.portalframe": "Portal Frame",
+      "block.fallout_wastelands.vaultanimation_50": "Vault Door",
       "block.fallout_wastelands.redindustrialblock": "Red Industrial Block",
+      "block.fallout_wastelands.vaultanimation_59": "Vault Door",
       "block.fallout_wastelands.walkwaystairs": "Walkway Stairs",
+      "block.fallout_wastelands.vaultanimation_57": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_58": "Vault Door",
       "block.wastlanders.scaffoldingcrossed": "Scaffolding (Crossed)",
+      "block.fallout_wastelands.vaultanimation_55": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_56": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_53": "Vault Door",
       "block.fallout_wastelands.plasterstairs": "Plaster Stairs",
+      "block.fallout_wastelands.vaultanimation_54": "Vault Door",
       "item.wastlanders.wrench": "Wrench",
       "block.wastlanders.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.t_45powerarmor_boots": "T-45 Power Armor Boots",
@@ -7336,12 +11418,22 @@
       "item.fallout_wastelands.robobrainrivetcanon": "Robobrainrivetcanon",
       "advancements.jointheworld.title": "Wasteland",
       "item.fallout_wastelands.militaryhull": "Military Hull",
+      "block.fallout_wastelands.vaultanimation_62": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_63": "Vault Door",
       "block.wastlanders.blastwindows": "Blast Windows",
       "item.wastlanders.femalevaultjumpsuit_chestplate": "Vault Jumpsuit Body (female)",
+      "block.fallout_wastelands.vaultanimation_60": "Vault Door",
       "item.wastlanders.nailgun": "Nailgun",
+      "block.fallout_wastelands.vaultanimation_61": "Vault Door",
       "block.wastlanders.redindusupperrivet": "Red Industrial Block (upper rivet)",
+      "block.fallout_wastelands.vaultanimation_68": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_69": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_66": "Vault Door",
       "block.fallout_wastelands.vaultfloorstairs": "Vaultfloor",
+      "block.fallout_wastelands.vaultanimation_67": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_64": "Vault Door",
       "block.wastlanders.wastlandconcrete": "Old Concrete",
+      "block.fallout_wastelands.vaultanimation_65": "Vault Door",
       "item.fallout_wastelands.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",
       "item.fallout_wastelands.frbcannon": "Frbcannon",
       "biome.wastlanders.capitalwasteland": "Capitalwasteland",
@@ -7381,16 +11473,26 @@
       "item.fallout_wastelands.printedchip": "Computer chip ",
       "item.wastlanders.robobrainengine": "Engine",
       "block.wastlanders.industrialredwalkway": "Red Industrial Black (walk way)",
+      "block.fallout_wastelands.vaultanimation_95": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_96": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_93": "Vault Door",
       "block.fallout_wastelands.wastelandsteelbars": "Wasteland Steel Bars",
+      "block.fallout_wastelands.vaultanimation_94": "Vault Door",
       "block.wastlanders.wastelancobblestonewall": "Wasteland Cobble Wall",
       "block.wastlanders.metallicwall": "Industrial Metal Plating",
       "item.wastlanders.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_91": "Vault Door",
       "item.wastlanders.fevgoo_bucket": "Fevgoo Bucket",
+      "block.fallout_wastelands.vaultanimation_92": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_90": "Vault Door",
       "key.fallout_wastelands.aimtest": "Aimtest",
       "entity.fallout_wastelands.armyrobobrain": "Army Robobrain",
       "item.wastlanders.bloatfly": "Bloatfly Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_99": "Vault Door",
       "item.wastlanders.ingotcopper": "Copper ingot",
       "block.wastlanders.moltencopperblock": "Molten Copper Block",
+      "block.fallout_wastelands.vaultanimation_97": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_98": "Vault Door",
       "block.fallout_wastelands.wastelanddirt": "Wasteland Dirt",
       "block.fallout_wastelands.rustedironstairs": "Rusted Iron Stairs",
       "item.minecraft.lingering_potion.effect.radiation": "Lingering Radiation Poisoning",
@@ -7484,6 +11586,7 @@
       "item.fallout_wastelands.leadnugget": "Lead Nugget",
       "biome.fallout_wastelands.capitalwasteland": "Capitalwasteland",
       "item.wastlanders.aluminiumingot": "Aluminium Ingot",
+      "block.fallout_wastelands.vault_door_top_part": "Vault Door Top Part",
       "block.fallout_wastelands.rottenplankfence": "Rotten Plank Fence",
       "block.wastlanders.rustedironwalls": "Rusted Iron Walls",
       "block.wastlanders.wastelandcoal": "Wasteland Coal Ore",
@@ -7506,6 +11609,7 @@
       "block.fallout_wastelands.wastlandconcrete": "Old Concrete",
       "item.wastlanders.robobrainhead": "Robobrain Head",
       "block.fallout_wastelands.enclavebunkerblock": "Enclave Bunker Block",
+      "block.fallout_wastelands.vault_door_filler": "Vault Door Filler",
       "block.wastlanders.structuralmetalblock": "Structural Metal Block",
       "block.wastlanders.deadgrass": "Wasteland Dead Grass",
       "item.fallout_wastelands.plasmas": "Plasmas",
@@ -7605,6 +11709,7 @@
       "block.fallout_wastelands.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.wrench": "Wrench",
       "item.fallout_wastelands.tenmmammo": "10mm Ammunition ",
+      "block.fallout_wastelands.vault_door": "Vault Door",
       "item.wastlanders.chromeraider": "Wasteland Raider Spawn Egg",
       "block.fallout_wastelands.rottenwooddoor": "Rotten Wood Door",
       "block.wastlanders.redindustrialblock": "Red Industrial Block",
@@ -7681,12 +11786,21 @@
       "block.wastlanders.wastelandstonebrick": "Wasteland Stonebrick",
       "block.wastlanders.moltenironblock": "Molten Iron Block",
       "item.fallout_wastelands.malewastelander_2_spawn_egg": "Wastelander Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_9": "Vault Door",
       "block.fallout_wastelands.militaryplatingslab": "Military Plating Slab",
+      "block.fallout_wastelands.vaultanimation_8": "Vault Door",
       "item.wastlanders.leadingot": "Lead Ingot",
+      "block.fallout_wastelands.vaultanimation_7": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_6": "Vault Door",
       "block.fallout_wastelands.charredplanksstairs": "Charred Plank Stairs",
+      "block.fallout_wastelands.vaultanimation_5": "Vault Door",
       "item.wastlanders.closecombatsupermutant_spawn_egg": "Closecombatsupermutant Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_4": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_3": "Vault Door",
       "block.wastlanders.deadroots": "Wasteland Dead Roots",
+      "block.fallout_wastelands.vaultanimation_2": "Vault Door",
       "item.wastlanders.mirlurksteak": "Mirlurk Steak",
+      "block.fallout_wastelands.vaultanimation_1": "Vault Door",
       "block.wastlanders.rottenplanksslab": "Rotten Plank Slab",
       "item.fallout_wastelands.femalevaultjumpsuit_leggings": "Vault Jumpsuit Leggings (female)",
       "block.fallout_wastelands.wastelancobblestonewall": "Wasteland Cobblestone Wall",
