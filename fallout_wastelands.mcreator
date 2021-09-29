@@ -10796,6 +10796,2490 @@
           }
         ]
       }
+    },
+    {
+      "name": "Vaultanimation101hehe",
+      "type": "block",
+      "sortid": 846,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_101hehe"
+    },
+    {
+      "name": "Vaultanimation102",
+      "type": "block",
+      "sortid": 847,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_102"
+    },
+    {
+      "name": "Vaultanimation103",
+      "type": "block",
+      "sortid": 848,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_103"
+    },
+    {
+      "name": "Vaultanimation104",
+      "type": "block",
+      "sortid": 849,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_104"
+    },
+    {
+      "name": "Vaultanimation105",
+      "type": "block",
+      "sortid": 850,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_105"
+    },
+    {
+      "name": "Vaultanimation106",
+      "type": "block",
+      "sortid": 851,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_106"
+    },
+    {
+      "name": "Vaultanimation107",
+      "type": "block",
+      "sortid": 852,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_107"
+    },
+    {
+      "name": "Vaultanimation108",
+      "type": "block",
+      "sortid": 853,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_108"
+    },
+    {
+      "name": "Vaultanimation109",
+      "type": "block",
+      "sortid": 854,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_109"
+    },
+    {
+      "name": "Vaultanimation110",
+      "type": "block",
+      "sortid": 855,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_110"
+    },
+    {
+      "name": "Vaultanimation111",
+      "type": "block",
+      "sortid": 856,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_111"
+    },
+    {
+      "name": "Vaultanimation112",
+      "type": "block",
+      "sortid": 857,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_112"
+    },
+    {
+      "name": "Vaultanimation113",
+      "type": "block",
+      "sortid": 858,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_113"
+    },
+    {
+      "name": "Vaultanimation114",
+      "type": "block",
+      "sortid": 859,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_114"
+    },
+    {
+      "name": "Vaultanimation115",
+      "type": "block",
+      "sortid": 860,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_115"
+    },
+    {
+      "name": "Vaultanimation116",
+      "type": "block",
+      "sortid": 861,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_116"
+    },
+    {
+      "name": "Vaultanimation117",
+      "type": "block",
+      "sortid": 862,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_117"
+    },
+    {
+      "name": "Vaultanimation118",
+      "type": "block",
+      "sortid": 863,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_118"
+    },
+    {
+      "name": "Vaultanimation119",
+      "type": "block",
+      "sortid": 864,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_119"
+    },
+    {
+      "name": "Vaultanimation120",
+      "type": "block",
+      "sortid": 865,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_120"
+    },
+    {
+      "name": "Vaultanimation121",
+      "type": "block",
+      "sortid": 866,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_121"
+    },
+    {
+      "name": "Vaultanimation122",
+      "type": "block",
+      "sortid": 867,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_122"
+    },
+    {
+      "name": "Vaultanimation123",
+      "type": "block",
+      "sortid": 868,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_123"
+    },
+    {
+      "name": "Vaultanimation124",
+      "type": "block",
+      "sortid": 869,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_124"
+    },
+    {
+      "name": "Vaultanimation125",
+      "type": "block",
+      "sortid": 870,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_125"
+    },
+    {
+      "name": "Vaultanimation126",
+      "type": "block",
+      "sortid": 871,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_126"
+    },
+    {
+      "name": "Vaultanimation127",
+      "type": "block",
+      "sortid": 872,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_127"
+    },
+    {
+      "name": "Vaultanimation128",
+      "type": "block",
+      "sortid": 873,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_128"
+    },
+    {
+      "name": "Vaultanimation129",
+      "type": "block",
+      "sortid": 874,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_129"
+    },
+    {
+      "name": "Vaultanimation130",
+      "type": "block",
+      "sortid": 875,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_130"
+    },
+    {
+      "name": "Vaultanimation131",
+      "type": "block",
+      "sortid": 876,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_131"
+    },
+    {
+      "name": "Vaultanimation132",
+      "type": "block",
+      "sortid": 877,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_132"
+    },
+    {
+      "name": "Vaultanimation133",
+      "type": "block",
+      "sortid": 878,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_133"
+    },
+    {
+      "name": "Vaultanimation134",
+      "type": "block",
+      "sortid": 879,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_134"
+    },
+    {
+      "name": "Vaultanimation135",
+      "type": "block",
+      "sortid": 880,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_135"
+    },
+    {
+      "name": "Vaultanimation101heheUpdateTick",
+      "type": "procedure",
+      "sortid": 881,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_101hehe_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation102UpdateTick",
+      "type": "procedure",
+      "sortid": 882,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_102_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation103UpdateTick",
+      "type": "procedure",
+      "sortid": 883,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_103_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation104UpdateTick",
+      "type": "procedure",
+      "sortid": 884,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_104_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation105UpdateTick",
+      "type": "procedure",
+      "sortid": 885,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_105_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation106UpdateTick",
+      "type": "procedure",
+      "sortid": 886,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_106_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation107UpdateTick",
+      "type": "procedure",
+      "sortid": 887,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_107_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation108UpdateTick",
+      "type": "procedure",
+      "sortid": 888,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_108_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation109UpdateTick",
+      "type": "procedure",
+      "sortid": 889,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_109_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation110UpdateTick",
+      "type": "procedure",
+      "sortid": 890,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_110_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation111UpdateTick",
+      "type": "procedure",
+      "sortid": 891,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_111_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation112UpdateTick",
+      "type": "procedure",
+      "sortid": 892,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_112_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation113UpdateTick",
+      "type": "procedure",
+      "sortid": 893,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_113_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation114UpdateTick",
+      "type": "procedure",
+      "sortid": 894,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_114_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation115UpdateTick",
+      "type": "procedure",
+      "sortid": 895,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_115_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation116UpdateTick",
+      "type": "procedure",
+      "sortid": 896,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_116_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation117UpdateTick",
+      "type": "procedure",
+      "sortid": 897,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_117_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation118UpdateTick",
+      "type": "procedure",
+      "sortid": 898,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_118_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation119UpdateTick",
+      "type": "procedure",
+      "sortid": 899,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_119_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation120UpdateTick",
+      "type": "procedure",
+      "sortid": 900,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_120_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation121UpdateTick",
+      "type": "procedure",
+      "sortid": 901,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_121_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation122UpdateTick",
+      "type": "procedure",
+      "sortid": 902,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_122_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation123UpdateTick",
+      "type": "procedure",
+      "sortid": 903,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_123_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation124UpdateTick",
+      "type": "procedure",
+      "sortid": 904,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_124_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation125UpdateTick",
+      "type": "procedure",
+      "sortid": 905,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_125_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation126UpdateTick",
+      "type": "procedure",
+      "sortid": 906,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_126_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation127UpdateTick",
+      "type": "procedure",
+      "sortid": 907,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_127_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation128UpdateTick",
+      "type": "procedure",
+      "sortid": 908,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_128_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation129UpdateTick",
+      "type": "procedure",
+      "sortid": 909,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_129_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation130UpdateTick",
+      "type": "procedure",
+      "sortid": 910,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_130_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation131UpdateTick",
+      "type": "procedure",
+      "sortid": 911,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_131_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation132UpdateTick",
+      "type": "procedure",
+      "sortid": 912,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_132_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation133UpdateTick",
+      "type": "procedure",
+      "sortid": 913,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_133_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation134UpdateTick",
+      "type": "procedure",
+      "sortid": 914,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_134_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultanimation135UpdateTick",
+      "type": "procedure",
+      "sortid": 915,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultanimation_135_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VaultDoorFrame",
+      "type": "block",
+      "sortid": 916,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_frame"
+    },
+    {
+      "name": "VaultdooranimationCytokenisis",
+      "type": "block",
+      "sortid": 917,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultdooranimation_cytokenisis"
+    },
+    {
+      "name": "VaultDoorTopPartOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 918,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_top_part_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Vaultdooranimation137",
+      "type": "block",
+      "sortid": 919,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultdooranimation_137"
+    },
+    {
+      "name": "Dooranimation138",
+      "type": "block",
+      "sortid": 920,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_138"
+    },
+    {
+      "name": "Vaultdooranimation137UpdateTick",
+      "type": "procedure",
+      "sortid": 921,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultdooranimation_137_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation138UpdateTick",
+      "type": "procedure",
+      "sortid": 922,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_138_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation139",
+      "type": "block",
+      "sortid": 923,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_139"
+    },
+    {
+      "name": "Dooranimation140",
+      "type": "block",
+      "sortid": 924,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_140"
+    },
+    {
+      "name": "Dooranimation141",
+      "type": "block",
+      "sortid": 925,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_141"
+    },
+    {
+      "name": "Dooranimation142",
+      "type": "block",
+      "sortid": 926,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_142"
+    },
+    {
+      "name": "Dooranimation143",
+      "type": "block",
+      "sortid": 927,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_143"
+    },
+    {
+      "name": "Dooranimation144",
+      "type": "block",
+      "sortid": 928,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_144"
+    },
+    {
+      "name": "Dooranimation145",
+      "type": "block",
+      "sortid": 929,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_145"
+    },
+    {
+      "name": "Dooranimation146",
+      "type": "block",
+      "sortid": 930,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_146"
+    },
+    {
+      "name": "Dooranimation147",
+      "type": "block",
+      "sortid": 931,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_147"
+    },
+    {
+      "name": "Dooranimation148",
+      "type": "block",
+      "sortid": 932,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_148"
+    },
+    {
+      "name": "Dooranimation149",
+      "type": "block",
+      "sortid": 933,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_149"
+    },
+    {
+      "name": "Dooranimation150",
+      "type": "block",
+      "sortid": 934,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_150"
+    },
+    {
+      "name": "Dooranimation151",
+      "type": "block",
+      "sortid": 935,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_151"
+    },
+    {
+      "name": "Dooranimation152",
+      "type": "block",
+      "sortid": 936,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_152"
+    },
+    {
+      "name": "Dooranimation153",
+      "type": "block",
+      "sortid": 937,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_153"
+    },
+    {
+      "name": "Dooranimation154",
+      "type": "block",
+      "sortid": 938,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_154"
+    },
+    {
+      "name": "Dooranimation155",
+      "type": "block",
+      "sortid": 939,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_155"
+    },
+    {
+      "name": "Dooranimation156",
+      "type": "block",
+      "sortid": 940,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_156"
+    },
+    {
+      "name": "Dooranimation157",
+      "type": "block",
+      "sortid": 941,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_157"
+    },
+    {
+      "name": "Dooranimation158",
+      "type": "block",
+      "sortid": 942,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_158"
+    },
+    {
+      "name": "Dooranimation159",
+      "type": "block",
+      "sortid": 943,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_159"
+    },
+    {
+      "name": "Dooranimation160",
+      "type": "block",
+      "sortid": 944,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_160"
+    },
+    {
+      "name": "Dooranimation161",
+      "type": "block",
+      "sortid": 945,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_161"
+    },
+    {
+      "name": "Dooranimation162",
+      "type": "block",
+      "sortid": 946,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_162"
+    },
+    {
+      "name": "Dooranimation163",
+      "type": "block",
+      "sortid": 947,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_163"
+    },
+    {
+      "name": "Dooranimation164",
+      "type": "block",
+      "sortid": 948,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_164"
+    },
+    {
+      "name": "Dooranimation165",
+      "type": "block",
+      "sortid": 949,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_165"
+    },
+    {
+      "name": "Dooranimation166",
+      "type": "block",
+      "sortid": 950,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_166"
+    },
+    {
+      "name": "Dooranimation167",
+      "type": "block",
+      "sortid": 951,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_167"
+    },
+    {
+      "name": "Dooranimation168",
+      "type": "block",
+      "sortid": 952,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_168"
+    },
+    {
+      "name": "Dooranimation169",
+      "type": "block",
+      "sortid": 953,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_169"
+    },
+    {
+      "name": "Dooranimation170",
+      "type": "block",
+      "sortid": 954,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_170"
+    },
+    {
+      "name": "Dooranimation171",
+      "type": "block",
+      "sortid": 955,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_171"
+    },
+    {
+      "name": "Dooranimation172",
+      "type": "block",
+      "sortid": 956,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_172"
+    },
+    {
+      "name": "Dooranimation173",
+      "type": "block",
+      "sortid": 957,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_173"
+    },
+    {
+      "name": "Dooranimation174",
+      "type": "block",
+      "sortid": 958,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_174"
+    },
+    {
+      "name": "Dooranimation175",
+      "type": "block",
+      "sortid": 959,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_175"
+    },
+    {
+      "name": "Dooranimation176",
+      "type": "block",
+      "sortid": 960,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_176"
+    },
+    {
+      "name": "Dooranimation177",
+      "type": "block",
+      "sortid": 961,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_177"
+    },
+    {
+      "name": "Dooranimation178",
+      "type": "block",
+      "sortid": 962,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_178"
+    },
+    {
+      "name": "Dooranimation179",
+      "type": "block",
+      "sortid": 963,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_179"
+    },
+    {
+      "name": "Dooranimation180",
+      "type": "block",
+      "sortid": 964,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_180"
+    },
+    {
+      "name": "Dooranimation181",
+      "type": "block",
+      "sortid": 965,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_181"
+    },
+    {
+      "name": "Dooranimation182",
+      "type": "block",
+      "sortid": 966,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_182"
+    },
+    {
+      "name": "Dooranimation183",
+      "type": "block",
+      "sortid": 967,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_183"
+    },
+    {
+      "name": "Dooranimation184",
+      "type": "block",
+      "sortid": 968,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_184"
+    },
+    {
+      "name": "Dooranimation185",
+      "type": "block",
+      "sortid": 969,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_185"
+    },
+    {
+      "name": "Dooranimation186",
+      "type": "block",
+      "sortid": 970,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_186"
+    },
+    {
+      "name": "Dooranimation187",
+      "type": "block",
+      "sortid": 971,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_187"
+    },
+    {
+      "name": "Dooranimation188",
+      "type": "block",
+      "sortid": 972,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_188"
+    },
+    {
+      "name": "Dooranimation189",
+      "type": "block",
+      "sortid": 973,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_189"
+    },
+    {
+      "name": "Dooranimation190",
+      "type": "block",
+      "sortid": 974,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_190"
+    },
+    {
+      "name": "Dooranimation191",
+      "type": "block",
+      "sortid": 975,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_191"
+    },
+    {
+      "name": "Dooranimation192",
+      "type": "block",
+      "sortid": 976,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_192"
+    },
+    {
+      "name": "Dooranimation193",
+      "type": "block",
+      "sortid": 977,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_193"
+    },
+    {
+      "name": "Dooranimation194",
+      "type": "block",
+      "sortid": 978,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_194"
+    },
+    {
+      "name": "Dooranimation195",
+      "type": "block",
+      "sortid": 979,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_195"
+    },
+    {
+      "name": "Dooranimation196",
+      "type": "block",
+      "sortid": 980,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_196"
+    },
+    {
+      "name": "Dooranimation197",
+      "type": "block",
+      "sortid": 981,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_197"
+    },
+    {
+      "name": "Dooranimation198",
+      "type": "block",
+      "sortid": 982,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_198"
+    },
+    {
+      "name": "Dooranimation199",
+      "type": "block",
+      "sortid": 983,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_199"
+    },
+    {
+      "name": "Dooranimation200",
+      "type": "block",
+      "sortid": 984,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_200"
+    },
+    {
+      "name": "Dooranimation201",
+      "type": "block",
+      "sortid": 985,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_201"
+    },
+    {
+      "name": "VaultdooranimationCytokenisisUpdateTick",
+      "type": "procedure",
+      "sortid": 986,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vaultdooranimation_cytokenisis_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation139UpdateTick",
+      "type": "procedure",
+      "sortid": 987,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_139_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation140UpdateTick",
+      "type": "procedure",
+      "sortid": 988,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_140_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation141UpdateTick",
+      "type": "procedure",
+      "sortid": 989,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_141_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation142UpdateTick",
+      "type": "procedure",
+      "sortid": 990,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_142_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation143UpdateTick",
+      "type": "procedure",
+      "sortid": 991,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_143_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation144UpdateTick",
+      "type": "procedure",
+      "sortid": 992,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_144_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation145UpdateTick",
+      "type": "procedure",
+      "sortid": 993,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_145_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation146UpdateTick",
+      "type": "procedure",
+      "sortid": 994,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_146_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation147UpdateTick",
+      "type": "procedure",
+      "sortid": 995,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_147_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation148UpdateTick",
+      "type": "procedure",
+      "sortid": 996,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_148_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation149UpdateTick",
+      "type": "procedure",
+      "sortid": 997,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_149_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation150UpdateTick",
+      "type": "procedure",
+      "sortid": 998,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_150_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation151UpdateTick",
+      "type": "procedure",
+      "sortid": 999,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_151_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation152UpdateTick",
+      "type": "procedure",
+      "sortid": 1000,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_152_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation153UpdateTick",
+      "type": "procedure",
+      "sortid": 1001,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_153_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -11126,442 +13610,241 @@
   ],
   "language_map": {
     "en_us": {
-      "item.wastlanders.steeldust": "Steel Dust",
-      "block.wastlanders.roadbitumen": "Road Bitumen",
-      "item.wastlanders.bluepaintcan": "Blue Paint Can",
-      "block.fallout_wastelands.aluminiumblock": "Aluminium Block",
       "block.wastlanders.wastelandcobblestoneslab": "Wasteland Cobble Slab",
-      "subtitles.ninemmshot": "",
-      "item.fallout_wastelands.stimpack": "Stimpak",
-      "entity.fallout_wastelands.rangedsupermutant": "Supermutant Brute",
-      "item.fallout_wastelands.t_45powerarmor_chestplate": "T-45 Power Armor Body",
-      "block.fallout_wastelands.radioactiveair": "Radioactive Air",
-      "item.wastlanders.metalclaw": "Metal Claw",
-      "block.wastlanders.testbunkerdoor": "Military Plated Door",
-      "item.fallout_wastelands.tinnugget": "Tin Nugget",
       "block.wastlanders.steelblock": "Steel Block",
       "block.wastlanders.wastelanduraniumore": "Wasteland Uranium Ore",
       "advancements.itsalive.title": "It\u0027s Alive !",
-      "block.wastlanders.bossteelplatingslabs": "Bos Steel Plating Slabs",
       "item.fallout_wastelands.uraniumingot": "Uranium Ingot",
       "block.fallout_wastelands.wastelandcobblestairs": "Wasteland Cobblestone Stairs",
-      "block.wastlanders.wastlandsand": "Wasteland Sand",
       "block.fallout_wastelands.copperblock": "Copper Block",
       "block.wastlanders.sheetmetalwall": "Sheet Metal Wall",
-      "block.wastlanders.charredplank": "Charred Plank",
       "block.fallout_wastelands.vaultkitchenblocks": "Vault Kitchen Floor",
-      "item.fallout_wastelands.neutronade": "Nuka Cola",
-      "block.wastlanders.uraniumblock": "Uranium Block",
       "block.wastlanders.rustbloc": "Fully Rusted Iron",
       "item.fallout_wastelands.ghoul_spawn_egg": "Ghoul Spawn Egg",
       "item.fallout_wastelands.bluepaintcan": "Blue Paint Can",
       "block.wastlanders.militaryplatingblockhazard": "Military Plating (Hazard)",
       "item.wastlanders.tenmmammo": "10mm Ammunition ",
       "item.fallout_wastelands.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
-      "item.wastlanders.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
-      "block.fallout_wastelands.vaultanimation_100": "Vault Door",
       "item.fallout_wastelands.vaulttecplating": "Vault Tec Plating",
-      "item.wastlanders.robobrainrivetcanon": "Robobrainrivetcanon",
-      "item.fallout_wastelands.enclavepowerarmorsoldier_spawn_egg": "Enclave Soldier (power armor) Spawn Egg",
       "item.fallout_wastelands.mobmachinegun": "Mobmachinegun",
-      "block.fallout_wastelands.wastelandemerald": "Wasteland Emerald Ore",
-      "item.wastlanders.wasteland": "Wasteland Portal Igniter",
-      "block.fallout_wastelands.vaultwall_2": "Vaultwall 2",
-      "block.fallout_wastelands.vaultwall_3": "Vaultwall 3",
       "entity.fallout_wastelands.malewastelander_2": "Wastelander",
       "entity.fallout_wastelands.malewastelander_1": "Wastelander",
-      "block.fallout_wastelands.vaultwall_1": "Vaultwall 1",
-      "block.fallout_wastelands.rottenplanksslab": "Rotten Plank Slab",
-      "item.wastlanders.pipboy": "Pipboy-3000",
       "item.wastlanders.basesupermutant": "Super Mutant Grunt Spawn Egg",
-      "block.fallout_wastelands.coreunit": "Core Unit Block",
+      "block.fallout_wastelands.vaultanimation_101hehe": "Vault Door",
       "block.fallout_wastelands.terminal": "Terminal",
       "biome.wastlanders.wastlandsanddesert": "Wastlandsanddesert",
-      "block.fallout_wastelands.moltensteel": "Molten Steel Block",
-      "block.fallout_wastelands.scaffoldingcrossed": "Scaffolding (Crossed)",
       "entity.fallout_wastelands.malewastelander_4": "Wastelander",
       "entity.fallout_wastelands.malewastelander_3": "Wastelander",
       "block.fallout_wastelands.xander": "Xander",
-      "item.fallout_wastelands.greenpaintcan": "Green Paint Can",
       "block.fallout_wastelands.militaryplatingwall": "Military Plated Wall",
       "block.fallout_wastelands.rottenplanksstairs": "Rotten Plank Stairs",
-      "block.wastlanders.geck_bo_sbunker": "GECK Bo Sbunker",
-      "item.wastlanders.ghoul": "Ghoul Spawn Egg",
-      "effect.radiation": "Radiation Poisoning",
       "item.fallout_wastelands.tireiron": "Tire Iron",
-      "item.fallout_wastelands.jerrican": "Empty Jerrican",
       "block.fallout_wastelands.wastelandallumiumore": "Wasteland Aluminium Ore",
       "item.fallout_wastelands.enclaveofficierarmor_helmet": "Enclave Officier Armor Cap",
-      "item.wastlanders.rawmirlurk": "Raw Mirlurk",
-      "block.fallout_wastelands.fridge": "Fridge",
-      "block.wastlanders.wastelandgold": "Wasteland Gold Ore",
-      "item.fallout_wastelands.malevaultdweller_2_spawn_egg": "Vault Dweller  Spawn Egg",
-      "block.wastlanders.rustedironslab": "Rusted Iron Slab",
       "item.wastlanders.leadnugget": "Lead Nugget",
-      "block.wastlanders.copperblock": "Copper Block",
-      "block.fallout_wastelands.metalshelf": "Metal Shelf",
-      "block.fallout_wastelands.wastelandglass": "Wasteland Glass",
-      "block.fallout_wastelands.wastelandleadore": "Wasteland Lead Ore",
       "block.fallout_wastelands.roadbitumen": "Road Bitumen",
       "entity.fallout_wastelands.ghoul": "Ghoul",
-      "item.wastlanders.uraniumingot": "Uranium Ingot",
-      "entity.fallout_wastelands.malevaultdweller_1": "Vault Dweller ",
-      "block.fallout_wastelands.vaultanimation_30": "Vault Door",
-      "entity.fallout_wastelands.malevaultdweller_2": "Vault Dweller ",
-      "item.fallout_wastelands.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
       "item.wastlanders.femalevaultjumpsuit_helmet": "Femalevaultjumpsuit Helmet",
       "block.fallout_wastelands.rustedwallrusted": "Rusted Ruin Block (more rust)",
-      "block.fallout_wastelands.bossteelplatingslabs": "BoS Steel Plating Slab",
-      "block.fallout_wastelands.vaultanimation_37": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_38": "Vault Door",
       "item.wastlanders.vaultjumpsuit_boots": "Vault Jumpsuit Boots (male)",
-      "item.wastlanders.bugmeat": "Bug Flesh",
-      "block.fallout_wastelands.vaultanimation_35": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_36": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_33": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_34": "Vault Door",
       "block.fallout_wastelands.downruinblock": "Rusted Ruin Block (wall base)",
-      "block.fallout_wastelands.vaultanimation_31": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_32": "Vault Door",
       "block.fallout_wastelands.wastelandtile": "Wasteland Tile",
       "block.wastlanders.rottenplanksstairs": "Rotten Plank Stairs",
-      "item.wastlanders.highwayman": "Highwayman Spawn Egg",
-      "item.fallout_wastelands.basesupermutant_spawn_egg": "Super Mutant Grunt Spawn Egg",
-      "block.fallout_wastelands.wastelandwornmetalblock": "Wasteland Worn Metal",
       "item.minecraft.potion.effect.radiation": "Radiation Poisoning",
-      "block.fallout_wastelands.vaultanimation_28": "Vault Door",
-      "itemGroup.tabwastelanderscombattab": "Wastelanders Combat",
       "block.wastlanders.wastelandconcretewall": "Wasteland Concrete Wall",
-      "block.fallout_wastelands.vaultanimation_29": "Vault Door",
+      "itemGroup.tabwastelanderscombattab": "Wastelanders Combat",
       "block.wastlanders.plasterslab": "Plaster Slab",
-      "item.fallout_wastelands.combatknife": "Combat Knife",
-      "block.fallout_wastelands.vaultblastdoor": "Vaultblastdoor",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
-      "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_2": "Xander 2",
-      "block.fallout_wastelands.vaultanimation_40": "Vault Door",
-      "item.wastlanders.mobmachinegun": "Mobmachinegun",
+      "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_3": "Xander 3",
-      "block.fallout_wastelands.vaultanimation_41": "Vault Door 41",
+      "item.wastlanders.mobmachinegun": "Mobmachinegun",
       "block.fallout_wastelands.xander_1": "Xander 1",
       "item.fallout_wastelands.nailedwrench": "Nailed Wrench",
       "block.fallout_wastelands.xander_4": "Xander 4",
       "block.fallout_wastelands.xander_5": "Xander 5",
-      "block.fallout_wastelands.vaultanimation_48": "Vault Door",
       "item.wastlanders.rotativepart": "Rotary Piece",
-      "block.fallout_wastelands.vaultanimation_49": "Vault Door",
       "block.fallout_wastelands.wastlandstone": "Wasteland Stone",
-      "block.fallout_wastelands.vaultanimation_46": "Vault Door",
       "item.fallout_wastelands.highwayman_spawn_egg": "Highwayman Spawn Egg",
-      "block.fallout_wastelands.vaultanimation_47": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_44": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_45": "Vault Door",
-      "block.wastlanders.bo_sdoor": "BoS Blast Door",
-      "item.wastlanders.raidergunner": "Raider Gunner Spawn Egg",
-      "item.wastlanders.bloatfly_spawn_egg": "Bloatfly Spawn Egg",
-      "block.fallout_wastelands.vaultanimation_42": "Vault Door",
       "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
-      "block.fallout_wastelands.vaultanimation_43": "Vault Door",
       "item.fallout_wastelands.ninemmammo": "9mm ammo",
-      "block.fallout_wastelands.sheetmetal": "Sheet metal",
-      "block.fallout_wastelands.vaultanimation_39": "Vault Door",
       "block.wastlanders.plaster": "Plaster",
-      "item.wastlanders.greenpaintcan": "Green Paint Can",
-      "block.fallout_wastelands.decorativepipe": "Pipe",
-      "block.wastlanders.redindustrialdoor": "Red Industrial Door",
-      "block.wastlanders.wastelandgravel": "Wasteland Gravel",
       "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
-      "item.fallout_wastelands.chromeraider_spawn_egg": "Wasteland Raider Spawn Egg",
       "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
       "item.wastlanders.laserriffle": "Laser Rifle",
-      "item.fallout_wastelands.reaper": "Ripper",
       "item.wastlanders.breadroller": "Bread Roller",
       "block.fallout_wastelands.redindustrialblocslab": "Red Industrial Block Slab",
       "item.fallout_wastelands.aluminiumingot": "Aluminium Ingot",
       "item.wastlanders.redpaintcan": "Red Paint Can",
-      "block.fallout_wastelands.vaultanimation_15": "Vault Door",
       "block.wastlanders.safeblock": "Concrete (safe)",
-      "block.fallout_wastelands.wastelandtinore": "Wasteland Tin Ore",
-      "block.fallout_wastelands.vaultanimation_16": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_13": "Vault Door",
-      "item.wastlanders.fueljerrican": "Fuel Jerrican",
-      "block.fallout_wastelands.vaultanimation_14": "Vault Door",
-      "item.wastlanders.coppernugget": "Copper Nugget",
       "block.wastlanders.rottenwooddoor": "Rotten Wood Door",
-      "block.fallout_wastelands.vaultanimation_11": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_12": "Vault Door",
-      "entity.wastlanders.chromedraiderfemale": "Female Wasteland Raider",
-      "block.fallout_wastelands.vaultanimation_10": "Vault Door",
       "item.wastlanders.fusionmicrocell": "Fusion Cell",
       "block.fallout_wastelands.steelblock": "Steel Block",
-      "block.wastlanders.tirestack": "Tire Stack",
+      "block.fallout_wastelands.dooranimation_149": "Vault Door135",
       "item.wastlanders.bossteelplate": "BoS Steelplate",
-      "item.minecraft.tipped_arrow.effect.radiation": "Arrow of Radiation Poisoning",
+      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_147": "Vault Door135",
       "item.fallout_wastelands.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
-      "item.fallout_wastelands.uraniumnugget": "Uranium Nugget",
+      "block.fallout_wastelands.dooranimation_142": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_141": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_140": "Vault Door135",
       "item.fallout_wastelands.ingot_tin": "Tin Ingot",
-      "block.wastlanders.militaryplatedradiationwarrior": "Military plating (radiation)",
+      "block.fallout_wastelands.dooranimation_146": "Vault Door135",
       "block.fallout_wastelands.lighttub": "Light Tub",
-      "advancements.jointheworld.descr": "Vault tec wish you a good luck ...",
+      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
       "entity.fallout_wastelands.mirelurk": "Mirelurk",
-      "block.fallout_wastelands.plasterwall": "Plaster Wall",
+      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_143": "Vault Door135",
       "block.wastlanders.concretepattern": "Concrete Pattern",
       "item.fallout_wastelands.steelingot": "Steel Ingot",
-      "item.fallout_wastelands.abraxo": "Abraxo ",
       "item.wastlanders.septammo": "7.62 ammo",
       "block.fallout_wastelands.wastelandredstone": "Wasteland Redstone Ore",
       "item.fallout_wastelands.mmpistolnine": "9mm pistol",
-      "block.fallout_wastelands.vaultanimation_26": "Vault Door",
-      "block.fallout_wastelands.militaryplatingglass": "Military Plating Glass",
-      "block.fallout_wastelands.vaultanimation_27": "Vault Door",
-      "block.fallout_wastelands.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
       "block.fallout_wastelands.militaryplated": "Military plating",
-      "block.fallout_wastelands.vaultanimation_24": "Vault Door",
-      "block.wastlanders.bossteelplating": "BoS Metal Plating (light)",
-      "block.fallout_wastelands.vaultanimation_25": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_22": "Vault Door",
       "block.fallout_wastelands.barrelbarrel": "Barrel",
-      "block.fallout_wastelands.vaultanimation_23": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_20": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_21": "Vault Door",
-      "item.wastlanders.militaryhull": "Military Hull",
-      "block.fallout_wastelands.vaultanimation_19": "Vault Door",
+      "block.fallout_wastelands.dooranimation_139": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_138": "Vault Door135",
       "block.fallout_wastelands.landmine": "Landmine",
-      "block.fallout_wastelands.vaultanimation_17": "Vault Door",
-      "item.wastlanders.robobraintrack": "Robobrain Track",
       "subtitles.tenmm": "",
-      "block.fallout_wastelands.vaultanimation_18": "Vault Door",
       "block.fallout_wastelands.deadtrunk": "Charred Log",
       "itemGroup.tabwastelandersitems": "Wastelanders Items",
-      "block.wastlanders.sheetmetal": "Sheet metal",
       "entity.wastlanders.closecombatsupermutant": "Closecombatsupermutant",
-      "block.fallout_wastelands.wastelandbrick": "Wasteland Brick",
-      "block.fallout_wastelands.vaultanimation_73": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_74": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_71": "Vault Door",
       "block.fallout_wastelands.wastelandlapislazuli": "Wasteland Lapis Lazuli Ore",
-      "block.fallout_wastelands.vaultanimation_72": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_70": "Vault Door",
+      "block.fallout_wastelands.dooranimation_160": "Vault Door135",
       "item.wastlanders.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.wastlanders.plasterwall": "Plaster Wall",
-      "block.fallout_wastelands.vaultanimation_79": "Vault Door",
       "block.wastlanders.bosbasemetalplating": "BoS Metal Plating",
       "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
       "block.fallout_wastelands.vault_door_animation_0": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_77": "Vault Door",
-      "item.wastlanders.combatknife": "Combat Knife",
-      "item.fallout_wastelands.femalevaultdweller_2_spawn_egg": "Vault Dweller Spawn Egg",
-      "block.fallout_wastelands.vaultanimation_78": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_75": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_76": "Vault Door",
       "item.fallout_wastelands.mirlurksteak": "Mirlurk Steak",
       "item.wastlanders.bulletmobs": "Bulletmobs",
       "item.wastlanders.cigarettepack": "Cigarette Pack",
       "block.wastlanders.scaffolding": "Scaffolding",
+      "block.fallout_wastelands.vaultdooranimation_cytokenisis": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_169": "Vault Door135",
       "item.fallout_wastelands.metalclaw": "Metal Claw",
       "block.fallout_wastelands.wastelandbrickstairs": "Wasteland Brick Stairs",
-      "block.fallout_wastelands.frbblock": "Robotbrain In A package",
-      "block.fallout_wastelands.plaster": "Plaster",
-      "block.fallout_wastelands.vaultanimation_84": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_85": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_82": "Vault Door",
+      "block.fallout_wastelands.dooranimation_164": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_163": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_162": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_161": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_168": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_167": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_166": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_165": "Vault Door135",
       "block.fallout_wastelands.redindustrialdoor": "Red Industrial Door",
-      "block.fallout_wastelands.vaultanimation_83": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_80": "Vault Door",
-      "item.fallout_wastelands.bugmeat": "Bug Flesh",
-      "block.fallout_wastelands.vaultanimation_81": "Vault Door",
-      "block.wastlanders.walkway": "Walkway",
       "item.wastlanders.tinnugget": "Tin Nugget",
-      "block.fallout_wastelands.enclavedoors": "Enclave Door",
       "block.wastlanders.rustediron": "Rusted Iron",
       "item.fallout_wastelands.robobrainengine": "Engine",
       "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
-      "item.fallout_wastelands.vaultjumpsuit_boots": "Vault Jumpsuit Boots (male)",
-      "block.fallout_wastelands.vaultanimation_88": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_89": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_86": "Vault Door",
-      "block.fallout_wastelands.ammunitionbox": "Ammunition Box",
-      "block.fallout_wastelands.vaultanimation_87": "Vault Door",
       "block.fallout_wastelands.bossteelplating": "BoS Metal Plating (light)",
-      "item.fallout_wastelands.rustedcombatweapon": "Junk sword",
-      "item.fallout_wastelands.closecombatsupermutant_spawn_egg": "Close Combat Supermutant Spawn Egg",
-      "entity.fallout_wastelands.femalevaultdweller_2": "Vault Dweller",
-      "entity.fallout_wastelands.femalevaultdweller_1": "Vault Dweller ",
+      "block.fallout_wastelands.dooranimation_159": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_158": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_153": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_152": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_151": "Vault Door135",
       "item.fallout_wastelands.coffee": "Coffee",
+      "block.fallout_wastelands.dooranimation_150": "Vault Door135",
       "item.fallout_wastelands.breadroller": "Bread Roller",
-      "item.fallout_wastelands.fusionmicrocell": "Fusion Cell",
-      "block.fallout_wastelands.bosbasemetalplating": "BoS Metal Plating",
-      "block.fallout_wastelands.vaultanimation_51": "Vault Door",
-      "item.fallout_wastelands.rotativepart": "Rotary Piece",
-      "block.fallout_wastelands.vaultanimation_52": "Vault Door",
-      "block.fallout_wastelands.openedvaultblastdoor": "Vault Blast Door",
+      "block.fallout_wastelands.dooranimation_157": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_156": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_155": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_154": "Vault Door135",
       "block.fallout_wastelands.portalframe": "Portal Frame",
-      "block.fallout_wastelands.vaultanimation_50": "Vault Door",
-      "block.fallout_wastelands.redindustrialblock": "Red Industrial Block",
-      "block.fallout_wastelands.vaultanimation_59": "Vault Door",
-      "block.fallout_wastelands.walkwaystairs": "Walkway Stairs",
-      "block.fallout_wastelands.vaultanimation_57": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_58": "Vault Door",
-      "block.wastlanders.scaffoldingcrossed": "Scaffolding (Crossed)",
-      "block.fallout_wastelands.vaultanimation_55": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_56": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_53": "Vault Door",
+      "block.fallout_wastelands.dooranimation_182": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_181": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_180": "Vault Door135",
       "block.fallout_wastelands.plasterstairs": "Plaster Stairs",
-      "block.fallout_wastelands.vaultanimation_54": "Vault Door",
-      "item.wastlanders.wrench": "Wrench",
       "block.wastlanders.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.t_45powerarmor_boots": "T-45 Power Armor Boots",
       "item.wastlanders.highwayman_spawn_egg": "Highwayman Spawn Egg",
-      "block.fallout_wastelands.vaultfloor_2": "Vault Floor Block",
       "item.fallout_wastelands.bulletmobs": "Bulletmobs",
-      "block.fallout_wastelands.enclavebunkerfloor": "Enclave Bunker Floor",
+      "block.fallout_wastelands.dooranimation_186": "Vault Door135",
       "item.fallout_wastelands.robobrainrivetcanon": "Robobrainrivetcanon",
+      "block.fallout_wastelands.dooranimation_185": "Vault Door135",
       "advancements.jointheworld.title": "Wasteland",
+      "block.fallout_wastelands.dooranimation_184": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_183": "Vault Door135",
       "item.fallout_wastelands.militaryhull": "Military Hull",
-      "block.fallout_wastelands.vaultanimation_62": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_63": "Vault Door",
-      "block.wastlanders.blastwindows": "Blast Windows",
-      "item.wastlanders.femalevaultjumpsuit_chestplate": "Vault Jumpsuit Body (female)",
-      "block.fallout_wastelands.vaultanimation_60": "Vault Door",
-      "item.wastlanders.nailgun": "Nailgun",
-      "block.fallout_wastelands.vaultanimation_61": "Vault Door",
+      "block.fallout_wastelands.dooranimation_189": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_188": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_187": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_171": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_170": "Vault Door135",
       "block.wastlanders.redindusupperrivet": "Red Industrial Block (upper rivet)",
-      "block.fallout_wastelands.vaultanimation_68": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_69": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_66": "Vault Door",
       "block.fallout_wastelands.vaultfloorstairs": "Vaultfloor",
-      "block.fallout_wastelands.vaultanimation_67": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_64": "Vault Door",
-      "block.wastlanders.wastlandconcrete": "Old Concrete",
-      "block.fallout_wastelands.vaultanimation_65": "Vault Door",
       "item.fallout_wastelands.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",
       "item.fallout_wastelands.frbcannon": "Frbcannon",
+      "block.fallout_wastelands.dooranimation_175": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_174": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_173": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_172": "Vault Door135",
       "biome.wastlanders.capitalwasteland": "Capitalwasteland",
       "subtitles.portalentrance": "",
-      "subtitles.tenmmshootb": "",
+      "block.fallout_wastelands.dooranimation_179": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_178": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_177": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_176": "Vault Door135",
       "block.wastlanders.rottenplanks": "Rotten Plank",
-      "entity.wastlanders.rangedsupermutant": "Supermutant Brute",
-      "item.fallout_wastelands.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
       "block.wastlanders.gore": "Gore",
-      "item.wastlanders.frbcannon": "Frbcannon",
       "block.wastlanders.militaryplated": "Military plating",
       "item.fallout_wastelands.blackpaintcan": "Black Paint Can",
       "item.fallout_wastelands.tenmm": "10mm Pistol ",
       "block.wastlanders.wastelandbrickstairs": "Wasteland Brick Stairs",
       "item.fallout_wastelands.fueljerrican": "Fuel Jerrican",
       "block.fallout_wastelands.wastelandcobblestoneslab": "Wasteland Cobblestone Slab",
-      "item.fallout_wastelands.bloatflyshot": "Bloatflyshot",
       "block.fallout_wastelands.redindusrivetmid": "Red Industrial Block (mid rivet)",
-      "item.fallout_wastelands.vaultjumpsuit_helmet": "Vaultjumpsuit Helmet",
       "biome.fallout_wastelands.capitalwastelandeast": "Capitalwastelandeast",
-      "item.fallout_wastelands.enclav_eofficier_spawn_egg": "Enclave Officier Spawn Egg",
       "item.wastlanders.cannedporkshop": "Canned Porkshop",
-      "biome.wastlanders.desertwastland": "Desertwastland",
-      "item.wastlanders.nailedwrench": "Nailed Wrench",
-      "item.fallout_wastelands.vaultjumpsuit_leggings": "Vault Jumpsuit Leggings (male)",
-      "block.fallout_wastelands.wastelandcoal": "Wasteland Coal Ore",
       "entity.fallout_wastelands.highwayman": "Highwayman",
       "block.fallout_wastelands.locker": "Locker",
-      "item.wastlanders.jerrican": "Empty Jerrican",
+      "block.fallout_wastelands.dooranimation_193": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_192": "Vault Door135",
       "entity.wastlanders.ghoul": "Ghoul",
-      "item.wastlanders.reaper": "Ripper",
-      "entity.wastlanders.raidergunner": "Raider Gunner",
+      "block.fallout_wastelands.dooranimation_191": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_190": "Vault Door135",
       "entity.fallout_wastelands.friendlybrainbot": "Robot Brain (Hackable)",
-      "block.wastlanders.walkwaystairs": "Walkway Stairs",
       "item.fallout_wastelands.ingotcopper": "Copper ingot",
-      "block.fallout_wastelands.deadgrass": "Wasteland Dead Grass",
       "item.fallout_wastelands.printedchip": "Computer chip ",
-      "item.wastlanders.robobrainengine": "Engine",
+      "block.fallout_wastelands.dooranimation_197": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_196": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_195": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_194": "Vault Door135",
       "block.wastlanders.industrialredwalkway": "Red Industrial Black (walk way)",
-      "block.fallout_wastelands.vaultanimation_95": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_96": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_93": "Vault Door",
-      "block.fallout_wastelands.wastelandsteelbars": "Wasteland Steel Bars",
-      "block.fallout_wastelands.vaultanimation_94": "Vault Door",
-      "block.wastlanders.wastelancobblestonewall": "Wasteland Cobble Wall",
-      "block.wastlanders.metallicwall": "Industrial Metal Plating",
+      "block.fallout_wastelands.dooranimation_199": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_198": "Vault Door135",
       "item.wastlanders.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
-      "block.fallout_wastelands.vaultanimation_91": "Vault Door",
+      "block.wastlanders.metallicwall": "Industrial Metal Plating",
       "item.wastlanders.fevgoo_bucket": "Fevgoo Bucket",
-      "block.fallout_wastelands.vaultanimation_92": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_90": "Vault Door",
-      "key.fallout_wastelands.aimtest": "Aimtest",
-      "entity.fallout_wastelands.armyrobobrain": "Army Robobrain",
-      "item.wastlanders.bloatfly": "Bloatfly Spawn Egg",
-      "block.fallout_wastelands.vaultanimation_99": "Vault Door",
       "item.wastlanders.ingotcopper": "Copper ingot",
       "block.wastlanders.moltencopperblock": "Molten Copper Block",
-      "block.fallout_wastelands.vaultanimation_97": "Vault Door",
-      "block.fallout_wastelands.vaultanimation_98": "Vault Door",
-      "block.fallout_wastelands.wastelanddirt": "Wasteland Dirt",
       "block.fallout_wastelands.rustedironstairs": "Rusted Iron Stairs",
       "item.minecraft.lingering_potion.effect.radiation": "Lingering Radiation Poisoning",
-      "block.fallout_wastelands.wastelandglass_2": "Wasteland Glass",
-      "block.wastlanders.redindustrialrivetdown": "Red Industrial Block (rivet bottom)",
       "block.wastlanders.wastelandiron": "Wasteland Iron Ore",
       "item.fallout_wastelands.crushedcan": "Crushed Can",
-      "item.fallout_wastelands.enclaveplating": "Enclave Plating",
       "block.fallout_wastelands.vaultvent": "Vaultvent",
       "block.wastlanders.aluminiumblock": "Aluminium Block",
-      "block.fallout_wastelands.wastelandconcretewall": "Wasteland Concrete Wall",
       "item.wastlanders.blackpaintcan": "Black Paint Can",
-      "block.wastlanders.deadtrunk": "Chared Log",
-      "block.wastlanders.coffeemixer": "Coffee Brewer ",
-      "item.wastlanders.steelingot": "Steel Ingot",
-      "block.wastlanders.leadblock": "Lead Block",
-      "item.fallout_wastelands.sheetmetalplating": "Sheet Metal Plating",
       "item.fallout_wastelands.plasmarifle": "Plasma Rifle",
       "block.wastlanders.plasterstairs": "Plaster Stairs",
-      "block.wastlanders.wastelandcobblestairs": "Wasteland Cobble Stairs",
-      "block.wastlanders.wastelandleadore": "Wasteland Lead Ore",
-      "subtitles.wastelandwind": "",
-      "item.fallout_wastelands.mmpistolnineaim": "9mm pistol",
       "item.fallout_wastelands.enclaveofficierarmor_boots": "Enclave Officier Boots",
-      "block.fallout_wastelands.rustedruinblockground": "Rusted Ruin Ground Block",
       "block.fallout_wastelands.bo_ssteelplatingstairs": "BoS Steel Plating Stairs",
-      "block.fallout_wastelands.safeblock": "Concrete Safe",
-      "block.fallout_wastelands.rustedironslab": "Rusted Iron Slab",
-      "block.wastlanders.militaryplatedground": "Military Plating (walk way)",
-      "item.fallout_wastelands.t_45powerarmor_helmet": "T-45 Power Armor Helmet",
-      "block.fallout_wastelands.wastelandconcretestairs": "Wasteland Concrete Stairs",
-      "block.fallout_wastelands.moltencopperblock": "Molten Copper Block",
       "block.fallout_wastelands.trashbin": "Trash Bin",
       "block.wastlanders.landmine": "Landmine",
       "item.wastlanders.ghoul_spawn_egg": "Ghoul Spawn Egg",
-      "block.wastlanders.wastelandconcreteslab": "Wasteland Concrete Slab",
-      "block.fallout_wastelands.rustbloc": "Fully Rusted Iron",
       "item.wastlanders.abraxo": "Abraxo ",
-      "item.fallout_wastelands.militarygradeaccessbadge": "Military Grade Access Badge",
       "block.fallout_wastelands.wastelandconcretevent": "Wasteland Concrete Vent",
       "item.fallout_wastelands.pipboy": "Pipboy-3000",
-      "block.wastlanders.wastelandemerald": "Wasteland Emerald Ore",
-      "biome.fallout_wastelands.desertwastland": "Desertwastland",
       "block.fallout_wastelands.fillingcabinet": "Metal Shelf",
       "item.wastlanders.printedchip": "Computer chip ",
-      "block.fallout_wastelands.invisiblelightsource": "Invisiblelightsource",
-      "block.wastlanders.moltentin": "Molten Tin Block",
-      "item.wastlanders.chromeraider_spawn_egg": "Wasteland Raider Spawn Egg",
       "item.wastlanders.robobrainarm": "Robobrain Arm",
       "item.wastlanders.aluminiumnugget": "Aluminium Nugget",
-      "item.fallout_wastelands.cannedporkshop": "Canned Porkshop",
-      "item.wastlanders.tireiron": "Tire Iron",
       "subtitles.rbshot": "",
       "item.wastlanders.nails": "Nails",
       "block.fallout_wastelands.concretepattern": "Concrete Pattern",
-      "block.fallout_wastelands.gore": "Gore",
-      "item.fallout_wastelands.septammo": "7.62 ammo",
       "item.wastlanders.track": "Track Segment",
-      "fluid.fevgoo": "Fevgoo",
-      "block.fallout_wastelands.metalchair": "Metal Chair",
       "entity.fallout_wastelands.chromedraiderfemale": "Female Wasteland Raider",
-      "block.fallout_wastelands.wastelanduraniumore": "Wasteland Uranium Ore",
-      "item.wastlanders.rustedcombatweapon": "Junk sword",
-      "block.fallout_wastelands.vaultfloor": "Vaultfloor",
-      "item.fallout_wastelands.enclave_x_01pa_helmet": "Enclave APA Helmet",
       "block.wastlanders.ammunitionbox": "Ammunition Box",
-      "item.wastlanders.t_45powerarmor_boots": "T-45 Power Armor Boots",
-      "item.fallout_wastelands.bottlecaps": "Bottlecaps",
-      "block.wastlanders.brotherhoodofsteelmetalplating": "BoS Metal Plating (lines)",
       "block.fallout_wastelands.sheetmetalwall": "Sheet Metal Wall",
       "block.wastlanders.charredplankfence": "Charred Plank Fence",
       "item.fallout_wastelands.robobrainarm": "Robobrain Arm",
@@ -11576,27 +13859,14 @@
       "item.fallout_wastelands.enclave_x_01pa_chestplate": "Enclave APA Body",
       "block.fallout_wastelands.radioactivwastebarrel": "Radioactive barrel",
       "item.fallout_wastelands.rawmirlurk": "Raw Mirlurk",
-      "block.fallout_wastelands.bo_sdoor": "BoS Blast Door",
-      "block.wastlanders.militaryplatingwall": "Military Plated Wall",
-      "block.fallout_wastelands.cellinglights": "Celling Lights",
       "entity.wastlanders.basesupermutant": "Super Mutant Grunt",
-      "item.fallout_wastelands.robobraintrack": "Robobrain Track",
-      "block.fallout_wastelands.charredplank": "Charred Plank",
-      "block.wastlanders.wastelandbrick": "Wasteland Brick",
-      "item.fallout_wastelands.leadnugget": "Lead Nugget",
       "biome.fallout_wastelands.capitalwasteland": "Capitalwasteland",
-      "item.wastlanders.aluminiumingot": "Aluminium Ingot",
       "block.fallout_wastelands.vault_door_top_part": "Vault Door Top Part",
-      "block.fallout_wastelands.rottenplankfence": "Rotten Plank Fence",
-      "block.wastlanders.rustedironwalls": "Rusted Iron Walls",
       "block.wastlanders.wastelandcoal": "Wasteland Coal Ore",
-      "advancements.itsalive.descr": "My creation is Allliiiiivee !!!",
       "block.wastlanders.charredplankslab": "Charredplankslab",
       "block.wastlanders.bo_ssteelplatingstairs": "BoS Steel Plating Stairs",
-      "item.fallout_wastelands.nuclearwaste": "Nuclear Waste",
       "block.fallout_wastelands.redindustrialrivetdown": "Red Industrial Block (rivet bottom)",
       "item.wastlanders.rangedsupermutant": "Supermutant Brute Spawn Egg",
-      "item.fallout_wastelands.nails": "Nails",
       "block.fallout_wastelands.wastelandiron": "Wasteland Iron Ore",
       "block.fallout_wastelands.wastlandsand": "Wasteland Sand",
       "item.fallout_wastelands.femalevaultjumpsuit_chestplate": "Vault Jumpsuit Body (female)",
@@ -11605,67 +13875,34 @@
       "item.fallout_wastelands.raidergunner_spawn_egg": "Raider Gunner Spawn Egg",
       "item.wastlanders.crushedcan": "Crushed Can",
       "block.wastlanders.wastelanddirt": "Wasteland Dirt",
-      "item.fallout_wastelands.nailgun": "Nailgun",
       "block.fallout_wastelands.wastlandconcrete": "Old Concrete",
-      "item.wastlanders.robobrainhead": "Robobrain Head",
-      "block.fallout_wastelands.enclavebunkerblock": "Enclave Bunker Block",
-      "block.fallout_wastelands.vault_door_filler": "Vault Door Filler",
-      "block.wastlanders.structuralmetalblock": "Structural Metal Block",
       "block.wastlanders.deadgrass": "Wasteland Dead Grass",
-      "item.fallout_wastelands.plasmas": "Plasmas",
       "item.wastlanders.humanbrain": "Human Brain",
-      "item.wastlanders.femalevaultjumpsuit_leggings": "Vault Jumpsuit Leggings (female)",
-      "item.wastlanders.themachinegun": "Butcher Mk1",
-      "entity.fallout_wastelands.chromeraider": "Wasteland Raider",
       "item.fallout_wastelands.robobrainhead": "Robobrain Head",
-      "block.wastlanders.barrelbarrel": "Barrel",
-      "block.fallout_wastelands.wastelandbrickslab": "Wasteland Brick Slab",
-      "item.wastlanders.bloatflyshot": "Bloatflyshot",
       "block.fallout_wastelands.enclavebunkerblocklogo": "Enclave Bunker Block Logo",
-      "entity.wastlanders.highwayman": "Highwayman",
-      "item.fallout_wastelands.track": "Track Segment",
       "block.wastlanders.wastelandtinore": "Wasteland Tin Ore",
       "block.fallout_wastelands.testbunkerdoor": "Military Plated Door",
-      "item.fallout_wastelands.wasteland": "Wasteland Portal Igniter",
       "subtitles.ninemmshotb": "",
-      "item.fallout_wastelands.cigarettepack": "Cigarette Pack",
       "block.wastlanders.tinblock": "Tin Block",
       "block.wastlanders.redindustrialblockstairs": "Red Industrial Stairs",
       "item.fallout_wastelands.enclave_x_01pa_boots": "Enclave APA Boots",
-      "entity.fallout_wastelands.enclav_eofficier": "Enclave Officier",
       "block.wastlanders.medicalbox": "Medical Box",
-      "block.wastlanders.wastelanddiamond": "Wasteland Diamond Ore",
-      "item.fallout_wastelands.enclaveofficierarmor_leggings": "Enclave Officier Pants ",
       "item.wastlanders.vaultjumpsuit_helmet": "Vaultjumpsuit Helmet",
       "entity.wastlanders.bloatfly": "Bloatfly",
       "biome.fallout_wastelands.wastlandsanddesert": "Wastlandsanddesert",
       "entity.wastlanders.chromeraider": "Wasteland Raider",
       "block.fallout_wastelands.militaryplatedground": "Military Plating (walk way)",
-      "block.fallout_wastelands.bo_slights": "BoS Light",
-      "item.fallout_wastelands.redpaintcan": "Red Paint Can",
-      "item.fallout_wastelands.enclave_x_01pa_leggings": "Enclave APA Leggings",
-      "item.wastlanders.ingot_tin": "Tin Ingot",
-      "item.fallout_wastelands.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.wastlanders.walkwayslab": "Walkway Slab",
-      "block.fallout_wastelands.wastelandgold": "Wasteland Gold Ore",
-      "block.fallout_wastelands.leadblock": "Lead Block",
-      "block.fallout_wastelands.enclavebunkerblockwall": "Enclave Bunker Block Wall",
-      "item.wastlanders.t_45powerarmor_chestplate": "T-45 Power Armor Body",
       "block.fallout_wastelands.rustedwall": "Rusted Ruin Block",
       "block.fallout_wastelands.deadroots": "Wasteland Dead Roots",
       "block.wastlanders.wastelandredstone": "Wasteland Redstone Ore",
       "entity.fallout_wastelands.closecombatsupermutant": "Close Combat Supermutant",
       "item.fallout_wastelands.yellowpaintcan": "Yellow Paint Can",
-      "item.wastlanders.femalevaultjumpsuit_boots": "Vault Jumpsuit Boots (female)",
       "block.wastlanders.militaryplatingglass": "Military Plating Glass",
       "block.wastlanders.lighttub": "Light Tub",
       "item.fallout_wastelands.neutronadebottle": "Nuka cola Bottle",
-      "block.fallout_wastelands.bossteelstructureslab": "BoS Steel Slab (light)",
       "block.fallout_wastelands.vaultpillar_1": "Vaultpillar 1",
       "item.fallout_wastelands.overseer_spawn_egg": "Overseer Spawn Egg",
-      "block.fallout_wastelands.militaryplatedradiationwarrior": "Military plating (radiation)",
-      "block.fallout_wastelands.metallicwall": "Industrial Metal Plating",
-      "block.wastlanders.frbblock": "Robotbrain In A package",
       "item.fallout_wastelands.steeldust": "Steel Dust",
       "block.fallout_wastelands.vaultpillar_2": "Vaultpillar 2",
       "item.wastlanders.whitepaintcan": "White Paint Can",
@@ -11674,132 +13911,481 @@
       "block.wastlanders.rustedironstairs": "Rusted Iron Stairs",
       "item.wastlanders.robobraintorso": "Robobrain Torso",
       "item.fallout_wastelands.robobraintorso": "Robobrain Torso",
-      "block.fallout_wastelands.wastelandcopper": "Wasteland Copper Ore",
-      "block.fallout_wastelands.walkway": "Walkway",
       "entity.wastlanders.friendlybrainbot": "Robot Brain (Hackable)",
       "item.fallout_wastelands.coffepot": "Coffee Pot",
       "block.wastlanders.bo_slights": "BoS Light",
+      "item.fallout_wastelands.bossteelplate": "BoS Steelplate",
+      "block.fallout_wastelands.redindustrialblockwarning": "Red Industrial Block (warning)",
+      "item.fallout_wastelands.femalevaultjumpsuit_boots": "Vault Jumpsuit Boots (female)",
+      "block.fallout_wastelands.oldpapers": "Old Papers",
+      "item.wastlanders.yellowpaintcan": "Yellow Paint Can",
+      "block.wastlanders.militaryplatedstairs": "Military Plated Stairs",
+      "entity.fallout_wastelands.basesupermutant": "Super Mutant Grunt",
+      "block.fallout_wastelands.militaryplatedstairs": "Military Plated Stairs",
+      "block.fallout_wastelands.walkwayslab": "Walkway Slab",
+      "item.wastlanders.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
+      "block.fallout_wastelands.scaffolding": "Scaffolding",
+      "block.wastlanders.wastelandlapislazuli": "Wasteland Lapis Lazuli Ore",
+      "item.wastlanders.coffepot": "Coffee Pot",
+      "item.fallout_wastelands.wrench": "Wrench",
+      "block.wastlanders.wastelandrock": "Wasteland Cobblestone",
+      "item.wastlanders.armyrobobrain": "Army Robobrain Spawn Egg",
+      "item.wastlanders.stimpack": "Stimpak",
+      "item.wastlanders.chromedraiderfemale": "Female Wasteland Raider Spawn Egg",
+      "block.wastlanders.wastelandconcretevent": "Wasteland Concrete Vent",
+      "item.fallout_wastelands.xanderroot": "Xander Root",
+      "block.fallout_wastelands.moltentin": "Molten Tin Block",
+      "block.wastlanders.redindusrivetmid": "Red Industrial Block (mid rivet)",
+      "item.fallout_wastelands.rangedsupermutant_spawn_egg": "Supermutant Brute Spawn Egg",
+      "item.minecraft.splash_potion.effect.radiation": "Splash Radiation Poisoning",
+      "block.fallout_wastelands.charredplankslab": "Charred Plank Slab",
+      "block.wastlanders.wastelandcopper": "Wasteland Copper Ore",
+      "item.fallout_wastelands.enclaveofficierarmor_chestplate": "Enclave Officier Coat ",
+      "item.fallout_wastelands.coppernugget": "Copper Nugget",
+      "block.fallout_wastelands.wastelandglassblock": "Wasteland Glass Block",
+      "block.wastlanders.wastelandconcretestairs": "Wasteland Concrete Stairs",
+      "block.fallout_wastelands.enclavebunkerstairs": "Enclave Bunker Stairs",
+      "item.wastlanders.neutronade": "Nuka Cola",
+      "subtitles.tenmmc": "",
+      "subtitles.menutheme": "",
+      "block.fallout_wastelands.vaultwallstairs": "Vaultwall 1",
+      "item.wastlanders.t_45powerarmor_helmet": "T-45 Power Armor Helmet",
+      "block.fallout_wastelands.wastelandstonebrick": "Wasteland Stonebrick",
+      "entity.wastlanders.mirelurk": "Mirelurk",
+      "item.wastlanders.friendlybrainbot": "Robot Brain (Hackable) Spawn Egg",
+      "item.wastlanders.rangedsupermutant_spawn_egg": "Supermutant Brute Spawn Egg",
+      "item.wastlanders.vaultjumpsuit_leggings": "Vault Jumpsuit Leggings (male)",
+      "biome.wastlanders.capitalwastelandeast": "Capitalwastelandeast",
+      "block.fallout_wastelands.vaulwall_4": "Vaulwall 4",
+      "item.wastlanders.tenmm": "10mm Pistol ",
+      "item.fallout_wastelands.aluminiumnugget": "Aluminium Nugget",
+      "block.wastlanders.moltenironblock": "Molten Iron Block",
+      "block.fallout_wastelands.militaryplatingslab": "Military Plating Slab",
+      "item.wastlanders.leadingot": "Lead Ingot",
+      "block.fallout_wastelands.charredplanksstairs": "Charred Plank Stairs",
+      "item.wastlanders.mirlurksteak": "Mirlurk Steak",
+      "item.wastlanders.steeldust": "Steel Dust",
+      "block.wastlanders.roadbitumen": "Road Bitumen",
+      "item.wastlanders.bluepaintcan": "Blue Paint Can",
+      "block.fallout_wastelands.aluminiumblock": "Aluminium Block",
+      "subtitles.ninemmshot": "",
+      "entity.fallout_wastelands.rangedsupermutant": "Supermutant Brute",
+      "item.fallout_wastelands.stimpack": "Stimpak",
+      "item.fallout_wastelands.t_45powerarmor_chestplate": "T-45 Power Armor Body",
+      "block.fallout_wastelands.radioactiveair": "Radioactive Air",
+      "item.wastlanders.metalclaw": "Metal Claw",
+      "block.wastlanders.testbunkerdoor": "Military Plated Door",
+      "item.fallout_wastelands.tinnugget": "Tin Nugget",
+      "block.fallout_wastelands.vaultdooranimation_137": "Vault Door135",
+      "block.wastlanders.bossteelplatingslabs": "Bos Steel Plating Slabs",
+      "block.fallout_wastelands.dooranimation_201": "Vault Door135",
+      "block.wastlanders.wastlandsand": "Wasteland Sand",
+      "block.fallout_wastelands.dooranimation_200": "Vault Door135",
+      "block.wastlanders.charredplank": "Charred Plank",
+      "block.wastlanders.uraniumblock": "Uranium Block",
+      "item.fallout_wastelands.neutronade": "Nuka Cola",
+      "item.wastlanders.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
+      "block.fallout_wastelands.vaultanimation_100": "Vault Door",
+      "item.wastlanders.robobrainrivetcanon": "Robobrainrivetcanon",
+      "block.fallout_wastelands.vaultanimation_105": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_106": "Vault Door",
+      "item.fallout_wastelands.enclavepowerarmorsoldier_spawn_egg": "Enclave Soldier (power armor) Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_107": "Vault Door",
+      "block.fallout_wastelands.wastelandemerald": "Wasteland Emerald Ore",
+      "block.fallout_wastelands.vaultanimation_108": "Vault Door",
+      "item.wastlanders.wasteland": "Wasteland Portal Igniter",
+      "block.fallout_wastelands.vaultanimation_102": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_103": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_104": "Vault Door",
+      "block.fallout_wastelands.vaultwall_2": "Vaultwall 2",
+      "block.fallout_wastelands.vaultwall_3": "Vaultwall 3",
+      "block.fallout_wastelands.vaultanimation_109": "Vault Door",
+      "block.fallout_wastelands.vaultwall_1": "Vaultwall 1",
+      "block.fallout_wastelands.rottenplanksslab": "Rotten Plank Slab",
+      "item.wastlanders.pipboy": "Pipboy-3000",
+      "block.fallout_wastelands.coreunit": "Core Unit Block",
+      "block.fallout_wastelands.vaultanimation_110": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_111": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_116": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_117": "Vault Door",
+      "block.fallout_wastelands.moltensteel": "Molten Steel Block",
+      "block.fallout_wastelands.vaultanimation_118": "Vault Door",
+      "block.fallout_wastelands.scaffoldingcrossed": "Scaffolding (Crossed)",
+      "block.fallout_wastelands.vaultanimation_119": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_112": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_113": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_114": "Vault Door",
+      "item.fallout_wastelands.greenpaintcan": "Green Paint Can",
+      "block.fallout_wastelands.vaultanimation_115": "Vault Door",
+      "block.wastlanders.geck_bo_sbunker": "GECK Bo Sbunker",
+      "item.wastlanders.ghoul": "Ghoul Spawn Egg",
+      "effect.radiation": "Radiation Poisoning",
+      "item.fallout_wastelands.jerrican": "Empty Jerrican",
+      "item.wastlanders.rawmirlurk": "Raw Mirlurk",
+      "block.fallout_wastelands.fridge": "Fridge",
+      "block.wastlanders.wastelandgold": "Wasteland Gold Ore",
+      "item.fallout_wastelands.malevaultdweller_2_spawn_egg": "Vault Dweller  Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_120": "Vault Door",
+      "block.wastlanders.rustedironslab": "Rusted Iron Slab",
+      "block.fallout_wastelands.vaultanimation_121": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_122": "Vault Door",
+      "block.wastlanders.copperblock": "Copper Block",
+      "block.fallout_wastelands.vaultanimation_127": "Vault Door",
+      "block.fallout_wastelands.metalshelf": "Metal Shelf",
+      "block.fallout_wastelands.wastelandglass": "Wasteland Glass",
+      "block.fallout_wastelands.vaultanimation_128": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_129": "Vault Door",
+      "block.fallout_wastelands.wastelandleadore": "Wasteland Lead Ore",
+      "block.fallout_wastelands.vaultanimation_123": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_124": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_125": "Vault Door",
+      "item.wastlanders.uraniumingot": "Uranium Ingot",
+      "block.fallout_wastelands.vaultanimation_126": "Vault Door",
+      "entity.fallout_wastelands.malevaultdweller_1": "Vault Dweller ",
+      "block.fallout_wastelands.vaultanimation_30": "Vault Door",
+      "entity.fallout_wastelands.malevaultdweller_2": "Vault Dweller ",
+      "item.fallout_wastelands.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
+      "block.fallout_wastelands.bossteelplatingslabs": "BoS Steel Plating Slab",
+      "block.fallout_wastelands.vaultanimation_37": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_38": "Vault Door",
+      "item.wastlanders.bugmeat": "Bug Flesh",
+      "block.fallout_wastelands.vaultanimation_35": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_36": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_33": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_34": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_31": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_32": "Vault Door",
+      "item.wastlanders.highwayman": "Highwayman Spawn Egg",
+      "item.fallout_wastelands.basesupermutant_spawn_egg": "Super Mutant Grunt Spawn Egg",
+      "block.fallout_wastelands.wastelandwornmetalblock": "Wasteland Worn Metal",
+      "block.fallout_wastelands.vaultanimation_28": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_29": "Vault Door",
+      "item.fallout_wastelands.combatknife": "Combat Knife",
+      "block.fallout_wastelands.vaultblastdoor": "Vaultblastdoor",
+      "block.fallout_wastelands.vaultanimation_40": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_41": "Vault Door 41",
+      "block.fallout_wastelands.vaultanimation_48": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_49": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_46": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_47": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_44": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_45": "Vault Door",
+      "block.wastlanders.bo_sdoor": "BoS Blast Door",
+      "item.wastlanders.raidergunner": "Raider Gunner Spawn Egg",
+      "item.wastlanders.bloatfly_spawn_egg": "Bloatfly Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_42": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_43": "Vault Door",
+      "block.fallout_wastelands.sheetmetal": "Sheet metal",
+      "block.fallout_wastelands.vaultanimation_39": "Vault Door",
+      "item.wastlanders.greenpaintcan": "Green Paint Can",
+      "block.fallout_wastelands.decorativepipe": "Pipe",
+      "block.wastlanders.redindustrialdoor": "Red Industrial Door",
+      "block.wastlanders.wastelandgravel": "Wasteland Gravel",
+      "item.fallout_wastelands.chromeraider_spawn_egg": "Wasteland Raider Spawn Egg",
+      "item.fallout_wastelands.reaper": "Ripper",
+      "block.fallout_wastelands.vaultanimation_15": "Vault Door",
+      "block.fallout_wastelands.wastelandtinore": "Wasteland Tin Ore",
+      "block.fallout_wastelands.vaultanimation_16": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_13": "Vault Door",
+      "item.wastlanders.fueljerrican": "Fuel Jerrican",
+      "block.fallout_wastelands.vaultanimation_14": "Vault Door",
+      "item.wastlanders.coppernugget": "Copper Nugget",
+      "block.fallout_wastelands.vaultanimation_11": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_12": "Vault Door",
+      "entity.wastlanders.chromedraiderfemale": "Female Wasteland Raider",
+      "block.fallout_wastelands.vaultanimation_10": "Vault Door",
+      "block.wastlanders.tirestack": "Tire Stack",
+      "item.minecraft.tipped_arrow.effect.radiation": "Arrow of Radiation Poisoning",
+      "item.fallout_wastelands.uraniumnugget": "Uranium Nugget",
+      "block.wastlanders.militaryplatedradiationwarrior": "Military plating (radiation)",
+      "block.fallout_wastelands.plasterwall": "Plaster Wall",
+      "advancements.jointheworld.descr": "Vault tec wish you a good luck ...",
+      "item.fallout_wastelands.abraxo": "Abraxo ",
+      "block.fallout_wastelands.vaultanimation_26": "Vault Door",
+      "block.fallout_wastelands.militaryplatingglass": "Military Plating Glass",
+      "block.fallout_wastelands.vaultanimation_27": "Vault Door",
+      "block.fallout_wastelands.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
+      "block.fallout_wastelands.vaultanimation_24": "Vault Door",
+      "block.wastlanders.bossteelplating": "BoS Metal Plating (light)",
+      "block.fallout_wastelands.vaultanimation_25": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_22": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_23": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_20": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_21": "Vault Door",
+      "item.wastlanders.militaryhull": "Military Hull",
+      "block.fallout_wastelands.vaultanimation_19": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_17": "Vault Door",
+      "item.wastlanders.robobraintrack": "Robobrain Track",
+      "block.fallout_wastelands.vaultanimation_18": "Vault Door",
+      "block.wastlanders.sheetmetal": "Sheet metal",
+      "block.fallout_wastelands.wastelandbrick": "Wasteland Brick",
+      "block.fallout_wastelands.vaultanimation_73": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_74": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_71": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_72": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_70": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_79": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_77": "Vault Door",
+      "item.wastlanders.combatknife": "Combat Knife",
+      "item.fallout_wastelands.femalevaultdweller_2_spawn_egg": "Vault Dweller Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_78": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_75": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_76": "Vault Door",
+      "block.fallout_wastelands.frbblock": "Robotbrain In A package",
+      "block.fallout_wastelands.plaster": "Plaster",
+      "block.fallout_wastelands.vaultanimation_84": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_85": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_82": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_83": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_80": "Vault Door",
+      "item.fallout_wastelands.bugmeat": "Bug Flesh",
+      "block.fallout_wastelands.vaultanimation_81": "Vault Door",
+      "block.wastlanders.walkway": "Walkway",
+      "block.fallout_wastelands.enclavedoors": "Enclave Door",
+      "item.fallout_wastelands.vaultjumpsuit_boots": "Vault Jumpsuit Boots (male)",
+      "block.fallout_wastelands.vaultanimation_88": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_89": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_86": "Vault Door",
+      "block.fallout_wastelands.ammunitionbox": "Ammunition Box",
+      "block.fallout_wastelands.vaultanimation_87": "Vault Door",
+      "item.fallout_wastelands.rustedcombatweapon": "Junk sword",
+      "item.fallout_wastelands.closecombatsupermutant_spawn_egg": "Close Combat Supermutant Spawn Egg",
+      "entity.fallout_wastelands.femalevaultdweller_2": "Vault Dweller",
+      "entity.fallout_wastelands.femalevaultdweller_1": "Vault Dweller ",
+      "block.fallout_wastelands.bosbasemetalplating": "BoS Metal Plating",
+      "item.fallout_wastelands.fusionmicrocell": "Fusion Cell",
+      "block.fallout_wastelands.vaultanimation_51": "Vault Door",
+      "item.fallout_wastelands.rotativepart": "Rotary Piece",
+      "block.fallout_wastelands.vaultanimation_52": "Vault Door",
+      "block.fallout_wastelands.openedvaultblastdoor": "Vault Blast Door",
+      "block.fallout_wastelands.vaultanimation_50": "Vault Door",
+      "block.fallout_wastelands.redindustrialblock": "Red Industrial Block",
+      "block.fallout_wastelands.vaultanimation_59": "Vault Door",
+      "block.fallout_wastelands.walkwaystairs": "Walkway Stairs",
+      "block.fallout_wastelands.vaultanimation_57": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_58": "Vault Door",
+      "block.wastlanders.scaffoldingcrossed": "Scaffolding (Crossed)",
+      "block.fallout_wastelands.vaultanimation_55": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_56": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_53": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_54": "Vault Door",
+      "item.wastlanders.wrench": "Wrench",
+      "block.fallout_wastelands.vaultfloor_2": "Vault Floor Block",
+      "block.fallout_wastelands.enclavebunkerfloor": "Enclave Bunker Floor",
+      "block.fallout_wastelands.vaultanimation_62": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_63": "Vault Door",
+      "block.wastlanders.blastwindows": "Blast Windows",
+      "item.wastlanders.femalevaultjumpsuit_chestplate": "Vault Jumpsuit Body (female)",
+      "block.fallout_wastelands.vaultanimation_60": "Vault Door",
+      "item.wastlanders.nailgun": "Nailgun",
+      "block.fallout_wastelands.vaultanimation_61": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_68": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_69": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_66": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_67": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_64": "Vault Door",
+      "block.wastlanders.wastlandconcrete": "Old Concrete",
+      "block.fallout_wastelands.vaultanimation_65": "Vault Door",
+      "subtitles.tenmmshootb": "",
+      "entity.wastlanders.rangedsupermutant": "Supermutant Brute",
+      "item.fallout_wastelands.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
+      "item.wastlanders.frbcannon": "Frbcannon",
+      "block.fallout_wastelands.vaultanimation_130": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_131": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_132": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_133": "Vault Door",
+      "item.fallout_wastelands.bloatflyshot": "Bloatflyshot",
+      "item.fallout_wastelands.vaultjumpsuit_helmet": "Vaultjumpsuit Helmet",
+      "item.fallout_wastelands.enclav_eofficier_spawn_egg": "Enclave Officier Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_134": "Vault Door",
+      "biome.wastlanders.desertwastland": "Desertwastland",
+      "item.wastlanders.nailedwrench": "Nailed Wrench",
+      "block.fallout_wastelands.vaultanimation_135": "Vault Door135",
+      "item.fallout_wastelands.vaultjumpsuit_leggings": "Vault Jumpsuit Leggings (male)",
+      "block.fallout_wastelands.wastelandcoal": "Wasteland Coal Ore",
+      "item.wastlanders.jerrican": "Empty Jerrican",
+      "item.wastlanders.reaper": "Ripper",
+      "entity.wastlanders.raidergunner": "Raider Gunner",
+      "block.wastlanders.walkwaystairs": "Walkway Stairs",
+      "block.fallout_wastelands.deadgrass": "Wasteland Dead Grass",
+      "item.wastlanders.robobrainengine": "Engine",
+      "block.fallout_wastelands.vaultanimation_95": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_96": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_93": "Vault Door",
+      "block.fallout_wastelands.wastelandsteelbars": "Wasteland Steel Bars",
+      "block.fallout_wastelands.vaultanimation_94": "Vault Door",
+      "block.wastlanders.wastelancobblestonewall": "Wasteland Cobble Wall",
+      "block.fallout_wastelands.vaultanimation_91": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_92": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_90": "Vault Door",
+      "key.fallout_wastelands.aimtest": "Aimtest",
+      "entity.fallout_wastelands.armyrobobrain": "Army Robobrain",
+      "item.wastlanders.bloatfly": "Bloatfly Spawn Egg",
+      "block.fallout_wastelands.vaultanimation_99": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_97": "Vault Door",
+      "block.fallout_wastelands.vaultanimation_98": "Vault Door",
+      "block.fallout_wastelands.wastelanddirt": "Wasteland Dirt",
+      "block.fallout_wastelands.wastelandglass_2": "Wasteland Glass",
+      "block.wastlanders.redindustrialrivetdown": "Red Industrial Block (rivet bottom)",
+      "item.fallout_wastelands.enclaveplating": "Enclave Plating",
+      "block.fallout_wastelands.wastelandconcretewall": "Wasteland Concrete Wall",
+      "block.wastlanders.deadtrunk": "Chared Log",
+      "block.wastlanders.coffeemixer": "Coffee Brewer ",
+      "item.wastlanders.steelingot": "Steel Ingot",
+      "block.wastlanders.leadblock": "Lead Block",
+      "item.fallout_wastelands.sheetmetalplating": "Sheet Metal Plating",
+      "block.wastlanders.wastelandcobblestairs": "Wasteland Cobble Stairs",
+      "block.wastlanders.wastelandleadore": "Wasteland Lead Ore",
+      "subtitles.wastelandwind": "",
+      "item.fallout_wastelands.mmpistolnineaim": "9mm pistol",
+      "block.fallout_wastelands.rustedruinblockground": "Rusted Ruin Ground Block",
+      "block.fallout_wastelands.safeblock": "Concrete Safe",
+      "block.fallout_wastelands.rustedironslab": "Rusted Iron Slab",
+      "block.wastlanders.militaryplatedground": "Military Plating (walk way)",
+      "item.fallout_wastelands.t_45powerarmor_helmet": "T-45 Power Armor Helmet",
+      "block.fallout_wastelands.moltencopperblock": "Molten Copper Block",
+      "block.fallout_wastelands.wastelandconcretestairs": "Wasteland Concrete Stairs",
+      "block.wastlanders.wastelandconcreteslab": "Wasteland Concrete Slab",
+      "block.fallout_wastelands.rustbloc": "Fully Rusted Iron",
+      "item.fallout_wastelands.militarygradeaccessbadge": "Military Grade Access Badge",
+      "biome.fallout_wastelands.desertwastland": "Desertwastland",
+      "block.wastlanders.wastelandemerald": "Wasteland Emerald Ore",
+      "block.fallout_wastelands.invisiblelightsource": "Invisiblelightsource",
+      "block.wastlanders.moltentin": "Molten Tin Block",
+      "item.wastlanders.chromeraider_spawn_egg": "Wasteland Raider Spawn Egg",
+      "item.fallout_wastelands.cannedporkshop": "Canned Porkshop",
+      "item.wastlanders.tireiron": "Tire Iron",
+      "block.fallout_wastelands.gore": "Gore",
+      "item.fallout_wastelands.septammo": "7.62 ammo",
+      "fluid.fevgoo": "Fevgoo",
+      "block.fallout_wastelands.metalchair": "Metal Chair",
+      "block.fallout_wastelands.wastelanduraniumore": "Wasteland Uranium Ore",
+      "item.wastlanders.rustedcombatweapon": "Junk sword",
+      "block.fallout_wastelands.vaultfloor": "Vaultfloor",
+      "item.fallout_wastelands.enclave_x_01pa_helmet": "Enclave APA Helmet",
+      "item.wastlanders.t_45powerarmor_boots": "T-45 Power Armor Boots",
+      "item.fallout_wastelands.bottlecaps": "Bottlecaps",
+      "block.wastlanders.brotherhoodofsteelmetalplating": "BoS Metal Plating (lines)",
+      "block.fallout_wastelands.bo_sdoor": "BoS Blast Door",
+      "block.wastlanders.militaryplatingwall": "Military Plated Wall",
+      "block.fallout_wastelands.cellinglights": "Celling Lights",
+      "item.fallout_wastelands.robobraintrack": "Robobrain Track",
+      "block.fallout_wastelands.charredplank": "Charred Plank",
+      "block.wastlanders.wastelandbrick": "Wasteland Brick",
+      "item.fallout_wastelands.leadnugget": "Lead Nugget",
+      "item.wastlanders.aluminiumingot": "Aluminium Ingot",
+      "block.fallout_wastelands.rottenplankfence": "Rotten Plank Fence",
+      "block.wastlanders.rustedironwalls": "Rusted Iron Walls",
+      "advancements.itsalive.descr": "My creation is Allliiiiivee !!!",
+      "item.fallout_wastelands.nuclearwaste": "Nuclear Waste",
+      "item.fallout_wastelands.nails": "Nails",
+      "item.fallout_wastelands.nailgun": "Nailgun",
+      "item.wastlanders.robobrainhead": "Robobrain Head",
+      "block.fallout_wastelands.enclavebunkerblock": "Enclave Bunker Block",
+      "block.fallout_wastelands.vault_door_filler": "Vault Door Filler",
+      "block.wastlanders.structuralmetalblock": "Structural Metal Block",
+      "item.fallout_wastelands.plasmas": "Plasmas",
+      "item.wastlanders.femalevaultjumpsuit_leggings": "Vault Jumpsuit Leggings (female)",
+      "item.wastlanders.themachinegun": "Butcher Mk1",
+      "entity.fallout_wastelands.chromeraider": "Wasteland Raider",
+      "block.wastlanders.barrelbarrel": "Barrel",
+      "block.fallout_wastelands.wastelandbrickslab": "Wasteland Brick Slab",
+      "item.wastlanders.bloatflyshot": "Bloatflyshot",
+      "entity.wastlanders.highwayman": "Highwayman",
+      "item.fallout_wastelands.track": "Track Segment",
+      "item.fallout_wastelands.wasteland": "Wasteland Portal Igniter",
+      "item.fallout_wastelands.cigarettepack": "Cigarette Pack",
+      "entity.fallout_wastelands.enclav_eofficier": "Enclave Officier",
+      "block.wastlanders.wastelanddiamond": "Wasteland Diamond Ore",
+      "item.fallout_wastelands.enclaveofficierarmor_leggings": "Enclave Officier Pants ",
+      "block.fallout_wastelands.bo_slights": "BoS Light",
+      "item.fallout_wastelands.redpaintcan": "Red Paint Can",
+      "item.fallout_wastelands.enclave_x_01pa_leggings": "Enclave APA Leggings",
+      "block.fallout_wastelands.vault_door_frame": "Vault Door Frame",
+      "item.wastlanders.ingot_tin": "Tin Ingot",
+      "item.fallout_wastelands.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
+      "block.fallout_wastelands.wastelandgold": "Wasteland Gold Ore",
+      "block.fallout_wastelands.leadblock": "Lead Block",
+      "block.fallout_wastelands.enclavebunkerblockwall": "Enclave Bunker Block Wall",
+      "item.wastlanders.t_45powerarmor_chestplate": "T-45 Power Armor Body",
+      "item.wastlanders.femalevaultjumpsuit_boots": "Vault Jumpsuit Boots (female)",
+      "block.fallout_wastelands.bossteelstructureslab": "BoS Steel Slab (light)",
+      "block.fallout_wastelands.militaryplatedradiationwarrior": "Military plating (radiation)",
+      "block.fallout_wastelands.metallicwall": "Industrial Metal Plating",
+      "block.wastlanders.frbblock": "Robotbrain In A package",
+      "block.fallout_wastelands.wastelandcopper": "Wasteland Copper Ore",
+      "block.fallout_wastelands.walkway": "Walkway",
       "block.fallout_wastelands.structuralmetalblock": "Structural Metal Block",
       "item.fallout_wastelands.malewastelander_4_spawn_egg": "Wastelander Spawn Egg",
       "block.fallout_wastelands.redindusupperrivet": "Red Industrial Block (upper rivet)",
-      "item.fallout_wastelands.bossteelplate": "BoS Steelplate",
-      "block.fallout_wastelands.redindustrialblockwarning": "Red Industrial Block (warning)",
       "subtitles.tenmmshot": "",
-      "item.fallout_wastelands.femalevaultjumpsuit_boots": "Vault Jumpsuit Boots (female)",
       "item.fallout_wastelands.ak": "Ak",
-      "block.fallout_wastelands.oldpapers": "Old Papers",
-      "item.wastlanders.yellowpaintcan": "Yellow Paint Can",
       "item.wastlanders.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",
-      "block.wastlanders.militaryplatedstairs": "Military Plated Stairs",
       "block.fallout_wastelands.industrialredwalkway": "Red Industrial Black (walk way)",
-      "entity.fallout_wastelands.basesupermutant": "Super Mutant Grunt",
-      "block.fallout_wastelands.militaryplatedstairs": "Military Plated Stairs",
       "item.wastlanders.nuclearwaste": "Nuclear Waste",
       "item.wastlanders.sheetmetalplating": "Sheet Metal Plating",
       "item.fallout_wastelands.malewastelander_3_spawn_egg": "Wastelander Spawn Egg",
       "block.fallout_wastelands.brotherhoodofsteelmetalplating": "BoS Metal Plating (lines)",
-      "block.fallout_wastelands.walkwayslab": "Walkway Slab",
       "entity.fallout_wastelands.overseer": "Overseer",
-      "item.wastlanders.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
       "block.fallout_wastelands.redindustrialblockstairs": "Red Industrial Stairs",
-      "block.fallout_wastelands.scaffolding": "Scaffolding",
-      "block.wastlanders.wastelandlapislazuli": "Wasteland Lapis Lazuli Ore",
-      "item.wastlanders.coffepot": "Coffee Pot",
       "block.fallout_wastelands.moltenaluminiumblock": "Molten Aluminium Block",
       "block.fallout_wastelands.plasterslab": "Plaster Slab",
-      "item.fallout_wastelands.wrench": "Wrench",
       "item.fallout_wastelands.tenmmammo": "10mm Ammunition ",
       "block.fallout_wastelands.vault_door": "Vault Door",
       "item.wastlanders.chromeraider": "Wasteland Raider Spawn Egg",
       "block.fallout_wastelands.rottenwooddoor": "Rotten Wood Door",
       "block.wastlanders.redindustrialblock": "Red Industrial Block",
-      "block.wastlanders.wastelandrock": "Wasteland Cobblestone",
       "block.wastlanders.moltenaluminiumblock": "Molten Aluminium Block",
       "subtitles.plasmarifle": "",
-      "item.wastlanders.armyrobobrain": "Army Robobrain Spawn Egg",
       "item.wastlanders.closecombatsupermutant": "Closecombatsupermutant Spawn Egg",
       "block.fallout_wastelands.wastelanddiamond": "Wasteland Diamond Ore",
       "entity.fallout_wastelands.raidergunner": "Raider Gunner",
       "entity.fallout_wastelands.enclavepowerarmorsoldier": "Enclave Soldier (power armor)",
-      "item.wastlanders.stimpack": "Stimpak",
-      "item.wastlanders.chromedraiderfemale": "Female Wasteland Raider Spawn Egg",
       "block.wastlanders.bossteelstructureslab": "Bos Steel Slab (light)",
-      "block.wastlanders.wastelandconcretevent": "Wasteland Concrete Vent",
-      "item.fallout_wastelands.xanderroot": "Xander Root",
       "itemGroup.tabblocs_w": "Wastlanders Blocks",
-      "block.fallout_wastelands.moltentin": "Molten Tin Block",
       "block.fallout_wastelands.rustediron": "Rusted Iron",
-      "block.wastlanders.redindusrivetmid": "Red Industrial Block (mid rivet)",
       "block.fallout_wastelands.tirestack": "Tire Stack",
       "item.fallout_wastelands.malewastelander_1_spawn_egg": "Wastelander Spawn Egg",
-      "item.fallout_wastelands.rangedsupermutant_spawn_egg": "Supermutant Brute Spawn Egg",
       "entity.fallout_wastelands.bloatfly": "Bloatfly",
       "block.fallout_wastelands.wastelandconcreteslab": "Wasteland Concrete Slab",
       "item.fallout_wastelands.malevaultdweller_1_spawn_egg": "Vault Dweller  Spawn Egg",
-      "item.minecraft.splash_potion.effect.radiation": "Splash Radiation Poisoning",
       "item.wastlanders.neutronadebottle": "Nuka cola Bottle",
       "block.wastlanders.wastelandallumiumore": "Wasteland Aluminium Ore",
-      "block.fallout_wastelands.charredplankslab": "Charred Plank Slab",
       "block.wastlanders.militaryplatingslab": "Military Plating Slab",
       "block.fallout_wastelands.charredplankfence": "Charred Plank Fence",
-      "block.wastlanders.wastelandcopper": "Wasteland Copper Ore",
-      "item.fallout_wastelands.enclaveofficierarmor_chestplate": "Enclave Officier Coat ",
-      "item.fallout_wastelands.coppernugget": "Copper Nugget",
       "item.wastlanders.basesupermutant_spawn_egg": "Super Mutant Grunt Spawn Egg",
       "item.wastlanders.ak": "Ak",
-      "block.fallout_wastelands.wastelandglassblock": "Wasteland Glass Block",
       "block.wastlanders.wastelandtile": "Wasteland Tile",
-      "block.wastlanders.wastelandconcretestairs": "Wasteland Concrete Stairs",
       "block.fallout_wastelands.militaryplatingblockhazard": "Military Plating (Hazard)",
       "block.wastlanders.charredplanksstairs": "Charred Plank Stairs",
-      "block.fallout_wastelands.enclavebunkerstairs": "Enclave Bunker Stairs",
-      "item.wastlanders.neutronade": "Nuka Cola",
       "item.fallout_wastelands.humanbrain": "Human Brain",
-      "subtitles.tenmmc": "",
       "block.fallout_wastelands.moltenironblock": "Molten Iron Block",
-      "subtitles.menutheme": "",
       "block.wastlanders.rottenplankfence": "Rotten Plank Fence",
       "block.fallout_wastelands.blastwindows": "Blast Windows",
       "block.wastlanders.moltensteel": "Molten Steel Block",
       "item.fallout_wastelands.whitepaintcan": "White Paint Can",
-      "block.fallout_wastelands.vaultwallstairs": "Vaultwall 1",
-      "item.wastlanders.t_45powerarmor_helmet": "T-45 Power Armor Helmet",
-      "block.fallout_wastelands.wastelandstonebrick": "Wasteland Stonebrick",
       "block.fallout_wastelands.uraniumblock": "Uranium Block",
-      "entity.wastlanders.mirelurk": "Mirelurk",
-      "item.wastlanders.friendlybrainbot": "Robot Brain (Hackable) Spawn Egg",
       "block.wastlanders.redindustrialblockwarning": "Red Industrial Block (warning)",
-      "item.wastlanders.rangedsupermutant_spawn_egg": "Supermutant Brute Spawn Egg",
       "item.fallout_wastelands.femalevaultjumpsuit_helmet": "Femalevaultjumpsuit Helmet",
       "block.wastlanders.redindustrialblocslab": "Redindustrial Block Slab",
-      "item.wastlanders.vaultjumpsuit_leggings": "Vault Jumpsuit Leggings (male)",
-      "biome.wastlanders.capitalwastelandeast": "Capitalwastelandeast",
-      "block.fallout_wastelands.vaulwall_4": "Vaulwall 4",
-      "item.wastlanders.tenmm": "10mm Pistol ",
-      "item.wastlanders.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
       "item.wastlanders.raidergunner_spawn_egg": "Raider Gunner Spawn Egg",
-      "item.fallout_wastelands.aluminiumnugget": "Aluminium Nugget",
+      "item.wastlanders.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
       "item.wastlanders.militarygradeaccessbadge": "Military Grade Access Badge",
       "block.fallout_wastelands.tinblock": "Tin Block",
       "block.fallout_wastelands.wastelandrock": "Wasteland Cobblestone",
       "block.fallout_wastelands.rottenplanks": "Rotten Plank",
       "block.wastlanders.wastelandstonebrick": "Wasteland Stonebrick",
-      "block.wastlanders.moltenironblock": "Molten Iron Block",
       "item.fallout_wastelands.malewastelander_2_spawn_egg": "Wastelander Spawn Egg",
       "block.fallout_wastelands.vaultanimation_9": "Vault Door",
-      "block.fallout_wastelands.militaryplatingslab": "Military Plating Slab",
       "block.fallout_wastelands.vaultanimation_8": "Vault Door",
-      "item.wastlanders.leadingot": "Lead Ingot",
       "block.fallout_wastelands.vaultanimation_7": "Vault Door",
       "block.fallout_wastelands.vaultanimation_6": "Vault Door",
-      "block.fallout_wastelands.charredplanksstairs": "Charred Plank Stairs",
       "block.fallout_wastelands.vaultanimation_5": "Vault Door",
       "item.wastlanders.closecombatsupermutant_spawn_egg": "Closecombatsupermutant Spawn Egg",
       "block.fallout_wastelands.vaultanimation_4": "Vault Door",
       "block.fallout_wastelands.vaultanimation_3": "Vault Door",
       "block.wastlanders.deadroots": "Wasteland Dead Roots",
       "block.fallout_wastelands.vaultanimation_2": "Vault Door",
-      "item.wastlanders.mirlurksteak": "Mirlurk Steak",
       "block.fallout_wastelands.vaultanimation_1": "Vault Door",
       "block.wastlanders.rottenplanksslab": "Rotten Plank Slab",
       "item.fallout_wastelands.femalevaultjumpsuit_leggings": "Vault Jumpsuit Leggings (female)",

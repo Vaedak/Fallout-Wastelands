@@ -14,7 +14,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.fallout_wastelands.block.VaultDoorTopPartBlock;
 import net.mcreator.fallout_wastelands.block.VaultDoorFillerBlock;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
@@ -101,8 +100,8 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 				}
 
 				private void run() {
-					if ((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == VaultDoorTopPartBlock.block
-							.getDefaultState().getBlock()) == (false))) {
+					if ((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR.getDefaultState()
+							.getBlock()) == (true))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);

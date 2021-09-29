@@ -2,6 +2,10 @@ package net.mcreator.fallout_wastelands.procedures;
 
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Direction;
+import net.minecraft.state.EnumProperty;
+import net.minecraft.state.DirectionProperty;
+import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.Vaultanimation41Block;
 import net.mcreator.fallout_wastelands.block.Vaultanimation40Block;
@@ -43,6 +47,45 @@ public class Vaultanimation40UpdateTickProcedure extends FalloutWastelandsModEle
 		IWorld world = (IWorld) dependencies.get("world");
 		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Vaultanimation40Block.block.getDefaultState().getBlock())) {
 			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Vaultanimation41Block.block.getDefaultState(), 3);
+		}
+		try {
+			BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
+			DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+			if (_property != null) {
+				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(_property, (new Object() {
+					public Direction getDirection(BlockPos pos) {
+						try {
+							BlockState _bs = world.getBlockState(pos);
+							DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+							if (property != null)
+								return _bs.get(property);
+							return Direction.getFacingFromAxisDirection(
+									_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
+									Direction.AxisDirection.POSITIVE);
+						} catch (Exception e) {
+							return Direction.NORTH;
+						}
+					}
+				}.getDirection(new BlockPos((int) x, (int) (y - 1), (int) z)))), 3);
+			} else {
+				world.setBlockState(new BlockPos((int) x, (int) y, (int) z),
+						_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), (new Object() {
+							public Direction getDirection(BlockPos pos) {
+								try {
+									BlockState _bs = world.getBlockState(pos);
+									DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+									if (property != null)
+										return _bs.get(property);
+									return Direction.getFacingFromAxisDirection(
+											_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
+											Direction.AxisDirection.POSITIVE);
+								} catch (Exception e) {
+									return Direction.NORTH;
+								}
+							}
+						}.getDirection(new BlockPos((int) x, (int) (y - 1), (int) z))).getAxis()), 3);
+			}
+		} catch (Exception e) {
 		}
 	}
 }

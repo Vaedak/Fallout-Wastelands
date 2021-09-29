@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fallout_wastelands:block/vaultdooranimation_cytokenisis"
+    },
+    "facing=east": {
+      "model": "fallout_wastelands:block/vaultdooranimation_cytokenisis",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fallout_wastelands:block/vaultdooranimation_cytokenisis",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fallout_wastelands:block/vaultdooranimation_cytokenisis",
+      "y": 270
+    }
+  }
+}

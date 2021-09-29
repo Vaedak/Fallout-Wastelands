@@ -7,8 +7,8 @@ import net.minecraft.state.EnumProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.fallout_wastelands.block.Vaultanimation101heheBlock;
 import net.mcreator.fallout_wastelands.block.Vaultanimation100Block;
-import net.mcreator.fallout_wastelands.block.VaultDoorAnimation0Block;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
@@ -47,7 +47,7 @@ public class Vaultanimation100UpdateTickProcedure extends FalloutWastelandsModEl
 		IWorld world = (IWorld) dependencies.get("world");
 		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Vaultanimation100Block.block.getDefaultState()
 				.getBlock())) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), VaultDoorAnimation0Block.block.getDefaultState(), 3);
+			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Vaultanimation101heheBlock.block.getDefaultState(), 3);
 		}
 		try {
 			BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));

@@ -10,10 +10,13 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.Mirror;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.loot.LootContext;
@@ -32,6 +35,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
 import net.mcreator.fallout_wastelands.procedures.VaultDoorTopPartUpdateTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.VaultDoorTopPartOnBlockRightClickedProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
@@ -130,6 +134,25 @@ public class VaultDoorTopPartBlock extends FalloutWastelandsModElements.ModEleme
 				VaultDoorTopPartUpdateTickProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 10);
+		}
+
+		@Override
+		public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity entity, Hand hand,
+				BlockRayTraceResult hit) {
+			super.onBlockActivated(state, world, pos, entity, hand, hit);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			Direction direction = hit.getFace();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				VaultDoorTopPartOnBlockRightClickedProcedure.executeProcedure($_dependencies);
+			}
+			return ActionResultType.SUCCESS;
 		}
 	}
 }

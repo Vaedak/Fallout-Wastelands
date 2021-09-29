@@ -1,0 +1,8 @@
+{
+  "parent": "fallout_wastelands:custom/vaultdoorframe",
+  "textures": {
+    "all": "fallout_wastelands:blocks/vaultblock_2",
+    "particle": "fallout_wastelands:blocks/vaultblock_2",
+    "0": "fallout_wastelands:blocks/vaultgeardoorframe"
+  }
+}
