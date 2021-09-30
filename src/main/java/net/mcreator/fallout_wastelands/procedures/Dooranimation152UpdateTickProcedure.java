@@ -7,6 +7,7 @@ import net.minecraft.state.EnumProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.fallout_wastelands.block.Dooranimation153Block;
 import net.mcreator.fallout_wastelands.block.Dooranimation152Block;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
@@ -45,7 +46,7 @@ public class Dooranimation152UpdateTickProcedure extends FalloutWastelandsModEle
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Dooranimation152Block.block.getDefaultState().getBlock())) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Dooranimation152Block.block.getDefaultState(), 3);
+			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Dooranimation153Block.block.getDefaultState(), 3);
 		}
 		try {
 			BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));

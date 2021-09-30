@@ -28,7 +28,7 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.fallout_wastelands.procedures.Dooranimation138UpdateTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.Dooranimation163UpdateTickProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
@@ -119,7 +119,7 @@ public class Dooranimation163Block extends FalloutWastelandsModElements.ModEleme
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				Dooranimation138UpdateTickProcedure.executeProcedure($_dependencies);
+				Dooranimation163UpdateTickProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 1);
 		}

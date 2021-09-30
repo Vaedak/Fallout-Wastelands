@@ -9,7 +9,7 @@
     "textureRight": "",
     "textureBack": "",
     "renderType": 2,
-    "customModelName": "vaultanimation138doorout:default",
+    "customModelName": "vaultanimation154doorout:default",
     "rotationMode": 1,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
@@ -102,7 +102,7 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
-      "name": "Dooranimation138UpdateTick"
+      "name": "Dooranimation154UpdateTick"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

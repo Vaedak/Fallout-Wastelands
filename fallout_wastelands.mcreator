@@ -13280,6 +13280,1436 @@
           }
         ]
       }
+    },
+    {
+      "name": "Dooranimation154UpdateTick",
+      "type": "procedure",
+      "sortid": 1002,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_154_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation155UpdateTick",
+      "type": "procedure",
+      "sortid": 1003,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_155_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation156UpdateTick",
+      "type": "procedure",
+      "sortid": 1004,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_156_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation157UpdateTick",
+      "type": "procedure",
+      "sortid": 1005,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_157_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation158UpdateTick",
+      "type": "procedure",
+      "sortid": 1006,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_158_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation159UpdateTick",
+      "type": "procedure",
+      "sortid": 1007,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_159_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation160UpdateTick",
+      "type": "procedure",
+      "sortid": 1008,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_160_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation161UpdateTick",
+      "type": "procedure",
+      "sortid": 1009,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_161_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation162UpdateTick",
+      "type": "procedure",
+      "sortid": 1010,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_162_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation163UpdateTick",
+      "type": "procedure",
+      "sortid": 1011,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_163_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation164UpdateTick",
+      "type": "procedure",
+      "sortid": 1012,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_164_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation165UpdateTick",
+      "type": "procedure",
+      "sortid": 1013,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_165_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation166UpdateTick",
+      "type": "procedure",
+      "sortid": 1014,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_166_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation167UpdateTick",
+      "type": "procedure",
+      "sortid": 1015,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_167_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation168UpdateTick",
+      "type": "procedure",
+      "sortid": 1016,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_168_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation169UpdateTick",
+      "type": "procedure",
+      "sortid": 1017,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_169_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation170UpdateTick",
+      "type": "procedure",
+      "sortid": 1018,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_170_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation171UpdateTick",
+      "type": "procedure",
+      "sortid": 1019,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_171_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation172UpdateTick",
+      "type": "procedure",
+      "sortid": 1020,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_172_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation173UpdateTick",
+      "type": "procedure",
+      "sortid": 1021,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_173_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation174UpdateTick",
+      "type": "procedure",
+      "sortid": 1022,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_174_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation175UpdateTick",
+      "type": "procedure",
+      "sortid": 1023,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_175_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation176UpdateTick",
+      "type": "procedure",
+      "sortid": 1024,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_176_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation177UpdateTick",
+      "type": "procedure",
+      "sortid": 1025,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_177_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation178UpdateTick",
+      "type": "procedure",
+      "sortid": 1026,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_178_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation179UpdateTick",
+      "type": "procedure",
+      "sortid": 1027,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_179_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation180UpdateTick",
+      "type": "procedure",
+      "sortid": 1028,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_180_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation181UpdateTick",
+      "type": "procedure",
+      "sortid": 1029,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_181_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation182UpdateTick",
+      "type": "procedure",
+      "sortid": 1030,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_182_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation183UpdateTick",
+      "type": "procedure",
+      "sortid": 1031,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_183_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation184UpdateTick",
+      "type": "procedure",
+      "sortid": 1032,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_184_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation185UpdateTick",
+      "type": "procedure",
+      "sortid": 1033,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_185_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation186UpdateTick",
+      "type": "procedure",
+      "sortid": 1034,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_186_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation187UpdateTick",
+      "type": "procedure",
+      "sortid": 1035,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_187_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation188UpdateTick",
+      "type": "procedure",
+      "sortid": 1036,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_188_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation189UpdateTick",
+      "type": "procedure",
+      "sortid": 1037,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_189_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation190UpdateTick",
+      "type": "procedure",
+      "sortid": 1038,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_190_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation191UpdateTick",
+      "type": "procedure",
+      "sortid": 1039,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_191_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation192UpdateTick",
+      "type": "procedure",
+      "sortid": 1040,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_192_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation193UpdateTick",
+      "type": "procedure",
+      "sortid": 1041,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_193_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation194UpdateTick",
+      "type": "procedure",
+      "sortid": 1042,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_194_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation195UpdateTick",
+      "type": "procedure",
+      "sortid": 1043,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_195_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation196UpdateTick",
+      "type": "procedure",
+      "sortid": 1044,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_196_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation197UpdateTick",
+      "type": "procedure",
+      "sortid": 1045,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_197_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation198UpdateTick",
+      "type": "procedure",
+      "sortid": 1046,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_198_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation199UpdateTick",
+      "type": "procedure",
+      "sortid": 1047,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_199_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation200UpdateTick",
+      "type": "procedure",
+      "sortid": 1048,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_200_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dooranimation201UpdateTick",
+      "type": "procedure",
+      "sortid": 1049,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dooranimation_201_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DoorDirectionControllerUpdateTick",
+      "type": "procedure",
+      "sortid": 1050,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "door_direction_controller_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DoorDirectionController",
+      "type": "block",
+      "sortid": 1050,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "door_direction_controller"
     }
   ],
   "variable_elements": [
@@ -14216,6 +15646,7 @@
       "block.fallout_wastelands.vaultanimation_94": "Vault Door",
       "block.wastlanders.wastelancobblestonewall": "Wasteland Cobble Wall",
       "block.fallout_wastelands.vaultanimation_91": "Vault Door",
+      "block.fallout_wastelands.door_direction_controller": "Door Direction Controller",
       "block.fallout_wastelands.vaultanimation_92": "Vault Door",
       "block.fallout_wastelands.vaultanimation_90": "Vault Door",
       "key.fallout_wastelands.aimtest": "Aimtest",
