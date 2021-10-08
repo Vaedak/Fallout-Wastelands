@@ -1,5 +1,5 @@
 {
-  "parent": "fallout_wastelands:custom/vaultanimation135",
+  "parent": "fallout_wastelands:custom/vaultanimation13",
   "textures": {
     "all": "fallout_wastelands:blocks/vaultblock_2",
     "particle": "fallout_wastelands:blocks/vaultblock_2",

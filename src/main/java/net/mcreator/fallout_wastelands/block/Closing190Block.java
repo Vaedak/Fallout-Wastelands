@@ -103,7 +103,7 @@ public class Closing190Block extends FalloutWastelandsModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 5);
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 4);
 		}
 
 		@Override
@@ -120,7 +120,7 @@ public class Closing190Block extends FalloutWastelandsModElements.ModElement {
 				$_dependencies.put("world", world);
 				Closing190UpdateTickProcedure.executeProcedure($_dependencies);
 			}
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 5);
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 4);
 		}
 	}
 }

@@ -29,7 +29,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
 import net.mcreator.fallout_wastelands.procedures.VaultDoorAnimation0UpdateTickProcedure;
-import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
 import java.util.Random;
@@ -49,7 +48,7 @@ public class VaultDoorAnimation0Block extends FalloutWastelandsModElements.ModEl
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(null)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override

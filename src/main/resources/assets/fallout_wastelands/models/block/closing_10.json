@@ -1,9 +1,9 @@
 {
-  "parent": "fallout_wastelands:custom/vaultanimation135",
+  "parent": "fallout_wastelands:custom/vaultanimation10",
   "textures": {
     "all": "fallout_wastelands:blocks/vaultblock_2",
     "particle": "fallout_wastelands:blocks/vaultblock_2",
-    "door out": "fallout_wastelands:blocks/vaultgeardoorout",
-    "frameanimated": "fallout_wastelands:blocks/vaultframeforanimationimportant"
+    "1": "fallout_wastelands:blocks/vaultframeforanimationimportant",
+    "door out": "fallout_wastelands:blocks/vaultgeardoorout"
   }
 }

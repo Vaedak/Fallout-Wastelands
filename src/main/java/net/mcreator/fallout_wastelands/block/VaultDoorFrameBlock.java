@@ -23,6 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.RenderType;
@@ -34,7 +35,7 @@ import net.minecraft.block.Block;
 
 import net.mcreator.fallout_wastelands.procedures.VaultDoorFrameUpdateTickProcedure;
 import net.mcreator.fallout_wastelands.procedures.VaultDoorFrameOnBlockRightClickedProcedure;
-import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
+import net.mcreator.fallout_wastelands.procedures.VaultDoorFrameBlockDestroyedByPlayerProcedure;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
 import java.util.Random;
@@ -54,7 +55,7 @@ public class VaultDoorFrameBlock extends FalloutWastelandsModElements.ModElement
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(null)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
@@ -120,9 +121,30 @@ public class VaultDoorFrameBlock extends FalloutWastelandsModElements.ModElement
 			int z = pos.getZ();
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
 				VaultDoorFrameUpdateTickProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 10);
+		}
+
+		@Override
+		public boolean removedByPlayer(BlockState state, World world, BlockPos pos, PlayerEntity entity, boolean willHarvest, FluidState fluid) {
+			boolean retval = super.removedByPlayer(state, world, pos, entity, willHarvest, fluid);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				VaultDoorFrameBlockDestroyedByPlayerProcedure.executeProcedure($_dependencies);
+			}
+			return retval;
 		}
 
 		@Override

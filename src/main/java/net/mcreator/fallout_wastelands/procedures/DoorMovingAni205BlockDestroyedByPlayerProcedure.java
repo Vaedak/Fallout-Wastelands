@@ -2,13 +2,9 @@ package net.mcreator.fallout_wastelands.procedures;
 
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Direction;
-import net.minecraft.state.EnumProperty;
-import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.BlockState;
 
-import net.mcreator.fallout_wastelands.block.AluminiumblockBlock;
+import net.mcreator.fallout_wastelands.block.VaultDoorFrameBlock;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
@@ -45,73 +41,21 @@ public class DoorMovingAni205BlockDestroyedByPlayerProcedure extends FalloutWast
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((new Object() {
-			public Direction getDirection(BlockPos pos) {
-				try {
-					BlockState _bs = world.getBlockState(pos);
-					DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (property != null)
-						return _bs.get(property);
-					return Direction.getFacingFromAxisDirection(
-							_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-							Direction.AxisDirection.POSITIVE);
-				} catch (Exception e) {
-					return Direction.NORTH;
-				}
-			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-			world.setBlockState(new BlockPos((int) (x - 3), (int) (y + 0), (int) (z - 1)), AluminiumblockBlock.block.getDefaultState(), 3);
+		if (((world.getBlockState(new BlockPos((int) (x - 3), (int) (y + 0), (int) (z - 1)))).getBlock() == VaultDoorFrameBlock.block
+				.getDefaultState().getBlock())) {
+			world.setBlockState(new BlockPos((int) (x - 3), (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 		}
-		if (((new Object() {
-			public Direction getDirection(BlockPos pos) {
-				try {
-					BlockState _bs = world.getBlockState(pos);
-					DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (property != null)
-						return _bs.get(property);
-					return Direction.getFacingFromAxisDirection(
-							_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-							Direction.AxisDirection.POSITIVE);
-				} catch (Exception e) {
-					return Direction.NORTH;
-				}
-			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-			world.setBlockState(new BlockPos((int) (x + 3), (int) (y + 0), (int) (z + 1)), Blocks.DIAMOND_BLOCK.getDefaultState(), 3);
+		if (((world.getBlockState(new BlockPos((int) (x + 3), (int) (y + 0), (int) (z + 1)))).getBlock() == VaultDoorFrameBlock.block
+				.getDefaultState().getBlock())) {
+			world.setBlockState(new BlockPos((int) (x + 3), (int) (y + 0), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
 		}
-		if (((new Object() {
-			public Direction getDirection(BlockPos pos) {
-				try {
-					BlockState _bs = world.getBlockState(pos);
-					DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (property != null)
-						return _bs.get(property);
-					return Direction.getFacingFromAxisDirection(
-							_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-							Direction.AxisDirection.POSITIVE);
-				} catch (Exception e) {
-					return Direction.NORTH;
-				}
-			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-			world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) (z + 3)), Blocks.GOLD_BLOCK.getDefaultState(), 3);
+		if (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) (z + 3)))).getBlock() == VaultDoorFrameBlock.block
+				.getDefaultState().getBlock())) {
+			world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) (z + 3)), Blocks.AIR.getDefaultState(), 3);
 		}
-		if (((new Object() {
-			public Direction getDirection(BlockPos pos) {
-				try {
-					BlockState _bs = world.getBlockState(pos);
-					DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (property != null)
-						return _bs.get(property);
-					return Direction.getFacingFromAxisDirection(
-							_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-							Direction.AxisDirection.POSITIVE);
-				} catch (Exception e) {
-					return Direction.NORTH;
-				}
-			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-			world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z - 3)), Blocks.IRON_BLOCK.getDefaultState(), 3);
+		if (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z - 3)))).getBlock() == VaultDoorFrameBlock.block
+				.getDefaultState().getBlock())) {
+			world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z - 3)), Blocks.AIR.getDefaultState(), 3);
 		}
 	}
 }

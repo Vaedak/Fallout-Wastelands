@@ -39,7 +39,7 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:BlocsW"
+      "value": "No creative tab entry"
     },
     "destroyTool": "Not specified",
     "customDrop": {
@@ -106,6 +106,9 @@
     },
     "onTickUpdate": {
       "name": "VaultDoorFrameUpdateTick"
+    },
+    "onDestroyedByPlayer": {
+      "name": "VaultDoorFrameBlockDestroyedByPlayer"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

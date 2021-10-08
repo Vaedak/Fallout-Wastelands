@@ -9,6 +9,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.VaultDoorBlock;
+import net.mcreator.fallout_wastelands.block.PassableVaultDoorBlock;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
@@ -60,8 +61,10 @@ public class DoorMovingAni205UpdateTickProcedure extends FalloutWastelandsModEle
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-			if ((((world.getBlockState(new BlockPos((int) (x - 3), (int) (y - 1), (int) (z - 1)))).getBlock() == VaultDoorBlock.block
-					.getDefaultState().getBlock()) == (false))) {
+			if (((((world.getBlockState(new BlockPos((int) (x - 3), (int) (y - 1), (int) (z - 1)))).getBlock() == VaultDoorBlock.block
+					.getDefaultState().getBlock())
+					|| ((world.getBlockState(new BlockPos((int) (x - 3), (int) (y - 1), (int) (z - 1)))).getBlock() == PassableVaultDoorBlock.block
+							.getDefaultState().getBlock())) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
@@ -80,8 +83,10 @@ public class DoorMovingAni205UpdateTickProcedure extends FalloutWastelandsModEle
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-			if ((((world.getBlockState(new BlockPos((int) (x + 3), (int) (y - 1), (int) (z + 1)))).getBlock() == VaultDoorBlock.block
-					.getDefaultState().getBlock()) == (false))) {
+			if (((((world.getBlockState(new BlockPos((int) (x + 3), (int) (y - 1), (int) (z + 1)))).getBlock() == VaultDoorBlock.block
+					.getDefaultState().getBlock())
+					|| ((world.getBlockState(new BlockPos((int) (x + 3), (int) (y - 1), (int) (z + 1)))).getBlock() == PassableVaultDoorBlock.block
+							.getDefaultState().getBlock())) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
@@ -100,8 +105,10 @@ public class DoorMovingAni205UpdateTickProcedure extends FalloutWastelandsModEle
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-			if ((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 3)))).getBlock() == VaultDoorBlock.block
-					.getDefaultState().getBlock()) == (false))) {
+			if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 3)))).getBlock() == VaultDoorBlock.block
+					.getDefaultState().getBlock())
+					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 3)))).getBlock() == PassableVaultDoorBlock.block
+							.getDefaultState().getBlock())) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
@@ -120,8 +127,10 @@ public class DoorMovingAni205UpdateTickProcedure extends FalloutWastelandsModEle
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-			if ((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 3)))).getBlock() == VaultDoorBlock.block
-					.getDefaultState().getBlock()) == (false))) {
+			if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 3)))).getBlock() == VaultDoorBlock.block
+					.getDefaultState().getBlock())
+					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 3)))).getBlock() == PassableVaultDoorBlock.block
+							.getDefaultState().getBlock())) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}

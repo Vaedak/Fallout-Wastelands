@@ -39,7 +39,7 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:BlocsW"
+      "value": "No creative tab entry"
     },
     "destroyTool": "Not specified",
     "customDrop": {

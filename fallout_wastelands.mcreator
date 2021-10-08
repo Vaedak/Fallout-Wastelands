@@ -14720,7 +14720,24 @@
       "ids": {},
       "registry_name": "vault_door_frame_update_tick",
       "metadata": {
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {
@@ -20177,6 +20194,622 @@
           }
         ]
       }
+    },
+    {
+      "name": "Closing17UpdateTick",
+      "type": "procedure",
+      "sortid": 1352,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_17_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing16UpdateTick",
+      "type": "procedure",
+      "sortid": 1353,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_16_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing15UpdateTick",
+      "type": "procedure",
+      "sortid": 1354,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_15_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing14UpdateTick",
+      "type": "procedure",
+      "sortid": 1355,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_14_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing13UpdateTick",
+      "type": "procedure",
+      "sortid": 1356,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_13_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing12UpdateTick",
+      "type": "procedure",
+      "sortid": 1357,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_12_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing11UpdateTick",
+      "type": "procedure",
+      "sortid": 1358,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_11_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing10UpdateTick",
+      "type": "procedure",
+      "sortid": 1359,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_10_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing9UpdateTick",
+      "type": "procedure",
+      "sortid": 1360,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_9_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing8UpdateTick",
+      "type": "procedure",
+      "sortid": 1361,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_8_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing7UpdateTick",
+      "type": "procedure",
+      "sortid": 1362,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_7_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing6UpdateTick",
+      "type": "procedure",
+      "sortid": 1363,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_6_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing5UpdateTick",
+      "type": "procedure",
+      "sortid": 1364,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_5_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing4UpdateTick",
+      "type": "procedure",
+      "sortid": 1365,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_4_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing3UpdateTick",
+      "type": "procedure",
+      "sortid": 1366,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_3_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing135UpdateTick",
+      "type": "procedure",
+      "sortid": 1367,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_135_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ClosingMerginingUpdateTick",
+      "type": "procedure",
+      "sortid": 1368,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_mergining_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Closing2",
+      "type": "block",
+      "sortid": 1369,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_2"
+    },
+    {
+      "name": "Closing2UpdateTick",
+      "type": "procedure",
+      "sortid": 1370,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_2_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PassableVaultDoor",
+      "type": "block",
+      "sortid": 1371,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "passable_vault_door"
+    },
+    {
+      "name": "FillerPassable",
+      "type": "block",
+      "sortid": 1372,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "filler_passable"
+    },
+    {
+      "name": "VaultDoorFrameBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 1373,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "vault_door_frame_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CLOSING1AHHHHHHHHHHH",
+      "type": "block",
+      "sortid": 1374,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_1_ahhhhhhhhhhh"
+    },
+    {
+      "name": "CLOSING1AHHHHHHHHHHHUpdateTick",
+      "type": "procedure",
+      "sortid": 1375,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "closing_1_ahhhhhhhhhhh_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -20513,8 +21146,8 @@
       "advancements.itsalive.title": "It\u0027s Alive !",
       "item.fallout_wastelands.uraniumingot": "Uranium Ingot",
       "block.fallout_wastelands.wastelandcobblestairs": "Wasteland Cobblestone Stairs",
-      "block.wastlanders.sheetmetalwall": "Sheet Metal Wall",
       "block.fallout_wastelands.copperblock": "Copper Block",
+      "block.wastlanders.sheetmetalwall": "Sheet Metal Wall",
       "block.fallout_wastelands.vaultkitchenblocks": "Vault Kitchen Floor",
       "block.wastlanders.rustbloc": "Fully Rusted Iron",
       "item.fallout_wastelands.ghoul_spawn_egg": "Ghoul Spawn Egg",
@@ -20552,10 +21185,10 @@
       "itemGroup.tabwastelanderscombattab": "Wastelanders Combat",
       "block.wastlanders.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
-      "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_2": "Xander 2",
-      "item.wastlanders.mobmachinegun": "Mobmachinegun",
+      "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_3": "Xander 3",
+      "item.wastlanders.mobmachinegun": "Mobmachinegun",
       "block.fallout_wastelands.xander_1": "Xander 1",
       "item.fallout_wastelands.nailedwrench": "Nailed Wrench",
       "block.fallout_wastelands.xander_4": "Xander 4",
@@ -20566,8 +21199,8 @@
       "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
       "item.fallout_wastelands.ninemmammo": "9mm ammo",
       "block.wastlanders.plaster": "Plaster",
-      "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
       "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
+      "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
       "item.wastlanders.laserriffle": "Laser Rifle",
       "item.wastlanders.breadroller": "Bread Roller",
       "block.fallout_wastelands.redindustrialblocslab": "Red Industrial Block Slab",
@@ -20580,26 +21213,26 @@
       "block.fallout_wastelands.steelblock": "Steel Block",
       "block.fallout_wastelands.dooranimation_149": "Vault Door135",
       "block.fallout_wastelands.closing_114": "Vault Door",
-      "block.fallout_wastelands.closing_111": "Vault Door",
-      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
       "item.wastlanders.bossteelplate": "BoS Steelplate",
-      "block.fallout_wastelands.closing_112": "Vault Door",
+      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
+      "block.fallout_wastelands.closing_111": "Vault Door",
       "block.fallout_wastelands.dooranimation_147": "Vault Door135",
+      "block.fallout_wastelands.closing_112": "Vault Door",
       "item.fallout_wastelands.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
       "block.fallout_wastelands.closing_110": "Vault Door",
       "block.fallout_wastelands.dooranimation_142": "Vault Door135",
       "block.fallout_wastelands.dooranimation_141": "Vault Door135",
-      "block.fallout_wastelands.closing_119": "Vault Door",
       "block.fallout_wastelands.dooranimation_140": "Vault Door135",
+      "block.fallout_wastelands.closing_119": "Vault Door",
       "item.fallout_wastelands.ingot_tin": "Tin Ingot",
       "block.fallout_wastelands.dooranimation_146": "Vault Door135",
       "block.fallout_wastelands.closing_117": "Vault Door",
-      "block.fallout_wastelands.closing_118": "Vault Door",
-      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
       "block.fallout_wastelands.lighttub": "Light Tub",
-      "block.fallout_wastelands.closing_115": "Vault Door",
-      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
+      "block.fallout_wastelands.closing_118": "Vault Door",
       "entity.fallout_wastelands.mirelurk": "Mirelurk",
+      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "block.fallout_wastelands.closing_115": "Vault Door",
       "block.fallout_wastelands.dooranimation_143": "Vault Door135",
       "block.fallout_wastelands.closing_116": "Vault Door",
       "block.wastlanders.concretepattern": "Concrete Pattern",
@@ -20630,9 +21263,9 @@
       "block.fallout_wastelands.dooranimation_160": "Vault Door135",
       "item.wastlanders.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.wastlanders.plasterwall": "Plaster Wall",
-      "block.fallout_wastelands.vault_door_animation_0": "Vault Door",
-      "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
       "block.wastlanders.bosbasemetalplating": "BoS Metal Plating",
+      "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
+      "block.fallout_wastelands.vault_door_animation_0": "Vault Door",
       "item.fallout_wastelands.mirlurksteak": "Mirlurk Steak",
       "item.wastlanders.bulletmobs": "Bulletmobs",
       "item.wastlanders.cigarettepack": "Cigarette Pack",
@@ -20656,19 +21289,20 @@
       "block.fallout_wastelands.closing_5": "Vault Door",
       "item.wastlanders.tinnugget": "Tin Nugget",
       "block.fallout_wastelands.closing_9": "Vault Door",
-      "item.fallout_wastelands.robobrainengine": "Engine",
       "block.wastlanders.rustediron": "Rusted Iron",
+      "item.fallout_wastelands.robobrainengine": "Engine",
       "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
       "block.fallout_wastelands.closing_4": "Vault Door",
       "block.fallout_wastelands.closing_3": "Vault Door",
+      "block.fallout_wastelands.closing_2": "Vault Door",
       "block.fallout_wastelands.bossteelplating": "BoS Metal Plating (light)",
       "block.fallout_wastelands.dooranimation_159": "Vault Door135",
       "block.fallout_wastelands.dooranimation_158": "Vault Door135",
       "block.fallout_wastelands.dooranimation_153": "Vault Door135",
       "block.fallout_wastelands.dooranimation_152": "Vault Door135",
       "block.fallout_wastelands.dooranimation_151": "Vault Door135",
-      "block.fallout_wastelands.dooranimation_150": "Vault Door135",
       "item.fallout_wastelands.coffee": "Coffee",
+      "block.fallout_wastelands.dooranimation_150": "Vault Door135",
       "item.fallout_wastelands.breadroller": "Bread Roller",
       "block.fallout_wastelands.dooranimation_157": "Vault Door135",
       "block.fallout_wastelands.dooranimation_156": "Vault Door135",
@@ -20724,8 +21358,8 @@
       "block.fallout_wastelands.locker": "Locker",
       "block.fallout_wastelands.dooranimation_193": "Vault Door135",
       "block.fallout_wastelands.dooranimation_192": "Vault Door135",
-      "block.fallout_wastelands.dooranimation_191": "Vault Door135",
       "entity.wastlanders.ghoul": "Ghoul",
+      "block.fallout_wastelands.dooranimation_191": "Vault Door135",
       "block.fallout_wastelands.dooranimation_190": "Vault Door135",
       "entity.fallout_wastelands.friendlybrainbot": "Robot Brain (Hackable)",
       "item.fallout_wastelands.ingotcopper": "Copper ingot",
@@ -20737,8 +21371,8 @@
       "block.wastlanders.industrialredwalkway": "Red Industrial Black (walk way)",
       "block.fallout_wastelands.dooranimation_199": "Vault Door135",
       "block.fallout_wastelands.dooranimation_198": "Vault Door135",
-      "block.wastlanders.metallicwall": "Industrial Metal Plating",
       "item.wastlanders.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
+      "block.wastlanders.metallicwall": "Industrial Metal Plating",
       "item.wastlanders.fevgoo_bucket": "Fevgoo Bucket",
       "item.wastlanders.ingotcopper": "Copper ingot",
       "block.wastlanders.moltencopperblock": "Molten Copper Block",
@@ -20799,6 +21433,7 @@
       "item.fallout_wastelands.raidergunner_spawn_egg": "Raider Gunner Spawn Egg",
       "item.wastlanders.crushedcan": "Crushed Can",
       "block.wastlanders.wastelanddirt": "Wasteland Dirt",
+      "block.fallout_wastelands.filler_passable": "Vault Door Filler",
       "block.fallout_wastelands.wastlandconcrete": "Old Concrete",
       "block.wastlanders.deadgrass": "Wasteland Dead Grass",
       "item.wastlanders.humanbrain": "Human Brain",
@@ -20980,6 +21615,7 @@
       "block.fallout_wastelands.dooranimation_201": "Vault Door135",
       "block.wastlanders.wastlandsand": "Wasteland Sand",
       "block.fallout_wastelands.dooranimation_200": "Vault Door135",
+      "block.fallout_wastelands.closing_1_ahhhhhhhhhhh": "Vault Door",
       "block.wastlanders.charredplank": "Charred Plank",
       "block.wastlanders.uraniumblock": "Uranium Block",
       "item.fallout_wastelands.neutronade": "Nuka Cola",
@@ -21260,6 +21896,7 @@
       "block.wastlanders.wastelandcobblestairs": "Wasteland Cobble Stairs",
       "block.wastlanders.wastelandleadore": "Wasteland Lead Ore",
       "subtitles.wastelandwind": "",
+      "block.fallout_wastelands.passable_vault_door": "Vault Door passable",
       "item.fallout_wastelands.mmpistolnineaim": "9mm pistol",
       "block.fallout_wastelands.rustedruinblockground": "Rusted Ruin Ground Block",
       "block.fallout_wastelands.safeblock": "Concrete Safe",

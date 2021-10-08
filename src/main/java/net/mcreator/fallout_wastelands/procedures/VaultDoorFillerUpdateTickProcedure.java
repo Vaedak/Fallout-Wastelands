@@ -9,6 +9,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.VaultDoorBlock;
+import net.mcreator.fallout_wastelands.block.PassableVaultDoorBlock;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
@@ -45,7 +46,7 @@ public class VaultDoorFillerUpdateTickProcedure extends FalloutWastelandsModElem
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == VaultDoorBlock.block.getDefaultState().getBlock())
+		if ((((((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == VaultDoorBlock.block.getDefaultState().getBlock())
 				|| (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z))).getBlock() == VaultDoorBlock.block.getDefaultState()
 						.getBlock())
 						|| (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 2), (int) z))).getBlock() == VaultDoorBlock.block
@@ -57,7 +58,22 @@ public class VaultDoorFillerUpdateTickProcedure extends FalloutWastelandsModElem
 												|| (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z)))
 														.getBlock() == VaultDoorBlock.block.getDefaultState().getBlock())
 														|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z)))
-																.getBlock() == VaultDoorBlock.block.getDefaultState().getBlock()))))))) == (false))) {
+																.getBlock() == VaultDoorBlock.block.getDefaultState().getBlock())))))))
+				|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == PassableVaultDoorBlock.block.getDefaultState()
+						.getBlock())
+						|| (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z))).getBlock() == PassableVaultDoorBlock.block
+								.getDefaultState().getBlock())
+								|| (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 2), (int) z)))
+										.getBlock() == PassableVaultDoorBlock.block.getDefaultState().getBlock())
+										|| (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 2), (int) z)))
+												.getBlock() == PassableVaultDoorBlock.block.getDefaultState().getBlock())
+												|| (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z)))
+														.getBlock() == PassableVaultDoorBlock.block.getDefaultState().getBlock())
+														|| (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z)))
+																.getBlock() == PassableVaultDoorBlock.block.getDefaultState().getBlock())
+																|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z)))
+																		.getBlock() == PassableVaultDoorBlock.block.getDefaultState()
+																				.getBlock())))))))) == (false))) {
 			if ((((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
@@ -90,7 +106,7 @@ public class VaultDoorFillerUpdateTickProcedure extends FalloutWastelandsModElem
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
-		if (((((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == VaultDoorBlock.block.getDefaultState().getBlock())
+		if ((((((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == VaultDoorBlock.block.getDefaultState().getBlock())
 				|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1)))).getBlock() == VaultDoorBlock.block.getDefaultState()
 						.getBlock())
 						|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) (z - 1)))).getBlock() == VaultDoorBlock.block
@@ -102,7 +118,22 @@ public class VaultDoorFillerUpdateTickProcedure extends FalloutWastelandsModElem
 												|| (((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1))))
 														.getBlock() == VaultDoorBlock.block.getDefaultState().getBlock())
 														|| ((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1))))
-																.getBlock() == VaultDoorBlock.block.getDefaultState().getBlock()))))))) == (false))) {
+																.getBlock() == VaultDoorBlock.block.getDefaultState().getBlock())))))))
+				|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == PassableVaultDoorBlock.block.getDefaultState()
+						.getBlock())
+						|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1)))).getBlock() == PassableVaultDoorBlock.block
+								.getDefaultState().getBlock())
+								|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) (z - 1))))
+										.getBlock() == PassableVaultDoorBlock.block.getDefaultState().getBlock())
+										|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) (z + 1))))
+												.getBlock() == PassableVaultDoorBlock.block.getDefaultState().getBlock())
+												|| (((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z + 1))))
+														.getBlock() == PassableVaultDoorBlock.block.getDefaultState().getBlock())
+														|| (((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1))))
+																.getBlock() == PassableVaultDoorBlock.block.getDefaultState().getBlock())
+																|| ((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1))))
+																		.getBlock() == PassableVaultDoorBlock.block.getDefaultState()
+																				.getBlock())))))))) == (false))) {
 			if ((((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
