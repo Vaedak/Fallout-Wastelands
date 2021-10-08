@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fallout_wastelands:block/closing_mergining"
+    },
+    "facing=east": {
+      "model": "fallout_wastelands:block/closing_mergining",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fallout_wastelands:block/closing_mergining",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fallout_wastelands:block/closing_mergining",
+      "y": 270
+    }
+  }
+}

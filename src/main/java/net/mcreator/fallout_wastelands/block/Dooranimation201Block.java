@@ -104,7 +104,7 @@ public class Dooranimation201Block extends FalloutWastelandsModElements.ModEleme
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 1);
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 15);
 		}
 
 		@Override
@@ -121,7 +121,7 @@ public class Dooranimation201Block extends FalloutWastelandsModElements.ModEleme
 				$_dependencies.put("world", world);
 				Dooranimation201UpdateTickProcedure.executeProcedure($_dependencies);
 			}
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 1);
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 15);
 		}
 	}
 }

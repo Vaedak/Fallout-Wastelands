@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fallout_wastelands:block/closing_69"
+    },
+    "facing=east": {
+      "model": "fallout_wastelands:block/closing_69",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fallout_wastelands:block/closing_69",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fallout_wastelands:block/closing_69",
+      "y": 270
+    }
+  }
+}

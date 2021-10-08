@@ -34,8 +34,8 @@
     ],
     "name": "Vault Door",
     "specialInfo": [],
-    "hardness": 1.0,
-    "resistance": 10.0,
+    "hardness": 50.0,
+    "resistance": 50.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {

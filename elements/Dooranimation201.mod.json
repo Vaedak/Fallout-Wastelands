@@ -54,7 +54,7 @@
     "material": {
       "value": "IRON"
     },
-    "tickRate": 1,
+    "tickRate": 15,
     "tickRandomly": false,
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",
