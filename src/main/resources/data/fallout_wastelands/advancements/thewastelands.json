@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "fallout_wastelands:falloutwastelands"
+    },
+    "title": {
+      "translate": "advancements.thewastelands.title"
+    },
+    "description": {
+      "translate": "advancements.thewastelands.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "thewastelands": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "fallout_wastelands:wasteland"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 1
+  },
+  "parent": "fallout_wastelands:jointheworld"
+}

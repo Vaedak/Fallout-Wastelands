@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/vaultlockdown",
+    "top": "fallout_wastelands:blocks/vaultlockup"
+  }
+}

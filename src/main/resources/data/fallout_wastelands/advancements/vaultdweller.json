@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "fallout_wastelands:meetingtheoversser"
+    },
+    "title": {
+      "translate": "advancements.vaultdweller.title"
+    },
+    "description": {
+      "translate": "advancements.vaultdweller.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "vaultdweller": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 10
+  },
+  "parent": "fallout_wastelands:jointheworld"
+}

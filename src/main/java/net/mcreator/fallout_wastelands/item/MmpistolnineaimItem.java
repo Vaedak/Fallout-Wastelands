@@ -31,7 +31,6 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.procedures.MmpistolnineRangedItemUsedProcedure;
-import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.entity.renderer.MmpistolnineaimRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
@@ -58,7 +57,7 @@ public class MmpistolnineaimItem extends FalloutWastelandsModElements.ModElement
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxDamage(100));
+			super(new Item.Properties().group(null).maxDamage(100));
 			setRegistryName("mmpistolnineaim");
 		}
 

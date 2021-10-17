@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "fallout_wastelands:notyeticon"
+    },
+    "title": {
+      "translate": "advancements.notyet.title"
+    },
+    "description": {
+      "translate": "advancements.notyet.descr"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "notyet": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1
+  },
+  "parent": "fallout_wastelands:jointheworld"
+}

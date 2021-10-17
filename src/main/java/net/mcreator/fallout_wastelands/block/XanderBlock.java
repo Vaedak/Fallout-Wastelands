@@ -98,7 +98,7 @@ public class XanderBlock extends FalloutWastelandsModElements.ModElement {
 			configuredFeature = feature
 					.withConfiguration(
 							(new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(block.getDefaultState()), new SimpleBlockPlacer()))
-									.tries(64).build())
+									.tries(3).build())
 					.withPlacement(Features.Placements.VEGETATION_PLACEMENT).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).func_242731_b(1);
 			event.getRegistry().register(feature.setRegistryName("xander"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("fallout_wastelands:xander"), configuredFeature);
@@ -116,7 +116,7 @@ public class XanderBlock extends FalloutWastelandsModElements.ModElement {
 	public static class BlockCustomFlower extends FlowerBlock {
 		public BlockCustomFlower() {
 			super(Effects.SATURATION, 0, Block.Properties.create(Material.PLANTS, MaterialColor.GRASS).tickRandomly().doesNotBlockMovement()
-					.sound(SoundType.PLANT).hardnessAndResistance(0.1f, 0.1f).setLightLevel(s -> 0));
+					.sound(SoundType.PLANT).hardnessAndResistance(0.2f, 0.1f).setLightLevel(s -> 0));
 			setRegistryName("xander");
 		}
 
@@ -135,7 +135,7 @@ public class XanderBlock extends FalloutWastelandsModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(XanderrootItem.block, (int) (3)));
+			return Collections.singletonList(new ItemStack(XanderrootItem.block));
 		}
 
 		@Override

@@ -35,19 +35,34 @@
     "creativeTab": {
       "value": "CUSTOM:BlocsW"
     },
-    "hardness": 0.1,
-    "resistance": 0.1,
+    "hardness": 0.2,
+    "resistance": 0.09999999999999998,
     "luminance": 0,
     "unbreakable": false,
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "PLANT"
     },
+    "breakSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
     "useLootTableForDrops": false,
     "customDrop": {
       "value": "CUSTOM:Xanderroot"
     },
-    "dropAmount": 3,
+    "dropAmount": 1,
     "forceTicking": true,
     "emissiveRendering": false,
     "hasTileEntity": false,
@@ -72,6 +87,6 @@
         "value": "CUSTOM:Desertwastland"
       }
     ],
-    "patchSize": 64
+    "patchSize": 3
   }
 }
