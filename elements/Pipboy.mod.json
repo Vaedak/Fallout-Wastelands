@@ -1,5 +1,5 @@
 {
-  "_fv": 18,
+  "_fv": 24,
   "_type": "item",
   "definition": {
     "renderType": 1,
@@ -30,6 +30,7 @@
     "hasGlow": false,
     "guiBoundTo": "Pipboygui",
     "inventorySize": 45,
-    "inventoryStackSize": 64
+    "inventoryStackSize": 64,
+    "hasDispenseBehavior": false
   }
 }

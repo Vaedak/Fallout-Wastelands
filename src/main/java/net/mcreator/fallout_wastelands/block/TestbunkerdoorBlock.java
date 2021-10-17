@@ -7,8 +7,6 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.loot.LootContext;
@@ -53,11 +51,6 @@ public class TestbunkerdoorBlock extends FalloutWastelandsModElements.ModElement
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(15f, 18f).setLightLevel(s -> 0).harvestLevel(2)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool().slipperiness(0.5f).notSolid().setOpaque((bs, br, bp) -> false));
 			setRegistryName("testbunkerdoor");
-		}
-
-		@Override
-		public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
-			return true;
 		}
 
 		@Override

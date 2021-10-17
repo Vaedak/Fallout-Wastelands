@@ -92,10 +92,10 @@ public class ENCLAVEofficierEntity extends FalloutWastelandsModElements.ModEleme
 			experienceValue = 2;
 			setNoAI(false);
 			enablePersistence();
-			this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(EnclaveofficierarmorItem.helmet, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(EnclaveofficierarmorItem.body, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(EnclaveofficierarmorItem.legs, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(EnclaveofficierarmorItem.boots, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(EnclaveofficierarmorItem.helmet));
+			this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(EnclaveofficierarmorItem.body));
+			this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(EnclaveofficierarmorItem.legs));
+			this.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(EnclaveofficierarmorItem.boots));
 		}
 
 		@Override
@@ -150,7 +150,7 @@ public class ENCLAVEofficierEntity extends FalloutWastelandsModElements.ModEleme
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(FusionmicrocellItem.block, (int) (1)));
+			this.entityDropItem(new ItemStack(FusionmicrocellItem.block));
 		}
 
 		@Override

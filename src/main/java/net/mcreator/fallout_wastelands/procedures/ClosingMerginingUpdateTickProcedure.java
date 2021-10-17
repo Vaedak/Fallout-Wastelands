@@ -11,17 +11,11 @@ import net.mcreator.fallout_wastelands.block.VaultDoorFillerBlock;
 import net.mcreator.fallout_wastelands.block.VaultDoorBlock;
 import net.mcreator.fallout_wastelands.block.ClosingMerginingBlock;
 import net.mcreator.fallout_wastelands.block.Closing134Block;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class ClosingMerginingUpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public ClosingMerginingUpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 1368);
-	}
-
+public class ClosingMerginingUpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -47,7 +41,7 @@ public class ClosingMerginingUpdateTickProcedure extends FalloutWastelandsModEle
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == ClosingMerginingBlock.block.getDefaultState().getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == ClosingMerginingBlock.block)) {
 			if (((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {

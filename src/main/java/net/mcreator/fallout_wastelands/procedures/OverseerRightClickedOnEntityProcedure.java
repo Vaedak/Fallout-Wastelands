@@ -15,19 +15,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.gui.Overseer1Gui;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
 import io.netty.buffer.Unpooled;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class OverseerRightClickedOnEntityProcedure extends FalloutWastelandsModElements.ModElement {
-	public OverseerRightClickedOnEntityProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 600);
-	}
-
+public class OverseerRightClickedOnEntityProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("sourceentity") == null) {
 			if (!dependencies.containsKey("sourceentity"))

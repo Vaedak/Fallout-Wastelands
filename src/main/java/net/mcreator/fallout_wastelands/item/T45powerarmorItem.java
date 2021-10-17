@@ -74,7 +74,7 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 
 			@Override
 			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(Blocks.IRON_BLOCK, (int) (1)));
+				return Ingredient.fromStacks(new ItemStack(Blocks.IRON_BLOCK));
 			}
 
 			@OnlyIn(Dist.CLIENT)

@@ -66,7 +66,7 @@ public class VaultjumpsuitItem extends FalloutWastelandsModElements.ModElement {
 
 			@Override
 			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(Items.LEATHER, (int) (1)));
+				return Ingredient.fromStacks(new ItemStack(Items.LEATHER));
 			}
 
 			@OnlyIn(Dist.CLIENT)

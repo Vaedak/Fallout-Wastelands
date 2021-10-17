@@ -62,6 +62,11 @@ public class OldpapersBlock extends FalloutWastelandsModElements.ModElement {
 		}
 
 		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 0;
+		}
+
+		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
 			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 2, 16)).withOffset(offset.x, offset.y, offset.z);
@@ -72,7 +77,7 @@ public class OldpapersBlock extends FalloutWastelandsModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(Items.PAPER, (int) (1)));
+			return Collections.singletonList(new ItemStack(Items.PAPER));
 		}
 	}
 }

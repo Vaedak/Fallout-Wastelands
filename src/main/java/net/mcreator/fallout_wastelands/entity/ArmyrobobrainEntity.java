@@ -148,7 +148,7 @@ public class ArmyrobobrainEntity extends FalloutWastelandsModElements.ModElement
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(Blocks.IRON_BLOCK, (int) (1)));
+			this.entityDropItem(new ItemStack(Blocks.IRON_BLOCK));
 		}
 
 		@Override

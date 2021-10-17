@@ -22,7 +22,7 @@ public class WastelanderscombattabItemGroup extends FalloutWastelandsModElements
 			@OnlyIn(Dist.CLIENT)
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(ThemachinegunItem.block, (int) (1));
+				return new ItemStack(ThemachinegunItem.block);
 			}
 
 			@OnlyIn(Dist.CLIENT)

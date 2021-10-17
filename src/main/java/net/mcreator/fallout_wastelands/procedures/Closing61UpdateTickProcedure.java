@@ -9,17 +9,11 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.Closing61Block;
 import net.mcreator.fallout_wastelands.block.Closing60Block;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class Closing61UpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public Closing61UpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 1309);
-	}
-
+public class Closing61UpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -45,7 +39,7 @@ public class Closing61UpdateTickProcedure extends FalloutWastelandsModElements.M
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Closing61Block.block.getDefaultState().getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Closing61Block.block)) {
 			if (((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {

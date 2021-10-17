@@ -7,19 +7,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.entity.HighwaymanEntity;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.function.Function;
 import java.util.Map;
 import java.util.Comparator;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class HighwaymanPlayerCollidesWithThisEntityProcedure extends FalloutWastelandsModElements.ModElement {
-	public HighwaymanPlayerCollidesWithThisEntityProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 582);
-	}
-
+public class HighwaymanPlayerCollidesWithThisEntityProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("sourceentity") == null) {
 			if (!dependencies.containsKey("sourceentity"))

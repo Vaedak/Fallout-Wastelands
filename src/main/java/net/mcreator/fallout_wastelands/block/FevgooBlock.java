@@ -14,6 +14,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.item.Rarity;
 import net.minecraft.item.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.BucketItem;
@@ -66,24 +67,27 @@ public class FevgooBlock extends FalloutWastelandsModElements.ModElement {
 		fluidproperties = new ForgeFlowingFluid.Properties(() -> still, () -> flowing,
 				FluidAttributes
 						.builder(new ResourceLocation("fallout_wastelands:blocks/fev2bf"), new ResourceLocation("fallout_wastelands:blocks/fev2bf"))
-						.luminosity(100).density(500).viscosity(100000)).bucket(() -> bucket).block(() -> block);
+						.luminosity(100).density(500).viscosity(100000).temperature(300).rarity(Rarity.COMMON)).explosionResistance(100f).tickRate(5)
+								.levelDecreasePerBlock(1).slopeFindDistance(4).bucket(() -> bucket).block(() -> block);
 		still = (FlowingFluid) new ForgeFlowingFluid.Source(fluidproperties).setRegistryName("fevgoo");
 		flowing = (FlowingFluid) new ForgeFlowingFluid.Flowing(fluidproperties).setRegistryName("fevgoo_flowing");
-		elements.blocks.add(() -> new FlowingFluidBlock(still, Block.Properties.create(Material.WATER)) {
-			@Override
-			public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-				super.onEntityCollision(state, world, pos, entity);
-				int x = pos.getX();
-				int y = pos.getY();
-				int z = pos.getZ();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					FevgooMobplayerCollidesBlockProcedure.executeProcedure($_dependencies);
-				}
-			}
-		}.setRegistryName("fevgoo"));
-		elements.items.add(() -> new BucketItem(still, new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(BlocsWItemGroup.tab))
-				.setRegistryName("fevgoo_bucket"));
+		elements.blocks
+				.add(() -> new FlowingFluidBlock(still, Block.Properties.create(Material.WATER).hardnessAndResistance(100f).setLightLevel(s -> 0)) {
+					@Override
+					public void onEntityCollision(BlockState blockstate, World world, BlockPos pos, Entity entity) {
+						super.onEntityCollision(blockstate, world, pos, entity);
+						int x = pos.getX();
+						int y = pos.getY();
+						int z = pos.getZ();
+						{
+							Map<String, Object> $_dependencies = new HashMap<>();
+							$_dependencies.put("entity", entity);
+							FevgooMobplayerCollidesBlockProcedure.executeProcedure($_dependencies);
+						}
+					}
+				}.setRegistryName("fevgoo"));
+		elements.items.add(() -> new BucketItem(still,
+				new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(BlocsWItemGroup.tab).rarity(Rarity.COMMON))
+						.setRegistryName("fevgoo_bucket"));
 	}
 }

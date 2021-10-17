@@ -86,12 +86,11 @@ public class PlasmarifleItem extends FalloutWastelandsModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				if (true) {
-					ItemStack stack = ShootableItem.getHeldAmmo(entity,
-							e -> e.getItem() == new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem());
+					ItemStack stack = ShootableItem.getHeldAmmo(entity, e -> e.getItem() == FusionmicrocellItem.block);
 					if (stack == ItemStack.EMPTY) {
 						for (int i = 0; i < entity.inventory.mainInventory.size(); i++) {
 							ItemStack teststack = entity.inventory.mainInventory.get(i);
-							if (teststack != null && teststack.getItem() == new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem()) {
+							if (teststack != null && teststack.getItem() == FusionmicrocellItem.block) {
 								stack = teststack;
 								break;
 							}
@@ -103,7 +102,7 @@ public class PlasmarifleItem extends FalloutWastelandsModElements.ModElement {
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
 						} else {
-							if (new ItemStack(FusionmicrocellItem.block, (int) (1)).isDamageable()) {
+							if (new ItemStack(FusionmicrocellItem.block).isDamageable()) {
 								if (stack.attemptDamageItem(1, random, entity)) {
 									stack.shrink(1);
 									stack.setDamage(0);
@@ -148,12 +147,12 @@ public class PlasmarifleItem extends FalloutWastelandsModElements.ModElement {
 		@Override
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack getItem() {
-			return new ItemStack(PlasmasItem.block, (int) (1));
+			return new ItemStack(PlasmasItem.block);
 		}
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return new ItemStack(FusionmicrocellItem.block, (int) (1));
+			return new ItemStack(FusionmicrocellItem.block);
 		}
 
 		@Override
@@ -170,6 +169,7 @@ public class PlasmarifleItem extends FalloutWastelandsModElements.ModElement {
 			double z = this.getPosZ();
 			World world = this.world;
 			Entity entity = this.func_234616_v_();
+			Entity imediatesourceentity = this;
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("x", x);

@@ -65,7 +65,7 @@ public class EnclaveofficierarmorItem extends FalloutWastelandsModElements.ModEl
 
 			@Override
 			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(Items.STRING, (int) (1)));
+				return Ingredient.fromStacks(new ItemStack(Items.STRING));
 			}
 
 			@OnlyIn(Dist.CLIENT)

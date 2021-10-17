@@ -6,17 +6,11 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class RadioactivwastebarrelEntityCollidesInTheBlockProcedure extends FalloutWastelandsModElements.ModElement {
-	public RadioactivwastebarrelEntityCollidesInTheBlockProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 213);
-	}
-
+public class RadioactivwastebarrelEntityCollidesInTheBlockProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))

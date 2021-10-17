@@ -5,17 +5,11 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class UraniumblockEntityWalksOnTheBlockProcedure extends FalloutWastelandsModElements.ModElement {
-	public UraniumblockEntityWalksOnTheBlockProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 455);
-	}
-
+public class UraniumblockEntityWalksOnTheBlockProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))

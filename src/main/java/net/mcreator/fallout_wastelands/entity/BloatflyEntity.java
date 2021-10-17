@@ -195,7 +195,7 @@ public class BloatflyEntity extends FalloutWastelandsModElements.ModElement {
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(BugmeatItem.block, (int) (1)));
+			this.entityDropItem(new ItemStack(BugmeatItem.block));
 		}
 
 		@Override

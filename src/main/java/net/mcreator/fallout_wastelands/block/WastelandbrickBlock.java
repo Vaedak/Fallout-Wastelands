@@ -3,6 +3,8 @@ package net.mcreator.fallout_wastelands.block;
 
 import net.minecraftforge.registries.ObjectHolder;
 
+import net.minecraft.world.IBlockReader;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -35,6 +37,11 @@ public class WastelandbrickBlock extends FalloutWastelandsModElements.ModElement
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(7f, 10f).setLightLevel(s -> 0));
 			setRegistryName("wastelandbrick");
+		}
+
+		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 15;
 		}
 
 		@Override

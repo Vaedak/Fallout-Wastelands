@@ -117,7 +117,7 @@ public class GhoulEntity extends FalloutWastelandsModElements.ModElement {
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(Items.ROTTEN_FLESH, (int) (1)));
+			this.entityDropItem(new ItemStack(Items.ROTTEN_FLESH));
 		}
 
 		@Override

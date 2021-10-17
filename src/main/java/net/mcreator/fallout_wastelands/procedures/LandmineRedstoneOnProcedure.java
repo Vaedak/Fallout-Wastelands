@@ -6,17 +6,11 @@ import net.minecraft.world.Explosion;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class LandmineRedstoneOnProcedure extends FalloutWastelandsModElements.ModElement {
-	public LandmineRedstoneOnProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 295);
-	}
-
+public class LandmineRedstoneOnProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

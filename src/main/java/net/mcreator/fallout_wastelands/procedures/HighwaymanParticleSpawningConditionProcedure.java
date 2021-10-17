@@ -7,17 +7,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.item.FueljerricanItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class HighwaymanParticleSpawningConditionProcedure extends FalloutWastelandsModElements.ModElement {
-	public HighwaymanParticleSpawningConditionProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 556);
-	}
-
+public class HighwaymanParticleSpawningConditionProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -49,9 +43,7 @@ public class HighwaymanParticleSpawningConditionProcedure extends FalloutWastela
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((entity instanceof PlayerEntity)
-				? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(FueljerricanItem.block, (int) (1)))
-				: false)) {
+		if (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(FueljerricanItem.block)) : false)) {
 			world.addParticle(ParticleTypes.MYCELIUM, x, y, z, 0, 1, 0);
 			world.addParticle(ParticleTypes.MYCELIUM, x, y, z, 0, 1, 0);
 		}

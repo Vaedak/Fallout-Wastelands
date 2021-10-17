@@ -3,17 +3,11 @@ package net.mcreator.fallout_wastelands.procedures;
 import net.minecraft.world.IWorld;
 import net.minecraft.particles.ParticleTypes;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class MmpistolnineRangedItemUsedProcedure extends FalloutWastelandsModElements.ModElement {
-	public MmpistolnineRangedItemUsedProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 602);
-	}
-
+public class MmpistolnineRangedItemUsedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

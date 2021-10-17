@@ -7,17 +7,11 @@ import net.minecraft.particles.ParticleTypes;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class HighwaymanOnEntityTickUpdatetest2Procedure extends FalloutWastelandsModElements.ModElement {
-	public HighwaymanOnEntityTickUpdatetest2Procedure(FalloutWastelandsModElements instance) {
-		super(instance, 479);
-	}
-
+public class HighwaymanOnEntityTickUpdatetest2Procedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))

@@ -5,17 +5,11 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class BloatflyshotBulletHitsLivingEntityProcedure extends FalloutWastelandsModElements.ModElement {
-	public BloatflyshotBulletHitsLivingEntityProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 271);
-	}
-
+public class BloatflyshotBulletHitsLivingEntityProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))

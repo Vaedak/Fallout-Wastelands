@@ -10,17 +10,11 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.DoorMovingAni205Block;
 import net.mcreator.fallout_wastelands.block.Closing204Block;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class VaultDoorFrameOnBlockRightClickedProcedure extends FalloutWastelandsModElements.ModElement {
-	public VaultDoorFrameOnBlockRightClickedProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 1060);
-	}
-
+public class VaultDoorFrameOnBlockRightClickedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -61,8 +55,8 @@ public class VaultDoorFrameOnBlockRightClickedProcedure extends FalloutWasteland
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-			if ((((world.getBlockState(new BlockPos((int) (x + 3), (int) (y + 0), (int) (z + 1)))).getBlock() == DoorMovingAni205Block.block
-					.getDefaultState().getBlock()) == (true))) {
+			if ((((world.getBlockState(new BlockPos((int) (x + 3), (int) (y + 0), (int) (z + 1))))
+					.getBlock() == DoorMovingAni205Block.block) == (true))) {
 				world.setBlockState(new BlockPos((int) (x + 2), (int) y, (int) (z + 1)), Closing204Block.block.getDefaultState(), 3);
 				try {
 					BlockState _bs = world.getBlockState(new BlockPos((int) (x + 2), (int) y, (int) (z + 1)));
@@ -93,8 +87,8 @@ public class VaultDoorFrameOnBlockRightClickedProcedure extends FalloutWasteland
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-			if ((((world.getBlockState(new BlockPos((int) (x - 3), (int) (y + 0), (int) (z - 1)))).getBlock() == DoorMovingAni205Block.block
-					.getDefaultState().getBlock()) == (true))) {
+			if ((((world.getBlockState(new BlockPos((int) (x - 3), (int) (y + 0), (int) (z - 1))))
+					.getBlock() == DoorMovingAni205Block.block) == (true))) {
 				world.setBlockState(new BlockPos((int) (x - 2), (int) y, (int) (z - 1)), Closing204Block.block.getDefaultState(), 3);
 				try {
 					BlockState _bs = world.getBlockState(new BlockPos((int) (x - 2), (int) y, (int) (z - 1)));
@@ -125,8 +119,8 @@ public class VaultDoorFrameOnBlockRightClickedProcedure extends FalloutWasteland
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-			if ((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z - 3)))).getBlock() == DoorMovingAni205Block.block
-					.getDefaultState().getBlock()) == (true))) {
+			if ((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z - 3))))
+					.getBlock() == DoorMovingAni205Block.block) == (true))) {
 				world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z - 2)), Closing204Block.block.getDefaultState(), 3);
 				try {
 					BlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z - 2)));
@@ -157,8 +151,8 @@ public class VaultDoorFrameOnBlockRightClickedProcedure extends FalloutWasteland
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-			if ((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) (z + 3)))).getBlock() == DoorMovingAni205Block.block
-					.getDefaultState().getBlock()) == (true))) {
+			if ((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) (z + 3))))
+					.getBlock() == DoorMovingAni205Block.block) == (true))) {
 				world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) (z + 2)), Closing204Block.block.getDefaultState(), 3);
 				try {
 					BlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) (z + 2)));

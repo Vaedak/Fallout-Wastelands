@@ -8,17 +8,11 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class LandmineEntityCollidesInTheBlockProcedure extends FalloutWastelandsModElements.ModElement {
-	public LandmineEntityCollidesInTheBlockProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 294);
-	}
-
+public class LandmineEntityCollidesInTheBlockProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))

@@ -88,7 +88,7 @@ public class RaidergunnerEntity extends FalloutWastelandsModElements.ModElement 
 			super(type, world);
 			experienceValue = 6;
 			setNoAI(false);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(ThemachinegunItem.block, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(ThemachinegunItem.block));
 		}
 
 		@Override
@@ -134,7 +134,7 @@ public class RaidergunnerEntity extends FalloutWastelandsModElements.ModElement 
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(CannedporkshopItem.block, (int) (1)));
+			this.entityDropItem(new ItemStack(CannedporkshopItem.block));
 		}
 
 		@Override

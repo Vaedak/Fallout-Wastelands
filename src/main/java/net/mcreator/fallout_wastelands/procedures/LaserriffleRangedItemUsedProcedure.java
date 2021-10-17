@@ -9,17 +9,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class LaserriffleRangedItemUsedProcedure extends FalloutWastelandsModElements.ModElement {
-	public LaserriffleRangedItemUsedProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 235);
-	}
-
+public class LaserriffleRangedItemUsedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -58,7 +52,7 @@ public class LaserriffleRangedItemUsedProcedure extends FalloutWastelandsModElem
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		if (entity instanceof PlayerEntity)
-			((PlayerEntity) entity).getCooldownTracker().setCooldown(((itemstack)).getItem(), (int) 2);
+			((PlayerEntity) entity).getCooldownTracker().setCooldown((itemstack).getItem(), (int) 2);
 		if (!world.isRemote()) {
 			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 			TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -84,7 +78,7 @@ public class LaserriffleRangedItemUsedProcedure extends FalloutWastelandsModElem
 			}
 		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "counter1")) % 15) == 0)) {
 			if (entity instanceof PlayerEntity)
-				((PlayerEntity) entity).getCooldownTracker().setCooldown(((itemstack)).getItem(), (int) 120);
+				((PlayerEntity) entity).getCooldownTracker().setCooldown((itemstack).getItem(), (int) 120);
 		}
 	}
 }

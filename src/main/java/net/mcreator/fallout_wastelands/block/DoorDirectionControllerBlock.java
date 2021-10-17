@@ -69,6 +69,11 @@ public class DoorDirectionControllerBlock extends FalloutWastelandsModElements.M
 		}
 
 		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 15;
+		}
+
+		@Override
 		protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
 			builder.add(FACING);
 		}
@@ -89,7 +94,7 @@ public class DoorDirectionControllerBlock extends FalloutWastelandsModElements.M
 
 		@Override
 		public ItemStack getPickBlock(BlockState state, RayTraceResult target, IBlockReader world, BlockPos pos, PlayerEntity player) {
-			return new ItemStack(VaultDoorBlock.block, (int) (1));
+			return new ItemStack(VaultDoorBlock.block);
 		}
 
 		@Override
@@ -97,12 +102,12 @@ public class DoorDirectionControllerBlock extends FalloutWastelandsModElements.M
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(Blocks.AIR, (int) (1)));
+			return Collections.singletonList(new ItemStack(Blocks.AIR));
 		}
 
 		@Override
-		public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean moving) {
-			super.onBlockAdded(state, world, pos, oldState, moving);
+		public void onBlockAdded(BlockState blockstate, World world, BlockPos pos, BlockState oldState, boolean moving) {
+			super.onBlockAdded(blockstate, world, pos, oldState, moving);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
@@ -110,8 +115,8 @@ public class DoorDirectionControllerBlock extends FalloutWastelandsModElements.M
 		}
 
 		@Override
-		public void tick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-			super.tick(state, world, pos, random);
+		public void tick(BlockState blockstate, ServerWorld world, BlockPos pos, Random random) {
+			super.tick(blockstate, world, pos, random);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();

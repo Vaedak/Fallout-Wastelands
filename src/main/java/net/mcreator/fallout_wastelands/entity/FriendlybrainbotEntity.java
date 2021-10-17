@@ -68,7 +68,6 @@ import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.block.BlockState;
@@ -272,10 +271,6 @@ public class FriendlybrainbotEntity extends FalloutWastelandsModElements.ModElem
 						this.enablePersistence();
 				}
 			}
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
 			return retval;
 		}
 
@@ -295,7 +290,7 @@ public class FriendlybrainbotEntity extends FalloutWastelandsModElements.ModElem
 		public boolean isBreedingItem(ItemStack stack) {
 			if (stack == null)
 				return false;
-			if (new ItemStack(MilitarygradeaccessbadgeItem.block, (int) (1)).getItem() == stack.getItem())
+			if (MilitarygradeaccessbadgeItem.block == stack.getItem())
 				return true;
 			return false;
 		}

@@ -10,17 +10,11 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Mirror;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class EnclavecommcenterOnStructureInstanceGeneratedProcedure extends FalloutWastelandsModElements.ModElement {
-	public EnclavecommcenterOnStructureInstanceGeneratedProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 545);
-	}
-
+public class EnclavecommcenterOnStructureInstanceGeneratedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

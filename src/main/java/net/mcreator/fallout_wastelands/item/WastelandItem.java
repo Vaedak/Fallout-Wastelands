@@ -33,10 +33,13 @@ public class WastelandItem extends Item {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			if (world.isAirBlock(pos) && true)
+			boolean success = false;
+			if (world.isAirBlock(pos) && true) {
 				WastelandDimension.portal.portalSpawn(world, pos);
-			itemstack.damageItem(1, entity, c -> c.sendBreakAnimation(context.getHand()));
-			return ActionResultType.SUCCESS;
+				itemstack.damageItem(1, entity, c -> c.sendBreakAnimation(context.getHand()));
+				success = true;
+			}
+			return success ? ActionResultType.SUCCESS : ActionResultType.FAIL;
 		}
 	}
 }

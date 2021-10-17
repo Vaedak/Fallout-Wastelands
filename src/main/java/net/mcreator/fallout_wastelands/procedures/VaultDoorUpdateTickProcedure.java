@@ -16,17 +16,11 @@ import net.minecraft.block.Block;
 
 import net.mcreator.fallout_wastelands.block.VaultDoorFillerBlock;
 import net.mcreator.fallout_wastelands.block.FillerPassableBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public VaultDoorUpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 640);
-	}
-
+public class VaultDoorUpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -101,8 +95,7 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 				}
 
 				private void run() {
-					if ((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR.getDefaultState()
-							.getBlock()) == (true))) {
+					if ((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR) == (true))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
@@ -117,10 +110,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z)))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
@@ -135,10 +127,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z)))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
@@ -153,10 +144,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z)))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
@@ -171,10 +161,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z)))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
@@ -189,10 +178,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z)))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
@@ -207,10 +195,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z)))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
@@ -225,10 +212,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z)))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
@@ -296,10 +282,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 				}
 
 				private void run() {
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1))))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
@@ -314,10 +299,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
@@ -332,10 +316,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1))))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
@@ -350,10 +333,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z + 1)))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z + 1))))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
@@ -368,10 +350,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1))))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
@@ -386,10 +367,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1))))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
@@ -404,10 +384,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1))))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
@@ -422,10 +401,9 @@ public class VaultDoorUpdateTickProcedure extends FalloutWastelandsModElements.M
 							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block
-							.getDefaultState().getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z))).getBlock() == FillerPassableBlock.block
-									.getDefaultState().getBlock())) == (false))) {
+					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z)))
+									.getBlock() == FillerPassableBlock.block)) == (false))) {
 						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);

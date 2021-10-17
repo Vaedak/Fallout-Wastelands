@@ -1,8 +1,8 @@
 package net.mcreator.fallout_wastelands.procedures;
 
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
@@ -25,19 +25,35 @@ import net.mcreator.fallout_wastelands.entity.ChromeraiderEntity;
 import net.mcreator.fallout_wastelands.entity.ChromedraiderfemaleEntity;
 import net.mcreator.fallout_wastelands.entity.BasesupermutantEntity;
 import net.mcreator.fallout_wastelands.block.FevgooBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 import java.util.HashMap;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class FevgooonhumanProcedure extends FalloutWastelandsModElements.ModElement {
-	public FevgooonhumanProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 272);
-		MinecraftForge.EVENT_BUS.register(this);
+public class FevgooonhumanProcedure {
+	@Mod.EventBusSubscriber
+	private static class GlobalTrigger {
+		@SubscribeEvent
+		public static void onEntityDeath(LivingDeathEvent event) {
+			if (event != null && event.getEntity() != null) {
+				Entity entity = event.getEntity();
+				Entity sourceentity = event.getSource().getTrueSource();
+				double i = entity.getPosX();
+				double j = entity.getPosY();
+				double k = entity.getPosZ();
+				World world = entity.world;
+				Map<String, Object> dependencies = new HashMap<>();
+				dependencies.put("x", i);
+				dependencies.put("y", j);
+				dependencies.put("z", k);
+				dependencies.put("world", world);
+				dependencies.put("entity", entity);
+				dependencies.put("sourceentity", sourceentity);
+				dependencies.put("event", event);
+				executeProcedure(dependencies);
+			}
+		}
 	}
-
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -69,7 +85,7 @@ public class FevgooonhumanProcedure extends FalloutWastelandsModElements.ModElem
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == FevgooBlock.block.getDefaultState().getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == FevgooBlock.block)) {
 			if ((entity instanceof ChromeraiderEntity.CustomEntity)) {
 				if (world instanceof ServerWorld) {
 					Entity entityToSpawn = new BasesupermutantEntity.CustomEntity(BasesupermutantEntity.entity, (World) world);
@@ -160,27 +176,6 @@ public class FevgooonhumanProcedure extends FalloutWastelandsModElements.ModElem
 					world.addEntity(entityToSpawn);
 				}
 			}
-		}
-	}
-
-	@SubscribeEvent
-	public void onEntityDeath(LivingDeathEvent event) {
-		if (event != null && event.getEntity() != null) {
-			Entity entity = event.getEntity();
-			Entity sourceentity = event.getSource().getTrueSource();
-			double i = entity.getPosX();
-			double j = entity.getPosY();
-			double k = entity.getPosZ();
-			World world = entity.world;
-			Map<String, Object> dependencies = new HashMap<>();
-			dependencies.put("x", i);
-			dependencies.put("y", j);
-			dependencies.put("z", k);
-			dependencies.put("world", world);
-			dependencies.put("entity", entity);
-			dependencies.put("sourceentity", sourceentity);
-			dependencies.put("event", event);
-			this.executeProcedure(dependencies);
 		}
 	}
 }

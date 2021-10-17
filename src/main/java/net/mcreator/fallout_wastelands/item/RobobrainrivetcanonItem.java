@@ -136,7 +136,7 @@ public class RobobrainrivetcanonItem extends FalloutWastelandsModElements.ModEle
 		@Override
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack getItem() {
-			return new ItemStack(AkItem.block, (int) (1));
+			return new ItemStack(AkItem.block);
 		}
 
 		@Override
@@ -158,6 +158,7 @@ public class RobobrainrivetcanonItem extends FalloutWastelandsModElements.ModEle
 			double z = this.getPosZ();
 			World world = this.world;
 			Entity entity = this.func_234616_v_();
+			Entity imediatesourceentity = this;
 			if (this.inGround) {
 				this.remove();
 			}

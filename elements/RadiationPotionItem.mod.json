@@ -1,0 +1,21 @@
+{
+  "_fv": 24,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Radiation Poisoning",
+    "splashName": "Splash Radiation Poisoning",
+    "lingeringName": "Lingering Radiation Poisoning",
+    "arrowName": "Arrow of Radiation Poisoning",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:Radiation"
+        },
+        "duration": 3600,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

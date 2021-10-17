@@ -8,17 +8,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class AmmunitionboxOnBlockRightClickedProcedure extends FalloutWastelandsModElements.ModElement {
-	public AmmunitionboxOnBlockRightClickedProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 239);
-	}
-
+public class AmmunitionboxOnBlockRightClickedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

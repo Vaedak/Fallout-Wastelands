@@ -22,7 +22,7 @@ public class WastelandersitemsItemGroup extends FalloutWastelandsModElements.Mod
 			@OnlyIn(Dist.CLIENT)
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(NuclearwasteItem.block, (int) (1));
+				return new ItemStack(NuclearwasteItem.block);
 			}
 
 			@OnlyIn(Dist.CLIENT)

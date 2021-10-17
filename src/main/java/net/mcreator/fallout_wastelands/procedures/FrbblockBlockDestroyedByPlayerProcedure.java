@@ -15,17 +15,11 @@ import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.entity.FriendlybrainbotEntity;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class FrbblockBlockDestroyedByPlayerProcedure extends FalloutWastelandsModElements.ModElement {
-	public FrbblockBlockDestroyedByPlayerProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 264);
-	}
-
+public class FrbblockBlockDestroyedByPlayerProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

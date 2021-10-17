@@ -9,17 +9,11 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.Vaultanimation29Block;
 import net.mcreator.fallout_wastelands.block.Vaultanimation28Block;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class Vaultanimation28UpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public Vaultanimation28UpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 708);
-	}
-
+public class Vaultanimation28UpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -45,7 +39,7 @@ public class Vaultanimation28UpdateTickProcedure extends FalloutWastelandsModEle
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Vaultanimation28Block.block.getDefaultState().getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Vaultanimation28Block.block)) {
 			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Vaultanimation29Block.block.getDefaultState(), 3);
 		}
 		try {

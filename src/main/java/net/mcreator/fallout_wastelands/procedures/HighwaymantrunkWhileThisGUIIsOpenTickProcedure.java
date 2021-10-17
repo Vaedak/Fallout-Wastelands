@@ -11,7 +11,6 @@ import net.minecraft.block.Blocks;
 
 import net.mcreator.fallout_wastelands.entity.HighwaymanEntity;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.function.Supplier;
@@ -20,12 +19,7 @@ import java.util.Random;
 import java.util.Map;
 import java.util.Comparator;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class HighwaymantrunkWhileThisGUIIsOpenTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public HighwaymantrunkWhileThisGUIIsOpenTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 579);
-	}
-
+public class HighwaymantrunkWhileThisGUIIsOpenTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -119,7 +113,7 @@ public class HighwaymantrunkWhileThisGUIIsOpenTickProcedure extends FalloutWaste
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == new ItemStack(Blocks.AIR, (int) (1)).getItem())) {
+		}.getItemStack((int) (0))).getItem() == Blocks.AIR.asItem())) {
 			entity.getPersistentData().putBoolean("AddFuel", (false));
 		}
 		{

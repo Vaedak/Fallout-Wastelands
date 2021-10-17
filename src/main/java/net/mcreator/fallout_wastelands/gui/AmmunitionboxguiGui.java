@@ -118,109 +118,109 @@ public class AmmunitionboxguiGui extends FalloutWastelandsModElements.ModElement
 			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 7, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(SeptammoItem.block, (int) (1)).getItem() == stack.getItem());
+					return (SeptammoItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 25, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(SeptammoItem.block, (int) (1)).getItem() == stack.getItem());
+					return (SeptammoItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 43, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(SeptammoItem.block, (int) (1)).getItem() == stack.getItem());
+					return (SeptammoItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 61, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(SeptammoItem.block, (int) (1)).getItem() == stack.getItem());
+					return (SeptammoItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 79, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(SeptammoItem.block, (int) (1)).getItem() == stack.getItem());
+					return (SeptammoItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 97, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(SeptammoItem.block, (int) (1)).getItem() == stack.getItem());
+					return (SeptammoItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 115, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(SeptammoItem.block, (int) (1)).getItem() == stack.getItem());
+					return (SeptammoItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 133, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(SeptammoItem.block, (int) (1)).getItem() == stack.getItem());
+					return (SeptammoItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 151, 12) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(SeptammoItem.block, (int) (1)).getItem() == stack.getItem());
+					return (SeptammoItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 7, 30) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FusionmicrocellItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(10, this.addSlot(new SlotItemHandler(internal, 10, 25, 30) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FusionmicrocellItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(11, this.addSlot(new SlotItemHandler(internal, 11, 43, 30) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FusionmicrocellItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(12, this.addSlot(new SlotItemHandler(internal, 12, 61, 30) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FusionmicrocellItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(13, this.addSlot(new SlotItemHandler(internal, 13, 79, 30) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FusionmicrocellItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(14, this.addSlot(new SlotItemHandler(internal, 14, 97, 30) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FusionmicrocellItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(15, this.addSlot(new SlotItemHandler(internal, 15, 115, 30) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FusionmicrocellItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(16, this.addSlot(new SlotItemHandler(internal, 16, 133, 30) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FusionmicrocellItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(17, this.addSlot(new SlotItemHandler(internal, 17, 151, 30) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FusionmicrocellItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FusionmicrocellItem.block == stack.getItem());
 				}
 			}));
 			int si;

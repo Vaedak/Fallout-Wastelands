@@ -4,6 +4,8 @@ package net.mcreator.fallout_wastelands.block;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.common.ToolType;
 
+import net.minecraft.world.IBlockReader;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -38,6 +40,11 @@ public class WastlandsandBlock extends FalloutWastelandsModElements.ModElement {
 			super(Block.Properties.create(Material.SAND).sound(SoundType.SAND).hardnessAndResistance(4f, 4f).setLightLevel(s -> 0).harvestLevel(0)
 					.harvestTool(ToolType.SHOVEL).setRequiresTool());
 			setRegistryName("wastlandsand");
+		}
+
+		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 15;
 		}
 
 		@Override

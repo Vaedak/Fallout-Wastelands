@@ -22,7 +22,7 @@ public class BlocsWItemGroup extends FalloutWastelandsModElements.ModElement {
 			@OnlyIn(Dist.CLIENT)
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(MilitaryplatedradiationwarriorBlock.block, (int) (1));
+				return new ItemStack(MilitaryplatedradiationwarriorBlock.block);
 			}
 
 			@OnlyIn(Dist.CLIENT)

@@ -81,8 +81,8 @@ public class ChromedraiderfemaleEntity extends FalloutWastelandsModElements.ModE
 			super(type, world);
 			experienceValue = 4;
 			setNoAI(false);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(RustedcombatweaponItem.block, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(RustedcombatweaponItem.block, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(RustedcombatweaponItem.block));
+			this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(RustedcombatweaponItem.block));
 		}
 
 		@Override
@@ -120,7 +120,7 @@ public class ChromedraiderfemaleEntity extends FalloutWastelandsModElements.ModE
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(Items.IRON_NUGGET, (int) (1)));
+			this.entityDropItem(new ItemStack(Items.IRON_NUGGET));
 		}
 
 		@Override

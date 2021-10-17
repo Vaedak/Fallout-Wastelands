@@ -105,11 +105,11 @@ public class EnclavepowerarmorsoldierEntity extends FalloutWastelandsModElements
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(PlasmarifleItem.block, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(EnclaveX01paItem.helmet, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(EnclaveX01paItem.body, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(EnclaveX01paItem.legs, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(EnclaveX01paItem.boots, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(PlasmarifleItem.block));
+			this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(EnclaveX01paItem.helmet));
+			this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(EnclaveX01paItem.body));
+			this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(EnclaveX01paItem.legs));
+			this.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(EnclaveX01paItem.boots));
 		}
 
 		@Override
@@ -173,7 +173,7 @@ public class EnclavepowerarmorsoldierEntity extends FalloutWastelandsModElements
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(EnclaveplatingItem.block, (int) (1)));
+			this.entityDropItem(new ItemStack(EnclaveplatingItem.block));
 		}
 
 		@Override

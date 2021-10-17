@@ -7,17 +7,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.item.ItemEntity;
 
 import net.mcreator.fallout_wastelands.block.WastelandgravelBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class WastelandgravelBlockDestroyedByPlayerProcedure extends FalloutWastelandsModElements.ModElement {
-	public WastelandgravelBlockDestroyedByPlayerProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 371);
-	}
-
+public class WastelandgravelBlockDestroyedByPlayerProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -45,13 +39,13 @@ public class WastelandgravelBlockDestroyedByPlayerProcedure extends FalloutWaste
 		IWorld world = (IWorld) dependencies.get("world");
 		if ((Math.random() < 0.1)) {
 			if (world instanceof World && !world.isRemote()) {
-				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.FLINT, (int) (1)));
+				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.FLINT));
 				entityToSpawn.setPickupDelay((int) 10);
 				world.addEntity(entityToSpawn);
 			}
 		} else {
 			if (world instanceof World && !world.isRemote()) {
-				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(WastelandgravelBlock.block, (int) (1)));
+				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(WastelandgravelBlock.block));
 				entityToSpawn.setPickupDelay((int) 10);
 				world.addEntity(entityToSpawn);
 			}

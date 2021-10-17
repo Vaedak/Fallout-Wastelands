@@ -10,17 +10,11 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.ClosingMerginingBlock;
 import net.mcreator.fallout_wastelands.block.Closing135Block;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class Closing135UpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public Closing135UpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 1367);
-	}
-
+public class Closing135UpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -46,8 +40,7 @@ public class Closing135UpdateTickProcedure extends FalloutWastelandsModElements.
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Closing135Block.block.getDefaultState()
-				.getBlock()) == (true))) {
+		if ((((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Closing135Block.block) == (true))) {
 			if (((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {

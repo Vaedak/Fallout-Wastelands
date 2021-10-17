@@ -6,8 +6,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.potion.RadiationPotion;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+import net.mcreator.fallout_wastelands.potion.RadiationPotionEffect;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.stream.Collectors;
@@ -16,12 +15,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class UraniumblockUpdateTicktest1Procedure extends FalloutWastelandsModElements.ModElement {
-	public UraniumblockUpdateTicktest1Procedure(FalloutWastelandsModElements instance) {
-		super(instance, 572);
-	}
-
+public class UraniumblockUpdateTicktest1Procedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -64,7 +58,7 @@ public class UraniumblockUpdateTicktest1Procedure extends FalloutWastelandsModEl
 					}.compareDistOf(x, y, z)).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotion.potion, (int) 60, (int) 1));
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 1));
 			}
 		}
 	}

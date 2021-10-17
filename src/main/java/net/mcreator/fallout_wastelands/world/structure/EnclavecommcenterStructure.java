@@ -1,11 +1,10 @@
 
 package net.mcreator.fallout_wastelands.world.structure;
 
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.IPlacementConfig;
@@ -32,24 +31,19 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.procedures.EnclavecommcenterOnStructureInstanceGeneratedProcedure;
 import net.mcreator.fallout_wastelands.block.WastelanddirtBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
 import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class EnclavecommcenterStructure extends FalloutWastelandsModElements.ModElement {
+@Mod.EventBusSubscriber
+public class EnclavecommcenterStructure {
 	private static Feature<NoFeatureConfig> feature = null;
 	private static ConfiguredFeature<?, ?> configuredFeature = null;
-	public EnclavecommcenterStructure(FalloutWastelandsModElements instance) {
-		super(instance, 545);
-		MinecraftForge.EVENT_BUS.register(this);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
-	}
+	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 	private static class FeatureRegisterHandler {
 		@SubscribeEvent
-		public void registerFeature(RegistryEvent.Register<Feature<?>> event) {
+		public static void registerFeature(RegistryEvent.Register<Feature<?>> event) {
 			feature = new Feature<NoFeatureConfig>(NoFeatureConfig.field_236558_a_) {
 				@Override
 				public boolean generate(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, NoFeatureConfig config) {
@@ -70,7 +64,7 @@ public class EnclavecommcenterStructure extends FalloutWastelandsModElements.Mod
 							j -= 1;
 							BlockState blockAt = world.getBlockState(new BlockPos(i, j, k));
 							boolean blockCriteria = false;
-							if (blockAt.getBlock() == WastelanddirtBlock.block.getDefaultState().getBlock())
+							if (blockAt.getBlock() == WastelanddirtBlock.block)
 								blockCriteria = true;
 							if (!blockCriteria)
 								continue;
@@ -108,7 +102,7 @@ public class EnclavecommcenterStructure extends FalloutWastelandsModElements.Mod
 		}
 	}
 	@SubscribeEvent
-	public void addFeatureToBiomes(BiomeLoadingEvent event) {
+	public static void addFeatureToBiomes(BiomeLoadingEvent event) {
 		boolean biomeCriteria = false;
 		if (new ResourceLocation("fallout_wastelands:capitalwasteland").equals(event.getName()))
 			biomeCriteria = true;

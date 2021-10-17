@@ -4,17 +4,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class ThemachinegunRangedItemUsedProcedure extends FalloutWastelandsModElements.ModElement {
-	public ThemachinegunRangedItemUsedProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 231);
-	}
-
+public class ThemachinegunRangedItemUsedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -29,6 +23,6 @@ public class ThemachinegunRangedItemUsedProcedure extends FalloutWastelandsModEl
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		if (entity instanceof PlayerEntity)
-			((PlayerEntity) entity).getCooldownTracker().setCooldown(((itemstack)).getItem(), (int) (-20));
+			((PlayerEntity) entity).getCooldownTracker().setCooldown((itemstack).getItem(), (int) (-20));
 	}
 }

@@ -14,18 +14,12 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements.ModElement {
-	public HighwaymandiscplayingProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 498);
-	}
-
+public class HighwaymandiscplayingProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -71,7 +65,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_13, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_13)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.13")),
@@ -96,7 +90,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_CAT, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_CAT)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.cat")),
@@ -121,7 +115,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_BLOCKS, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_BLOCKS)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.blocks")),
@@ -146,7 +140,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_CHIRP, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_CHIRP)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.chirp")),
@@ -171,7 +165,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_FAR, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_FAR)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.far")),
@@ -196,7 +190,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_MALL, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_MALL)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.mall")),
@@ -221,7 +215,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_MELLOHI, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_MELLOHI)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.mellohi")),
@@ -246,7 +240,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_STAL, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_STAL)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.stal")),
@@ -271,7 +265,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_STRAD, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_STRAD)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.strad")),
@@ -296,7 +290,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_WARD, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_WARD)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.ward")),
@@ -321,7 +315,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_11, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_11)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.11")),
@@ -346,7 +340,7 @@ public class HighwaymandiscplayingProcedure extends FalloutWastelandsModElements
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == new ItemStack(Items.MUSIC_DISC_WAIT, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_WAIT)) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.wait")),

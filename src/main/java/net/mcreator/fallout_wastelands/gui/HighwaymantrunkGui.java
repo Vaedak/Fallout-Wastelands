@@ -145,7 +145,7 @@ public class HighwaymantrunkGui extends FalloutWastelandsModElements.ModElement 
 			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 11, 201) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FueljerricanItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FueljerricanItem.block == stack.getItem());
 				}
 			}));
 			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 209, 201) {

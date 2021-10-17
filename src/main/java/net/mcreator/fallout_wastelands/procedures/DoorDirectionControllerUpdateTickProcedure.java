@@ -13,17 +13,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.VaultDoorBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class DoorDirectionControllerUpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public DoorDirectionControllerUpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 1050);
-	}
-
+public class DoorDirectionControllerUpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -69,8 +63,7 @@ public class DoorDirectionControllerUpdateTickProcedure extends FalloutWasteland
 			}
 
 			private void run() {
-				if ((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR.getDefaultState()
-						.getBlock()) == (true))) {
+				if ((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR) == (true))) {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 				}
 				MinecraftForge.EVENT_BUS.unregister(this);
@@ -91,8 +84,7 @@ public class DoorDirectionControllerUpdateTickProcedure extends FalloutWasteland
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-			if ((((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == VaultDoorBlock.block.getDefaultState()
-					.getBlock()) == (false))) {
+			if ((((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == VaultDoorBlock.block) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
@@ -111,8 +103,7 @@ public class DoorDirectionControllerUpdateTickProcedure extends FalloutWasteland
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-			if ((((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == VaultDoorBlock.block.getDefaultState()
-					.getBlock()) == (false))) {
+			if ((((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == VaultDoorBlock.block) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
@@ -131,8 +122,7 @@ public class DoorDirectionControllerUpdateTickProcedure extends FalloutWasteland
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-			if ((((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == VaultDoorBlock.block.getDefaultState()
-					.getBlock()) == (false))) {
+			if ((((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == VaultDoorBlock.block) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
@@ -151,8 +141,7 @@ public class DoorDirectionControllerUpdateTickProcedure extends FalloutWasteland
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-			if ((((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == VaultDoorBlock.block.getDefaultState()
-					.getBlock()) == (false))) {
+			if ((((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == VaultDoorBlock.block) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}

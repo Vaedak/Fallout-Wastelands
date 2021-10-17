@@ -56,6 +56,11 @@ public class InvisiblelightsourceBlock extends FalloutWastelandsModElements.ModE
 		}
 
 		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 15;
+		}
+
+		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			return VoxelShapes.empty();
 		}

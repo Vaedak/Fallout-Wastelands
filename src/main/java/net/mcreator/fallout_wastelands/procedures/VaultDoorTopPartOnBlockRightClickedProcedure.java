@@ -8,17 +8,11 @@ import net.minecraft.state.DirectionProperty;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.VaultDoorAnimation0Block;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class VaultDoorTopPartOnBlockRightClickedProcedure extends FalloutWastelandsModElements.ModElement {
-	public VaultDoorTopPartOnBlockRightClickedProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 918);
-	}
-
+public class VaultDoorTopPartOnBlockRightClickedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

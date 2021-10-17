@@ -16,6 +16,8 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
+import java.util.HashMap;
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
@@ -24,6 +26,7 @@ public class Overseer1GuiWindow extends ContainerScreen<Overseer1Gui.GuiContaine
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
+	private final static HashMap guistate = Overseer1Gui.guistate;
 	public Overseer1GuiWindow(Overseer1Gui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;

@@ -10,17 +10,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class ReaperLivingEntityIsHitWithToolProcedure extends FalloutWastelandsModElements.ModElement {
-	public ReaperLivingEntityIsHitWithToolProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 310);
-	}
-
+public class ReaperLivingEntityIsHitWithToolProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))

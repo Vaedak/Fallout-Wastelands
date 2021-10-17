@@ -8,17 +8,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.item.StimpackItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class StimpackRightClickedInAirProcedure extends FalloutWastelandsModElements.ModElement {
-	public StimpackRightClickedInAirProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 158);
-	}
-
+public class StimpackRightClickedInAirProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -29,7 +23,7 @@ public class StimpackRightClickedInAirProcedure extends FalloutWastelandsModElem
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.INSTANT_HEALTH, (int) 1, (int) 1));
 		if (entity instanceof PlayerEntity) {
-			ItemStack _stktoremove = new ItemStack(StimpackItem.block, (int) (1));
+			ItemStack _stktoremove = new ItemStack(StimpackItem.block);
 			((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
 					((PlayerEntity) entity).container.func_234641_j_());
 		}

@@ -83,7 +83,7 @@ public class ChromeraiderEntity extends FalloutWastelandsModElements.ModElement 
 			super(type, world);
 			experienceValue = 5;
 			setNoAI(false);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(RustedcombatweaponItem.block, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(RustedcombatweaponItem.block));
 		}
 
 		@Override
@@ -114,7 +114,7 @@ public class ChromeraiderEntity extends FalloutWastelandsModElements.ModElement 
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(Items.IRON_NUGGET, (int) (1)));
+			this.entityDropItem(new ItemStack(Items.IRON_NUGGET));
 		}
 
 		@Override

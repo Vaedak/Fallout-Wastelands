@@ -75,7 +75,12 @@ public class RadioactivwastebarrelBlock extends FalloutWastelandsModElements.Mod
 
 		@Override
 		public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
-			return true;
+			return state.getFluidState().isEmpty();
+		}
+
+		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 0;
 		}
 
 		@Override
@@ -118,8 +123,8 @@ public class RadioactivwastebarrelBlock extends FalloutWastelandsModElements.Mod
 		}
 
 		@Override
-		public void onBlockClicked(BlockState state, World world, BlockPos pos, PlayerEntity entity) {
-			super.onBlockClicked(state, world, pos, entity);
+		public void onBlockClicked(BlockState blockstate, World world, BlockPos pos, PlayerEntity entity) {
+			super.onBlockClicked(blockstate, world, pos, entity);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
@@ -131,8 +136,8 @@ public class RadioactivwastebarrelBlock extends FalloutWastelandsModElements.Mod
 		}
 
 		@Override
-		public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-			super.onEntityCollision(state, world, pos, entity);
+		public void onEntityCollision(BlockState blockstate, World world, BlockPos pos, Entity entity) {
+			super.onEntityCollision(blockstate, world, pos, entity);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();

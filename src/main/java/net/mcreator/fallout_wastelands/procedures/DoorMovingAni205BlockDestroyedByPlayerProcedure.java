@@ -5,17 +5,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.Blocks;
 
 import net.mcreator.fallout_wastelands.block.VaultDoorFrameBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class DoorMovingAni205BlockDestroyedByPlayerProcedure extends FalloutWastelandsModElements.ModElement {
-	public DoorMovingAni205BlockDestroyedByPlayerProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 1061);
-	}
-
+public class DoorMovingAni205BlockDestroyedByPlayerProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -41,20 +35,16 @@ public class DoorMovingAni205BlockDestroyedByPlayerProcedure extends FalloutWast
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) (x - 3), (int) (y + 0), (int) (z - 1)))).getBlock() == VaultDoorFrameBlock.block
-				.getDefaultState().getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) (x - 3), (int) (y + 0), (int) (z - 1)))).getBlock() == VaultDoorFrameBlock.block)) {
 			world.setBlockState(new BlockPos((int) (x - 3), (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
 		}
-		if (((world.getBlockState(new BlockPos((int) (x + 3), (int) (y + 0), (int) (z + 1)))).getBlock() == VaultDoorFrameBlock.block
-				.getDefaultState().getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) (x + 3), (int) (y + 0), (int) (z + 1)))).getBlock() == VaultDoorFrameBlock.block)) {
 			world.setBlockState(new BlockPos((int) (x + 3), (int) (y + 0), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
 		}
-		if (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) (z + 3)))).getBlock() == VaultDoorFrameBlock.block
-				.getDefaultState().getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) (z + 3)))).getBlock() == VaultDoorFrameBlock.block)) {
 			world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) (z + 3)), Blocks.AIR.getDefaultState(), 3);
 		}
-		if (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z - 3)))).getBlock() == VaultDoorFrameBlock.block
-				.getDefaultState().getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z - 3)))).getBlock() == VaultDoorFrameBlock.block)) {
 			world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z - 3)), Blocks.AIR.getDefaultState(), 3);
 		}
 	}

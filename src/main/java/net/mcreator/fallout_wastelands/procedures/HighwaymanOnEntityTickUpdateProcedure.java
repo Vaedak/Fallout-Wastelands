@@ -10,18 +10,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.item.FueljerricanItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Random;
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class HighwaymanOnEntityTickUpdateProcedure extends FalloutWastelandsModElements.ModElement {
-	public HighwaymanOnEntityTickUpdateProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 478);
-	}
-
+public class HighwaymanOnEntityTickUpdateProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -60,9 +54,7 @@ public class HighwaymanOnEntityTickUpdateProcedure extends FalloutWastelandsModE
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		world.addParticle(ParticleTypes.MYCELIUM, x, y, z, 0, 1, 0);
-		if (((entity instanceof PlayerEntity)
-				? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(FueljerricanItem.block, (int) (1)))
-				: false)) {
+		if (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(FueljerricanItem.block)) : false)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
 			{

@@ -72,6 +72,11 @@ public class LandmineBlock extends FalloutWastelandsModElements.ModElement {
 		}
 
 		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 0;
+		}
+
+		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
 			return VoxelShapes.or(makeCuboidShape(3.2, 0, 3.2, 12.8, 3.2, 12.8)).withOffset(offset.x, offset.y, offset.z);
@@ -86,8 +91,8 @@ public class LandmineBlock extends FalloutWastelandsModElements.ModElement {
 		}
 
 		@Override
-		public void neighborChanged(BlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
-			super.neighborChanged(state, world, pos, neighborBlock, fromPos, moving);
+		public void neighborChanged(BlockState blockstate, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
+			super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
@@ -105,8 +110,8 @@ public class LandmineBlock extends FalloutWastelandsModElements.ModElement {
 		}
 
 		@Override
-		public void onBlockClicked(BlockState state, World world, BlockPos pos, PlayerEntity entity) {
-			super.onBlockClicked(state, world, pos, entity);
+		public void onBlockClicked(BlockState blockstate, World world, BlockPos pos, PlayerEntity entity) {
+			super.onBlockClicked(blockstate, world, pos, entity);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
@@ -122,8 +127,8 @@ public class LandmineBlock extends FalloutWastelandsModElements.ModElement {
 		}
 
 		@Override
-		public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-			super.onEntityCollision(state, world, pos, entity);
+		public void onEntityCollision(BlockState blockstate, World world, BlockPos pos, Entity entity) {
+			super.onEntityCollision(blockstate, world, pos, entity);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
@@ -144,6 +149,7 @@ public class LandmineBlock extends FalloutWastelandsModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
+			BlockState blockstate = world.getBlockState(pos);
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);

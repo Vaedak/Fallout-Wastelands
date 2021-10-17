@@ -118,7 +118,7 @@ public class HighwaymanGUImenuGui extends FalloutWastelandsModElements.ModElemen
 			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 7, 21) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(FueljerricanItem.block, (int) (1)).getItem() == stack.getItem());
+					return (FueljerricanItem.block == stack.getItem());
 				}
 			}));
 			int si;

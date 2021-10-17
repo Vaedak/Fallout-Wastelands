@@ -9,17 +9,11 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.VaultDoorTopPartBlock;
 import net.mcreator.fallout_wastelands.block.CLOSING1AHHHHHHHHHHHBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class CLOSING1AHHHHHHHHHHHUpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public CLOSING1AHHHHHHHHHHHUpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 1375);
-	}
-
+public class CLOSING1AHHHHHHHHHHHUpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -45,8 +39,7 @@ public class CLOSING1AHHHHHHHHHHHUpdateTickProcedure extends FalloutWastelandsMo
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == CLOSING1AHHHHHHHHHHHBlock.block.getDefaultState()
-				.getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == CLOSING1AHHHHHHHHHHHBlock.block)) {
 			if (((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {

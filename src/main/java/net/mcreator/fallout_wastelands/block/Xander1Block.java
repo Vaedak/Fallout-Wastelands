@@ -76,7 +76,7 @@ public class Xander1Block extends FalloutWastelandsModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(XanderrootItem.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(XanderrootItem.block));
 		}
 
 		@Override
@@ -85,7 +85,7 @@ public class Xander1Block extends FalloutWastelandsModElements.ModElement {
 		}
 
 		@Override
-		public void tick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+		public void tick(BlockState blockstate, ServerWorld world, BlockPos pos, Random random) {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();

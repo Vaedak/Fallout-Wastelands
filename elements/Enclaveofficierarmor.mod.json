@@ -1,5 +1,5 @@
 {
-  "_fv": 18,
+  "_fv": 24,
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
@@ -38,6 +38,10 @@
     "bootsModelPartL": "leftleg",
     "bootsModelPartR": "rightleg",
     "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
     "maxDamage": 15,
     "damageValueHelmet": 1,
     "damageValueBody": 4,

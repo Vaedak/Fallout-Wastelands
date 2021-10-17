@@ -1,6 +1,6 @@
 {
-  "_fv": 18,
-  "_type": "mob",
+  "_fv": 24,
+  "_type": "livingentity",
   "definition": {
     "mobName": "Vault Dweller ",
     "mobLabel": "",
@@ -44,7 +44,7 @@
     "equipmentBoots": {
       "value": ""
     },
-    "mobBehaviourType": "Mob",
+    "mobBehaviourType": "Creature",
     "mobCreatureType": "UNDEFINED",
     "attackStrength": 3,
     "attackKnockback": 0.0,
@@ -110,7 +110,7 @@
     },
     "rangedItemType": "Default item",
     "spawnThisMob": false,
-    "doesDespawnWhenIdle": true,
+    "doesDespawnWhenIdle": false,
     "spawningProbability": 20,
     "mobSpawningType": "creature",
     "minNumberOfMobsPerGroup": 4,

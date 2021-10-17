@@ -9,17 +9,11 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.Dooranimation191Block;
 import net.mcreator.fallout_wastelands.block.Dooranimation190Block;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class Dooranimation190UpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public Dooranimation190UpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 1038);
-	}
-
+public class Dooranimation190UpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -45,7 +39,7 @@ public class Dooranimation190UpdateTickProcedure extends FalloutWastelandsModEle
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Dooranimation190Block.block.getDefaultState().getBlock())) {
+		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Dooranimation190Block.block)) {
 			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Dooranimation191Block.block.getDefaultState(), 3);
 		}
 		try {

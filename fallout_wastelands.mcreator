@@ -3,7 +3,7 @@
   "mod_elements": [
     {
       "name": "Chromeraider",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 1,
       "compiles": true,
       "locked_code": false,
@@ -21,7 +21,7 @@
     },
     {
       "name": "Chromedraiderfemale",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 3,
       "compiles": true,
       "locked_code": false,
@@ -30,7 +30,7 @@
     },
     {
       "name": "Themachinegun",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 6,
       "compiles": true,
       "locked_code": false,
@@ -127,7 +127,7 @@
     },
     {
       "name": "Laserriffle",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 13,
       "compiles": true,
       "locked_code": false,
@@ -181,7 +181,7 @@
     },
     {
       "name": "Mobmachinegun",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 20,
       "compiles": true,
       "locked_code": false,
@@ -190,7 +190,7 @@
     },
     {
       "name": "Ak",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 31,
       "compiles": true,
       "locked_code": false,
@@ -262,7 +262,7 @@
     },
     {
       "name": "Mirelurk",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 40,
       "compiles": true,
       "locked_code": false,
@@ -541,7 +541,7 @@
     },
     {
       "name": "Ghoul",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 71,
       "compiles": true,
       "locked_code": false,
@@ -1390,7 +1390,10 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "fevgoo"
+      "registry_name": "fevgoo",
+      "metadata": {
+        "gb": true
+      }
     },
     {
       "name": "T45powerarmor",
@@ -1942,7 +1945,7 @@
     },
     {
       "name": "Armyrobobrain",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 214,
       "compiles": true,
       "locked_code": false,
@@ -1951,7 +1954,7 @@
     },
     {
       "name": "Robobrainrivetcanon",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 215,
       "compiles": true,
       "locked_code": false,
@@ -2288,7 +2291,7 @@
     },
     {
       "name": "Closecombatsupermutant",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 240,
       "compiles": true,
       "locked_code": false,
@@ -2297,7 +2300,7 @@
     },
     {
       "name": "Basesupermutant",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 241,
       "compiles": true,
       "locked_code": false,
@@ -2306,7 +2309,7 @@
     },
     {
       "name": "Rangedsupermutant",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 242,
       "compiles": true,
       "locked_code": false,
@@ -2333,7 +2336,7 @@
     },
     {
       "name": "Friendlybrainbot",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 245,
       "compiles": true,
       "locked_code": false,
@@ -2456,7 +2459,7 @@
     },
     {
       "name": "Frbcannon",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 256,
       "compiles": true,
       "locked_code": false,
@@ -2619,7 +2622,7 @@
     },
     {
       "name": "Bloatflyshot",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 270,
       "compiles": true,
       "locked_code": false,
@@ -2628,7 +2631,7 @@
     },
     {
       "name": "Bloatfly",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 270,
       "compiles": true,
       "locked_code": false,
@@ -2876,7 +2879,7 @@
     },
     {
       "name": "Nailgun",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 287,
       "compiles": true,
       "locked_code": false,
@@ -3109,7 +3112,7 @@
     },
     {
       "name": "Raidergunner",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 299,
       "compiles": true,
       "locked_code": false,
@@ -4775,7 +4778,7 @@
     },
     {
       "name": "Highwayman",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 475,
       "compiles": true,
       "locked_code": false,
@@ -5147,7 +5150,7 @@
     },
     {
       "name": "Tenmm",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 508,
       "compiles": true,
       "locked_code": false,
@@ -5281,7 +5284,7 @@
     },
     {
       "name": "Plasmarifle",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 519,
       "compiles": true,
       "locked_code": false,
@@ -5371,7 +5374,7 @@
     },
     {
       "name": "Enclavepowerarmorsoldier",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 529,
       "compiles": true,
       "locked_code": false,
@@ -5511,7 +5514,7 @@
     },
     {
       "name": "ENCLAVEofficier",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 541,
       "compiles": true,
       "locked_code": false,
@@ -5953,7 +5956,7 @@
       }
     },
     {
-      "name": "Radiation",
+      "name": "RadiationPotionItem",
       "type": "potion",
       "sortid": 570,
       "compiles": true,
@@ -6256,7 +6259,7 @@
     },
     {
       "name": "Malevaultdweller1",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 591,
       "compiles": true,
       "locked_code": false,
@@ -6265,7 +6268,7 @@
     },
     {
       "name": "Malevaultdweller2",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 592,
       "compiles": true,
       "locked_code": false,
@@ -6274,7 +6277,7 @@
     },
     {
       "name": "Femalevaultdweller1",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 593,
       "compiles": true,
       "locked_code": false,
@@ -6283,7 +6286,7 @@
     },
     {
       "name": "Femalevaultdweller2",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 594,
       "compiles": true,
       "locked_code": false,
@@ -6292,7 +6295,7 @@
     },
     {
       "name": "Malewastelander1",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 595,
       "compiles": true,
       "locked_code": false,
@@ -6301,7 +6304,7 @@
     },
     {
       "name": "Malewastelander2",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 596,
       "compiles": true,
       "locked_code": false,
@@ -6310,7 +6313,7 @@
     },
     {
       "name": "Malewastelander3",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 597,
       "compiles": true,
       "locked_code": false,
@@ -6319,7 +6322,7 @@
     },
     {
       "name": "Malewastelander4",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 598,
       "compiles": true,
       "locked_code": false,
@@ -6328,7 +6331,7 @@
     },
     {
       "name": "Overseer",
-      "type": "mob",
+      "type": "livingentity",
       "sortid": 599,
       "compiles": true,
       "locked_code": false,
@@ -6417,7 +6420,7 @@
     },
     {
       "name": "Mmpistolnine",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 602,
       "compiles": true,
       "locked_code": false,
@@ -6435,7 +6438,7 @@
     },
     {
       "name": "Mmpistolnineaim",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 604,
       "compiles": true,
       "locked_code": false,
@@ -20810,6 +20813,15 @@
           }
         ]
       }
+    },
+    {
+      "name": "Radiation",
+      "type": "potioneffect",
+      "sortid": 1376,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "radiation"
     }
   ],
   "variable_elements": [
@@ -21329,6 +21341,7 @@
       "block.fallout_wastelands.dooranimation_187": "Vault Door135",
       "block.fallout_wastelands.dooranimation_171": "Vault Door135",
       "block.fallout_wastelands.dooranimation_170": "Vault Door135",
+      "block.fallout_wastelands.fevgoo": "Fevgoo",
       "block.wastlanders.redindusupperrivet": "Red Industrial Block (upper rivet)",
       "block.fallout_wastelands.vaultfloorstairs": "Vaultfloor",
       "item.fallout_wastelands.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",
@@ -21540,6 +21553,7 @@
       "block.fallout_wastelands.moltentin": "Molten Tin Block",
       "block.wastlanders.redindusrivetmid": "Red Industrial Block (mid rivet)",
       "item.fallout_wastelands.rangedsupermutant_spawn_egg": "Supermutant Brute Spawn Egg",
+      "fluid.fallout_wastelands.fevgoo": "Fevgoo",
       "item.minecraft.splash_potion.effect.radiation": "Splash Radiation Poisoning",
       "block.fallout_wastelands.charredplankslab": "Charred Plank Slab",
       "block.fallout_wastelands.closing_90": "Vault Door",
@@ -22107,5 +22121,5 @@
     "modElementsPackage": "net.mcreator.fallout_wastelands",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100118117
+  "mcreatorVersion": 202100236710
 }

@@ -8,17 +8,11 @@ import net.minecraft.entity.Entity;
 import net.mcreator.fallout_wastelands.entity.RangedsupermutantEntity;
 import net.mcreator.fallout_wastelands.entity.ClosecombatsupermutantEntity;
 import net.mcreator.fallout_wastelands.entity.BasesupermutantEntity;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class FevgooMobplayerCollidesBlockProcedure extends FalloutWastelandsModElements.ModElement {
-	public FevgooMobplayerCollidesBlockProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 159);
-	}
-
+public class FevgooMobplayerCollidesBlockProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))

@@ -4,17 +4,11 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 
 import net.mcreator.fallout_wastelands.block.XanderBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class Xander5UpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public Xander5UpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 569);
-	}
-
+public class Xander5UpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

@@ -115,7 +115,7 @@ public class FrbcannonItem extends FalloutWastelandsModElements.ModElement {
 		@Override
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack getItem() {
-			return new ItemStack(BulletmobsItem.block, (int) (1));
+			return new ItemStack(BulletmobsItem.block);
 		}
 
 		@Override
@@ -137,6 +137,7 @@ public class FrbcannonItem extends FalloutWastelandsModElements.ModElement {
 			double z = this.getPosZ();
 			World world = this.world;
 			Entity entity = this.func_234616_v_();
+			Entity imediatesourceentity = this;
 			if (this.inGround) {
 				this.remove();
 			}

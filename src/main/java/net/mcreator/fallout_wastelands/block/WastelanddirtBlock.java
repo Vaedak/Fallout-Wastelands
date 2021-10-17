@@ -38,9 +38,14 @@ public class WastelanddirtBlock extends FalloutWastelandsModElements.ModElement 
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.EARTH).sound(SoundType.GROUND).hardnessAndResistance(2f, 4f).setLightLevel(s -> 0).harvestLevel(0)
-					.harvestTool(ToolType.SHOVEL).setRequiresTool().slipperiness(0.7000000000000001f));
+			super(Block.Properties.create(Material.EARTH).sound(SoundType.GROUND).hardnessAndResistance(1.4f, 1.5f).setLightLevel(s -> 0)
+					.harvestLevel(0).harvestTool(ToolType.SHOVEL).setRequiresTool().slipperiness(0.7000000000000001f));
 			setRegistryName("wastelanddirt");
+		}
+
+		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 15;
 		}
 
 		@Override

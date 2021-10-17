@@ -5,17 +5,11 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class WastelanduraniumorePlayerStartsToDestroyProcedure extends FalloutWastelandsModElements.ModElement {
-	public WastelanduraniumorePlayerStartsToDestroyProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 446);
-	}
-
+public class WastelanduraniumorePlayerStartsToDestroyProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))

@@ -74,6 +74,7 @@ public class Malevaultdweller2Entity extends FalloutWastelandsModElements.ModEle
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
+			enablePersistence();
 		}
 
 		@Override
@@ -94,6 +95,11 @@ public class Malevaultdweller2Entity extends FalloutWastelandsModElements.ModEle
 		@Override
 		public CreatureAttribute getCreatureAttribute() {
 			return CreatureAttribute.UNDEFINED;
+		}
+
+		@Override
+		public boolean canDespawn(double distanceToClosestPlayer) {
+			return false;
 		}
 
 		@Override

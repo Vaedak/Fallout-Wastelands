@@ -1,28 +1,16 @@
 {
   "variants": {
-    "facing=south": {
-      "model": "fallout_wastelands:block/lighttub"
-    },
-    "facing=north": {
-      "model": "fallout_wastelands:block/lighttub"
-    },
-    "facing=east": {
-      "model": "fallout_wastelands:block/lighttub",
-      "x": 90
-    },
-    "facing=west": {
-      "model": "fallout_wastelands:block/lighttub",
-      "x": 90
-    },
-    "facing=up": {
+    "axis=x": {
       "model": "fallout_wastelands:block/lighttub",
       "x": 90,
       "y": 90
     },
-    "facing=down": {
+    "axis=y": {
+      "model": "fallout_wastelands:block/lighttub"
+    },
+    "axis=z": {
       "model": "fallout_wastelands:block/lighttub",
-      "x": 90,
-      "y": 90
+      "x": 90
     }
   }
 }

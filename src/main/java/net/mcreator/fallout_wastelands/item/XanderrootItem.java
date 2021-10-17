@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.Food;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.procedures.XanderrootRightClickedOnBlockProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.WastelandersitemsItemGroup;
@@ -53,6 +54,7 @@ public class XanderrootItem extends FalloutWastelandsModElements.ModElement {
 			BlockPos pos = context.getPos();
 			PlayerEntity entity = context.getPlayer();
 			Direction direction = context.getFace();
+			BlockState blockstate = world.getBlockState(pos);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();

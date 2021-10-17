@@ -10,17 +10,11 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.VaultDoorTopPartBlock;
 import net.mcreator.fallout_wastelands.block.VaultDoorFillerBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class VaultDoorBlockAddedProcedure extends FalloutWastelandsModElements.ModElement {
-	public VaultDoorBlockAddedProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 637);
-	}
-
+public class VaultDoorBlockAddedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -46,9 +40,9 @@ public class VaultDoorBlockAddedProcedure extends FalloutWastelandsModElements.M
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR.getDefaultState().getBlock())
-				|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.WATER.getDefaultState().getBlock()))
-				|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.LAVA.getDefaultState().getBlock()))) {
+		if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR)
+				|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.WATER))
+				|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.LAVA))) {
 			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), VaultDoorTopPartBlock.block.getDefaultState(), 3);
 			if (((new Object() {
 				public Direction getDirection(BlockPos pos) {

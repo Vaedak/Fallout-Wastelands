@@ -10,7 +10,6 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.item.FueljerricanItem;
 import net.mcreator.fallout_wastelands.entity.HighwaymanEntity;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.function.Supplier;
@@ -18,12 +17,7 @@ import java.util.function.Function;
 import java.util.Map;
 import java.util.Comparator;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class AddFuelProcedure extends FalloutWastelandsModElements.ModElement {
-	public AddFuelProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 577);
-	}
-
+public class AddFuelProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -69,7 +63,7 @@ public class AddFuelProcedure extends FalloutWastelandsModElements.ModElement {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == new ItemStack(FueljerricanItem.block, (int) (1)).getItem()) && ((((Entity) world
+		}.getItemStack((int) (0))).getItem() == FueljerricanItem.block) && ((((Entity) world
 				.getEntitiesWithinAABB(HighwaymanEntity.CustomEntity.class,
 						new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
 				.stream().sorted(new Object() {

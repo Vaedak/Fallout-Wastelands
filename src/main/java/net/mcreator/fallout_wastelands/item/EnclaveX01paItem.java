@@ -73,7 +73,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 
 			@Override
 			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(EnclaveplatingItem.block, (int) (1)));
+				return Ingredient.fromStacks(new ItemStack(EnclaveplatingItem.block));
 			}
 
 			@OnlyIn(Dist.CLIENT)

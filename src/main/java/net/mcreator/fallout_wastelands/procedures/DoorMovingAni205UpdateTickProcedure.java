@@ -10,17 +10,11 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.block.VaultDoorBlock;
 import net.mcreator.fallout_wastelands.block.PassableVaultDoorBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class DoorMovingAni205UpdateTickProcedure extends FalloutWastelandsModElements.ModElement {
-	public DoorMovingAni205UpdateTickProcedure(FalloutWastelandsModElements instance) {
-		super(instance, 1059);
-	}
-
+public class DoorMovingAni205UpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -61,10 +55,9 @@ public class DoorMovingAni205UpdateTickProcedure extends FalloutWastelandsModEle
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-			if (((((world.getBlockState(new BlockPos((int) (x - 3), (int) (y - 1), (int) (z - 1)))).getBlock() == VaultDoorBlock.block
-					.getDefaultState().getBlock())
-					|| ((world.getBlockState(new BlockPos((int) (x - 3), (int) (y - 1), (int) (z - 1)))).getBlock() == PassableVaultDoorBlock.block
-							.getDefaultState().getBlock())) == (false))) {
+			if (((((world.getBlockState(new BlockPos((int) (x - 3), (int) (y - 1), (int) (z - 1)))).getBlock() == VaultDoorBlock.block)
+					|| ((world.getBlockState(new BlockPos((int) (x - 3), (int) (y - 1), (int) (z - 1))))
+							.getBlock() == PassableVaultDoorBlock.block)) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
@@ -83,10 +76,9 @@ public class DoorMovingAni205UpdateTickProcedure extends FalloutWastelandsModEle
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-			if (((((world.getBlockState(new BlockPos((int) (x + 3), (int) (y - 1), (int) (z + 1)))).getBlock() == VaultDoorBlock.block
-					.getDefaultState().getBlock())
-					|| ((world.getBlockState(new BlockPos((int) (x + 3), (int) (y - 1), (int) (z + 1)))).getBlock() == PassableVaultDoorBlock.block
-							.getDefaultState().getBlock())) == (false))) {
+			if (((((world.getBlockState(new BlockPos((int) (x + 3), (int) (y - 1), (int) (z + 1)))).getBlock() == VaultDoorBlock.block)
+					|| ((world.getBlockState(new BlockPos((int) (x + 3), (int) (y - 1), (int) (z + 1))))
+							.getBlock() == PassableVaultDoorBlock.block)) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
@@ -105,10 +97,9 @@ public class DoorMovingAni205UpdateTickProcedure extends FalloutWastelandsModEle
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-			if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 3)))).getBlock() == VaultDoorBlock.block
-					.getDefaultState().getBlock())
-					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 3)))).getBlock() == PassableVaultDoorBlock.block
-							.getDefaultState().getBlock())) == (false))) {
+			if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 3)))).getBlock() == VaultDoorBlock.block)
+					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 3))))
+							.getBlock() == PassableVaultDoorBlock.block)) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
@@ -127,10 +118,9 @@ public class DoorMovingAni205UpdateTickProcedure extends FalloutWastelandsModEle
 				}
 			}
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-			if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 3)))).getBlock() == VaultDoorBlock.block
-					.getDefaultState().getBlock())
-					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 3)))).getBlock() == PassableVaultDoorBlock.block
-							.getDefaultState().getBlock())) == (false))) {
+			if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 3)))).getBlock() == VaultDoorBlock.block)
+					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 3))))
+							.getBlock() == PassableVaultDoorBlock.block)) == (false))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}

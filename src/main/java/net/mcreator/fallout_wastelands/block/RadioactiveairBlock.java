@@ -67,6 +67,11 @@ public class RadioactiveairBlock extends FalloutWastelandsModElements.ModElement
 		}
 
 		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 0;
+		}
+
+		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			return VoxelShapes.empty();
 		}
@@ -85,8 +90,8 @@ public class RadioactiveairBlock extends FalloutWastelandsModElements.ModElement
 		}
 
 		@Override
-		public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-			super.onEntityCollision(state, world, pos, entity);
+		public void onEntityCollision(BlockState blockstate, World world, BlockPos pos, Entity entity) {
+			super.onEntityCollision(blockstate, world, pos, entity);
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
@@ -103,6 +108,7 @@ public class RadioactiveairBlock extends FalloutWastelandsModElements.ModElement
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
+			BlockState blockstate = world.getBlockState(pos);
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
