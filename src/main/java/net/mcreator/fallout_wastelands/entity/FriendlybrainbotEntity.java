@@ -69,6 +69,7 @@ import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.block.BlockState;
 
@@ -81,7 +82,8 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 public class FriendlybrainbotEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(164).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(3f, 3f))
-					.build("friendlybrainbot").setRegistryName("friendlybrainbot");
+			.build("friendlybrainbot").setRegistryName("friendlybrainbot");
+
 	public FriendlybrainbotEntity(FalloutWastelandsModElements instance) {
 		super(instance, 245);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FriendlybrainbotRenderer.ModelRegisterHandler());
@@ -98,6 +100,7 @@ public class FriendlybrainbotEntity extends FalloutWastelandsModElements.ModElem
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -135,7 +138,7 @@ public class FriendlybrainbotEntity extends FalloutWastelandsModElements.ModElem
 			this.goalSelector.addGoal(2, new OwnerHurtTargetGoal(this));
 			this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 0.3, (float) 10, (float) 2, false));
 			this.goalSelector.addGoal(4, new RandomWalkingGoal(this, 0.4));
-			this.targetSelector.addGoal(5, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(5, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(7, new SwimGoal(this));
 			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, false));
@@ -220,7 +223,7 @@ public class FriendlybrainbotEntity extends FalloutWastelandsModElements.ModElem
 
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof PotionEntity)
+			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
 				return false;
 			if (source == DamageSource.CACTUS)
 				return false;

@@ -16,7 +16,13 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class OpenedvaultblastdoorOnBlockRightClickedProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure OpenedvaultblastdoorOnBlockRightClicked!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure OpenedvaultblastdoorOnBlockRightClicked!");
@@ -32,21 +38,16 @@ public class OpenedvaultblastdoorOnBlockRightClickedProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure OpenedvaultblastdoorOnBlockRightClicked!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure OpenedvaultblastdoorOnBlockRightClicked!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
 		boolean found = false;
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
 		if (world instanceof World && !world.isRemote()) {
-			((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+			((World) world).playSound(null, new BlockPos(x, y, z),
 					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.step")),
 					SoundCategory.NEUTRAL, (float) 1, (float) 1);
 		} else {
@@ -54,23 +55,23 @@ public class OpenedvaultblastdoorOnBlockRightClickedProcedure {
 					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.step")),
 					SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 		}
-		world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
-		world.setBlockState(new BlockPos((int) x, (int) y, (int) z), VaultblastdoorBlock.block.getDefaultState(), 3);
-		if (((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == OpenedvaultblastdoorBlock.block)) {
-			world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), VaultblastdoorBlock.block.getDefaultState(), 3);
+		world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
+		world.setBlockState(new BlockPos(x, y, z), VaultblastdoorBlock.block.getDefaultState(), 3);
+		if ((world.getBlockState(new BlockPos(x + 1, y, z))).getBlock() == OpenedvaultblastdoorBlock.block) {
+			world.setBlockState(new BlockPos(x + 1, y, z), Blocks.AIR.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x + 1, y, z), VaultblastdoorBlock.block.getDefaultState(), 3);
 		}
-		if (((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == OpenedvaultblastdoorBlock.block)) {
-			world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), VaultblastdoorBlock.block.getDefaultState(), 3);
+		if ((world.getBlockState(new BlockPos(x - 1, y, z))).getBlock() == OpenedvaultblastdoorBlock.block) {
+			world.setBlockState(new BlockPos(x - 1, y, z), Blocks.AIR.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x - 1, y, z), VaultblastdoorBlock.block.getDefaultState(), 3);
 		}
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == OpenedvaultblastdoorBlock.block)) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), VaultblastdoorBlock.block.getDefaultState(), 3);
+		if ((world.getBlockState(new BlockPos(x, y, z - 1))).getBlock() == OpenedvaultblastdoorBlock.block) {
+			world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x, y, z - 1), VaultblastdoorBlock.block.getDefaultState(), 3);
 		}
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == OpenedvaultblastdoorBlock.block)) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), VaultblastdoorBlock.block.getDefaultState(), 3);
+		if ((world.getBlockState(new BlockPos(x, y, z + 1))).getBlock() == OpenedvaultblastdoorBlock.block) {
+			world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x, y, z + 1), VaultblastdoorBlock.block.getDefaultState(), 3);
 		}
 	}
 }

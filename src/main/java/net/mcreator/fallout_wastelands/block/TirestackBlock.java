@@ -30,6 +30,7 @@ import java.util.Collections;
 public class TirestackBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:tirestack")
 	public static final Block block = null;
+
 	public TirestackBlock(FalloutWastelandsModElements instance) {
 		super(instance, 91);
 	}
@@ -45,6 +46,7 @@ public class TirestackBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends FallingBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.SCAFFOLDING).hardnessAndResistance(3f, 10f).setLightLevel(s -> 0).notSolid()

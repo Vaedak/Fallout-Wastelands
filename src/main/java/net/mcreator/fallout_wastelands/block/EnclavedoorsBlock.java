@@ -30,6 +30,7 @@ import java.util.Collections;
 public class EnclavedoorsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:enclavedoors")
 	public static final Block block = null;
+
 	public EnclavedoorsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 538);
 	}
@@ -45,6 +46,7 @@ public class EnclavedoorsBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends DoorBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(8f, 8f).setLightLevel(s -> 5).notSolid()

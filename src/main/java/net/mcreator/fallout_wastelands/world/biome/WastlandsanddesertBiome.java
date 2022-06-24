@@ -24,10 +24,12 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 @FalloutWastelandsModElements.ModElement.Tag
 public class WastlandsanddesertBiome extends FalloutWastelandsModElements.ModElement {
 	public static Biome biome;
+
 	public WastlandsanddesertBiome(FalloutWastelandsModElements instance) {
 		super(instance, 458);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
+
 	private static class BiomeRegisterHandler {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
@@ -49,6 +51,7 @@ public class WastlandsanddesertBiome extends FalloutWastelandsModElements.ModEle
 			}
 		}
 	}
+
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		BiomeDictionary.addTypes(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, WorldGenRegistries.BIOME.getKey(biome)),

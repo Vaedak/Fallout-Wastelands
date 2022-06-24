@@ -15,7 +15,13 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class VaultDoorFillerUpdateTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure VaultDoorFillerUpdateTick!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure VaultDoorFillerUpdateTick!");
@@ -31,36 +37,25 @@ public class VaultDoorFillerUpdateTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure VaultDoorFillerUpdateTick!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure VaultDoorFillerUpdateTick!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((((((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == VaultDoorBlock.block) || (((world
-				.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z))).getBlock() == VaultDoorBlock.block)
-				|| (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 2), (int) z))).getBlock() == VaultDoorBlock.block) || (((world
-						.getBlockState(new BlockPos((int) (x + 1), (int) (y - 2), (int) z))).getBlock() == VaultDoorBlock.block)
-						|| (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z))).getBlock() == VaultDoorBlock.block)
-								|| (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z))).getBlock() == VaultDoorBlock.block)
-										|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z)))
-												.getBlock() == VaultDoorBlock.block)))))))
-				|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == PassableVaultDoorBlock.block)
-						|| (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z))).getBlock() == PassableVaultDoorBlock.block)
-								|| (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 2), (int) z)))
-										.getBlock() == PassableVaultDoorBlock.block)
-										|| (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 2), (int) z)))
-												.getBlock() == PassableVaultDoorBlock.block)
-												|| (((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z)))
-														.getBlock() == PassableVaultDoorBlock.block)
-														|| (((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z)))
-																.getBlock() == PassableVaultDoorBlock.block)
-																|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z)))
-																		.getBlock() == PassableVaultDoorBlock.block)))))))) == (false))) {
-			if ((((new Object() {
+		if (((world.getBlockState(new BlockPos(x, y - 2, z))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x + 1, y - 1, z))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x - 1, y - 2, z))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x + 1, y - 2, z))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x + 1, y + 0, z))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x - 1, y + 0, z))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x - 1, y - 1, z))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 2, z))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x + 1, y - 1, z))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x - 1, y - 2, z))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x + 1, y - 2, z))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x + 1, y + 0, z))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x - 1, y + 0, z))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x - 1, y - 1, z))).getBlock() == PassableVaultDoorBlock.block) == false) {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -74,7 +69,7 @@ public class VaultDoorFillerUpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH) || ((new Object() {
+			}.getDirection(new BlockPos(x, y, z))) == Direction.NORTH || (new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -88,31 +83,25 @@ public class VaultDoorFillerUpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH))) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+			}.getDirection(new BlockPos(x, y, z))) == Direction.SOUTH) {
+				world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
-		if ((((((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == VaultDoorBlock.block) || (((world
-				.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1)))).getBlock() == VaultDoorBlock.block)
-				|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) (z - 1)))).getBlock() == VaultDoorBlock.block) || (((world
-						.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) (z + 1)))).getBlock() == VaultDoorBlock.block)
-						|| (((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z + 1)))).getBlock() == VaultDoorBlock.block)
-								|| (((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)))).getBlock() == VaultDoorBlock.block)
-										|| ((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1))))
-												.getBlock() == VaultDoorBlock.block)))))))
-				|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == PassableVaultDoorBlock.block)
-						|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1)))).getBlock() == PassableVaultDoorBlock.block)
-								|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) (z - 1))))
-										.getBlock() == PassableVaultDoorBlock.block)
-										|| (((world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) (z + 1))))
-												.getBlock() == PassableVaultDoorBlock.block)
-												|| (((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z + 1))))
-														.getBlock() == PassableVaultDoorBlock.block)
-														|| (((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1))))
-																.getBlock() == PassableVaultDoorBlock.block)
-																|| ((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1))))
-																		.getBlock() == PassableVaultDoorBlock.block)))))))) == (false))) {
-			if ((((new Object() {
+		if (((world.getBlockState(new BlockPos(x, y - 2, z))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 1, z + 1))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 2, z - 1))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 2, z + 1))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y + 0, z + 1))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y + 0, z - 1))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 1, z - 1))).getBlock() == VaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 2, z))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 1, z + 1))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 2, z - 1))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 2, z + 1))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y + 0, z + 1))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y + 0, z - 1))).getBlock() == PassableVaultDoorBlock.block
+				|| (world.getBlockState(new BlockPos(x, y - 1, z - 1))).getBlock() == PassableVaultDoorBlock.block) == false) {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -126,7 +115,7 @@ public class VaultDoorFillerUpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST) || ((new Object() {
+			}.getDirection(new BlockPos(x, y, z))) == Direction.WEST || (new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -140,8 +129,8 @@ public class VaultDoorFillerUpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST))) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+			}.getDirection(new BlockPos(x, y, z))) == Direction.EAST) {
+				world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
 	}

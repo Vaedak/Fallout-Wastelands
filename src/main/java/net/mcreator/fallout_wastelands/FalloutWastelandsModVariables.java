@@ -36,15 +36,19 @@ public class FalloutWastelandsModVariables {
 	private void init(FMLCommonSetupEvent event) {
 		CapabilityManager.INSTANCE.register(PlayerVariables.class, new PlayerVariablesStorage(), PlayerVariables::new);
 	}
+
 	@CapabilityInject(PlayerVariables.class)
 	public static Capability<PlayerVariables> PLAYER_VARIABLES_CAPABILITY = null;
+
 	@SubscribeEvent
 	public void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
 		if (event.getObject() instanceof PlayerEntity && !(event.getObject() instanceof FakePlayer))
 			event.addCapability(new ResourceLocation("fallout_wastelands", "player_variables"), new PlayerVariablesProvider());
 	}
+
 	private static class PlayerVariablesProvider implements ICapabilitySerializable<INBT> {
 		private final LazyOptional<PlayerVariables> instance = LazyOptional.of(PLAYER_VARIABLES_CAPABILITY::getDefaultInstance);
+
 		@Override
 		public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
 			return cap == PLAYER_VARIABLES_CAPABILITY ? instance.cast() : LazyOptional.empty();
@@ -89,12 +93,14 @@ public class FalloutWastelandsModVariables {
 		public boolean Radioactivity1 = false;
 		public String Radiation2 = "";
 		public double Fuel = 0;
+
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				FalloutWastelandsMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
 						new PlayerVariablesSyncMessage(this));
 		}
 	}
+
 	@SubscribeEvent
 	public void onPlayerLoggedInSyncPlayerVariables(PlayerEvent.PlayerLoggedInEvent event) {
 		if (!event.getPlayer().world.isRemote())
@@ -128,8 +134,10 @@ public class FalloutWastelandsModVariables {
 		if (!event.isWasDeath()) {
 		}
 	}
+
 	public static class PlayerVariablesSyncMessage {
 		public PlayerVariables data;
+
 		public PlayerVariablesSyncMessage(PacketBuffer buffer) {
 			this.data = new PlayerVariables();
 			new PlayerVariablesStorage().readNBT(null, this.data, null, buffer.readCompoundTag());

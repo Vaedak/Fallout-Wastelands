@@ -56,6 +56,7 @@ import java.util.Collections;
 public class XanderBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:xander")
 	public static final Block block = null;
+
 	public XanderBlock(FalloutWastelandsModElements instance) {
 		super(instance, 558);
 		MinecraftForge.EVENT_BUS.register(this);
@@ -73,8 +74,10 @@ public class XanderBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	private static Feature<BlockClusterFeatureConfig> feature = null;
 	private static ConfiguredFeature<?, ?> configuredFeature = null;
+
 	private static class FeatureRegisterHandler {
 		@SubscribeEvent
 		public void registerFeature(RegistryEvent.Register<Feature<?>> event) {
@@ -104,6 +107,7 @@ public class XanderBlock extends FalloutWastelandsModElements.ModElement {
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("fallout_wastelands:xander"), configuredFeature);
 		}
 	}
+
 	@SubscribeEvent
 	public void addFeatureToBiomes(BiomeLoadingEvent event) {
 		boolean biomeCriteria = false;
@@ -113,6 +117,7 @@ public class XanderBlock extends FalloutWastelandsModElements.ModElement {
 			return;
 		event.getGeneration().getFeatures(GenerationStage.Decoration.VEGETAL_DECORATION).add(() -> configuredFeature);
 	}
+
 	public static class BlockCustomFlower extends FlowerBlock {
 		public BlockCustomFlower() {
 			super(Effects.SATURATION, 0, Block.Properties.create(Material.PLANTS, MaterialColor.GRASS).tickRandomly().doesNotBlockMovement()

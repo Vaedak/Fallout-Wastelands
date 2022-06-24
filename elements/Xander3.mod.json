@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "plant",
   "definition": {
     "renderType": 12,
@@ -67,6 +67,7 @@
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "patchSize": 64,
+    "generateAtAnyHeight": false,
     "onTickUpdate": {
       "name": "Xander3UpdateTick"
     }

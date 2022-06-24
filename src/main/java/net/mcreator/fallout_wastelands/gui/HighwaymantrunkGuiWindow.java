@@ -28,6 +28,7 @@ public class HighwaymantrunkGuiWindow extends ContainerScreen<HighwaymantrunkGui
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = HighwaymantrunkGui.guistate;
+
 	public HighwaymantrunkGuiWindow(HighwaymantrunkGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -38,7 +39,9 @@ public class HighwaymantrunkGuiWindow extends ContainerScreen<HighwaymantrunkGui
 		this.xSize = 238;
 		this.ySize = 238;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/highwaymantrunk.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

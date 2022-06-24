@@ -25,6 +25,7 @@ import java.util.Collections;
 public class ConcretepatternBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:concretepattern")
 	public static final Block block = null;
+
 	public ConcretepatternBlock(FalloutWastelandsModElements instance) {
 		super(instance, 493);
 	}
@@ -34,6 +35,7 @@ public class ConcretepatternBlock extends FalloutWastelandsModElements.ModElemen
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(3f, 7f).setLightLevel(s -> 0).harvestLevel(1)

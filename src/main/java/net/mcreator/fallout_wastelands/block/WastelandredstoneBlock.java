@@ -46,6 +46,7 @@ import java.util.Collections;
 public class WastelandredstoneBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:wastelandredstone")
 	public static final Block block = null;
+
 	public WastelandredstoneBlock(FalloutWastelandsModElements instance) {
 		super(instance, 323);
 		MinecraftForge.EVENT_BUS.register(this);
@@ -57,6 +58,7 @@ public class WastelandredstoneBlock extends FalloutWastelandsModElements.ModElem
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(4f, 5f).setLightLevel(s -> 0).harvestLevel(1)
@@ -77,12 +79,15 @@ public class WastelandredstoneBlock extends FalloutWastelandsModElements.ModElem
 			return Collections.singletonList(new ItemStack(Items.REDSTONE, (int) (4)));
 		}
 	}
+
 	private static Feature<OreFeatureConfig> feature = null;
 	private static ConfiguredFeature<?, ?> configuredFeature = null;
 	private static IRuleTestType<CustomRuleTest> CUSTOM_MATCH = null;
+
 	private static class CustomRuleTest extends RuleTest {
 		static final CustomRuleTest INSTANCE = new CustomRuleTest();
 		static final com.mojang.serialization.Codec<CustomRuleTest> codec = com.mojang.serialization.Codec.unit(() -> INSTANCE);
+
 		public boolean test(BlockState blockAt, Random random) {
 			boolean blockCriteria = false;
 			if (blockAt.getBlock() == WastlandstoneBlock.block)
@@ -120,6 +125,7 @@ public class WastelandredstoneBlock extends FalloutWastelandsModElements.ModElem
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("fallout_wastelands:wastelandredstone"), configuredFeature);
 		}
 	}
+
 	@SubscribeEvent
 	public void addFeatureToBiomes(BiomeLoadingEvent event) {
 		event.getGeneration().getFeatures(GenerationStage.Decoration.UNDERGROUND_ORES).add(() -> configuredFeature);

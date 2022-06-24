@@ -13,6 +13,7 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class FevgooMobplayerCollidesBlockProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -20,11 +21,11 @@ public class FevgooMobplayerCollidesBlockProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity instanceof BasesupermutantEntity.CustomEntity)) {
+		if (entity instanceof BasesupermutantEntity.CustomEntity) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
 		} else {
-			if ((!(entity instanceof BasesupermutantEntity.CustomEntity))) {
+			if (!(entity instanceof BasesupermutantEntity.CustomEntity)) {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 6000, (int) 5));
 				if (entity instanceof LivingEntity)
@@ -37,11 +38,11 @@ public class FevgooMobplayerCollidesBlockProcedure {
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 6000, (int) 10));
 			}
 		}
-		if ((entity instanceof ClosecombatsupermutantEntity.CustomEntity)) {
+		if (entity instanceof ClosecombatsupermutantEntity.CustomEntity) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
 		} else {
-			if ((!(entity instanceof BasesupermutantEntity.CustomEntity))) {
+			if (!(entity instanceof BasesupermutantEntity.CustomEntity)) {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 6000, (int) 5));
 				if (entity instanceof LivingEntity)
@@ -54,10 +55,10 @@ public class FevgooMobplayerCollidesBlockProcedure {
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 6000, (int) 10));
 			}
 		}
-		if ((entity instanceof RangedsupermutantEntity.CustomEntity)) {
+		if (entity instanceof RangedsupermutantEntity.CustomEntity) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
-			if ((!(entity instanceof BasesupermutantEntity.CustomEntity))) {
+			if (!(entity instanceof BasesupermutantEntity.CustomEntity)) {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 6000, (int) 5));
 				if (entity instanceof LivingEntity)

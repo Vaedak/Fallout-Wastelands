@@ -25,6 +25,7 @@ import java.util.Collections;
 public class WastelandwornmetalblockBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:wastelandwornmetalblock")
 	public static final Block block = null;
+
 	public WastelandwornmetalblockBlock(FalloutWastelandsModElements instance) {
 		super(instance, 487);
 	}
@@ -34,6 +35,7 @@ public class WastelandwornmetalblockBlock extends FalloutWastelandsModElements.M
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(7f, 7f).setLightLevel(s -> 0).harvestLevel(1)

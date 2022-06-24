@@ -24,6 +24,7 @@ import java.util.Collections;
 public class StructuralmetalblockBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:structuralmetalblock")
 	public static final Block block = null;
+
 	public StructuralmetalblockBlock(FalloutWastelandsModElements instance) {
 		super(instance, 499);
 	}
@@ -33,6 +34,7 @@ public class StructuralmetalblockBlock extends FalloutWastelandsModElements.ModE
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(4f, 6f).setLightLevel(s -> 0));

@@ -31,6 +31,7 @@ import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.CreatureAttribute;
@@ -44,6 +45,7 @@ public class ChromedraiderfemaleEntity extends FalloutWastelandsModElements.ModE
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(100).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.6f, 1.8f)).build("chromedraiderfemale").setRegistryName("chromedraiderfemale");
+
 	public ChromedraiderfemaleEntity(FalloutWastelandsModElements instance) {
 		super(instance, 3);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ChromedraiderfemaleRenderer.ModelRegisterHandler());
@@ -60,6 +62,7 @@ public class ChromedraiderfemaleEntity extends FalloutWastelandsModElements.ModE
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -106,7 +109,12 @@ public class ChromedraiderfemaleEntity extends FalloutWastelandsModElements.ModE
 			this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, MirelurkEntity.CustomEntity.class, false, false));
-			this.goalSelector.addGoal(14, new MeleeAttackGoal(this, 0.7, true));
+			this.goalSelector.addGoal(14, new MeleeAttackGoal(this, 0.7, true) {
+				@Override
+				protected double getAttackReachSqr(LivingEntity entity) {
+					return (double) (4.0 + entity.getWidth() * entity.getWidth());
+				}
+			});
 			this.goalSelector.addGoal(15, new RandomWalkingGoal(this, 0.7));
 			this.targetSelector.addGoal(16, new HurtByTargetGoal(this));
 			this.goalSelector.addGoal(17, new LookRandomlyGoal(this));

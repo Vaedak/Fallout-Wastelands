@@ -31,6 +31,7 @@ import java.util.Collections;
 public class RedindustrialdoorBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:redindustrialdoor")
 	public static final Block block = null;
+
 	public RedindustrialdoorBlock(FalloutWastelandsModElements instance) {
 		super(instance, 53);
 	}
@@ -46,6 +47,7 @@ public class RedindustrialdoorBlock extends FalloutWastelandsModElements.ModElem
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends DoorBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(7f, 10f).setLightLevel(s -> 0).harvestLevel(2)

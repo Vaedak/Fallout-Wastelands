@@ -41,6 +41,7 @@ import java.util.Collections;
 public class ScaffoldingcrossedBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:scaffoldingcrossed")
 	public static final Block block = null;
+
 	public ScaffoldingcrossedBlock(FalloutWastelandsModElements instance) {
 		super(instance, 101);
 	}
@@ -56,9 +57,11 @@ public class ScaffoldingcrossedBlock extends FalloutWastelandsModElements.ModEle
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends Block implements IWaterLoggable {
 		public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 		public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(3f, 10f).setLightLevel(s -> 0).harvestLevel(2)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool().notSolid().setOpaque((bs, br, bp) -> false));

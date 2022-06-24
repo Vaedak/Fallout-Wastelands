@@ -26,6 +26,7 @@ import java.util.Collections;
 public class DeadtrunkBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:deadtrunk")
 	public static final Block block = null;
+
 	public DeadtrunkBlock(FalloutWastelandsModElements instance) {
 		super(instance, 100);
 	}
@@ -35,6 +36,7 @@ public class DeadtrunkBlock extends FalloutWastelandsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 10f).setLightLevel(s -> 0).harvestLevel(0)

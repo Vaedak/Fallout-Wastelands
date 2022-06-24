@@ -34,15 +34,14 @@ import net.mcreator.fallout_wastelands.procedures.CoffeemixerOnBlockRightClicked
 import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
-import java.util.Map;
 import java.util.List;
-import java.util.HashMap;
 import java.util.Collections;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class CoffeemixerBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:coffeemixer")
 	public static final Block block = null;
+
 	public CoffeemixerBlock(FalloutWastelandsModElements instance) {
 		super(instance, 86);
 	}
@@ -58,6 +57,7 @@ public class CoffeemixerBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(9f, 15f).setLightLevel(s -> 0).harvestLevel(1)
@@ -78,7 +78,11 @@ public class CoffeemixerBlock extends FalloutWastelandsModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 8, 16, 16)).withOffset(offset.x, offset.y, offset.z);
+			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 8, 16, 16)
+
+			)
+
+					.withOffset(offset.x, offset.y, offset.z);
 		}
 
 		@Override
@@ -100,10 +104,8 @@ public class CoffeemixerBlock extends FalloutWastelandsModElements.ModElement {
 			double hitY = hit.getHitVec().y;
 			double hitZ = hit.getHitVec().z;
 			Direction direction = hit.getFace();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				CoffeemixerOnBlockRightClickedProcedure.executeProcedure($_dependencies);
-			}
+
+			CoffeemixerOnBlockRightClickedProcedure.executeProcedure(Collections.emptyMap());
 			return ActionResultType.SUCCESS;
 		}
 	}

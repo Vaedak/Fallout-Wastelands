@@ -37,6 +37,7 @@ public class VaultjumpsuitItem extends FalloutWastelandsModElements.ModElement {
 	public static final Item legs = null;
 	@ObjectHolder("fallout_wastelands:vaultjumpsuit_boots")
 	public static final Item boots = null;
+
 	public VaultjumpsuitItem(FalloutWastelandsModElements instance) {
 		super(instance, 144);
 	}
@@ -144,6 +145,7 @@ public class VaultjumpsuitItem extends FalloutWastelandsModElements.ModElement {
 					}
 				}.setRegistryName("vaultjumpsuit_boots"));
 	}
+
 	// Made with Blockbench 3.5.4
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
@@ -154,6 +156,7 @@ public class VaultjumpsuitItem extends FalloutWastelandsModElements.ModElement {
 		private final ModelRenderer rightarm;
 		private final ModelRenderer leftarm;
 		private final ModelRenderer body;
+
 		public Modelvaultjumpsuit() {
 			textureWidth = 64;
 			textureHeight = 32;
@@ -194,8 +197,10 @@ public class VaultjumpsuitItem extends FalloutWastelandsModElements.ModElement {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.rightleg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 			this.leftleg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 		}
 	}
+
 }

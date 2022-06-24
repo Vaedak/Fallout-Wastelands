@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Iterator;
 
 public class LaterspawninwastelandProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))

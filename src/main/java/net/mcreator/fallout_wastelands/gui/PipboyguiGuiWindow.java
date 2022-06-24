@@ -23,6 +23,7 @@ public class PipboyguiGuiWindow extends ContainerScreen<PipboyguiGui.GuiContaine
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = PipboyguiGui.guistate;
+
 	public PipboyguiGuiWindow(PipboyguiGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -38,7 +39,9 @@ public class PipboyguiGuiWindow extends ContainerScreen<PipboyguiGui.GuiContaine
 	public boolean isPauseScreen() {
 		return true;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/pipboygui.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

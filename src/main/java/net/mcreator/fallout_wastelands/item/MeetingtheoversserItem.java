@@ -3,6 +3,7 @@ package net.mcreator.fallout_wastelands.item;
 
 import net.minecraftforge.registries.ObjectHolder;
 
+import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -14,6 +15,7 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 public class MeetingtheoversserItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:meetingtheoversser")
 	public static final Item block = null;
+
 	public MeetingtheoversserItem(FalloutWastelandsModElements instance) {
 		super(instance, 1380);
 	}
@@ -22,10 +24,16 @@ public class MeetingtheoversserItem extends FalloutWastelandsModElements.ModElem
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(null).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("meetingtheoversser");
+		}
+
+		@Override
+		public UseAction getUseAction(ItemStack itemstack) {
+			return UseAction.EAT;
 		}
 
 		@Override

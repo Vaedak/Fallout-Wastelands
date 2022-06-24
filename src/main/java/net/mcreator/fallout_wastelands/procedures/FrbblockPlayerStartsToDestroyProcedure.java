@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Iterator;
 
 public class FrbblockPlayerStartsToDestroyProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -21,12 +22,12 @@ public class FrbblockPlayerStartsToDestroyProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((!(((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+		if (!(((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 				? ((ServerPlayerEntity) entity).getAdvancements()
 						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 								.getAdvancement(new ResourceLocation("fallout_wastelands:itsalive")))
 						.isDone()
-				: false))) {
+				: false)) {
 			if (entity instanceof ServerPlayerEntity) {
 				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 						.getAdvancement(new ResourceLocation("fallout_wastelands:itsalive"));

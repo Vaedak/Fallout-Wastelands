@@ -25,6 +25,7 @@ import java.util.Collections;
 public class AluminiumblockBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:aluminiumblock")
 	public static final Block block = null;
+
 	public AluminiumblockBlock(FalloutWastelandsModElements instance) {
 		super(instance, 361);
 	}
@@ -34,6 +35,7 @@ public class AluminiumblockBlock extends FalloutWastelandsModElements.ModElement
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(10f, 10f).setLightLevel(s -> 0).harvestLevel(1)

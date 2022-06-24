@@ -12,10 +12,11 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class XanderrootRightClickedOnBlockProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure XanderrootRightClickedOnBlock!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure XanderrootRightClickedOnBlock!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -33,22 +34,22 @@ public class XanderrootRightClickedOnBlockProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure XanderrootRightClickedOnBlock!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure XanderrootRightClickedOnBlock!");
+		if (dependencies.get("itemstack") == null) {
+			if (!dependencies.containsKey("itemstack"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure XanderrootRightClickedOnBlock!");
 			return;
 		}
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == WastelanddirtBlock.block)) {
-			((itemstack)).shrink((int) 1);
-			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Xander1Block.block.getDefaultState(), 3);
-		} else if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.FARMLAND)) {
-			((itemstack)).shrink((int) 1);
-			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Xander1Block.block.getDefaultState(), 3);
+		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == WastelanddirtBlock.block) {
+			(itemstack).shrink((int) 1);
+			world.setBlockState(new BlockPos(x, y + 1, z), Xander1Block.block.getDefaultState(), 3);
+		} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.FARMLAND) {
+			(itemstack).shrink((int) 1);
+			world.setBlockState(new BlockPos(x, y + 1, z), Xander1Block.block.getDefaultState(), 3);
 		}
 	}
 }

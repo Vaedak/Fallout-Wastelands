@@ -30,6 +30,7 @@ import java.util.Collections;
 public class MilitaryplatingglassBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:militaryplatingglass")
 	public static final Block block = null;
+
 	public MilitaryplatingglassBlock(FalloutWastelandsModElements instance) {
 		super(instance, 39);
 	}
@@ -45,6 +46,7 @@ public class MilitaryplatingglassBlock extends FalloutWastelandsModElements.ModE
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(10f, 18f).setLightLevel(s -> 0).harvestLevel(2)

@@ -36,6 +36,7 @@ public class LaserriffleRenderer {
 	@OnlyIn(Dist.CLIENT)
 	public static class CustomRender extends EntityRenderer<LaserriffleItem.ArrowCustomEntity> {
 		private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/laser.png");
+
 		public CustomRender(EntityRendererManager renderManager) {
 			super(renderManager);
 		}
@@ -65,6 +66,7 @@ public class LaserriffleRenderer {
 	public static class Modellaser extends EntityModel<Entity> {
 		private final ModelRenderer shot;
 		private final ModelRenderer west;
+
 		public Modellaser() {
 			textureWidth = 128;
 			textureHeight = 128;
@@ -91,6 +93,8 @@ public class LaserriffleRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 		}
 	}
+
 }

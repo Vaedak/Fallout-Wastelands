@@ -27,6 +27,7 @@ import java.util.Collections;
 public class WastelanddirtBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:wastelanddirt")
 	public static final Block block = null;
+
 	public WastelanddirtBlock(FalloutWastelandsModElements instance) {
 		super(instance, 73);
 	}
@@ -36,6 +37,7 @@ public class WastelanddirtBlock extends FalloutWastelandsModElements.ModElement 
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.EARTH).sound(SoundType.GROUND).hardnessAndResistance(1.4f, 1.5f).setLightLevel(s -> 0)

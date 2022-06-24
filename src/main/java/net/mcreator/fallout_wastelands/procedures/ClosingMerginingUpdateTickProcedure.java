@@ -16,7 +16,13 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class ClosingMerginingUpdateTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure ClosingMerginingUpdateTick!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure ClosingMerginingUpdateTick!");
@@ -32,17 +38,12 @@ public class ClosingMerginingUpdateTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure ClosingMerginingUpdateTick!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure ClosingMerginingUpdateTick!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == ClosingMerginingBlock.block)) {
-			if (((new Object() {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == ClosingMerginingBlock.block) {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -56,69 +57,69 @@ public class ClosingMerginingUpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Closing134Block.block.getDefaultState(), 3);
+			}.getDirection(new BlockPos(x, y, z))) == Direction.NORTH) {
+				world.setBlockState(new BlockPos(x, y, z), Closing134Block.block.getDefaultState(), 3);
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(_property, Direction.NORTH), 3);
+						world.setBlockState(new BlockPos(x, y, z), _bs.with(_property, Direction.NORTH), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
-				world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), VaultDoorFillerBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), VaultDoorFillerBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), VaultDoorBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x + 1, y, z), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x - 1, y, z), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y - 1, z), VaultDoorBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y + 1, z), VaultDoorFillerBlock.block.getDefaultState(), 3);
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x + 1, y, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), _bs.with(_property, Direction.NORTH), 3);
+						world.setBlockState(new BlockPos(x + 1, y, z), _bs.with(_property, Direction.NORTH), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), _bs.with(
-								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
-					}
-				} catch (Exception e) {
-				}
-				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z));
-					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (_property != null) {
-						world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), _bs.with(_property, Direction.NORTH), 3);
-					} else {
-						world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x + 1, y, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x - 1, y, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), _bs.with(_property, Direction.NORTH), 3);
+						world.setBlockState(new BlockPos(x - 1, y, z), _bs.with(_property, Direction.NORTH), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x - 1, y, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y - 1, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), _bs.with(_property, Direction.NORTH), 3);
+						world.setBlockState(new BlockPos(x, y - 1, z), _bs.with(_property, Direction.NORTH), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y - 1, z), _bs.with(
+								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
+					}
+				} catch (Exception e) {
+				}
+				try {
+					BlockState _bs = world.getBlockState(new BlockPos(x, y + 1, z));
+					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+					if (_property != null) {
+						world.setBlockState(new BlockPos(x, y + 1, z), _bs.with(_property, Direction.NORTH), 3);
+					} else {
+						world.setBlockState(new BlockPos(x, y + 1, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -132,69 +133,69 @@ public class ClosingMerginingUpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Closing134Block.block.getDefaultState(), 3);
+			}.getDirection(new BlockPos(x, y, z))) == Direction.SOUTH) {
+				world.setBlockState(new BlockPos(x, y, z), Closing134Block.block.getDefaultState(), 3);
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(_property, Direction.SOUTH), 3);
+						world.setBlockState(new BlockPos(x, y, z), _bs.with(_property, Direction.SOUTH), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.SOUTH.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
-				world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), VaultDoorFillerBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), VaultDoorFillerBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), VaultDoorBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x + 1, y, z), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x - 1, y, z), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y - 1, z), VaultDoorBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y + 1, z), VaultDoorFillerBlock.block.getDefaultState(), 3);
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x + 1, y, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), _bs.with(_property, Direction.SOUTH), 3);
+						world.setBlockState(new BlockPos(x + 1, y, z), _bs.with(_property, Direction.SOUTH), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), _bs.with(
-								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.SOUTH.getAxis()), 3);
-					}
-				} catch (Exception e) {
-				}
-				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z));
-					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (_property != null) {
-						world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), _bs.with(_property, Direction.SOUTH), 3);
-					} else {
-						world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x + 1, y, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.SOUTH.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x - 1, y, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), _bs.with(_property, Direction.SOUTH), 3);
+						world.setBlockState(new BlockPos(x - 1, y, z), _bs.with(_property, Direction.SOUTH), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x - 1, y, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.SOUTH.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y - 1, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), _bs.with(_property, Direction.SOUTH), 3);
+						world.setBlockState(new BlockPos(x, y - 1, z), _bs.with(_property, Direction.SOUTH), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y - 1, z), _bs.with(
+								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.SOUTH.getAxis()), 3);
+					}
+				} catch (Exception e) {
+				}
+				try {
+					BlockState _bs = world.getBlockState(new BlockPos(x, y + 1, z));
+					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+					if (_property != null) {
+						world.setBlockState(new BlockPos(x, y + 1, z), _bs.with(_property, Direction.SOUTH), 3);
+					} else {
+						world.setBlockState(new BlockPos(x, y + 1, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.SOUTH.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -208,69 +209,69 @@ public class ClosingMerginingUpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Closing134Block.block.getDefaultState(), 3);
+			}.getDirection(new BlockPos(x, y, z))) == Direction.WEST) {
+				world.setBlockState(new BlockPos(x, y, z), Closing134Block.block.getDefaultState(), 3);
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(_property, Direction.WEST), 3);
+						world.setBlockState(new BlockPos(x, y, z), _bs.with(_property, Direction.WEST), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), VaultDoorFillerBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), VaultDoorFillerBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), VaultDoorBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y, z + 1), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y, z - 1), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y - 1, z), VaultDoorBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y + 1, z), VaultDoorFillerBlock.block.getDefaultState(), 3);
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y, z - 1));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), _bs.with(_property, Direction.WEST), 3);
+						world.setBlockState(new BlockPos(x, y, z - 1), _bs.with(_property, Direction.WEST), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), _bs.with(
-								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()), 3);
-					}
-				} catch (Exception e) {
-				}
-				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)));
-					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), _bs.with(_property, Direction.WEST), 3);
-					} else {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), _bs.with(
+						world.setBlockState(new BlockPos(x, y, z - 1), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y, z + 1));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), _bs.with(_property, Direction.WEST), 3);
+						world.setBlockState(new BlockPos(x, y, z + 1), _bs.with(_property, Direction.WEST), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y, z + 1), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y - 1, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), _bs.with(_property, Direction.WEST), 3);
+						world.setBlockState(new BlockPos(x, y - 1, z), _bs.with(_property, Direction.WEST), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y - 1, z), _bs.with(
+								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()), 3);
+					}
+				} catch (Exception e) {
+				}
+				try {
+					BlockState _bs = world.getBlockState(new BlockPos(x, y + 1, z));
+					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+					if (_property != null) {
+						world.setBlockState(new BlockPos(x, y + 1, z), _bs.with(_property, Direction.WEST), 3);
+					} else {
+						world.setBlockState(new BlockPos(x, y + 1, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -284,63 +285,63 @@ public class ClosingMerginingUpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Closing134Block.block.getDefaultState(), 3);
+			}.getDirection(new BlockPos(x, y, z))) == Direction.EAST) {
+				world.setBlockState(new BlockPos(x, y, z), Closing134Block.block.getDefaultState(), 3);
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(_property, Direction.EAST), 3);
+						world.setBlockState(new BlockPos(x, y, z), _bs.with(_property, Direction.EAST), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), VaultDoorFillerBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), VaultDoorFillerBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), VaultDoorBlock.block.getDefaultState(), 3);
-				world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y, z + 1), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y, z - 1), VaultDoorFillerBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y - 1, z), VaultDoorBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos(x, y + 1, z), VaultDoorFillerBlock.block.getDefaultState(), 3);
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y, z - 1));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), _bs.with(_property, Direction.EAST), 3);
+						world.setBlockState(new BlockPos(x, y, z - 1), _bs.with(_property, Direction.EAST), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), _bs.with(
-								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()), 3);
-					}
-				} catch (Exception e) {
-				}
-				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)));
-					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), _bs.with(_property, Direction.EAST), 3);
-					} else {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), _bs.with(
+						world.setBlockState(new BlockPos(x, y, z - 1), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y, z + 1));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), _bs.with(_property, Direction.EAST), 3);
+						world.setBlockState(new BlockPos(x, y, z + 1), _bs.with(_property, Direction.EAST), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y, z + 1), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()), 3);
 					}
 				} catch (Exception e) {
 				}
 				try {
-					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z));
+					BlockState _bs = world.getBlockState(new BlockPos(x, y - 1, z));
 					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 					if (_property != null) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), _bs.with(_property, Direction.EAST), 3);
+						world.setBlockState(new BlockPos(x, y - 1, z), _bs.with(_property, Direction.EAST), 3);
 					} else {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), _bs.with(
+						world.setBlockState(new BlockPos(x, y - 1, z), _bs.with(
+								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()), 3);
+					}
+				} catch (Exception e) {
+				}
+				try {
+					BlockState _bs = world.getBlockState(new BlockPos(x, y + 1, z));
+					DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+					if (_property != null) {
+						world.setBlockState(new BlockPos(x, y + 1, z), _bs.with(_property, Direction.EAST), 3);
+					} else {
+						world.setBlockState(new BlockPos(x, y + 1, z), _bs.with(
 								(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()), 3);
 					}
 				} catch (Exception e) {

@@ -34,6 +34,7 @@ import java.util.Collections;
 public class OldpapersBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:oldpapers")
 	public static final Block block = null;
+
 	public OldpapersBlock(FalloutWastelandsModElements instance) {
 		super(instance, 555);
 	}
@@ -49,6 +50,7 @@ public class OldpapersBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutoutMipped());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOL).sound(SoundType.CROP).hardnessAndResistance(0.5f, 0.5f).setLightLevel(s -> 0)
@@ -69,7 +71,11 @@ public class OldpapersBlock extends FalloutWastelandsModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 2, 16)).withOffset(offset.x, offset.y, offset.z);
+			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 2, 16)
+
+			)
+
+					.withOffset(offset.x, offset.y, offset.z);
 		}
 
 		@Override

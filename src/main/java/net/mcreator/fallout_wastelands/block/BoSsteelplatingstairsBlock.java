@@ -24,6 +24,7 @@ import java.util.Collections;
 public class BoSsteelplatingstairsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:bo_ssteelplatingstairs")
 	public static final Block block = null;
+
 	public BoSsteelplatingstairsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 188);
 	}
@@ -33,6 +34,7 @@ public class BoSsteelplatingstairsBlock extends FalloutWastelandsModElements.Mod
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
 			super(() -> new Block(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(15f, 20f).setLightLevel(s -> 0)

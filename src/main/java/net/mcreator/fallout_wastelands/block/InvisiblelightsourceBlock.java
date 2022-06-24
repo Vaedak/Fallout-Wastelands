@@ -32,6 +32,7 @@ import java.util.Collections;
 public class InvisiblelightsourceBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:invisiblelightsource")
 	public static final Block block = null;
+
 	public InvisiblelightsourceBlock(FalloutWastelandsModElements instance) {
 		super(instance, 603);
 	}
@@ -47,6 +48,7 @@ public class InvisiblelightsourceBlock extends FalloutWastelandsModElements.ModE
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.BARRIER).sound(SoundType.GLASS).hardnessAndResistance(-1, 3600000).setLightLevel(s -> 8)

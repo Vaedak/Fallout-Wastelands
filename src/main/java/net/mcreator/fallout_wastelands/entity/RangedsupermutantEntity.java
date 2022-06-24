@@ -42,6 +42,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.procedures.RangedsupermutantOnEntityTickUpdateProcedure;
@@ -50,14 +51,17 @@ import net.mcreator.fallout_wastelands.item.AkItem;
 import net.mcreator.fallout_wastelands.entity.renderer.RangedsupermutantRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class RangedsupermutantEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(264).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.7999999999999999f, 2.8000000000000003f)).build("rangedsupermutant").setRegistryName("rangedsupermutant");
+
 	public RangedsupermutantEntity(FalloutWastelandsModElements instance) {
 		super(instance, 242);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new RangedsupermutantRenderer.ModelRegisterHandler());
@@ -74,6 +78,7 @@ public class RangedsupermutantEntity extends FalloutWastelandsModElements.ModEle
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -106,7 +111,7 @@ public class RangedsupermutantEntity extends FalloutWastelandsModElements.ModEle
 		protected void registerGoals() {
 			super.registerGoals();
 			this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 0.4));
-			this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(4, new SwimGoal(this));
 			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, false));
@@ -160,7 +165,7 @@ public class RangedsupermutantEntity extends FalloutWastelandsModElements.ModEle
 
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof PotionEntity)
+			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
 				return false;
 			return super.attackEntityFrom(source, amount);
 		}
@@ -172,15 +177,11 @@ public class RangedsupermutantEntity extends FalloutWastelandsModElements.ModEle
 			double y = this.getPosY();
 			double z = this.getPosZ();
 			Entity entity = this;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				RangedsupermutantOnEntityTickUpdateProcedure.executeProcedure($_dependencies);
-			}
+
+			RangedsupermutantOnEntityTickUpdateProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {

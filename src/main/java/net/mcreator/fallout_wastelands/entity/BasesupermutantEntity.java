@@ -36,10 +36,12 @@ import net.minecraft.entity.ai.goal.BreakDoorGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.fallout_wastelands.procedures.BasesupermutantOnEntityTickUpdateProcedure;
@@ -47,14 +49,17 @@ import net.mcreator.fallout_wastelands.item.SeptammoItem;
 import net.mcreator.fallout_wastelands.entity.renderer.BasesupermutantRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class BasesupermutantEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(264).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.8f, 2.8000000000000003f)).build("basesupermutant").setRegistryName("basesupermutant");
+
 	public BasesupermutantEntity(FalloutWastelandsModElements instance) {
 		super(instance, 241);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BasesupermutantRenderer.ModelRegisterHandler());
@@ -71,6 +76,7 @@ public class BasesupermutantEntity extends FalloutWastelandsModElements.ModEleme
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -102,9 +108,14 @@ public class BasesupermutantEntity extends FalloutWastelandsModElements.ModEleme
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.7, false));
+			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.7, false) {
+				@Override
+				protected double getAttackReachSqr(LivingEntity entity) {
+					return (double) (4.0 + entity.getWidth() * entity.getWidth());
+				}
+			});
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 0.4));
-			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
 			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, false));
@@ -152,7 +163,7 @@ public class BasesupermutantEntity extends FalloutWastelandsModElements.ModEleme
 
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof PotionEntity)
+			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
 				return false;
 			return super.attackEntityFrom(source, amount);
 		}
@@ -164,15 +175,11 @@ public class BasesupermutantEntity extends FalloutWastelandsModElements.ModEleme
 			double y = this.getPosY();
 			double z = this.getPosZ();
 			Entity entity = this;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				BasesupermutantOnEntityTickUpdateProcedure.executeProcedure($_dependencies);
-			}
+
+			BasesupermutantOnEntityTickUpdateProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

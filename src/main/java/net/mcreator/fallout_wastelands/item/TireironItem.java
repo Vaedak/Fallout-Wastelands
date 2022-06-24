@@ -15,6 +15,7 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 public class TireironItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:tireiron")
 	public static final Item block = null;
+
 	public TireironItem(FalloutWastelandsModElements instance) {
 		super(instance, 308);
 	}

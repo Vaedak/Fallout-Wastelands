@@ -6,6 +6,7 @@ import net.minecraftforge.registries.ObjectHolder;
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -21,6 +22,7 @@ import java.util.List;
 public class FusionmicrocellItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:fusionmicrocell")
 	public static final Item block = null;
+
 	public FusionmicrocellItem(FalloutWastelandsModElements instance) {
 		super(instance, 14);
 	}
@@ -29,10 +31,16 @@ public class FusionmicrocellItem extends FalloutWastelandsModElements.ModElement
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("fusionmicrocell");
+		}
+
+		@Override
+		public UseAction getUseAction(ItemStack itemstack) {
+			return UseAction.EAT;
 		}
 
 		@Override

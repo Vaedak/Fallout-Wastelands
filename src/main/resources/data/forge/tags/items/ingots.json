@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "fallout_wastelands:ingot_tin",
-    "fallout_wastelands:ingotcopper",
-    "fallout_wastelands:uraniumingot"
+    "fallout_wastelands:uraniumingot",
+    "fallout_wastelands:ingotcopper"
   ]
 }

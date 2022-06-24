@@ -20,10 +20,11 @@ import java.util.function.Supplier;
 import java.util.Map;
 
 public class HighwaymandiscplayingProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Highwaymandiscplaying!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure Highwaymandiscplaying!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -41,17 +42,17 @@ public class HighwaymandiscplayingProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure Highwaymandiscplaying!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure Highwaymandiscplaying!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Highwaymandiscplaying!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((new Object() {
+		Entity entity = (Entity) dependencies.get("entity");
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -65,9 +66,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_13)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_13) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.13")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -76,7 +77,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -90,9 +91,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_CAT)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_CAT) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.cat")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -101,7 +102,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -115,9 +116,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_BLOCKS)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_BLOCKS) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.blocks")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -126,7 +127,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -140,9 +141,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_CHIRP)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_CHIRP) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.chirp")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -151,7 +152,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -165,9 +166,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_FAR)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_FAR) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.far")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -176,7 +177,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -190,9 +191,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_MALL)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_MALL) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.mall")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -201,7 +202,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -215,9 +216,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_MELLOHI)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_MELLOHI) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.mellohi")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -226,7 +227,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -240,9 +241,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_STAL)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_STAL) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.stal")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -251,7 +252,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -265,9 +266,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_STRAD)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_STRAD) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.strad")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -276,7 +277,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -290,9 +291,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_WARD)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_WARD) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.ward")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -301,7 +302,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -315,9 +316,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_11)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_11) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.11")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {
@@ -326,7 +327,7 @@ public class HighwaymandiscplayingProcedure {
 						SoundCategory.NEUTRAL, (float) 5, (float) 1, false);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -340,9 +341,9 @@ public class HighwaymandiscplayingProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_WAIT)) {
+		}.getItemStack((int) (1))).getItem() == Items.MUSIC_DISC_WAIT) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.wait")),
 						SoundCategory.NEUTRAL, (float) 5, (float) 1);
 			} else {

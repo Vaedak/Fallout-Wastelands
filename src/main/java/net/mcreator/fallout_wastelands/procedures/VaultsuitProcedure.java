@@ -40,6 +40,7 @@ public class VaultsuitProcedure {
 			executeProcedure(dependencies);
 		}
 	}
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -47,12 +48,12 @@ public class VaultsuitProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((!(((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+		if (!(((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 				? ((ServerPlayerEntity) entity).getAdvancements()
 						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 								.getAdvancement(new ResourceLocation("fallout_wastelands:jointheworld")))
 						.isDone()
-				: false))) {
+				: false)) {
 			if (entity instanceof PlayerEntity) {
 				ItemStack _setstack = new ItemStack(VaultjumpsuitItem.body);
 				_setstack.setCount((int) 1);

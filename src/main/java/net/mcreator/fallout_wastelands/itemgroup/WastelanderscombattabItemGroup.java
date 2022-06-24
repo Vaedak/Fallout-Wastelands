@@ -31,5 +31,6 @@ public class WastelanderscombattabItemGroup extends FalloutWastelandsModElements
 			}
 		};
 	}
+
 	public static ItemGroup tab;
 }

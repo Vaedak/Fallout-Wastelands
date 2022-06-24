@@ -25,6 +25,7 @@ import java.util.Collections;
 public class WastelandcobblestoneslabBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:wastelandcobblestoneslab")
 	public static final Block block = null;
+
 	public WastelandcobblestoneslabBlock(FalloutWastelandsModElements instance) {
 		super(instance, 207);
 	}
@@ -34,6 +35,7 @@ public class WastelandcobblestoneslabBlock extends FalloutWastelandsModElements.
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends SlabBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(7f, 10f).setLightLevel(s -> 0).harvestLevel(1)

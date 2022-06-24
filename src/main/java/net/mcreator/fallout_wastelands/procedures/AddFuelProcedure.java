@@ -18,10 +18,11 @@ import java.util.Map;
 import java.util.Comparator;
 
 public class AddFuelProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure AddFuel!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure AddFuel!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -39,17 +40,17 @@ public class AddFuelProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure AddFuel!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure AddFuel!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure AddFuel!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((((new Object() {
+		Entity entity = (Entity) dependencies.get("entity");
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -63,14 +64,14 @@ public class AddFuelProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == FueljerricanItem.block) && ((((Entity) world
+		}.getItemStack((int) (0))).getItem() == FueljerricanItem.block && ((Entity) world
 				.getEntitiesWithinAABB(HighwaymanEntity.CustomEntity.class,
 						new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
 				.stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().getDouble("Fuel")) < 10000))) {
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().getDouble("Fuel") < 10000) {
 			entity.getPersistentData().putBoolean("AddFuel", (true));
 		}
 	}

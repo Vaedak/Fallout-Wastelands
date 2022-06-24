@@ -33,6 +33,7 @@ import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.CreatureAttribute;
@@ -46,6 +47,7 @@ public class ChromeraiderEntity extends FalloutWastelandsModElements.ModElement 
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(100).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.6f, 1.8f)).build("chromeraider").setRegistryName("chromeraider");
+
 	public ChromeraiderEntity(FalloutWastelandsModElements instance) {
 		super(instance, 1);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ChromeraiderRenderer.ModelRegisterHandler());
@@ -62,6 +64,7 @@ public class ChromeraiderEntity extends FalloutWastelandsModElements.ModElement 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -95,12 +98,17 @@ public class ChromeraiderEntity extends FalloutWastelandsModElements.ModElement 
 		protected void registerGoals() {
 			super.registerGoals();
 			this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false));
-			this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 0.7, true));
+			this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 0.7, true) {
+				@Override
+				protected double getAttackReachSqr(LivingEntity entity) {
+					return (double) (4.0 + entity.getWidth() * entity.getWidth());
+				}
+			});
 			this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, VillagerEntity.class, false, false));
 			this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, MirelurkEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, GhoulEntity.CustomEntity.class, false, false));
 			this.goalSelector.addGoal(6, new RandomWalkingGoal(this, 0.7));
-			this.targetSelector.addGoal(7, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(7, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(9, new SwimGoal(this));
 			this.goalSelector.addGoal(10, new ReturnToVillageGoal(this, 0.6, false));

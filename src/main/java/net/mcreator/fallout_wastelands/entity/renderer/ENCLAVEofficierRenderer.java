@@ -1,3 +1,4 @@
+
 package net.mcreator.fallout_wastelands.entity.renderer;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -26,6 +27,7 @@ public class ENCLAVEofficierRenderer {
 		public void registerModels(ModelRegistryEvent event) {
 			RenderingRegistry.registerEntityRenderingHandler(ENCLAVEofficierEntity.entity, renderManager -> {
 				return new MobRenderer(renderManager, new Modelenclaveofficer(), 0.5f) {
+
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("fallout_wastelands:textures/enclaveofficer_2.png");
@@ -51,6 +53,7 @@ public class ENCLAVEofficierRenderer {
 		private final ModelRenderer head;
 		private final ModelRenderer visor;
 		private final ModelRenderer visor_r1;
+
 		public Modelenclaveofficer() {
 			textureWidth = 64;
 			textureHeight = 64;
@@ -119,6 +122,7 @@ public class ENCLAVEofficierRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.head.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.head.rotateAngleX = f4 / (180F / (float) Math.PI);
 			this.rightleg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
@@ -126,4 +130,5 @@ public class ENCLAVEofficierRenderer {
 			this.leftarm.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
 		}
 	}
+
 }

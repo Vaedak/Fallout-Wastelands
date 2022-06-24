@@ -1,3 +1,4 @@
+
 package net.mcreator.fallout_wastelands.entity.renderer;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -26,6 +27,7 @@ public class MirelurkRenderer {
 		public void registerModels(ModelRegistryEvent event) {
 			RenderingRegistry.registerEntityRenderingHandler(MirelurkEntity.entity, renderManager -> {
 				return new MobRenderer(renderManager, new ModelLeFangeux(), 1.2f) {
+
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("fallout_wastelands:textures/mirelurk.png");
@@ -69,6 +71,7 @@ public class MirelurkRenderer {
 		private final ModelRenderer pinch2;
 		private final ModelRenderer cutterone2;
 		private final ModelRenderer cuttertwo2;
+
 		public ModelLeFangeux() {
 			textureWidth = 128;
 			textureHeight = 128;
@@ -228,10 +231,12 @@ public class MirelurkRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.head.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.head.rotateAngleX = f4 / (180F / (float) Math.PI);
 			this.rightlegtoanimate.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 			this.leftlegtoanimate.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 		}
 	}
+
 }

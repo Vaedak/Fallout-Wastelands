@@ -42,10 +42,12 @@ import java.util.List;
 @FalloutWastelandsModElements.ModElement.Tag
 public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement {
 	public static Biome biome;
+
 	public DesertwastlandBiome(FalloutWastelandsModElements instance) {
 		super(instance, 70);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
+
 	private static class BiomeRegisterHandler {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
@@ -72,9 +74,11 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 			}
 		}
 	}
+
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class CustomLeaveVineTreeDecorator extends LeaveVineTreeDecorator {
 		public static final CustomLeaveVineTreeDecorator instance = new CustomLeaveVineTreeDecorator();
 		public static com.mojang.serialization.Codec<LeaveVineTreeDecorator> codec;
@@ -85,6 +89,7 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 			tdt.setRegistryName("desertwastland_lvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
+
 		@Override
 		protected TreeDecoratorType<?> func_230380_a_() {
 			return tdt;
@@ -106,6 +111,7 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 			tdt.setRegistryName("desertwastland_tvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
+
 		@Override
 		protected TreeDecoratorType<?> func_230380_a_() {
 			return tdt;
@@ -127,6 +133,7 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 			tdt.setRegistryName("desertwastland_ctd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
+
 		public CustomCocoaTreeDecorator() {
 			super(0.2f);
 		}

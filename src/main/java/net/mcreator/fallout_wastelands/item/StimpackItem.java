@@ -8,6 +8,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ActionResult;
+import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -19,14 +20,17 @@ import net.mcreator.fallout_wastelands.procedures.StimpackRightClickedInAirProce
 import net.mcreator.fallout_wastelands.itemgroup.WastelandersitemsItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class StimpackItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:stimpack")
 	public static final Item block = null;
+
 	public StimpackItem(FalloutWastelandsModElements instance) {
 		super(instance, 158);
 	}
@@ -35,10 +39,16 @@ public class StimpackItem extends FalloutWastelandsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(8).rarity(Rarity.COMMON));
 			setRegistryName("stimpack");
+		}
+
+		@Override
+		public UseAction getUseAction(ItemStack itemstack) {
+			return UseAction.EAT;
 		}
 
 		@Override
@@ -69,11 +79,9 @@ public class StimpackItem extends FalloutWastelandsModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				StimpackRightClickedInAirProcedure.executeProcedure($_dependencies);
-			}
+
+			StimpackRightClickedInAirProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ar;
 		}
 	}

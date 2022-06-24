@@ -32,8 +32,10 @@ import net.mcreator.fallout_wastelands.procedures.FevgooMobplayerCollidesBlockPr
 import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class FevgooBlock extends FalloutWastelandsModElements.ModElement {
@@ -44,10 +46,12 @@ public class FevgooBlock extends FalloutWastelandsModElements.ModElement {
 	public static FlowingFluid flowing = null;
 	public static FlowingFluid still = null;
 	private ForgeFlowingFluid.Properties fluidproperties = null;
+
 	public FevgooBlock(FalloutWastelandsModElements instance) {
 		super(instance, 159);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FluidRegisterHandler());
 	}
+
 	private static class FluidRegisterHandler {
 		@SubscribeEvent
 		public void registerFluids(RegistryEvent.Register<Fluid> event) {
@@ -55,6 +59,7 @@ public class FevgooBlock extends FalloutWastelandsModElements.ModElement {
 			event.getRegistry().register(flowing);
 		}
 	}
+
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void clientLoad(FMLClientSetupEvent event) {
@@ -67,8 +72,12 @@ public class FevgooBlock extends FalloutWastelandsModElements.ModElement {
 		fluidproperties = new ForgeFlowingFluid.Properties(() -> still, () -> flowing,
 				FluidAttributes
 						.builder(new ResourceLocation("fallout_wastelands:blocks/fev2bf"), new ResourceLocation("fallout_wastelands:blocks/fev2bf"))
-						.luminosity(100).density(500).viscosity(100000).temperature(300).rarity(Rarity.COMMON)).explosionResistance(100f).tickRate(5)
-								.levelDecreasePerBlock(1).slopeFindDistance(4).bucket(() -> bucket).block(() -> block);
+						.luminosity(100).density(500).viscosity(100000).temperature(300)
+
+						.rarity(Rarity.COMMON))
+				.explosionResistance(100f)
+
+				.tickRate(5).levelDecreasePerBlock(1).slopeFindDistance(4).bucket(() -> bucket).block(() -> block);
 		still = (FlowingFluid) new ForgeFlowingFluid.Source(fluidproperties).setRegistryName("fevgoo");
 		flowing = (FlowingFluid) new ForgeFlowingFluid.Flowing(fluidproperties).setRegistryName("fevgoo_flowing");
 		elements.blocks
@@ -79,15 +88,13 @@ public class FevgooBlock extends FalloutWastelandsModElements.ModElement {
 						int x = pos.getX();
 						int y = pos.getY();
 						int z = pos.getZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							FevgooMobplayerCollidesBlockProcedure.executeProcedure($_dependencies);
-						}
+
+						FevgooMobplayerCollidesBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("fevgoo"));
 		elements.items.add(() -> new BucketItem(still,
 				new Item.Properties().containerItem(Items.BUCKET).maxStackSize(1).group(BlocsWItemGroup.tab).rarity(Rarity.COMMON))
-						.setRegistryName("fevgoo_bucket"));
+				.setRegistryName("fevgoo_bucket"));
 	}
 }

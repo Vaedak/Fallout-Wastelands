@@ -1,3 +1,4 @@
+
 package net.mcreator.fallout_wastelands.entity.renderer;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -26,6 +27,7 @@ public class BloatflyRenderer {
 		public void registerModels(ModelRegistryEvent event) {
 			RenderingRegistry.registerEntityRenderingHandler(BloatflyEntity.entity, renderManager -> {
 				return new MobRenderer(renderManager, new Modelbloatfly(), 0.5f) {
+
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("fallout_wastelands:textures/bloatflytexture.png");
@@ -46,6 +48,7 @@ public class BloatflyRenderer {
 		private final ModelRenderer head;
 		private final ModelRenderer rightpeds;
 		private final ModelRenderer leftpeds;
+
 		public Modelbloatfly() {
 			textureWidth = 64;
 			textureHeight = 32;
@@ -97,10 +100,12 @@ public class BloatflyRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.head.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.head.rotateAngleX = f4 / (180F / (float) Math.PI);
 			this.torso.rotateAngleZ = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
 			this.sting.rotateAngleY = MathHelper.cos(f * 0.6662F) * f1;
 		}
 	}
+
 }

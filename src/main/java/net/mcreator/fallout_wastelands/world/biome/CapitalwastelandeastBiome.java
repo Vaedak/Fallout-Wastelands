@@ -38,10 +38,12 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 @FalloutWastelandsModElements.ModElement.Tag
 public class CapitalwastelandeastBiome extends FalloutWastelandsModElements.ModElement {
 	public static Biome biome;
+
 	public CapitalwastelandeastBiome(FalloutWastelandsModElements instance) {
 		super(instance, 181);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
+
 	private static class BiomeRegisterHandler {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
@@ -82,6 +84,7 @@ public class CapitalwastelandeastBiome extends FalloutWastelandsModElements.ModE
 			}
 		}
 	}
+
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}

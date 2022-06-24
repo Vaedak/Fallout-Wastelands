@@ -47,6 +47,7 @@ public class FalloutWastelandsMod {
 			new ResourceLocation("fallout_wastelands", "fallout_wastelands"), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals,
 			PROTOCOL_VERSION::equals);
 	public FalloutWastelandsModElements elements;
+
 	public FalloutWastelandsMod() {
 		elements = new FalloutWastelandsModElements();
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -87,8 +88,10 @@ public class FalloutWastelandsMod {
 	public void registerSounds(RegistryEvent.Register<net.minecraft.util.SoundEvent> event) {
 		elements.registerSounds(event);
 	}
+
 	private static class FalloutWastelandsModFMLBusEvents {
 		private final FalloutWastelandsMod parent;
+
 		FalloutWastelandsModFMLBusEvents(FalloutWastelandsMod parent) {
 			this.parent = parent;
 		}

@@ -26,6 +26,7 @@ import java.util.Collections;
 public class CharredplankBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:charredplank")
 	public static final Block block = null;
+
 	public CharredplankBlock(FalloutWastelandsModElements instance) {
 		super(instance, 120);
 	}
@@ -35,6 +36,7 @@ public class CharredplankBlock extends FalloutWastelandsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(4f, 6f).setLightLevel(s -> 0).harvestLevel(0)

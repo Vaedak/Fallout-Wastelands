@@ -28,6 +28,7 @@ import java.util.Collections;
 public class WastelandsteelbarsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:wastelandsteelbars")
 	public static final Block block = null;
+
 	public WastelandsteelbarsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 609);
 	}
@@ -43,6 +44,7 @@ public class WastelandsteelbarsBlock extends FalloutWastelandsModElements.ModEle
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends PaneBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(4f, 7f).setLightLevel(s -> 0).notSolid()

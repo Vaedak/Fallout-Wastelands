@@ -18,15 +18,18 @@ import net.minecraft.block.Block;
 import net.mcreator.fallout_wastelands.procedures.GECKBoSbunkerRedstoneOnProcedure;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class GECKBoSbunkerBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:geck_bo_sbunker")
 	public static final Block block = null;
+
 	public GECKBoSbunkerBlock(FalloutWastelandsModElements instance) {
 		super(instance, 219);
 	}
@@ -36,6 +39,7 @@ public class GECKBoSbunkerBlock extends FalloutWastelandsModElements.ModElement 
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(null)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(-1, 3600000).setLightLevel(s -> 0));
@@ -62,14 +66,11 @@ public class GECKBoSbunkerBlock extends FalloutWastelandsModElements.ModElement 
 			int y = pos.getY();
 			int z = pos.getZ();
 			if (world.getRedstonePowerFromNeighbors(new BlockPos(x, y, z)) > 0) {
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", y);
-					$_dependencies.put("z", z);
-					$_dependencies.put("world", world);
-					GECKBoSbunkerRedstoneOnProcedure.executeProcedure($_dependencies);
-				}
+
+				GECKBoSbunkerRedstoneOnProcedure.executeProcedure(Stream
+						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			} else {
 			}
 		}

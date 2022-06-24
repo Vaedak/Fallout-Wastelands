@@ -25,6 +25,7 @@ import java.util.Collections;
 public class WastelandstonebrickBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:wastelandstonebrick")
 	public static final Block block = null;
+
 	public WastelandstonebrickBlock(FalloutWastelandsModElements instance) {
 		super(instance, 496);
 	}
@@ -34,6 +35,7 @@ public class WastelandstonebrickBlock extends FalloutWastelandsModElements.ModEl
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(4f, 6f).setLightLevel(s -> 0).harvestLevel(1)

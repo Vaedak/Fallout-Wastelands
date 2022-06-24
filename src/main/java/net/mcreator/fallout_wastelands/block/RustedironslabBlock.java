@@ -25,6 +25,7 @@ import java.util.Collections;
 public class RustedironslabBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:rustedironslab")
 	public static final Block block = null;
+
 	public RustedironslabBlock(FalloutWastelandsModElements instance) {
 		super(instance, 151);
 	}
@@ -34,6 +35,7 @@ public class RustedironslabBlock extends FalloutWastelandsModElements.ModElement
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends SlabBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(12f, 10f).setLightLevel(s -> 0).harvestLevel(2)

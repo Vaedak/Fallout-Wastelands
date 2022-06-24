@@ -32,6 +32,7 @@ import java.util.Collections;
 public class CoreunitBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:coreunit")
 	public static final Block block = null;
+
 	public CoreunitBlock(FalloutWastelandsModElements instance) {
 		super(instance, 536);
 	}
@@ -41,8 +42,10 @@ public class CoreunitBlock extends FalloutWastelandsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(5f, 8f).setLightLevel(s -> 3).harvestLevel(1)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool());

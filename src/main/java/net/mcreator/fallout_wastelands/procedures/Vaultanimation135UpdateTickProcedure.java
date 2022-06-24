@@ -22,7 +22,13 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class Vaultanimation135UpdateTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure Vaultanimation135UpdateTick!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure Vaultanimation135UpdateTick!");
@@ -38,23 +44,18 @@ public class Vaultanimation135UpdateTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure Vaultanimation135UpdateTick!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure Vaultanimation135UpdateTick!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Vaultanimation135Block.block)) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), VaultDoorFrameBlock.block.getDefaultState(), 3);
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Vaultanimation135Block.block) {
+			world.setBlockState(new BlockPos(x, y, z), VaultDoorFrameBlock.block.getDefaultState(), 3);
 		}
 		try {
-			BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
+			BlockState _bs = world.getBlockState(new BlockPos(x, y, z));
 			DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 			if (_property != null) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(_property, (new Object() {
+				world.setBlockState(new BlockPos(x, y, z), _bs.with(_property, (new Object() {
 					public Direction getDirection(BlockPos pos) {
 						try {
 							BlockState _bs = world.getBlockState(pos);
@@ -68,9 +69,9 @@ public class Vaultanimation135UpdateTickProcedure {
 							return Direction.NORTH;
 						}
 					}
-				}.getDirection(new BlockPos((int) x, (int) (y - 1), (int) z)))), 3);
+				}.getDirection(new BlockPos(x, y - 1, z)))), 3);
 			} else {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z),
+				world.setBlockState(new BlockPos(x, y, z),
 						_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), (new Object() {
 							public Direction getDirection(BlockPos pos) {
 								try {
@@ -85,11 +86,11 @@ public class Vaultanimation135UpdateTickProcedure {
 									return Direction.NORTH;
 								}
 							}
-						}.getDirection(new BlockPos((int) x, (int) (y - 1), (int) z))).getAxis()), 3);
+						}.getDirection(new BlockPos(x, y - 1, z))).getAxis()), 3);
 			}
 		} catch (Exception e) {
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -103,38 +104,37 @@ public class Vaultanimation135UpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
+		}.getDirection(new BlockPos(x, y, z))) == Direction.NORTH) {
 			if (world instanceof World) {
-				Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))), (World) world,
-						new BlockPos((int) x, (int) y, (int) (z + 1)));
-				world.destroyBlock(new BlockPos((int) x, (int) y, (int) (z + 1)), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z + 1)), (World) world, new BlockPos(x, y, z + 1));
+				world.destroyBlock(new BlockPos(x, y, z + 1), false);
 			}
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x, y, z + 1), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
 			try {
-				BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)));
+				BlockState _bs = world.getBlockState(new BlockPos(x, y, z + 1));
 				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 				if (_property != null) {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), _bs.with(_property, Direction.NORTH), 3);
+					world.setBlockState(new BlockPos(x, y, z + 1), _bs.with(_property, Direction.NORTH), 3);
 				} else {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), _bs.with(
+					world.setBlockState(new BlockPos(x, y, z + 1), _bs.with(
 							(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
 				}
 			} catch (Exception e) {
 			}
 			try {
-				BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1)));
+				BlockState _bs = world.getBlockState(new BlockPos(x, y - 1, z + 1));
 				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 				if (_property != null) {
-					world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1)), _bs.with(_property, Direction.NORTH), 3);
+					world.setBlockState(new BlockPos(x, y - 1, z + 1), _bs.with(_property, Direction.NORTH), 3);
 				} else {
-					world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1)), _bs.with(
+					world.setBlockState(new BlockPos(x, y - 1, z + 1), _bs.with(
 							(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
 				}
 			} catch (Exception e) {
 			}
-			world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z + 1)), DoorDirectionControllerBlock.block.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x, y - 1, z + 1), DoorDirectionControllerBlock.block.getDefaultState(), 3);
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -148,16 +148,16 @@ public class Vaultanimation135UpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
+		}.getDirection(new BlockPos(x, y, z))) == Direction.SOUTH) {
 			if (world instanceof World) {
-				Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1))), (World) world,
-						new BlockPos((int) x, (int) y, (int) (z - 1)));
-				world.destroyBlock(new BlockPos((int) x, (int) y, (int) (z - 1)), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z - 1)), (World) world, new BlockPos(x, y, z - 1));
+				world.destroyBlock(new BlockPos(x, y, z - 1), false);
 			}
 			new Object() {
 				private int ticks = 0;
 				private float waitTicks;
 				private IWorld world;
+
 				public void start(IWorld world, int waitTicks) {
 					this.waitTicks = waitTicks;
 					MinecraftForge.EVENT_BUS.register(this);
@@ -174,14 +174,14 @@ public class Vaultanimation135UpdateTickProcedure {
 				}
 
 				private void run() {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
+					world.setBlockState(new BlockPos(x, y, z - 1), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
 					try {
-						BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)));
+						BlockState _bs = world.getBlockState(new BlockPos(x, y, z - 1));
 						DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 						if (_property != null) {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), _bs.with(_property, Direction.SOUTH), 3);
+							world.setBlockState(new BlockPos(x, y, z - 1), _bs.with(_property, Direction.SOUTH), 3);
 						} else {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)),
+							world.setBlockState(new BlockPos(x, y, z - 1),
 									_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"),
 											Direction.SOUTH.getAxis()),
 									3);
@@ -189,12 +189,12 @@ public class Vaultanimation135UpdateTickProcedure {
 					} catch (Exception e) {
 					}
 					try {
-						BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1)));
+						BlockState _bs = world.getBlockState(new BlockPos(x, y - 1, z - 1));
 						DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 						if (_property != null) {
-							world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1)), _bs.with(_property, Direction.SOUTH), 3);
+							world.setBlockState(new BlockPos(x, y - 1, z - 1), _bs.with(_property, Direction.SOUTH), 3);
 						} else {
-							world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1)),
+							world.setBlockState(new BlockPos(x, y - 1, z - 1),
 									_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"),
 											Direction.SOUTH.getAxis()),
 									3);
@@ -204,9 +204,9 @@ public class Vaultanimation135UpdateTickProcedure {
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, (int) 1);
-			world.setBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1)), DoorDirectionControllerBlock.block.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x, y - 1, z - 1), DoorDirectionControllerBlock.block.getDefaultState(), 3);
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -220,40 +220,39 @@ public class Vaultanimation135UpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
+		}.getDirection(new BlockPos(x, y, z))) == Direction.WEST) {
 			if (world instanceof World) {
-				Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z)), (World) world,
-						new BlockPos((int) (x + 1), (int) y, (int) z));
-				world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) z), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos(x + 1, y, z)), (World) world, new BlockPos(x + 1, y, z));
+				world.destroyBlock(new BlockPos(x + 1, y, z), false);
 			}
-			world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x + 1, y, z), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
 			try {
-				BlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z));
+				BlockState _bs = world.getBlockState(new BlockPos(x + 1, y, z));
 				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 				if (_property != null) {
-					world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), _bs.with(_property, Direction.WEST), 3);
+					world.setBlockState(new BlockPos(x + 1, y, z), _bs.with(_property, Direction.WEST), 3);
 				} else {
-					world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z),
+					world.setBlockState(new BlockPos(x + 1, y, z),
 							_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()),
 							3);
 				}
 			} catch (Exception e) {
 			}
-			world.setBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z), DoorDirectionControllerBlock.block.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x + 1, y - 1, z), DoorDirectionControllerBlock.block.getDefaultState(), 3);
 			try {
-				BlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z));
+				BlockState _bs = world.getBlockState(new BlockPos(x + 1, y - 1, z));
 				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 				if (_property != null) {
-					world.setBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z), _bs.with(_property, Direction.WEST), 3);
+					world.setBlockState(new BlockPos(x + 1, y - 1, z), _bs.with(_property, Direction.WEST), 3);
 				} else {
-					world.setBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) z),
+					world.setBlockState(new BlockPos(x + 1, y - 1, z),
 							_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()),
 							3);
 				}
 			} catch (Exception e) {
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -267,33 +266,32 @@ public class Vaultanimation135UpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
+		}.getDirection(new BlockPos(x, y, z))) == Direction.EAST) {
 			if (world instanceof World) {
-				Block.spawnDrops(world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z)), (World) world,
-						new BlockPos((int) (x - 1), (int) y, (int) z));
-				world.destroyBlock(new BlockPos((int) (x - 1), (int) y, (int) z), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos(x - 1, y, z)), (World) world, new BlockPos(x - 1, y, z));
+				world.destroyBlock(new BlockPos(x - 1, y, z), false);
 			}
-			world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x - 1, y, z), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
 			try {
-				BlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z));
+				BlockState _bs = world.getBlockState(new BlockPos(x - 1, y, z));
 				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 				if (_property != null) {
-					world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), _bs.with(_property, Direction.EAST), 3);
+					world.setBlockState(new BlockPos(x - 1, y, z), _bs.with(_property, Direction.EAST), 3);
 				} else {
-					world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z),
+					world.setBlockState(new BlockPos(x - 1, y, z),
 							_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()),
 							3);
 				}
 			} catch (Exception e) {
 			}
-			world.setBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z), DoorDirectionControllerBlock.block.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x - 1, y - 1, z), DoorDirectionControllerBlock.block.getDefaultState(), 3);
 			try {
-				BlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z));
+				BlockState _bs = world.getBlockState(new BlockPos(x - 1, y - 1, z));
 				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 				if (_property != null) {
-					world.setBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z), _bs.with(_property, Direction.EAST), 3);
+					world.setBlockState(new BlockPos(x - 1, y - 1, z), _bs.with(_property, Direction.EAST), 3);
 				} else {
-					world.setBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z),
+					world.setBlockState(new BlockPos(x - 1, y - 1, z),
 							_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()),
 							3);
 				}

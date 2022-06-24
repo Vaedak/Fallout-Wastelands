@@ -21,7 +21,13 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class VaultDoorUpdateTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure VaultDoorUpdateTick!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure VaultDoorUpdateTick!");
@@ -37,16 +43,11 @@ public class VaultDoorUpdateTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure VaultDoorUpdateTick!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure VaultDoorUpdateTick!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -60,7 +61,7 @@ public class VaultDoorUpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) (y + 1), (int) z))) == Direction.NORTH) || ((new Object() {
+		}.getDirection(new BlockPos(x, y + 1, z))) == Direction.NORTH || (new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -74,11 +75,12 @@ public class VaultDoorUpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) (y + 1), (int) z))) == Direction.SOUTH))) {
+		}.getDirection(new BlockPos(x, y + 1, z))) == Direction.SOUTH) {
 			new Object() {
 				private int ticks = 0;
 				private float waitTicks;
 				private IWorld world;
+
 				public void start(IWorld world, int waitTicks) {
 					this.waitTicks = waitTicks;
 					MinecraftForge.EVENT_BUS.register(this);
@@ -95,145 +97,130 @@ public class VaultDoorUpdateTickProcedure {
 				}
 
 				private void run() {
-					if ((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR) == (true))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 1, z))).getBlock() == Blocks.AIR) == true) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z)))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 2, z))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x, y + 2, z))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z)))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x + 1, y + 2, z))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x + 1, y + 2, z))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z)))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x - 1, y + 1, z))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x - 1, y + 1, z))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z)))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x + 1, y + 1, z))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x + 1, y + 1, z))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z)))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x - 1, y + 0, z))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x - 1, y + 0, z))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z)))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x + 1, y + 0, z))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x + 1, y + 0, z))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z)))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x - 1, y + 2, z))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x - 1, y + 2, z))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 2, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x + 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x - 1, y + 0, z), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, (int) 2);
 		}
-		if ((((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -247,7 +234,7 @@ public class VaultDoorUpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) (y + 1), (int) z))) == Direction.WEST) || ((new Object() {
+		}.getDirection(new BlockPos(x, y + 1, z))) == Direction.WEST || (new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -261,11 +248,12 @@ public class VaultDoorUpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) (y + 1), (int) z))) == Direction.EAST))) {
+		}.getDirection(new BlockPos(x, y + 1, z))) == Direction.EAST) {
 			new Object() {
 				private int ticks = 0;
 				private float waitTicks;
 				private IWorld world;
+
 				public void start(IWorld world, int waitTicks) {
 					this.waitTicks = waitTicks;
 					MinecraftForge.EVENT_BUS.register(this);
@@ -282,140 +270,124 @@ public class VaultDoorUpdateTickProcedure {
 				}
 
 				private void run() {
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1))))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 2, z + 1))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x, y + 2, z + 1))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z - 1), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1))))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 1, z - 1))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x, y + 1, z - 1))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z - 1), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1))))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 1, z + 1))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x, y + 1, z + 1))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z - 1), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z + 1))))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 0, z + 1))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x, y + 0, z + 1))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z - 1), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1))))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 2, z - 1))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x, y + 2, z - 1))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z - 1), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1))))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 1, z + 1))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x, y + 1, z + 1))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z - 1), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1))))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 0, z - 1))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x, y + 0, z - 1))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z - 1), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
-					if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z))).getBlock() == VaultDoorFillerBlock.block)
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z)))
-									.getBlock() == FillerPassableBlock.block)) == (false))) {
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) z), Blocks.AIR.getDefaultState(), 3);
-						world.setBlockState(new BlockPos((int) x, (int) (y + 0), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
+					if (((world.getBlockState(new BlockPos(x, y + 2, z))).getBlock() == VaultDoorFillerBlock.block
+							|| (world.getBlockState(new BlockPos(x, y + 2, z))).getBlock() == FillerPassableBlock.block) == false) {
+						world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 2, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z - 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 1, z + 1), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z), Blocks.AIR.getDefaultState(), 3);
+						world.setBlockState(new BlockPos(x, y + 0, z - 1), Blocks.AIR.getDefaultState(), 3);
 						if (world instanceof World) {
-							Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-									new BlockPos((int) x, (int) y, (int) z));
-							world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+							Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z)), (World) world, new BlockPos(x, y, z));
+							world.destroyBlock(new BlockPos(x, y, z), false);
 						}
 					}
 					MinecraftForge.EVENT_BUS.unregister(this);

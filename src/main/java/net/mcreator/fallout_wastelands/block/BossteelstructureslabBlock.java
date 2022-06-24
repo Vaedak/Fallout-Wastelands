@@ -24,6 +24,7 @@ import java.util.Collections;
 public class BossteelstructureslabBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:bossteelstructureslab")
 	public static final Block block = null;
+
 	public BossteelstructureslabBlock(FalloutWastelandsModElements instance) {
 		super(instance, 191);
 	}
@@ -33,6 +34,7 @@ public class BossteelstructureslabBlock extends FalloutWastelandsModElements.Mod
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends SlabBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(15f, 20f).setLightLevel(s -> 0));

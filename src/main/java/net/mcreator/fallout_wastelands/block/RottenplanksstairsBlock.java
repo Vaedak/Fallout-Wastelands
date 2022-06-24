@@ -27,6 +27,7 @@ import java.util.Collections;
 public class RottenplanksstairsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:rottenplanksstairs")
 	public static final Block block = null;
+
 	public RottenplanksstairsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 114);
 	}
@@ -36,6 +37,7 @@ public class RottenplanksstairsBlock extends FalloutWastelandsModElements.ModEle
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
 			super(() -> new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(4f, 6f).setLightLevel(s -> 0)

@@ -47,10 +47,11 @@ public class ObtainabrainProcedure {
 			}
 		}
 	}
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Obtainabrain!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure Obtainabrain!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -68,18 +69,18 @@ public class ObtainabrainProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure Obtainabrain!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure Obtainabrain!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Obtainabrain!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((entity instanceof ChromeraiderEntity.CustomEntity)) {
-			if ((Math.random() < 0.001)) {
+		Entity entity = (Entity) dependencies.get("entity");
+		if (entity instanceof ChromeraiderEntity.CustomEntity) {
+			if (Math.random() < 0.001) {
 				if (world instanceof World && !world.isRemote()) {
 					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(HumanbrainItem.block));
 					entityToSpawn.setPickupDelay((int) 10);
@@ -87,8 +88,8 @@ public class ObtainabrainProcedure {
 				}
 			}
 		}
-		if ((entity instanceof ChromedraiderfemaleEntity.CustomEntity)) {
-			if ((Math.random() < 0.001)) {
+		if (entity instanceof ChromedraiderfemaleEntity.CustomEntity) {
+			if (Math.random() < 0.001) {
 				if (world instanceof World && !world.isRemote()) {
 					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(HumanbrainItem.block));
 					entityToSpawn.setPickupDelay((int) 10);
@@ -96,8 +97,8 @@ public class ObtainabrainProcedure {
 				}
 			}
 		}
-		if ((entity instanceof ChromeraiderEntity.CustomEntity)) {
-			if ((Math.random() < 0.001)) {
+		if (entity instanceof ChromeraiderEntity.CustomEntity) {
+			if (Math.random() < 0.001) {
 				if (world instanceof World && !world.isRemote()) {
 					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(HumanbrainItem.block));
 					entityToSpawn.setPickupDelay((int) 10);
@@ -105,8 +106,8 @@ public class ObtainabrainProcedure {
 				}
 			}
 		}
-		if ((entity instanceof PillagerEntity)) {
-			if ((Math.random() < 0.001)) {
+		if (entity instanceof PillagerEntity) {
+			if (Math.random() < 0.001) {
 				if (world instanceof World && !world.isRemote()) {
 					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(HumanbrainItem.block));
 					entityToSpawn.setPickupDelay((int) 10);
@@ -114,8 +115,8 @@ public class ObtainabrainProcedure {
 				}
 			}
 		}
-		if ((entity instanceof VillagerEntity)) {
-			if ((Math.random() < 0.001)) {
+		if (entity instanceof VillagerEntity) {
+			if (Math.random() < 0.001) {
 				if (world instanceof World && !world.isRemote()) {
 					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(HumanbrainItem.block));
 					entityToSpawn.setPickupDelay((int) 10);
@@ -123,8 +124,8 @@ public class ObtainabrainProcedure {
 				}
 			}
 		}
-		if ((entity instanceof WitchEntity)) {
-			if ((Math.random() < 0.001)) {
+		if (entity instanceof WitchEntity) {
+			if (Math.random() < 0.001) {
 				if (world instanceof World && !world.isRemote()) {
 					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(HumanbrainItem.block));
 					entityToSpawn.setPickupDelay((int) 10);
@@ -132,8 +133,8 @@ public class ObtainabrainProcedure {
 				}
 			}
 		}
-		if ((entity instanceof VindicatorEntity)) {
-			if ((Math.random() < 0.001)) {
+		if (entity instanceof VindicatorEntity) {
+			if (Math.random() < 0.001) {
 				if (world instanceof World && !world.isRemote()) {
 					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(HumanbrainItem.block));
 					entityToSpawn.setPickupDelay((int) 10);
@@ -141,8 +142,8 @@ public class ObtainabrainProcedure {
 				}
 			}
 		}
-		if ((entity instanceof PlayerEntity)) {
-			if ((Math.random() < 0.01)) {
+		if (entity instanceof PlayerEntity) {
+			if (Math.random() < 0.01) {
 				if (world instanceof World && !world.isRemote()) {
 					ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(HumanbrainItem.block));
 					entityToSpawn.setPickupDelay((int) 10);

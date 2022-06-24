@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "block",
   "definition": {
     "texture": "uraniumwastelandore",
@@ -122,6 +122,7 @@
         "value": "CUSTOM:Wastlandstone"
       }
     ],
+    "generationShape": "UNIFORM",
     "frequencyPerChunks": 1,
     "frequencyOnChunk": 2,
     "minGenerateHeight": 1,

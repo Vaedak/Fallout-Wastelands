@@ -28,8 +28,10 @@ import net.mcreator.fallout_wastelands.procedures.EnclaveX01paBodyTickEventProce
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -44,6 +46,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 	public static final Item legs = null;
 	@ObjectHolder("fallout_wastelands:enclave_x_01pa_boots")
 	public static final Item boots = null;
+
 	public EnclaveX01paItem(FalloutWastelandsModElements instance) {
 		super(instance, 517);
 	}
@@ -116,11 +119,9 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double x = entity.getPosX();
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							EnclaveX01paHelmetTickEventProcedure.executeProcedure($_dependencies);
-						}
+
+						EnclaveX01paHelmetTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("enclave_x_01pa_helmet"));
 		elements.items
@@ -148,11 +149,9 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double x = entity.getPosX();
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							EnclaveX01paBodyTickEventProcedure.executeProcedure($_dependencies);
-						}
+
+						EnclaveX01paBodyTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("enclave_x_01pa_chestplate"));
 		elements.items
@@ -179,11 +178,9 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double x = entity.getPosX();
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							EnclaveX01paLeggingsTickEventProcedure.executeProcedure($_dependencies);
-						}
+
+						EnclaveX01paLeggingsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("enclave_x_01pa_leggings"));
 		elements.items
@@ -210,14 +207,13 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double x = entity.getPosX();
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							EnclaveX01paBootsTickEventProcedure.executeProcedure($_dependencies);
-						}
+
+						EnclaveX01paBootsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("enclave_x_01pa_boots"));
 	}
+
 	// Made with Blockbench 3.5.4
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
@@ -236,6 +232,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 		private final ModelRenderer head;
 		private final ModelRenderer pipe;
 		private final ModelRenderer nose;
+
 		public Modelxoone() {
 			textureWidth = 128;
 			textureHeight = 32;
@@ -314,6 +311,8 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 		}
 	}
+
 }

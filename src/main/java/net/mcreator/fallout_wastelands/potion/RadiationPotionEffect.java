@@ -6,7 +6,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
 
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.potion.EffectType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effect;
@@ -15,16 +14,16 @@ import net.minecraft.potion.Effect;
 public class RadiationPotionEffect {
 	@ObjectHolder("fallout_wastelands:radiation")
 	public static final Effect potion = null;
+
 	@SubscribeEvent
 	public static void registerEffect(RegistryEvent.Register<Effect> event) {
 		event.getRegistry().register(new EffectCustom());
 	}
+
 	public static class EffectCustom extends Effect {
-		private final ResourceLocation potionIcon;
 		public EffectCustom() {
 			super(EffectType.HARMFUL, -9799897);
 			setRegistryName("radiation");
-			potionIcon = new ResourceLocation("fallout_wastelands:textures/radioeffect.png");
 		}
 
 		@Override

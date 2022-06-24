@@ -15,13 +15,16 @@ import net.mcreator.fallout_wastelands.procedures.ReaperLivingEntityIsHitWithToo
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class ReaperItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:reaper")
 	public static final Item block = null;
+
 	public ReaperItem(FalloutWastelandsModElements instance) {
 		super(instance, 310);
 	}
@@ -60,15 +63,12 @@ public class ReaperItem extends FalloutWastelandsModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				World world = entity.world;
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", y);
-					$_dependencies.put("z", z);
-					$_dependencies.put("world", world);
-					ReaperLivingEntityIsHitWithToolProcedure.executeProcedure($_dependencies);
-				}
+
+				ReaperLivingEntityIsHitWithToolProcedure.executeProcedure(Stream
+						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+								new AbstractMap.SimpleEntry<>("entity", entity))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 		}.setRegistryName("reaper"));

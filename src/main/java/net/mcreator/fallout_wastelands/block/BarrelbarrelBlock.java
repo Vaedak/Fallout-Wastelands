@@ -43,6 +43,7 @@ import java.util.Collections;
 public class BarrelbarrelBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:barrelbarrel")
 	public static final Block block = null;
+
 	public BarrelbarrelBlock(FalloutWastelandsModElements instance) {
 		super(instance, 98);
 	}
@@ -58,8 +59,10 @@ public class BarrelbarrelBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends Block implements IWaterLoggable {
 		public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(8f, 10f).setLightLevel(s -> 0).harvestLevel(1)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool().notSolid().setOpaque((bs, br, bp) -> false));
@@ -80,7 +83,11 @@ public class BarrelbarrelBlock extends FalloutWastelandsModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(1.6, 0, 1.6, 14.4, 16, 14.4)).withOffset(offset.x, offset.y, offset.z);
+			return VoxelShapes.or(makeCuboidShape(1.6, 0, 1.6, 14.4, 16, 14.4)
+
+			)
+
+					.withOffset(offset.x, offset.y, offset.z);
 		}
 
 		@Override

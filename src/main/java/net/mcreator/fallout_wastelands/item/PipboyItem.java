@@ -24,6 +24,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ActionResult;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -52,6 +53,7 @@ import io.netty.buffer.Unpooled;
 public class PipboyItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:pipboy")
 	public static final Item block = null;
+
 	public PipboyItem(FalloutWastelandsModElements instance) {
 		super(instance, 303);
 		MinecraftForge.EVENT_BUS.register(this);
@@ -71,10 +73,16 @@ public class PipboyItem extends FalloutWastelandsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
 			setRegistryName("pipboy");
+		}
+
+		@Override
+		public UseAction getUseAction(ItemStack itemstack) {
+			return UseAction.EAT;
 		}
 
 		@Override
@@ -152,6 +160,7 @@ public class PipboyItem extends FalloutWastelandsModElements.ModElement {
 
 	private static class InventoryCapability implements ICapabilitySerializable<CompoundNBT> {
 		private final LazyOptional<ItemStackHandler> inventory = LazyOptional.of(this::createItemHandler);
+
 		@Override
 		public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
 			return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? this.inventory.cast() : LazyOptional.empty();
@@ -177,6 +186,10 @@ public class PipboyItem extends FalloutWastelandsModElements.ModElement {
 				@Override
 				public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
 					return stack.getItem() != block;
+				}
+
+				@Override
+				public void setSize(int size) {
 				}
 			};
 		}

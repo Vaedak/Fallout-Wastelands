@@ -24,6 +24,7 @@ import java.util.Collections;
 public class RustedironstairsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:rustedironstairs")
 	public static final Block block = null;
+
 	public RustedironstairsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 152);
 	}
@@ -33,6 +34,7 @@ public class RustedironstairsBlock extends FalloutWastelandsModElements.ModEleme
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
 			super(() -> new Block(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(12f, 10f).setLightLevel(s -> 0)

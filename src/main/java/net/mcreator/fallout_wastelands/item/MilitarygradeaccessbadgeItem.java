@@ -6,6 +6,7 @@ import net.minecraftforge.registries.ObjectHolder;
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -21,6 +22,7 @@ import java.util.List;
 public class MilitarygradeaccessbadgeItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:militarygradeaccessbadge")
 	public static final Item block = null;
+
 	public MilitarygradeaccessbadgeItem(FalloutWastelandsModElements instance) {
 		super(instance, 255);
 	}
@@ -29,10 +31,16 @@ public class MilitarygradeaccessbadgeItem extends FalloutWastelandsModElements.M
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
 			setRegistryName("militarygradeaccessbadge");
+		}
+
+		@Override
+		public UseAction getUseAction(ItemStack itemstack) {
+			return UseAction.EAT;
 		}
 
 		@Override

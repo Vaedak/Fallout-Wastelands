@@ -32,6 +32,7 @@ import java.util.Collections;
 public class WalkwayBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:walkway")
 	public static final Block block = null;
+
 	public WalkwayBlock(FalloutWastelandsModElements instance) {
 		super(instance, 35);
 	}
@@ -47,6 +48,7 @@ public class WalkwayBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(10f, 10f).setLightLevel(s -> 0).harvestLevel(2)

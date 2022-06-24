@@ -46,6 +46,7 @@ import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
@@ -58,6 +59,7 @@ public class ArmyrobobrainEntity extends FalloutWastelandsModElements.ModElement
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(100).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
 			.size(3f, 3f)).build("armyrobobrain").setRegistryName("armyrobobrain");
+
 	public ArmyrobobrainEntity(FalloutWastelandsModElements instance) {
 		super(instance, 214);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ArmyrobobrainRenderer.ModelRegisterHandler());
@@ -74,6 +76,7 @@ public class ArmyrobobrainEntity extends FalloutWastelandsModElements.ModElement
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -107,7 +110,7 @@ public class ArmyrobobrainEntity extends FalloutWastelandsModElements.ModElement
 		protected void registerGoals() {
 			super.registerGoals();
 			this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 0.2));
-			this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
 			this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, true));
 			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, ChromedraiderfemaleEntity.CustomEntity.class, true, true));
@@ -174,7 +177,7 @@ public class ArmyrobobrainEntity extends FalloutWastelandsModElements.ModElement
 
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof PotionEntity)
+			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
 				return false;
 			if (source == DamageSource.CACTUS)
 				return false;

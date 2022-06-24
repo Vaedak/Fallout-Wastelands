@@ -19,8 +19,5 @@
     "jointheworld": {
       "trigger": "minecraft:impossible"
     }
-  },
-  "rewards": {
-    "experience": 0
   }
 }

@@ -56,6 +56,7 @@ import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AreaEffectCloudEntity;
 
 import net.mcreator.fallout_wastelands.item.PlasmarifleItem;
 import net.mcreator.fallout_wastelands.item.EnclaveplatingItem;
@@ -68,6 +69,7 @@ public class EnclavepowerarmorsoldierEntity extends FalloutWastelandsModElements
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.6f, 1.8f)).build("enclavepowerarmorsoldier").setRegistryName("enclavepowerarmorsoldier");
+
 	public EnclavepowerarmorsoldierEntity(FalloutWastelandsModElements instance) {
 		super(instance, 529);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EnclavepowerarmorsoldierRenderer.ModelRegisterHandler());
@@ -84,6 +86,7 @@ public class EnclavepowerarmorsoldierEntity extends FalloutWastelandsModElements
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -120,7 +123,7 @@ public class EnclavepowerarmorsoldierEntity extends FalloutWastelandsModElements
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 0.5));
 			this.goalSelector.addGoal(3, new WaterAvoidingRandomWalkingGoal(this, 0.5));
 			this.goalSelector.addGoal(4, new OpenDoorGoal(this, true));
@@ -188,7 +191,7 @@ public class EnclavepowerarmorsoldierEntity extends FalloutWastelandsModElements
 
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof PotionEntity)
+			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
 				return false;
 			return super.attackEntityFrom(source, amount);
 		}

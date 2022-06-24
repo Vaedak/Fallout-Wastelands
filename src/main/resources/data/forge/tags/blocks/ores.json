@@ -1,17 +1,17 @@
 {
   "replace": false,
   "values": [
-    "fallout_wastelands:wastelandgold",
     "fallout_wastelands:wastelandlapislazuli",
-    "fallout_wastelands:wastelanddiamond",
     "fallout_wastelands:wastelandcoal",
-    "fallout_wastelands:wastelandiron",
-    "fallout_wastelands:wastelandredstone",
     "fallout_wastelands:wastelandemerald",
+    "fallout_wastelands:wastelandiron",
+    "fallout_wastelands:wastelanduraniumore",
+    "fallout_wastelands:wastelandleadore",
     "fallout_wastelands:wastelandcopper",
     "fallout_wastelands:wastelandallumiumore",
-    "fallout_wastelands:wastelandtinore",
-    "fallout_wastelands:wastelandleadore",
-    "fallout_wastelands:wastelanduraniumore"
+    "fallout_wastelands:wastelandgold",
+    "fallout_wastelands:wastelandredstone",
+    "fallout_wastelands:wastelanddiamond",
+    "fallout_wastelands:wastelandtinore"
   ]
 }

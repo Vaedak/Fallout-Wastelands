@@ -20,10 +20,11 @@ import java.util.Map;
 import java.util.Comparator;
 
 public class HighwaymantrunkWhileThisGUIIsOpenTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure HighwaymantrunkWhileThisGUIIsOpenTick!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure HighwaymantrunkWhileThisGUIIsOpenTick!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -41,25 +42,25 @@ public class HighwaymantrunkWhileThisGUIIsOpenTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure HighwaymantrunkWhileThisGUIIsOpenTick!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure HighwaymantrunkWhileThisGUIIsOpenTick!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure HighwaymantrunkWhileThisGUIIsOpenTick!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((entity.getPersistentData().getBoolean("AddFuel")) == (true))) {
-			if (((((Entity) world
+		Entity entity = (Entity) dependencies.get("entity");
+		if (entity.getPersistentData().getBoolean("AddFuel") == true) {
+			if (((Entity) world
 					.getEntitiesWithinAABB(HighwaymanEntity.CustomEntity.class,
 							new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
 					.stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().getDouble("Fuel")) < 10000)) {
+					}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().getDouble("Fuel") < 10000) {
 				{
 					ItemStack _ist = (new Object() {
 						public ItemStack getItemStack(int sltid) {
@@ -89,17 +90,17 @@ public class HighwaymantrunkWhileThisGUIIsOpenTickProcedure {
 								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 							}
 						}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().putDouble("Fuel",
-								((((Entity) world.getEntitiesWithinAABB(HighwaymanEntity.CustomEntity.class,
+								(((Entity) world.getEntitiesWithinAABB(HighwaymanEntity.CustomEntity.class,
 										new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
 										.stream().sorted(new Object() {
 											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 												return Comparator
 														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 											}
-										}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().getDouble("Fuel")) + 1));
+										}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().getDouble("Fuel") + 1));
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -113,11 +114,11 @@ public class HighwaymantrunkWhileThisGUIIsOpenTickProcedure {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (0))).getItem() == Blocks.AIR.asItem())) {
+		}.getItemStack((int) (0))).getItem() == Blocks.AIR.asItem()) {
 			entity.getPersistentData().putBoolean("AddFuel", (false));
 		}
 		{
-			double _setval = (double) (((Entity) world
+			double _setval = (((Entity) world
 					.getEntitiesWithinAABB(HighwaymanEntity.CustomEntity.class,
 							new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
 					.stream().sorted(new Object() {

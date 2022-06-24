@@ -39,7 +39,7 @@ import net.minecraft.item.Item;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.entity.projectile.PotionEntity;
-import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
@@ -53,6 +53,7 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.block.BlockState;
 
@@ -66,9 +67,11 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
+import java.util.stream.Stream;
 import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 import io.netty.buffer.Unpooled;
 
@@ -77,6 +80,7 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(3.9999999999999996f, 3f)).build("highwayman").setRegistryName("highwayman");
+
 	public HighwaymanEntity(FalloutWastelandsModElements instance) {
 		super(instance, 475);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new HighwaymanRenderer.ModelRegisterHandler());
@@ -93,6 +97,7 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -163,9 +168,9 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof ArrowEntity)
+			if (source.getImmediateSource() instanceof AbstractArrowEntity)
 				return false;
-			if (source.getImmediateSource() instanceof PotionEntity)
+			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
 				return false;
 			if (source == DamageSource.CACTUS)
 				return false;
@@ -173,6 +178,7 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 				return false;
 			return super.attackEntityFrom(source, amount);
 		}
+
 		private final ItemStackHandler inventory = new ItemStackHandler(67) {
 			@Override
 			public int getSlotLimit(int slot) {
@@ -181,6 +187,7 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 		};
 		private final CombinedInvWrapper combined = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this),
 				new EntityArmorInvWrapper(this));
+
 		@Override
 		public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
 			if (this.isAlive() && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && side == null)
@@ -247,15 +254,11 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 			double y = this.getPosY();
 			double z = this.getPosZ();
 			Entity entity = this;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				HighwaymanOnEntityTickUpdatetest2Procedure.executeProcedure($_dependencies);
-			}
+
+			HighwaymanOnEntityTickUpdatetest2Procedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
 
@@ -266,11 +269,9 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 			double y = this.getPosY();
 			double z = this.getPosZ();
 			Entity entity = this;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				HighwaymanFuelUseTickProcedure.executeProcedure($_dependencies);
-			}
+
+			HighwaymanFuelUseTickProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -280,15 +281,11 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 			double x = this.getPosX();
 			double y = this.getPosY();
 			double z = this.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("sourceentity", sourceentity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				HighwaymanPlayerCollidesWithThisEntityProcedure.executeProcedure($_dependencies);
-			}
+
+			HighwaymanPlayerCollidesWithThisEntityProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

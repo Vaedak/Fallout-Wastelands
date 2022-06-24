@@ -23,6 +23,7 @@ public class AmmunitionboxguiGuiWindow extends ContainerScreen<AmmunitionboxguiG
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = AmmunitionboxguiGui.guistate;
+
 	public AmmunitionboxguiGuiWindow(AmmunitionboxguiGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -33,7 +34,9 @@ public class AmmunitionboxguiGuiWindow extends ContainerScreen<AmmunitionboxguiG
 		this.xSize = 176;
 		this.ySize = 166;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/ammunitionboxgui.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

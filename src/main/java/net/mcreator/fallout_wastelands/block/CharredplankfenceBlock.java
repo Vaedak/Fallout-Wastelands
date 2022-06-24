@@ -33,6 +33,7 @@ import java.util.Collections;
 public class CharredplankfenceBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:charredplankfence")
 	public static final Block block = null;
+
 	public CharredplankfenceBlock(FalloutWastelandsModElements instance) {
 		super(instance, 123);
 	}
@@ -48,6 +49,7 @@ public class CharredplankfenceBlock extends FalloutWastelandsModElements.ModElem
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends FenceBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(4f, 6f).setLightLevel(s -> 0).harvestLevel(0)

@@ -25,6 +25,7 @@ import java.util.Collections;
 public class EnclavebunkerblockBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:enclavebunkerblock")
 	public static final Block block = null;
+
 	public EnclavebunkerblockBlock(FalloutWastelandsModElements instance) {
 		super(instance, 512);
 	}
@@ -34,6 +35,7 @@ public class EnclavebunkerblockBlock extends FalloutWastelandsModElements.ModEle
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(7f, 7f).setLightLevel(s -> 0).harvestLevel(1)
