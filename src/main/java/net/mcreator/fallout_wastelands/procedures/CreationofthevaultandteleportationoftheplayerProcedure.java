@@ -1,37 +1,9 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.player.AdvancementEvent;
-
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.gen.feature.template.Template;
-import net.minecraft.world.gen.feature.template.PlacementSettings;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.math.vector.Vector2f;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Rotation;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Mirror;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.command.ICommandSource;
-import net.minecraft.command.CommandSource;
-import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
-import java.util.Iterator;
-import java.util.HashMap;
+import net.minecraftforge.eventbus.api.Event;
 
 public class CreationofthevaultandteleportationoftheplayerProcedure {
+
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
 		@SubscribeEvent
@@ -75,10 +47,12 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Creationofthevaultandteleportationoftheplayer!");
 			return;
 		}
+
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 				? ((ServerPlayerEntity) entity).getAdvancements()
 						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
@@ -94,6 +68,7 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 				if (world instanceof ServerWorld) {
 					Template template = ((ServerWorld) world).getStructureTemplateManager()
 							.getTemplateDefaulted(new ResourceLocation("fallout_wastelands", "vault_part_1_up_right_front"));
+
 					if (template != null) {
 						template.func_237144_a_((ServerWorld) world, new BlockPos(0, 60, 0),
 								new PlacementSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setChunk(null).setIgnoreEntities(false),
@@ -103,6 +78,7 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 				if (world instanceof ServerWorld) {
 					Template template = ((ServerWorld) world).getStructureTemplateManager()
 							.getTemplateDefaulted(new ResourceLocation("fallout_wastelands", "vault_part_3_up_left_front"));
+
 					if (template != null) {
 						template.func_237144_a_((ServerWorld) world, new BlockPos(0, 60, -32),
 								new PlacementSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setChunk(null).setIgnoreEntities(false),
@@ -112,6 +88,7 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 				if (world instanceof ServerWorld) {
 					Template template = ((ServerWorld) world).getStructureTemplateManager()
 							.getTemplateDefaulted(new ResourceLocation("fallout_wastelands", "vault_part_2_up_right_back"));
+
 					if (template != null) {
 						template.func_237144_a_((ServerWorld) world, new BlockPos(32, 60, 0),
 								new PlacementSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setChunk(null).setIgnoreEntities(false),
@@ -121,6 +98,7 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 				if (world instanceof ServerWorld) {
 					Template template = ((ServerWorld) world).getStructureTemplateManager()
 							.getTemplateDefaulted(new ResourceLocation("fallout_wastelands", "vault_part_4_up_left_back"));
+
 					if (template != null) {
 						template.func_237144_a_((ServerWorld) world, new BlockPos(32, 60, -32),
 								new PlacementSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setChunk(null).setIgnoreEntities(false),
@@ -130,6 +108,7 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 				if (world instanceof ServerWorld) {
 					Template template = ((ServerWorld) world).getStructureTemplateManager()
 							.getTemplateDefaulted(new ResourceLocation("fallout_wastelands", "vault_part_5_down_right_front"));
+
 					if (template != null) {
 						template.func_237144_a_((ServerWorld) world, new BlockPos(0, 28, 0),
 								new PlacementSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setChunk(null).setIgnoreEntities(false),
@@ -139,6 +118,7 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 				if (world instanceof ServerWorld) {
 					Template template = ((ServerWorld) world).getStructureTemplateManager()
 							.getTemplateDefaulted(new ResourceLocation("fallout_wastelands", "vault_part_7_down_left_front"));
+
 					if (template != null) {
 						template.func_237144_a_((ServerWorld) world, new BlockPos(0, 28, -32),
 								new PlacementSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setChunk(null).setIgnoreEntities(false),
@@ -148,6 +128,7 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 				if (world instanceof ServerWorld) {
 					Template template = ((ServerWorld) world).getStructureTemplateManager()
 							.getTemplateDefaulted(new ResourceLocation("fallout_wastelands", "vault_part_6_down_right_back"));
+
 					if (template != null) {
 						template.func_237144_a_((ServerWorld) world, new BlockPos(32, 28, 0),
 								new PlacementSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setChunk(null).setIgnoreEntities(false),
@@ -157,6 +138,7 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 				if (world instanceof ServerWorld) {
 					Template template = ((ServerWorld) world).getStructureTemplateManager()
 							.getTemplateDefaulted(new ResourceLocation("fallout_wastelands", "vault_part_8_down_left_back"));
+
 					if (template != null) {
 						template.func_237144_a_((ServerWorld) world, new BlockPos(32, 28, -32),
 								new PlacementSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setChunk(null).setIgnoreEntities(false),
@@ -186,4 +168,5 @@ public class CreationofthevaultandteleportationoftheplayerProcedure {
 			}
 		}
 	}
+
 }

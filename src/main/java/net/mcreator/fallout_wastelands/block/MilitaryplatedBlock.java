@@ -39,8 +39,8 @@ public class MilitaryplatedBlock extends FalloutWastelandsModElements.ModElement
 
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(10f, 18f).setLightLevel(s -> 0).harvestLevel(2)
-					.harvestTool(ToolType.PICKAXE).setRequiresTool());
+			super(Block.Properties.create(Material.ROCK, MaterialColor.IRON).sound(SoundType.METAL).hardnessAndResistance(10f, 18f)
+					.setLightLevel(s -> 0).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool());
 			setRegistryName("militaryplated");
 		}
 

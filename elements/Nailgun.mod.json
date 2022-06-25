@@ -12,10 +12,10 @@
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": "CUSTOM:Nails"
+      "value": "Blocks.AIR"
     },
     "shootConstantly": false,
-    "usageCount": 500,
+    "usageCount": 1000,
     "actionSound": {
       "value": "CUSTOM:rbshot"
     },
@@ -23,6 +23,15 @@
     "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "NailgunRangedItemUsed"
+    },
+    "onEntitySwing": {
+      "name": "NailgunEntitySwingsItem"
+    },
+    "useCondition": {
+      "name": "NailgunCanUseRangedItem"
+    },
     "bulletPower": 1.0,
     "bulletDamage": 1.5,
     "bulletKnockback": 1,

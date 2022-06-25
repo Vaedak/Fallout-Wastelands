@@ -12,10 +12,10 @@
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": "CUSTOM:Ninemmammo"
+      "value": "Blocks.AIR"
     },
     "shootConstantly": false,
-    "usageCount": 100,
+    "usageCount": 901,
     "actionSound": {
       "value": "CUSTOM:ninemmshotb"
     },
@@ -26,7 +26,13 @@
     "onRangedItemUsed": {
       "name": "MmpistolnineRangedItemUsed"
     },
-    "bulletPower": 5.0,
+    "onEntitySwing": {
+      "name": "MmpistolnineEntitySwingsItem"
+    },
+    "useCondition": {
+      "name": "MmpistolnineCanUseRangedItem"
+    },
+    "bulletPower": 4.0,
     "bulletDamage": 1.0,
     "bulletKnockback": 0,
     "bulletParticles": false,

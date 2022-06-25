@@ -36,7 +36,7 @@
       "value": ""
     },
     "music": {
-      "value": "CUSTOM:wastelandwind"
+      "value": ""
     },
     "moodSound": {
       "value": ""
@@ -52,10 +52,10 @@
     "temperature": 2.0,
     "baseHeight": 0.1,
     "heightVariation": 0.30000000000000004,
-    "spawnBiome": true,
+    "spawnBiome": false,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 600,
+    "biomeWeight": 300,
     "biomeDictionaryTypes": [],
     "grassPerChunk": 6,
     "seagrassPerChunk": 0,
@@ -106,7 +106,6 @@
       "Caves",
       "MonsterRooms",
       "Structures",
-      "Ores",
       "Ores"
     ],
     "spawnEntries": []

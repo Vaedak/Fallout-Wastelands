@@ -184,7 +184,7 @@
       "type": "block",
       "sortid": 33,
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "militaryplated"
     },
     {
@@ -242,6 +242,22 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mirelurk"
+    },
+    {
+      "name": "Rawmirlurk",
+      "type": "item",
+      "sortid": 1388,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rawmirlurk"
+    },
+    {
+      "name": "Mirlurksteak",
+      "type": "item",
+      "sortid": 1389,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mirlurksteak"
     },
     {
       "name": "Testbunkerdoor",
@@ -997,6 +1013,14 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "militaryplatingwallcraft"
+    },
+    {
+      "name": "Neutronade",
+      "type": "item",
+      "sortid": 1390,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "neutronade"
     },
     {
       "name": "Nuclearwaste",
@@ -1965,22 +1989,6 @@
           {
             "name": "itemstack",
             "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       }
@@ -2780,6 +2788,14 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "abraxo"
+    },
+    {
+      "name": "Cannedporkshop",
+      "type": "item",
+      "sortid": 1391,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cannedporkshop"
     },
     {
       "name": "Landminecraft",
@@ -3698,6 +3714,14 @@
       "registry_name": "wrenchcraft"
     },
     {
+      "name": "Bugmeat",
+      "type": "item",
+      "sortid": 1392,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bugmeat"
+    },
+    {
       "name": "CoffeeFoodEaten",
       "type": "procedure",
       "sortid": 411,
@@ -3712,6 +3736,14 @@
           }
         ]
       }
+    },
+    {
+      "name": "Coffee",
+      "type": "item",
+      "sortid": 1393,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee"
     },
     {
       "name": "Cigarettepack",
@@ -5122,6 +5154,14 @@
       }
     },
     {
+      "name": "Xanderroot",
+      "type": "item",
+      "sortid": 1394,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "xanderroot"
+    },
+    {
       "name": "Xander",
       "type": "plant",
       "sortid": 558,
@@ -5754,20 +5794,12 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "x",
-            "type": "number"
+            "name": "entity",
+            "type": "entity"
           },
           {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
+            "name": "itemstack",
+            "type": "itemstack"
           }
         ]
       }
@@ -19533,6 +19565,92 @@
       }
     },
     {
+      "name": "Hazmat",
+      "type": "armor",
+      "sortid": 1395,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hazmat",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Radiationzoneeffect",
+      "type": "procedure",
+      "sortid": 1396,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiationzoneeffect",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Radx",
+      "type": "item",
+      "sortid": 1403,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radx"
+    },
+    {
+      "name": "RadiationEffectStartedapplied",
+      "type": "procedure",
+      "sortid": 1398,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationOnEffectActiveTick",
+      "type": "procedure",
+      "sortid": 1399,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
       "name": "Creationofthevaultandteleportationoftheplayer",
       "type": "procedure",
       "sortid": 1386,
@@ -19589,156 +19707,6 @@
       }
     },
     {
-      "name": "Rawmirlurk",
-      "type": "item",
-      "sortid": 1388,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "rawmirlurk"
-    },
-    {
-      "name": "Mirlurksteak",
-      "type": "item",
-      "sortid": 1389,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mirlurksteak"
-    },
-    {
-      "name": "Neutronade",
-      "type": "item",
-      "sortid": 1390,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "neutronade"
-    },
-    {
-      "name": "Cannedporkshop",
-      "type": "item",
-      "sortid": 1391,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cannedporkshop"
-    },
-    {
-      "name": "Bugmeat",
-      "type": "item",
-      "sortid": 1392,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "bugmeat"
-    },
-    {
-      "name": "Coffee",
-      "type": "item",
-      "sortid": 1393,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "coffee"
-    },
-    {
-      "name": "Xanderroot",
-      "type": "item",
-      "sortid": 1394,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "xanderroot"
-    },
-    {
-      "name": "Hazmat",
-      "type": "armor",
-      "sortid": 1395,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hazmat",
-      "metadata": {
-        "eh": true,
-        "el": true,
-        "eb": true,
-        "ec": true
-      }
-    },
-    {
-      "name": "Radiationzoneeffect",
-      "type": "procedure",
-      "sortid": 1396,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "radiationzoneeffect",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Radiationeffectappliance",
-      "type": "procedure",
-      "sortid": 1397,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "radiationeffectappliance",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "RadiationEffectStartedapplied",
-      "type": "procedure",
-      "sortid": 1398,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "radiation_effect_startedapplied",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "RadiationOnEffectActiveTick",
-      "type": "procedure",
-      "sortid": 1399,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "radiation_on_effect_active_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "Radioprotection",
       "type": "potioneffect",
       "sortid": 1400,
@@ -19753,6 +19721,22 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "hazmat_body_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Radiationeffectappliance",
+      "type": "procedure",
+      "sortid": 1397,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiationeffectappliance",
       "metadata": {
         "dependencies": [
           {
@@ -19793,12 +19777,426 @@
       }
     },
     {
-      "name": "Radx",
-      "type": "item",
+      "name": "GunControlProcedure",
+      "type": "procedure",
+      "sortid": 1393,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gun_control_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LaserriffleProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 1396,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laserriffle_projectile_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TenmmCanUseRangedItem",
+      "type": "procedure",
+      "sortid": 1399,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tenmm_can_use_ranged_item",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NailgunCanUseRangedItem",
+      "type": "procedure",
+      "sortid": 1402,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nailgun_can_use_ranged_item",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NailgunEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 1404,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nailgun_entity_swings_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MmpistolnineCanUseRangedItem",
+      "type": "procedure",
+      "sortid": 1398,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mmpistolnine_can_use_ranged_item",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TenmmEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 1401,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tenmm_entity_swings_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ThemachinegunCanUseRangedItem",
+      "type": "procedure",
+      "sortid": 1408,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "themachinegun_can_use_ranged_item",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlasmarifleRangedItemUsed",
+      "type": "procedure",
+      "sortid": 1406,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "plasmarifle_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NailgunRangedItemUsed",
+      "type": "procedure",
       "sortid": 1403,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radx"
+      "registry_name": "nailgun_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlasmarifleCanUseRangedItem",
+      "type": "procedure",
+      "sortid": 1407,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "plasmarifle_can_use_ranged_item",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LaserriffleCanUseRangedItem",
+      "type": "procedure",
+      "sortid": 1394,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laserriffle_can_use_ranged_item",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LaserriffleEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 1395,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laserriffle_entity_swings_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ThemachinegunEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 1409,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "themachinegun_entity_swings_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MmpistolnineEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 1397,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mmpistolnine_entity_swings_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TenmmRangedItemUsed",
+      "type": "procedure",
+      "sortid": 1400,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tenmm_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlasmarifleEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 1405,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "plasmarifle_entity_swings_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -20139,6 +20537,54 @@
       ],
       "category": "player",
       "subtitle": ""
+    },
+    {
+      "name": "machinegunreload",
+      "files": [
+        "276956__gfl7__awp-reload-sound"
+      ],
+      "category": "neutral",
+      "subtitle": "Reload"
+    },
+    {
+      "name": "laserriflereload",
+      "files": [
+        "88291__s-dij__whisk-reload-05"
+      ],
+      "category": "neutral",
+      "subtitle": "Reload"
+    },
+    {
+      "name": "emptygunfire",
+      "files": [
+        "154934__klawykogut__empty-gun-shot"
+      ],
+      "category": "neutral",
+      "subtitle": "Empty"
+    },
+    {
+      "name": "removingfusioncell",
+      "files": [
+        "614819__rthijs__opening-soda-bottle"
+      ],
+      "category": "neutral",
+      "subtitle": "Removing Fusion Cell"
+    },
+    {
+      "name": "pistol10mmreload",
+      "files": [
+        "616758__oneshotofficial__m9-reload"
+      ],
+      "category": "neutral",
+      "subtitle": "Reload"
+    },
+    {
+      "name": "pistol9mmreload",
+      "files": [
+        "396331__nioczkus__1911-reload"
+      ],
+      "category": "neutral",
+      "subtitle": "Reload"
     }
   ],
   "language_map": {
@@ -20161,7 +20607,6 @@
       "item.fallout_wastelands.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
       "item.fallout_wastelands.vaulttecplating": "Vault Tec Plating",
       "item.fallout_wastelands.mobmachinegun": "Mobmachinegun",
-      "effect.radioprotection": "Radiation protection",
       "entity.fallout_wastelands.malewastelander_2": "Wastelander",
       "entity.fallout_wastelands.malewastelander_1": "Wastelander",
       "item.wastlanders.basesupermutant": "Super Mutant Grunt Spawn Egg",
@@ -20192,7 +20637,6 @@
       "itemGroup.tabwastelanderscombattab": "Wastelanders Combat",
       "block.wastlanders.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
-      "item.fallout_wastelands.radx": "Rad-X",
       "block.fallout_wastelands.xander_2": "Xander 2",
       "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_3": "Xander 3",
@@ -20205,7 +20649,7 @@
       "block.fallout_wastelands.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.highwayman_spawn_egg": "Highwayman Spawn Egg",
       "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
-      "item.fallout_wastelands.ninemmammo": "9mm ammo",
+      "item.fallout_wastelands.ninemmammo": "9mm Ammo",
       "block.wastlanders.plaster": "Plaster",
       "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
       "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
@@ -20390,6 +20834,7 @@
       "block.fallout_wastelands.rustedironstairs": "Rusted Iron Stairs",
       "item.minecraft.lingering_potion.effect.radiation": "Lingering Radiation Poisoning",
       "block.wastlanders.wastelandiron": "Wasteland Iron Ore",
+      "subtitles.machinegunreload": "Reload",
       "item.fallout_wastelands.crushedcan": "Crushed Can",
       "block.fallout_wastelands.vaultvent": "Vault Vent",
       "item.fallout_wastelands.notyeticon": "Notyeticon",
@@ -20416,6 +20861,7 @@
       "item.wastlanders.track": "Track Segment",
       "entity.fallout_wastelands.chromedraiderfemale": "Female Wasteland Raider",
       "block.wastlanders.ammunitionbox": "Ammunition Box",
+      "subtitles.removingfusioncell": "Removing Fusion Cell",
       "block.fallout_wastelands.sheetmetalwall": "Sheet Metal Wall",
       "block.wastlanders.charredplankfence": "Charred Plank Fence",
       "item.fallout_wastelands.robobrainarm": "Robobrain Arm",
@@ -20559,7 +21005,6 @@
       "item.minecraft.splash_potion.effect.radiation": "Splash Radiation Poisoning",
       "block.fallout_wastelands.charredplankslab": "Charred Plank Slab",
       "block.fallout_wastelands.closing_90": "Vault Door",
-      "item.fallout_wastelands.hazmat_boots": "Hazmat Boots",
       "block.fallout_wastelands.closing_91": "Vault Door",
       "block.wastlanders.wastelandcopper": "Wasteland Copper Ore",
       "item.fallout_wastelands.enclaveofficierarmor_chestplate": "Enclave Officier Coat ",
@@ -20629,6 +21074,7 @@
       "item.fallout_wastelands.tinnugget": "Tin Nugget",
       "block.fallout_wastelands.vaultdooranimation_137": "Vault Door135",
       "block.wastlanders.bossteelplatingslabs": "Bos Steel Plating Slabs",
+      "subtitles.laserriflereload": "Reload",
       "block.fallout_wastelands.dooranimation_201": "Vault Door135",
       "block.wastlanders.wastlandsand": "Wasteland Sand",
       "block.fallout_wastelands.dooranimation_200": "Vault Door135",
@@ -20769,7 +21215,6 @@
       "block.fallout_wastelands.vaultanimation_10": "Vault Door",
       "block.wastlanders.tirestack": "Tire Stack",
       "item.minecraft.tipped_arrow.effect.radiation": "Arrow of Radiation Poisoning",
-      "item.fallout_wastelands.hazmat_leggings": "Hazmat Leggings",
       "item.fallout_wastelands.uraniumnugget": "Uranium Nugget",
       "block.wastlanders.militaryplatedradiationwarrior": "Military plating (radiation)",
       "block.fallout_wastelands.plasterwall": "Plaster Wall",
@@ -20793,7 +21238,6 @@
       "block.fallout_wastelands.vaultanimation_18": "Vault Door",
       "block.wastlanders.sheetmetal": "Sheet metal",
       "block.fallout_wastelands.wastelandbrick": "Wasteland Brick",
-      "item.fallout_wastelands.hazmat_chestplate": "Hazmat Body",
       "block.fallout_wastelands.vaultanimation_73": "Vault Door",
       "block.fallout_wastelands.vaultanimation_74": "Vault Door",
       "block.fallout_wastelands.vaultanimation_71": "Vault Door",
@@ -20864,7 +21308,6 @@
       "block.wastlanders.wastlandconcrete": "Old Concrete",
       "block.fallout_wastelands.vaultanimation_65": "Vault Door",
       "subtitles.tenmmshootb": "",
-      "item.fallout_wastelands.combatarmor_helmet": "MKICombat Helmet",
       "entity.wastlanders.rangedsupermutant": "Supermutant Brute",
       "item.fallout_wastelands.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
       "item.wastlanders.frbcannon": "Frbcannon",
@@ -20881,6 +21324,7 @@
       "block.fallout_wastelands.vaultanimation_135": "Vault Door135",
       "item.fallout_wastelands.vaultjumpsuit_leggings": "Vault Jumpsuit Leggings (male)",
       "block.fallout_wastelands.wastelandcoal": "Wasteland Coal Ore",
+      "subtitles.pistol9mmreload": "Reload",
       "item.wastlanders.jerrican": "Empty Jerrican",
       "item.wastlanders.reaper": "Ripper",
       "entity.wastlanders.raidergunner": "Raider Gunner",
@@ -20947,7 +21391,6 @@
       "item.fallout_wastelands.bottlecaps": "Bottlecaps",
       "advancements.vaultdweller.descr": "The time have come for you to leave the vault . You should go have a chat with the overseer at the lower level .",
       "block.wastlanders.brotherhoodofsteelmetalplating": "BoS Metal Plating (lines)",
-      "item.fallout_wastelands.combatarmor_leggings": "MKI Combat Leggings",
       "block.fallout_wastelands.bo_sdoor": "BoS Blast Door",
       "block.wastlanders.militaryplatingwall": "Military Plated Wall",
       "block.fallout_wastelands.cellinglights": "Celling Lights",
@@ -20966,6 +21409,7 @@
       "block.fallout_wastelands.door_moving_ani_203": "Vault Door135",
       "item.wastlanders.robobrainhead": "Robobrain Head",
       "block.fallout_wastelands.enclavebunkerblock": "Enclave Bunker Block",
+      "subtitles.pistol10mmreload": "Reload",
       "block.fallout_wastelands.vault_door_filler": "Vault Door Filler",
       "block.wastlanders.structuralmetalblock": "Structural Metal Block",
       "item.fallout_wastelands.plasmas": "Plasmas",
@@ -20978,7 +21422,6 @@
       "entity.wastlanders.highwayman": "Highwayman",
       "item.fallout_wastelands.track": "Track Segment",
       "item.fallout_wastelands.wasteland": "Wasteland Portal Igniter",
-      "item.fallout_wastelands.combatarmor_boots": "MKI Combat Boots",
       "item.fallout_wastelands.cigarettepack": "Cigarette Pack",
       "entity.fallout_wastelands.enclav_eofficier": "Enclave Officier",
       "block.wastlanders.wastelanddiamond": "Wasteland Diamond Ore",
@@ -21034,7 +21477,7 @@
       "block.fallout_wastelands.redindustrialblockstairs": "Red Industrial Stairs",
       "block.fallout_wastelands.moltenaluminiumblock": "Molten Aluminium Block",
       "block.fallout_wastelands.plasterslab": "Plaster Slab",
-      "item.fallout_wastelands.tenmmammo": "10mm Ammunition ",
+      "item.fallout_wastelands.tenmmammo": "10mm Ammo",
       "block.fallout_wastelands.vault_door": "Vault Door",
       "item.wastlanders.chromeraider": "Wasteland Raider Spawn Egg",
       "block.fallout_wastelands.rottenwooddoor": "Rotten Wood Door",
@@ -21044,7 +21487,6 @@
       "block.fallout_wastelands.closing_145": "Vault Door",
       "item.wastlanders.closecombatsupermutant": "Closecombatsupermutant Spawn Egg",
       "block.fallout_wastelands.closing_140": "Vault Door",
-      "item.fallout_wastelands.combatarmor_chestplate": "MKI Combat Body",
       "block.fallout_wastelands.wastelanddiamond": "Wasteland Diamond Ore",
       "entity.fallout_wastelands.raidergunner": "Raider Gunner",
       "entity.fallout_wastelands.enclavepowerarmorsoldier": "Enclave Soldier (power armor)",
@@ -21085,7 +21527,6 @@
       "item.wastlanders.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
       "item.wastlanders.militarygradeaccessbadge": "Military Grade Access Badge",
       "block.fallout_wastelands.tinblock": "Tin Block",
-      "item.fallout_wastelands.hazmat_helmet": "Hazmat Helmet",
       "block.fallout_wastelands.wastelandrock": "Wasteland Cobblestone",
       "block.fallout_wastelands.rottenplanks": "Rotten Plank",
       "block.fallout_wastelands.closing_180": "Vault Door",
@@ -21096,6 +21537,7 @@
       "block.fallout_wastelands.vaultanimation_7": "Vault Door",
       "block.fallout_wastelands.vaultanimation_6": "Vault Door",
       "block.fallout_wastelands.vaultanimation_5": "Vault Door",
+      "subtitles.emptygunfire": "Empty",
       "item.wastlanders.closecombatsupermutant_spawn_egg": "Closecombatsupermutant Spawn Egg",
       "block.fallout_wastelands.vaultanimation_4": "Vault Door",
       "block.fallout_wastelands.vaultanimation_3": "Vault Door",
@@ -21113,11 +21555,11 @@
     "name": "~",
     "children": [
       {
-        "name": "vault_door",
+        "name": "vaultdoor",
         "children": []
       },
       {
-        "name": "vaultdoor",
+        "name": "vault_door",
         "children": []
       }
     ]
@@ -21127,7 +21569,7 @@
     "modName": "Fallout Wastelands",
     "version": "Beta 0.5.8",
     "description": "A Fallout game serie mod for minecraft , with vault-craft we assure you a calm and bright future !",
-    "author": "Vaedak,Mechanist1108,FoxysYT,Josephyumnug,Mcreator",
+    "author": "Vaedak,Mechanist1108,FoxysYT,Mcreator",
     "websiteURL": "https://mcreator.net",
     "license": "Not specified",
     "disableForgeVersionCheck": true,
@@ -21142,5 +21584,5 @@
     "modElementsPackage": "net.mcreator.fallout_wastelands",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200120510
+  "mcreatorVersion": 202100236710
 }

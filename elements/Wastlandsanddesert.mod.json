@@ -36,7 +36,7 @@
       "value": ""
     },
     "music": {
-      "value": "CUSTOM:wastelandwind"
+      "value": ""
     },
     "moodSound": {
       "value": ""
@@ -52,10 +52,10 @@
     "temperature": 2.0,
     "baseHeight": 0.30000000000000004,
     "heightVariation": 0.30000000000000004,
-    "spawnBiome": true,
+    "spawnBiome": false,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 600,
+    "biomeWeight": 700,
     "biomeDictionaryTypes": [
       "WASTELAND"
     ],

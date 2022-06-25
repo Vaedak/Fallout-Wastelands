@@ -7,26 +7,32 @@
     "customModelName": "lasergun:default",
     "name": "Laser Rifle",
     "specialInfo": [
-      "Fusion cell"
+      "Fusion Cell"
     ],
     "creativeTab": {
       "value": "CUSTOM:Wastelanderscombattab"
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": "CUSTOM:Fusionmicrocell"
+      "value": "Blocks.AIR"
     },
     "shootConstantly": false,
-    "usageCount": 150,
+    "usageCount": 1500,
     "actionSound": {
       "value": "CUSTOM:lasershoot"
     },
     "hasGlow": false,
-    "animation": "none",
+    "animation": "bow",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "onRangedItemUsed": {
       "name": "LaserriffleRangedItemUsed"
+    },
+    "onEntitySwing": {
+      "name": "LaserriffleEntitySwingsItem"
+    },
+    "useCondition": {
+      "name": "LaserriffleCanUseRangedItem"
     },
     "bulletPower": 15.0,
     "bulletDamage": 0.5,
@@ -37,6 +43,9 @@
       "value": "CUSTOM:Bulletmobs"
     },
     "bulletModel": "Modellaser",
-    "customBulletModelTexture": "laser.png"
+    "customBulletModelTexture": "laser.png",
+    "onBulletHitsBlock": {
+      "name": "LaserriffleProjectileHitsBlock"
+    }
   }
 }

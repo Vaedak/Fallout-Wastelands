@@ -1,12 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class ThemachinegunRangedItemUsedProcedure {
 
@@ -21,9 +15,44 @@ public class ThemachinegunRangedItemUsedProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure ThemachinegunRangedItemUsed!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-		if (entity instanceof PlayerEntity)
-			((PlayerEntity) entity).getCooldownTracker().setCooldown(itemstack.getItem(), (int) (-20));
+
+		if (itemstack.getOrCreateTag().getBoolean("NewMagLoaded") == true) {
+			if (itemstack.getOrCreateTag().getDouble("BulletCounter") > 0) {
+				itemstack.getOrCreateTag().putDouble("BulletCounter", (itemstack.getOrCreateTag().getDouble("BulletCounter") - 1));
+				(itemstack).setDamage((int) ((itemstack).getDamage() + 100));
+			}
+		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"execute at @s anchored eyes run particle minecraft:flame ^-0.45 ^-0.38 ^2 ~ ~ 0 0 0 force");
+			}
+		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"execute at @s anchored eyes run particle minecraft:flame ^-0.45 ^-0.38 ^2 ~ ~ 0 0 0 force");
+			}
+		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"execute at @s anchored eyes run particle minecraft:smoke ^-0.45 ^-0.38 ^2 ~ ~ 0 0 0 force");
+			}
+		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"execute at @s anchored eyes run particle minecraft:smoke ^-0.45 ^-0.38 ^2 ~ ~ 0 0 0 force");
+			}
+		}
 	}
+
 }

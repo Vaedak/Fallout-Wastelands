@@ -376,5 +376,65 @@
         "stream": false
       }
     ]
+  },
+  "machinegunreload": {
+    "category": "neutral",
+    "subtitle": "subtitles.machinegunreload",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:276956__gfl7__awp-reload-sound",
+        "stream": false
+      }
+    ]
+  },
+  "laserriflereload": {
+    "category": "neutral",
+    "subtitle": "subtitles.laserriflereload",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:88291__s-dij__whisk-reload-05",
+        "stream": false
+      }
+    ]
+  },
+  "emptygunfire": {
+    "category": "neutral",
+    "subtitle": "subtitles.emptygunfire",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:154934__klawykogut__empty-gun-shot",
+        "stream": false
+      }
+    ]
+  },
+  "removingfusioncell": {
+    "category": "neutral",
+    "subtitle": "subtitles.removingfusioncell",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:614819__rthijs__opening-soda-bottle",
+        "stream": false
+      }
+    ]
+  },
+  "pistol10mmreload": {
+    "category": "neutral",
+    "subtitle": "subtitles.pistol10mmreload",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:616758__oneshotofficial__m9-reload",
+        "stream": false
+      }
+    ]
+  },
+  "pistol9mmreload": {
+    "category": "neutral",
+    "subtitle": "subtitles.pistol9mmreload",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:396331__nioczkus__1911-reload",
+        "stream": false
+      }
+    ]
   }
 }

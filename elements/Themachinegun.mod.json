@@ -14,19 +14,25 @@
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": "CUSTOM:Septammo"
+      "value": "Blocks.AIR"
     },
     "shootConstantly": true,
-    "usageCount": 300,
+    "usageCount": 4000,
     "actionSound": {
       "value": "CUSTOM:gun"
     },
     "hasGlow": false,
-    "animation": "bow",
+    "animation": "block",
     "enableMeleeDamage": true,
     "damageVsEntity": 1.0,
     "onRangedItemUsed": {
       "name": "ThemachinegunRangedItemUsed"
+    },
+    "onEntitySwing": {
+      "name": "ThemachinegunEntitySwingsItem"
+    },
+    "useCondition": {
+      "name": "ThemachinegunCanUseRangedItem"
     },
     "bulletPower": 3.0,
     "bulletDamage": 1.0,
