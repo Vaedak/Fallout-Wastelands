@@ -29,8 +29,11 @@ import net.minecraft.entity.IRendersAsItem;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
+import net.minecraft.block.Blocks;
 
 import net.mcreator.fallout_wastelands.procedures.MmpistolnineRangedItemUsedProcedure;
+import net.mcreator.fallout_wastelands.procedures.MmpistolnineEntitySwingsItemProcedure;
+import net.mcreator.fallout_wastelands.procedures.MmpistolnineCanUseRangedItemProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.entity.renderer.MmpistolnineRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
@@ -62,7 +65,7 @@ public class MmpistolnineItem extends FalloutWastelandsModElements.ModElement {
 
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxDamage(100));
+			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxDamage(901));
 			setRegistryName("mmpistolnine");
 		}
 
@@ -70,6 +73,22 @@ public class MmpistolnineItem extends FalloutWastelandsModElements.ModElement {
 		public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
 			entity.setActiveHand(hand);
 			return new ActionResult(ActionResultType.SUCCESS, entity.getHeldItem(hand));
+		}
+
+		@Override
+		public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
+			boolean retval = super.onEntitySwing(itemstack, entity);
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			World world = entity.world;
+
+			MmpistolnineEntitySwingsItemProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity),
+							new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			return retval;
 		}
 
 		@Override
@@ -89,24 +108,25 @@ public class MmpistolnineItem extends FalloutWastelandsModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				if (true) {
-					ItemStack stack = ShootableItem.getHeldAmmo(entity, e -> e.getItem() == NinemmammoItem.block);
+				if (MmpistolnineCanUseRangedItemProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
+					ItemStack stack = ShootableItem.getHeldAmmo(entity, e -> e.getItem() == Blocks.AIR.asItem());
 					if (stack == ItemStack.EMPTY) {
 						for (int i = 0; i < entity.inventory.mainInventory.size(); i++) {
 							ItemStack teststack = entity.inventory.mainInventory.get(i);
-							if (teststack != null && teststack.getItem() == NinemmammoItem.block) {
+							if (teststack != null && teststack.getItem() == Blocks.AIR.asItem()) {
 								stack = teststack;
 								break;
 							}
 						}
 					}
 					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 5f, 1, 0);
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 4f, 1, 0);
 						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
 						} else {
-							if (new ItemStack(NinemmammoItem.block).isDamageable()) {
+							if (new ItemStack(Blocks.AIR).isDamageable()) {
 								if (stack.attemptDamageItem(1, random, entity)) {
 									stack.shrink(1);
 									stack.setDamage(0);
@@ -120,10 +140,9 @@ public class MmpistolnineItem extends FalloutWastelandsModElements.ModElement {
 							}
 						}
 
-						MmpistolnineRangedItemUsedProcedure.executeProcedure(Stream
-								.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-										new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+						MmpistolnineRangedItemUsedProcedure.executeProcedure(
+								Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+										.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}
 			}
@@ -161,7 +180,7 @@ public class MmpistolnineItem extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return new ItemStack(NinemmammoItem.block);
+			return new ItemStack(Blocks.AIR);
 		}
 
 		@Override
@@ -207,7 +226,7 @@ public class MmpistolnineItem extends FalloutWastelandsModElements.ModElement {
 		double d0 = target.getPosY() + (double) target.getEyeHeight() - 1.1;
 		double d1 = target.getPosX() - entity.getPosX();
 		double d3 = target.getPosZ() - entity.getPosZ();
-		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 5f * 2, 12.0F);
+		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 4f * 2, 12.0F);
 		entityarrow.setSilent(true);
 		entityarrow.setDamage(1);
 		entityarrow.setKnockbackStrength(0);

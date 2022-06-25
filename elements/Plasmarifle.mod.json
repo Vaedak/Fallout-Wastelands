@@ -6,16 +6,18 @@
     "texture": "plasmarifle",
     "customModelName": "fusil_plasma_v2_f5:default",
     "name": "Plasma Rifle",
-    "specialInfo": [],
+    "specialInfo": [
+      "Fusion Cell"
+    ],
     "creativeTab": {
       "value": "CUSTOM:Wastelanderscombattab"
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": "CUSTOM:Fusionmicrocell"
+      "value": "Blocks.AIR"
     },
     "shootConstantly": false,
-    "usageCount": 600,
+    "usageCount": 1500,
     "actionSound": {
       "value": "CUSTOM:plasmarifle"
     },
@@ -23,6 +25,15 @@
     "animation": "bow",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "PlasmarifleRangedItemUsed"
+    },
+    "onEntitySwing": {
+      "name": "PlasmarifleEntitySwingsItem"
+    },
+    "useCondition": {
+      "name": "PlasmarifleCanUseRangedItem"
+    },
     "bulletPower": 4.0,
     "bulletDamage": 1.7999999999999998,
     "bulletKnockback": 0,
@@ -33,6 +44,9 @@
     },
     "bulletModel": "Default",
     "customBulletModelTexture": "",
+    "onBulletHitsBlock": {
+      "name": "LaserriffleProjectileHitsBlock"
+    },
     "onBulletFlyingTick": {
       "name": "PlasmarifleWhileBulletFlyingTick"
     }

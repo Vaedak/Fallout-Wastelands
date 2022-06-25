@@ -119,10 +119,9 @@ public class MmpistolnineaimItem extends FalloutWastelandsModElements.ModElement
 							}
 						}
 
-						MmpistolnineRangedItemUsedProcedure.executeProcedure(Stream
-								.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-										new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+						MmpistolnineRangedItemUsedProcedure.executeProcedure(
+								Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+										.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}
 			}

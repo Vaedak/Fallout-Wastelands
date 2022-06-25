@@ -38,8 +38,11 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.block.Blocks;
 
 import net.mcreator.fallout_wastelands.procedures.ThemachinegunRangedItemUsedProcedure;
+import net.mcreator.fallout_wastelands.procedures.ThemachinegunEntitySwingsItemProcedure;
+import net.mcreator.fallout_wastelands.procedures.ThemachinegunCanUseRangedItemProcedure;
 import net.mcreator.fallout_wastelands.procedures.ThemachinegunBulletHitsPlayerProcedure;
 import net.mcreator.fallout_wastelands.procedures.ThemachinegunBulletHitsLivingEntityProcedure;
 import net.mcreator.fallout_wastelands.procedures.ThemachinegunBulletHitsBlockProcedure;
@@ -79,7 +82,7 @@ public class ThemachinegunItem extends FalloutWastelandsModElements.ModElement {
 
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxDamage(300));
+			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxDamage(4000));
 			setRegistryName("themachinegun");
 		}
 
@@ -90,6 +93,22 @@ public class ThemachinegunItem extends FalloutWastelandsModElements.ModElement {
 		}
 
 		@Override
+		public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
+			boolean retval = super.onEntitySwing(itemstack, entity);
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			World world = entity.world;
+
+			ThemachinegunEntitySwingsItemProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity),
+							new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			return retval;
+		}
+
+		@Override
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("7.62"));
@@ -97,7 +116,7 @@ public class ThemachinegunItem extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.BOW;
+			return UseAction.BLOCK;
 		}
 
 		@Override
@@ -127,12 +146,13 @@ public class ThemachinegunItem extends FalloutWastelandsModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				if (true) {
-					ItemStack stack = ShootableItem.getHeldAmmo(entity, e -> e.getItem() == SeptammoItem.block);
+				if (ThemachinegunCanUseRangedItemProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
+					ItemStack stack = ShootableItem.getHeldAmmo(entity, e -> e.getItem() == Blocks.AIR.asItem());
 					if (stack == ItemStack.EMPTY) {
 						for (int i = 0; i < entity.inventory.mainInventory.size(); i++) {
 							ItemStack teststack = entity.inventory.mainInventory.get(i);
-							if (teststack != null && teststack.getItem() == SeptammoItem.block) {
+							if (teststack != null && teststack.getItem() == Blocks.AIR.asItem()) {
 								stack = teststack;
 								break;
 							}
@@ -144,7 +164,7 @@ public class ThemachinegunItem extends FalloutWastelandsModElements.ModElement {
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
 						} else {
-							if (new ItemStack(SeptammoItem.block).isDamageable()) {
+							if (new ItemStack(Blocks.AIR).isDamageable()) {
 								if (stack.attemptDamageItem(1, random, entity)) {
 									stack.shrink(1);
 									stack.setDamage(0);
@@ -199,7 +219,7 @@ public class ThemachinegunItem extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return new ItemStack(SeptammoItem.block);
+			return new ItemStack(Blocks.AIR);
 		}
 
 		@Override

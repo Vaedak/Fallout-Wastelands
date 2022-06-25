@@ -129,6 +129,18 @@ public class FalloutWastelandsModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "tenmmc")));
 		sounds.put(new ResourceLocation("fallout_wastelands", "portalentrance"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "portalentrance")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "emptygunfire"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "emptygunfire")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "laserriflereload"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "laserriflereload")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "removingfusioncell"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "removingfusioncell")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "pistol9mmreload"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "pistol9mmreload")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "pistol10mmreload"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "pistol10mmreload")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "machinegunreload"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "machinegunreload")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("fallout_wastelands").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

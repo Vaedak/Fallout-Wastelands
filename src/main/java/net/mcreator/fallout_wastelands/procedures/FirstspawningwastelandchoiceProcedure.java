@@ -1,5 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
+import net.minecraftforge.fml.server.ServerLifecycleHooks;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -9,7 +10,9 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.ChatType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.network.PacketBuffer;
@@ -107,6 +110,12 @@ public class FirstspawningwastelandchoiceProcedure {
 					}
 				}
 			}
+		}
+		if (!world.isRemote()) {
+			MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
+			if (mcserv != null)
+				mcserv.getPlayerList().func_232641_a_(new StringTextComponent((entity.world.getDimensionKey() + "dimension id")), ChatType.SYSTEM,
+						Util.DUMMY_UUID);
 		}
 	}
 }
