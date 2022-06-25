@@ -40,15 +40,18 @@ import net.mcreator.fallout_wastelands.procedures.RadioactivwastebarrelEntityCol
 import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class RadioactivwastebarrelBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:radioactivwastebarrel")
 	public static final Block block = null;
+
 	public RadioactivwastebarrelBlock(FalloutWastelandsModElements instance) {
 		super(instance, 212);
 	}
@@ -64,8 +67,10 @@ public class RadioactivwastebarrelBlock extends FalloutWastelandsModElements.Mod
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends Block implements IWaterLoggable {
 		public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(7f, 15f).setLightLevel(s -> 0).notSolid()
 					.setOpaque((bs, br, bp) -> false));
@@ -86,7 +91,11 @@ public class RadioactivwastebarrelBlock extends FalloutWastelandsModElements.Mod
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(1.6, 0, 1.6, 14.4, 16, 14.4)).withOffset(offset.x, offset.y, offset.z);
+			return VoxelShapes.or(makeCuboidShape(1.6, 0, 1.6, 14.4, 16, 14.4)
+
+			)
+
+					.withOffset(offset.x, offset.y, offset.z);
 		}
 
 		@Override
@@ -128,11 +137,9 @@ public class RadioactivwastebarrelBlock extends FalloutWastelandsModElements.Mod
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				RadioactivwastebarrelPlayerStartsToDestroyProcedure.executeProcedure($_dependencies);
-			}
+
+			RadioactivwastebarrelPlayerStartsToDestroyProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -141,11 +148,9 @@ public class RadioactivwastebarrelBlock extends FalloutWastelandsModElements.Mod
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				RadioactivwastebarrelEntityCollidesInTheBlockProcedure.executeProcedure($_dependencies);
-			}
+
+			RadioactivwastebarrelEntityCollidesInTheBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

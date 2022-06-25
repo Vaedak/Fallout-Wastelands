@@ -30,15 +30,18 @@ import net.mcreator.fallout_wastelands.procedures.RadioactiveairEntityCollidesIn
 import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class RadioactiveairBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:radioactiveair")
 	public static final Block block = null;
+
 	public RadioactiveairBlock(FalloutWastelandsModElements instance) {
 		super(instance, 573);
 	}
@@ -54,6 +57,7 @@ public class RadioactiveairBlock extends FalloutWastelandsModElements.ModElement
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.AIR).sound(SoundType.PLANT).hardnessAndResistance(-1, 3600000).setLightLevel(s -> 0)
@@ -95,11 +99,9 @@ public class RadioactiveairBlock extends FalloutWastelandsModElements.ModElement
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				RadioactiveairEntityCollidesInTheBlockProcedure.executeProcedure($_dependencies);
-			}
+
+			RadioactiveairEntityCollidesInTheBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -109,11 +111,9 @@ public class RadioactiveairBlock extends FalloutWastelandsModElements.ModElement
 			int y = pos.getY();
 			int z = pos.getZ();
 			BlockState blockstate = world.getBlockState(pos);
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				RadioactiveairEntityWalksOnTheBlockProcedure.executeProcedure($_dependencies);
-			}
+
+			RadioactiveairEntityWalksOnTheBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

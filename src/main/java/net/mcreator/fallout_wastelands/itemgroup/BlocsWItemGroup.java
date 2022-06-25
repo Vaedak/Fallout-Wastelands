@@ -31,5 +31,6 @@ public class BlocsWItemGroup extends FalloutWastelandsModElements.ModElement {
 			}
 		};
 	}
+
 	public static ItemGroup tab;
 }

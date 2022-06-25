@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableMultimap;
 public class WrenchItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:wrench")
 	public static final Item block = null;
+
 	public WrenchItem(FalloutWastelandsModElements instance) {
 		super(instance, 281);
 	}
@@ -33,6 +34,7 @@ public class WrenchItem extends FalloutWastelandsModElements.ModElement {
 		elements.items.add(() -> new ItemToolCustom() {
 		}.setRegistryName("wrench"));
 	}
+
 	private static class ItemToolCustom extends Item {
 		protected ItemToolCustom() {
 			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxDamage(300));

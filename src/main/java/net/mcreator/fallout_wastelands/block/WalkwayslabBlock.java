@@ -29,6 +29,7 @@ import java.util.Collections;
 public class WalkwayslabBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:walkwayslab")
 	public static final Block block = null;
+
 	public WalkwayslabBlock(FalloutWastelandsModElements instance) {
 		super(instance, 107);
 	}
@@ -44,6 +45,7 @@ public class WalkwayslabBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends SlabBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(3f, 10f).setLightLevel(s -> 0).notSolid()

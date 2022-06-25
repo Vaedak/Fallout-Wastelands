@@ -1,3 +1,4 @@
+
 package net.mcreator.fallout_wastelands.entity.renderer;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -28,6 +29,7 @@ public class Malewastelander2Renderer {
 					}
 				};
 				customRender.addLayer(new BipedArmorLayer(customRender, new BipedModel(0.5f), new BipedModel(1)));
+
 				return customRender;
 			});
 		}

@@ -31,6 +31,7 @@ import java.util.Collections;
 public class VaultlockBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:vaultlock")
 	public static final Block block = null;
+
 	public VaultlockBlock(FalloutWastelandsModElements instance) {
 		super(instance, 1377);
 	}
@@ -46,6 +47,7 @@ public class VaultlockBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends DoorBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(5f, 15f).setLightLevel(s -> 0).harvestLevel(1)

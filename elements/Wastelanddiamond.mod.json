@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "block",
   "definition": {
     "texture": "wastelanddiamondore",
@@ -113,6 +113,7 @@
         "value": "CUSTOM:Wastlandstone"
       }
     ],
+    "generationShape": "UNIFORM",
     "frequencyPerChunks": 1,
     "frequencyOnChunk": 5,
     "minGenerateHeight": 1,

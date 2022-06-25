@@ -24,6 +24,7 @@ import java.util.Collections;
 public class VaultkitchenblocksBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:vaultkitchenblocks")
 	public static final Block block = null;
+
 	public VaultkitchenblocksBlock(FalloutWastelandsModElements instance) {
 		super(instance, 607);
 	}
@@ -33,6 +34,7 @@ public class VaultkitchenblocksBlock extends FalloutWastelandsModElements.ModEle
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(6f, 15f).setLightLevel(s -> 0));

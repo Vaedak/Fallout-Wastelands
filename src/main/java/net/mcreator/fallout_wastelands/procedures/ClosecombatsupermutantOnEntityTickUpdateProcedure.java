@@ -13,10 +13,11 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class ClosecombatsupermutantOnEntityTickUpdateProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure ClosecombatsupermutantOnEntityTickUpdate!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure ClosecombatsupermutantOnEntityTickUpdate!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -34,17 +35,17 @@ public class ClosecombatsupermutantOnEntityTickUpdateProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure ClosecombatsupermutantOnEntityTickUpdate!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure ClosecombatsupermutantOnEntityTickUpdate!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure ClosecombatsupermutantOnEntityTickUpdate!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == FevgooBlock.block)) {
+		Entity entity = (Entity) dependencies.get("entity");
+		if ((world.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == FevgooBlock.block) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
 			if (entity instanceof LivingEntity)
@@ -55,7 +56,7 @@ public class ClosecombatsupermutantOnEntityTickUpdateProcedure {
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.DOLPHINS_GRACE, (int) 60, (int) 4));
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 60, (int) 4));
-		} else if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == FevgooBlock.block)) {
+		} else if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == FevgooBlock.block) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
 			if (entity instanceof LivingEntity)

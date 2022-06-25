@@ -26,6 +26,7 @@ import java.util.Collections;
 public class MilitaryplatedBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:militaryplated")
 	public static final Block block = null;
+
 	public MilitaryplatedBlock(FalloutWastelandsModElements instance) {
 		super(instance, 33);
 	}
@@ -35,6 +36,7 @@ public class MilitaryplatedBlock extends FalloutWastelandsModElements.ModElement
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(10f, 18f).setLightLevel(s -> 0).harvestLevel(2)

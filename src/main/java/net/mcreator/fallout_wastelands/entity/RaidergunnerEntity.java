@@ -51,6 +51,7 @@ public class RaidergunnerEntity extends FalloutWastelandsModElements.ModElement 
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(100).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.6f, 1.8f)).build("raidergunner").setRegistryName("raidergunner");
+
 	public RaidergunnerEntity(FalloutWastelandsModElements instance) {
 		super(instance, 299);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new RaidergunnerRenderer.ModelRegisterHandler());
@@ -67,6 +68,7 @@ public class RaidergunnerEntity extends FalloutWastelandsModElements.ModElement 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -100,7 +102,7 @@ public class RaidergunnerEntity extends FalloutWastelandsModElements.ModElement 
 		protected void registerGoals() {
 			super.registerGoals();
 			this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 0.3));
-			this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(4, new SwimGoal(this));
 			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, true, false));

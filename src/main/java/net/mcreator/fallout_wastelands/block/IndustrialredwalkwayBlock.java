@@ -31,6 +31,7 @@ import java.util.Collections;
 public class IndustrialredwalkwayBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:industrialredwalkway")
 	public static final Block block = null;
+
 	public IndustrialredwalkwayBlock(FalloutWastelandsModElements instance) {
 		super(instance, 57);
 	}
@@ -40,8 +41,10 @@ public class IndustrialredwalkwayBlock extends FalloutWastelandsModElements.ModE
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).harvestLevel(2)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool().slipperiness(0.7f));

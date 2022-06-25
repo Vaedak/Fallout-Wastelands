@@ -15,7 +15,13 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class DoorMovingAni205UpdateTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure DoorMovingAni205UpdateTick!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure DoorMovingAni205UpdateTick!");
@@ -31,16 +37,11 @@ public class DoorMovingAni205UpdateTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure DoorMovingAni205UpdateTick!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure DoorMovingAni205UpdateTick!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -54,14 +55,13 @@ public class DoorMovingAni205UpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-			if (((((world.getBlockState(new BlockPos((int) (x - 3), (int) (y - 1), (int) (z - 1)))).getBlock() == VaultDoorBlock.block)
-					|| ((world.getBlockState(new BlockPos((int) (x - 3), (int) (y - 1), (int) (z - 1))))
-							.getBlock() == PassableVaultDoorBlock.block)) == (false))) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+		}.getDirection(new BlockPos(x, y, z))) == Direction.NORTH) {
+			if (((world.getBlockState(new BlockPos(x - 3, y - 1, z - 1))).getBlock() == VaultDoorBlock.block
+					|| (world.getBlockState(new BlockPos(x - 3, y - 1, z - 1))).getBlock() == PassableVaultDoorBlock.block) == false) {
+				world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -75,14 +75,13 @@ public class DoorMovingAni205UpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-			if (((((world.getBlockState(new BlockPos((int) (x + 3), (int) (y - 1), (int) (z + 1)))).getBlock() == VaultDoorBlock.block)
-					|| ((world.getBlockState(new BlockPos((int) (x + 3), (int) (y - 1), (int) (z + 1))))
-							.getBlock() == PassableVaultDoorBlock.block)) == (false))) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+		}.getDirection(new BlockPos(x, y, z))) == Direction.SOUTH) {
+			if (((world.getBlockState(new BlockPos(x + 3, y - 1, z + 1))).getBlock() == VaultDoorBlock.block
+					|| (world.getBlockState(new BlockPos(x + 3, y - 1, z + 1))).getBlock() == PassableVaultDoorBlock.block) == false) {
+				world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -96,14 +95,13 @@ public class DoorMovingAni205UpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-			if (((((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 3)))).getBlock() == VaultDoorBlock.block)
-					|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) (z + 3))))
-							.getBlock() == PassableVaultDoorBlock.block)) == (false))) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+		}.getDirection(new BlockPos(x, y, z))) == Direction.WEST) {
+			if (((world.getBlockState(new BlockPos(x - 1, y - 1, z + 3))).getBlock() == VaultDoorBlock.block
+					|| (world.getBlockState(new BlockPos(x - 1, y - 1, z + 3))).getBlock() == PassableVaultDoorBlock.block) == false) {
+				world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -117,11 +115,10 @@ public class DoorMovingAni205UpdateTickProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-			if (((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 3)))).getBlock() == VaultDoorBlock.block)
-					|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y - 1), (int) (z - 3))))
-							.getBlock() == PassableVaultDoorBlock.block)) == (false))) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+		}.getDirection(new BlockPos(x, y, z))) == Direction.EAST) {
+			if (((world.getBlockState(new BlockPos(x + 1, y - 1, z - 3))).getBlock() == VaultDoorBlock.block
+					|| (world.getBlockState(new BlockPos(x + 1, y - 1, z - 3))).getBlock() == PassableVaultDoorBlock.block) == false) {
+				world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 			}
 		}
 	}

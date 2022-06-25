@@ -30,6 +30,7 @@ import java.util.Collections;
 public class WastelandglassBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:wastelandglass")
 	public static final Block block = null;
+
 	public WastelandglassBlock(FalloutWastelandsModElements instance) {
 		super(instance, 611);
 	}
@@ -45,6 +46,7 @@ public class WastelandglassBlock extends FalloutWastelandsModElements.ModElement
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends PaneBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.GLASS).sound(SoundType.GLASS).hardnessAndResistance(0.5f, 0.4f).setLightLevel(s -> 0).notSolid()

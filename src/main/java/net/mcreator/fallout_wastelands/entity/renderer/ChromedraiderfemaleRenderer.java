@@ -1,3 +1,4 @@
+
 package net.mcreator.fallout_wastelands.entity.renderer;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -26,6 +27,7 @@ public class ChromedraiderfemaleRenderer {
 		public void registerModels(ModelRegistryEvent event) {
 			RenderingRegistry.registerEntityRenderingHandler(ChromedraiderfemaleEntity.entity, renderManager -> {
 				return new MobRenderer(renderManager, new Modelalex(), 0.5f) {
+
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("fallout_wastelands:textures/chromedraiderfemaleb.png");
@@ -46,6 +48,7 @@ public class ChromedraiderfemaleRenderer {
 		private final ModelRenderer LeftArm;
 		private final ModelRenderer RightLeg;
 		private final ModelRenderer LeftLeg;
+
 		public Modelalex() {
 			textureWidth = 64;
 			textureHeight = 70;
@@ -105,6 +108,7 @@ public class ChromedraiderfemaleRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.RightArm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
 			this.LeftLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 			this.Head.rotateAngleY = f3 / (180F / (float) Math.PI);
@@ -113,4 +117,5 @@ public class ChromedraiderfemaleRenderer {
 			this.RightLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 		}
 	}
+
 }

@@ -35,6 +35,7 @@ import java.util.Collections;
 public class LighttubBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:lighttub")
 	public static final Block block = null;
+
 	public LighttubBlock(FalloutWastelandsModElements instance) {
 		super(instance, 316);
 	}
@@ -50,8 +51,10 @@ public class LighttubBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.GLASS).hardnessAndResistance(2f, 6f).setLightLevel(s -> 15)
 					.doesNotBlockMovement().notSolid().setNeedsPostProcessing((bs, br, bp) -> true).setEmmisiveRendering((bs, br, bp) -> true)

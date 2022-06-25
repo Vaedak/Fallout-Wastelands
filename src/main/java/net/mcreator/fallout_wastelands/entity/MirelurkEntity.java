@@ -37,10 +37,12 @@ import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AreaEffectCloudEntity;
 
 import net.mcreator.fallout_wastelands.item.RawmirlurkItem;
 import net.mcreator.fallout_wastelands.entity.renderer.MirelurkRenderer;
@@ -51,6 +53,7 @@ public class MirelurkEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.WATER_CREATURE)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.6f, 1.8f)).build("mirelurk").setRegistryName("mirelurk");
+
 	public MirelurkEntity(FalloutWastelandsModElements instance) {
 		super(instance, 40);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new MirelurkRenderer.ModelRegisterHandler());
@@ -89,6 +92,7 @@ public class MirelurkEntity extends FalloutWastelandsModElements.ModElement {
 				SquidEntity::func_223365_b);
 		DungeonHooks.addDungeonMob(entity, 180);
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -124,9 +128,14 @@ public class MirelurkEntity extends FalloutWastelandsModElements.ModElement {
 			this.goalSelector.addGoal(2, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(3, new SwimGoal(this));
 			this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 2, 40));
-			this.targetSelector.addGoal(5, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(5, new HurtByTargetGoal(this).setCallsForHelp());
 			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false));
-			this.goalSelector.addGoal(7, new MeleeAttackGoal(this, 0.6, true));
+			this.goalSelector.addGoal(7, new MeleeAttackGoal(this, 0.6, true) {
+				@Override
+				protected double getAttackReachSqr(LivingEntity entity) {
+					return (double) (4.0 + entity.getWidth() * entity.getWidth());
+				}
+			});
 			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, ChromedraiderfemaleEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, ArmyrobobrainEntity.CustomEntity.class, false, false));
@@ -163,7 +172,7 @@ public class MirelurkEntity extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof PotionEntity)
+			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
 				return false;
 			if (source == DamageSource.DROWN)
 				return false;

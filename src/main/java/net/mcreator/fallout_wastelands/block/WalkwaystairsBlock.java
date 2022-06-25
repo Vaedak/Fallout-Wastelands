@@ -29,6 +29,7 @@ import java.util.Collections;
 public class WalkwaystairsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:walkwaystairs")
 	public static final Block block = null;
+
 	public WalkwaystairsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 76);
 	}
@@ -44,11 +45,12 @@ public class WalkwaystairsBlock extends FalloutWastelandsModElements.ModElement 
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
 			super(() -> new Block(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(10f, 10f).setLightLevel(s -> 0)
 					.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().slipperiness(0.7f).notSolid().setOpaque((bs, br, bp) -> false))
-							.getDefaultState(),
+					.getDefaultState(),
 					Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(10f, 10f).setLightLevel(s -> 0)
 							.harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().slipperiness(0.7f).notSolid()
 							.setOpaque((bs, br, bp) -> false));

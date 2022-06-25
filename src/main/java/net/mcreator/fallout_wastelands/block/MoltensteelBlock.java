@@ -25,6 +25,7 @@ import java.util.Collections;
 public class MoltensteelBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:moltensteel")
 	public static final Block block = null;
+
 	public MoltensteelBlock(FalloutWastelandsModElements instance) {
 		super(instance, 228);
 	}
@@ -34,6 +35,7 @@ public class MoltensteelBlock extends FalloutWastelandsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(15f, 15f).setLightLevel(s -> 0).harvestLevel(2)

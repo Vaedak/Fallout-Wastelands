@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "potioneffect",
   "definition": {
     "effectName": "Radiation Poisoning",
@@ -12,6 +12,12 @@
     "isBad": true,
     "isBenefitical": false,
     "renderStatusInInventory": true,
-    "renderStatusInHUD": true
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "RadiationEffectStartedapplied"
+    },
+    "onActiveTick": {
+      "name": "RadiationOnEffectActiveTick"
+    }
   }
 }

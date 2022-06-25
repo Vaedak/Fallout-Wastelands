@@ -35,6 +35,7 @@ import java.util.Collections;
 public class DecorativepipeBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:decorativepipe")
 	public static final Block block = null;
+
 	public DecorativepipeBlock(FalloutWastelandsModElements instance) {
 		super(instance, 617);
 	}
@@ -50,8 +51,10 @@ public class DecorativepipeBlock extends FalloutWastelandsModElements.ModElement
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(4f, 8f).setLightLevel(s -> 0).notSolid()
 					.setOpaque((bs, br, bp) -> false));

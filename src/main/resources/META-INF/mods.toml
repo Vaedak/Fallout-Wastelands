@@ -4,12 +4,12 @@ license="Not specified"
 
 [[mods]]
 modId="fallout_wastelands"
-version="Beta 0.5.8"
+version="0.5.8"
 displayName="Fallout Wastelands"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
 logoFile="logo.png"
-authors="Vaedak,Mechanist1108,FoxysYT,Mcreator"
+authors="Vaedak,Mechanist1108,FoxysYT,Josephyumnug,Mcreator"
 description='''
 A Fallout game serie mod for minecraft , with vault-craft we assure you a calm and bright future !
 '''

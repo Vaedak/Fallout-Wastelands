@@ -29,6 +29,7 @@ import java.util.Collections;
 public class WastelandbrickstairsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:wastelandbrickstairs")
 	public static final Block block = null;
+
 	public WastelandbrickstairsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 95);
 	}
@@ -44,6 +45,7 @@ public class WastelandbrickstairsBlock extends FalloutWastelandsModElements.ModE
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
 			super(() -> new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(6f, 10f).setLightLevel(s -> 0)

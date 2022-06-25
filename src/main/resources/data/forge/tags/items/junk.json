@@ -1,17 +1,17 @@
 {
   "replace": false,
   "values": [
-    "fallout_wastelands:printedchip",
     "fallout_wastelands:robobrainengine",
-    "fallout_wastelands:coffepot",
     "fallout_wastelands:cigarettepack",
-    "fallout_wastelands:crushedcan",
-    "fallout_wastelands:nuclearwaste",
     "fallout_wastelands:whitepaintcan",
-    "fallout_wastelands:redpaintcan",
     "fallout_wastelands:blackpaintcan",
-    "fallout_wastelands:yellowpaintcan",
     "fallout_wastelands:greenpaintcan",
-    "fallout_wastelands:bluepaintcan"
+    "fallout_wastelands:crushedcan",
+    "fallout_wastelands:redpaintcan",
+    "fallout_wastelands:nuclearwaste",
+    "fallout_wastelands:bluepaintcan",
+    "fallout_wastelands:coffepot",
+    "fallout_wastelands:yellowpaintcan",
+    "fallout_wastelands:printedchip"
   ]
 }

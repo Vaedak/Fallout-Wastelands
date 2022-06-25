@@ -1,3 +1,4 @@
+
 package net.mcreator.fallout_wastelands.entity.renderer;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -26,6 +27,7 @@ public class ArmyrobobrainRenderer {
 		public void registerModels(ModelRegistryEvent event) {
 			RenderingRegistry.registerEntityRenderingHandler(ArmyrobobrainEntity.entity, renderManager -> {
 				return new MobRenderer(renderManager, new Modelarmyrobobrain(), 0.5f) {
+
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("fallout_wastelands:textures/robobrainfix.png");
@@ -98,6 +100,7 @@ public class ArmyrobobrainRenderer {
 		private final ModelRenderer head;
 		private final ModelRenderer leftarm;
 		private final ModelRenderer rightarm;
+
 		public Modelarmyrobobrain() {
 			textureWidth = 128;
 			textureHeight = 256;
@@ -406,10 +409,12 @@ public class ArmyrobobrainRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.rightarm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
 			this.leftarm.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
 			this.head.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.head.rotateAngleX = f4 / (180F / (float) Math.PI);
 		}
 	}
+
 }

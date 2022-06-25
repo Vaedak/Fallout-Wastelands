@@ -13,10 +13,11 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class LandminePlayerStartsToDestroyProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure LandminePlayerStartsToDestroy!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure LandminePlayerStartsToDestroy!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -34,17 +35,17 @@ public class LandminePlayerStartsToDestroyProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure LandminePlayerStartsToDestroy!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure LandminePlayerStartsToDestroy!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure LandminePlayerStartsToDestroy!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+		Entity entity = (Entity) dependencies.get("entity");
+		world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 		if (world instanceof World && !((World) world).isRemote) {
 			((World) world).createExplosion(null, (int) x, (int) y, (int) z, (float) 4, Explosion.Mode.BREAK);
 		}

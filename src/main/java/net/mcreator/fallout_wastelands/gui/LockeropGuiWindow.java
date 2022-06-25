@@ -23,6 +23,7 @@ public class LockeropGuiWindow extends ContainerScreen<LockeropGui.GuiContainerM
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = LockeropGui.guistate;
+
 	public LockeropGuiWindow(LockeropGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -33,7 +34,9 @@ public class LockeropGuiWindow extends ContainerScreen<LockeropGui.GuiContainerM
 		this.xSize = 246;
 		this.ySize = 204;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/lockerop.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

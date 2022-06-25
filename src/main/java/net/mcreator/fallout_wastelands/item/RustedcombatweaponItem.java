@@ -22,6 +22,7 @@ import java.util.List;
 public class RustedcombatweaponItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:rustedcombatweapon")
 	public static final Item block = null;
+
 	public RustedcombatweaponItem(FalloutWastelandsModElements instance) {
 		super(instance, 2);
 	}

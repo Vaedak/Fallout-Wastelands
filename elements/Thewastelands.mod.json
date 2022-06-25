@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "achievement",
   "definition": {
     "achievementName": "The Wasteland",
@@ -15,7 +15,7 @@
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardFunction": "No function",
-    "rewardXP": 1,
+    "rewardXP": 5,
     "achievementType": "task",
     "parent": {
       "value": "CUSTOM:Jointheworld"

@@ -15,10 +15,11 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class ReaperLivingEntityIsHitWithToolProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure ReaperLivingEntityIsHitWithTool!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure ReaperLivingEntityIsHitWithTool!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -36,18 +37,18 @@ public class ReaperLivingEntityIsHitWithToolProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure ReaperLivingEntityIsHitWithTool!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure ReaperLivingEntityIsHitWithTool!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure ReaperLivingEntityIsHitWithTool!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
+		Entity entity = (Entity) dependencies.get("entity");
 		if (world instanceof World && !world.isRemote()) {
-			((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+			((World) world).playSound(null, new BlockPos(x, y, z),
 					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("fallout_wastelands:reaper")),
 					SoundCategory.NEUTRAL, (float) 1, (float) 1);
 		} else {

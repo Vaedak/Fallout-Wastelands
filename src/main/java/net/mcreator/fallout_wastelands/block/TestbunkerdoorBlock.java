@@ -31,6 +31,7 @@ import java.util.Collections;
 public class TestbunkerdoorBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:testbunkerdoor")
 	public static final Block block = null;
+
 	public TestbunkerdoorBlock(FalloutWastelandsModElements instance) {
 		super(instance, 43);
 	}
@@ -46,6 +47,7 @@ public class TestbunkerdoorBlock extends FalloutWastelandsModElements.ModElement
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends DoorBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(15f, 18f).setLightLevel(s -> 0).harvestLevel(2)

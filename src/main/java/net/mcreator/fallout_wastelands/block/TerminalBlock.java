@@ -43,6 +43,7 @@ import java.util.Collections;
 public class TerminalBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:terminal")
 	public static final Block block = null;
+
 	public TerminalBlock(FalloutWastelandsModElements instance) {
 		super(instance, 521);
 	}
@@ -58,9 +59,11 @@ public class TerminalBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block implements IWaterLoggable {
 		public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 		public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(5f, 5f).setLightLevel(s -> 3).harvestLevel(1)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool().notSolid().setNeedsPostProcessing((bs, br, bp) -> true)

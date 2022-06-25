@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableMultimap;
 public class BreadrollerItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:breadroller")
 	public static final Item block = null;
+
 	public BreadrollerItem(FalloutWastelandsModElements instance) {
 		super(instance, 407);
 	}
@@ -33,6 +34,7 @@ public class BreadrollerItem extends FalloutWastelandsModElements.ModElement {
 		elements.items.add(() -> new ItemToolCustom() {
 		}.setRegistryName("breadroller"));
 	}
+
 	private static class ItemToolCustom extends Item {
 		protected ItemToolCustom() {
 			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxDamage(100));

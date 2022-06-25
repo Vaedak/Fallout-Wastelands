@@ -1,3 +1,4 @@
+
 package net.mcreator.fallout_wastelands.entity.renderer;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -26,6 +27,7 @@ public class ClosecombatsupermutantRenderer {
 		public void registerModels(ModelRegistryEvent event) {
 			RenderingRegistry.registerEntityRenderingHandler(ClosecombatsupermutantEntity.entity, renderManager -> {
 				return new MobRenderer(renderManager, new Modelsupermutantcc(), 0.5f) {
+
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("fallout_wastelands:textures/supermutantmelee.png");
@@ -35,8 +37,8 @@ public class ClosecombatsupermutantRenderer {
 		}
 	}
 
-	// Made with Blockbench
-	// Paste this code into your mod.
+	//Made with Blockbench
+	//Paste this code into your mod.
 	public static class Modelsupermutantcc extends EntityModel<Entity> {
 		private final ModelRenderer Head;
 		private final ModelRenderer Body;
@@ -44,6 +46,7 @@ public class ClosecombatsupermutantRenderer {
 		private final ModelRenderer LeftArm;
 		private final ModelRenderer RightLeg;
 		private final ModelRenderer LeftLeg;
+
 		public Modelsupermutantcc() {
 			textureWidth = 128;
 			textureHeight = 128;
@@ -89,6 +92,7 @@ public class ClosecombatsupermutantRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.RightArm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
 			this.LeftLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 			this.Head.rotateAngleY = f3 / (180F / (float) Math.PI);
@@ -97,6 +101,7 @@ public class ClosecombatsupermutantRenderer {
 			this.RightLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 		}
 	}
+
 	@OnlyIn(Dist.CLIENT)
 	public static void addBoxHelper(ModelRenderer renderer, int texU, int texV, float x, float y, float z, int dx, int dy, int dz, float delta) {
 		addBoxHelper(renderer, texU, texV, x, y, z, dx, dy, dz, delta, renderer.mirror);

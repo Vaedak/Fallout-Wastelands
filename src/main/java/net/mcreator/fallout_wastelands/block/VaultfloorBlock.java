@@ -24,6 +24,7 @@ import java.util.Collections;
 public class VaultfloorBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:vaultfloor")
 	public static final Block block = null;
+
 	public VaultfloorBlock(FalloutWastelandsModElements instance) {
 		super(instance, 586);
 	}
@@ -33,6 +34,7 @@ public class VaultfloorBlock extends FalloutWastelandsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(6f, 25f).setLightLevel(s -> 0));

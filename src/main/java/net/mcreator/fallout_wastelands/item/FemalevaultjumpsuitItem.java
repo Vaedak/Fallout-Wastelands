@@ -35,6 +35,7 @@ public class FemalevaultjumpsuitItem extends FalloutWastelandsModElements.ModEle
 	public static final Item legs = null;
 	@ObjectHolder("fallout_wastelands:femalevaultjumpsuit_boots")
 	public static final Item boots = null;
+
 	public FemalevaultjumpsuitItem(FalloutWastelandsModElements instance) {
 		super(instance, 145);
 	}
@@ -145,6 +146,7 @@ public class FemalevaultjumpsuitItem extends FalloutWastelandsModElements.ModEle
 					}
 				}.setRegistryName("femalevaultjumpsuit_boots"));
 	}
+
 	// Made with Blockbench 3.5.4
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
@@ -156,6 +158,7 @@ public class FemalevaultjumpsuitItem extends FalloutWastelandsModElements.ModEle
 		private final ModelRenderer leftarm;
 		private final ModelRenderer body;
 		private final ModelRenderer breast;
+
 		public Modelvaultjumpsuitfemale() {
 			textureWidth = 64;
 			textureHeight = 32;
@@ -201,6 +204,8 @@ public class FemalevaultjumpsuitItem extends FalloutWastelandsModElements.ModEle
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 		}
 	}
+
 }

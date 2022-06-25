@@ -24,6 +24,7 @@ import java.util.Collections;
 public class MilitaryplatedstairsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:militaryplatedstairs")
 	public static final Block block = null;
+
 	public MilitaryplatedstairsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 83);
 	}
@@ -33,6 +34,7 @@ public class MilitaryplatedstairsBlock extends FalloutWastelandsModElements.ModE
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
 			super(() -> new Block(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(10f, 18f).setLightLevel(s -> 0)

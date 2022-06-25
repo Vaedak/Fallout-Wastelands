@@ -30,6 +30,7 @@ import java.util.Collections;
 public class BlastwindowsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:blastwindows")
 	public static final Block block = null;
+
 	public BlastwindowsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 192);
 	}
@@ -45,6 +46,7 @@ public class BlastwindowsBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.GLASS).sound(SoundType.GLASS).hardnessAndResistance(10f, 15f).setLightLevel(s -> 0).harvestLevel(3)

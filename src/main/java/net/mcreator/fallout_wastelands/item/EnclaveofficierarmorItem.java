@@ -36,6 +36,7 @@ public class EnclaveofficierarmorItem extends FalloutWastelandsModElements.ModEl
 	public static final Item legs = null;
 	@ObjectHolder("fallout_wastelands:enclaveofficierarmor_boots")
 	public static final Item boots = null;
+
 	public EnclaveofficierarmorItem(FalloutWastelandsModElements instance) {
 		super(instance, 542);
 	}
@@ -165,6 +166,7 @@ public class EnclaveofficierarmorItem extends FalloutWastelandsModElements.ModEl
 					}
 				}.setRegistryName("enclaveofficierarmor_boots"));
 	}
+
 	// Made with Blockbench 3.7.5
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
@@ -178,6 +180,7 @@ public class EnclaveofficierarmorItem extends FalloutWastelandsModElements.ModEl
 		private final ModelRenderer head;
 		private final ModelRenderer visor;
 		private final ModelRenderer visor_r1;
+
 		public Modelenclaveofficeruniform() {
 			textureWidth = 128;
 			textureHeight = 32;
@@ -231,6 +234,8 @@ public class EnclaveofficierarmorItem extends FalloutWastelandsModElements.ModEl
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 		}
 	}
+
 }

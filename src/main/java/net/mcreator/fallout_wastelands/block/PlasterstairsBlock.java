@@ -24,6 +24,7 @@ import java.util.Collections;
 public class PlasterstairsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:plasterstairs")
 	public static final Block block = null;
+
 	public PlasterstairsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 146);
 	}
@@ -33,6 +34,7 @@ public class PlasterstairsBlock extends FalloutWastelandsModElements.ModElement 
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
 			super(() -> new Block(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(6f, 10f).setLightLevel(s -> 0)

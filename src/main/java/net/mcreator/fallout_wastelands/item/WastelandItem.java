@@ -17,6 +17,7 @@ import net.mcreator.fallout_wastelands.itemgroup.WastelandersitemsItemGroup;
 public class WastelandItem extends Item {
 	@ObjectHolder("fallout_wastelands:wasteland")
 	public static final Item block = null;
+
 	public WastelandItem() {
 		super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxDamage(64));
 	}

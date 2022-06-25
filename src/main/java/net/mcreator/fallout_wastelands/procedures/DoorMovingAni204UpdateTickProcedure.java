@@ -19,7 +19,13 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class DoorMovingAni204UpdateTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure DoorMovingAni204UpdateTick!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure DoorMovingAni204UpdateTick!");
@@ -35,20 +41,16 @@ public class DoorMovingAni204UpdateTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure DoorMovingAni204UpdateTick!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure DoorMovingAni204UpdateTick!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == DoorMovingAni204Block.block)) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == DoorMovingAni204Block.block) {
 			new Object() {
 				private int ticks = 0;
 				private float waitTicks;
 				private IWorld world;
+
 				public void start(IWorld world, int waitTicks) {
 					this.waitTicks = waitTicks;
 					MinecraftForge.EVENT_BUS.register(this);
@@ -65,11 +67,11 @@ public class DoorMovingAni204UpdateTickProcedure {
 				}
 
 				private void run() {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
+					world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, (int) 1);
-			if (((new Object() {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -83,8 +85,8 @@ public class DoorMovingAni204UpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-				if (((new Object() {
+			}.getDirection(new BlockPos(x, y, z))) == Direction.NORTH) {
+				if ((new Object() {
 					public Direction getDirection(BlockPos pos) {
 						try {
 							BlockState _bs = world.getBlockState(pos);
@@ -98,15 +100,15 @@ public class DoorMovingAni204UpdateTickProcedure {
 							return Direction.NORTH;
 						}
 					}
-				}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-					world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), DoorMovingAni205Block.block.getDefaultState(), 3);
+				}.getDirection(new BlockPos(x, y, z))) == Direction.NORTH) {
+					world.setBlockState(new BlockPos(x + 1, y, z), DoorMovingAni205Block.block.getDefaultState(), 3);
 					try {
-						BlockState _bs = world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z));
+						BlockState _bs = world.getBlockState(new BlockPos(x + 1, y, z));
 						DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 						if (_property != null) {
-							world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), _bs.with(_property, Direction.NORTH), 3);
+							world.setBlockState(new BlockPos(x + 1, y, z), _bs.with(_property, Direction.NORTH), 3);
 						} else {
-							world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z),
+							world.setBlockState(new BlockPos(x + 1, y, z),
 									_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"),
 											Direction.NORTH.getAxis()),
 									3);
@@ -115,7 +117,7 @@ public class DoorMovingAni204UpdateTickProcedure {
 					}
 				}
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -129,8 +131,8 @@ public class DoorMovingAni204UpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-				if (((new Object() {
+			}.getDirection(new BlockPos(x, y, z))) == Direction.SOUTH) {
+				if ((new Object() {
 					public Direction getDirection(BlockPos pos) {
 						try {
 							BlockState _bs = world.getBlockState(pos);
@@ -144,15 +146,15 @@ public class DoorMovingAni204UpdateTickProcedure {
 							return Direction.NORTH;
 						}
 					}
-				}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-					world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), DoorMovingAni205Block.block.getDefaultState(), 3);
+				}.getDirection(new BlockPos(x, y, z))) == Direction.SOUTH) {
+					world.setBlockState(new BlockPos(x - 1, y, z), DoorMovingAni205Block.block.getDefaultState(), 3);
 					try {
-						BlockState _bs = world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z));
+						BlockState _bs = world.getBlockState(new BlockPos(x - 1, y, z));
 						DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 						if (_property != null) {
-							world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), _bs.with(_property, Direction.SOUTH), 3);
+							world.setBlockState(new BlockPos(x - 1, y, z), _bs.with(_property, Direction.SOUTH), 3);
 						} else {
-							world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z),
+							world.setBlockState(new BlockPos(x - 1, y, z),
 									_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"),
 											Direction.SOUTH.getAxis()),
 									3);
@@ -161,7 +163,7 @@ public class DoorMovingAni204UpdateTickProcedure {
 					}
 				}
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -175,8 +177,8 @@ public class DoorMovingAni204UpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-				if (((new Object() {
+			}.getDirection(new BlockPos(x, y, z))) == Direction.WEST) {
+				if ((new Object() {
 					public Direction getDirection(BlockPos pos) {
 						try {
 							BlockState _bs = world.getBlockState(pos);
@@ -190,15 +192,15 @@ public class DoorMovingAni204UpdateTickProcedure {
 							return Direction.NORTH;
 						}
 					}
-				}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), DoorMovingAni205Block.block.getDefaultState(), 3);
+				}.getDirection(new BlockPos(x, y, z))) == Direction.WEST) {
+					world.setBlockState(new BlockPos(x, y, z - 1), DoorMovingAni205Block.block.getDefaultState(), 3);
 					try {
-						BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)));
+						BlockState _bs = world.getBlockState(new BlockPos(x, y, z - 1));
 						DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 						if (_property != null) {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), _bs.with(_property, Direction.WEST), 3);
+							world.setBlockState(new BlockPos(x, y, z - 1), _bs.with(_property, Direction.WEST), 3);
 						} else {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)),
+							world.setBlockState(new BlockPos(x, y, z - 1),
 									_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"),
 											Direction.WEST.getAxis()),
 									3);
@@ -207,7 +209,7 @@ public class DoorMovingAni204UpdateTickProcedure {
 					}
 				}
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					try {
 						BlockState _bs = world.getBlockState(pos);
@@ -221,8 +223,8 @@ public class DoorMovingAni204UpdateTickProcedure {
 						return Direction.NORTH;
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-				if (((new Object() {
+			}.getDirection(new BlockPos(x, y, z))) == Direction.EAST) {
+				if ((new Object() {
 					public Direction getDirection(BlockPos pos) {
 						try {
 							BlockState _bs = world.getBlockState(pos);
@@ -236,15 +238,15 @@ public class DoorMovingAni204UpdateTickProcedure {
 							return Direction.NORTH;
 						}
 					}
-				}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), DoorMovingAni205Block.block.getDefaultState(), 3);
+				}.getDirection(new BlockPos(x, y, z))) == Direction.EAST) {
+					world.setBlockState(new BlockPos(x, y, z + 1), DoorMovingAni205Block.block.getDefaultState(), 3);
 					try {
-						BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)));
+						BlockState _bs = world.getBlockState(new BlockPos(x, y, z + 1));
 						DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 						if (_property != null) {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), _bs.with(_property, Direction.EAST), 3);
+							world.setBlockState(new BlockPos(x, y, z + 1), _bs.with(_property, Direction.EAST), 3);
 						} else {
-							world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)),
+							world.setBlockState(new BlockPos(x, y, z + 1),
 									_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"),
 											Direction.EAST.getAxis()),
 									3);

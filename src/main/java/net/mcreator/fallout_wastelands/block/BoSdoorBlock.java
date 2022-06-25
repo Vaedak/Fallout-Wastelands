@@ -31,6 +31,7 @@ import java.util.Collections;
 public class BoSdoorBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:bo_sdoor")
 	public static final Block block = null;
+
 	public BoSdoorBlock(FalloutWastelandsModElements instance) {
 		super(instance, 187);
 	}
@@ -46,6 +47,7 @@ public class BoSdoorBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends DoorBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.ANVIL).hardnessAndResistance(20f, 30f).setLightLevel(s -> 0).harvestLevel(3)

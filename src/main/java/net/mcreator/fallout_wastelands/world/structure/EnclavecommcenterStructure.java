@@ -32,14 +32,17 @@ import net.minecraft.block.BlockState;
 import net.mcreator.fallout_wastelands.procedures.EnclavecommcenterOnStructureInstanceGeneratedProcedure;
 import net.mcreator.fallout_wastelands.block.WastelanddirtBlock;
 
+import java.util.stream.Stream;
 import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @Mod.EventBusSubscriber
 public class EnclavecommcenterStructure {
 	private static Feature<NoFeatureConfig> feature = null;
 	private static ConfiguredFeature<?, ?> configuredFeature = null;
+
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 	private static class FeatureRegisterHandler {
 		@SubscribeEvent
@@ -82,14 +85,11 @@ public class EnclavecommcenterStructure {
 									new PlacementSettings().setRotation(rotation).setRandom(random).setMirror(mirror)
 											.addProcessor(BlockIgnoreStructureProcessor.STRUCTURE_BLOCK).setChunk(null).setIgnoreEntities(false),
 									random);
-							{
-								Map<String, Object> $_dependencies = new HashMap<>();
-								$_dependencies.put("x", x);
-								$_dependencies.put("y", y);
-								$_dependencies.put("z", z);
-								$_dependencies.put("world", world);
-								EnclavecommcenterOnStructureInstanceGeneratedProcedure.executeProcedure($_dependencies);
-							}
+
+							EnclavecommcenterOnStructureInstanceGeneratedProcedure.executeProcedure(Stream
+									.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+											new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						}
 					}
 					return true;
@@ -101,6 +101,7 @@ public class EnclavecommcenterStructure {
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("fallout_wastelands:enclavecommcenter"), configuredFeature);
 		}
 	}
+
 	@SubscribeEvent
 	public static void addFeatureToBiomes(BiomeLoadingEvent event) {
 		boolean biomeCriteria = false;

@@ -22,10 +22,11 @@ import java.util.Map;
 import io.netty.buffer.Unpooled;
 
 public class OverseerRightClickedOnEntityProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("sourceentity") == null) {
-			if (!dependencies.containsKey("sourceentity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure OverseerRightClickedOnEntity!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure OverseerRightClickedOnEntity!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -43,20 +44,20 @@ public class OverseerRightClickedOnEntityProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure OverseerRightClickedOnEntity!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure OverseerRightClickedOnEntity!");
+		if (dependencies.get("sourceentity") == null) {
+			if (!dependencies.containsKey("sourceentity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure OverseerRightClickedOnEntity!");
 			return;
 		}
-		Entity sourceentity = (Entity) dependencies.get("sourceentity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
+		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		{
 			Entity _ent = sourceentity;
 			if (_ent instanceof ServerPlayerEntity) {
-				BlockPos _bpos = new BlockPos((int) x, (int) y, (int) z);
+				BlockPos _bpos = new BlockPos(x, y, z);
 				NetworkHooks.openGui((ServerPlayerEntity) _ent, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {

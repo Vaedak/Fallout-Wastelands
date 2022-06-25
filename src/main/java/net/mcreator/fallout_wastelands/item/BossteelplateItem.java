@@ -3,6 +3,7 @@ package net.mcreator.fallout_wastelands.item;
 
 import net.minecraftforge.registries.ObjectHolder;
 
+import net.minecraft.item.UseAction;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -15,6 +16,7 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 public class BossteelplateItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:bossteelplate")
 	public static final Item block = null;
+
 	public BossteelplateItem(FalloutWastelandsModElements instance) {
 		super(instance, 201);
 	}
@@ -23,10 +25,16 @@ public class BossteelplateItem extends FalloutWastelandsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("bossteelplate");
+		}
+
+		@Override
+		public UseAction getUseAction(ItemStack itemstack) {
+			return UseAction.EAT;
 		}
 
 		@Override

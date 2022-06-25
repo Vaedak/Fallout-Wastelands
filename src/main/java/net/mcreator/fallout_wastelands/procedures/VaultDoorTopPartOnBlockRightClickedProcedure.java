@@ -13,7 +13,13 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.Map;
 
 public class VaultDoorTopPartOnBlockRightClickedProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure VaultDoorTopPartOnBlockRightClicked!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure VaultDoorTopPartOnBlockRightClicked!");
@@ -29,21 +35,16 @@ public class VaultDoorTopPartOnBlockRightClickedProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure VaultDoorTopPartOnBlockRightClicked!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure VaultDoorTopPartOnBlockRightClicked!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		world.setBlockState(new BlockPos((int) x, (int) y, (int) z), VaultDoorAnimation0Block.block.getDefaultState(), 3);
+		world.setBlockState(new BlockPos(x, y, z), VaultDoorAnimation0Block.block.getDefaultState(), 3);
 		try {
-			BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
+			BlockState _bs = world.getBlockState(new BlockPos(x, y, z));
 			DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
 			if (_property != null) {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), _bs.with(_property, (new Object() {
+				world.setBlockState(new BlockPos(x, y, z), _bs.with(_property, (new Object() {
 					public Direction getDirection(BlockPos pos) {
 						try {
 							BlockState _bs = world.getBlockState(pos);
@@ -57,9 +58,9 @@ public class VaultDoorTopPartOnBlockRightClickedProcedure {
 							return Direction.NORTH;
 						}
 					}
-				}.getDirection(new BlockPos((int) x, (int) (y - 1), (int) z)))), 3);
+				}.getDirection(new BlockPos(x, y - 1, z)))), 3);
 			} else {
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z),
+				world.setBlockState(new BlockPos(x, y, z),
 						_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), (new Object() {
 							public Direction getDirection(BlockPos pos) {
 								try {
@@ -74,7 +75,7 @@ public class VaultDoorTopPartOnBlockRightClickedProcedure {
 									return Direction.NORTH;
 								}
 							}
-						}.getDirection(new BlockPos((int) x, (int) (y - 1), (int) z))).getAxis()), 3);
+						}.getDirection(new BlockPos(x, y - 1, z))).getAxis()), 3);
 			}
 		} catch (Exception e) {
 		}

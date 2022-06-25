@@ -33,6 +33,7 @@ import java.util.Collections;
 public class RottenplankfenceBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:rottenplankfence")
 	public static final Block block = null;
+
 	public RottenplankfenceBlock(FalloutWastelandsModElements instance) {
 		super(instance, 116);
 	}
@@ -48,6 +49,7 @@ public class RottenplankfenceBlock extends FalloutWastelandsModElements.ModEleme
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends FenceBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(4f, 6f).setLightLevel(s -> 0).harvestLevel(0)

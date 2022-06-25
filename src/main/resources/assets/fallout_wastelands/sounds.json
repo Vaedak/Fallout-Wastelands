@@ -367,5 +367,14 @@
         "stream": false
       }
     ]
+  },
+  "radiation": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:geiger",
+        "stream": false
+      }
+    ]
   }
 }

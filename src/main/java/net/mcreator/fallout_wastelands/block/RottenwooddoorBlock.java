@@ -31,6 +31,7 @@ import java.util.Collections;
 public class RottenwooddoorBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:rottenwooddoor")
 	public static final Block block = null;
+
 	public RottenwooddoorBlock(FalloutWastelandsModElements instance) {
 		super(instance, 236);
 	}
@@ -46,6 +47,7 @@ public class RottenwooddoorBlock extends FalloutWastelandsModElements.ModElement
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends DoorBlock {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2f, 3f).setLightLevel(s -> 0).harvestLevel(0)

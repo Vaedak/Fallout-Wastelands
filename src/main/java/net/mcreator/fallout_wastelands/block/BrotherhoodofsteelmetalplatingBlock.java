@@ -25,6 +25,7 @@ import java.util.Collections;
 public class BrotherhoodofsteelmetalplatingBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:brotherhoodofsteelmetalplating")
 	public static final Block block = null;
+
 	public BrotherhoodofsteelmetalplatingBlock(FalloutWastelandsModElements instance) {
 		super(instance, 183);
 	}
@@ -34,6 +35,7 @@ public class BrotherhoodofsteelmetalplatingBlock extends FalloutWastelandsModEle
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(15f, 20f).setLightLevel(s -> 0).harvestLevel(2)

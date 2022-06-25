@@ -31,6 +31,7 @@ import java.util.Collections;
 public class SafeblockBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:safeblock")
 	public static final Block block = null;
+
 	public SafeblockBlock(FalloutWastelandsModElements instance) {
 		super(instance, 491);
 	}
@@ -40,8 +41,10 @@ public class SafeblockBlock extends FalloutWastelandsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(10f, 15f).setLightLevel(s -> 0).harvestLevel(2)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool());

@@ -24,15 +24,18 @@ import net.mcreator.fallout_wastelands.procedures.UraniumblockEntityCollidesInTh
 import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class UraniumblockBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:uraniumblock")
 	public static final Block block = null;
+
 	public UraniumblockBlock(FalloutWastelandsModElements instance) {
 		super(instance, 447);
 	}
@@ -42,6 +45,7 @@ public class UraniumblockBlock extends FalloutWastelandsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(25f, 25f).setLightLevel(s -> 9).harvestLevel(3)
@@ -68,11 +72,9 @@ public class UraniumblockBlock extends FalloutWastelandsModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				UraniumblockPlayerStartsToDestroyProcedure.executeProcedure($_dependencies);
-			}
+
+			UraniumblockPlayerStartsToDestroyProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -81,11 +83,9 @@ public class UraniumblockBlock extends FalloutWastelandsModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				UraniumblockEntityCollidesInTheBlockProcedure.executeProcedure($_dependencies);
-			}
+
+			UraniumblockEntityCollidesInTheBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -95,11 +95,9 @@ public class UraniumblockBlock extends FalloutWastelandsModElements.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 			BlockState blockstate = world.getBlockState(pos);
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				UraniumblockEntityWalksOnTheBlockProcedure.executeProcedure($_dependencies);
-			}
+
+			UraniumblockEntityWalksOnTheBlockProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

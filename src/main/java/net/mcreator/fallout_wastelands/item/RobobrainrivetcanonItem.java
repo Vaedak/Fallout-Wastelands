@@ -47,7 +47,8 @@ public class RobobrainrivetcanonItem extends FalloutWastelandsModElements.ModEle
 	public static final Item block = null;
 	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-			.size(0.5f, 0.5f)).build("entitybulletrobobrainrivetcanon").setRegistryName("entitybulletrobobrainrivetcanon");
+			.size(0.5f, 0.5f)).build("projectile_robobrainrivetcanon").setRegistryName("projectile_robobrainrivetcanon");
+
 	public RobobrainrivetcanonItem(FalloutWastelandsModElements instance) {
 		super(instance, 215);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new RobobrainrivetcanonRenderer.ModelRegisterHandler());
@@ -58,6 +59,7 @@ public class RobobrainrivetcanonItem extends FalloutWastelandsModElements.ModEle
 		elements.items.add(() -> new ItemRanged());
 		elements.entities.add(() -> arrow);
 	}
+
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
 			super(new Item.Properties().group(null).maxDamage(100));
@@ -141,7 +143,7 @@ public class RobobrainrivetcanonItem extends FalloutWastelandsModElements.ModEle
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return null;
+			return ItemStack.EMPTY;
 		}
 
 		@Override
@@ -158,15 +160,16 @@ public class RobobrainrivetcanonItem extends FalloutWastelandsModElements.ModEle
 			double z = this.getPosZ();
 			World world = this.world;
 			Entity entity = this.func_234616_v_();
-			Entity imediatesourceentity = this;
+			Entity immediatesourceentity = this;
 			if (this.inGround) {
 				this.remove();
 			}
 		}
 	}
+
 	public static ArrowCustomEntity shoot(World world, LivingEntity entity, Random random, float power, double damage, int knockback) {
 		ArrowCustomEntity entityarrow = new ArrowCustomEntity(arrow, entity, world);
-		entityarrow.shoot(entity.getLookVec().x, entity.getLookVec().y, entity.getLookVec().z, power * 2, 0);
+		entityarrow.shoot(entity.getLook(1).x, entity.getLook(1).y, entity.getLook(1).z, power * 2, 0);
 		entityarrow.setSilent(true);
 		entityarrow.setIsCritical(true);
 		entityarrow.setDamage(damage);

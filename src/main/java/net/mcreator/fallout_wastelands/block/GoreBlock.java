@@ -25,6 +25,7 @@ import java.util.Collections;
 public class GoreBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:gore")
 	public static final Block block = null;
+
 	public GoreBlock(FalloutWastelandsModElements instance) {
 		super(instance, 243);
 	}
@@ -34,6 +35,7 @@ public class GoreBlock extends FalloutWastelandsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.MISCELLANEOUS).sound(SoundType.SLIME).hardnessAndResistance(4f, 4f).setLightLevel(s -> 0)

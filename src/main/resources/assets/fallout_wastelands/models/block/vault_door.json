@@ -1,8 +1,12 @@
 {
-  "parent": "fallout_wastelands:custom/vauldoor",
+  "parent": "block/cube",
   "textures": {
-    "all": "fallout_wastelands:blocks/vaultblock_2",
-    "particle": "fallout_wastelands:blocks/vaultblock_2",
-    "0": "fallout_wastelands:blocks/vaultgeardoor"
+    "down": "fallout_wastelands:blocks/radioactiveair",
+    "up": "fallout_wastelands:blocks/radioactiveair",
+    "north": "fallout_wastelands:blocks/radioactiveair",
+    "east": "fallout_wastelands:blocks/radioactiveair",
+    "south": "fallout_wastelands:blocks/radioactiveair",
+    "west": "fallout_wastelands:blocks/radioactiveair",
+    "particle": "fallout_wastelands:blocks/radioactiveair"
   }
 }

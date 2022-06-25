@@ -25,6 +25,7 @@ import java.util.Collections;
 public class DownruinblockBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:downruinblock")
 	public static final Block block = null;
+
 	public DownruinblockBlock(FalloutWastelandsModElements instance) {
 		super(instance, 552);
 	}
@@ -34,6 +35,7 @@ public class DownruinblockBlock extends FalloutWastelandsModElements.ModElement 
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(5f, 5f).setLightLevel(s -> 0).harvestLevel(1)

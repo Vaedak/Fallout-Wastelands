@@ -6,6 +6,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.common.BiomeManager;
 
 import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
@@ -25,10 +26,15 @@ import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.IWorldWriter;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.util.registry.WorldGenRegistries;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.util.Direction;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
@@ -42,16 +48,21 @@ import java.util.List;
 @FalloutWastelandsModElements.ModElement.Tag
 public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement {
 	public static Biome biome;
+
 	public DesertwastlandBiome(FalloutWastelandsModElements instance) {
 		super(instance, 70);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
+
 	private static class BiomeRegisterHandler {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
 			if (biome == null) {
 				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-8475242).setWaterColor(-14666453).setWaterFogColor(-14666453)
-						.withSkyColor(-8475242).withFoliageColor(-10005969).withGrassColor(-10005969).build();
+						.withSkyColor(-8475242).withFoliageColor(-10005969).withGrassColor(-10005969)
+						.setMusic(new BackgroundMusicSelector((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+								.getValue(new ResourceLocation("fallout_wastelands:wastelandwind")), 12000, 24000, true))
+						.build();
 				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder()
 						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(WastelanddirtBlock.block.getDefaultState(),
 								WastelanddirtBlock.block.getDefaultState(), WastelanddirtBlock.block.getDefaultState())));
@@ -64,6 +75,7 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 				DefaultBiomeFeatures.withCavesAndCanyons(biomeGenerationSettings);
 				DefaultBiomeFeatures.withMonsterRoom(biomeGenerationSettings);
 				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
+				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
 				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
 				biome = new Biome.Builder().precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.1f).scale(0.3f).temperature(2f)
 						.downfall(0f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
@@ -72,9 +84,13 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 			}
 		}
 	}
+
 	@Override
 	public void init(FMLCommonSetupEvent event) {
+		BiomeManager.addBiome(BiomeManager.BiomeType.DESERT,
+				new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, WorldGenRegistries.BIOME.getKey(biome)), 600));
 	}
+
 	private static class CustomLeaveVineTreeDecorator extends LeaveVineTreeDecorator {
 		public static final CustomLeaveVineTreeDecorator instance = new CustomLeaveVineTreeDecorator();
 		public static com.mojang.serialization.Codec<LeaveVineTreeDecorator> codec;
@@ -85,6 +101,7 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 			tdt.setRegistryName("desertwastland_lvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
+
 		@Override
 		protected TreeDecoratorType<?> func_230380_a_() {
 			return tdt;
@@ -106,6 +123,7 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 			tdt.setRegistryName("desertwastland_tvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
+
 		@Override
 		protected TreeDecoratorType<?> func_230380_a_() {
 			return tdt;
@@ -127,6 +145,7 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 			tdt.setRegistryName("desertwastland_ctd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
+
 		public CustomCocoaTreeDecorator() {
 			super(0.2f);
 		}

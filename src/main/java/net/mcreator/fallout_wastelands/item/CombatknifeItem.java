@@ -15,6 +15,7 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 public class CombatknifeItem extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:combatknife")
 	public static final Item block = null;
+
 	public CombatknifeItem(FalloutWastelandsModElements instance) {
 		super(instance, 309);
 	}

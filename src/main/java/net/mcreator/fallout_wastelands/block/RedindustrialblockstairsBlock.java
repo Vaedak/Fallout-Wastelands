@@ -24,6 +24,7 @@ import java.util.Collections;
 public class RedindustrialblockstairsBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:redindustrialblockstairs")
 	public static final Block block = null;
+
 	public RedindustrialblockstairsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 82);
 	}
@@ -33,6 +34,7 @@ public class RedindustrialblockstairsBlock extends FalloutWastelandsModElements.
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(BlocsWItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends StairsBlock {
 		public CustomBlock() {
 			super(() -> new Block(Block.Properties.create(Material.ROCK).sound(SoundType.METAL).hardnessAndResistance(10f, 10f).setLightLevel(s -> 0)

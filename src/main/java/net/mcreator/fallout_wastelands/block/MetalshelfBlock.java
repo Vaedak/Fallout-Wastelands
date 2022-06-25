@@ -41,6 +41,7 @@ import java.util.Collections;
 public class MetalshelfBlock extends FalloutWastelandsModElements.ModElement {
 	@ObjectHolder("fallout_wastelands:metalshelf")
 	public static final Block block = null;
+
 	public MetalshelfBlock(FalloutWastelandsModElements instance) {
 		super(instance, 554);
 	}
@@ -56,8 +57,10 @@ public class MetalshelfBlock extends FalloutWastelandsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(4f, 4f).setLightLevel(s -> 0).harvestLevel(0)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool().slipperiness(1f).notSolid().setOpaque((bs, br, bp) -> false));
@@ -81,17 +84,29 @@ public class MetalshelfBlock extends FalloutWastelandsModElements.ModElement {
 			switch ((Direction) state.get(FACING)) {
 				case SOUTH :
 				default :
-					return VoxelShapes.or(makeCuboidShape(16, 0, 16, 0, 32, -16), makeCuboidShape(16, 0, 0, 0, 32, -16)).withOffset(offset.x,
-							offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(16, 0, 16, 0, 32, -16), makeCuboidShape(16, 0, 0, 0, 32, -16)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 				case NORTH :
-					return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 32, 32), makeCuboidShape(0, 0, 16, 16, 32, 32)).withOffset(offset.x, offset.y,
-							offset.z);
+					return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 32, 32), makeCuboidShape(0, 0, 16, 16, 32, 32)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 				case EAST :
-					return VoxelShapes.or(makeCuboidShape(16, 0, 0, -16, 32, 16), makeCuboidShape(0, 0, 0, -16, 32, 16)).withOffset(offset.x,
-							offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(16, 0, 0, -16, 32, 16), makeCuboidShape(0, 0, 0, -16, 32, 16)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 				case WEST :
-					return VoxelShapes.or(makeCuboidShape(0, 0, 16, 32, 32, 0), makeCuboidShape(16, 0, 16, 32, 32, 0)).withOffset(offset.x, offset.y,
-							offset.z);
+					return VoxelShapes.or(makeCuboidShape(0, 0, 16, 32, 32, 0), makeCuboidShape(16, 0, 16, 32, 32, 0)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 			}
 		}
 

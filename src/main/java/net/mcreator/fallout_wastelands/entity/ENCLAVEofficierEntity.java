@@ -54,6 +54,7 @@ public class ENCLAVEofficierEntity extends FalloutWastelandsModElements.ModEleme
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.6f, 1.8f)).build("enclav_eofficier").setRegistryName("enclav_eofficier");
+
 	public ENCLAVEofficierEntity(FalloutWastelandsModElements instance) {
 		super(instance, 541);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ENCLAVEofficierRenderer.ModelRegisterHandler());
@@ -70,6 +71,7 @@ public class ENCLAVEofficierEntity extends FalloutWastelandsModElements.ModEleme
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}
+
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
@@ -106,9 +108,14 @@ public class ENCLAVEofficierEntity extends FalloutWastelandsModElements.ModEleme
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.5, false));
+			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.5, false) {
+				@Override
+				protected double getAttackReachSqr(LivingEntity entity) {
+					return (double) (4.0 + entity.getWidth() * entity.getWidth());
+				}
+			});
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 0.4));
-			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
 			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, false));

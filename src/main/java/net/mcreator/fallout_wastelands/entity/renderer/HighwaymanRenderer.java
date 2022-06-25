@@ -1,3 +1,4 @@
+
 package net.mcreator.fallout_wastelands.entity.renderer;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -33,6 +34,7 @@ public class HighwaymanRenderer {
 					{
 						this.addLayer(new GlowingLayer<>(this));
 					}
+
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("fallout_wastelands:textures/highwaytwo.png");
@@ -107,6 +109,7 @@ public class HighwaymanRenderer {
 		private final ModelRenderer tirepiece22;
 		private final ModelRenderer tirepiece23;
 		private final ModelRenderer tirepiece24;
+
 		public Modelhighwayman() {
 			textureWidth = 512;
 			textureHeight = 512;
@@ -357,6 +360,8 @@ public class HighwaymanRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 		}
 	}
+
 }

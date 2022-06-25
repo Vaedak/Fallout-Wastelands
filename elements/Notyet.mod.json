@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 28,
   "_type": "achievement",
   "definition": {
     "achievementName": "Not Yet",
@@ -11,14 +11,14 @@
     "disableDisplay": false,
     "showPopup": false,
     "announceToChat": false,
-    "hideIfNotCompleted": false,
+    "hideIfNotCompleted": true,
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardFunction": "No function",
     "rewardXP": 1,
     "achievementType": "task",
     "parent": {
-      "value": "CUSTOM:Jointheworld"
+      "value": "CUSTOM:Thewastelands"
     },
     "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"custom_trigger\" x=\"103\" y=\"142\"><next><block type=\"advancement_trigger\" deletable=\"false\"></block></next></block></xml>"
   }

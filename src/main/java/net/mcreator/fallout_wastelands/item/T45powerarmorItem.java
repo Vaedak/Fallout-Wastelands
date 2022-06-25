@@ -29,8 +29,10 @@ import net.mcreator.fallout_wastelands.procedures.T45powerarmorBodyTickEventProc
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -45,6 +47,7 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 	public static final Item legs = null;
 	@ObjectHolder("fallout_wastelands:t_45powerarmor_boots")
 	public static final Item boots = null;
+
 	public T45powerarmorItem(FalloutWastelandsModElements instance) {
 		super(instance, 160);
 	}
@@ -117,11 +120,9 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 						double x = entity.getPosX();
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							T45powerarmorHelmetTickEventProcedure.executeProcedure($_dependencies);
-						}
+
+						T45powerarmorHelmetTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("t_45powerarmor_helmet"));
 		elements.items
@@ -149,11 +150,9 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 						double x = entity.getPosX();
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							T45powerarmorBodyTickEventProcedure.executeProcedure($_dependencies);
-						}
+
+						T45powerarmorBodyTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("t_45powerarmor_chestplate"));
 		elements.items
@@ -180,11 +179,9 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 						double x = entity.getPosX();
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							T45powerarmorLeggingsTickEventProcedure.executeProcedure($_dependencies);
-						}
+
+						T45powerarmorLeggingsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("t_45powerarmor_leggings"));
 		elements.items
@@ -211,14 +208,13 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 						double x = entity.getPosX();
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							T45powerarmorBootsTickEventProcedure.executeProcedure($_dependencies);
-						}
+
+						T45powerarmorBootsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("t_45powerarmor_boots"));
 	}
+
 	// Made with Blockbench 3.5.4
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
@@ -234,6 +230,7 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 		private final ModelRenderer head;
 		private final ModelRenderer tube;
 		private final ModelRenderer lamptow;
+
 		public Modeltfourtyfive() {
 			textureWidth = 128;
 			textureHeight = 32;
@@ -302,6 +299,8 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 		}
 	}
+
 }
