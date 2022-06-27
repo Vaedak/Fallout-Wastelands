@@ -12,7 +12,7 @@
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": "CUSTOM:Ninemmammo"
+      "value": ""
     },
     "shootConstantly": false,
     "usageCount": 100,

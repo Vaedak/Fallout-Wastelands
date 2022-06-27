@@ -56,7 +56,7 @@
     "bootsImmuneToFire": false,
     "maxDamage": 40,
     "damageValueHelmet": 4,
-    "damageValueBody": 6,
+    "damageValueBody": 8,
     "damageValueLeggings": 6,
     "damageValueBoots": 3,
     "enchantability": 9,

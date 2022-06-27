@@ -29,7 +29,7 @@
     "bulletParticles": false,
     "bulletIgnitesFire": false,
     "bulletItemTexture": {
-      "value": "CUSTOM:Moltenaluminiumblock"
+      "value": "CUSTOM:Bulletmobs"
     },
     "bulletModel": "Default",
     "customBulletModelTexture": "",

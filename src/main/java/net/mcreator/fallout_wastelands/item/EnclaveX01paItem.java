@@ -28,10 +28,7 @@ import net.mcreator.fallout_wastelands.procedures.EnclaveX01paBodyTickEventProce
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import java.util.Collections;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -120,8 +117,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						EnclaveX01paHelmetTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+						EnclaveX01paHelmetTickEventProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("enclave_x_01pa_helmet"));
 		elements.items
@@ -150,8 +146,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						EnclaveX01paBodyTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+						EnclaveX01paBodyTickEventProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("enclave_x_01pa_chestplate"));
 		elements.items
@@ -179,8 +174,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						EnclaveX01paLeggingsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+						EnclaveX01paLeggingsTickEventProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("enclave_x_01pa_leggings"));
 		elements.items
@@ -208,8 +202,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						EnclaveX01paBootsTickEventProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+						EnclaveX01paBootsTickEventProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("enclave_x_01pa_boots"));
 	}

@@ -76,6 +76,9 @@ public class FalloutWastelandsModVariables {
 			nbt.putString("Radiation2", instance.Radiation2);
 			nbt.putDouble("Fuel", instance.Fuel);
 			nbt.putDouble("radioactivity_gauge", instance.radioactivity_gauge);
+			nbt.putDouble("Power", instance.Power);
+			nbt.putBoolean("InPowerArmor", instance.InPowerArmor);
+			nbt.putBoolean("CanUseWeapon", instance.CanUseWeapon);
 			return nbt;
 		}
 
@@ -87,6 +90,9 @@ public class FalloutWastelandsModVariables {
 			instance.Radiation2 = nbt.getString("Radiation2");
 			instance.Fuel = nbt.getDouble("Fuel");
 			instance.radioactivity_gauge = nbt.getDouble("radioactivity_gauge");
+			instance.Power = nbt.getDouble("Power");
+			instance.InPowerArmor = nbt.getBoolean("InPowerArmor");
+			instance.CanUseWeapon = nbt.getBoolean("CanUseWeapon");
 		}
 	}
 
@@ -96,6 +102,9 @@ public class FalloutWastelandsModVariables {
 		public String Radiation2 = "";
 		public double Fuel = 0;
 		public double radioactivity_gauge = 0;
+		public double Power = 0;
+		public boolean InPowerArmor = false;
+		public boolean CanUseWeapon = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -134,6 +143,9 @@ public class FalloutWastelandsModVariables {
 		clone.Radioactivity1 = original.Radioactivity1;
 		clone.Radiation2 = original.Radiation2;
 		clone.Fuel = original.Fuel;
+		clone.Power = original.Power;
+		clone.InPowerArmor = original.InPowerArmor;
+		clone.CanUseWeapon = original.CanUseWeapon;
 		if (!event.isWasDeath()) {
 			clone.radioactivity_gauge = original.radioactivity_gauge;
 		}
@@ -166,6 +178,9 @@ public class FalloutWastelandsModVariables {
 					variables.Radiation2 = message.data.Radiation2;
 					variables.Fuel = message.data.Fuel;
 					variables.radioactivity_gauge = message.data.radioactivity_gauge;
+					variables.Power = message.data.Power;
+					variables.InPowerArmor = message.data.InPowerArmor;
+					variables.CanUseWeapon = message.data.CanUseWeapon;
 				}
 			});
 			context.setPacketHandled(true);

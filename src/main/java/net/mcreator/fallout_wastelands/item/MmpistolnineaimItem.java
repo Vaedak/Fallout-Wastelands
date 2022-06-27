@@ -18,7 +18,6 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.ActionResult;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.UseAction;
-import net.minecraft.item.ShootableItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -89,40 +88,13 @@ public class MmpistolnineaimItem extends FalloutWastelandsModElements.ModElement
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				if (true) {
-					ItemStack stack = ShootableItem.getHeldAmmo(entity, e -> e.getItem() == NinemmammoItem.block);
-					if (stack == ItemStack.EMPTY) {
-						for (int i = 0; i < entity.inventory.mainInventory.size(); i++) {
-							ItemStack teststack = entity.inventory.mainInventory.get(i);
-							if (teststack != null && teststack.getItem() == NinemmammoItem.block) {
-								stack = teststack;
-								break;
-							}
-						}
-					}
-					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 5f, 1, 0);
-						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
-						if (entity.abilities.isCreativeMode) {
-							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
-						} else {
-							if (new ItemStack(NinemmammoItem.block).isDamageable()) {
-								if (stack.attemptDamageItem(1, random, entity)) {
-									stack.shrink(1);
-									stack.setDamage(0);
-									if (stack.isEmpty())
-										entity.inventory.deleteStack(stack);
-								}
-							} else {
-								stack.shrink(1);
-								if (stack.isEmpty())
-									entity.inventory.deleteStack(stack);
-							}
-						}
+					ArrowCustomEntity entityarrow = shoot(world, entity, random, 5f, 1, 0);
+					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
+					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
 
-						MmpistolnineRangedItemUsedProcedure.executeProcedure(
-								Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-										.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-					}
+					MmpistolnineRangedItemUsedProcedure.executeProcedure(
+							Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				}
 			}
 		}
@@ -159,7 +131,7 @@ public class MmpistolnineaimItem extends FalloutWastelandsModElements.ModElement
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return new ItemStack(NinemmammoItem.block);
+			return ItemStack.EMPTY;
 		}
 
 		@Override
