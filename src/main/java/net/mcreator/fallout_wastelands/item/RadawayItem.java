@@ -4,13 +4,13 @@ package net.mcreator.fallout_wastelands.item;
 import net.minecraft.entity.ai.attributes.Attributes;
 
 @FalloutWastelandsModElements.ModElement.Tag
-public class CoffeeItem extends FalloutWastelandsModElements.ModElement {
+public class RadawayItem extends FalloutWastelandsModElements.ModElement {
 
-	@ObjectHolder("fallout_wastelands:coffee")
+	@ObjectHolder("fallout_wastelands:radaway")
 	public static final Item block = null;
 
-	public CoffeeItem(FalloutWastelandsModElements instance) {
-		super(instance, 1393);
+	public RadawayItem(FalloutWastelandsModElements instance) {
+		super(instance, 1410);
 
 	}
 
@@ -22,9 +22,9 @@ public class CoffeeItem extends FalloutWastelandsModElements.ModElement {
 	public static class ItemCustom extends Item {
 
 		public ItemCustom() {
-			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON)
-					.food((new Food.Builder()).hunger(4).saturation(7f).setAlwaysEdible().build()));
-			setRegistryName("coffee");
+			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(16).rarity(Rarity.COMMON)
+					.food((new Food.Builder()).hunger(-5).saturation(-0.5f).setAlwaysEdible().build()));
+			setRegistryName("radaway");
 		}
 
 		@Override
@@ -49,7 +49,13 @@ public class CoffeeItem extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 0F;
+			return 1F;
+		}
+
+		@Override
+		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
+			super.addInformation(itemstack, world, list, flag);
+			list.add(new StringTextComponent("A drug used to cure radiation"));
 		}
 
 		@Override
@@ -60,7 +66,7 @@ public class CoffeeItem extends FalloutWastelandsModElements.ModElement {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			CoffeeFoodEatenProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+			RadawayPlayerFinishesUsingItemProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 
 			return retval;

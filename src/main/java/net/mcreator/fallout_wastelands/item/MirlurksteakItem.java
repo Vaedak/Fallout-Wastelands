@@ -1,24 +1,17 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.Food;
-import net.minecraft.block.BlockState;
-
-import net.mcreator.fallout_wastelands.itemgroup.WastelandersitemsItemGroup;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+import net.minecraft.entity.ai.attributes.Attributes;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class MirlurksteakItem extends FalloutWastelandsModElements.ModElement {
+
 	@ObjectHolder("fallout_wastelands:mirlurksteak")
 	public static final Item block = null;
 
 	public MirlurksteakItem(FalloutWastelandsModElements instance) {
-		super(instance, 1387);
+		super(instance, 1389);
+
 	}
 
 	@Override
@@ -27,6 +20,7 @@ public class MirlurksteakItem extends FalloutWastelandsModElements.ModElement {
 	}
 
 	public static class ItemCustom extends Item {
+
 		public ItemCustom() {
 			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON)
 					.food((new Food.Builder()).hunger(6).saturation(1f)
@@ -49,5 +43,7 @@ public class MirlurksteakItem extends FalloutWastelandsModElements.ModElement {
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 0F;
 		}
+
 	}
+
 }

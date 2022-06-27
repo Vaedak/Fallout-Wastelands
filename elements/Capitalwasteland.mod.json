@@ -9,6 +9,9 @@
     "undergroundBlock": {
       "value": "CUSTOM:Wastlandstone"
     },
+    "underwaterBlock": {
+      "value": ""
+    },
     "airColor": {
       "value": -12886976,
       "falpha": 0.0

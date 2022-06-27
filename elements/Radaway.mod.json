@@ -3,17 +3,17 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "nukacola",
+    "texture": "radaway",
     "customModelName": "Normal",
-    "name": "Nuka Cola",
+    "name": "Radaway",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:Wastelandersitems"
     },
-    "stackSize": 1,
+    "stackSize": 16,
     "enchantability": 0,
-    "useDuration": 20,
-    "toolType": 0.0,
+    "useDuration": 5,
+    "toolType": 1.0,
     "damageCount": 0,
     "recipeRemainder": {
       "value": ""
@@ -24,23 +24,25 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [],
+    "specialInfo": [
+      "A drug used to cure radiation"
+    ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "onFinishUsingItem": {
-      "name": "NeutronadeFoodEaten"
+      "name": "RadawayPlayerFinishesUsingItem"
     },
     "hasDispenseBehavior": false,
     "isFood": true,
-    "nutritionalValue": 20,
-    "saturation": 5.0,
+    "nutritionalValue": -5,
+    "saturation": -0.5,
     "eatResultItem": {
       "value": ""
     },
     "isMeat": false,
-    "isAlwaysEdible": false,
+    "isAlwaysEdible": true,
     "animation": "drink"
   }
 }

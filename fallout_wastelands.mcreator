@@ -20300,14 +20300,6 @@
       "registry_name": "turret_fake_projectile"
     },
     {
-      "name": "RealTurretProjectile",
-      "type": "rangeditem",
-      "sortid": 1413,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "real_turret_projectile"
-    },
-    {
       "name": "MachinegunTurretOnEntityTickUpdatenew",
       "type": "procedure",
       "sortid": 1414,
@@ -20350,6 +20342,38 @@
           }
         ]
       }
+    },
+    {
+      "name": "RealTurretProjectile",
+      "type": "rangeditem",
+      "sortid": 1413,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "real_turret_projectile"
+    },
+    {
+      "name": "RadawayPlayerFinishesUsingItem",
+      "type": "procedure",
+      "sortid": 1410,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radaway_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Radaway",
+      "type": "item",
+      "sortid": 1410,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radaway"
     }
   ],
   "variable_elements": [
@@ -21451,7 +21475,6 @@
       "item.wastlanders.wrench": "Wrench",
       "block.fallout_wastelands.vaultfloor_2": "Vault Floor Block",
       "block.fallout_wastelands.enclavebunkerfloor": "Enclave Bunker Floor",
-      "item.fallout_wastelands.real_turret_projectile": "Real Turret Projectile",
       "block.fallout_wastelands.vaultanimation_62": "Vault Door",
       "block.fallout_wastelands.vaultanimation_63": "Vault Door",
       "block.wastlanders.blastwindows": "Blast Windows",
@@ -21592,7 +21615,6 @@
       "item.fallout_wastelands.enclaveofficierarmor_leggings": "Enclave Officier Pants ",
       "block.fallout_wastelands.bo_slights": "BoS Light",
       "item.fallout_wastelands.redpaintcan": "Red Paint Can",
-      "item.fallout_wastelands.turret_fake_projectile": "Turret Fake Projectile",
       "item.fallout_wastelands.enclave_x_01pa_leggings": "Enclave APA Leggings",
       "block.fallout_wastelands.vault_door_frame": "Vault Door Frame",
       "item.wastlanders.ingot_tin": "Tin Ingot",
