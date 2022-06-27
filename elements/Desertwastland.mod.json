@@ -9,6 +9,9 @@
     "undergroundBlock": {
       "value": "CUSTOM:Wastelanddirt"
     },
+    "underwaterBlock": {
+      "value": ""
+    },
     "airColor": {
       "value": -8475242,
       "falpha": 0.0

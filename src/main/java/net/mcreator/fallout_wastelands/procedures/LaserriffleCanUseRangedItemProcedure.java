@@ -1,6 +1,10 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.item.ItemStack;
+
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
 
 public class LaserriffleCanUseRangedItemProcedure {
 
@@ -10,11 +14,8 @@ public class LaserriffleCanUseRangedItemProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure LaserriffleCanUseRangedItem!");
 			return false;
 		}
-
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-
 		return (itemstack.getOrCreateTag().getDouble("BulletCountLaserRifle") > 0
 				&& itemstack.getOrCreateTag().getBoolean("NewMagLoaded") == true) == true;
 	}
-
 }

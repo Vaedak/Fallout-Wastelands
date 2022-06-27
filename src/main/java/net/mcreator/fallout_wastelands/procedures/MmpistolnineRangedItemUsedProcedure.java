@@ -1,6 +1,12 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
 
 public class MmpistolnineRangedItemUsedProcedure {
 
@@ -15,10 +21,8 @@ public class MmpistolnineRangedItemUsedProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure MmpistolnineRangedItemUsed!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-
 		{
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -56,5 +60,4 @@ public class MmpistolnineRangedItemUsedProcedure {
 			}
 		}
 	}
-
 }

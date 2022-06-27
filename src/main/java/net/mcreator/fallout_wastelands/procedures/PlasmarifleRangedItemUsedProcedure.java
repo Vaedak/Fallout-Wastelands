@@ -1,6 +1,12 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
 
 public class PlasmarifleRangedItemUsedProcedure {
 
@@ -15,10 +21,8 @@ public class PlasmarifleRangedItemUsedProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure PlasmarifleRangedItemUsed!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-
 		if (entity instanceof PlayerEntity)
 			((PlayerEntity) entity).getCooldownTracker().setCooldown(itemstack.getItem(), (int) 7);
 		if (itemstack.getOrCreateTag().getBoolean("NewMagLoaded") == true) {
@@ -28,5 +32,4 @@ public class PlasmarifleRangedItemUsedProcedure {
 			}
 		}
 	}
-
 }

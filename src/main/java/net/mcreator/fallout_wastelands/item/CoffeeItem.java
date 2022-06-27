@@ -1,17 +1,33 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.world.World;
+import net.minecraft.item.UseAction;
+import net.minecraft.item.Rarity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.item.Food;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.fallout_wastelands.procedures.CoffeeFoodEatenProcedure;
+import net.mcreator.fallout_wastelands.itemgroup.WastelandersitemsItemGroup;
+import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class CoffeeItem extends FalloutWastelandsModElements.ModElement {
-
 	@ObjectHolder("fallout_wastelands:coffee")
 	public static final Item block = null;
 
 	public CoffeeItem(FalloutWastelandsModElements instance) {
 		super(instance, 1393);
-
 	}
 
 	@Override
@@ -20,7 +36,6 @@ public class CoffeeItem extends FalloutWastelandsModElements.ModElement {
 	}
 
 	public static class ItemCustom extends Item {
-
 		public ItemCustom() {
 			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON)
 					.food((new Food.Builder()).hunger(4).saturation(7f).setAlwaysEdible().build()));
@@ -55,17 +70,13 @@ public class CoffeeItem extends FalloutWastelandsModElements.ModElement {
 		@Override
 		public ItemStack onItemUseFinish(ItemStack itemstack, World world, LivingEntity entity) {
 			ItemStack retval = super.onItemUseFinish(itemstack, world, entity);
-
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
 			CoffeeFoodEatenProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-
 			return retval;
 		}
-
 	}
-
 }
