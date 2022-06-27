@@ -2,9 +2,9 @@
 package net.mcreator.fallout_wastelands.potion;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class RadiationPotionEffect {
+public class TurretShakeActivatorPotionEffect {
 
-	@ObjectHolder("fallout_wastelands:radiation")
+	@ObjectHolder("fallout_wastelands:turret_shake_activator")
 	public static final Effect potion = null;
 
 	@SubscribeEvent
@@ -15,13 +15,13 @@ public class RadiationPotionEffect {
 	public static class EffectCustom extends Effect {
 
 		public EffectCustom() {
-			super(EffectType.HARMFUL, -9799897);
-			setRegistryName("radiation");
+			super(EffectType.NEUTRAL, -1);
+			setRegistryName("turret_shake_activator");
 		}
 
 		@Override
 		public String getName() {
-			return "effect.radiation";
+			return "effect.turret_shake_activator";
 		}
 
 		@Override
@@ -36,17 +36,17 @@ public class RadiationPotionEffect {
 
 		@Override
 		public boolean shouldRenderInvText(EffectInstance effect) {
-			return true;
+			return false;
 		}
 
 		@Override
 		public boolean shouldRender(EffectInstance effect) {
-			return true;
+			return false;
 		}
 
 		@Override
 		public boolean shouldRenderHUD(EffectInstance effect) {
-			return true;
+			return false;
 		}
 
 		@Override

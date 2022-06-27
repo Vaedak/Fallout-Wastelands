@@ -12,12 +12,6 @@
     "isBad": true,
     "isBenefitical": false,
     "renderStatusInInventory": true,
-    "renderStatusInHUD": true,
-    "onStarted": {
-      "name": "RadiationEffectStartedapplied"
-    },
-    "onActiveTick": {
-      "name": "RadiationOnEffectActiveTick"
-    }
+    "renderStatusInHUD": true
   }
 }

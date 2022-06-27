@@ -1,17 +1,9 @@
 
 package net.mcreator.fallout_wastelands.potion;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.RegistryEvent;
-
-import net.minecraft.potion.EffectType;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effect;
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RadioprotectionPotionEffect {
+
 	@ObjectHolder("fallout_wastelands:radioprotection")
 	public static final Effect potion = null;
 
@@ -21,6 +13,7 @@ public class RadioprotectionPotionEffect {
 	}
 
 	public static class EffectCustom extends Effect {
+
 		public EffectCustom() {
 			super(EffectType.BENEFICIAL, -3152267);
 			setRegistryName("radioprotection");
@@ -60,5 +53,7 @@ public class RadioprotectionPotionEffect {
 		public boolean isReady(int duration, int amplifier) {
 			return true;
 		}
+
 	}
+
 }

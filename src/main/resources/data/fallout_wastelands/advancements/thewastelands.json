@@ -23,7 +23,7 @@
     }
   },
   "rewards": {
-    "experience": 5
+    "experience": 1
   },
   "parent": "fallout_wastelands:jointheworld"
 }

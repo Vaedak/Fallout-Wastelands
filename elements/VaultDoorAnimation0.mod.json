@@ -9,7 +9,7 @@
     "textureRight": "",
     "textureBack": "",
     "renderType": 2,
-    "customModelName": "vauldoor:default",
+    "customModelName": "vaultanimation0:default",
     "rotationMode": 1,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
@@ -58,9 +58,6 @@
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
-    "emittedRedstonePower": {
-      "fixedValue": 15.0
-    },
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
       "value": ""
@@ -78,21 +75,6 @@
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "METAL"
-    },
-    "breakSound": {
-      "value": ""
-    },
-    "fallSound": {
-      "value": ""
-    },
-    "hitSound": {
-      "value": ""
-    },
-    "placeSound": {
-      "value": ""
-    },
-    "stepSound": {
-      "value": ""
     },
     "luminance": 0,
     "unbreakable": false,

@@ -15,7 +15,7 @@
     "rewardLoot": [],
     "rewardRecipes": [],
     "rewardFunction": "No function",
-    "rewardXP": 5,
+    "rewardXP": 1,
     "achievementType": "task",
     "parent": {
       "value": "CUSTOM:Jointheworld"
