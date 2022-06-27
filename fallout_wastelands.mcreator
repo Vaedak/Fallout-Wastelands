@@ -20197,6 +20197,71 @@
           }
         ]
       }
+    },
+    {
+      "name": "MachinegunTurretOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1410,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "machinegun_turret_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TurretShakeActivator",
+      "type": "potioneffect",
+      "sortid": 1411,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "turret_shake_activator"
+    },
+    {
+      "name": "MachinegunTurretEntityShakingCondition",
+      "type": "procedure",
+      "sortid": 1411,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "machinegun_turret_entity_shaking_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MachinegunTurret",
+      "type": "livingentity",
+      "sortid": 1410,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "machinegun_turret"
     }
   ],
   "variable_elements": [
@@ -20593,6 +20658,7 @@
       "block.wastlanders.steelblock": "Steel Block",
       "block.wastlanders.wastelanduraniumore": "Wasteland Uranium Ore",
       "item.fallout_wastelands.meetingtheoversser": "Meetingtheoversser",
+      "entity.fallout_wastelands.machinegun_turret": "Machinegun Turret",
       "advancements.itsalive.title": "It\u0027s Alive !",
       "item.fallout_wastelands.uraniumingot": "Uranium Ingot",
       "block.fallout_wastelands.wastelandcobblestairs": "Wasteland Cobblestone Stairs",
@@ -20607,6 +20673,7 @@
       "item.fallout_wastelands.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
       "item.fallout_wastelands.vaulttecplating": "Vault Tec Plating",
       "item.fallout_wastelands.mobmachinegun": "Mobmachinegun",
+      "effect.radioprotection": "Radiation protection",
       "entity.fallout_wastelands.malewastelander_2": "Wastelander",
       "entity.fallout_wastelands.malewastelander_1": "Wastelander",
       "item.wastlanders.basesupermutant": "Super Mutant Grunt Spawn Egg",
@@ -20637,6 +20704,7 @@
       "itemGroup.tabwastelanderscombattab": "Wastelanders Combat",
       "block.wastlanders.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
+      "item.fallout_wastelands.radx": "Rad-X",
       "block.fallout_wastelands.xander_2": "Xander 2",
       "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_3": "Xander 3",
@@ -20765,6 +20833,7 @@
       "block.fallout_wastelands.dooranimation_182": "Vault Door135",
       "block.fallout_wastelands.dooranimation_181": "Vault Door135",
       "block.fallout_wastelands.dooranimation_180": "Vault Door135",
+      "item.fallout_wastelands.machinegun_turret_spawn_egg": "Machinegun Turret Spawn Egg",
       "block.fallout_wastelands.plasterstairs": "Plaster Stairs",
       "block.wastlanders.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.t_45powerarmor_boots": "T-45 Power Armor Boots",
@@ -21005,6 +21074,7 @@
       "item.minecraft.splash_potion.effect.radiation": "Splash Radiation Poisoning",
       "block.fallout_wastelands.charredplankslab": "Charred Plank Slab",
       "block.fallout_wastelands.closing_90": "Vault Door",
+      "item.fallout_wastelands.hazmat_boots": "Hazmat Boots",
       "block.fallout_wastelands.closing_91": "Vault Door",
       "block.wastlanders.wastelandcopper": "Wasteland Copper Ore",
       "item.fallout_wastelands.enclaveofficierarmor_chestplate": "Enclave Officier Coat ",
@@ -21215,6 +21285,7 @@
       "block.fallout_wastelands.vaultanimation_10": "Vault Door",
       "block.wastlanders.tirestack": "Tire Stack",
       "item.minecraft.tipped_arrow.effect.radiation": "Arrow of Radiation Poisoning",
+      "item.fallout_wastelands.hazmat_leggings": "Hazmat Leggings",
       "item.fallout_wastelands.uraniumnugget": "Uranium Nugget",
       "block.wastlanders.militaryplatedradiationwarrior": "Military plating (radiation)",
       "block.fallout_wastelands.plasterwall": "Plaster Wall",
@@ -21238,6 +21309,7 @@
       "block.fallout_wastelands.vaultanimation_18": "Vault Door",
       "block.wastlanders.sheetmetal": "Sheet metal",
       "block.fallout_wastelands.wastelandbrick": "Wasteland Brick",
+      "item.fallout_wastelands.hazmat_chestplate": "Hazmat Body",
       "block.fallout_wastelands.vaultanimation_73": "Vault Door",
       "block.fallout_wastelands.vaultanimation_74": "Vault Door",
       "block.fallout_wastelands.vaultanimation_71": "Vault Door",
@@ -21308,6 +21380,7 @@
       "block.wastlanders.wastlandconcrete": "Old Concrete",
       "block.fallout_wastelands.vaultanimation_65": "Vault Door",
       "subtitles.tenmmshootb": "",
+      "item.fallout_wastelands.combatarmor_helmet": "MKICombat Helmet",
       "entity.wastlanders.rangedsupermutant": "Supermutant Brute",
       "item.fallout_wastelands.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
       "item.wastlanders.frbcannon": "Frbcannon",
@@ -21391,6 +21464,7 @@
       "item.fallout_wastelands.bottlecaps": "Bottlecaps",
       "advancements.vaultdweller.descr": "The time have come for you to leave the vault . You should go have a chat with the overseer at the lower level .",
       "block.wastlanders.brotherhoodofsteelmetalplating": "BoS Metal Plating (lines)",
+      "item.fallout_wastelands.combatarmor_leggings": "MKI Combat Leggings",
       "block.fallout_wastelands.bo_sdoor": "BoS Blast Door",
       "block.wastlanders.militaryplatingwall": "Military Plated Wall",
       "block.fallout_wastelands.cellinglights": "Celling Lights",
@@ -21422,6 +21496,7 @@
       "entity.wastlanders.highwayman": "Highwayman",
       "item.fallout_wastelands.track": "Track Segment",
       "item.fallout_wastelands.wasteland": "Wasteland Portal Igniter",
+      "item.fallout_wastelands.combatarmor_boots": "MKI Combat Boots",
       "item.fallout_wastelands.cigarettepack": "Cigarette Pack",
       "entity.fallout_wastelands.enclav_eofficier": "Enclave Officier",
       "block.wastlanders.wastelanddiamond": "Wasteland Diamond Ore",
@@ -21487,6 +21562,7 @@
       "block.fallout_wastelands.closing_145": "Vault Door",
       "item.wastlanders.closecombatsupermutant": "Closecombatsupermutant Spawn Egg",
       "block.fallout_wastelands.closing_140": "Vault Door",
+      "item.fallout_wastelands.combatarmor_chestplate": "MKI Combat Body",
       "block.fallout_wastelands.wastelanddiamond": "Wasteland Diamond Ore",
       "entity.fallout_wastelands.raidergunner": "Raider Gunner",
       "entity.fallout_wastelands.enclavepowerarmorsoldier": "Enclave Soldier (power armor)",
@@ -21511,6 +21587,7 @@
       "block.fallout_wastelands.militaryplatingblockhazard": "Military Plating (Hazard)",
       "block.wastlanders.charredplanksstairs": "Charred Plank Stairs",
       "item.fallout_wastelands.humanbrain": "Human Brain",
+      "effect.turret_shake_activator": "Shake",
       "block.fallout_wastelands.moltenironblock": "Molten Iron Block",
       "block.fallout_wastelands.closing_165": "Vault Door",
       "block.wastlanders.rottenplankfence": "Rotten Plank Fence",
@@ -21527,6 +21604,7 @@
       "item.wastlanders.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
       "item.wastlanders.militarygradeaccessbadge": "Military Grade Access Badge",
       "block.fallout_wastelands.tinblock": "Tin Block",
+      "item.fallout_wastelands.hazmat_helmet": "Hazmat Helmet",
       "block.fallout_wastelands.wastelandrock": "Wasteland Cobblestone",
       "block.fallout_wastelands.rottenplanks": "Rotten Plank",
       "block.fallout_wastelands.closing_180": "Vault Door",

@@ -99,19 +99,6 @@
           "x": 114,
           "y": 89
         }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "(Vault coordinates x0 z0)",
-          "color": {
-            "value": -13395712,
-            "falpha": 0.0
-          },
-          "name": "(Vault coordinates x0 z0)",
-          "x": 159,
-          "y": 107
-        }
       }
     ],
     "gridSettings": {

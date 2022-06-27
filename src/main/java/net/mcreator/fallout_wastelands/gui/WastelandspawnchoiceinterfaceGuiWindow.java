@@ -85,7 +85,6 @@ public class WastelandspawnchoiceinterfaceGuiWindow extends ContainerScreen<Wast
 		this.font.drawString(ms, "If so you will spawn in a vault .", 15, 16, -13395712);
 		this.font.drawString(ms, "Spawning in the vault will trigger the main quest", -20, 34, -13395712);
 		this.font.drawString(ms, "The main quest is actually early WIP (1% done)", -11, 52, -3407872);
-		this.font.drawString(ms, "(Vault coordinates x0 z0)", 33, 70, -13395712);
 	}
 
 	@Override

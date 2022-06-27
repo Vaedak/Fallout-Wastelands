@@ -1,9 +1,23 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
+
+import net.minecraft.world.World;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.potion.RadiationPotionEffect;
+import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Collection;
 
 public class RadiationeffectapplianceProcedure {
-
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
 		@SubscribeEvent
@@ -32,9 +46,7 @@ public class RadiationeffectapplianceProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Radiationeffectappliance!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
-
 		if (!(new Object() {
 			boolean check(Entity _entity) {
 				if (_entity instanceof LivingEntity) {
@@ -54,5 +66,4 @@ public class RadiationeffectapplianceProcedure {
 			}
 		}
 	}
-
 }

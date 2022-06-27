@@ -1,6 +1,11 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
 
 public class ThemachinegunRangedItemUsedProcedure {
 
@@ -15,10 +20,8 @@ public class ThemachinegunRangedItemUsedProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure ThemachinegunRangedItemUsed!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-
 		if (itemstack.getOrCreateTag().getBoolean("NewMagLoaded") == true) {
 			if (itemstack.getOrCreateTag().getDouble("BulletCounter") > 0) {
 				itemstack.getOrCreateTag().putDouble("BulletCounter", (itemstack.getOrCreateTag().getDouble("BulletCounter") - 1));
@@ -54,5 +57,4 @@ public class ThemachinegunRangedItemUsedProcedure {
 			}
 		}
 	}
-
 }

@@ -1,6 +1,10 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.item.ItemStack;
+
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
 
 public class NailgunCanUseRangedItemProcedure {
 
@@ -10,10 +14,7 @@ public class NailgunCanUseRangedItemProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure NailgunCanUseRangedItem!");
 			return false;
 		}
-
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-
 		return (itemstack.getOrCreateTag().getDouble("BulletCount") > 0 && itemstack.getOrCreateTag().getBoolean("NewMagLoaded") == true) == true;
 	}
-
 }
