@@ -1,9 +1,17 @@
 
 package net.mcreator.fallout_wastelands.potion;
 
+import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.RegistryEvent;
+
+import net.minecraft.potion.EffectType;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effect;
+
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TurretShakeActivatorPotionEffect {
-
 	@ObjectHolder("fallout_wastelands:turret_shake_activator")
 	public static final Effect potion = null;
 
@@ -13,7 +21,6 @@ public class TurretShakeActivatorPotionEffect {
 	}
 
 	public static class EffectCustom extends Effect {
-
 		public EffectCustom() {
 			super(EffectType.NEUTRAL, -1);
 			setRegistryName("turret_shake_activator");
@@ -53,7 +60,5 @@ public class TurretShakeActivatorPotionEffect {
 		public boolean isReady(int duration, int amplifier) {
 			return true;
 		}
-
 	}
-
 }
