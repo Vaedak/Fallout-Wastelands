@@ -18,7 +18,6 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.ActionResult;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.UseAction;
-import net.minecraft.item.ShootableItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -29,7 +28,6 @@ import net.minecraft.entity.IRendersAsItem;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
 
 import net.mcreator.fallout_wastelands.procedures.NailgunRangedItemUsedProcedure;
 import net.mcreator.fallout_wastelands.procedures.NailgunEntitySwingsItemProcedure;
@@ -110,40 +108,13 @@ public class NailgunItem extends FalloutWastelandsModElements.ModElement {
 				double z = entity.getPosZ();
 				if (NailgunCanUseRangedItemProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("itemstack", itemstack))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-					ItemStack stack = ShootableItem.getHeldAmmo(entity, e -> e.getItem() == Blocks.AIR.asItem());
-					if (stack == ItemStack.EMPTY) {
-						for (int i = 0; i < entity.inventory.mainInventory.size(); i++) {
-							ItemStack teststack = entity.inventory.mainInventory.get(i);
-							if (teststack != null && teststack.getItem() == Blocks.AIR.asItem()) {
-								stack = teststack;
-								break;
-							}
-						}
-					}
-					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 1f, 1.5, 1);
-						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
-						if (entity.abilities.isCreativeMode) {
-							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
-						} else {
-							if (new ItemStack(Blocks.AIR).isDamageable()) {
-								if (stack.attemptDamageItem(1, random, entity)) {
-									stack.shrink(1);
-									stack.setDamage(0);
-									if (stack.isEmpty())
-										entity.inventory.deleteStack(stack);
-								}
-							} else {
-								stack.shrink(1);
-								if (stack.isEmpty())
-									entity.inventory.deleteStack(stack);
-							}
-						}
+					ArrowCustomEntity entityarrow = shoot(world, entity, random, 1f, 1.5, 1);
+					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
+					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
 
-						NailgunRangedItemUsedProcedure.executeProcedure(
-								Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-										.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-					}
+					NailgunRangedItemUsedProcedure.executeProcedure(
+							Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				}
 			}
 		}
@@ -180,7 +151,7 @@ public class NailgunItem extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return new ItemStack(Blocks.AIR);
+			return ItemStack.EMPTY;
 		}
 
 		@Override

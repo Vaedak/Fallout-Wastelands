@@ -12,7 +12,7 @@
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": "Blocks.AIR"
+      "value": ""
     },
     "shootConstantly": false,
     "usageCount": 1000,

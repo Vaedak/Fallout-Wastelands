@@ -59,6 +59,7 @@ public class PlasmarifleEntitySwingsItemProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		if (itemstack.getOrCreateTag().getDouble("BulletCountLaserRifle") == 0) {
+			itemstack.getOrCreateTag().putBoolean("magcheck", (false));
 			itemstack.getOrCreateTag().putBoolean("NewMagLoaded", (false));
 			if (((entity instanceof PlayerEntity)
 					? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(FusionmicrocellItem.block))
@@ -87,6 +88,7 @@ public class PlasmarifleEntitySwingsItemProcedure {
 
 					private void run() {
 						itemstack.getOrCreateTag().putBoolean("NewMagLoaded", (true));
+						itemstack.getOrCreateTag().putBoolean("magcheck", (true));
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
 				}.start(world, (int) 50);
@@ -159,6 +161,11 @@ public class PlasmarifleEntitySwingsItemProcedure {
 									.getValue(new ResourceLocation("fallout_wastelands:emptygunfire")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
+			}
+		}
+		if (itemstack.getOrCreateTag().getDouble("BulletCountLaserRifle") > 0) {
+			if (entity.getPersistentData().getBoolean("magcheck") == true) {
+				itemstack.getOrCreateTag().putBoolean("NewMagLoaded", (true));
 			}
 		}
 	}

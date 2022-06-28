@@ -11,7 +11,7 @@
       "name": "MachinegunTurretEntityShakingCondition"
     },
     "modelWidth": 0.5,
-    "modelHeight": 1.0,
+    "modelHeight": 1.2000000000000002,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
@@ -24,7 +24,7 @@
       "falpha": 0.0
     },
     "creativeTab": {
-      "value": "CUSTOM:Wastelandersitems"
+      "value": "MISC"
     },
     "isBoss": false,
     "bossBarColor": "PINK",
@@ -52,7 +52,7 @@
     "attackStrength": 0,
     "attackKnockback": 0.0,
     "knockbackResistance": 10.0,
-    "movementSpeed": 0.3,
+    "movementSpeed": 0.0,
     "armorBaseValue": 4.0,
     "trackingRange": 64,
     "health": 15,
@@ -102,19 +102,19 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "onMobTickUpdate": {
-      "name": "MachinegunTurretOnEntityTickUpdate"
+      "name": "MachinegunTurretOnEntityTickUpdatenew"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">TRUE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityLiving</field><field name=\"condition\">null,null</field></block></next></block></next></block><block type=\"attack_on_collide\" x=\"821\" y=\"251\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field></block></next></block><block type=\"look_around\" collapsed=\"true\" x=\"1190\" y=\"353\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">0</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">TRUE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityLiving</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block><block type=\"attack_on_collide\" x=\"426\" y=\"250\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field></block><block type=\"attack_on_collide\" x=\"821\" y=\"251\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block><block type=\"look_around\" x=\"1042\" y=\"264\"><field name=\"condition\">null,null</field></block><block type=\"look_around\" collapsed=\"true\" x=\"582\" y=\"307\"><field name=\"condition\">null,null</field></block></xml>",
     "breedable": false,
     "tameable": false,
     "breedTriggerItems": [],
-    "ranged": false,
+    "ranged": true,
     "rangedAttackItem": {
       "value": ""
     },
-    "rangedItemType": "Default item",
+    "rangedItemType": "TurretFakeProjectile",
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
     "spawningProbability": 20,

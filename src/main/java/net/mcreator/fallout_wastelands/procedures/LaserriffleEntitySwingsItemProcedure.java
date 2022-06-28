@@ -161,5 +161,6 @@ public class LaserriffleEntitySwingsItemProcedure {
 				}
 			}
 		}
+		entity.getPersistentData().putBoolean("tagName", (true));
 	}
 }
