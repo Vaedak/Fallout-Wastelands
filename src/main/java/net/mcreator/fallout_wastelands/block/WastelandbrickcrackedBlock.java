@@ -1,32 +1,18 @@
 
 package net.mcreator.fallout_wastelands.block;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.loot.LootContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.BlockItem;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
-
-import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
-
-import java.util.List;
-import java.util.Collections;
+import net.minecraft.util.SoundEvent;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class WastelandbrickcrackedBlock extends FalloutWastelandsModElements.ModElement {
+
 	@ObjectHolder("fallout_wastelands:wastelandbrickcracked")
 	public static final Block block = null;
 
 	public WastelandbrickcrackedBlock(FalloutWastelandsModElements instance) {
 		super(instance, 1422);
+
 	}
 
 	@Override
@@ -36,8 +22,10 @@ public class WastelandbrickcrackedBlock extends FalloutWastelandsModElements.Mod
 	}
 
 	public static class CustomBlock extends Block {
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(7f, 10f).setLightLevel(s -> 0));
+
 			setRegistryName("wastelandbrickcracked");
 		}
 
@@ -48,10 +36,13 @@ public class WastelandbrickcrackedBlock extends FalloutWastelandsModElements.Mod
 
 		@Override
 		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
 			return Collections.singletonList(new ItemStack(this, 1));
 		}
+
 	}
+
 }

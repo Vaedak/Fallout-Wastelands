@@ -77,9 +77,12 @@ public class FalloutWastelandsModVariables {
 			nbt.putDouble("Fuel", instance.Fuel);
 			nbt.putDouble("radioactivity_gauge", instance.radioactivity_gauge);
 			nbt.putBoolean("RADUI0", instance.RADUI0);
-			nbt.putBoolean("RADUI1", instance.RADUI1);
 			nbt.putBoolean("RADUI2", instance.RADUI2);
+			nbt.putBoolean("RADUI1", instance.RADUI1);
 			nbt.putBoolean("RADUI3", instance.RADUI3);
+			nbt.putBoolean("InPowerArmor", instance.InPowerArmor);
+			nbt.putDouble("Power", instance.Power);
+			nbt.putBoolean("CanUseWeapon", instance.CanUseWeapon);
 			return nbt;
 		}
 
@@ -92,9 +95,12 @@ public class FalloutWastelandsModVariables {
 			instance.Fuel = nbt.getDouble("Fuel");
 			instance.radioactivity_gauge = nbt.getDouble("radioactivity_gauge");
 			instance.RADUI0 = nbt.getBoolean("RADUI0");
-			instance.RADUI1 = nbt.getBoolean("RADUI1");
 			instance.RADUI2 = nbt.getBoolean("RADUI2");
+			instance.RADUI1 = nbt.getBoolean("RADUI1");
 			instance.RADUI3 = nbt.getBoolean("RADUI3");
+			instance.InPowerArmor = nbt.getBoolean("InPowerArmor");
+			instance.Power = nbt.getDouble("Power");
+			instance.CanUseWeapon = nbt.getBoolean("CanUseWeapon");
 		}
 	}
 
@@ -105,9 +111,12 @@ public class FalloutWastelandsModVariables {
 		public double Fuel = 0;
 		public double radioactivity_gauge = 0;
 		public boolean RADUI0 = false;
-		public boolean RADUI1 = false;
 		public boolean RADUI2 = false;
+		public boolean RADUI1 = false;
 		public boolean RADUI3 = false;
+		public boolean InPowerArmor = false;
+		public double Power = 0;
+		public boolean CanUseWeapon = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -146,11 +155,14 @@ public class FalloutWastelandsModVariables {
 		clone.Radioactivity1 = original.Radioactivity1;
 		clone.Radiation2 = original.Radiation2;
 		clone.Fuel = original.Fuel;
+		clone.InPowerArmor = original.InPowerArmor;
+		clone.Power = original.Power;
+		clone.CanUseWeapon = original.CanUseWeapon;
 		if (!event.isWasDeath()) {
 			clone.radioactivity_gauge = original.radioactivity_gauge;
 			clone.RADUI0 = original.RADUI0;
-			clone.RADUI1 = original.RADUI1;
 			clone.RADUI2 = original.RADUI2;
+			clone.RADUI1 = original.RADUI1;
 			clone.RADUI3 = original.RADUI3;
 		}
 	}
@@ -183,9 +195,12 @@ public class FalloutWastelandsModVariables {
 					variables.Fuel = message.data.Fuel;
 					variables.radioactivity_gauge = message.data.radioactivity_gauge;
 					variables.RADUI0 = message.data.RADUI0;
-					variables.RADUI1 = message.data.RADUI1;
 					variables.RADUI2 = message.data.RADUI2;
+					variables.RADUI1 = message.data.RADUI1;
 					variables.RADUI3 = message.data.RADUI3;
+					variables.InPowerArmor = message.data.InPowerArmor;
+					variables.Power = message.data.Power;
+					variables.CanUseWeapon = message.data.CanUseWeapon;
 				}
 			});
 			context.setPacketHandled(true);

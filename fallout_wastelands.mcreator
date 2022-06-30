@@ -20248,22 +20248,37 @@
       "registry_name": "turret_shake_activator"
     },
     {
-      "name": "Protectron",
-      "type": "livingentity",
-      "sortid": 1412,
+      "name": "TV",
+      "type": "block",
+      "sortid": 1419,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "protectron"
+      "registry_name": "tv"
     },
     {
-      "name": "Radiation0UI",
-      "type": "procedure",
-      "sortid": 1413,
+      "name": "Wirefence",
+      "type": "block",
+      "sortid": 1418,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_0_ui",
+      "registry_name": "wirefence"
+    },
+    {
+      "name": "Theglowdirt",
+      "type": "block",
+      "sortid": 1421,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "theglowdirt"
+    },
+    {
+      "name": "BarbedwireEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 1417,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "barbedwire_entity_collides_in_the_block",
       "metadata": {
-        "return_type": "logic",
         "dependencies": [
           {
             "name": "entity",
@@ -20273,12 +20288,28 @@
       }
     },
     {
-      "name": "Radiation1UI",
-      "type": "procedure",
-      "sortid": 1414,
+      "name": "RadiationUI0",
+      "type": "overlay",
+      "sortid": 1413,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_1_ui",
+      "registry_name": "radiation_ui_0"
+    },
+    {
+      "name": "Barbedwire",
+      "type": "block",
+      "sortid": 1417,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "barbedwire"
+    },
+    {
+      "name": "Radiation0UI",
+      "type": "procedure",
+      "sortid": 1413,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_0_ui",
       "metadata": {
         "return_type": "logic",
         "dependencies": [
@@ -20307,12 +20338,21 @@
       }
     },
     {
-      "name": "RadiationUI0",
-      "type": "overlay",
-      "sortid": 1413,
+      "name": "Radiation1UI",
+      "type": "procedure",
+      "sortid": 1414,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_0"
+      "registry_name": "radiation_1_ui",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     },
     {
       "name": "Radiation3UI",
@@ -20343,44 +20383,12 @@
       }
     },
     {
-      "name": "BarbedwireEntityCollidesInTheBlock",
-      "type": "procedure",
-      "sortid": 1417,
+      "name": "Theglow",
+      "type": "biome",
+      "sortid": 1423,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "barbedwire_entity_collides_in_the_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Barbedwire",
-      "type": "block",
-      "sortid": 1417,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "barbedwire"
-    },
-    {
-      "name": "Wirefence",
-      "type": "block",
-      "sortid": 1418,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wirefence"
-    },
-    {
-      "name": "TV",
-      "type": "block",
-      "sortid": 1419,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tv"
+      "registry_name": "theglow"
     },
     {
       "name": "Mojaveyucca",
@@ -20391,14 +20399,6 @@
       "registry_name": "mojaveyucca"
     },
     {
-      "name": "Theglowdirt",
-      "type": "block",
-      "sortid": 1421,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "theglowdirt"
-    },
-    {
       "name": "Wastelandbrickcracked",
       "type": "block",
       "sortid": 1422,
@@ -20407,12 +20407,180 @@
       "registry_name": "wastelandbrickcracked"
     },
     {
-      "name": "Theglow",
-      "type": "biome",
-      "sortid": 1423,
+      "name": "TurretFakeProjectileWhileProjectileFlyingTick",
+      "type": "procedure",
+      "sortid": 1412,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "theglow"
+      "registry_name": "turret_fake_projectile_while_projectile_flying_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FusionCoreItemInInventoryTick",
+      "type": "procedure",
+      "sortid": 1416,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_core_item_in_inventory_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FusionCoreItemIsDroppedByPlayer",
+      "type": "procedure",
+      "sortid": 1417,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_core_item_is_dropped_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TurretFakeProjectile",
+      "type": "rangeditem",
+      "sortid": 1412,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "turret_fake_projectile"
+    },
+    {
+      "name": "MachinegunTurretOnEntityTickUpdatenew",
+      "type": "procedure",
+      "sortid": 1414,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "machinegun_turret_on_entity_tick_updatenew",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TurretFakeProjectileRangedItemUsed",
+      "type": "procedure",
+      "sortid": 1415,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "turret_fake_projectile_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RealTurretProjectile",
+      "type": "rangeditem",
+      "sortid": 1413,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "real_turret_projectile"
+    },
+    {
+      "name": "PlayerTickCheckforPowerArmor",
+      "type": "procedure",
+      "sortid": 1418,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_tick_checkfor_power_armor",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FusionCore",
+      "type": "item",
+      "sortid": 1416,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusion_core"
+    },
+    {
+      "name": "CurrentPower",
+      "type": "overlay",
+      "sortid": 1420,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "current_power"
     }
   ],
   "variable_elements": [
@@ -20453,13 +20621,13 @@
       "value": "false"
     },
     {
-      "name": "RADUI1",
+      "name": "RADUI2",
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
     },
     {
-      "name": "RADUI2",
+      "name": "RADUI1",
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
@@ -20468,6 +20636,24 @@
       "name": "RADUI3",
       "type": "logic",
       "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "InPowerArmor",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Power",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "CanUseWeapon",
+      "type": "logic",
+      "scope": "player_persistent",
       "value": "false"
     }
   ],
@@ -20988,7 +21174,6 @@
       "block.fallout_wastelands.closing_9": "Vault Door",
       "item.fallout_wastelands.robobrainengine": "Engine",
       "block.wastlanders.rustediron": "Rusted Iron",
-      "block.fallout_wastelands.mojaveyucca": "Mojave Yucca",
       "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
       "block.fallout_wastelands.closing_4": "Vault Door",
       "block.fallout_wastelands.closing_3": "Vault Door",
@@ -21037,7 +21222,6 @@
       "block.fallout_wastelands.dooranimation_174": "Vault Door135",
       "block.fallout_wastelands.dooranimation_173": "Vault Door135",
       "block.fallout_wastelands.dooranimation_172": "Vault Door135",
-      "block.fallout_wastelands.wastelandbrickcracked": "Wasteland cracked Brick",
       "biome.wastlanders.capitalwasteland": "Capitalwasteland",
       "subtitles.portalentrance": "",
       "block.fallout_wastelands.dooranimation_179": "Vault Door135",
@@ -21107,7 +21291,6 @@
       "block.fallout_wastelands.concretepattern": "Concrete Pattern",
       "item.wastlanders.track": "Track Segment",
       "entity.fallout_wastelands.chromedraiderfemale": "Female Wasteland Raider",
-      "block.fallout_wastelands.barbedwire": "Barbed Wire",
       "block.wastlanders.ammunitionbox": "Ammunition Box",
       "subtitles.removingfusioncell": "Removing Fusion Cell",
       "block.fallout_wastelands.sheetmetalwall": "Sheet Metal Wall",
@@ -21150,7 +21333,6 @@
       "block.wastlanders.wastelandtinore": "Wasteland Tin Ore",
       "block.fallout_wastelands.testbunkerdoor": "Military Plated Door",
       "subtitles.ninemmshotb": "",
-      "biome.fallout_wastelands.theglow": "The Glow",
       "block.wastlanders.tinblock": "Tin Block",
       "block.wastlanders.redindustrialblockstairs": "Red Industrial Stairs",
       "item.fallout_wastelands.enclave_x_01pa_boots": "Enclave APA Boots",
@@ -21522,7 +21704,6 @@
       "block.fallout_wastelands.ammunitionbox": "Ammunition Box",
       "block.fallout_wastelands.vaultanimation_87": "Vault Door",
       "item.fallout_wastelands.rustedcombatweapon": "Junk sword",
-      "block.fallout_wastelands.theglowdirt": "The Glow Dirt",
       "item.fallout_wastelands.closecombatsupermutant_spawn_egg": "Close Combat Supermutant Spawn Egg",
       "entity.fallout_wastelands.femalevaultdweller_2": "Vault Dweller",
       "entity.fallout_wastelands.femalevaultdweller_1": "Vault Dweller ",
@@ -21635,7 +21816,6 @@
       "item.wastlanders.chromeraider_spawn_egg": "Wasteland Raider Spawn Egg",
       "item.fallout_wastelands.cannedporkshop": "Canned Porkshop",
       "item.wastlanders.tireiron": "Tire Iron",
-      "block.fallout_wastelands.wirefence": "Wire Fence",
       "block.fallout_wastelands.gore": "Gore",
       "item.fallout_wastelands.septammo": "7.62 ammo",
       "fluid.fevgoo": "Fevgoo",
@@ -21682,7 +21862,6 @@
       "item.fallout_wastelands.wasteland": "Wasteland Portal Igniter",
       "item.fallout_wastelands.combatarmor_boots": "MKI Combat Boots",
       "item.fallout_wastelands.cigarettepack": "Cigarette Pack",
-      "block.fallout_wastelands.tv": "Television",
       "entity.fallout_wastelands.enclav_eofficier": "Enclave Officier",
       "block.wastlanders.wastelanddiamond": "Wasteland Diamond Ore",
       "item.fallout_wastelands.enclaveofficierarmor_leggings": "Enclave Officier Pants ",

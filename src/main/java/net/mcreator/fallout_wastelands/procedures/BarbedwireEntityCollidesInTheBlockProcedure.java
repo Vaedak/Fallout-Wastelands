@@ -1,11 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.util.DamageSource;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class BarbedwireEntityCollidesInTheBlockProcedure {
 
@@ -15,7 +10,11 @@ public class BarbedwireEntityCollidesInTheBlockProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure BarbedwireEntityCollidesInTheBlock!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		entity.attackEntityFrom(DamageSource.GENERIC, (float) 0.5);
+
 	}
+
 }
