@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/cbrick_crached",
+    "up": "fallout_wastelands:blocks/cbrick_crached",
+    "north": "fallout_wastelands:blocks/cbrick_crached",
+    "east": "fallout_wastelands:blocks/cbrick_crached",
+    "south": "fallout_wastelands:blocks/cbrick_crached",
+    "west": "fallout_wastelands:blocks/cbrick_crached",
+    "particle": "fallout_wastelands:blocks/cbrick_crached"
+  }
+}

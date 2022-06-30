@@ -10,12 +10,11 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.potion.TurretShakeActivatorPotionEffect;
 import net.mcreator.fallout_wastelands.item.ThemachinegunItem;
+import net.mcreator.fallout_wastelands.entity.MachinegunTurretEntity;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Random;
@@ -62,49 +61,48 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure MachinegunTurretOnEntityTickUpdate!");
 			return;
 		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure MachinegunTurretOnEntityTickUpdate!");
+		if (dependencies.get("sourceentity") == null) {
+			if (!dependencies.containsKey("sourceentity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure MachinegunTurretOnEntityTickUpdate!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		if (entity.getPersistentData().getDouble("ShootingTimer") == 0) {
-			if (entity instanceof LivingEntity) {
-				LivingEntity _ent = (LivingEntity) entity;
-				if (!_ent.world.isRemote()) {
-					ThemachinegunItem.shoot(_ent.world, _ent, new Random(), 1, 5, 5);
+		Entity sourceentity = (Entity) dependencies.get("sourceentity");
+		if (sourceentity instanceof MachinegunTurretEntity.CustomEntity == true) {
+			if (sourceentity.getPersistentData().getDouble("ShootingTimer") == 0) {
+				if (sourceentity instanceof LivingEntity) {
+					LivingEntity _ent = (LivingEntity) sourceentity;
+					if (!_ent.world.isRemote()) {
+						ThemachinegunItem.shoot(_ent.world, _ent, new Random(), 4, (float) 0.1, 0);
+					}
 				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-							"execute at @s anchored eyes run particle minecraft:flame ^-0.45 ^-0.38 ^1 ~ ~ 0 0 0 force");
+				{
+					Entity _ent = sourceentity;
+					if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+						_ent.world.getServer().getCommandManager().handleCommand(
+								_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+								"execute at @s anchored eyes run particle minecraft:flame ^-0.45 ^-0.38 ^1.5 ~ ~ 0 0 0 force");
+					}
 				}
+				if (world instanceof World && !world.isRemote()) {
+					((World) world)
+							.playSound(null, new BlockPos(x, y, z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("fallout_wastelands:tenmmshootb")),
+									SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				} else {
+					((World) world).playSound(x, y, z,
+							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+									.getValue(new ResourceLocation("fallout_wastelands:tenmmshootb")),
+							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+				}
+				sourceentity.getPersistentData().putDouble("ShootingTimer", 10);
 			}
-			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos(x, y, z),
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("fallout_wastelands:gun")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1);
-			} else {
-				((World) world).playSound(x, y, z,
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("fallout_wastelands:gun")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
-			}
-			entity.getPersistentData().putDouble("ShootingTimer", 20);
-			entity.getPersistentData().putBoolean("Shot", (true));
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity)
-						.addPotionEffect(new EffectInstance(TurretShakeActivatorPotionEffect.potion, (int) 7, (int) 1, (false), (false)));
-		}
-		if (entity.getPersistentData().getDouble("ShootingTimer") > 0) {
-			entity.getPersistentData().putDouble("ShootingTimer", (entity.getPersistentData().getDouble("ShootingTimer") - 1));
-			if (entity.getPersistentData().getBoolean("Shot") == true) {
-				entity.getPersistentData().putBoolean("Shot", (false));
+			if (sourceentity.getPersistentData().getDouble("ShootingTimer") > 0) {
+				sourceentity.getPersistentData().putDouble("ShootingTimer", (sourceentity.getPersistentData().getDouble("ShootingTimer") - 1));
 			}
 		}
 	}

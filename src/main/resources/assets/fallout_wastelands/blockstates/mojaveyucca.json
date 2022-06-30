@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "fallout_wastelands:block/mojaveyucca"
+    },
+    "half=lower": {
+      "model": "fallout_wastelands:block/mojaveyucca_bottom"
+    }
+  }
+}

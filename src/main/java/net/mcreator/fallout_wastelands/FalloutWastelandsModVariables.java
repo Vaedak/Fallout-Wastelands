@@ -76,6 +76,10 @@ public class FalloutWastelandsModVariables {
 			nbt.putString("Radiation2", instance.Radiation2);
 			nbt.putDouble("Fuel", instance.Fuel);
 			nbt.putDouble("radioactivity_gauge", instance.radioactivity_gauge);
+			nbt.putBoolean("RADUI0", instance.RADUI0);
+			nbt.putBoolean("RADUI1", instance.RADUI1);
+			nbt.putBoolean("RADUI2", instance.RADUI2);
+			nbt.putBoolean("RADUI3", instance.RADUI3);
 			return nbt;
 		}
 
@@ -87,6 +91,10 @@ public class FalloutWastelandsModVariables {
 			instance.Radiation2 = nbt.getString("Radiation2");
 			instance.Fuel = nbt.getDouble("Fuel");
 			instance.radioactivity_gauge = nbt.getDouble("radioactivity_gauge");
+			instance.RADUI0 = nbt.getBoolean("RADUI0");
+			instance.RADUI1 = nbt.getBoolean("RADUI1");
+			instance.RADUI2 = nbt.getBoolean("RADUI2");
+			instance.RADUI3 = nbt.getBoolean("RADUI3");
 		}
 	}
 
@@ -96,6 +104,10 @@ public class FalloutWastelandsModVariables {
 		public String Radiation2 = "";
 		public double Fuel = 0;
 		public double radioactivity_gauge = 0;
+		public boolean RADUI0 = false;
+		public boolean RADUI1 = false;
+		public boolean RADUI2 = false;
+		public boolean RADUI3 = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -136,6 +148,10 @@ public class FalloutWastelandsModVariables {
 		clone.Fuel = original.Fuel;
 		if (!event.isWasDeath()) {
 			clone.radioactivity_gauge = original.radioactivity_gauge;
+			clone.RADUI0 = original.RADUI0;
+			clone.RADUI1 = original.RADUI1;
+			clone.RADUI2 = original.RADUI2;
+			clone.RADUI3 = original.RADUI3;
 		}
 	}
 
@@ -166,6 +182,10 @@ public class FalloutWastelandsModVariables {
 					variables.Radiation2 = message.data.Radiation2;
 					variables.Fuel = message.data.Fuel;
 					variables.radioactivity_gauge = message.data.radioactivity_gauge;
+					variables.RADUI0 = message.data.RADUI0;
+					variables.RADUI1 = message.data.RADUI1;
+					variables.RADUI2 = message.data.RADUI2;
+					variables.RADUI3 = message.data.RADUI3;
 				}
 			});
 			context.setPacketHandled(true);

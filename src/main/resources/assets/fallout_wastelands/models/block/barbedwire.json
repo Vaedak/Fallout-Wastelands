@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/barbed_wire_side",
+    "up": "fallout_wastelands:blocks/barbed_wire_side",
+    "north": "fallout_wastelands:blocks/barbed_wire_side",
+    "east": "fallout_wastelands:blocks/barber_wire_front",
+    "south": "fallout_wastelands:blocks/barbed_wire_side",
+    "west": "fallout_wastelands:blocks/barber_wire_front",
+    "particle": "fallout_wastelands:blocks/barbed_wire_side"
+  }
+}

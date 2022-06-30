@@ -1,0 +1,80 @@
+{
+  "_fv": 28,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "rad_0.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Radiation0UI"
+          },
+          "name": "rad_0.png",
+          "x": 330,
+          "y": 8
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "rad_1.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Radiation0UI"
+          },
+          "name": "rad_1.png",
+          "x": 330,
+          "y": 8
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "rad_2.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Radiation2UI"
+          },
+          "name": "rad_2.png",
+          "x": 330,
+          "y": 8
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "rad_3.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Radiation3UI"
+          },
+          "name": "rad_3.png",
+          "x": 330,
+          "y": 8
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "radiation_ui_base.png",
+          "use1Xscale": false,
+          "name": "radiation_ui_base.png",
+          "x": 411,
+          "y": 8
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

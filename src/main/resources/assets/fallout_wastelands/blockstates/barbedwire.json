@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fallout_wastelands:block/barbedwire"
+    },
+    "facing=east": {
+      "model": "fallout_wastelands:block/barbedwire",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "fallout_wastelands:block/barbedwire",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fallout_wastelands:block/barbedwire",
+      "y": 270
+    }
+  }
+}
