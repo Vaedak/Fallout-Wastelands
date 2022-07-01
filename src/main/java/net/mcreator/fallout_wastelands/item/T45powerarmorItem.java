@@ -22,10 +22,10 @@ import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.fallout_wastelands.procedures.T45powerarmorLeggingsTickEventProcedure;
-import net.mcreator.fallout_wastelands.procedures.T45powerarmorHelmetTickEventProcedure;
-import net.mcreator.fallout_wastelands.procedures.T45powerarmorBootsTickEventProcedure;
-import net.mcreator.fallout_wastelands.procedures.T45powerarmorBodyTickEventProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorLeggingsTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorHelmetTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorChestTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorBootsTickProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
@@ -118,7 +118,7 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						T45powerarmorHelmetTickEventProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorHelmetTickProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("t_45powerarmor_helmet"));
 		elements.items
@@ -147,7 +147,7 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						T45powerarmorBodyTickEventProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorChestTickProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("t_45powerarmor_chestplate"));
 		elements.items
@@ -175,7 +175,7 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						T45powerarmorLeggingsTickEventProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorLeggingsTickProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("t_45powerarmor_leggings"));
 		elements.items
@@ -203,7 +203,7 @@ public class T45powerarmorItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						T45powerarmorBootsTickEventProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorBootsTickProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("t_45powerarmor_boots"));
 	}

@@ -1,6 +1,16 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.IWorld;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.stream.Collectors;
+import java.util.function.Function;
+import java.util.Map;
+import java.util.List;
+import java.util.Comparator;
 
 public class TurretFakeProjectileWhileProjectileFlyingTickProcedure {
 
@@ -25,12 +35,10 @@ public class TurretFakeProjectileWhileProjectileFlyingTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure TurretFakeProjectileWhileProjectileFlyingTick!");
 			return;
 		}
-
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-
 		{
 			List<Entity> _entfound = world
 					.getEntitiesWithinAABB(Entity.class,
@@ -45,5 +53,4 @@ public class TurretFakeProjectileWhileProjectileFlyingTickProcedure {
 			}
 		}
 	}
-
 }

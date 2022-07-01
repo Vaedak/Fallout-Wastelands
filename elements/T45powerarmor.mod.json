@@ -11,16 +11,16 @@
     "enableBoots": true,
     "textureBoots": "powerarmorboots",
     "onHelmetTick": {
-      "name": "T45powerarmorHelmetTickEvent"
+      "name": "PowerArmorHelmetTick"
     },
     "onBodyTick": {
-      "name": "T45powerarmorBodyTickEvent"
+      "name": "PowerArmorChestTick"
     },
     "onLeggingsTick": {
-      "name": "T45powerarmorLeggingsTickEvent"
+      "name": "PowerArmorLeggingsTick"
     },
     "onBootsTick": {
-      "name": "T45powerarmorBootsTickEvent"
+      "name": "PowerArmorBootsTick"
     },
     "creativeTab": {
       "value": "CUSTOM:Wastelanderscombattab"
