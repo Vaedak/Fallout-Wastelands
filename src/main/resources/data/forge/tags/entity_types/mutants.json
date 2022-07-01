@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "fallout_wastelands:closecombatsupermutant",
+    "fallout_wastelands:rangedsupermutant",
+    "fallout_wastelands:basesupermutant",
+    "fallout_wastelands:ghoul",
+    "fallout_wastelands:mirelurk",
+    "fallout_wastelands:bloatfly"
+  ]
+}

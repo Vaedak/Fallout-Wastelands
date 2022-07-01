@@ -1,0 +1,26 @@
+{
+  "_fv": 28,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:Armyrobobrain"
+      },
+      {
+        "value": "CUSTOM:Friendlybrainbot"
+      },
+      {
+        "value": "CUSTOM:Highwayman"
+      },
+      {
+        "value": "CUSTOM:MachinegunTurret"
+      }
+    ],
+    "name": "robots",
+    "namespace": "forge"
+  }
+}

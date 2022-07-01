@@ -1,0 +1,41 @@
+{
+  "_fv": 28,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:Femalevaultdweller1"
+      },
+      {
+        "value": "CUSTOM:Femalevaultdweller2"
+      },
+      {
+        "value": "CUSTOM:Malevaultdweller1"
+      },
+      {
+        "value": "CUSTOM:Malevaultdweller2"
+      },
+      {
+        "value": "CUSTOM:Malewastelander1"
+      },
+      {
+        "value": "CUSTOM:Malewastelander2"
+      },
+      {
+        "value": "CUSTOM:Malewastelander3"
+      },
+      {
+        "value": "CUSTOM:Malewastelander4"
+      },
+      {
+        "value": "CUSTOM:Overseer"
+      }
+    ],
+    "name": "survivors",
+    "namespace": "forge"
+  }
+}

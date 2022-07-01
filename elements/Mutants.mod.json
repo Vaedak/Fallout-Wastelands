@@ -1,0 +1,32 @@
+{
+  "_fv": 28,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:Bloatfly"
+      },
+      {
+        "value": "CUSTOM:Basesupermutant"
+      },
+      {
+        "value": "CUSTOM:Closecombatsupermutant"
+      },
+      {
+        "value": "CUSTOM:Ghoul"
+      },
+      {
+        "value": "CUSTOM:Mirelurk"
+      },
+      {
+        "value": "CUSTOM:Rangedsupermutant"
+      }
+    ],
+    "name": "mutants",
+    "namespace": "forge"
+  }
+}

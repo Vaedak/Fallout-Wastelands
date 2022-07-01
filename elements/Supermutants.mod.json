@@ -1,0 +1,23 @@
+{
+  "_fv": 28,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:Basesupermutant"
+      },
+      {
+        "value": "CUSTOM:Rangedsupermutant"
+      },
+      {
+        "value": "CUSTOM:Closecombatsupermutant"
+      }
+    ],
+    "name": "supermutants",
+    "namespace": "forge"
+  }
+}

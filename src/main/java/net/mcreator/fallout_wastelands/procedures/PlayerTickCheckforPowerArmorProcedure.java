@@ -1,9 +1,26 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
+
+import net.minecraft.world.World;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.item.ItemStack;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.item.T45powerarmorItem;
+import net.mcreator.fallout_wastelands.item.EnclaveX01paItem;
+import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
+import java.util.HashMap;
 
 public class PlayerTickCheckforPowerArmorProcedure {
-
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
 		@SubscribeEvent
@@ -32,9 +49,7 @@ public class PlayerTickCheckforPowerArmorProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure PlayerTickCheckforPowerArmor!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
-
 		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
 				.getItem() == EnclaveX01paItem.helmet
 				|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
@@ -67,8 +82,6 @@ public class PlayerTickCheckforPowerArmorProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						if (entity instanceof LivingEntity)
-							((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 10, (int) 1, (false), (false)));
 					}
 				} else {
 					{
@@ -78,8 +91,6 @@ public class PlayerTickCheckforPowerArmorProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 10, (int) 1, (false), (false)));
 				}
 			} else {
 				{
@@ -89,8 +100,6 @@ public class PlayerTickCheckforPowerArmorProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 10, (int) 1, (false), (false)));
 			}
 		} else {
 			{
@@ -100,8 +109,6 @@ public class PlayerTickCheckforPowerArmorProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 10, (int) 1, (false), (false)));
 		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
@@ -110,12 +117,6 @@ public class PlayerTickCheckforPowerArmorProcedure {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, (int) 10, (int) 1, (false), (false)));
 			}
-			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power == 0) {
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 10, (int) 1, (false), (false)));
-			}
 		}
 	}
-
 }

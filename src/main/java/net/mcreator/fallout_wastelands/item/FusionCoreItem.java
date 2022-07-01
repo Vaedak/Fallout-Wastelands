@@ -1,17 +1,34 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.world.World;
+import net.minecraft.item.UseAction;
+import net.minecraft.item.Rarity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Item;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.fallout_wastelands.procedures.FusionCoreItemIsDroppedByPlayerProcedure;
+import net.mcreator.fallout_wastelands.procedures.FusionCoreItemInInventoryTickProcedure;
+import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class FusionCoreItem extends FalloutWastelandsModElements.ModElement {
-
 	@ObjectHolder("fallout_wastelands:fusion_core")
 	public static final Item block = null;
 
 	public FusionCoreItem(FalloutWastelandsModElements instance) {
 		super(instance, 1416);
-
 	}
 
 	@Override
@@ -20,7 +37,6 @@ public class FusionCoreItem extends FalloutWastelandsModElements.ModElement {
 	}
 
 	public static class ItemCustom extends Item {
-
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("fusion_core");
@@ -72,7 +88,5 @@ public class FusionCoreItem extends FalloutWastelandsModElements.ModElement {
 							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return true;
 		}
-
 	}
-
 }

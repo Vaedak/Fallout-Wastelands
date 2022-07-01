@@ -20581,6 +20581,101 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "current_power"
+    },
+    {
+      "name": "Theglowambiantradiation",
+      "type": "procedure",
+      "sortid": 1424,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "theglowambiantradiation",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Raiders",
+      "type": "tag",
+      "sortid": 1425,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raiders",
+      "path": "~/tags"
+    },
+    {
+      "name": "Supermutants",
+      "type": "tag",
+      "sortid": 1426,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "supermutants",
+      "path": "~/tags"
+    },
+    {
+      "name": "Mutants",
+      "type": "tag",
+      "sortid": 1427,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutants",
+      "path": "~/tags"
+    },
+    {
+      "name": "Survivors",
+      "type": "tag",
+      "sortid": 1428,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "survivors",
+      "path": "~/tags"
+    },
+    {
+      "name": "Enclave",
+      "type": "tag",
+      "sortid": 1429,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enclave",
+      "path": "~/tags"
+    },
+    {
+      "name": "Weapons",
+      "type": "tag",
+      "sortid": 1430,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weapons",
+      "path": "~/tags"
+    },
+    {
+      "name": "Robots",
+      "type": "tag",
+      "sortid": 1431,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "robots",
+      "path": "~/tags"
     }
   ],
   "variable_elements": [
@@ -21174,6 +21269,7 @@
       "block.fallout_wastelands.closing_9": "Vault Door",
       "item.fallout_wastelands.robobrainengine": "Engine",
       "block.wastlanders.rustediron": "Rusted Iron",
+      "block.fallout_wastelands.mojaveyucca": "Mojave Yucca",
       "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
       "block.fallout_wastelands.closing_4": "Vault Door",
       "block.fallout_wastelands.closing_3": "Vault Door",
@@ -21222,6 +21318,7 @@
       "block.fallout_wastelands.dooranimation_174": "Vault Door135",
       "block.fallout_wastelands.dooranimation_173": "Vault Door135",
       "block.fallout_wastelands.dooranimation_172": "Vault Door135",
+      "block.fallout_wastelands.wastelandbrickcracked": "Wasteland cracked Brick",
       "biome.wastlanders.capitalwasteland": "Capitalwasteland",
       "subtitles.portalentrance": "",
       "block.fallout_wastelands.dooranimation_179": "Vault Door135",
@@ -21291,6 +21388,7 @@
       "block.fallout_wastelands.concretepattern": "Concrete Pattern",
       "item.wastlanders.track": "Track Segment",
       "entity.fallout_wastelands.chromedraiderfemale": "Female Wasteland Raider",
+      "block.fallout_wastelands.barbedwire": "Barbed Wire",
       "block.wastlanders.ammunitionbox": "Ammunition Box",
       "subtitles.removingfusioncell": "Removing Fusion Cell",
       "block.fallout_wastelands.sheetmetalwall": "Sheet Metal Wall",
@@ -21333,6 +21431,7 @@
       "block.wastlanders.wastelandtinore": "Wasteland Tin Ore",
       "block.fallout_wastelands.testbunkerdoor": "Military Plated Door",
       "subtitles.ninemmshotb": "",
+      "biome.fallout_wastelands.theglow": "The Glow",
       "block.wastlanders.tinblock": "Tin Block",
       "block.wastlanders.redindustrialblockstairs": "Red Industrial Stairs",
       "item.fallout_wastelands.enclave_x_01pa_boots": "Enclave APA Boots",
@@ -21626,6 +21725,7 @@
       "block.fallout_wastelands.closing_200": "Vault Door135",
       "block.fallout_wastelands.sheetmetal": "Sheet metal",
       "block.fallout_wastelands.vaultanimation_39": "Vault Door",
+      "item.fallout_wastelands.fusion_core": "Fusion Core",
       "item.wastlanders.greenpaintcan": "Green Paint Can",
       "block.fallout_wastelands.decorativepipe": "Pipe",
       "block.wastlanders.redindustrialdoor": "Red Industrial Door",
@@ -21704,6 +21804,7 @@
       "block.fallout_wastelands.ammunitionbox": "Ammunition Box",
       "block.fallout_wastelands.vaultanimation_87": "Vault Door",
       "item.fallout_wastelands.rustedcombatweapon": "Junk sword",
+      "block.fallout_wastelands.theglowdirt": "Cracked Dirt",
       "item.fallout_wastelands.closecombatsupermutant_spawn_egg": "Close Combat Supermutant Spawn Egg",
       "entity.fallout_wastelands.femalevaultdweller_2": "Vault Dweller",
       "entity.fallout_wastelands.femalevaultdweller_1": "Vault Dweller ",
@@ -21727,6 +21828,7 @@
       "item.wastlanders.wrench": "Wrench",
       "block.fallout_wastelands.vaultfloor_2": "Vault Floor Block",
       "block.fallout_wastelands.enclavebunkerfloor": "Enclave Bunker Floor",
+      "item.fallout_wastelands.real_turret_projectile": "Real Turret Projectile",
       "block.fallout_wastelands.vaultanimation_62": "Vault Door",
       "block.fallout_wastelands.vaultanimation_63": "Vault Door",
       "block.wastlanders.blastwindows": "Blast Windows",
@@ -21816,6 +21918,7 @@
       "item.wastlanders.chromeraider_spawn_egg": "Wasteland Raider Spawn Egg",
       "item.fallout_wastelands.cannedporkshop": "Canned Porkshop",
       "item.wastlanders.tireiron": "Tire Iron",
+      "block.fallout_wastelands.wirefence": "Wire Fence",
       "block.fallout_wastelands.gore": "Gore",
       "item.fallout_wastelands.septammo": "7.62 ammo",
       "fluid.fevgoo": "Fevgoo",
@@ -21862,11 +21965,13 @@
       "item.fallout_wastelands.wasteland": "Wasteland Portal Igniter",
       "item.fallout_wastelands.combatarmor_boots": "MKI Combat Boots",
       "item.fallout_wastelands.cigarettepack": "Cigarette Pack",
+      "block.fallout_wastelands.tv": "Television",
       "entity.fallout_wastelands.enclav_eofficier": "Enclave Officier",
       "block.wastlanders.wastelanddiamond": "Wasteland Diamond Ore",
       "item.fallout_wastelands.enclaveofficierarmor_leggings": "Enclave Officier Pants ",
       "block.fallout_wastelands.bo_slights": "BoS Light",
       "item.fallout_wastelands.redpaintcan": "Red Paint Can",
+      "item.fallout_wastelands.turret_fake_projectile": "Turret Fake Projectile",
       "item.fallout_wastelands.enclave_x_01pa_leggings": "Enclave APA Leggings",
       "block.fallout_wastelands.vault_door_frame": "Vault Door Frame",
       "item.wastlanders.ingot_tin": "Tin Ingot",
@@ -22002,6 +22107,10 @@
       },
       {
         "name": "vault_door",
+        "children": []
+      },
+      {
+        "name": "tags",
         "children": []
       }
     ]

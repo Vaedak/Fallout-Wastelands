@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "fallout_wastelands:rangedsupermutant",
+    "fallout_wastelands:closecombatsupermutant",
+    "fallout_wastelands:basesupermutant"
+  ]
+}
