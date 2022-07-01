@@ -1,6 +1,26 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.CapabilityItemHandler;
+
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.item.ItemStack;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.block.Blocks;
+
+import net.mcreator.fallout_wastelands.potion.FrameIdentifierPotionEffect;
+import net.mcreator.fallout_wastelands.potion.CheckerIfExitedPotionEffect;
+import net.mcreator.fallout_wastelands.potion.CheckIfExitedMarkerPotionEffect;
+import net.mcreator.fallout_wastelands.potion.ArmorPlacerPotionEffect;
+import net.mcreator.fallout_wastelands.item.FrameArmorItem;
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
+import java.util.Collection;
 
 public class PowerArmorFramePlayerCollidesWithThisEntityProcedure {
 
@@ -15,10 +35,8 @@ public class PowerArmorFramePlayerCollidesWithThisEntityProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure PowerArmorFramePlayerCollidesWithThisEntity!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
-
 		boolean transferer = false;
 		boolean getisframelegs = false;
 		boolean transfer3 = false;
@@ -56,24 +74,20 @@ public class PowerArmorFramePlayerCollidesWithThisEntityProcedure {
 						entity.rotationYaw = (float) ((sourceentity.rotationYaw));
 						entity.setRenderYawOffset(entity.rotationYaw);
 						entity.prevRotationYaw = entity.rotationYaw;
-
 						if (entity instanceof LivingEntity) {
 							((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
 							((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
 							((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
 						}
-
 						entity.rotationPitch = (float) (20);
 						sourceentity.rotationYaw = (float) ((sourceentity.rotationYaw));
 						entity.setRenderYawOffset(entity.rotationYaw);
 						entity.prevRotationYaw = entity.rotationYaw;
-
 						if (entity instanceof LivingEntity) {
 							((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
 							((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
 							((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
 						}
-
 						sourceentity.rotationPitch = (float) (20);
 						sourceentity.setMotion(0, 0, 0);
 						if ((((sourceentity instanceof LivingEntity)
@@ -247,5 +261,4 @@ public class PowerArmorFramePlayerCollidesWithThisEntityProcedure {
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(ArmorPlacerPotionEffect.potion, (int) 60, (int) 1, (false), (false)));
 	}
-
 }

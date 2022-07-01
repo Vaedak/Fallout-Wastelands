@@ -1,6 +1,10 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
 
 public class DontMoveOnEffectActiveTickProcedure {
 
@@ -10,10 +14,7 @@ public class DontMoveOnEffectActiveTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure DontMoveOnEffectActiveTick!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
-
 		entity.setMotion(0, 0, 0);
 	}
-
 }

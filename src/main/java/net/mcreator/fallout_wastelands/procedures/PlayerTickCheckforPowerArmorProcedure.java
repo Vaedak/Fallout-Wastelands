@@ -1,9 +1,16 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
+
+import net.minecraft.world.World;
+import net.minecraft.entity.Entity;
+
+import java.util.Map;
+import java.util.HashMap;
 
 public class PlayerTickCheckforPowerArmorProcedure {
-
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
 		@SubscribeEvent
@@ -29,5 +36,4 @@ public class PlayerTickCheckforPowerArmorProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 
 	}
-
 }

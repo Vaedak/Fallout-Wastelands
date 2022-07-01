@@ -1,6 +1,20 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.items.CapabilityItemHandler;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.potion.ArmorPlacerPotionEffect;
+import net.mcreator.fallout_wastelands.entity.PowerArmorFrameEntity;
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.Map;
 
 public class ArmorPlacerEffectExpiresProcedure {
 
@@ -10,9 +24,7 @@ public class ArmorPlacerEffectExpiresProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure ArmorPlacerEffectExpires!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
-
 		if (entity instanceof PowerArmorFrameEntity.CustomEntity) {
 			if (entity instanceof LivingEntity) {
 				if (entity instanceof PlayerEntity)
@@ -115,5 +127,4 @@ public class ArmorPlacerEffectExpiresProcedure {
 			}
 		}
 	}
-
 }

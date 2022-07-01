@@ -1,19 +1,41 @@
 
 package net.mcreator.fallout_wastelands.keybind;
 
+import org.lwjgl.glfw.GLFW;
+
+import net.minecraftforge.fml.network.NetworkEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.minecraft.world.World;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.network.PacketBuffer;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.client.Minecraft;
+
+import net.mcreator.fallout_wastelands.procedures.ExitPowerArmorOnKeyReleasedProcedure;
+import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.stream.Stream;
+import java.util.function.Supplier;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class ExitPowerArmorKeyBinding extends FalloutWastelandsModElements.ModElement {
-
 	@OnlyIn(Dist.CLIENT)
 	private KeyBinding keys;
-
 	private long lastpress = 0;
 
 	public ExitPowerArmorKeyBinding(FalloutWastelandsModElements instance) {
 		super(instance, 1442);
-
 		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
 				KeyBindingPressedMessage::handler);
 	}
@@ -32,7 +54,6 @@ public class ExitPowerArmorKeyBinding extends FalloutWastelandsModElements.ModEl
 		if (Minecraft.getInstance().currentScreen == null) {
 			if (event.getKey() == keys.getKey().getKeyCode()) {
 				if (event.getAction() == GLFW.GLFW_PRESS) {
-
 					lastpress = System.currentTimeMillis();
 				} else if (event.getAction() == GLFW.GLFW_RELEASE) {
 					int dt = (int) (System.currentTimeMillis() - lastpress);
@@ -44,7 +65,6 @@ public class ExitPowerArmorKeyBinding extends FalloutWastelandsModElements.ModEl
 	}
 
 	public static class KeyBindingPressedMessage {
-
 		int type, pressedms;
 
 		public KeyBindingPressedMessage(int type, int pressedms) {
@@ -69,7 +89,6 @@ public class ExitPowerArmorKeyBinding extends FalloutWastelandsModElements.ModEl
 			});
 			context.setPacketHandled(true);
 		}
-
 	}
 
 	private static void pressAction(PlayerEntity entity, int type, int pressedms) {
@@ -77,11 +96,9 @@ public class ExitPowerArmorKeyBinding extends FalloutWastelandsModElements.ModEl
 		double x = entity.getPosX();
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
-
 		// security measure to prevent arbitrary chunk generation
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
-
 		if (type == 1) {
 
 			ExitPowerArmorOnKeyReleasedProcedure.executeProcedure(Stream
@@ -90,5 +107,4 @@ public class ExitPowerArmorKeyBinding extends FalloutWastelandsModElements.ModEl
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
-
 }

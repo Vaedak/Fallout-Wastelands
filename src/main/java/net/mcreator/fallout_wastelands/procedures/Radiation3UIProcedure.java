@@ -1,6 +1,11 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.Map;
 
 public class Radiation3UIProcedure {
 
@@ -10,9 +15,7 @@ public class Radiation3UIProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Radiation3UI!");
 			return false;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
-
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge < 200
 				&& (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -23,5 +26,4 @@ public class Radiation3UIProcedure {
 		return (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).RADUI1 == false;
 	}
-
 }

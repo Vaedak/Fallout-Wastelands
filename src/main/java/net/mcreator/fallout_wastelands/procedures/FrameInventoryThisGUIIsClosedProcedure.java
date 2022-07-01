@@ -1,6 +1,18 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.IWorld;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.potion.DontMovePotionEffect;
+import net.mcreator.fallout_wastelands.potion.ArmorPlacerPotionEffect;
+import net.mcreator.fallout_wastelands.entity.PowerArmorFrameEntity;
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.function.Function;
+import java.util.Map;
+import java.util.Comparator;
 
 public class FrameInventoryThisGUIIsClosedProcedure {
 
@@ -30,13 +42,11 @@ public class FrameInventoryThisGUIIsClosedProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure FrameInventoryThisGUIIsClosed!");
 			return;
 		}
-
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-
 		if (((Entity) world
 				.getEntitiesWithinAABB(PowerArmorFrameEntity.CustomEntity.class,
 						new AxisAlignedBB(x - (0.5 / 2d), y - (0.5 / 2d), z - (0.5 / 2d), x + (0.5 / 2d), y + (0.5 / 2d), z + (0.5 / 2d)), null)
@@ -58,5 +68,4 @@ public class FrameInventoryThisGUIIsClosedProcedure {
 			((LivingEntity) entity).removePotionEffect(DontMovePotionEffect.potion);
 		}
 	}
-
 }
