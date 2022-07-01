@@ -1,0 +1,50 @@
+{
+  "_fv": 28,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:Reaper"
+      },
+      {
+        "value": "CUSTOM:Wrench"
+      },
+      {
+        "value": "CUSTOM:Nailedwrench"
+      },
+      {
+        "value": "CUSTOM:Tireiron"
+      },
+      {
+        "value": "CUSTOM:Combatknife"
+      },
+      {
+        "value": "CUSTOM:Rustedcombatweapon"
+      },
+      {
+        "value": "CUSTOM:Breadroller"
+      },
+      {
+        "value": "CUSTOM:Laserriffle"
+      },
+      {
+        "value": "CUSTOM:Themachinegun"
+      },
+      {
+        "value": "CUSTOM:Nailgun"
+      },
+      {
+        "value": "CUSTOM:Tenmm"
+      },
+      {
+        "value": "CUSTOM:Plasmarifle"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "weapons",
+    "namespace": "forge"
+  }
+}

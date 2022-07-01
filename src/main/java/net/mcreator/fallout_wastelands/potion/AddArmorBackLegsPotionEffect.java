@@ -1,27 +1,9 @@
 
 package net.mcreator.fallout_wastelands.potion;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.RegistryEvent;
-
-import net.minecraft.world.World;
-import net.minecraft.potion.EffectType;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effect;
-import net.minecraft.entity.ai.attributes.AttributeModifierManager;
-import net.minecraft.entity.LivingEntity;
-
-import net.mcreator.fallout_wastelands.procedures.AddArmorBackLegsEffectExpiresProcedure;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AddArmorBackLegsPotionEffect {
+
 	@ObjectHolder("fallout_wastelands:add_armor_back_legs")
 	public static final Effect potion = null;
 
@@ -31,6 +13,7 @@ public class AddArmorBackLegsPotionEffect {
 	}
 
 	public static class EffectCustom extends Effect {
+
 		public EffectCustom() {
 			super(EffectType.NEUTRAL, -1);
 			setRegistryName("add_armor_back_legs");
@@ -82,5 +65,7 @@ public class AddArmorBackLegsPotionEffect {
 		public boolean isReady(int duration, int amplifier) {
 			return true;
 		}
+
 	}
+
 }

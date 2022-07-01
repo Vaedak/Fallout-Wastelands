@@ -1,39 +1,18 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.procedures.FrameArmorTickEventUniversalProcedure;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
-
 @FalloutWastelandsModElements.ModElement.Tag
 public class FrameArmorItem extends FalloutWastelandsModElements.ModElement {
+
 	@ObjectHolder("fallout_wastelands:frame_armor_helmet")
 	public static final Item helmet = null;
+
 	@ObjectHolder("fallout_wastelands:frame_armor_chestplate")
 	public static final Item body = null;
+
 	@ObjectHolder("fallout_wastelands:frame_armor_leggings")
 	public static final Item legs = null;
+
 	@ObjectHolder("fallout_wastelands:frame_armor_boots")
 	public static final Item boots = null;
 
@@ -85,7 +64,9 @@ public class FrameArmorItem extends FalloutWastelandsModElements.ModElement {
 				return 0f;
 			}
 		};
+
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)) {
+
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "fallout_wastelands:textures/models/armor/2enclaveofficeruniform__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1")
@@ -99,14 +80,12 @@ public class FrameArmorItem extends FalloutWastelandsModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				FrameArmorTickEventUniversalProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				FrameArmorTickEventUniversalProcedure.executeProcedure(Collections.emptyMap());
 			}
 		}.setRegistryName("frame_armor_helmet"));
+
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)) {
+
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "fallout_wastelands:textures/models/armor/2enclaveofficeruniform__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1")
@@ -119,14 +98,12 @@ public class FrameArmorItem extends FalloutWastelandsModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				FrameArmorTickEventUniversalProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				FrameArmorTickEventUniversalProcedure.executeProcedure(Collections.emptyMap());
 			}
 		}.setRegistryName("frame_armor_chestplate"));
+
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)) {
+
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "fallout_wastelands:textures/models/armor/2enclaveofficeruniform__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1")
@@ -139,14 +116,12 @@ public class FrameArmorItem extends FalloutWastelandsModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				FrameArmorTickEventUniversalProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				FrameArmorTickEventUniversalProcedure.executeProcedure(Collections.emptyMap());
 			}
 		}.setRegistryName("frame_armor_leggings"));
+
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)) {
+
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "fallout_wastelands:textures/models/armor/2enclaveofficeruniform__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1")
@@ -159,11 +134,7 @@ public class FrameArmorItem extends FalloutWastelandsModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				FrameArmorTickEventUniversalProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				FrameArmorTickEventUniversalProcedure.executeProcedure(Collections.emptyMap());
 			}
 		}.setRegistryName("frame_armor_boots"));
 	}

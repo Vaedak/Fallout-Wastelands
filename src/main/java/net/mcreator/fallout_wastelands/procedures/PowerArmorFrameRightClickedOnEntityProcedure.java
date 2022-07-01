@@ -1,42 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
-
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
-
-import net.mcreator.fallout_wastelands.potion.DontMovePotionEffect;
-import net.mcreator.fallout_wastelands.potion.CheckerIfExitedPotionEffect;
-import net.mcreator.fallout_wastelands.item.FrameArmorItem;
-import net.mcreator.fallout_wastelands.gui.FrameInventoryGui;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.Map;
-import java.util.Collections;
-
-import io.netty.buffer.Unpooled;
+import net.minecraftforge.eventbus.api.Event;
 
 public class PowerArmorFrameRightClickedOnEntityProcedure {
 
@@ -71,12 +35,14 @@ public class PowerArmorFrameRightClickedOnEntityProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure PowerArmorFrameRightClickedOnEntity!");
 			return;
 		}
+
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
+
 		boolean PartOne = false;
 		boolean PartThree = false;
 		boolean PartTwo = false;
@@ -144,11 +110,13 @@ public class PowerArmorFrameRightClickedOnEntityProcedure {
 				sourceentity.rotationYaw = (float) ((entity.rotationYaw));
 				entity.setRenderYawOffset(entity.rotationYaw);
 				entity.prevRotationYaw = entity.rotationYaw;
+
 				if (entity instanceof LivingEntity) {
 					((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
 					((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
 					((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
 				}
+
 				sourceentity.rotationPitch = (float) (20);
 				if (entity instanceof LivingEntity) {
 					((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
@@ -198,11 +166,13 @@ public class PowerArmorFrameRightClickedOnEntityProcedure {
 					sourceentity.rotationYaw = (float) ((entity.rotationYaw));
 					entity.setRenderYawOffset(entity.rotationYaw);
 					entity.prevRotationYaw = entity.rotationYaw;
+
 					if (entity instanceof LivingEntity) {
 						((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
 						((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
 						((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
 					}
+
 					sourceentity.rotationPitch = (float) (30);
 					if (entity instanceof LivingEntity) {
 						((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
@@ -211,6 +181,7 @@ public class PowerArmorFrameRightClickedOnEntityProcedure {
 						((LivingEntity) entity).removePotionEffect(Effects.SLOWNESS);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -412,6 +383,7 @@ public class PowerArmorFrameRightClickedOnEntityProcedure {
 							}
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 1);
 					if (PartTwo == true) {
 						PartTwo = (false);
@@ -429,13 +401,16 @@ public class PowerArmorFrameRightClickedOnEntityProcedure {
 							sourceentity.rotationYaw = (float) ((entity.rotationYaw));
 							entity.setRenderYawOffset(entity.rotationYaw);
 							entity.prevRotationYaw = entity.rotationYaw;
+
 							if (entity instanceof LivingEntity) {
 								((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
 								((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
 								((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
 							}
+
 							sourceentity.rotationPitch = (float) (30);
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -460,6 +435,7 @@ public class PowerArmorFrameRightClickedOnEntityProcedure {
 										entity.remove();
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 2);
 							if (entity instanceof LivingEntity) {
 								((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
@@ -483,11 +459,13 @@ public class PowerArmorFrameRightClickedOnEntityProcedure {
 					sourceentity.rotationYaw = (float) ((entity.rotationYaw));
 					entity.setRenderYawOffset(entity.rotationYaw);
 					entity.prevRotationYaw = entity.rotationYaw;
+
 					if (entity instanceof LivingEntity) {
 						((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
 						((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
 						((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
 					}
+
 					sourceentity.rotationPitch = (float) (30);
 					if (entity instanceof LivingEntity) {
 						((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
@@ -499,4 +477,5 @@ public class PowerArmorFrameRightClickedOnEntityProcedure {
 			}
 		}
 	}
+
 }

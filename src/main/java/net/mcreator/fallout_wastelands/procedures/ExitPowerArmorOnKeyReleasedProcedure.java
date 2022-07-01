@@ -1,24 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.potion.CheckerIfExitedPotionEffect;
-import net.mcreator.fallout_wastelands.potion.CheckIfExitedMarkerPotionEffect;
-import net.mcreator.fallout_wastelands.entity.PowerArmorFrameEntity;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class ExitPowerArmorOnKeyReleasedProcedure {
 
@@ -48,19 +30,23 @@ public class ExitPowerArmorOnKeyReleasedProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure ExitPowerArmorOnKeyReleased!");
 			return;
 		}
+
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
 			if (world instanceof ServerWorld) {
 				Entity entityToSpawn = new PowerArmorFrameEntity.CustomEntity(PowerArmorFrameEntity.entity, (World) world);
 				entityToSpawn.setLocationAndAngles(x, y, z, world.getRandom().nextFloat() * 360F, 0);
+
 				if (entityToSpawn instanceof MobEntity)
 					((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world, world.getDifficultyForLocation(entityToSpawn.getPosition()),
 							SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
+
 				world.addEntity(entityToSpawn);
 			}
 			{
@@ -81,4 +67,5 @@ public class ExitPowerArmorOnKeyReleasedProcedure {
 						.addPotionEffect(new EffectInstance(CheckIfExitedMarkerPotionEffect.potion, (int) 120, (int) 1, (false), (false)));
 		}
 	}
+
 }

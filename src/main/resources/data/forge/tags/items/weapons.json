@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "fallout_wastelands:wrench",
+    "fallout_wastelands:nailedwrench",
+    "fallout_wastelands:tireiron",
+    "fallout_wastelands:breadroller",
+    "fallout_wastelands:tenmm",
+    "fallout_wastelands:rustedcombatweapon",
+    "fallout_wastelands:themachinegun",
+    "fallout_wastelands:reaper",
+    "fallout_wastelands:nailgun",
+    "fallout_wastelands:plasmarifle",
+    "fallout_wastelands:laserriffle",
+    "fallout_wastelands:combatknife"
+  ]
+}

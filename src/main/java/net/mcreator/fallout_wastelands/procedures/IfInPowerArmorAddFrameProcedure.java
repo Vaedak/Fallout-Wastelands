@@ -1,26 +1,9 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-
-import net.minecraft.world.World;
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
-
-import net.mcreator.fallout_wastelands.item.FrameArmorItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
-import java.util.HashMap;
+import net.minecraftforge.eventbus.api.Event;
 
 public class IfInPowerArmorAddFrameProcedure {
+
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
 		@SubscribeEvent
@@ -49,7 +32,9 @@ public class IfInPowerArmorAddFrameProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure IfInPowerArmorAddFrame!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
 			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
@@ -98,4 +83,5 @@ public class IfInPowerArmorAddFrameProcedure {
 			}
 		}
 	}
+
 }

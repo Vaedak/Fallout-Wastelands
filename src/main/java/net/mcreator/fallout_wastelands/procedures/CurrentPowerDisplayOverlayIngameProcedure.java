@@ -1,11 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class CurrentPowerDisplayOverlayIngameProcedure {
 
@@ -15,8 +10,11 @@ public class CurrentPowerDisplayOverlayIngameProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure CurrentPowerDisplayOverlayIngame!");
 			return false;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		return (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true;
 	}
+
 }

@@ -32,7 +32,7 @@
         "subtract": false
       }
     ],
-    "name": "The Glow Dirt",
+    "name": "Cracked Dirt",
     "specialInfo": [],
     "hardness": 4.0,
     "resistance": 10.0,
@@ -121,17 +121,30 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "spawnWorldTypes": [],
-    "restrictionBiomes": [],
+    "spawnWorldTypes": [
+      "CUSTOM:Wasteland",
+      "Surface"
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:Capitalwasteland"
+      },
+      {
+        "value": "CUSTOM:Capitalwastelandeast"
+      },
+      {
+        "value": "CUSTOM:Desertwastland"
+      }
+    ],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "CUSTOM:Wastelanddirt"
       }
     ],
     "generationShape": "UNIFORM",
-    "frequencyPerChunks": 10,
-    "frequencyOnChunk": 16,
-    "minGenerateHeight": 0,
-    "maxGenerateHeight": 64
+    "frequencyPerChunks": 5,
+    "frequencyOnChunk": 56,
+    "minGenerateHeight": 67,
+    "maxGenerateHeight": 97
   }
 }

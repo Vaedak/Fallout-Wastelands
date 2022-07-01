@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "fallout_wastelands:armyrobobrain",
+    "fallout_wastelands:friendlybrainbot",
+    "fallout_wastelands:machinegun_turret",
+    "fallout_wastelands:highwayman"
+  ]
+}

@@ -1,18 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
-
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class AddArmorBackLegsEffectExpiresProcedure {
 
@@ -22,7 +10,9 @@ public class AddArmorBackLegsEffectExpiresProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure AddArmorBackLegsEffectExpires!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		boolean waiter3 = false;
 		if (entity instanceof PlayerEntity) {
 			ItemStack _setstack = ((entity instanceof LivingEntity)
@@ -44,4 +34,5 @@ public class AddArmorBackLegsEffectExpiresProcedure {
 			waiter3 = (true);
 		}
 	}
+
 }
