@@ -3,21 +3,24 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "combat_helmet",
+    "textureHelmet": "enclave_hazmat_helmet",
     "enableBody": true,
-    "textureBody": "combat_chestplate",
+    "textureBody": "enclave_hazmat_chestplate",
     "enableLeggings": true,
-    "textureLeggings": "combat_leggings",
+    "textureLeggings": "enclave_hazmat_leggings",
     "enableBoots": true,
-    "textureBoots": "combat_boots",
+    "textureBoots": "enclave_hazmat_boots",
+    "onBodyTick": {
+      "name": "EnclavehazmatBodyTickEvent"
+    },
     "creativeTab": {
       "value": "CUSTOM:Wastelanderscombattab"
     },
-    "armorTextureFile": "combatmk1b_",
-    "helmetName": "MKICombat Helmet",
-    "bodyName": "MKI Combat Body",
-    "leggingsName": "MKI Combat Leggings",
-    "bootsName": "MKI Combat Boots",
+    "armorTextureFile": "enclave_hazmat__b",
+    "helmetName": "Enclave Hazmat Helmet",
+    "bodyName": "Enclave Hazmat Body",
+    "leggingsName": "Enclave Hazmat Leggings",
+    "bootsName": "Enclave Hazmat Boots",
     "helmetSpecialInfo": [],
     "bodySpecialInfo": [],
     "leggingsSpecialInfo": [],
@@ -42,20 +45,20 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 20,
-    "damageValueHelmet": 3,
-    "damageValueBody": 6,
-    "damageValueLeggings": 5,
+    "maxDamage": 7,
+    "damageValueHelmet": 2,
+    "damageValueBody": 4,
+    "damageValueLeggings": 3,
     "damageValueBoots": 2,
     "enchantability": 9,
-    "toughness": 0.5,
-    "knockbackResistance": 0.1,
+    "toughness": 0.30000000000000004,
+    "knockbackResistance": 0.0,
     "equipSound": {
-      "value": "item.armor.equip_iron"
+      "value": "block.cloth.place"
     },
     "repairItems": [
       {
-        "value": "CUSTOM:Militaryhull"
+        "value": "CUSTOM:Enclaveplating"
       }
     ]
   }
