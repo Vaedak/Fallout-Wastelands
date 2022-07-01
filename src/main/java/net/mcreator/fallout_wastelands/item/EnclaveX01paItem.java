@@ -21,10 +21,10 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 
-import net.mcreator.fallout_wastelands.procedures.EnclaveX01paLeggingsTickEventProcedure;
-import net.mcreator.fallout_wastelands.procedures.EnclaveX01paHelmetTickEventProcedure;
-import net.mcreator.fallout_wastelands.procedures.EnclaveX01paBootsTickEventProcedure;
-import net.mcreator.fallout_wastelands.procedures.EnclaveX01paBodyTickEventProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorLeggingsTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorHelmetTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorChestTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorBootsTickProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
@@ -117,7 +117,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						EnclaveX01paHelmetTickEventProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorHelmetTickProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("enclave_x_01pa_helmet"));
 		elements.items
@@ -146,7 +146,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						EnclaveX01paBodyTickEventProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorChestTickProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("enclave_x_01pa_chestplate"));
 		elements.items
@@ -174,7 +174,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						EnclaveX01paLeggingsTickEventProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorLeggingsTickProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("enclave_x_01pa_leggings"));
 		elements.items
@@ -202,7 +202,7 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						EnclaveX01paBootsTickEventProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorBootsTickProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("enclave_x_01pa_boots"));
 	}

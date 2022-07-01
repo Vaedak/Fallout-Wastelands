@@ -11,16 +11,16 @@
     "enableBoots": true,
     "textureBoots": "apowerarmorboots",
     "onHelmetTick": {
-      "name": "EnclaveX01paHelmetTickEvent"
+      "name": "PowerArmorHelmetTick"
     },
     "onBodyTick": {
-      "name": "EnclaveX01paBodyTickEvent"
+      "name": "PowerArmorChestTick"
     },
     "onLeggingsTick": {
-      "name": "EnclaveX01paLeggingsTickEvent"
+      "name": "PowerArmorLeggingsTick"
     },
     "onBootsTick": {
-      "name": "EnclaveX01paBootsTickEvent"
+      "name": "PowerArmorBootsTick"
     },
     "creativeTab": {
       "value": "CUSTOM:Wastelanderscombattab"
