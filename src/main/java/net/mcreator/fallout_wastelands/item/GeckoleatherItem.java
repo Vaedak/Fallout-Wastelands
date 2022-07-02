@@ -4,13 +4,13 @@ package net.mcreator.fallout_wastelands.item;
 import net.minecraft.entity.ai.attributes.Attributes;
 
 @FalloutWastelandsModElements.ModElement.Tag
-public class PleasedeleteItem extends FalloutWastelandsModElements.ModElement {
+public class GeckoleatherItem extends FalloutWastelandsModElements.ModElement {
 
-	@ObjectHolder("fallout_wastelands:pleasedelete")
+	@ObjectHolder("fallout_wastelands:geckoleather")
 	public static final Item block = null;
 
-	public PleasedeleteItem(FalloutWastelandsModElements instance) {
-		super(instance, 1453);
+	public GeckoleatherItem(FalloutWastelandsModElements instance) {
+		super(instance, 1439);
 
 	}
 
@@ -22,8 +22,8 @@ public class PleasedeleteItem extends FalloutWastelandsModElements.ModElement {
 	public static class ItemCustom extends Item {
 
 		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));
-			setRegistryName("pleasedelete");
+			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
+			setRegistryName("geckoleather");
 		}
 
 		@Override

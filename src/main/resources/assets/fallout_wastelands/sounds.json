@@ -436,32 +436,5 @@
         "stream": false
       }
     ]
-  },
-  "bigfallboom": {
-    "category": "neutral",
-    "sounds": [
-      {
-        "name": "fallout_wastelands:largeexplosion",
-        "stream": false
-      }
-    ]
-  },
-  "armorhitbyarrow": {
-    "category": "neutral",
-    "sounds": [
-      {
-        "name": "fallout_wastelands:metal_hit",
-        "stream": false
-      }
-    ]
-  },
-  "smallfallboom": {
-    "category": "neutral",
-    "sounds": [
-      {
-        "name": "fallout_wastelands:fallboom",
-        "stream": false
-      }
-    ]
   }
 }

@@ -20678,722 +20678,6 @@
       "registry_name": "current_power"
     },
     {
-      "name": "PowerArmorLeggingsTick",
-      "type": "procedure",
-      "sortid": 1446,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_leggings_tick",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
-      "name": "DontMove",
-      "type": "potioneffect",
-      "sortid": 1439,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "dont_move"
-    },
-    {
-      "name": "CheckIfExitedMarker",
-      "type": "potioneffect",
-      "sortid": 1435,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "check_if_exited_marker"
-    },
-    {
-      "name": "DontMoveOnEffectActiveTick",
-      "type": "procedure",
-      "sortid": 1439,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "dont_move_on_effect_active_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorFrameOnInitialEntitySpawn",
-      "type": "procedure",
-      "sortid": 1433,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_frame_on_initial_entity_spawn",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorFrameOnEntityTickUpdate",
-      "type": "procedure",
-      "sortid": 1431,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_frame_on_entity_tick_update",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "FallingInArmor",
-      "type": "procedure",
-      "sortid": 1451,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "falling_in_armor",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorFrame",
-      "type": "livingentity",
-      "sortid": 1431,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_frame"
-    },
-    {
-      "name": "PowerArmorFramePlayerCollidesWithThisEntity",
-      "type": "procedure",
-      "sortid": 1437,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_frame_player_collides_with_this_entity",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorVisor",
-      "type": "overlay",
-      "sortid": 1452,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_visor"
-    },
-    {
-      "name": "AddArmorBackBoots",
-      "type": "potioneffect",
-      "sortid": 1426,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_armor_back_boots"
-    },
-    {
-      "name": "PowerArmorHelmetTick",
-      "type": "procedure",
-      "sortid": 1444,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_helmet_tick",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
-      "name": "AddArmorBackBootsEffectExpires",
-      "type": "procedure",
-      "sortid": 1426,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_armor_back_boots_effect_expires",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "AddArmorBackLegsEffectExpires",
-      "type": "procedure",
-      "sortid": 1427,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_armor_back_legs_effect_expires",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "AddArmorBackHelmet",
-      "type": "potioneffect",
-      "sortid": 1428,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_armor_back_helmet"
-    },
-    {
-      "name": "CheckerIfExited",
-      "type": "potioneffect",
-      "sortid": 1434,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "checker_if_exited"
-    },
-    {
-      "name": "PowerArmorFrameItemRightclickedOnBlock",
-      "type": "procedure",
-      "sortid": 1449,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_frame_item_rightclicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "RemoveFrame",
-      "type": "procedure",
-      "sortid": 1448,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "remove_frame",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "FrameInventoryThisGUIIsClosed",
-      "type": "procedure",
-      "sortid": 1441,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "frame_inventory_this_gui_is_closed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "CheckerIfExitedOnEffectActiveTick",
-      "type": "procedure",
-      "sortid": 1434,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "checker_if_exited_on_effect_active_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorTrueFeatures",
-      "type": "procedure",
-      "sortid": 1450,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_true_features",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "FrameInventory",
-      "type": "gui",
-      "sortid": 1438,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "frame_inventory"
-    },
-    {
-      "name": "PowerArmorChestTick",
-      "type": "procedure",
-      "sortid": 1445,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_chest_tick",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
-      "name": "AddArmorBackchest",
-      "type": "potioneffect",
-      "sortid": 1429,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_armor_backchest"
-    },
-    {
-      "name": "BrokenFrameRightClickedOnEntity",
-      "type": "procedure",
-      "sortid": 1450,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "broken_frame_right_clicked_on_entity",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorFrameItem",
-      "type": "item",
-      "sortid": 1449,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_frame_item"
-    },
-    {
-      "name": "ArmorPlacerEffectExpires",
-      "type": "procedure",
-      "sortid": 1443,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "armor_placer_effect_expires",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "AddArmorBackchestEffectExpires",
-      "type": "procedure",
-      "sortid": 1429,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_armor_backchest_effect_expires",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "FrameInventoryWhileThisGUIIsOpenTick",
-      "type": "procedure",
-      "sortid": 1440,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "frame_inventory_while_this_gui_is_open_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorBootsTick",
-      "type": "procedure",
-      "sortid": 1447,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_boots_tick",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
-      "name": "PowerArmorVisorDisplayOverlayIngame",
-      "type": "procedure",
-      "sortid": 1452,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_visor_display_overlay_ingame",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "CurrentPowerDisplayOverlayIngame",
-      "type": "procedure",
-      "sortid": 1448,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "current_power_display_overlay_ingame",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "FrameIdentifier",
-      "type": "potioneffect",
-      "sortid": 1432,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "frame_identifier"
-    },
-    {
-      "name": "BrokenFrame",
-      "type": "livingentity",
-      "sortid": 1450,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "broken_frame"
-    },
-    {
-      "name": "ExitPowerArmorOnKeyReleased",
-      "type": "procedure",
-      "sortid": 1442,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "exit_power_armor_on_key_released",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "FrameArmor",
-      "type": "armor",
-      "sortid": 1424,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "frame_armor",
-      "metadata": {
-        "eh": true,
-        "el": true,
-        "eb": true,
-        "ec": true
-      }
-    },
-    {
-      "name": "FrameArmorTickEventUniversal",
-      "type": "procedure",
-      "sortid": 1425,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "frame_armor_tick_event_universal",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "IfInPowerArmorAddFrame",
-      "type": "procedure",
-      "sortid": 1430,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "if_in_power_armor_add_frame",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "ExitPowerArmor",
-      "type": "keybind",
-      "sortid": 1442,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "exit_power_armor"
-    },
-    {
-      "name": "AddArmorBackHelmetEffectExpires",
-      "type": "procedure",
-      "sortid": 1428,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_armor_back_helmet_effect_expires",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorFrameRightClickedOnEntity",
-      "type": "procedure",
-      "sortid": 1439,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_frame_right_clicked_on_entity",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "AddArmorBackLegs",
-      "type": "potioneffect",
-      "sortid": 1427,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_armor_back_legs"
-    },
-    {
-      "name": "ArmorPlacer",
-      "type": "potioneffect",
-      "sortid": 1436,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "armor_placer"
-    },
-    {
       "name": "Theglowambiantradiation",
       "type": "procedure",
       "sortid": 1424,
@@ -21495,6 +20779,114 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "pleasedelete"
+    },
+    {
+      "name": "GlowingonePlayerCollidesWithThisEntity",
+      "type": "procedure",
+      "sortid": 1436,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "glowingone_player_collides_with_this_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnclavehazmatBodyTickEvent",
+      "type": "procedure",
+      "sortid": 1434,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enclavehazmat_body_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Glowingone",
+      "type": "livingentity",
+      "sortid": 1435,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "glowingone"
+    },
+    {
+      "name": "Radiationparticles",
+      "type": "particle",
+      "sortid": 1435,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiationparticles"
+    },
+    {
+      "name": "Enclavehazmat",
+      "type": "armor",
+      "sortid": 1433,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enclavehazmat",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Nightkin",
+      "type": "livingentity",
+      "sortid": 1437,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nightkin"
+    },
+    {
+      "name": "Deathclaw",
+      "type": "livingentity",
+      "sortid": 1440,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deathclaw"
+    },
+    {
+      "name": "Geckoleather",
+      "type": "item",
+      "sortid": 1439,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "geckoleather"
+    },
+    {
+      "name": "Taloncombatarmor",
+      "type": "armor",
+      "sortid": 1432,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "taloncombatarmor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Gecko",
+      "type": "livingentity",
+      "sortid": 1438,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gecko"
     }
   ],
   "variable_elements": [
@@ -21925,30 +21317,6 @@
       ],
       "category": "neutral",
       "subtitle": "Reload"
-    },
-    {
-      "name": "bigfallboom",
-      "files": [
-        "largeexplosion"
-      ],
-      "category": "neutral",
-      "subtitle": ""
-    },
-    {
-      "name": "armorhitbyarrow",
-      "files": [
-        "metal_hit"
-      ],
-      "category": "neutral",
-      "subtitle": ""
-    },
-    {
-      "name": "smallfallboom",
-      "files": [
-        "fallboom"
-      ],
-      "category": "neutral",
-      "subtitle": ""
     }
   ],
   "language_map": {
@@ -22062,7 +21430,6 @@
       "item.fallout_wastelands.steelingot": "Steel Ingot",
       "item.wastlanders.septammo": "7.62 ammo",
       "block.fallout_wastelands.wastelandredstone": "Wasteland Redstone Ore",
-      "item.fallout_wastelands.pleasedelete": "Pleasedelete",
       "item.fallout_wastelands.mmpistolnine": "9mm pistol",
       "block.fallout_wastelands.militaryplated": "Military plating",
       "block.fallout_wastelands.barrelbarrel": "Barrel",

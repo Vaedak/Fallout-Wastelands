@@ -1,0 +1,21 @@
+{
+  "_fv": 28,
+  "_type": "particle",
+  "definition": {
+    "texture": "radiation_particle.png",
+    "animate": false,
+    "frameDuration": 1,
+    "width": 0.2,
+    "height": 0.2,
+    "scale": 1.0,
+    "speedFactor": 0.5,
+    "gravity": 0.1,
+    "maxAge": 11,
+    "maxAgeDiff": 5,
+    "angularVelocity": 0.1,
+    "angularAcceleration": 0.01,
+    "canCollide": false,
+    "alwaysShow": false,
+    "renderType": "LIT"
+  }
+}

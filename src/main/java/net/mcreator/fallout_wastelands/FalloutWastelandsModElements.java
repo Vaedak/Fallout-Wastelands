@@ -143,12 +143,6 @@ public class FalloutWastelandsModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "pistol10mmreload")));
 		sounds.put(new ResourceLocation("fallout_wastelands", "pistol9mmreload"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "pistol9mmreload")));
-		sounds.put(new ResourceLocation("fallout_wastelands", "bigfallboom"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "bigfallboom")));
-		sounds.put(new ResourceLocation("fallout_wastelands", "armorhitbyarrow"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "armorhitbyarrow")));
-		sounds.put(new ResourceLocation("fallout_wastelands", "smallfallboom"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "smallfallboom")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("fallout_wastelands").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();
