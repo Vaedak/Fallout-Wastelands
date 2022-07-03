@@ -6,7 +6,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.World;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.ItemStack;
@@ -14,21 +13,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 
-import net.mcreator.fallout_wastelands.procedures.PowerArmorLeggingsTickProcedure;
-import net.mcreator.fallout_wastelands.procedures.PowerArmorHelmetTickProcedure;
-import net.mcreator.fallout_wastelands.procedures.PowerArmorChestTickProcedure;
-import net.mcreator.fallout_wastelands.procedures.PowerArmorBootsTickProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
-
-import java.util.Collections;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -109,16 +101,6 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 						return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 					}
-
-					@Override
-					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-						super.onArmorTick(itemstack, world, entity);
-						double x = entity.getPosX();
-						double y = entity.getPosY();
-						double z = entity.getPosZ();
-
-						PowerArmorHelmetTickProcedure.executeProcedure(Collections.emptyMap());
-					}
 				}.setRegistryName("enclave_x_01pa_helmet"));
 		elements.items
 				.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
@@ -139,15 +121,6 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 						return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 					}
-
-					@Override
-					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-						double x = entity.getPosX();
-						double y = entity.getPosY();
-						double z = entity.getPosZ();
-
-						PowerArmorChestTickProcedure.executeProcedure(Collections.emptyMap());
-					}
 				}.setRegistryName("enclave_x_01pa_chestplate"));
 		elements.items
 				.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
@@ -167,15 +140,6 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 						return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 					}
-
-					@Override
-					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-						double x = entity.getPosX();
-						double y = entity.getPosY();
-						double z = entity.getPosZ();
-
-						PowerArmorLeggingsTickProcedure.executeProcedure(Collections.emptyMap());
-					}
 				}.setRegistryName("enclave_x_01pa_leggings"));
 		elements.items
 				.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
@@ -194,15 +158,6 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 					@Override
 					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 						return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-					}
-
-					@Override
-					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-						double x = entity.getPosX();
-						double y = entity.getPosY();
-						double z = entity.getPosZ();
-
-						PowerArmorBootsTickProcedure.executeProcedure(Collections.emptyMap());
 					}
 				}.setRegistryName("enclave_x_01pa_boots"));
 	}

@@ -20,9 +20,6 @@
     ],
     "baseTexture": "",
     "overlayTarget": "Ingame",
-    "displayCondition": {
-      "name": "CurrentPowerDisplayOverlayIngame"
-    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,
