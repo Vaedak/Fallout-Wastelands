@@ -86,7 +86,7 @@ public class DeathclawRenderer {
 		private final ModelRenderer foot2;
 		private final ModelRenderer footclaws2_r1;
 		private final ModelRenderer footclaws2;
-		private final ModelRenderer arm;
+		private final ModelRenderer armright;
 		private final ModelRenderer frontarm_r1;
 		private final ModelRenderer frontarm;
 		private final ModelRenderer armleft;
@@ -207,18 +207,18 @@ public class DeathclawRenderer {
 			foot2.addChild(footclaws2);
 			setRotationAngle(footclaws2, 0.0F, 0.0F, -0.7418F);
 			footclaws2.setTextureOffset(58, 32).addBox(-5.0F, -5.0F, -1.0F, 9.0F, 9.0F, 2.0F, 0.0F, true);
-			arm = new ModelRenderer(this);
-			arm.setRotationPoint(-12.0F, -39.0F, 1.0F);
-			deathclaw.addChild(arm);
-			setRotationAngle(arm, 0.8136F, 0.3864F, 0.494F);
-			arm.setTextureOffset(64, 109).addBox(-3.4083F, -2.8783F, -3.3347F, 6.0F, 17.0F, 7.0F, 0.0F, false);
+			armright = new ModelRenderer(this);
+			armright.setRotationPoint(-12.0F, -39.0F, 1.0F);
+			deathclaw.addChild(armright);
+			setRotationAngle(armright, 0.8136F, 0.3864F, 0.494F);
+			armright.setTextureOffset(64, 109).addBox(-3.4083F, -2.8783F, -3.3347F, 6.0F, 17.0F, 7.0F, 0.0F, false);
 			frontarm_r1 = new ModelRenderer(this);
 			frontarm_r1.setRotationPoint(1.5628F, 11.9394F, -0.0897F);
-			arm.addChild(frontarm_r1);
+			armright.addChild(frontarm_r1);
 			setRotationAngle(frontarm_r1, -0.3491F, 0.0F, 0.0F);
 			frontarm = new ModelRenderer(this);
 			frontarm.setRotationPoint(1.5628F, 11.9394F, -0.0897F);
-			arm.addChild(frontarm);
+			armright.addChild(frontarm);
 			setRotationAngle(frontarm, -0.3491F, 0.0F, 0.0F);
 			frontarm.setTextureOffset(58, 32).addBox(-4.0F, -1.0F, -21.0F, 4.0F, 4.0F, 22.0F, 0.0F, false);
 			frontarm.setTextureOffset(118, 9).addBox(-4.5021F, -3.8769F, -29.787F, 3.0F, 8.0F, 10.0F, 0.0F, false);
@@ -285,10 +285,10 @@ public class DeathclawRenderer {
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
 			this.legright.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 			this.legleft.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
+			this.armright.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
 			this.head.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.head.rotateAngleX = f4 / (180F / (float) Math.PI);
 			this.armleft.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
-			this.arm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
 		}
 	}
 
