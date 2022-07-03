@@ -1,6 +1,23 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.CapabilityItemHandler;
+
+import net.minecraft.world.IWorld;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.effect.LightningBoltEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.fallout_wastelands.item.FusionCoreItem;
+import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+
+import java.util.function.Function;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.Random;
+import java.util.Map;
+import java.util.Comparator;
 
 public class FusionCoreItemInInventoryTickProcedure {
 
@@ -35,14 +52,12 @@ public class FusionCoreItemInInventoryTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure FusionCoreItemInInventoryTick!");
 			return;
 		}
-
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-
 		boolean dontstop = false;
 		double cores = 0;
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -138,5 +153,4 @@ public class FusionCoreItemInInventoryTickProcedure {
 			itemstack.getOrCreateTag().putBoolean("CoreInUse", (false));
 		}
 	}
-
 }

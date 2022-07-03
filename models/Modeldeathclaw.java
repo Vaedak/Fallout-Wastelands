@@ -12,6 +12,7 @@ public static class Modeldeathclaw extends EntityModel<Entity> {
 	private final ModelRenderer body;
 	private final ModelRenderer torso_r1;
 	private final ModelRenderer torso;
+	private final ModelRenderer rightlegpivotpoint;
 	private final ModelRenderer legright;
 	private final ModelRenderer foot_r1;
 	private final ModelRenderer legparter_r1;
@@ -19,6 +20,7 @@ public static class Modeldeathclaw extends EntityModel<Entity> {
 	private final ModelRenderer foot;
 	private final ModelRenderer footclaws_r1;
 	private final ModelRenderer footclaws;
+	private final ModelRenderer leftlegpivotpoint;
 	private final ModelRenderer legleft;
 	private final ModelRenderer foot2_r1;
 	private final ModelRenderer legparter2_r1;
@@ -89,10 +91,15 @@ public static class Modeldeathclaw extends EntityModel<Entity> {
 		setRotationAngle(torso, 0.9599F, 0.0F, 0.0F);
 		torso.setTextureOffset(0, 0).addBox(-6.0F, -19.3027F, -0.7531F, 20.0F, 15.0F, 13.0F, 0.0F, false);
 
+		rightlegpivotpoint = new ModelRenderer(this);
+		rightlegpivotpoint.setRotationPoint(-6.0F, -18.5F, 5.5F);
+		deathclaw.addChild(rightlegpivotpoint);
+		setRotationAngle(rightlegpivotpoint, -0.0873F, 0.0F, 0.0F);
+
 		legright = new ModelRenderer(this);
-		legright.setRotationPoint(-6.0F, -18.5F, 5.5F);
-		deathclaw.addChild(legright);
-		setRotationAngle(legright, -0.8727F, 0.2618F, 0.0436F);
+		legright.setRotationPoint(0.0F, 0.0F, 0.0F);
+		rightlegpivotpoint.addChild(legright);
+		setRotationAngle(legright, -0.8291F, 0.2618F, 0.0436F);
 		legright.setTextureOffset(112, 82).addBox(-3.0F, -3.5F, -3.5F, 6.0F, 15.0F, 6.0F, 0.0F, false);
 
 		foot_r1 = new ModelRenderer(this);
@@ -130,10 +137,14 @@ public static class Modeldeathclaw extends EntityModel<Entity> {
 		setRotationAngle(footclaws, 0.0F, 0.0F, 0.7418F);
 		footclaws.setTextureOffset(58, 32).addBox(-4.0F, -5.0F, -1.0F, 9.0F, 9.0F, 2.0F, 0.0F, false);
 
+		leftlegpivotpoint = new ModelRenderer(this);
+		leftlegpivotpoint.setRotationPoint(6.0F, -18.5F, 5.5F);
+		deathclaw.addChild(leftlegpivotpoint);
+
 		legleft = new ModelRenderer(this);
-		legleft.setRotationPoint(6.0F, -18.5F, 5.5F);
-		deathclaw.addChild(legleft);
-		setRotationAngle(legleft, -0.8727F, -0.2618F, -0.0436F);
+		legleft.setRotationPoint(0.0F, 0.0F, 0.0F);
+		leftlegpivotpoint.addChild(legleft);
+		setRotationAngle(legleft, -0.8291F, -0.2618F, -0.0436F);
 		legleft.setTextureOffset(90, 109).addBox(-3.0F, -3.5F, -3.5F, 6.0F, 15.0F, 6.0F, 0.0F, false);
 
 		foot2_r1 = new ModelRenderer(this);
@@ -174,7 +185,7 @@ public static class Modeldeathclaw extends EntityModel<Entity> {
 		armright = new ModelRenderer(this);
 		armright.setRotationPoint(-12.0F, -39.0F, 1.0F);
 		deathclaw.addChild(armright);
-		setRotationAngle(armright, 0.8136F, 0.3864F, 0.494F);
+		setRotationAngle(armright, 0.9445F, 0.3864F, 0.494F);
 		armright.setTextureOffset(64, 109).addBox(-3.4083F, -2.8783F, -3.3347F, 6.0F, 17.0F, 7.0F, 0.0F, false);
 
 		frontarm_r1 = new ModelRenderer(this);
@@ -193,7 +204,7 @@ public static class Modeldeathclaw extends EntityModel<Entity> {
 		armleft = new ModelRenderer(this);
 		armleft.setRotationPoint(12.0F, -39.0F, 1.0F);
 		deathclaw.addChild(armleft);
-		setRotationAngle(armleft, 0.8136F, -0.3864F, -0.494F);
+		setRotationAngle(armleft, 0.9008F, -0.3864F, -0.494F);
 		armleft.setTextureOffset(64, 109).addBox(-2.5917F, -2.8783F, -3.3347F, 6.0F, 17.0F, 7.0F, 0.0F, true);
 
 		frontarm2_r1 = new ModelRenderer(this);
@@ -259,11 +270,11 @@ public static class Modeldeathclaw extends EntityModel<Entity> {
 	}
 
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
-		this.legright.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
-		this.legleft.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 		this.armright.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
 		this.head.rotateAngleY = f3 / (180F / (float) Math.PI);
 		this.head.rotateAngleX = f4 / (180F / (float) Math.PI);
+		this.leftlegpivotpoint.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 		this.armleft.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.rightlegpivotpoint.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 	}
 }

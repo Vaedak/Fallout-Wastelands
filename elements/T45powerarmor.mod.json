@@ -10,18 +10,6 @@
     "textureLeggings": "powerarmorlegs",
     "enableBoots": true,
     "textureBoots": "powerarmorboots",
-    "onHelmetTick": {
-      "name": "PowerArmorHelmetTick"
-    },
-    "onBodyTick": {
-      "name": "PowerArmorChestTick"
-    },
-    "onLeggingsTick": {
-      "name": "PowerArmorLeggingsTick"
-    },
-    "onBootsTick": {
-      "name": "PowerArmorBootsTick"
-    },
     "creativeTab": {
       "value": "CUSTOM:Wastelanderscombattab"
     },
