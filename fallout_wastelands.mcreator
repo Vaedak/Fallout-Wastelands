@@ -19710,7 +19710,7 @@
       "name": "Combatarmor",
       "type": "armor",
       "sortid": 1402,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "combatarmor",
       "metadata": {
