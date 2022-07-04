@@ -12,13 +12,7 @@ import net.minecraft.world.World;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.fallout_wastelands.procedures.CurrentPowerDisplayOverlayIngameProcedure;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
 
 @Mod.EventBusSubscriber
 public class CurrentPowerOverlay {
@@ -45,8 +39,7 @@ public class CurrentPowerOverlay {
 			double x = _x;
 			double y = _y;
 			double z = _z;
-			if (CurrentPowerDisplayOverlayIngameProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
+			if (true) {
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
 						"" + ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power) + "",

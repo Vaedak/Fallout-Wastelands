@@ -138,12 +138,7 @@ public class T45powerarmorBodyTickEventProcedure {
 					}
 
 					private void run() {
-						if ((((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorHelmet")
-								|| ((entity instanceof LivingEntity)
-										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-										: ItemStack.EMPTY).getItem() == FrameArmorItem.helmet) == false) {
+						if (true) {
 							if ((((entity instanceof LivingEntity)
 									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
 									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
@@ -181,12 +176,7 @@ public class T45powerarmorBodyTickEventProcedure {
 					}
 
 					private void run() {
-						if ((((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorChestplate")
-								|| ((entity instanceof LivingEntity)
-										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-										: ItemStack.EMPTY).getItem() == FrameArmorItem.body) == false) {
+						if (true) {
 							if ((((entity instanceof LivingEntity)
 									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
 									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
