@@ -4,10 +4,10 @@
   "definition": {
     "name": "The Glow",
     "groundBlock": {
-      "value": "CUSTOM:Theglowdirt"
+      "value": "CUSTOM:Theglowradioactivedirt"
     },
     "undergroundBlock": {
-      "value": "CUSTOM:Theglowdirt"
+      "value": "CUSTOM:Theglowradioactivedirt"
     },
     "underwaterBlock": {
       "value": "CUSTOM:Wastelandgravel"

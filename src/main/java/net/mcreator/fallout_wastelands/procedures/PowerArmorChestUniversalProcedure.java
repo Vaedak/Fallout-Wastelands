@@ -1,39 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
-
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.math.vector.Vector2f;
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.command.ICommandSource;
-import net.minecraft.command.CommandSource;
-import net.minecraft.block.Blocks;
-
-import net.mcreator.fallout_wastelands.potion.CheckerIfExitedPotionEffect;
-import net.mcreator.fallout_wastelands.potion.AddArmorBackchestPotionEffect;
-import net.mcreator.fallout_wastelands.potion.AddArmorBackLegsPotionEffect;
-import net.mcreator.fallout_wastelands.potion.AddArmorBackHelmetPotionEffect;
-import net.mcreator.fallout_wastelands.potion.AddArmorBackBootsPotionEffect;
-import net.mcreator.fallout_wastelands.item.FrameArmorItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class PowerArmorChestUniversalProcedure {
 
@@ -68,12 +35,14 @@ public class PowerArmorChestUniversalProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure PowerArmorChestUniversal!");
 			return;
 		}
+
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
+
 		boolean chest = false;
 		boolean legs = false;
 		boolean boots = false;
@@ -106,6 +75,7 @@ public class PowerArmorChestUniversalProcedure {
 					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
 							.getItem() == FrameArmorItem.helmet) == false) {
 				new Object() {
+
 					private int ticks = 0;
 					private float waitTicks;
 					private IWorld world;
@@ -137,6 +107,7 @@ public class PowerArmorChestUniversalProcedure {
 						}
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
+
 				}.start(world, (int) 5);
 			}
 			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
@@ -144,6 +115,7 @@ public class PowerArmorChestUniversalProcedure {
 					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
 							.getItem() == FrameArmorItem.body) == false) {
 				new Object() {
+
 					private int ticks = 0;
 					private float waitTicks;
 					private IWorld world;
@@ -175,6 +147,7 @@ public class PowerArmorChestUniversalProcedure {
 						}
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
+
 				}.start(world, (int) 5);
 			}
 			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
@@ -182,6 +155,7 @@ public class PowerArmorChestUniversalProcedure {
 					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
 							.getItem() == FrameArmorItem.legs) == false) {
 				new Object() {
+
 					private int ticks = 0;
 					private float waitTicks;
 					private IWorld world;
@@ -218,6 +192,7 @@ public class PowerArmorChestUniversalProcedure {
 						}
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
+
 				}.start(world, (int) 5);
 			}
 			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
@@ -225,6 +200,7 @@ public class PowerArmorChestUniversalProcedure {
 					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
 							.getItem() == FrameArmorItem.boots) == false) {
 				new Object() {
+
 					private int ticks = 0;
 					private float waitTicks;
 					private IWorld world;
@@ -261,6 +237,7 @@ public class PowerArmorChestUniversalProcedure {
 						}
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
+
 				}.start(world, (int) 5);
 			}
 		}
@@ -3769,4 +3746,5 @@ public class PowerArmorChestUniversalProcedure {
 			}
 		}
 	}
+
 }

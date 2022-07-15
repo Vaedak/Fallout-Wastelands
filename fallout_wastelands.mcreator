@@ -21639,6 +21639,14 @@
       "registry_name": "enemylaserweapon"
     },
     {
+      "name": "BrokenFrameItem",
+      "type": "item",
+      "sortid": 1471,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "broken_frame_item"
+    },
+    {
       "name": "PowerArmorBootsUniversal",
       "type": "procedure",
       "sortid": 1469,
@@ -21675,40 +21683,23 @@
       }
     },
     {
-      "name": "PowerArmorLegsUniversal",
+      "name": "BrokenFrameOnEntityTickUpdate",
       "type": "procedure",
-      "sortid": 1469,
+      "sortid": 1472,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "power_armor_legs_universal",
+      "registry_name": "broken_frame_on_entity_tick_update",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       }
+    },
+    {
+      "name": "EnclaveMachingunTurret",
+      "type": "livingentity",
+      "sortid": 1470,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enclave_machingun_turret"
     },
     {
       "name": "PowerArmorChestUniversal",
@@ -21783,30 +21774,39 @@
       }
     },
     {
-      "name": "EnclaveMachingunTurret",
-      "type": "livingentity",
-      "sortid": 1470,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "enclave_machingun_turret"
-    },
-    {
-      "name": "BrokenFrameItem",
-      "type": "item",
-      "sortid": 1471,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "broken_frame_item"
-    },
-    {
-      "name": "BrokenFrameOnEntityTickUpdate",
+      "name": "PowerArmorLegsUniversal",
       "type": "procedure",
-      "sortid": 1472,
+      "sortid": 1469,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "broken_frame_on_entity_tick_update",
+      "registry_name": "power_armor_legs_universal",
       "metadata": {
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {
@@ -21816,6 +21816,114 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fix_frame"
+    },
+    {
+      "name": "Geckoslimecraft",
+      "type": "recipe",
+      "sortid": 1472,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "geckoslimecraft"
+    },
+    {
+      "name": "Theglowradioactivedirt",
+      "type": "block",
+      "sortid": 1469,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "theglowradioactivedirt"
+    },
+    {
+      "name": "Slimeballcraftgeckoegg",
+      "type": "recipe",
+      "sortid": 1470,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slimeballcraftgeckoegg"
+    },
+    {
+      "name": "Antiradclothing",
+      "type": "item",
+      "sortid": 1474,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antiradclothing"
+    },
+    {
+      "name": "Geckofriedegg",
+      "type": "item",
+      "sortid": 1471,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "geckofriedegg"
+    },
+    {
+      "name": "Geckoslimeleather",
+      "type": "recipe",
+      "sortid": 1473,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "geckoslimeleather"
+    },
+    {
+      "name": "GeckoEntityDies",
+      "type": "procedure",
+      "sortid": 1476,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gecko_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Geckoegg",
+      "type": "item",
+      "sortid": 1470,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "geckoegg"
+    },
+    {
+      "name": "FriedeggchicagospecialPlayerFinishesUsingItem",
+      "type": "procedure",
+      "sortid": 1475,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "friedeggchicagospecial_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Friedeggchicagospecial",
+      "type": "item",
+      "sortid": 1475,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "friedeggchicagospecial"
     }
   ],
   "variable_elements": [
@@ -22491,7 +22599,6 @@
       "block.fallout_wastelands.dooranimation_156": "Vault Door135",
       "block.fallout_wastelands.dooranimation_155": "Vault Door135",
       "block.fallout_wastelands.dooranimation_154": "Vault Door135",
-      "entity.fallout_wastelands.enclave_machingun_turret": "Enclave Machinegun Turret",
       "block.fallout_wastelands.portalframe": "Portal Frame",
       "block.fallout_wastelands.dooranimation_182": "Vault Door135",
       "block.fallout_wastelands.dooranimation_181": "Vault Door135",
@@ -22622,7 +22729,7 @@
       "block.fallout_wastelands.vaultlock": "Vault Air Lock",
       "biome.fallout_wastelands.capitalwasteland": "Capitalwasteland",
       "block.fallout_wastelands.vault_door_top_part": "Vault Door Top Part",
-      "item.fallout_wastelands.taloncombatarmor_chestplate": "Talon Combat Chestplate",
+      "item.fallout_wastelands.taloncombatarmor_chestplate": "Talon Combat Body",
       "block.wastlanders.wastelandcoal": "Wasteland Coal Ore",
       "block.wastlanders.charredplankslab": "Charredplankslab",
       "block.wastlanders.bo_ssteelplatingstairs": "BoS Steel Plating Stairs",
@@ -22638,13 +22745,12 @@
       "block.wastlanders.wastelanddirt": "Wasteland Dirt",
       "block.fallout_wastelands.filler_passable": "Vault Door Filler",
       "block.fallout_wastelands.wastlandconcrete": "Old Concrete",
-      "item.fallout_wastelands.nightkin_spawn_egg": "Close Combat Supermutant Spawn Egg",
+      "item.fallout_wastelands.nightkin_spawn_egg": "Nightkin Supermutant Spawn Egg",
       "block.wastlanders.deadgrass": "Wasteland Dead Grass",
       "entity.fallout_wastelands.broken_frame": "Broken Frame",
       "subtitles.tenmmquieter": "",
       "item.wastlanders.humanbrain": "Human Brain",
       "item.fallout_wastelands.robobrainhead": "Robobrain Head",
-      "item.fallout_wastelands.enclave_machingun_turret_spawn_egg": "Enclave Machinegun Turret Spawn Egg",
       "block.fallout_wastelands.enclavebunkerblocklogo": "Enclave Bunker Block Logo",
       "block.wastlanders.wastelandtinore": "Wasteland Tin Ore",
       "block.fallout_wastelands.testbunkerdoor": "Military Plated Door",
@@ -22867,7 +22973,7 @@
       "block.fallout_wastelands.vaultanimation_112": "Vault Door",
       "block.fallout_wastelands.vaultanimation_113": "Vault Door",
       "block.fallout_wastelands.vaultanimation_114": "Vault Door",
-      "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame",
+      "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame Item",
       "item.fallout_wastelands.greenpaintcan": "Green Paint Can",
       "block.fallout_wastelands.vaultanimation_115": "Vault Door",
       "block.wastlanders.geck_bo_sbunker": "GECK Bo Sbunker",
@@ -22911,7 +23017,7 @@
       "block.fallout_wastelands.vaultanimation_36": "Vault Door",
       "block.fallout_wastelands.closing_24": "Vault Door",
       "block.fallout_wastelands.vaultanimation_33": "Vault Door",
-      "entity.fallout_wastelands.nightkin": "Close Combat Supermutant",
+      "entity.fallout_wastelands.nightkin": "Nightkin Supermutant",
       "block.fallout_wastelands.vaultanimation_34": "Vault Door",
       "block.fallout_wastelands.vaultanimation_31": "Vault Door",
       "block.fallout_wastelands.vaultanimation_32": "Vault Door",
@@ -23214,7 +23320,6 @@
       "item.fallout_wastelands.turret_fake_projectile": "Turret Fake Projectile",
       "item.fallout_wastelands.enclave_x_01pa_leggings": "Enclave APA Leggings",
       "block.fallout_wastelands.vault_door_frame": "Vault Door Frame",
-      "item.fallout_wastelands.broken_frame_item": "Broken Power Armor Frame",
       "item.wastlanders.ingot_tin": "Tin Ingot",
       "item.fallout_wastelands.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.fallout_wastelands.wastelandgold": "Wasteland Gold Ore",

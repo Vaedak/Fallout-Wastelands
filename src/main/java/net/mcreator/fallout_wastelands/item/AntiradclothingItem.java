@@ -4,13 +4,13 @@ package net.mcreator.fallout_wastelands.item;
 import net.minecraft.entity.ai.attributes.Attributes;
 
 @FalloutWastelandsModElements.ModElement.Tag
-public class BrokenFrameItemItem extends FalloutWastelandsModElements.ModElement {
+public class AntiradclothingItem extends FalloutWastelandsModElements.ModElement {
 
-	@ObjectHolder("fallout_wastelands:broken_frame_item")
+	@ObjectHolder("fallout_wastelands:antiradclothing")
 	public static final Item block = null;
 
-	public BrokenFrameItemItem(FalloutWastelandsModElements instance) {
-		super(instance, 1471);
+	public AntiradclothingItem(FalloutWastelandsModElements instance) {
+		super(instance, 1474);
 
 	}
 
@@ -22,8 +22,8 @@ public class BrokenFrameItemItem extends FalloutWastelandsModElements.ModElement
 	public static class ItemCustom extends Item {
 
 		public ItemCustom() {
-			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
-			setRegistryName("broken_frame_item");
+			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
+			setRegistryName("antiradclothing");
 		}
 
 		@Override

@@ -33,7 +33,7 @@
       "name": "TenmmCanUseRangedItem"
     },
     "bulletPower": 5.0,
-    "bulletDamage": 0.8,
+    "bulletDamage": 1.0,
     "bulletKnockback": 0,
     "bulletParticles": false,
     "bulletIgnitesFire": false,
