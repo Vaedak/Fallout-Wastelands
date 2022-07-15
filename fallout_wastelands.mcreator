@@ -21924,6 +21924,387 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "friedeggchicagospecial"
+    },
+    {
+      "name": "RadiationUI4",
+      "type": "procedure",
+      "sortid": 1477,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_4",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI5",
+      "type": "procedure",
+      "sortid": 1478,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_5",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI6",
+      "type": "procedure",
+      "sortid": 1479,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_6",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI7",
+      "type": "procedure",
+      "sortid": 1480,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_7",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI8",
+      "type": "procedure",
+      "sortid": 1481,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_8",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI9",
+      "type": "procedure",
+      "sortid": 1482,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_9",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI10",
+      "type": "procedure",
+      "sortid": 1483,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_10",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI11",
+      "type": "procedure",
+      "sortid": 1484,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_11",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI12",
+      "type": "procedure",
+      "sortid": 1485,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_12",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI13",
+      "type": "procedure",
+      "sortid": 1486,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_13",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI14",
+      "type": "procedure",
+      "sortid": 1487,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_14",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI15",
+      "type": "procedure",
+      "sortid": 1488,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_15",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI16",
+      "type": "procedure",
+      "sortid": 1489,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_16",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI17",
+      "type": "procedure",
+      "sortid": 1490,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_17",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI18",
+      "type": "procedure",
+      "sortid": 1491,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_18",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI19",
+      "type": "procedure",
+      "sortid": 1492,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_19",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI20",
+      "type": "procedure",
+      "sortid": 1493,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_20",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI21",
+      "type": "procedure",
+      "sortid": 1494,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_21",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI22",
+      "type": "procedure",
+      "sortid": 1495,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_22",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI23",
+      "type": "procedure",
+      "sortid": 1496,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_23",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RemoveframepotionEffectExpires",
+      "type": "procedure",
+      "sortid": 1497,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "removeframepotion_effect_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Removeframepotion",
+      "type": "potioneffect",
+      "sortid": 1497,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "removeframepotion"
+    },
+    {
+      "name": "Displayradiationgreenicon",
+      "type": "procedure",
+      "sortid": 1498,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "displayradiationgreenicon",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -21997,6 +22378,18 @@
       "name": "CanUseWeapon",
       "type": "logic",
       "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "RADUIToggle",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "PaHudToggle",
+      "type": "logic",
+      "scope": "player_lifetime",
       "value": "false"
     }
   ],
@@ -22423,14 +22816,15 @@
       "advancements.itsalive.title": "It\u0027s Alive !",
       "item.fallout_wastelands.uraniumingot": "Uranium Ingot",
       "block.fallout_wastelands.wastelandcobblestairs": "Wasteland Cobblestone Stairs",
-      "block.fallout_wastelands.copperblock": "Copper Block",
       "block.wastlanders.sheetmetalwall": "Sheet Metal Wall",
+      "block.fallout_wastelands.copperblock": "Copper Block",
       "block.fallout_wastelands.vaultkitchenblocks": "Vault Kitchen Floor",
       "block.wastlanders.rustbloc": "Fully Rusted Iron",
       "item.fallout_wastelands.ghoul_spawn_egg": "Ghoul Spawn Egg",
       "item.fallout_wastelands.bluepaintcan": "Blue Paint Can",
       "block.wastlanders.militaryplatingblockhazard": "Military Plating (Hazard)",
       "item.wastlanders.tenmmammo": "10mm Ammunition ",
+      "effect.removeframepotion": "removeframe",
       "item.fallout_wastelands.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
       "item.fallout_wastelands.vaulttecplating": "Vault Tec Plating",
       "item.fallout_wastelands.mobmachinegun": "Mobmachinegun",
@@ -22467,10 +22861,10 @@
       "block.wastlanders.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
       "item.fallout_wastelands.radx": "Rad-X",
-      "block.fallout_wastelands.xander_2": "Xander 2",
       "item.wastlanders.coffee": "Coffee",
-      "block.fallout_wastelands.xander_3": "Xander 3",
+      "block.fallout_wastelands.xander_2": "Xander 2",
       "item.wastlanders.mobmachinegun": "Mobmachinegun",
+      "block.fallout_wastelands.xander_3": "Xander 3",
       "block.fallout_wastelands.xander_1": "Xander 1",
       "item.fallout_wastelands.nailedwrench": "Nailed Wrench",
       "block.fallout_wastelands.xander_4": "Xander 4",
@@ -22479,10 +22873,11 @@
       "block.fallout_wastelands.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.highwayman_spawn_egg": "Highwayman Spawn Egg",
       "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
+      "item.fallout_wastelands.friedeggchicagospecial": "Fried Egg Chicago Special",
       "item.fallout_wastelands.ninemmammo": "9mm Ammo",
       "block.wastlanders.plaster": "Plaster",
-      "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
       "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
+      "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
       "item.wastlanders.laserriffle": "Laser Rifle",
       "item.wastlanders.breadroller": "Bread Roller",
       "block.fallout_wastelands.redindustrialblocslab": "Red Industrial Block Slab",
@@ -22496,27 +22891,27 @@
       "block.fallout_wastelands.steelblock": "Steel Block",
       "block.fallout_wastelands.dooranimation_149": "Vault Door135",
       "block.fallout_wastelands.closing_114": "Vault Door",
-      "item.wastlanders.bossteelplate": "BoS Steelplate",
-      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
       "block.fallout_wastelands.closing_111": "Vault Door",
-      "block.fallout_wastelands.dooranimation_147": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
+      "item.wastlanders.bossteelplate": "BoS Steelplate",
       "block.fallout_wastelands.closing_112": "Vault Door",
+      "block.fallout_wastelands.dooranimation_147": "Vault Door135",
       "item.fallout_wastelands.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
       "block.fallout_wastelands.closing_110": "Vault Door",
       "block.fallout_wastelands.dooranimation_142": "Vault Door135",
-      "block.fallout_wastelands.dooranimation_141": "Vault Door135",
       "advancements.vaultdweller.title": "Vault Dweller",
-      "block.fallout_wastelands.dooranimation_140": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_141": "Vault Door135",
       "block.fallout_wastelands.closing_119": "Vault Door",
+      "block.fallout_wastelands.dooranimation_140": "Vault Door135",
       "item.fallout_wastelands.ingot_tin": "Tin Ingot",
       "block.fallout_wastelands.dooranimation_146": "Vault Door135",
       "block.fallout_wastelands.closing_117": "Vault Door",
-      "block.fallout_wastelands.lighttub": "Light Tub",
-      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
       "block.fallout_wastelands.closing_118": "Vault Door",
-      "entity.fallout_wastelands.mirelurk": "Mirelurk",
-      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
+      "block.fallout_wastelands.lighttub": "Light Tub",
       "block.fallout_wastelands.closing_115": "Vault Door",
+      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "entity.fallout_wastelands.mirelurk": "Mirelurk",
       "block.fallout_wastelands.dooranimation_143": "Vault Door135",
       "block.fallout_wastelands.closing_116": "Vault Door",
       "item.fallout_wastelands.frame_armor_leggings": "Frame Armor Leggings",
@@ -22528,8 +22923,8 @@
       "item.fallout_wastelands.mmpistolnine": "9mm pistol",
       "block.fallout_wastelands.militaryplated": "Military plating",
       "block.fallout_wastelands.barrelbarrel": "Barrel",
-      "block.fallout_wastelands.closing_102": "Vault Door",
       "block.fallout_wastelands.dooranimation_139": "Vault Door135",
+      "block.fallout_wastelands.closing_102": "Vault Door",
       "block.fallout_wastelands.dooranimation_138": "Vault Door135",
       "block.fallout_wastelands.closing_103": "Vault Door 103 boyeee!",
       "block.fallout_wastelands.closing_100": "Vault Door",
@@ -22540,8 +22935,8 @@
       "itemGroup.tabwastelandersitems": "Wastelanders Items",
       "block.fallout_wastelands.closing_108": "Vault Door",
       "block.fallout_wastelands.closing_109": "Vault Door",
-      "item.fallout_wastelands.radaway": "Radaway",
       "block.fallout_wastelands.closing_106": "Vault Door",
+      "item.fallout_wastelands.radaway": "Radaway",
       "block.fallout_wastelands.closing_107": "Vault Door",
       "entity.wastlanders.closecombatsupermutant": "Closecombatsupermutant",
       "block.fallout_wastelands.closing_104": "Vault Door",
@@ -22550,9 +22945,9 @@
       "block.fallout_wastelands.dooranimation_160": "Vault Door135",
       "item.wastlanders.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.wastlanders.plasterwall": "Plaster Wall",
-      "block.wastlanders.bosbasemetalplating": "BoS Metal Plating",
-      "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
       "block.fallout_wastelands.vault_door_animation_0": "Vault Door",
+      "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
+      "block.wastlanders.bosbasemetalplating": "BoS Metal Plating",
       "item.fallout_wastelands.enemylaserweapon": "Enemylaserweapon",
       "item.fallout_wastelands.mirlurksteak": "Mirlurk Steak",
       "item.wastlanders.bulletmobs": "Bulletmobs",
@@ -22578,10 +22973,10 @@
       "item.fallout_wastelands.geckohide": "Gecko Leather",
       "item.wastlanders.tinnugget": "Tin Nugget",
       "block.fallout_wastelands.closing_9": "Vault Door",
-      "block.wastlanders.rustediron": "Rusted Iron",
       "item.fallout_wastelands.robobrainengine": "Engine",
-      "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
+      "block.wastlanders.rustediron": "Rusted Iron",
       "block.fallout_wastelands.mojaveyucca": "Mojave Yucca",
+      "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
       "block.fallout_wastelands.closing_4": "Vault Door",
       "block.fallout_wastelands.closing_3": "Vault Door",
       "block.fallout_wastelands.closing_2": "Vault Door",
@@ -22599,14 +22994,15 @@
       "block.fallout_wastelands.dooranimation_156": "Vault Door135",
       "block.fallout_wastelands.dooranimation_155": "Vault Door135",
       "block.fallout_wastelands.dooranimation_154": "Vault Door135",
+      "entity.fallout_wastelands.enclave_machingun_turret": "Enclave Machinegun Turret",
       "block.fallout_wastelands.portalframe": "Portal Frame",
       "block.fallout_wastelands.dooranimation_182": "Vault Door135",
       "block.fallout_wastelands.dooranimation_181": "Vault Door135",
       "item.fallout_wastelands.machinegun_turret_spawn_egg": "Machinegun Turret Spawn Egg",
       "block.fallout_wastelands.dooranimation_180": "Vault Door135",
       "block.fallout_wastelands.plasterstairs": "Plaster Stairs",
-      "block.wastlanders.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.t_45powerarmor_boots": "T-45 Power Armor Boots",
+      "block.wastlanders.wastlandstone": "Wasteland Stone",
       "item.wastlanders.highwayman_spawn_egg": "Highwayman Spawn Egg",
       "item.fallout_wastelands.bulletmobs": "Bulletmobs",
       "block.fallout_wastelands.dooranimation_186": "Vault Door135",
@@ -22620,8 +23016,8 @@
       "block.fallout_wastelands.dooranimation_188": "Vault Door135",
       "block.fallout_wastelands.dooranimation_187": "Vault Door135",
       "block.fallout_wastelands.dooranimation_171": "Vault Door135",
-      "block.fallout_wastelands.fevgoo": "Fevgoo",
       "block.fallout_wastelands.dooranimation_170": "Vault Door135",
+      "block.fallout_wastelands.fevgoo": "Fevgoo",
       "block.wastlanders.redindusupperrivet": "Red Industrial Block (upper rivet)",
       "block.fallout_wastelands.vaultfloorstairs": "Vaultfloor",
       "item.fallout_wastelands.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",
@@ -22729,7 +23125,7 @@
       "block.fallout_wastelands.vaultlock": "Vault Air Lock",
       "biome.fallout_wastelands.capitalwasteland": "Capitalwasteland",
       "block.fallout_wastelands.vault_door_top_part": "Vault Door Top Part",
-      "item.fallout_wastelands.taloncombatarmor_chestplate": "Talon Combat Body",
+      "item.fallout_wastelands.taloncombatarmor_chestplate": "Talon Combat Chestplate",
       "block.wastlanders.wastelandcoal": "Wasteland Coal Ore",
       "block.wastlanders.charredplankslab": "Charredplankslab",
       "block.wastlanders.bo_ssteelplatingstairs": "BoS Steel Plating Stairs",
@@ -22745,12 +23141,13 @@
       "block.wastlanders.wastelanddirt": "Wasteland Dirt",
       "block.fallout_wastelands.filler_passable": "Vault Door Filler",
       "block.fallout_wastelands.wastlandconcrete": "Old Concrete",
-      "item.fallout_wastelands.nightkin_spawn_egg": "Nightkin Supermutant Spawn Egg",
+      "item.fallout_wastelands.nightkin_spawn_egg": "Close Combat Supermutant Spawn Egg",
       "block.wastlanders.deadgrass": "Wasteland Dead Grass",
       "entity.fallout_wastelands.broken_frame": "Broken Frame",
       "subtitles.tenmmquieter": "",
       "item.wastlanders.humanbrain": "Human Brain",
       "item.fallout_wastelands.robobrainhead": "Robobrain Head",
+      "item.fallout_wastelands.enclave_machingun_turret_spawn_egg": "Enclave Machinegun Turret Spawn Egg",
       "block.fallout_wastelands.enclavebunkerblocklogo": "Enclave Bunker Block Logo",
       "block.wastlanders.wastelandtinore": "Wasteland Tin Ore",
       "block.fallout_wastelands.testbunkerdoor": "Military Plated Door",
@@ -22881,6 +23278,7 @@
       "block.fallout_wastelands.closing_97": "Vault Door",
       "subtitles.tenmmc": "",
       "effect.add_armor_back_legs": "a",
+      "item.fallout_wastelands.geckofriedegg": "Gecko Fried Egg",
       "subtitles.menutheme": "",
       "block.fallout_wastelands.vaultwallstairs": "Vaultwall 1",
       "item.wastlanders.t_45powerarmor_helmet": "T-45 Power Armor Helmet",
@@ -22973,7 +23371,7 @@
       "block.fallout_wastelands.vaultanimation_112": "Vault Door",
       "block.fallout_wastelands.vaultanimation_113": "Vault Door",
       "block.fallout_wastelands.vaultanimation_114": "Vault Door",
-      "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame Item",
+      "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame",
       "item.fallout_wastelands.greenpaintcan": "Green Paint Can",
       "block.fallout_wastelands.vaultanimation_115": "Vault Door",
       "block.wastlanders.geck_bo_sbunker": "GECK Bo Sbunker",
@@ -23004,6 +23402,7 @@
       "block.fallout_wastelands.vaultanimation_126": "Vault Door",
       "entity.fallout_wastelands.malevaultdweller_1": "Vault Dweller ",
       "block.fallout_wastelands.vaultanimation_30": "Vault Door",
+      "item.fallout_wastelands.geckoegg": "Gecko Egg",
       "entity.fallout_wastelands.malevaultdweller_2": "Vault Dweller ",
       "item.fallout_wastelands.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
       "block.fallout_wastelands.bossteelplatingslabs": "BoS Steel Plating Slab",
@@ -23017,7 +23416,7 @@
       "block.fallout_wastelands.vaultanimation_36": "Vault Door",
       "block.fallout_wastelands.closing_24": "Vault Door",
       "block.fallout_wastelands.vaultanimation_33": "Vault Door",
-      "entity.fallout_wastelands.nightkin": "Nightkin Supermutant",
+      "entity.fallout_wastelands.nightkin": "Close Combat Supermutant",
       "block.fallout_wastelands.vaultanimation_34": "Vault Door",
       "block.fallout_wastelands.vaultanimation_31": "Vault Door",
       "block.fallout_wastelands.vaultanimation_32": "Vault Door",
@@ -23185,6 +23584,7 @@
       "block.fallout_wastelands.vaultanimation_65": "Vault Door",
       "subtitles.tenmmshootb": "",
       "item.fallout_wastelands.combatarmor_helmet": "MKICombat Helmet",
+      "item.fallout_wastelands.antiradclothing": "Antirad Clothing",
       "entity.wastlanders.rangedsupermutant": "Supermutant Brute",
       "item.fallout_wastelands.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
       "item.wastlanders.frbcannon": "Frbcannon",
@@ -23320,6 +23720,7 @@
       "item.fallout_wastelands.turret_fake_projectile": "Turret Fake Projectile",
       "item.fallout_wastelands.enclave_x_01pa_leggings": "Enclave APA Leggings",
       "block.fallout_wastelands.vault_door_frame": "Vault Door Frame",
+      "item.fallout_wastelands.broken_frame_item": "Broken Power Armor Frame",
       "item.wastlanders.ingot_tin": "Tin Ingot",
       "item.fallout_wastelands.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.fallout_wastelands.wastelandgold": "Wasteland Gold Ore",
@@ -23375,6 +23776,7 @@
       "item.wastlanders.chromeraider": "Wasteland Raider Spawn Egg",
       "block.fallout_wastelands.rottenwooddoor": "Rotten Wood Door",
       "block.wastlanders.redindustrialblock": "Red Industrial Block",
+      "block.fallout_wastelands.theglowradioactivedirt": "The Glow Cracked Dirt",
       "block.wastlanders.moltenaluminiumblock": "Molten Aluminium Block",
       "subtitles.plasmarifle": "",
       "block.fallout_wastelands.closing_145": "Vault Door",

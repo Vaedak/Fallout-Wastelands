@@ -1,9 +1,17 @@
 
 package net.mcreator.fallout_wastelands;
 
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.common.brewing.IBrewingRecipe;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+
+import net.minecraft.item.Items;
+import net.minecraft.item.ItemStack;
+
+import net.mcreator.fallout_wastelands.item.GeckoeggItem;
+
 @FalloutWastelandsModElements.ModElement.Tag
 public class GeckoslimecraftBrewingRecipe extends FalloutWastelandsModElements.ModElement {
-
 	public GeckoslimecraftBrewingRecipe(FalloutWastelandsModElements instance) {
 		super(instance, 1472);
 	}

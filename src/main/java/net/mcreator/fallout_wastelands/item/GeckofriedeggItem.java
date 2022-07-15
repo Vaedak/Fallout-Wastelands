@@ -1,17 +1,30 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.item.Rarity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.item.Food;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.fallout_wastelands.itemgroup.WastelandersitemsItemGroup;
+import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+
+import java.util.List;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class GeckofriedeggItem extends FalloutWastelandsModElements.ModElement {
-
 	@ObjectHolder("fallout_wastelands:geckofriedegg")
 	public static final Item block = null;
 
 	public GeckofriedeggItem(FalloutWastelandsModElements instance) {
 		super(instance, 1471);
-
 	}
 
 	@Override
@@ -20,7 +33,6 @@ public class GeckofriedeggItem extends FalloutWastelandsModElements.ModElement {
 	}
 
 	public static class ItemCustom extends Item {
-
 		public ItemCustom() {
 			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON)
 					.food((new Food.Builder()).hunger(4).saturation(4f)
@@ -49,7 +61,5 @@ public class GeckofriedeggItem extends FalloutWastelandsModElements.ModElement {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("Full of protein !"));
 		}
-
 	}
-
 }

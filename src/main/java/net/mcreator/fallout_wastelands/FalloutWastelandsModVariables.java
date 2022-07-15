@@ -83,6 +83,8 @@ public class FalloutWastelandsModVariables {
 			nbt.putBoolean("InPowerArmor", instance.InPowerArmor);
 			nbt.putDouble("Power", instance.Power);
 			nbt.putBoolean("CanUseWeapon", instance.CanUseWeapon);
+			nbt.putBoolean("RADUIToggle", instance.RADUIToggle);
+			nbt.putBoolean("PaHudToggle", instance.PaHudToggle);
 			return nbt;
 		}
 
@@ -101,6 +103,8 @@ public class FalloutWastelandsModVariables {
 			instance.InPowerArmor = nbt.getBoolean("InPowerArmor");
 			instance.Power = nbt.getDouble("Power");
 			instance.CanUseWeapon = nbt.getBoolean("CanUseWeapon");
+			instance.RADUIToggle = nbt.getBoolean("RADUIToggle");
+			instance.PaHudToggle = nbt.getBoolean("PaHudToggle");
 		}
 	}
 
@@ -117,6 +121,8 @@ public class FalloutWastelandsModVariables {
 		public boolean InPowerArmor = false;
 		public double Power = 0;
 		public boolean CanUseWeapon = false;
+		public boolean RADUIToggle = false;
+		public boolean PaHudToggle = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -164,6 +170,8 @@ public class FalloutWastelandsModVariables {
 			clone.RADUI2 = original.RADUI2;
 			clone.RADUI1 = original.RADUI1;
 			clone.RADUI3 = original.RADUI3;
+			clone.RADUIToggle = original.RADUIToggle;
+			clone.PaHudToggle = original.PaHudToggle;
 		}
 	}
 
@@ -201,6 +209,8 @@ public class FalloutWastelandsModVariables {
 					variables.InPowerArmor = message.data.InPowerArmor;
 					variables.Power = message.data.Power;
 					variables.CanUseWeapon = message.data.CanUseWeapon;
+					variables.RADUIToggle = message.data.RADUIToggle;
+					variables.PaHudToggle = message.data.PaHudToggle;
 				}
 			});
 			context.setPacketHandled(true);

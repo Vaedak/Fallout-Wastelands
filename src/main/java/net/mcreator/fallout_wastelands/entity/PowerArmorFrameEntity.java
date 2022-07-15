@@ -58,6 +58,7 @@ import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameRightClickedOnE
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFramePlayerCollidesWithThisEntityProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameOnInitialEntitySpawnProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameOnEntityTickUpdateProcedure;
+import net.mcreator.fallout_wastelands.item.PowerArmorFrameItemItem;
 import net.mcreator.fallout_wastelands.gui.FrameInventoryGui;
 import net.mcreator.fallout_wastelands.entity.renderer.PowerArmorFrameRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
@@ -137,6 +138,11 @@ public class PowerArmorFrameEntity extends FalloutWastelandsModElements.ModEleme
 		@Override
 		public boolean canDespawn(double distanceToClosestPlayer) {
 			return false;
+		}
+
+		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
+			super.dropSpecialItems(source, looting, recentlyHitIn);
+			this.entityDropItem(new ItemStack(PowerArmorFrameItemItem.block));
 		}
 
 		@Override
@@ -297,6 +303,19 @@ public class PowerArmorFrameEntity extends FalloutWastelandsModElements.ModEleme
 			PowerArmorFramePlayerCollidesWithThisEntityProcedure.executeProcedure(
 					Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
 							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+
+		@Override
+		public boolean canBePushed() {
+			return false;
+		}
+
+		@Override
+		protected void collideWithEntity(Entity entityIn) {
+		}
+
+		@Override
+		protected void collideWithNearbyEntities() {
 		}
 	}
 }

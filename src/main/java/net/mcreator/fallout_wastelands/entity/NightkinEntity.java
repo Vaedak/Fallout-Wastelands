@@ -58,7 +58,7 @@ public class NightkinEntity extends FalloutWastelandsModElements.ModElement {
 			.size(0.7999999999999999f, 2.8000000000000003f)).build("nightkin").setRegistryName("nightkin");
 
 	public NightkinEntity(FalloutWastelandsModElements instance) {
-		super(instance, 1437);
+		super(instance, 1467);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new NightkinRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

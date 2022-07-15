@@ -1,15 +1,19 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.world.World;
+import net.minecraftforge.fml.server.ServerLifecycleHooks;
+
 import net.minecraft.world.IWorld;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ChatType;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.DamageSource;
-import net.minecraft.item.ItemStack;
+import net.minecraft.util.Util;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.item.PowerArmorFrameItemItem;
+import net.mcreator.fallout_wastelands.potion.RemoveframepotionPotionEffect;
 import net.mcreator.fallout_wastelands.entity.PowerArmorFrameEntity;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
@@ -55,21 +59,23 @@ public class RemoveFrameProcedure {
 		{
 			List<Entity> _entfound = world
 					.getEntitiesWithinAABB(Entity.class,
-							new AxisAlignedBB(x - (2 / 2d), y - (2 / 2d), z - (2 / 2d), x + (2 / 2d), y + (2 / 2d), z + (2 / 2d)), null)
+							new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
 					.stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 						}
 					}.compareDistOf(x, y, z)).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
-				if (entityiterator instanceof PowerArmorFrameEntity.CustomEntity) {
-					entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 100000);
+				if (entityiterator instanceof PowerArmorFrameEntity.CustomEntity == true) {
+					if (entityiterator instanceof LivingEntity)
+						((LivingEntity) entityiterator)
+								.addPotionEffect(new EffectInstance(RemoveframepotionPotionEffect.potion, (int) 5, (int) 1, (false), (false)));
 					if (entity instanceof PlayerEntity)
 						((PlayerEntity) entity).closeScreen();
-					if (world instanceof World && !world.isRemote()) {
-						ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(PowerArmorFrameItemItem.block));
-						entityToSpawn.setPickupDelay((int) 10);
-						world.addEntity(entityToSpawn);
+					if (!world.isRemote()) {
+						MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
+						if (mcserv != null)
+							mcserv.getPlayerList().func_232641_a_(new StringTextComponent("removedpwoerarmor"), ChatType.SYSTEM, Util.DUMMY_UUID);
 					}
 				}
 			}

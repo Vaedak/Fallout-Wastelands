@@ -30,7 +30,7 @@ public class TaloncombatarmorItem extends FalloutWastelandsModElements.ModElemen
 	public static final Item boots = null;
 
 	public TaloncombatarmorItem(FalloutWastelandsModElements instance) {
-		super(instance, 1432);
+		super(instance, 1453);
 	}
 
 	@Override

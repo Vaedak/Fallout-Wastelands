@@ -48,7 +48,7 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 			.size(1.8f, 3f)).build("deathclaw").setRegistryName("deathclaw");
 
 	public DeathclawEntity(FalloutWastelandsModElements instance) {
-		super(instance, 1440);
+		super(instance, 1458);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new DeathclawRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}
