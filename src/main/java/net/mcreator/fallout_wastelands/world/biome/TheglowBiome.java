@@ -27,7 +27,7 @@ import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.mcreator.fallout_wastelands.entity.GlowingoneEntity;
 import net.mcreator.fallout_wastelands.entity.GhoulEntity;
 import net.mcreator.fallout_wastelands.block.WastelandgravelBlock;
-import net.mcreator.fallout_wastelands.block.TheglowdirtBlock;
+import net.mcreator.fallout_wastelands.block.TheglowradioactivedirtBlock;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
 @FalloutWastelandsModElements.ModElement.Tag
@@ -48,9 +48,9 @@ public class TheglowBiome extends FalloutWastelandsModElements.ModElement {
 						.setMusic(new BackgroundMusicSelector((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 								.getValue(new ResourceLocation("fallout_wastelands:unnaturalglow")), 12000, 24000, true))
 						.setParticle(new ParticleEffectAmbience(ParticleTypes.UNDERWATER, 0.003f)).build();
-				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder()
-						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(TheglowdirtBlock.block.getDefaultState(),
-								TheglowdirtBlock.block.getDefaultState(), WastelandgravelBlock.block.getDefaultState())));
+				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder().withSurfaceBuilder(
+						SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(TheglowradioactivedirtBlock.block.getDefaultState(),
+								TheglowradioactivedirtBlock.block.getDefaultState(), WastelandgravelBlock.block.getDefaultState())));
 				DefaultBiomeFeatures.withCavesAndCanyons(biomeGenerationSettings);
 				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
 				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();

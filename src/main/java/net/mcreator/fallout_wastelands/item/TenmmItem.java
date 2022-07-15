@@ -110,7 +110,7 @@ public class TenmmItem extends FalloutWastelandsModElements.ModElement {
 				double z = entity.getPosZ();
 				if (TenmmCanUseRangedItemProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("itemstack", itemstack))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-					ArrowCustomEntity entityarrow = shoot(world, entity, random, 5f, 0.8, 0);
+					ArrowCustomEntity entityarrow = shoot(world, entity, random, 5f, 1, 0);
 					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
 
@@ -222,7 +222,7 @@ public class TenmmItem extends FalloutWastelandsModElements.ModElement {
 		double d3 = target.getPosZ() - entity.getPosZ();
 		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 5f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(0.8);
+		entityarrow.setDamage(1);
 		entityarrow.setKnockbackStrength(0);
 		entityarrow.setIsCritical(false);
 		entity.world.addEntity(entityarrow);
