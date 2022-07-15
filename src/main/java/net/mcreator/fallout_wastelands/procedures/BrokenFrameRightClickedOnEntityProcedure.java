@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.item.PowerArmorFrameItemItem;
+import net.mcreator.fallout_wastelands.item.BrokenFrameItemItem;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
@@ -47,7 +47,7 @@ public class BrokenFrameRightClickedOnEntityProcedure {
 		if (!entity.world.isRemote())
 			entity.remove();
 		if (world instanceof World && !world.isRemote()) {
-			ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(PowerArmorFrameItemItem.block));
+			ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(BrokenFrameItemItem.block));
 			entityToSpawn.setPickupDelay((int) 5);
 			entityToSpawn.setNoDespawn();
 			world.addEntity(entityToSpawn);

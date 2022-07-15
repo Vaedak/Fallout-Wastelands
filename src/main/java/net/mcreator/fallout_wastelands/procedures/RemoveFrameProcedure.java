@@ -55,7 +55,7 @@ public class RemoveFrameProcedure {
 		{
 			List<Entity> _entfound = world
 					.getEntitiesWithinAABB(Entity.class,
-							new AxisAlignedBB(x - (1 / 2d), y - (1 / 2d), z - (1 / 2d), x + (1 / 2d), y + (1 / 2d), z + (1 / 2d)), null)
+							new AxisAlignedBB(x - (2 / 2d), y - (2 / 2d), z - (2 / 2d), x + (2 / 2d), y + (2 / 2d), z + (2 / 2d)), null)
 					.stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));

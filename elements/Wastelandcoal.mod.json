@@ -58,9 +58,6 @@
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
-    "emittedRedstonePower": {
-      "fixedValue": 15.0
-    },
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
       "value": ""
@@ -79,24 +76,9 @@
     "soundOnStep": {
       "value": "STONE"
     },
-    "breakSound": {
-      "value": ""
-    },
-    "fallSound": {
-      "value": ""
-    },
-    "hitSound": {
-      "value": ""
-    },
-    "placeSound": {
-      "value": ""
-    },
-    "stepSound": {
-      "value": ""
-    },
     "luminance": 0,
     "unbreakable": false,
-    "breakHarvestLevel": 0,
+    "breakHarvestLevel": 1,
     "spawnParticles": false,
     "particleToSpawn": {
       "value": "EXPLOSION_NORMAL"

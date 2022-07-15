@@ -41,7 +41,7 @@
     "creativeTab": {
       "value": "CUSTOM:BlocsW"
     },
-    "destroyTool": "shovel",
+    "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
     },
@@ -96,7 +96,7 @@
     },
     "luminance": 0,
     "unbreakable": false,
-    "breakHarvestLevel": 0,
+    "breakHarvestLevel": 1,
     "spawnParticles": false,
     "particleToSpawn": {
       "value": "CUSTOM:Plasma"

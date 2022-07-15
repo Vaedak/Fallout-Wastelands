@@ -86,16 +86,6 @@ public class CoffeemixerBlock extends FalloutWastelandsModElements.ModElement {
 		}
 
 		@Override
-		public boolean canProvidePower(BlockState state) {
-			return true;
-		}
-
-		@Override
-		public int getWeakPower(BlockState blockstate, IBlockReader blockAccess, BlockPos pos, Direction direction) {
-			return 15;
-		}
-
-		@Override
 		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())

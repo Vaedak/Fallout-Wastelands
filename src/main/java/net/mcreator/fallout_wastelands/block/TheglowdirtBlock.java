@@ -6,7 +6,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.gen.feature.template.RuleTest;
@@ -60,8 +59,7 @@ public class TheglowdirtBlock extends FalloutWastelandsModElements.ModElement {
 
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.EARTH).sound(SoundType.SOUL_SAND).hardnessAndResistance(4f, 10f).setLightLevel(s -> 0)
-					.harvestLevel(0).harvestTool(ToolType.SHOVEL).setRequiresTool());
+			super(Block.Properties.create(Material.EARTH).sound(SoundType.SOUL_SAND).hardnessAndResistance(4f, 10f).setLightLevel(s -> 0));
 			setRegistryName("theglowdirt");
 		}
 

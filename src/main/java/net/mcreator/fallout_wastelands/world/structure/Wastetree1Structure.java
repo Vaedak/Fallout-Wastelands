@@ -99,7 +99,9 @@ public class Wastetree1Structure {
 		boolean biomeCriteria = false;
 		if (new ResourceLocation("fallout_wastelands:desertwastland").equals(event.getName()))
 			biomeCriteria = true;
-		if (new ResourceLocation("fallout_wastelands:wastelandforest").equals(event.getName()))
+		if (new ResourceLocation("fallout_wastelands:capitalwastelandeast").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("fallout_wastelands:capitalwasteland").equals(event.getName()))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;

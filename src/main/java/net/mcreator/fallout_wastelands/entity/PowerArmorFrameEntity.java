@@ -33,7 +33,6 @@ import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.Container;
@@ -88,8 +87,7 @@ public class PowerArmorFrameEntity extends FalloutWastelandsModElements.ModEleme
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
-		elements.items.add(
-				() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("power_armor_frame_spawn_egg"));
+		elements.items.add(() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(null)).setRegistryName("power_armor_frame_spawn_egg"));
 	}
 
 	@Override

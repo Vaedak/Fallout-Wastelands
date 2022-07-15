@@ -79,18 +79,6 @@ public class T45powerarmorBodyTickEventProcedure {
 		boolean boots = false;
 		boolean helm = false;
 		itemstack.getOrCreateTag().putBoolean("PowerArmorChestplate", (true));
-		if (entity instanceof PlayerEntity || entity instanceof ServerPlayerEntity) {
-			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
-				if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power > 0) {
-					if (entity.isInWater()) {
-						if (entity instanceof LivingEntity)
-							((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, (int) 60, (int) 1, (false), (false)));
-					}
-				}
-			}
-		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
 			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -102,14 +90,14 @@ public class T45powerarmorBodyTickEventProcedure {
 							.addPotionEffect(new EffectInstance(CheckerIfExitedPotionEffect.potion, (int) 10, (int) 1, (false), (false)));
 			}
 		}
-		if (entity instanceof PlayerEntity || entity instanceof ServerPlayerEntity) {
-			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == false
-					|| (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power == 0) {
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, (int) 10, (int) 4, (false), (false)));
-			}
+		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == false
+				|| (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power == 0) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, (int) 10, (int) 4, (false), (false)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 10, (int) 5, (false), (false)));
 		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
@@ -138,12 +126,7 @@ public class T45powerarmorBodyTickEventProcedure {
 					}
 
 					private void run() {
-						if ((((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorHelmet")
-								|| ((entity instanceof LivingEntity)
-										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-										: ItemStack.EMPTY).getItem() == FrameArmorItem.helmet) == false) {
+						if (true) {
 							if ((((entity instanceof LivingEntity)
 									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
 									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
@@ -181,12 +164,7 @@ public class T45powerarmorBodyTickEventProcedure {
 					}
 
 					private void run() {
-						if ((((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorChestplate")
-								|| ((entity instanceof LivingEntity)
-										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-										: ItemStack.EMPTY).getItem() == FrameArmorItem.body) == false) {
+						if (true) {
 							if ((((entity instanceof LivingEntity)
 									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
 									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {

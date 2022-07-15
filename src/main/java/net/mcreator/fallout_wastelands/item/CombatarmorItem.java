@@ -43,7 +43,7 @@ public class CombatarmorItem extends FalloutWastelandsModElements.ModElement {
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{2, 4, 5, 2}[slot.getIndex()];
+				return new int[]{2, 5, 6, 3}[slot.getIndex()];
 			}
 
 			@Override
@@ -58,7 +58,7 @@ public class CombatarmorItem extends FalloutWastelandsModElements.ModElement {
 
 			@Override
 			public Ingredient getRepairMaterial() {
-				return Ingredient.EMPTY;
+				return Ingredient.fromStacks(new ItemStack(MilitaryhullItem.block));
 			}
 
 			@OnlyIn(Dist.CLIENT)
@@ -74,7 +74,7 @@ public class CombatarmorItem extends FalloutWastelandsModElements.ModElement {
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0f;
+				return 0.1f;
 			}
 		};
 		elements.items

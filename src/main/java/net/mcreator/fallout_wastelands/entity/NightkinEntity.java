@@ -42,7 +42,7 @@ import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.AreaEffectCloudEntity;
 
 import net.mcreator.fallout_wastelands.procedures.ClosecombatsupermutantOnEntityTickUpdateProcedure;
-import net.mcreator.fallout_wastelands.item.SeptammoItem;
+import net.mcreator.fallout_wastelands.item.FusionmicrocellItem;
 import net.mcreator.fallout_wastelands.entity.renderer.NightkinRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
@@ -55,10 +55,10 @@ import java.util.AbstractMap;
 public class NightkinEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(200).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
-			.size(1f, 2.8000000000000003f)).build("nightkin").setRegistryName("nightkin");
+			.size(0.7999999999999999f, 2.8000000000000003f)).build("nightkin").setRegistryName("nightkin");
 
 	public NightkinEntity(FalloutWastelandsModElements instance) {
-		super(instance, 1467);
+		super(instance, 1437);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new NightkinRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}
@@ -66,7 +66,7 @@ public class NightkinEntity extends FalloutWastelandsModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -6711040, -13408768, new Item.Properties().group(ItemGroup.MISC))
+		elements.items.add(() -> new SpawnEggItem(entity, -9866887, -13408768, new Item.Properties().group(ItemGroup.MISC))
 				.setRegistryName("nightkin_spawn_egg"));
 	}
 
@@ -78,11 +78,10 @@ public class NightkinEntity extends FalloutWastelandsModElements.ModElement {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
 			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
-			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.6);
+			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.7);
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 50);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 1);
-			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 15);
-			ammma = ammma.createMutableAttribute(Attributes.ATTACK_KNOCKBACK, 2);
+			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 10);
 			event.put(entity, ammma.create());
 		}
 	}
@@ -106,7 +105,7 @@ public class NightkinEntity extends FalloutWastelandsModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.7, false) {
+			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.7, true) {
 				@Override
 				protected double getAttackReachSqr(LivingEntity entity) {
 					return (double) (4.0 + entity.getWidth() * entity.getWidth());
@@ -116,36 +115,25 @@ public class NightkinEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
-			this.goalSelector.addGoal(6, new BreakDoorGoal(this, e -> true));
-			this.goalSelector.addGoal(7, new ReturnToVillageGoal(this, 0.6, false));
-			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, ChromedraiderfemaleEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, MirelurkEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, GhoulEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, ArmyrobobrainEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, VillagerEntity.class, true, false));
-			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, ZombieEntity.class, true, false));
-			this.targetSelector.addGoal(15, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(16, new NearestAttackableTargetGoal(this, VindicatorEntity.class, true, false));
-			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, PlayerEntity.class, true, false));
-			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, FriendlybrainbotEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, Malevaultdweller1Entity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, Femalevaultdweller1Entity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, Femalevaultdweller2Entity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, Malevaultdweller2Entity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(27, new NearestAttackableTargetGoal(this, Malewastelander1Entity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(28, new NearestAttackableTargetGoal(this, Malewastelander2Entity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, Malewastelander3Entity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, Malewastelander4Entity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, DeathclawEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, GeckoEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, ChromedraiderfemaleEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, MirelurkEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, GhoulEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, ArmyrobobrainEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, VillagerEntity.class, true, false));
+			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, ZombieEntity.class, true, false));
+			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, VindicatorEntity.class, true, false));
+			this.targetSelector.addGoal(15, new NearestAttackableTargetGoal(this, PlayerEntity.class, true, false));
+			this.targetSelector.addGoal(16, new NearestAttackableTargetGoal(this, FriendlybrainbotEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, DeathclawEntity.CustomEntity.class, true, false));
+			this.goalSelector.addGoal(23, new BreakDoorGoal(this, e -> true));
+			this.goalSelector.addGoal(24, new ReturnToVillageGoal(this, 0.6, false));
 		}
 
 		@Override
@@ -155,7 +143,7 @@ public class NightkinEntity extends FalloutWastelandsModElements.ModElement {
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(SeptammoItem.block));
+			this.entityDropItem(new ItemStack(FusionmicrocellItem.block));
 		}
 
 		@Override
@@ -171,6 +159,10 @@ public class NightkinEntity extends FalloutWastelandsModElements.ModElement {
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
 			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
+				return false;
+			if (source == DamageSource.WITHER)
+				return false;
+			if (source.getDamageType().equals("witherSkull"))
 				return false;
 			return super.attackEntityFrom(source, amount);
 		}

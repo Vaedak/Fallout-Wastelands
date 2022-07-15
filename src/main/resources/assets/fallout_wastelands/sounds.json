@@ -472,5 +472,32 @@
         "stream": true
       }
     ]
+  },
+  "machinegunquieter": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:581771__hz37__machine-gun-hza-01-08-2021machinegunquieter",
+        "stream": false
+      }
+    ]
+  },
+  "ninemmquieter": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:9mmshootquieter",
+        "stream": false
+      }
+    ]
+  },
+  "tenmmquieter": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:tenmmquieter",
+        "stream": false
+      }
+    ]
   }
 }
