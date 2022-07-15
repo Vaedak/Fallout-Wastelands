@@ -12,6 +12,9 @@
             "value": -256,
             "falpha": 0.0
           },
+          "displayCondition": {
+            "name": "InarmorIsTrue"
+          },
           "name": "<VAR:Power>",
           "x": 361,
           "y": 221

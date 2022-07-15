@@ -20931,22 +20931,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       }
@@ -22273,12 +22257,7 @@
       "locked_code": false,
       "registry_name": "removeframepotion_effect_expires",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       }
     },
     {
@@ -22296,6 +22275,23 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "displayradiationgreenicon",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InarmorIsTrue",
+      "type": "procedure",
+      "sortid": 1499,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "inarmor_is_true",
       "metadata": {
         "return_type": "logic",
         "dependencies": [
@@ -22816,8 +22812,8 @@
       "advancements.itsalive.title": "It\u0027s Alive !",
       "item.fallout_wastelands.uraniumingot": "Uranium Ingot",
       "block.fallout_wastelands.wastelandcobblestairs": "Wasteland Cobblestone Stairs",
-      "block.wastlanders.sheetmetalwall": "Sheet Metal Wall",
       "block.fallout_wastelands.copperblock": "Copper Block",
+      "block.wastlanders.sheetmetalwall": "Sheet Metal Wall",
       "block.fallout_wastelands.vaultkitchenblocks": "Vault Kitchen Floor",
       "block.wastlanders.rustbloc": "Fully Rusted Iron",
       "item.fallout_wastelands.ghoul_spawn_egg": "Ghoul Spawn Egg",
@@ -22861,10 +22857,10 @@
       "block.wastlanders.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
       "item.fallout_wastelands.radx": "Rad-X",
-      "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_2": "Xander 2",
-      "item.wastlanders.mobmachinegun": "Mobmachinegun",
+      "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_3": "Xander 3",
+      "item.wastlanders.mobmachinegun": "Mobmachinegun",
       "block.fallout_wastelands.xander_1": "Xander 1",
       "item.fallout_wastelands.nailedwrench": "Nailed Wrench",
       "block.fallout_wastelands.xander_4": "Xander 4",
@@ -22872,12 +22868,12 @@
       "item.wastlanders.rotativepart": "Rotary Piece",
       "block.fallout_wastelands.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.highwayman_spawn_egg": "Highwayman Spawn Egg",
-      "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
       "item.fallout_wastelands.friedeggchicagospecial": "Fried Egg Chicago Special",
+      "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
       "item.fallout_wastelands.ninemmammo": "9mm Ammo",
       "block.wastlanders.plaster": "Plaster",
-      "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
       "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
+      "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
       "item.wastlanders.laserriffle": "Laser Rifle",
       "item.wastlanders.breadroller": "Bread Roller",
       "block.fallout_wastelands.redindustrialblocslab": "Red Industrial Block Slab",
@@ -22891,27 +22887,27 @@
       "block.fallout_wastelands.steelblock": "Steel Block",
       "block.fallout_wastelands.dooranimation_149": "Vault Door135",
       "block.fallout_wastelands.closing_114": "Vault Door",
-      "block.fallout_wastelands.closing_111": "Vault Door",
-      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
       "item.wastlanders.bossteelplate": "BoS Steelplate",
-      "block.fallout_wastelands.closing_112": "Vault Door",
+      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
+      "block.fallout_wastelands.closing_111": "Vault Door",
       "block.fallout_wastelands.dooranimation_147": "Vault Door135",
+      "block.fallout_wastelands.closing_112": "Vault Door",
       "item.fallout_wastelands.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
       "block.fallout_wastelands.closing_110": "Vault Door",
       "block.fallout_wastelands.dooranimation_142": "Vault Door135",
-      "advancements.vaultdweller.title": "Vault Dweller",
       "block.fallout_wastelands.dooranimation_141": "Vault Door135",
-      "block.fallout_wastelands.closing_119": "Vault Door",
+      "advancements.vaultdweller.title": "Vault Dweller",
       "block.fallout_wastelands.dooranimation_140": "Vault Door135",
+      "block.fallout_wastelands.closing_119": "Vault Door",
       "item.fallout_wastelands.ingot_tin": "Tin Ingot",
       "block.fallout_wastelands.dooranimation_146": "Vault Door135",
       "block.fallout_wastelands.closing_117": "Vault Door",
-      "block.fallout_wastelands.closing_118": "Vault Door",
-      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
       "block.fallout_wastelands.lighttub": "Light Tub",
-      "block.fallout_wastelands.closing_115": "Vault Door",
-      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
+      "block.fallout_wastelands.closing_118": "Vault Door",
       "entity.fallout_wastelands.mirelurk": "Mirelurk",
+      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "block.fallout_wastelands.closing_115": "Vault Door",
       "block.fallout_wastelands.dooranimation_143": "Vault Door135",
       "block.fallout_wastelands.closing_116": "Vault Door",
       "item.fallout_wastelands.frame_armor_leggings": "Frame Armor Leggings",
@@ -22923,8 +22919,8 @@
       "item.fallout_wastelands.mmpistolnine": "9mm pistol",
       "block.fallout_wastelands.militaryplated": "Military plating",
       "block.fallout_wastelands.barrelbarrel": "Barrel",
-      "block.fallout_wastelands.dooranimation_139": "Vault Door135",
       "block.fallout_wastelands.closing_102": "Vault Door",
+      "block.fallout_wastelands.dooranimation_139": "Vault Door135",
       "block.fallout_wastelands.dooranimation_138": "Vault Door135",
       "block.fallout_wastelands.closing_103": "Vault Door 103 boyeee!",
       "block.fallout_wastelands.closing_100": "Vault Door",
@@ -22935,8 +22931,8 @@
       "itemGroup.tabwastelandersitems": "Wastelanders Items",
       "block.fallout_wastelands.closing_108": "Vault Door",
       "block.fallout_wastelands.closing_109": "Vault Door",
-      "block.fallout_wastelands.closing_106": "Vault Door",
       "item.fallout_wastelands.radaway": "Radaway",
+      "block.fallout_wastelands.closing_106": "Vault Door",
       "block.fallout_wastelands.closing_107": "Vault Door",
       "entity.wastlanders.closecombatsupermutant": "Closecombatsupermutant",
       "block.fallout_wastelands.closing_104": "Vault Door",
@@ -22945,9 +22941,9 @@
       "block.fallout_wastelands.dooranimation_160": "Vault Door135",
       "item.wastlanders.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.wastlanders.plasterwall": "Plaster Wall",
-      "block.fallout_wastelands.vault_door_animation_0": "Vault Door",
-      "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
       "block.wastlanders.bosbasemetalplating": "BoS Metal Plating",
+      "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
+      "block.fallout_wastelands.vault_door_animation_0": "Vault Door",
       "item.fallout_wastelands.enemylaserweapon": "Enemylaserweapon",
       "item.fallout_wastelands.mirlurksteak": "Mirlurk Steak",
       "item.wastlanders.bulletmobs": "Bulletmobs",
@@ -23001,8 +22997,8 @@
       "item.fallout_wastelands.machinegun_turret_spawn_egg": "Machinegun Turret Spawn Egg",
       "block.fallout_wastelands.dooranimation_180": "Vault Door135",
       "block.fallout_wastelands.plasterstairs": "Plaster Stairs",
-      "item.fallout_wastelands.t_45powerarmor_boots": "T-45 Power Armor Boots",
       "block.wastlanders.wastlandstone": "Wasteland Stone",
+      "item.fallout_wastelands.t_45powerarmor_boots": "T-45 Power Armor Boots",
       "item.wastlanders.highwayman_spawn_egg": "Highwayman Spawn Egg",
       "item.fallout_wastelands.bulletmobs": "Bulletmobs",
       "block.fallout_wastelands.dooranimation_186": "Vault Door135",
@@ -23016,8 +23012,8 @@
       "block.fallout_wastelands.dooranimation_188": "Vault Door135",
       "block.fallout_wastelands.dooranimation_187": "Vault Door135",
       "block.fallout_wastelands.dooranimation_171": "Vault Door135",
-      "block.fallout_wastelands.dooranimation_170": "Vault Door135",
       "block.fallout_wastelands.fevgoo": "Fevgoo",
+      "block.fallout_wastelands.dooranimation_170": "Vault Door135",
       "block.wastlanders.redindusupperrivet": "Red Industrial Block (upper rivet)",
       "block.fallout_wastelands.vaultfloorstairs": "Vaultfloor",
       "item.fallout_wastelands.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",

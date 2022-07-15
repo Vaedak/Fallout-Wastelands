@@ -3,6 +3,7 @@ package net.mcreator.fallout_wastelands.procedures;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.CapabilityItemHandler;
 
+import net.minecraft.util.DamageSource;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -12,6 +13,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.fallout_wastelands.potion.RemoveframepotionPotionEffect;
 import net.mcreator.fallout_wastelands.potion.FrameIdentifierPotionEffect;
 import net.mcreator.fallout_wastelands.potion.CheckerIfExitedPotionEffect;
 import net.mcreator.fallout_wastelands.potion.CheckIfExitedMarkerPotionEffect;
@@ -44,6 +46,23 @@ public class PowerArmorFramePlayerCollidesWithThisEntityProcedure {
 		boolean transfer2 = false;
 		boolean getisframeboots = false;
 		boolean getisframe = false;
+		if (new Object() {
+			boolean check(Entity _entity) {
+				if (_entity instanceof LivingEntity) {
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+					for (EffectInstance effect : effects) {
+						if (effect.getPotion() == RemoveframepotionPotionEffect.potion)
+							return true;
+					}
+				}
+				return false;
+			}
+		}.check(sourceentity)) {
+			if (sourceentity instanceof LivingEntity) {
+				((LivingEntity) sourceentity).removePotionEffect(RemoveframepotionPotionEffect.potion);
+			}
+			entity.attackEntityFrom(DamageSource.GENERIC, (float) 10000);
+		}
 		if (new Object() {
 			boolean check(Entity _entity) {
 				if (_entity instanceof LivingEntity) {

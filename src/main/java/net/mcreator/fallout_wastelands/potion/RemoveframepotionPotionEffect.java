@@ -15,10 +15,7 @@ import net.minecraft.entity.LivingEntity;
 
 import net.mcreator.fallout_wastelands.procedures.RemoveframepotionEffectExpiresProcedure;
 
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import java.util.Collections;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RemoveframepotionPotionEffect {
@@ -74,8 +71,7 @@ public class RemoveframepotionPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			RemoveframepotionEffectExpiresProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			RemoveframepotionEffectExpiresProcedure.executeProcedure(Collections.emptyMap());
 		}
 
 		@Override
