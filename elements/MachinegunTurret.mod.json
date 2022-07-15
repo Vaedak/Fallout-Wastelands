@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "Machinegun Turret",
     "mobLabel": "",
-    "mobModelName": "Biped",
+    "mobModelName": "Modelturret",
     "mobModelTexture": "10mm_2.png",
     "mobModelGlowTexture": "",
     "isShakingCondition": {

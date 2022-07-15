@@ -3,12 +3,12 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "industrialsheetmetalplate",
+    "texture": "gecko_leather",
     "customModelName": "Normal",
-    "name": "Pleasedelete",
+    "name": "Gecko Leather",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "MISC"
+      "value": "CUSTOM:Wastelandersitems"
     },
     "stackSize": 64,
     "enchantability": 0,

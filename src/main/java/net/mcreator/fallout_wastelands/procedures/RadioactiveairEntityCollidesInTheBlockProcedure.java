@@ -1,10 +1,7 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.fallout_wastelands.potion.RadiationPotionEffect;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
@@ -21,16 +18,11 @@ public class RadioactiveairEntityCollidesInTheBlockProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		{
 			double _setval = ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Radioacitvity + 1);
+					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge + 1);
 			entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.Radioacitvity = _setval;
 				capability.syncPlayerVariables(entity);
 			});
-		}
-		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Radioacitvity >= 1) {
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 60, (int) 0));
 		}
 	}
 }

@@ -9,6 +9,9 @@
     "undergroundBlock": {
       "value": "CUSTOM:Wastlandsand"
     },
+    "underwaterBlock": {
+      "value": ""
+    },
     "airColor": {
       "value": -5257836,
       "falpha": 0.0
@@ -55,7 +58,7 @@
     "spawnBiome": false,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 700,
+    "biomeWeight": 1,
     "biomeDictionaryTypes": [
       "WASTELAND"
     ],

@@ -26,10 +26,7 @@
         "value": "CUSTOM:Desertwastland"
       },
       {
-        "value": "CUSTOM:Capitalwastelandeast"
-      },
-      {
-        "value": "CUSTOM:Capitalwasteland"
+        "value": "CUSTOM:Wastelandforest"
       }
     ],
     "ignoreBlocks": "STRUCTURE_BLOCK"

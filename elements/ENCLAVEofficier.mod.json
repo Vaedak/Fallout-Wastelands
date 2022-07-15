@@ -108,7 +108,7 @@
     "rangedAttackItem": {
       "value": ""
     },
-    "rangedItemType": "Laserriffle",
+    "rangedItemType": "Enemylaserweapon",
     "spawnThisMob": false,
     "doesDespawnWhenIdle": false,
     "spawningProbability": 1,

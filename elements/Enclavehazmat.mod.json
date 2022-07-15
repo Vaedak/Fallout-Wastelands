@@ -1,0 +1,61 @@
+{
+  "_fv": 28,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "enclave_hazmat_helmet",
+    "enableBody": true,
+    "textureBody": "enclave_hazmat_chestplate",
+    "enableLeggings": true,
+    "textureLeggings": "enclave_hazmat_leggings",
+    "enableBoots": true,
+    "textureBoots": "enclave_hazmat_boots",
+    "onBodyTick": {
+      "name": "HazmatBodyTickEvent"
+    },
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "armorTextureFile": "enclave_hazmat__b",
+    "helmetName": "Enclave Hazmat Helmet",
+    "bodyName": "Enclave Hazmat Body",
+    "leggingsName": "Enclave Hazmat Leggings",
+    "bootsName": "Enclave Hazmat Boots",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "maxDamage": 6,
+    "damageValueHelmet": 2,
+    "damageValueBody": 4,
+    "damageValueLeggings": 3,
+    "damageValueBoots": 2,
+    "enchantability": 9,
+    "toughness": 0.1,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": []
+  }
+}

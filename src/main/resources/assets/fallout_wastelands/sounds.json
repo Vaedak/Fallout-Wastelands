@@ -463,5 +463,14 @@
         "stream": false
       }
     ]
+  },
+  "unnaturalglow": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:unnatural_glow",
+        "stream": true
+      }
+    ]
   }
 }

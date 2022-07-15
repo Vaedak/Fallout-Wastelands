@@ -14,6 +14,12 @@
       },
       {
         "value": "CUSTOM:Wastlandsanddesert"
+      },
+      {
+        "value": "CUSTOM:Theglow"
+      },
+      {
+        "value": "CUSTOM:Wastelandforest"
       }
     ],
     "worldGenType": "Normal world gen",
@@ -24,7 +30,7 @@
       "value": "Blocks.FLOWING_WATER"
     },
     "airColor": {
-      "value": -13610703,
+      "value": -12689583,
       "falpha": 0.0
     },
     "canRespawnHere": true,
