@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:iron_ingot"
+    },
+    "1": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "2": {
+      "item": "minecraft:iron_ingot"
+    },
+    "3": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "4": {
+      "item": "fallout_wastelands:broken_frame_item"
+    },
+    "5": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "6": {
+      "item": "minecraft:redstone"
+    },
+    "7": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "8": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:power_armor_frame_item",
+    "count": 1
+  }
+}

@@ -43,8 +43,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.CreatureAttribute;
 
+import net.mcreator.fallout_wastelands.item.LaserriffleItem;
 import net.mcreator.fallout_wastelands.item.FusionmicrocellItem;
-import net.mcreator.fallout_wastelands.item.EnemylaserweaponItem;
 import net.mcreator.fallout_wastelands.item.EnclaveofficierarmorItem;
 import net.mcreator.fallout_wastelands.entity.renderer.ENCLAVEofficierRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
@@ -171,7 +171,7 @@ public class ENCLAVEofficierEntity extends FalloutWastelandsModElements.ModEleme
 		}
 
 		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {
-			EnemylaserweaponItem.shoot(this, target);
+			LaserriffleItem.shoot(this, target);
 		}
 	}
 }

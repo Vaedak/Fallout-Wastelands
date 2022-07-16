@@ -101,8 +101,6 @@ public class Wastelandtree3Structure {
 			biomeCriteria = true;
 		if (new ResourceLocation("fallout_wastelands:capitalwastelandeast").equals(event.getName()))
 			biomeCriteria = true;
-		if (new ResourceLocation("fallout_wastelands:wastelandforest").equals(event.getName()))
-			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 		event.getGeneration().getFeatures(GenerationStage.Decoration.SURFACE_STRUCTURES).add(() -> configuredFeature);

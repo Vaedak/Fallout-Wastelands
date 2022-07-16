@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "plasmarifleparticle",
+    "texture": "microfusion_cell",
     "customModelName": "Normal",
     "name": "Fusion Core",
     "rarity": "COMMON",

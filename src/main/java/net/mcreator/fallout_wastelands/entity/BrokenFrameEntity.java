@@ -32,19 +32,21 @@ import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.AreaEffectCloudEntity;
 
 import net.mcreator.fallout_wastelands.procedures.BrokenFrameRightClickedOnEntityProcedure;
+import net.mcreator.fallout_wastelands.procedures.BrokenFrameOnEntityTickUpdateProcedure;
 import net.mcreator.fallout_wastelands.entity.renderer.BrokenFrameRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
 import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Collections;
 import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class BrokenFrameEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
-			.size(0.5f, 0.5f)).build("broken_frame").setRegistryName("broken_frame");
+			.size(0.7f, 0.5f)).build("broken_frame").setRegistryName("broken_frame");
 
 	public BrokenFrameEntity(FalloutWastelandsModElements instance) {
 		super(instance, 1450);
@@ -163,6 +165,17 @@ public class BrokenFrameEntity extends FalloutWastelandsModElements.ModElement {
 							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
+		}
+
+		@Override
+		public void baseTick() {
+			super.baseTick();
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity entity = this;
+
+			BrokenFrameOnEntityTickUpdateProcedure.executeProcedure(Collections.emptyMap());
 		}
 	}
 }

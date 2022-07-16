@@ -61,10 +61,12 @@ public class PowerArmorFrameItemRightclickedOnBlockProcedure {
 						SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
 			world.addEntity(entityToSpawn);
 		}
-		if (entity instanceof PlayerEntity) {
-			ItemStack _stktoremove = new ItemStack(PowerArmorFrameItemItem.block);
-			((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-					((PlayerEntity) entity).container.func_234641_j_());
+		if (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).abilities.isCreativeMode : false) == false) {
+			if (entity instanceof PlayerEntity) {
+				ItemStack _stktoremove = new ItemStack(PowerArmorFrameItemItem.block);
+				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
+						((PlayerEntity) entity).container.func_234641_j_());
+			}
 		}
 	}
 }

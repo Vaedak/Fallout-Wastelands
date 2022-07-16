@@ -17,7 +17,7 @@
     "shootConstantly": false,
     "usageCount": 1200,
     "actionSound": {
-      "value": "CUSTOM:tenmmc"
+      "value": "CUSTOM:tenmmquieter"
     },
     "hasGlow": false,
     "animation": "none",

@@ -39,7 +39,7 @@
       "value": ""
     },
     "music": {
-      "value": "CUSTOM:unnaturalglow"
+      "value": "CUSTOM:wastelandwind"
     },
     "moodSound": {
       "value": ""
@@ -58,7 +58,7 @@
     "spawnBiome": true,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 1,
+    "biomeWeight": 4,
     "biomeDictionaryTypes": [],
     "grassPerChunk": 0,
     "seagrassPerChunk": 0,
@@ -117,15 +117,6 @@
         "minGroup": 4,
         "maxGroup": 4,
         "weight": 20,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:Glowingone"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 6,
         "spawnType": "monster"
       }
     ]

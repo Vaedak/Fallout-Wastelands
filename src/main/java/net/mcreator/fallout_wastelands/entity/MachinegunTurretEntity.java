@@ -72,7 +72,7 @@ import java.util.AbstractMap;
 public class MachinegunTurretEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
-			.size(0.5f, 1.2000000000000002f)).build("machinegun_turret").setRegistryName("machinegun_turret");
+			.size(0.5f, 0.6f)).build("machinegun_turret").setRegistryName("machinegun_turret");
 
 	public MachinegunTurretEntity(FalloutWastelandsModElements instance) {
 		super(instance, 1410);
@@ -150,27 +150,29 @@ public class MachinegunTurretEntity extends FalloutWastelandsModElements.ModElem
 			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, FriendlybrainbotEntity.CustomEntity.class, true, true));
 			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, true, true));
 			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, true, true));
-			this.targetSelector.addGoal(15, new NearestAttackableTargetGoal(this, HighwaymanEntity.CustomEntity.class, true, true));
-			this.targetSelector.addGoal(16, new NearestAttackableTargetGoal(this, BatEntity.class, true, true));
-			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, GhastEntity.class, true, true));
-			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, IronGolemEntity.class, true, true));
-			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, PillagerEntity.class, true, true));
-			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, SpiderEntity.class, true, true));
-			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, VillagerEntity.class, true, true));
-			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, WitherEntity.class, true, true));
-			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, WolfEntity.class, true, true));
-			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, ZombieEntity.class, true, true));
-			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, RavagerEntity.class, true, true));
-			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, PhantomEntity.class, true, true));
-			this.targetSelector.addGoal(27, new NearestAttackableTargetGoal(this, WitherSkeletonEntity.class, true, true));
-			this.targetSelector.addGoal(28, new NearestAttackableTargetGoal(this, WitchEntity.class, true, true));
-			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, SnowGolemEntity.class, true, true));
-			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, SlimeEntity.class, true, true));
-			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, SkeletonEntity.class, true, true));
-			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, EnderDragonEntity.class, true, true));
-			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, ZombifiedPiglinEntity.class, true, true));
-			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, PlayerEntity.class, true, true));
-			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, CreeperEntity.class, true, true));
+			this.targetSelector.addGoal(15, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(16, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, HighwaymanEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, BatEntity.class, true, true));
+			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, GhastEntity.class, true, true));
+			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, IronGolemEntity.class, true, true));
+			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, PillagerEntity.class, true, true));
+			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, SpiderEntity.class, true, true));
+			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, VillagerEntity.class, true, true));
+			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, WitherEntity.class, true, true));
+			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, WolfEntity.class, true, true));
+			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, ZombieEntity.class, true, true));
+			this.targetSelector.addGoal(27, new NearestAttackableTargetGoal(this, RavagerEntity.class, true, true));
+			this.targetSelector.addGoal(28, new NearestAttackableTargetGoal(this, PhantomEntity.class, true, true));
+			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, WitherSkeletonEntity.class, true, true));
+			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, WitchEntity.class, true, true));
+			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, SnowGolemEntity.class, true, true));
+			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, SlimeEntity.class, true, true));
+			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, SkeletonEntity.class, true, true));
+			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, EnderDragonEntity.class, true, true));
+			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, ZombifiedPiglinEntity.class, true, true));
+			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, PlayerEntity.class, true, true));
+			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, CreeperEntity.class, true, true));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

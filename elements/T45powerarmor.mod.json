@@ -11,16 +11,16 @@
     "enableBoots": true,
     "textureBoots": "powerarmorboots",
     "onHelmetTick": {
-      "name": "PowerArmorHelmetTick"
+      "name": "PowerArmorHelmetUniversal"
     },
     "onBodyTick": {
-      "name": "PowerArmorChestTick"
+      "name": "PowerArmorChestUniversal"
     },
     "onLeggingsTick": {
-      "name": "PowerArmorLeggingsTick"
+      "name": "PowerArmorLegsUniversal"
     },
     "onBootsTick": {
-      "name": "PowerArmorBootsTick"
+      "name": "PowerArmorBootsUniversal"
     },
     "creativeTab": {
       "value": "CUSTOM:Wastelanderscombattab"
@@ -50,10 +50,10 @@
     "bootsModelPartL": "leftleg",
     "bootsModelPartR": "rightleg",
     "bootsModelTexture": "From armor",
-    "helmetImmuneToFire": false,
-    "bodyImmuneToFire": false,
-    "leggingsImmuneToFire": false,
-    "bootsImmuneToFire": false,
+    "helmetImmuneToFire": true,
+    "bodyImmuneToFire": true,
+    "leggingsImmuneToFire": true,
+    "bootsImmuneToFire": true,
     "maxDamage": 40,
     "damageValueHelmet": 4,
     "damageValueBody": 8,
