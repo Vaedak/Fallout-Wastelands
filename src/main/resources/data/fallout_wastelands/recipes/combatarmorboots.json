@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:leather"
+    },
+    "2": {
+      "item": "minecraft:leather"
+    },
+    "3": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "5": {
+      "item": "fallout_wastelands:militaryhull"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:combatarmor_boots",
+    "count": 1
+  }
+}

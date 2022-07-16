@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "2": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "3": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "4": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "5": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "6": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "7": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "8": {
+      "item": "fallout_wastelands:militaryhull"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:combatarmor_chestplate",
+    "count": 1
+  }
+}

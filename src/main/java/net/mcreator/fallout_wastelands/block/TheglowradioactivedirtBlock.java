@@ -67,8 +67,8 @@ public class TheglowradioactivedirtBlock extends FalloutWastelandsModElements.Mo
 
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.EARTH).sound(SoundType.SOUL_SAND).hardnessAndResistance(4f, 10f).setLightLevel(s -> 1)
-					.harvestLevel(0).harvestTool(ToolType.SHOVEL).setRequiresTool().setNeedsPostProcessing((bs, br, bp) -> true)
+			super(Block.Properties.create(Material.EARTH).sound(SoundType.GROUND).hardnessAndResistance(4f, 10f).setLightLevel(s -> 0).harvestLevel(0)
+					.harvestTool(ToolType.SHOVEL).setRequiresTool().setNeedsPostProcessing((bs, br, bp) -> true)
 					.setEmmisiveRendering((bs, br, bp) -> true));
 			setRegistryName("theglowradioactivedirt");
 		}

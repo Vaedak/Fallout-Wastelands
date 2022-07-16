@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "1": {
+      "item": "fallout_wastelands:wastelandglassblock"
+    },
+    "2": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "3": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "5": {
+      "item": "fallout_wastelands:antiradclothing"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:hazmat_helmet",
+    "count": 1
+  }
+}

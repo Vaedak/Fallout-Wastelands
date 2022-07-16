@@ -152,6 +152,8 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false));
 			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, GhoulEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, false, false));
 		}
 
 		@Override

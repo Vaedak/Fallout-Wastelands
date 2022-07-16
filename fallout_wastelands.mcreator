@@ -21745,6 +21745,138 @@
           }
         ]
       }
+    },
+    {
+      "name": "Antiradclothingcrafting",
+      "type": "recipe",
+      "sortid": 1477,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antiradclothingcrafting"
+    },
+    {
+      "name": "Antiradhelmetcrafting",
+      "type": "recipe",
+      "sortid": 1478,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antiradhelmetcrafting"
+    },
+    {
+      "name": "Antiradchestplatecraft",
+      "type": "recipe",
+      "sortid": 1479,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antiradchestplatecraft"
+    },
+    {
+      "name": "Antiradleggingcraft",
+      "type": "recipe",
+      "sortid": 1480,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antiradleggingcraft"
+    },
+    {
+      "name": "Antiradbootscraft",
+      "type": "recipe",
+      "sortid": 1481,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antiradbootscraft"
+    },
+    {
+      "name": "EnclaveARHcraft",
+      "type": "recipe",
+      "sortid": 1482,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enclave_ar_hcraft"
+    },
+    {
+      "name": "EnclaveARCcraft",
+      "type": "recipe",
+      "sortid": 1483,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enclave_ar_ccraft"
+    },
+    {
+      "name": "EnclaveARLcraft",
+      "type": "recipe",
+      "sortid": 1484,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enclave_ar_lcraft"
+    },
+    {
+      "name": "EnclaveARBcraft",
+      "type": "recipe",
+      "sortid": 1485,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enclave_ar_bcraft"
+    },
+    {
+      "name": "Combathelmetcraft",
+      "type": "recipe",
+      "sortid": 1486,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combathelmetcraft"
+    },
+    {
+      "name": "Combatarmorchestplatecraft",
+      "type": "recipe",
+      "sortid": 1487,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combatarmorchestplatecraft"
+    },
+    {
+      "name": "Combatarmorlegging",
+      "type": "recipe",
+      "sortid": 1488,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combatarmorlegging"
+    },
+    {
+      "name": "Combatarmorboots",
+      "type": "recipe",
+      "sortid": 1489,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "combatarmorboots"
+    },
+    {
+      "name": "RootdirtBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 1490,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rootdirt_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

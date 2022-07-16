@@ -1,0 +1,46 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Antiradclothing"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Antiradclothing"
+      },
+      {
+        "value": "CUSTOM:Antiradclothing"
+      },
+      {
+        "value": "CUSTOM:Antiradclothing"
+      },
+      {
+        "value": "CUSTOM:Antiradclothing"
+      },
+      {
+        "value": "CUSTOM:Leadingot"
+      },
+      {
+        "value": "CUSTOM:Antiradclothing"
+      },
+      {
+        "value": "CUSTOM:Leadingot"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Hazmat.body"
+    },
+    "name": "antiradchestplatecraft",
+    "namespace": "mod"
+  }
+}

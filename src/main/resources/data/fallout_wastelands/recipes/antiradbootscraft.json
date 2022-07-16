@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "2": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "3": {
+      "item": "fallout_wastelands:leadingot"
+    },
+    "5": {
+      "item": "fallout_wastelands:leadingot"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:hazmat_boots",
+    "count": 1
+  }
+}

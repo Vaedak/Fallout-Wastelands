@@ -18,7 +18,7 @@
         }
       }
     ],
-    "baseTexture": "sans_titrees.png",
+    "baseTexture": "pahudoutline.png",
     "overlayTarget": "Ingame",
     "displayCondition": {
       "name": "PowerArmorVisorDisplayOverlayIngame"
