@@ -19,7 +19,7 @@ public class RadiationOnEffectActiveTickProcedure {
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-						"attribute @s minecraft:generic.max_health base set 5.0");
+						"attribute @s minecraft:generic.max_health base set 7.0");
 			}
 		}
 	}

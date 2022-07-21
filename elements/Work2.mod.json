@@ -1,0 +1,138 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "paulo.png",
+          "use1Xscale": false,
+          "name": "paulo.png",
+          "x": 42,
+          "y": -1
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Farewell then kill some raiders and get",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "Farewell then kill some raiders and get",
+          "x": 114,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "",
+          "x": 114,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Opentrade"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 348,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "See you then Paulo .",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "See you then Paulo .",
+          "x": 114,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Queststartingpaulo"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "",
+          "x": 114,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "the cards . Get ten cards back to me",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "the cards . Get ten cards back to me",
+          "x": 114,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "and I'll give you caps for them .",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "and I'll give you caps for them .",
+          "x": 114,
+          "y": 134
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

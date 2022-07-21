@@ -33,11 +33,11 @@ public class MachinegunTurretRenderer {
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
 			RenderingRegistry.registerEntityRenderingHandler(MachinegunTurretEntity.entity, renderManager -> {
-				return new MobRenderer(renderManager, new Modelmachineturret(), 0.4f) {
+				return new MobRenderer(renderManager, new Modelmachineturret(), 0.5f) {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/turret.png");
+						return new ResourceLocation("fallout_wastelands:textures/turret_second.png");
 					}
 
 					@Override

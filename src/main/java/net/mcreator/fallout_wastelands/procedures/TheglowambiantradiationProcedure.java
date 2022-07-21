@@ -6,10 +6,12 @@ import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
@@ -92,20 +94,32 @@ public class TheglowambiantradiationProcedure {
 			}.check(entity)) {
 				{
 					double _setval = ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Radioacitvity + 0.5);
+							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge + 0.5);
 					entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.radioactivity_gauge = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+							("Message" + (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge)),
+							(true));
+				}
 			} else {
 				{
 					double _setval = ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Radioacitvity + 10);
+							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge + 10);
 					entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.radioactivity_gauge = _setval;
 						capability.syncPlayerVariables(entity);
 					});
+				}
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+							("Message" + (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge)),
+							(true));
 				}
 			}
 		}

@@ -29,9 +29,11 @@ import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.fallout_wastelands.entity.GeckoEntity;
 import net.mcreator.fallout_wastelands.block.WastelanddirtBlock;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
@@ -67,6 +69,7 @@ public class DesertwastlandBiome extends FalloutWastelandsModElements.ModElement
 				DefaultBiomeFeatures.withMonsterRoom(biomeGenerationSettings);
 				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
 				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
+				mobSpawnInfo.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(GeckoEntity.entity, 2, 4, 4));
 				biome = new Biome.Builder().precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.1f).scale(0.3f).temperature(2f)
 						.downfall(0f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
 						.withGenerationSettings(biomeGenerationSettings.build()).build();

@@ -58,7 +58,7 @@
     "spawnBiome": false,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 1000,
+    "biomeWeight": 15,
     "biomeDictionaryTypes": [],
     "grassPerChunk": 1,
     "seagrassPerChunk": 0,

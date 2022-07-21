@@ -21877,6 +21877,1120 @@
           }
         ]
       }
+    },
+    {
+      "name": "Radiation4UI",
+      "type": "procedure",
+      "sortid": 1491,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_4_ui",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Caravanguard",
+      "type": "livingentity",
+      "sortid": 1492,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "caravanguard"
+    },
+    {
+      "name": "Paulotradecapsslot0",
+      "type": "procedure",
+      "sortid": 1493,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradecapsslot_0",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradeantiradslot1",
+      "type": "procedure",
+      "sortid": 1494,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradeantiradslot_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotrade",
+      "type": "gui",
+      "sortid": 1493,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotrade",
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulothetrader",
+      "type": "livingentity",
+      "sortid": 1495,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulothetrader",
+      "path": "~/trades"
+    },
+    {
+      "name": "Introduction",
+      "type": "gui",
+      "sortid": 1496,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introductionpaulo",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Opentrade",
+      "type": "procedure",
+      "sortid": 1496,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "opentrade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Startingdiscussion",
+      "type": "procedure",
+      "sortid": 1497,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "startingdiscussion",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Closingtrade",
+      "type": "procedure",
+      "sortid": 1498,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "closingtrade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Mexican",
+      "type": "gui",
+      "sortid": 1499,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mexican",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Startingmexican",
+      "type": "procedure",
+      "sortid": 1500,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "startingmexican",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Ifcapsareremoved1",
+      "type": "procedure",
+      "sortid": 1501,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ifcapsareremoved_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulowatchingfortrades",
+      "type": "procedure",
+      "sortid": 1502,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulowatchingfortrades",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Palotradecapsslot4",
+      "type": "procedure",
+      "sortid": 1503,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "palotradecapsslot_4",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradecapsslot2",
+      "type": "procedure",
+      "sortid": 1504,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradecapsslot_2",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradecapsslot67",
+      "type": "procedure",
+      "sortid": 1505,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradecapsslot_67",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradeslot2caps",
+      "type": "procedure",
+      "sortid": 1506,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradeslot_2caps",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradeslot4",
+      "type": "procedure",
+      "sortid": 1507,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradeslot_4",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradeslot67",
+      "type": "procedure",
+      "sortid": 1508,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradeslot_67",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Work1",
+      "type": "gui",
+      "sortid": 1509,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "IntroductionC1",
+      "type": "procedure",
+      "sortid": 1510,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introduction_c_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1B",
+      "type": "gui",
+      "sortid": 1511,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1_b",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work2",
+      "type": "gui",
+      "sortid": 1512,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_2",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1next",
+      "type": "procedure",
+      "sortid": 1513,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1next",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1back",
+      "type": "procedure",
+      "sortid": 1514,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1back",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1C1",
+      "type": "procedure",
+      "sortid": 1510,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1_c_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Town",
+      "type": "gui",
+      "sortid": 1515,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "town",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Town1",
+      "type": "procedure",
+      "sortid": 1516,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "town_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1C2",
+      "type": "gui",
+      "sortid": 1517,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1_c_2",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Backtowork1",
+      "type": "procedure",
+      "sortid": 1518,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "backtowork_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Queststartingpaulo",
+      "type": "procedure",
+      "sortid": 1519,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "queststartingpaulo",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Introductionwhilequest",
+      "type": "gui",
+      "sortid": 1520,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introductionwhilequest",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1whilequest",
+      "type": "gui",
+      "sortid": 1521,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1whilequest",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "IntroductionwqC1",
+      "type": "procedure",
+      "sortid": 1522,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introductionwq_c_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work2whilequest",
+      "type": "gui",
+      "sortid": 1523,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_2whilequest",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work2WQaccess",
+      "type": "procedure",
+      "sortid": 1524,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_2_w_qaccess",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Strangeelectroniccards",
+      "type": "item",
+      "sortid": 1525,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "strangeelectroniccards"
+    },
+    {
+      "name": "Raidercarddrop",
+      "type": "procedure",
+      "sortid": 1526,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raidercarddrop",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Showwork2WQC1",
+      "type": "procedure",
+      "sortid": 1525,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "showwork_2_wqc_1",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Work1whilequestrue",
+      "type": "gui",
+      "sortid": 1527,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1whilequestrue",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Gobacktowork",
+      "type": "gui",
+      "sortid": 1528,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gobacktowork",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Closedialogue",
+      "type": "procedure",
+      "sortid": 1529,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "closedialogue",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1WQrefusal",
+      "type": "procedure",
+      "sortid": 1530,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1_w_qrefusal",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Cardsworth",
+      "type": "procedure",
+      "sortid": 1531,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cardsworth",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Mexico",
+      "type": "gui",
+      "sortid": 1532,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mexico",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Shithole",
+      "type": "gui",
+      "sortid": 1533,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shithole",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Openmexico",
+      "type": "procedure",
+      "sortid": 1534,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "openmexico",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Openshithole",
+      "type": "procedure",
+      "sortid": 1535,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "openshithole",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "TradetownOnStructureInstanceGenerated",
+      "type": "procedure",
+      "sortid": 1536,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tradetown_on_structure_instance_generated",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tradetown",
+      "type": "structure",
+      "sortid": 1536,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tradetown"
+    },
+    {
+      "name": "ItemtesttradetownOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 1537,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "itemtesttradetown_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Itemtesttradetown",
+      "type": "block",
+      "sortid": 1537,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "itemtesttradetown"
     }
   ],
   "variable_elements": [
@@ -21950,6 +23064,36 @@
       "name": "CanUseWeapon",
       "type": "logic",
       "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "RADUI4",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "paulo_quest_in_progress",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "paulo_quest_done",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "are10cardsdropped",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "tencardsaredropped",
+      "type": "logic",
+      "scope": "world",
       "value": "false"
     }
   ],
@@ -22339,6 +23483,22 @@
       ],
       "category": "music",
       "subtitle": ""
+    },
+    {
+      "name": "cash",
+      "files": [
+        "flowingcaps"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "quest",
+      "files": [
+        "quest"
+      ],
+      "category": "neutral",
+      "subtitle": ""
     }
   ],
   "language_map": {
@@ -22357,6 +23517,7 @@
       "block.fallout_wastelands.vaultkitchenblocks": "Vault Kitchen Floor",
       "block.wastlanders.rustbloc": "Fully Rusted Iron",
       "item.fallout_wastelands.ghoul_spawn_egg": "Ghoul Spawn Egg",
+      "item.fallout_wastelands.strangeelectroniccards": "Strange Electronic Cards",
       "item.fallout_wastelands.bluepaintcan": "Blue Paint Can",
       "block.wastlanders.militaryplatingblockhazard": "Military Plating (Hazard)",
       "item.wastlanders.tenmmammo": "10mm Ammunition ",
@@ -22510,8 +23671,8 @@
       "block.fallout_wastelands.closing_9": "Vault Door",
       "block.wastlanders.rustediron": "Rusted Iron",
       "item.fallout_wastelands.robobrainengine": "Engine",
-      "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
       "block.fallout_wastelands.mojaveyucca": "Mojave Yucca",
+      "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
       "block.fallout_wastelands.closing_4": "Vault Door",
       "block.fallout_wastelands.closing_3": "Vault Door",
       "block.fallout_wastelands.closing_2": "Vault Door",
@@ -22581,10 +23742,12 @@
       "item.wastlanders.cannedporkshop": "Canned Porkshop",
       "entity.fallout_wastelands.highwayman": "Highwayman",
       "block.fallout_wastelands.locker": "Locker",
+      "entity.fallout_wastelands.caravanguard": "Caravan Guard",
       "block.fallout_wastelands.dooranimation_193": "Vault Door135",
       "block.fallout_wastelands.dooranimation_192": "Vault Door135",
       "block.fallout_wastelands.dooranimation_191": "Vault Door135",
       "entity.wastlanders.ghoul": "Ghoul",
+      "item.fallout_wastelands.caravanguard_spawn_egg": "Caravan Guard Spawn Egg",
       "block.fallout_wastelands.dooranimation_190": "Vault Door135",
       "entity.fallout_wastelands.friendlybrainbot": "Robot Brain (Hackable)",
       "item.fallout_wastelands.ingotcopper": "Copper ingot",
@@ -22615,6 +23778,7 @@
       "block.wastlanders.aluminiumblock": "Aluminium Block",
       "block.fallout_wastelands.rootdirt": "Root Dirt",
       "item.wastlanders.blackpaintcan": "Black Paint Can",
+      "subtitles.cash": "",
       "item.fallout_wastelands.plasmarifle": "Plasma Rifle",
       "block.wastlanders.plasterstairs": "Plaster Stairs",
       "item.fallout_wastelands.broken_frame_spawn_egg": "Broken Frame Spawn Egg",
@@ -22636,6 +23800,7 @@
       "subtitles.rbshot": "",
       "item.wastlanders.nails": "Nails",
       "block.fallout_wastelands.concretepattern": "Concrete Pattern",
+      "subtitles.quest": "",
       "item.wastlanders.track": "Track Segment",
       "entity.fallout_wastelands.chromedraiderfemale": "Female Wasteland Raider",
       "block.fallout_wastelands.barbedwire": "Barbed Wire",
@@ -22651,6 +23816,7 @@
       "block.wastlanders.wastelandbrickslab": "Wasteland Brick Slab",
       "item.wastlanders.uraniumnugget": "Uranium Nugget",
       "item.fallout_wastelands.laserriffle": "Laser Rifle",
+      "entity.fallout_wastelands.paulothetrader": "Paulo The Trader",
       "block.fallout_wastelands.wastelandgravel": "Wasteland Gravel",
       "item.fallout_wastelands.enclave_x_01pa_chestplate": "Enclave APA Body",
       "block.fallout_wastelands.radioactivwastebarrel": "Radioactive barrel",
@@ -22832,6 +23998,7 @@
       "block.fallout_wastelands.vaulwall_4": "Vault Wall ",
       "item.wastlanders.tenmm": "10mm Pistol ",
       "item.fallout_wastelands.aluminiumnugget": "Aluminium Nugget",
+      "block.fallout_wastelands.itemtesttradetown": "Itemtesttradetown",
       "block.fallout_wastelands.closing_70": "Vault Door",
       "block.fallout_wastelands.closing_71": "Vault Door",
       "block.fallout_wastelands.closing_76": "Vault Door",
@@ -22849,6 +24016,7 @@
       "block.fallout_wastelands.closing_69": "Vault Door",
       "item.wastlanders.mirlurksteak": "Mirlurk Steak",
       "item.wastlanders.steeldust": "Steel Dust",
+      "item.fallout_wastelands.paulothetrader_spawn_egg": "Paulo The Trader Spawn Egg",
       "block.wastlanders.roadbitumen": "Road Bitumen",
       "item.wastlanders.bluepaintcan": "Blue Paint Can",
       "block.fallout_wastelands.aluminiumblock": "Aluminium Block",
@@ -23393,6 +24561,14 @@
       },
       {
         "name": "vault_door",
+        "children": []
+      },
+      {
+        "name": "trades",
+        "children": []
+      },
+      {
+        "name": "Paulo_interactions",
         "children": []
       }
     ]

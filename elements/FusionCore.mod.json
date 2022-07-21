@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "microfusion_cell",
+    "texture": "fusioncoret",
     "customModelName": "Normal",
     "name": "Fusion Core",
     "rarity": "COMMON",
@@ -24,7 +24,9 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [],
+    "specialInfo": [
+      "Used for fueling power armors ."
+    ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,

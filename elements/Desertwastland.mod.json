@@ -58,7 +58,7 @@
     "spawnBiome": false,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 300,
+    "biomeWeight": 10,
     "biomeDictionaryTypes": [],
     "grassPerChunk": 6,
     "seagrassPerChunk": 0,
@@ -111,6 +111,16 @@
       "Structures",
       "Ores"
     ],
-    "spawnEntries": []
+    "spawnEntries": [
+      {
+        "entity": {
+          "value": "CUSTOM:Gecko"
+        },
+        "minGroup": 4,
+        "maxGroup": 4,
+        "weight": 2,
+        "spawnType": "monster"
+      }
+    ]
   }
 }

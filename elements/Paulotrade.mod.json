@@ -1,0 +1,492 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "trade.png",
+          "use1Xscale": false,
+          "name": "trade.png",
+          "x": 42,
+          "y": -1
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:Bottlecaps"
+          },
+          "color": {
+            "value": -9785261,
+            "falpha": 0.0
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "onSlotChanged": {
+            "name": "Paulotradecapsslot0"
+          },
+          "onTakenFromSlot": {
+            "name": "Ifcapsareremoved1"
+          },
+          "name": "Slot #0",
+          "x": 114,
+          "y": 44
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradeslot.png",
+          "use1Xscale": false,
+          "name": "tradeslot.png",
+          "x": 114,
+          "y": 44
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -12601524,
+            "falpha": 0.0
+          },
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "onTakenFromSlot": {
+            "name": "Paulotradeantiradslot1"
+          },
+          "onStackTransfer": {
+            "name": "Paulotradeantiradslot1"
+          },
+          "name": "Slot #1",
+          "x": 177,
+          "y": 44
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradearrow1.png",
+          "use1Xscale": false,
+          "name": "tradearrow1.png",
+          "x": 141,
+          "y": 44
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradeslot.png",
+          "use1Xscale": false,
+          "name": "tradeslot.png",
+          "x": 177,
+          "y": 44
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bottlecaps.png",
+          "use1Xscale": false,
+          "name": "bottlecaps.png",
+          "x": 51,
+          "y": 8
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bottlecaps.png",
+          "use1Xscale": false,
+          "name": "bottlecaps.png",
+          "x": 114,
+          "y": 26
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "radaway.png",
+          "use1Xscale": false,
+          "name": "radaway.png",
+          "x": 177,
+          "y": 26
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "16",
+          "color": {
+            "value": -13382656,
+            "falpha": 0.0
+          },
+          "name": "16",
+          "x": 114,
+          "y": 35
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Closingtrade"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 348,
+          "y": 197
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:Bottlecaps"
+          },
+          "id": 2,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "onSlotChanged": {
+            "name": "Paulotradecapsslot2"
+          },
+          "name": "Slot #2",
+          "x": 114,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradeslot.png",
+          "use1Xscale": false,
+          "name": "tradeslot.png",
+          "x": 114,
+          "y": 80
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 3,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "onTakenFromSlot": {
+            "name": "Paulotradeslot2caps"
+          },
+          "onStackTransfer": {
+            "name": "Paulotradeslot2caps"
+          },
+          "name": "Slot #3",
+          "x": 177,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradeslot.png",
+          "use1Xscale": false,
+          "name": "tradeslot.png",
+          "x": 177,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradearrow1.png",
+          "use1Xscale": false,
+          "name": "tradearrow1.png",
+          "x": 141,
+          "y": 80
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 4,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "onSlotChanged": {
+            "name": "Palotradecapsslot4"
+          },
+          "name": "Slot #4",
+          "x": 231,
+          "y": 44
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradeslot.png",
+          "use1Xscale": false,
+          "name": "tradeslot.png",
+          "x": 231,
+          "y": 44
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradearrow1.png",
+          "use1Xscale": false,
+          "name": "tradearrow1.png",
+          "x": 258,
+          "y": 44
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 5,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "onTakenFromSlot": {
+            "name": "Paulotradeslot4"
+          },
+          "onStackTransfer": {
+            "name": "Paulotradeslot4"
+          },
+          "name": "Slot #5",
+          "x": 294,
+          "y": 44
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradeslot.png",
+          "use1Xscale": false,
+          "name": "tradeslot.png",
+          "x": 294,
+          "y": 44
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bottlecaps.png",
+          "use1Xscale": false,
+          "name": "bottlecaps.png",
+          "x": 114,
+          "y": 62
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "coffee.png",
+          "use1Xscale": false,
+          "name": "coffee.png",
+          "x": 177,
+          "y": 62
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bottlecaps.png",
+          "use1Xscale": false,
+          "name": "bottlecaps.png",
+          "x": 231,
+          "y": 26
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "reaper.png",
+          "use1Xscale": false,
+          "name": "reaper.png",
+          "x": 294,
+          "y": 26
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "42",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "42",
+          "x": 231,
+          "y": 35
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "4",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "4",
+          "x": 114,
+          "y": 71
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 6,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "onSlotChanged": {
+            "name": "Paulotradecapsslot67"
+          },
+          "name": "Slot #6",
+          "x": 222,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradeslot.png",
+          "use1Xscale": false,
+          "name": "tradeslot.png",
+          "x": 222,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "bottlecaps.png",
+          "use1Xscale": false,
+          "name": "bottlecaps.png",
+          "x": 231,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "128",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "128",
+          "x": 231,
+          "y": 71
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 7,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #7",
+          "x": 240,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradeslot.png",
+          "use1Xscale": false,
+          "name": "tradeslot.png",
+          "x": 240,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradearrow1.png",
+          "use1Xscale": false,
+          "name": "tradearrow1.png",
+          "x": 258,
+          "y": 80
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 8,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "onTakenFromSlot": {
+            "name": "Paulotradeslot67"
+          },
+          "onStackTransfer": {
+            "name": "Paulotradeslot67"
+          },
+          "name": "Slot #8",
+          "x": 294,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tradeslot.png",
+          "use1Xscale": false,
+          "name": "tradeslot.png",
+          "x": 294,
+          "y": 80
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fusioncoret.png",
+          "use1Xscale": false,
+          "name": "fusioncoret.png",
+          "x": 294,
+          "y": 62
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "inventory_tex.png",
+          "use1Xscale": false,
+          "name": "inventory_tex.png",
+          "x": 132,
+          "y": 120
+        }
+      }
+    ],
+    "onTick": {
+      "name": "Paulowatchingfortrades"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

@@ -9,6 +9,9 @@
     "undergroundBlock": {
       "value": "CUSTOM:Wastlandstone"
     },
+    "underwaterBlock": {
+      "value": ""
+    },
     "airColor": {
       "value": -12889025,
       "falpha": 0.0
@@ -55,7 +58,7 @@
     "spawnBiome": false,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 1000,
+    "biomeWeight": 6,
     "biomeDictionaryTypes": [],
     "grassPerChunk": 1,
     "seagrassPerChunk": 0,

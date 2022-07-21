@@ -1,0 +1,112 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "paulo.png",
+          "use1Xscale": false,
+          "name": "paulo.png",
+          "x": 42,
+          "y": -1
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Those cards are of no interest for you ",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "Those cards are of no interest for you ",
+          "x": 114,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "however the trader group is interested",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "however the trader group is interested",
+          "x": 114,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Opentrade"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 348,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Alright .",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "Alright .",
+          "x": 114,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Backtowork1"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "in acquiering them for researches .",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "in acquiering them for researches .",
+          "x": 114,
+          "y": 134
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

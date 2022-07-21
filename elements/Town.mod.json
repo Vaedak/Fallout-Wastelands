@@ -1,0 +1,112 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "paulo.png",
+          "use1Xscale": false,
+          "name": "paulo.png",
+          "x": 42,
+          "y": -1
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "This town is a caravan checkpoint here",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "This town is a caravan checkpoint here",
+          "x": 114,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "what makes it very interesting for the",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "what makes it very interesting for the",
+          "x": 114,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Opentrade"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 348,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Wanted to talk of something .",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "Wanted to talk of something .",
+          "x": 114,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Closingtrade"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "peoples of my kind .",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "peoples of my kind .",
+          "x": 114,
+          "y": 134
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

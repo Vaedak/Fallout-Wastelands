@@ -56,9 +56,8 @@ public class PowerArmorVisorOverlay {
 			RenderSystem.disableAlphaTest();
 			if (PowerArmorVisorDisplayOverlayIngameProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/pahudoutline.png"));
+				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/powerarmorb.png"));
 				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, w, h, w, h);
-				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(), "PlaceHolderVisor", posX + -41, posY + -118, -1);
 			}
 			RenderSystem.depthMask(true);
 			RenderSystem.enableDepthTest();

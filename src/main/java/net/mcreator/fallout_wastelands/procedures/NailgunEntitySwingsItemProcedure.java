@@ -130,7 +130,6 @@ public class NailgunEntitySwingsItemProcedure {
 
 							private void run() {
 								itemstack.getOrCreateTag().putDouble("BulletCount", (itemstack.getOrCreateTag().getDouble("BulletCount") + 1));
-								(itemstack).setDamage((int) ((itemstack).getDamage() - 100));
 								MinecraftForge.EVENT_BUS.unregister(this);
 							}
 						}.start(world, (int) 10);

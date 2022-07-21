@@ -148,6 +148,20 @@ public class MirelurkEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, DeathclawEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, GeckoEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, MachinegunTurretEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, Malevaultdweller1Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(27, new NearestAttackableTargetGoal(this, Femalevaultdweller1Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(28, new NearestAttackableTargetGoal(this, Femalevaultdweller2Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, Malevaultdweller2Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, Malewastelander1Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, Malewastelander2Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, Malewastelander3Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, Malewastelander4Entity.CustomEntity.class, false, false));
 		}
 
 		@Override

@@ -16,16 +16,13 @@ public class RadawayPlayerFinishesUsingItemProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge > 0) {
-			{
-				double _setval = ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge - 50);
-				entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.radioactivity_gauge = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+		{
+			double _setval = ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge - 50);
+			entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.radioactivity_gauge = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

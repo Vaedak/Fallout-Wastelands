@@ -10,6 +10,9 @@
     "textureLeggings": "enclave_hazmat_leggings",
     "enableBoots": true,
     "textureBoots": "enclave_hazmat_boots",
+    "onBodyTick": {
+      "name": "HazmatBodyTickEvent"
+    },
     "creativeTab": {
       "value": "CUSTOM:Wastelanderscombattab"
     },
@@ -42,21 +45,17 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 7,
+    "maxDamage": 6,
     "damageValueHelmet": 2,
     "damageValueBody": 4,
     "damageValueLeggings": 3,
     "damageValueBoots": 2,
     "enchantability": 9,
-    "toughness": 0.30000000000000004,
+    "toughness": 0.1,
     "knockbackResistance": 0.0,
     "equipSound": {
-      "value": "block.cloth.place"
+      "value": ""
     },
-    "repairItems": [
-      {
-        "value": "CUSTOM:Enclaveplating"
-      }
-    ]
+    "repairItems": []
   }
 }

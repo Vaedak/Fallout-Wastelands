@@ -16,11 +16,14 @@ public class Radiation0UIProcedure {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		return ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge > 0
+		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge >= 0
 				&& (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge < 100
-				&& (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).RADUIToggle == false) == true;
+						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge < 100) {
+			return (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).RADUI0 == true;
+		}
+		return (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).RADUI0 == false;
 	}
 }

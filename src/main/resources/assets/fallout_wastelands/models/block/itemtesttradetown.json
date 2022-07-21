@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/geck",
+    "up": "fallout_wastelands:blocks/geck",
+    "north": "fallout_wastelands:blocks/geck",
+    "east": "fallout_wastelands:blocks/geck",
+    "south": "fallout_wastelands:blocks/geck",
+    "west": "fallout_wastelands:blocks/geck",
+    "particle": "fallout_wastelands:blocks/geck"
+  }
+}

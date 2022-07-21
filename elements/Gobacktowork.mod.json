@@ -1,0 +1,99 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "paulo.png",
+          "use1Xscale": false,
+          "name": "paulo.png",
+          "x": 42,
+          "y": -1
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "What are you waitin' ?! Go back to work",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "What are you waitin' ?! Go back to work",
+          "x": 114,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "",
+          "x": 114,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Opentrade"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 348,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "[Close dialogue]",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "[Close dialogue]",
+          "x": 114,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Closedialogue"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 161
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

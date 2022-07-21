@@ -19,7 +19,7 @@
     "shootConstantly": true,
     "usageCount": 4000,
     "actionSound": {
-      "value": "CUSTOM:machinegunquieter"
+      "value": "CUSTOM:gun"
     },
     "hasGlow": false,
     "animation": "block",

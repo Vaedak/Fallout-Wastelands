@@ -15,7 +15,7 @@
     },
     "armorTextureFile": "talonarmor_",
     "helmetName": "Talon Combat Helmet",
-    "bodyName": "Talon Combat Chestplate",
+    "bodyName": "Talon Combat Body",
     "leggingsName": "Talon Combat Leggings",
     "bootsName": "Talon Combat Boots",
     "helmetSpecialInfo": [],
@@ -42,21 +42,17 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
-    "maxDamage": 25,
-    "damageValueHelmet": 4,
+    "maxDamage": 20,
+    "damageValueHelmet": 2,
     "damageValueBody": 5,
-    "damageValueLeggings": 5,
-    "damageValueBoots": 3,
+    "damageValueLeggings": 4,
+    "damageValueBoots": 2,
     "enchantability": 9,
-    "toughness": 1.0,
-    "knockbackResistance": 0.1,
+    "toughness": 0.5,
+    "knockbackResistance": 0.0,
     "equipSound": {
-      "value": "block.metal.hit"
+      "value": "item.armor.equip_iron"
     },
-    "repairItems": [
-      {
-        "value": "CUSTOM:Sheetmetalplating"
-      }
-    ]
+    "repairItems": []
   }
 }

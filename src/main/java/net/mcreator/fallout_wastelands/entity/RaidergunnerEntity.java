@@ -38,13 +38,20 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 
+import net.mcreator.fallout_wastelands.procedures.RaidercarddropProcedure;
 import net.mcreator.fallout_wastelands.item.ThemachinegunItem;
 import net.mcreator.fallout_wastelands.item.MobmachinegunItem;
 import net.mcreator.fallout_wastelands.item.CannedporkshopItem;
 import net.mcreator.fallout_wastelands.entity.renderer.RaidergunnerRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class RaidergunnerEntity extends FalloutWastelandsModElements.ModElement {
@@ -119,8 +126,21 @@ public class RaidergunnerEntity extends FalloutWastelandsModElements.ModElement 
 			this.targetSelector.addGoal(16, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, RangedsupermutantEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, BasesupermutantEntity.CustomEntity.class, true, false));
-			this.goalSelector.addGoal(19, new OpenDoorGoal(this, true));
-			this.goalSelector.addGoal(20, new ReturnToVillageGoal(this, 0.6, false));
+			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, DeathclawEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, GeckoEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, OverseerEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, Malevaultdweller1Entity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, Malevaultdweller2Entity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, Malewastelander3Entity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(27, new NearestAttackableTargetGoal(this, Malewastelander4Entity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(28, new NearestAttackableTargetGoal(this, Femalevaultdweller1Entity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, Femalevaultdweller2Entity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, OverseerEntity.CustomEntity.class, true, false));
+			this.goalSelector.addGoal(32, new OpenDoorGoal(this, true));
+			this.goalSelector.addGoal(33, new ReturnToVillageGoal(this, 0.6, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {
@@ -152,6 +172,21 @@ public class RaidergunnerEntity extends FalloutWastelandsModElements.ModElement 
 		@Override
 		public net.minecraft.util.SoundEvent getDeathSound() {
 			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+		}
+
+		@Override
+		public void onDeath(DamageSource source) {
+			super.onDeath(source);
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity sourceentity = source.getTrueSource();
+			Entity entity = this;
+
+			RaidercarddropProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {

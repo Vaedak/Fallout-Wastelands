@@ -1,0 +1,33 @@
+{
+  "_fv": 28,
+  "_type": "structure",
+  "definition": {
+    "structure": "structurebase",
+    "randomlyRotateStructure": false,
+    "surfaceDetectionType": "First motion blocking block",
+    "spawnProbability": 800,
+    "minCountPerChunk": 1,
+    "maxCountPerChunk": 1,
+    "spawnLocation": "Ground",
+    "spawnHeightOffset": -6,
+    "spawnXOffset": 0,
+    "spawnZOffset": 0,
+    "spawnWorldTypes": [
+      "Surface",
+      "CUSTOM:Wasteland"
+    ],
+    "restrictionBlocks": [],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:Capitalwastelandeast"
+      },
+      {
+        "value": "CUSTOM:Capitalwasteland"
+      }
+    ],
+    "ignoreBlocks": "STRUCTURE_BLOCK",
+    "onStructureGenerated": {
+      "name": "TradetownOnStructureInstanceGenerated"
+    }
+  }
+}

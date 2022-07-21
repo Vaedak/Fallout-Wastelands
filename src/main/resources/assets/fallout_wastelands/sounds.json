@@ -472,5 +472,23 @@
         "stream": true
       }
     ]
+  },
+  "cash": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:flowingcaps",
+        "stream": false
+      }
+    ]
+  },
+  "quest": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:quest",
+        "stream": false
+      }
+    ]
   }
 }

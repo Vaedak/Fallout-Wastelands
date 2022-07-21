@@ -21,7 +21,7 @@
       "falpha": 0.0
     },
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "MISC"
     },
     "isBoss": false,
     "bossBarColor": "PINK",
@@ -44,7 +44,7 @@
     "equipmentBoots": {
       "value": ""
     },
-    "mobBehaviourType": "Mob",
+    "mobBehaviourType": "Creature",
     "mobCreatureType": "UNDEFINED",
     "attackStrength": 3,
     "attackKnockback": 0.0,
@@ -59,7 +59,7 @@
     "guiBoundTo": "FrameInventory",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "disableCollisions": true,
+    "disableCollisions": false,
     "ridable": false,
     "canControlForward": false,
     "canControlStrafe": false,
@@ -77,7 +77,7 @@
     "immuneToWither": true,
     "immuneToDragonBreath": true,
     "mobDrop": {
-      "value": "CUSTOM:PowerArmorFrameItem"
+      "value": ""
     },
     "livingSound": {
       "value": ""

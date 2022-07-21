@@ -72,7 +72,7 @@ public class ProtectronEntity extends FalloutWastelandsModElements.ModElement {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
 			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
-			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.4);
+			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2);
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 20);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 5);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 4);
@@ -101,13 +101,13 @@ public class ProtectronEntity extends FalloutWastelandsModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.4, true) {
+			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.2, true) {
 				@Override
 				protected double getAttackReachSqr(LivingEntity entity) {
 					return (double) (4.0 + entity.getWidth() * entity.getWidth());
 				}
 			});
-			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 0.3));
+			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 0.2));
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
@@ -139,7 +139,7 @@ public class ProtectronEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, DeathclawEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, GeckoEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, true, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

@@ -132,8 +132,12 @@ public class BasesupermutantEntity extends FalloutWastelandsModElements.ModEleme
 			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, true, false));
-			this.goalSelector.addGoal(20, new BreakDoorGoal(this, e -> true));
-			this.goalSelector.addGoal(21, new ReturnToVillageGoal(this, 0.6, false));
+			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, MachinegunTurretEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, FriendlybrainbotEntity.CustomEntity.class, true, false));
+			this.goalSelector.addGoal(24, new BreakDoorGoal(this, e -> true));
+			this.goalSelector.addGoal(25, new ReturnToVillageGoal(this, 0.6, false));
 		}
 
 		@Override

@@ -17,7 +17,9 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.RegistryKey;
+import net.minecraft.entity.EntityClassification;
 
+import net.mcreator.fallout_wastelands.entity.DeathclawEntity;
 import net.mcreator.fallout_wastelands.block.WastlandsandBlock;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
@@ -44,6 +46,7 @@ public class WastlandsanddesertBiome extends FalloutWastelandsModElements.ModEle
 				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
 				DefaultBiomeFeatures.withFrozenTopLayer(biomeGenerationSettings);
 				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
+				mobSpawnInfo.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(DeathclawEntity.entity, 1, 1, 1));
 				biome = new Biome.Builder().precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(0.3f).scale(0.3f).temperature(2f)
 						.downfall(0f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
 						.withGenerationSettings(biomeGenerationSettings.build()).build();

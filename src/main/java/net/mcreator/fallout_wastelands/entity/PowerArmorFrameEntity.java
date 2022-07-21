@@ -33,6 +33,7 @@ import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.Container;
@@ -41,7 +42,6 @@ import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.SpawnReason;
@@ -50,6 +50,7 @@ import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -58,7 +59,6 @@ import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameRightClickedOnE
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFramePlayerCollidesWithThisEntityProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameOnInitialEntitySpawnProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameOnEntityTickUpdateProcedure;
-import net.mcreator.fallout_wastelands.item.PowerArmorFrameItemItem;
 import net.mcreator.fallout_wastelands.gui.FrameInventoryGui;
 import net.mcreator.fallout_wastelands.entity.renderer.PowerArmorFrameRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
@@ -88,7 +88,8 @@ public class PowerArmorFrameEntity extends FalloutWastelandsModElements.ModEleme
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(null)).setRegistryName("power_armor_frame_spawn_egg"));
+		elements.items.add(
+				() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("power_armor_frame_spawn_egg"));
 	}
 
 	@Override
@@ -107,7 +108,7 @@ public class PowerArmorFrameEntity extends FalloutWastelandsModElements.ModEleme
 		}
 	}
 
-	public static class CustomEntity extends MonsterEntity {
+	public static class CustomEntity extends CreatureEntity {
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
@@ -138,11 +139,6 @@ public class PowerArmorFrameEntity extends FalloutWastelandsModElements.ModEleme
 		@Override
 		public boolean canDespawn(double distanceToClosestPlayer) {
 			return false;
-		}
-
-		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
-			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(PowerArmorFrameItemItem.block));
 		}
 
 		@Override
@@ -303,19 +299,6 @@ public class PowerArmorFrameEntity extends FalloutWastelandsModElements.ModEleme
 			PowerArmorFramePlayerCollidesWithThisEntityProcedure.executeProcedure(
 					Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
 							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-		}
-
-		@Override
-		public boolean canBePushed() {
-			return false;
-		}
-
-		@Override
-		protected void collideWithEntity(Entity entityIn) {
-		}
-
-		@Override
-		protected void collideWithNearbyEntities() {
 		}
 	}
 }
