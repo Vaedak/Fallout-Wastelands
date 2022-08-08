@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:wastelandrock"
+    },
+    "1": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "2": {
+      "item": "fallout_wastelands:wastelandrock"
+    },
+    "3": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "4": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "5": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "6": {
+      "item": "fallout_wastelands:wastelandrock"
+    },
+    "7": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "8": {
+      "item": "fallout_wastelands:wastelandrock"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:undergroundbrick",
+    "count": 16
+  }
+}

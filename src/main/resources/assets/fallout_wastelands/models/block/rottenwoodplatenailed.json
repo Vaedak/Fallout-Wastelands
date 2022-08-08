@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/nailedplanks",
+    "up": "fallout_wastelands:blocks/nailedplanks",
+    "north": "fallout_wastelands:blocks/nailedplanks",
+    "east": "fallout_wastelands:blocks/nailedplanks",
+    "south": "fallout_wastelands:blocks/nailedplanks",
+    "west": "fallout_wastelands:blocks/nailedplanks",
+    "particle": "fallout_wastelands:blocks/nailedplanks"
+  }
+}

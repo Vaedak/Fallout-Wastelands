@@ -139,8 +139,11 @@ public class RaidergunnerEntity extends FalloutWastelandsModElements.ModElement 
 			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, Femalevaultdweller2Entity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, OverseerEntity.CustomEntity.class, true, false));
-			this.goalSelector.addGoal(32, new OpenDoorGoal(this, true));
-			this.goalSelector.addGoal(33, new ReturnToVillageGoal(this, 0.6, false));
+			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, false));
+			this.goalSelector.addGoal(35, new OpenDoorGoal(this, true));
+			this.goalSelector.addGoal(36, new ReturnToVillageGoal(this, 0.6, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

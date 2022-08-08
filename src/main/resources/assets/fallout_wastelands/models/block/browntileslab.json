@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/browntile",
+    "top": "fallout_wastelands:blocks/browntile",
+    "side": "fallout_wastelands:blocks/browntile"
+  }
+}

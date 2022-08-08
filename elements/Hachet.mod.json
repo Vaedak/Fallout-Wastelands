@@ -1,0 +1,31 @@
+{
+  "_fv": 28,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "hatchet",
+    "customModelName": "Normal",
+    "name": "Hachet",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelandersitems"
+    },
+    "toolType": "Axe",
+    "harvestLevel": 1,
+    "efficiency": 4.5,
+    "attackSpeed": 0.7999999999999999,
+    "enchantability": 2,
+    "damageVsEntity": 3.5,
+    "usageCount": 200,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:Steelingot"
+      }
+    ],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": true
+  }
+}

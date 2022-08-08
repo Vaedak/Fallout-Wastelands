@@ -187,7 +187,10 @@ public class BloatflyEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, ClosecombatsupermutantEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, BasesupermutantEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, RangedsupermutantEntity.CustomEntity.class, true, false));
-			this.goalSelector.addGoal(25, new ReturnToVillageGoal(this, 0.6, false));
+			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, false));
+			this.goalSelector.addGoal(28, new ReturnToVillageGoal(this, 0.6, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

@@ -136,6 +136,9 @@ public class ArmyrobobrainEntity extends FalloutWastelandsModElements.ModElement
 			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, true, true));
 			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, true, true));
 			this.targetSelector.addGoal(27, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(28, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, true));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

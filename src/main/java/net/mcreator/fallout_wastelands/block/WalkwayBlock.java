@@ -58,7 +58,7 @@ public class WalkwayBlock extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return 15;
+			return 1;
 		}
 
 		@Override

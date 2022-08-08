@@ -128,8 +128,10 @@ public class CaravanguardEntity extends FalloutWastelandsModElements.ModElement 
 			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, GeckoEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, MirelurkEntity.CustomEntity.class, false, false));
-			this.goalSelector.addGoal(25, new LookAtGoal(this, Malewastelander1Entity.CustomEntity.class, (float) 40));
-			this.goalSelector.addGoal(26, new LookAtGoal(this, Malewastelander2Entity.CustomEntity.class, (float) 40));
+			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, false, false));
+			this.goalSelector.addGoal(27, new LookAtGoal(this, Malewastelander1Entity.CustomEntity.class, (float) 40));
+			this.goalSelector.addGoal(28, new LookAtGoal(this, Malewastelander2Entity.CustomEntity.class, (float) 40));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

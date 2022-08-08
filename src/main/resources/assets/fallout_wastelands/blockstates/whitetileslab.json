@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fallout_wastelands:block/whitetileslab"
+    },
+    "type=top": {
+      "model": "fallout_wastelands:block/whitetileslab_top"
+    },
+    "type=double": {
+      "model": "fallout_wastelands:block/whitetileslab_full"
+    }
+  }
+}

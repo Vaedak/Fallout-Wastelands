@@ -1,0 +1,46 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 6,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Rustediron"
+      },
+      {
+        "value": "CUSTOM:Metallicwall"
+      },
+      {
+        "value": "CUSTOM:Roofsheetmetal"
+      },
+      {
+        "value": "CUSTOM:Sheetmetal"
+      },
+      {
+        "value": "CUSTOM:Wastelandsteelbars"
+      },
+      {
+        "value": "CUSTOM:Lightsheetmetal"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Barricadewasteland"
+    },
+    "name": "barricadeblockcraft",
+    "namespace": "mod"
+  }
+}

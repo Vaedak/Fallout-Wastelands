@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:ingotcopper"
+    },
+    "1": {
+      "item": "fallout_wastelands:fusionmicrocell"
+    },
+    "2": {
+      "item": "fallout_wastelands:ingotcopper"
+    },
+    "3": {
+      "item": "fallout_wastelands:ingot_tin"
+    },
+    "4": {
+      "item": "fallout_wastelands:nuclearwaste"
+    },
+    "5": {
+      "item": "fallout_wastelands:ingot_tin"
+    },
+    "6": {
+      "item": "fallout_wastelands:ingotcopper"
+    },
+    "7": {
+      "item": "fallout_wastelands:fusionmicrocell"
+    },
+    "8": {
+      "item": "fallout_wastelands:ingotcopper"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:fusion_core",
+    "count": 2
+  }
+}

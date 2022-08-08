@@ -48,7 +48,7 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
-			.size(0.6f, 1.8f)).build("deathclaw").setRegistryName("deathclaw");
+			.size(2f, 2.5f)).build("deathclaw").setRegistryName("deathclaw");
 
 	public DeathclawEntity(FalloutWastelandsModElements instance) {
 		super(instance, 1458);
@@ -154,6 +154,9 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(39, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, false, false));
 		}
 
 		@Override

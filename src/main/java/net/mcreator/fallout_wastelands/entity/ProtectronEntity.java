@@ -140,6 +140,9 @@ public class ProtectronEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, GeckoEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fallout_wastelands:block/browntileslab"
+    },
+    "type=top": {
+      "model": "fallout_wastelands:block/browntileslab_top"
+    },
+    "type=double": {
+      "model": "fallout_wastelands:block/browntileslab_full"
+    }
+  }
+}

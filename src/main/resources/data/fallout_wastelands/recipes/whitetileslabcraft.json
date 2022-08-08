@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:whitetile"
+    },
+    "1": {
+      "item": "fallout_wastelands:whitetile"
+    },
+    "2": {
+      "item": "fallout_wastelands:whitetile"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:whitetileslab",
+    "count": 6
+  }
+}

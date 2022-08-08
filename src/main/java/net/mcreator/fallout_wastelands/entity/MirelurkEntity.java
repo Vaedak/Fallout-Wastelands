@@ -162,6 +162,9 @@ public class MirelurkEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, Malewastelander2Entity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, Malewastelander3Entity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, Malewastelander4Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, false, false));
 		}
 
 		@Override

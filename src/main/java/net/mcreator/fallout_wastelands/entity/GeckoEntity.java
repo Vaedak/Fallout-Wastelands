@@ -150,6 +150,9 @@ public class GeckoEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(28, new NearestAttackableTargetGoal(this, RangedsupermutantEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, WolfEntity.class, false, false));
 			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false));
+			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, false, false));
 		}
 
 		@Override

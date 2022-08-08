@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "1": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "2": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "3": {
+      "item": "fallout_wastelands:rottenplanks"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:rottenwoodplate",
+    "count": 8
+  }
+}

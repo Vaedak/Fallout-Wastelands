@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/woodplate",
+    "up": "fallout_wastelands:blocks/woodplate",
+    "north": "fallout_wastelands:blocks/woodplate",
+    "east": "fallout_wastelands:blocks/woodplate",
+    "south": "fallout_wastelands:blocks/woodplate",
+    "west": "fallout_wastelands:blocks/woodplate",
+    "particle": "fallout_wastelands:blocks/woodplate"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fallout_wastelands:block/greytileslab"
+    },
+    "type=top": {
+      "model": "fallout_wastelands:block/greytileslab_top"
+    },
+    "type=double": {
+      "model": "fallout_wastelands:block/greytileslab_full"
+    }
+  }
+}

@@ -161,6 +161,9 @@ public class EnclavepowerarmorsoldierEntity extends FalloutWastelandsModElements
 			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, ZombifiedPiglinEntity.class, true, true));
 			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, PlayerEntity.class, true, true));
 			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, CreeperEntity.class, true, true));
+			this.targetSelector.addGoal(39, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(40, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(41, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, true));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

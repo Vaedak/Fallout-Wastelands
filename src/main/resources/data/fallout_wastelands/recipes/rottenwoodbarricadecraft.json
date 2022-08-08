@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "1": {
+      "item": "minecraft:stick"
+    },
+    "2": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "3": {
+      "item": "minecraft:stick"
+    },
+    "4": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "5": {
+      "item": "minecraft:stick"
+    },
+    "6": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    },
+    "8": {
+      "item": "fallout_wastelands:rottenplanks"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:roottenwoodbarricade",
+    "count": 8
+  }
+}

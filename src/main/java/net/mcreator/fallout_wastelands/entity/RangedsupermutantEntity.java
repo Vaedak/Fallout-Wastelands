@@ -132,8 +132,11 @@ public class RangedsupermutantEntity extends FalloutWastelandsModElements.ModEle
 			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, MachinegunTurretEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, FriendlybrainbotEntity.CustomEntity.class, true, false));
-			this.goalSelector.addGoal(23, new BreakDoorGoal(this, e -> true));
-			this.goalSelector.addGoal(24, new ReturnToVillageGoal(this, 0.6, false));
+			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, false));
+			this.goalSelector.addGoal(26, new BreakDoorGoal(this, e -> true));
+			this.goalSelector.addGoal(27, new ReturnToVillageGoal(this, 0.6, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

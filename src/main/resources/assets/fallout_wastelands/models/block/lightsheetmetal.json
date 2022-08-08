@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/tole_3",
+    "up": "fallout_wastelands:blocks/tole_3",
+    "north": "fallout_wastelands:blocks/tole_3",
+    "east": "fallout_wastelands:blocks/tole_3",
+    "south": "fallout_wastelands:blocks/tole_3",
+    "west": "fallout_wastelands:blocks/tole_3",
+    "particle": "fallout_wastelands:blocks/tole_3"
+  }
+}

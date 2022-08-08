@@ -145,6 +145,9 @@ public class ChromedraiderfemaleEntity extends FalloutWastelandsModElements.ModE
 			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, RangedsupermutantEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, false, false));
 		}
 
 		@Override

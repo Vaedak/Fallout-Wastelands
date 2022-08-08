@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:greyindustrialblock"
+    },
+    "1": {
+      "item": "fallout_wastelands:greyindustrialblock"
+    },
+    "2": {
+      "item": "fallout_wastelands:greyindustrialblock"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:greyindustrialblockslab",
+    "count": 6
+  }
+}

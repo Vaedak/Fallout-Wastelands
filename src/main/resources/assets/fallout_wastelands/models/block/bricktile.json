@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/bricktile",
+    "up": "fallout_wastelands:blocks/bricktile",
+    "north": "fallout_wastelands:blocks/bricktile",
+    "east": "fallout_wastelands:blocks/bricktile",
+    "south": "fallout_wastelands:blocks/bricktile",
+    "west": "fallout_wastelands:blocks/bricktile",
+    "particle": "fallout_wastelands:blocks/bricktile"
+  }
+}

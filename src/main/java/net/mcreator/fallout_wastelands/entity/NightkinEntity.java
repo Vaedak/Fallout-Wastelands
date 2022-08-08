@@ -146,6 +146,9 @@ public class NightkinEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, DeathclawEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, GeckoEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, false));
 		}
 
 		@Override

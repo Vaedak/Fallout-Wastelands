@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:ingot_tin"
+    },
+    "1": {
+      "item": "minecraft:iron_ingot"
+    },
+    "2": {
+      "item": "fallout_wastelands:ingot_tin"
+    },
+    "3": {
+      "item": "fallout_wastelands:ingot_tin"
+    },
+    "4": {
+      "item": "minecraft:iron_ingot"
+    },
+    "5": {
+      "item": "fallout_wastelands:ingot_tin"
+    },
+    "6": {
+      "item": "fallout_wastelands:ingot_tin"
+    },
+    "7": {
+      "item": "minecraft:iron_ingot"
+    },
+    "8": {
+      "item": "fallout_wastelands:ingot_tin"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:roofsheetmetal",
+    "count": 16
+  }
+}

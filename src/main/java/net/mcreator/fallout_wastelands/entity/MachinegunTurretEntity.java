@@ -158,6 +158,9 @@ public class MachinegunTurretEntity extends FalloutWastelandsModElements.ModElem
 			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, ZombifiedPiglinEntity.class, true, true));
 			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, PlayerEntity.class, true, true));
 			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, CreeperEntity.class, true, true));
+			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, true));
+			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, true));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

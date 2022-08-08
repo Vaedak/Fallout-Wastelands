@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/greypplain",
+    "up": "fallout_wastelands:blocks/greypplain",
+    "north": "fallout_wastelands:blocks/greypplain",
+    "east": "fallout_wastelands:blocks/greypplain",
+    "south": "fallout_wastelands:blocks/greypplain",
+    "west": "fallout_wastelands:blocks/greypplain",
+    "particle": "fallout_wastelands:blocks/greypplain"
+  }
+}

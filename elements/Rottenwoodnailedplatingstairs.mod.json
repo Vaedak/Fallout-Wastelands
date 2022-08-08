@@ -1,0 +1,46 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 4,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Rottenwoodplatenailed"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Rottenwoodplatenailed"
+      },
+      {
+        "value": "CUSTOM:Rottenwoodplatenailed"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Rottenwoodplatenailed"
+      },
+      {
+        "value": "CUSTOM:Rottenwoodplatenailed"
+      },
+      {
+        "value": "CUSTOM:Rottenwoodplatenailed"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Rottenwoodplatestairs"
+    },
+    "name": "rottenwoodnailedplatingstairs",
+    "namespace": "mod"
+  }
+}
