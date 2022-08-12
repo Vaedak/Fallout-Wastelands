@@ -490,5 +490,14 @@
         "stream": false
       }
     ]
+  },
+  "neontest": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:neontest",
+        "stream": false
+      }
+    ]
   }
 }

@@ -111,16 +111,6 @@
       "Structures",
       "Ores"
     ],
-    "spawnEntries": [
-      {
-        "entity": {
-          "value": "CUSTOM:Gecko"
-        },
-        "minGroup": 4,
-        "maxGroup": 4,
-        "weight": 2,
-        "spawnType": "monster"
-      }
-    ]
+    "spawnEntries": []
   }
 }

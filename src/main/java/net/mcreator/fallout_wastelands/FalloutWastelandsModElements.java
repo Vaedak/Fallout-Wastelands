@@ -155,6 +155,8 @@ public class FalloutWastelandsModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "cash")));
 		sounds.put(new ResourceLocation("fallout_wastelands", "quest"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "quest")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "neontest"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "neontest")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("fallout_wastelands").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

@@ -7,16 +7,15 @@ import net.minecraftforge.fml.network.FMLPlayMessages;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.common.MinecraftForge;
 
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.World;
+import net.minecraft.world.IServerWorld;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
@@ -34,27 +33,38 @@ import net.minecraft.entity.ai.goal.LeapAtTargetGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 
+import net.mcreator.fallout_wastelands.procedures.DeathclawblocbreakerProcedure;
+import net.mcreator.fallout_wastelands.procedures.DeathclawThisEntityKillsAnotherOneProcedure;
+import net.mcreator.fallout_wastelands.procedures.ChromeraiderOnInitialEntitySpawnProcedure;
 import net.mcreator.fallout_wastelands.entity.renderer.DeathclawRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+
+import javax.annotation.Nullable;
+
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
-			.size(2f, 2.5f)).build("deathclaw").setRegistryName("deathclaw");
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(2f, 3f))
+			.build("deathclaw").setRegistryName("deathclaw");
 
 	public DeathclawEntity(FalloutWastelandsModElements instance) {
 		super(instance, 1458);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new DeathclawRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
-		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@Override
@@ -64,20 +74,8 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 				.setRegistryName("deathclaw_spawn_egg"));
 	}
 
-	@SubscribeEvent
-	public void addFeatureToBiomes(BiomeLoadingEvent event) {
-		boolean biomeCriteria = false;
-		if (new ResourceLocation("fallout_wastelands:desertwastland").equals(event.getName()))
-			biomeCriteria = true;
-		if (!biomeCriteria)
-			return;
-		event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(entity, 1, 1, 1));
-	}
-
 	@Override
 	public void init(FMLCommonSetupEvent event) {
-		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
-				MonsterEntity::canMonsterSpawn);
 	}
 
 	private static class EntityAttributesRegisterHandler {
@@ -120,43 +118,42 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 				}
 			});
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 1));
-			this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-			this.targetSelector.addGoal(4, new HurtByTargetGoal(this).setCallsForHelp());
-			this.goalSelector.addGoal(5, new LeapAtTargetGoal(this, (float) 0.5));
-			this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
-			this.goalSelector.addGoal(7, new SwimGoal(this));
-			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, ArmyrobobrainEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, BasesupermutantEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, ChromedraiderfemaleEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, ClosecombatsupermutantEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(15, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(16, new NearestAttackableTargetGoal(this, Femalevaultdweller1Entity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, Femalevaultdweller2Entity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, FriendlybrainbotEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, GhoulEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, MachinegunTurretEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, Malevaultdweller1Entity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, Malevaultdweller2Entity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, Malewastelander1Entity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, Malewastelander2Entity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, Malewastelander3Entity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, Malewastelander4Entity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(27, new NearestAttackableTargetGoal(this, MirelurkEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(28, new NearestAttackableTargetGoal(this, OverseerEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, RangedsupermutantEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, WolfEntity.class, false, false));
-			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false));
-			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, GhoulEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, false, false));
-			this.targetSelector.addGoal(39, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp());
+			this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, (float) 0.5));
+			this.goalSelector.addGoal(5, new LookRandomlyGoal(this));
+			this.goalSelector.addGoal(6, new SwimGoal(this));
+			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, ArmyrobobrainEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, BasesupermutantEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, ChromedraiderfemaleEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, ClosecombatsupermutantEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(15, new NearestAttackableTargetGoal(this, Femalevaultdweller1Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(16, new NearestAttackableTargetGoal(this, Femalevaultdweller2Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, FriendlybrainbotEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, GhoulEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, MachinegunTurretEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, Malevaultdweller1Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, Malevaultdweller2Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, Malewastelander1Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, Malewastelander2Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, Malewastelander3Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, Malewastelander4Entity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, MirelurkEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(27, new NearestAttackableTargetGoal(this, OverseerEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(28, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(29, new NearestAttackableTargetGoal(this, RangedsupermutantEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(30, new NearestAttackableTargetGoal(this, WolfEntity.class, false, false));
+			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false));
+			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, GhoulEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(34, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(35, new NearestAttackableTargetGoal(this, NightkinEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, false, false));
+			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, false, false));
 		}
 
 		@Override
@@ -184,6 +181,48 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 			if (source == DamageSource.FALL)
 				return false;
 			return super.attackEntityFrom(source, amount);
+		}
+
+		@Override
+		public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason,
+				@Nullable ILivingEntityData livingdata, @Nullable CompoundNBT tag) {
+			ILivingEntityData retval = super.onInitialSpawn(world, difficulty, reason, livingdata, tag);
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity entity = this;
+
+			ChromeraiderOnInitialEntitySpawnProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			return retval;
+		}
+
+		@Override
+		public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
+			super.awardKillScore(entity, score, damageSource);
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity sourceentity = this;
+
+			DeathclawThisEntityKillsAnotherOneProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+
+		@Override
+		public void baseTick() {
+			super.baseTick();
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity entity = this;
+
+			DeathclawblocbreakerProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

@@ -66,7 +66,7 @@
       "value": ""
     },
     "offsetType": "NONE",
-    "aiPathNodeType": "DEFAULT",
+    "aiPathNodeType": "LEAVES",
     "flammability": 5,
     "fireSpreadSpeed": 9,
     "isLadder": false,
