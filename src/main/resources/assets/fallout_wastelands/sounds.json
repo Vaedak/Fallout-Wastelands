@@ -473,29 +473,29 @@
       }
     ]
   },
-  "cash": {
-    "category": "player",
-    "sounds": [
-      {
-        "name": "fallout_wastelands:flowingcaps",
-        "stream": false
-      }
-    ]
-  },
-  "quest": {
+  "machinegunquieter": {
     "category": "neutral",
     "sounds": [
       {
-        "name": "fallout_wastelands:quest",
+        "name": "fallout_wastelands:581771__hz37__machine-gun-hza-01-08-2021machinegunquieter",
         "stream": false
       }
     ]
   },
-  "neontest": {
-    "category": "block",
+  "ninemmquieter": {
+    "category": "neutral",
     "sounds": [
       {
-        "name": "fallout_wastelands:neontest",
+        "name": "fallout_wastelands:9mmshootquieter",
+        "stream": false
+      }
+    ]
+  },
+  "tenmmquieter": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "fallout_wastelands:tenmmquieter",
         "stream": false
       }
     ]

@@ -151,12 +151,12 @@ public class FalloutWastelandsModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "smallfallboom")));
 		sounds.put(new ResourceLocation("fallout_wastelands", "unnaturalglow"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "unnaturalglow")));
-		sounds.put(new ResourceLocation("fallout_wastelands", "cash"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "cash")));
-		sounds.put(new ResourceLocation("fallout_wastelands", "quest"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "quest")));
-		sounds.put(new ResourceLocation("fallout_wastelands", "neontest"),
-				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "neontest")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "machinegunquieter"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "machinegunquieter")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "ninemmquieter"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "ninemmquieter")));
+		sounds.put(new ResourceLocation("fallout_wastelands", "tenmmquieter"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("fallout_wastelands", "tenmmquieter")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("fallout_wastelands").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();
