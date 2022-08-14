@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:rottenwoodplatenailed"
+    },
+    "1": {
+      "item": "fallout_wastelands:rottenwoodplatenailed"
+    },
+    "2": {
+      "item": "fallout_wastelands:rottenwoodplatenailed"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:rottenwoodnailedplatingslab",
+    "count": 6
+  }
+}

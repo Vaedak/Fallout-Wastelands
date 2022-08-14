@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "1": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "2": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "3": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "5": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "6": {
+      "item": "fallout_wastelands:antiradclothing"
+    },
+    "8": {
+      "item": "fallout_wastelands:antiradclothing"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:hazmat_leggings",
+    "count": 1
+  }
+}

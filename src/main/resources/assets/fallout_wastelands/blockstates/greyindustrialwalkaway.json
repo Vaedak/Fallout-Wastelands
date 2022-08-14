@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "fallout_wastelands:block/greyindustrialwalkaway",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "fallout_wastelands:block/greyindustrialwalkaway"
+    },
+    "axis=z": {
+      "model": "fallout_wastelands:block/greyindustrialwalkaway",
+      "x": 90
+    }
+  }
+}

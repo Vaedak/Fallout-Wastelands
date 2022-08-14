@@ -57,7 +57,7 @@ public class BarbedwireBlock extends FalloutWastelandsModElements.ModElement {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void clientLoad(FMLClientSetupEvent event) {
-		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
 
 	public static class CustomBlock extends Block {

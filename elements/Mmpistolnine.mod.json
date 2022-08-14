@@ -17,7 +17,7 @@
     "shootConstantly": false,
     "usageCount": 901,
     "actionSound": {
-      "value": "CUSTOM:ninemmquieter"
+      "value": "CUSTOM:ninemmshotb"
     },
     "hasGlow": false,
     "animation": "none",

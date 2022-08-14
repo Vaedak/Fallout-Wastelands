@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:undergroundbrick"
+    },
+    "3": {
+      "item": "fallout_wastelands:undergroundbrick"
+    },
+    "4": {
+      "item": "fallout_wastelands:undergroundbrick"
+    },
+    "6": {
+      "item": "fallout_wastelands:undergroundbrick"
+    },
+    "7": {
+      "item": "fallout_wastelands:undergroundbrick"
+    },
+    "8": {
+      "item": "fallout_wastelands:undergroundbrick"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:undergroundbrickstairs",
+    "count": 4
+  }
+}

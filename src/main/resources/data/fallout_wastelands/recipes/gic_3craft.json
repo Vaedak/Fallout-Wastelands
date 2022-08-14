@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fallout_wastelands:greyindustrivetmid"
+    }
+  ],
+  "result": {
+    "item": "fallout_wastelands:greyindusupperrivet",
+    "count": 1
+  }
+}

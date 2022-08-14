@@ -1,0 +1,184 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "paulo.png",
+          "use1Xscale": false,
+          "name": "paulo.png",
+          "x": 42,
+          "y": -1
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "raiders found some sort of military vault",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "raiders found some sort of military vault",
+          "x": 114,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "of course they raided it and found",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "of course they raided it and found",
+          "x": 114,
+          "y": 125
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Opentrade"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 348,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "I'll take it .",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "I'll take it .",
+          "x": 114,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Work1C1"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "What are those chips worth ?",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "What are those chips worth ?",
+          "x": 114,
+          "y": 188
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 179
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "I'll pass my turn .",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "I'll pass my turn .",
+          "x": 114,
+          "y": 206
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 285,
+          "y": 197
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "a ton of electronic cards in it",
+          "color": {
+            "value": -10040320,
+            "falpha": 0.0
+          },
+          "name": "a ton of electronic cards in it",
+          "x": 114,
+          "y": 134
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": ".",
+          "onClick": {
+            "name": "Work1back"
+          },
+          "width": 30,
+          "height": 20,
+          "name": ".",
+          "x": 303,
+          "y": 125
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "nextarrow.png",
+          "use1Xscale": false,
+          "name": "nextarrow.png",
+          "x": 303,
+          "y": 125
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

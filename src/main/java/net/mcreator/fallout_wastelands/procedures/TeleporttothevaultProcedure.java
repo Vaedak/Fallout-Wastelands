@@ -21,6 +21,7 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Collections;
 
 public class TeleporttothevaultProcedure {
 	@Mod.EventBusSubscriber
@@ -92,6 +93,14 @@ public class TeleporttothevaultProcedure {
 					if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 						_ent.world.getServer().getCommandManager()
 								.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "tp@p 0 40 0");
+					}
+				}
+				{
+					Entity _ent = entity;
+					_ent.setPositionAndUpdate(0, (-10), 0);
+					if (_ent instanceof ServerPlayerEntity) {
+						((ServerPlayerEntity) _ent).connection.setPlayerLocation(0, (-10), 0, _ent.rotationYaw, _ent.rotationPitch,
+								Collections.emptySet());
 					}
 				}
 			}

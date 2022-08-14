@@ -10,9 +10,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 
 import net.minecraft.world.World;
+import net.minecraft.world.IServerWorld;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
@@ -20,6 +23,7 @@ import net.minecraft.item.Item;
 import net.minecraft.entity.projectile.PotionEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.monster.ZombieEntity;
+import net.minecraft.entity.monster.WitchEntity;
 import net.minecraft.entity.monster.VindicatorEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.merchant.villager.VillagerEntity;
@@ -33,8 +37,10 @@ import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.goal.BreakDoorGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
@@ -42,9 +48,12 @@ import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.AreaEffectCloudEntity;
 
 import net.mcreator.fallout_wastelands.procedures.ClosecombatsupermutantOnEntityTickUpdateProcedure;
+import net.mcreator.fallout_wastelands.procedures.ChromeraiderOnInitialEntitySpawnProcedure;
 import net.mcreator.fallout_wastelands.item.SeptammoItem;
 import net.mcreator.fallout_wastelands.entity.renderer.ClosecombatsupermutantRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+
+import javax.annotation.Nullable;
 
 import java.util.stream.Stream;
 import java.util.Map;
@@ -122,16 +131,22 @@ public class ClosecombatsupermutantEntity extends FalloutWastelandsModElements.M
 			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, ArmyrobobrainEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, VillagerEntity.class, true, false));
 			this.targetSelector.addGoal(12, new NearestAttackableTargetGoal(this, ZombieEntity.class, true, false));
-			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(13, new NearestAttackableTargetGoal(this, WitchEntity.class, true, false));
 			this.targetSelector.addGoal(14, new NearestAttackableTargetGoal(this, VindicatorEntity.class, true, false));
 			this.targetSelector.addGoal(15, new NearestAttackableTargetGoal(this, PlayerEntity.class, true, false));
-			this.targetSelector.addGoal(16, new NearestAttackableTargetGoal(this, FriendlybrainbotEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, true, false));
-			this.goalSelector.addGoal(21, new BreakDoorGoal(this, e -> true));
-			this.goalSelector.addGoal(22, new ReturnToVillageGoal(this, 0.6, false));
+			this.targetSelector.addGoal(16, new NearestAttackableTargetGoal(this, RaidergunnerEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(17, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(18, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(19, new NearestAttackableTargetGoal(this, BloatflyEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(20, new NearestAttackableTargetGoal(this, ProtectronEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, GlowingoneEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, MachinegunTurretEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, FriendlybrainbotEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, false));
+			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, false));
+			this.goalSelector.addGoal(27, new BreakDoorGoal(this, e -> true));
+			this.goalSelector.addGoal(28, new ReturnToVillageGoal(this, 0.6, false));
 		}
 
 		@Override
@@ -159,6 +174,22 @@ public class ClosecombatsupermutantEntity extends FalloutWastelandsModElements.M
 			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
 				return false;
 			return super.attackEntityFrom(source, amount);
+		}
+
+		@Override
+		public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason,
+				@Nullable ILivingEntityData livingdata, @Nullable CompoundNBT tag) {
+			ILivingEntityData retval = super.onInitialSpawn(world, difficulty, reason, livingdata, tag);
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity entity = this;
+
+			ChromeraiderOnInitialEntitySpawnProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			return retval;
 		}
 
 		@Override

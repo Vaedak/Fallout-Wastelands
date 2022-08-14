@@ -1,0 +1,46 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.LEATHER"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.LEATHER"
+      },
+      {
+        "value": "CUSTOM:Militaryhull"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Militaryhull"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Combatarmor.boots"
+    },
+    "name": "combatarmorboots",
+    "namespace": "mod"
+  }
+}

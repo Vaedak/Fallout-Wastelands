@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "1": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "2": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "3": {
+      "item": "fallout_wastelands:militaryhull"
+    },
+    "4": {
+      "item": "fallout_wastelands:wastelandglassblock"
+    },
+    "5": {
+      "item": "fallout_wastelands:militaryhull"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:combatarmor_helmet",
+    "count": 1
+  }
+}

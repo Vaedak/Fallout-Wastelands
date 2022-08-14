@@ -15,7 +15,6 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.item.RealTurretProjectileItem;
 import net.mcreator.fallout_wastelands.entity.MachinegunTurretEntity;
-import net.mcreator.fallout_wastelands.entity.EnclaveMachingunTurretEntity;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Random;
@@ -72,27 +71,12 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
-		if ((sourceentity instanceof MachinegunTurretEntity.CustomEntity
-				|| sourceentity instanceof EnclaveMachingunTurretEntity.CustomEntity) == true) {
-			{
-				Entity _ent = sourceentity;
-				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-							"team join turret @s");
-				}
-			}
-			{
-				Entity _ent = sourceentity;
-				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-							"team add turret 101");
-				}
-			}
+		if (sourceentity instanceof MachinegunTurretEntity.CustomEntity == true) {
 			if (sourceentity.getPersistentData().getDouble("ShootingTimer") == 0) {
 				if (sourceentity instanceof LivingEntity) {
 					LivingEntity _ent = (LivingEntity) sourceentity;
 					if (!_ent.world.isRemote()) {
-						RealTurretProjectileItem.shoot(_ent.world, _ent, new Random(), 4, (float) 0.5, 0);
+						RealTurretProjectileItem.shoot(_ent.world, _ent, new Random(), 4, (float) 0.1, 0);
 					}
 				}
 				{
@@ -115,7 +99,7 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 									.getValue(new ResourceLocation("fallout_wastelands:tenmmshot")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				sourceentity.getPersistentData().putDouble("ShootingTimer", 7);
+				sourceentity.getPersistentData().putDouble("ShootingTimer", 10);
 			}
 			if (sourceentity.getPersistentData().getDouble("ShootingTimer") > 0) {
 				sourceentity.getPersistentData().putDouble("ShootingTimer", (sourceentity.getPersistentData().getDouble("ShootingTimer") - 1));

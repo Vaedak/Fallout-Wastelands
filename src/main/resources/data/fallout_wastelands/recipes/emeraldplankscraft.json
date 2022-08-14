@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "1": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "2": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "3": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "4": {
+      "item": "minecraft:lime_dye"
+    },
+    "5": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "6": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "7": {
+      "item": "fallout_wastelands:rottenplanks"
+    },
+    "8": {
+      "item": "fallout_wastelands:rottenplanks"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:emeraldplanks",
+    "count": 8
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 4,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Undergroungbrick"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Undergroungbrick"
+      },
+      {
+        "value": "CUSTOM:Undergroungbrick"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Undergroungbrick"
+      },
+      {
+        "value": "CUSTOM:Undergroungbrick"
+      },
+      {
+        "value": "CUSTOM:Undergroungbrick"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Undergroundbrickstairs"
+    },
+    "name": "undergroundbrickstairscraft",
+    "namespace": "mod"
+  }
+}

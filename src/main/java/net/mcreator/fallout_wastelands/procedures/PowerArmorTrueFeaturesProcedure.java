@@ -164,14 +164,16 @@ public class PowerArmorTrueFeaturesProcedure {
 				}
 				if (world instanceof ServerWorld) {
 					Entity entityToSpawn = new BrokenFrameEntity.CustomEntity(BrokenFrameEntity.entity, (World) world);
-					entityToSpawn.setLocationAndAngles(x, y, z, (float) 0, (float) 0);
-					entityToSpawn.setRenderYawOffset((float) 0);
-					entityToSpawn.setRotationYawHead((float) 0);
+					entityToSpawn.setLocationAndAngles(x, y, z, (float) randumframex, (float) randumframeyawgv);
+					entityToSpawn.setRenderYawOffset((float) randumframex);
+					entityToSpawn.setRotationYawHead((float) randumframex);
 					if (entityToSpawn instanceof MobEntity)
 						((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world, world.getDifficultyForLocation(entityToSpawn.getPosition()),
 								SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
 					world.addEntity(entityToSpawn);
 				}
+				randumframex = (Math.random() * 360);
+				randumframeyawgv = (Math.random() * 360);
 			}
 		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)

@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:rustediron"
+    },
+    "1": {
+      "item": "fallout_wastelands:metallicwall"
+    },
+    "2": {
+      "item": "fallout_wastelands:roofsheetmetal"
+    },
+    "3": {
+      "item": "fallout_wastelands:sheetmetal"
+    },
+    "4": {
+      "item": "fallout_wastelands:wastelandsteelbars"
+    },
+    "5": {
+      "item": "fallout_wastelands:lightsheetmetal"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:barricadewasteland",
+    "count": 6
+  }
+}

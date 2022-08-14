@@ -1,15 +1,19 @@
 package net.mcreator.fallout_wastelands.procedures;
 
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
@@ -92,20 +96,60 @@ public class TheglowambiantradiationProcedure {
 			}.check(entity)) {
 				{
 					double _setval = ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Radioacitvity + 0.5);
+							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge + 0.2);
 					entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.radioactivity_gauge = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+							("Radiation level" + (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge)),
+							(true));
+				}
+				if (Math.random() < 0.1) {
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos(x, y, z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("fallout_wastelands:radiation")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						((World) world).playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("fallout_wastelands:radiation")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+				}
 			} else {
 				{
 					double _setval = ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Radioacitvity + 10);
+							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge + 4);
 					entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.radioactivity_gauge = _setval;
 						capability.syncPlayerVariables(entity);
 					});
+				}
+				if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+							("Radiation level" + (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge)),
+							(true));
+				}
+				if (Math.random() < 0.1) {
+					if (world instanceof World && !world.isRemote()) {
+						((World) world)
+								.playSound(null, new BlockPos(x, y, z),
+										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+												.getValue(new ResourceLocation("fallout_wastelands:radiation")),
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						((World) world).playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("fallout_wastelands:radiation")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
 				}
 			}
 		}

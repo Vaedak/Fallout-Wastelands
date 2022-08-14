@@ -21,17 +21,14 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 
-import net.mcreator.fallout_wastelands.procedures.PowerArmorLegsUniversalProcedure;
-import net.mcreator.fallout_wastelands.procedures.PowerArmorHelmetUniversalProcedure;
-import net.mcreator.fallout_wastelands.procedures.PowerArmorChestUniversalProcedure;
-import net.mcreator.fallout_wastelands.procedures.PowerArmorBootsUniversalProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorLeggingsTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorHelmetTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorChestTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorBootsTickProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import java.util.Collections;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -95,135 +92,119 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 				return 0f;
 			}
 		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD,
-				new Item.Properties().group(WastelanderscombattabItemGroup.tab).isImmuneToFire()) {
-			@Override
-			@OnlyIn(Dist.CLIENT)
-			public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
-				BipedModel armorModel = new BipedModel(1);
-				armorModel.bipedHead = new Modelxoone().head;
-				armorModel.isSneak = living.isSneaking();
-				armorModel.isSitting = defaultModel.isSitting;
-				armorModel.isChild = living.isChild();
-				return armorModel;
-			}
+		elements.items
+				.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
+					@Override
+					@OnlyIn(Dist.CLIENT)
+					public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
+						BipedModel armorModel = new BipedModel(1);
+						armorModel.bipedHead = new Modelxoone().head;
+						armorModel.isSneak = living.isSneaking();
+						armorModel.isSitting = defaultModel.isSitting;
+						armorModel.isChild = living.isChild();
+						return armorModel;
+					}
 
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
+					@Override
+					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+						return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+					}
 
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				super.onArmorTick(itemstack, world, entity);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
+					@Override
+					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
+						super.onArmorTick(itemstack, world, entity);
+						double x = entity.getPosX();
+						double y = entity.getPosY();
+						double z = entity.getPosZ();
 
-				PowerArmorHelmetUniversalProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-		}.setRegistryName("enclave_x_01pa_helmet"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST,
-				new Item.Properties().group(WastelanderscombattabItemGroup.tab).isImmuneToFire()) {
-			@Override
-			@OnlyIn(Dist.CLIENT)
-			public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
-				BipedModel armorModel = new BipedModel(1);
-				armorModel.bipedBody = new Modelxoone().body;
-				armorModel.bipedLeftArm = new Modelxoone().leftarm;
-				armorModel.bipedRightArm = new Modelxoone().rightarm;
-				armorModel.isSneak = living.isSneaking();
-				armorModel.isSitting = defaultModel.isSitting;
-				armorModel.isChild = living.isChild();
-				return armorModel;
-			}
+						PowerArmorHelmetTickProcedure.executeProcedure(Collections.emptyMap());
+					}
+				}.setRegistryName("enclave_x_01pa_helmet"));
+		elements.items
+				.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
+					@Override
+					@OnlyIn(Dist.CLIENT)
+					public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
+						BipedModel armorModel = new BipedModel(1);
+						armorModel.bipedBody = new Modelxoone().body;
+						armorModel.bipedLeftArm = new Modelxoone().leftarm;
+						armorModel.bipedRightArm = new Modelxoone().rightarm;
+						armorModel.isSneak = living.isSneaking();
+						armorModel.isSitting = defaultModel.isSitting;
+						armorModel.isChild = living.isChild();
+						return armorModel;
+					}
 
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
+					@Override
+					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+						return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+					}
 
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
+					@Override
+					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
+						double x = entity.getPosX();
+						double y = entity.getPosY();
+						double z = entity.getPosZ();
 
-				PowerArmorChestUniversalProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-		}.setRegistryName("enclave_x_01pa_chestplate"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS,
-				new Item.Properties().group(WastelanderscombattabItemGroup.tab).isImmuneToFire()) {
-			@Override
-			@OnlyIn(Dist.CLIENT)
-			public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
-				BipedModel armorModel = new BipedModel(1);
-				armorModel.bipedLeftLeg = new Modelxoone().leftleg;
-				armorModel.bipedRightLeg = new Modelxoone().rightleg;
-				armorModel.isSneak = living.isSneaking();
-				armorModel.isSitting = defaultModel.isSitting;
-				armorModel.isChild = living.isChild();
-				return armorModel;
-			}
+						PowerArmorChestTickProcedure.executeProcedure(Collections.emptyMap());
+					}
+				}.setRegistryName("enclave_x_01pa_chestplate"));
+		elements.items
+				.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
+					@Override
+					@OnlyIn(Dist.CLIENT)
+					public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
+						BipedModel armorModel = new BipedModel(1);
+						armorModel.bipedLeftLeg = new Modelxoone().leftleg;
+						armorModel.bipedRightLeg = new Modelxoone().rightleg;
+						armorModel.isSneak = living.isSneaking();
+						armorModel.isSitting = defaultModel.isSitting;
+						armorModel.isChild = living.isChild();
+						return armorModel;
+					}
 
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
+					@Override
+					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+						return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+					}
 
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
+					@Override
+					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
+						double x = entity.getPosX();
+						double y = entity.getPosY();
+						double z = entity.getPosZ();
 
-				PowerArmorLegsUniversalProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-		}.setRegistryName("enclave_x_01pa_leggings"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET,
-				new Item.Properties().group(WastelanderscombattabItemGroup.tab).isImmuneToFire()) {
-			@Override
-			@OnlyIn(Dist.CLIENT)
-			public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
-				BipedModel armorModel = new BipedModel(1);
-				armorModel.bipedLeftLeg = new Modelxoone().leftleg;
-				armorModel.bipedRightLeg = new Modelxoone().rightleg;
-				armorModel.isSneak = living.isSneaking();
-				armorModel.isSitting = defaultModel.isSitting;
-				armorModel.isChild = living.isChild();
-				return armorModel;
-			}
+						PowerArmorLeggingsTickProcedure.executeProcedure(Collections.emptyMap());
+					}
+				}.setRegistryName("enclave_x_01pa_leggings"));
+		elements.items
+				.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
+					@Override
+					@OnlyIn(Dist.CLIENT)
+					public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
+						BipedModel armorModel = new BipedModel(1);
+						armorModel.bipedLeftLeg = new Modelxoone().leftleg;
+						armorModel.bipedRightLeg = new Modelxoone().rightleg;
+						armorModel.isSneak = living.isSneaking();
+						armorModel.isSitting = defaultModel.isSitting;
+						armorModel.isChild = living.isChild();
+						return armorModel;
+					}
 
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
+					@Override
+					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+						return "fallout_wastelands:textures/models/armor/x01b__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+					}
 
-			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
+					@Override
+					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
+						double x = entity.getPosX();
+						double y = entity.getPosY();
+						double z = entity.getPosZ();
 
-				PowerArmorBootsUniversalProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-		}.setRegistryName("enclave_x_01pa_boots"));
+						PowerArmorBootsTickProcedure.executeProcedure(Collections.emptyMap());
+					}
+				}.setRegistryName("enclave_x_01pa_boots"));
 	}
 
 	// Made with Blockbench 3.5.4

@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_orientable_trapdoor_open",
+  "textures": {
+    "texture": "fallout_wastelands:blocks/woodentrapdoor",
+    "particle": "fallout_wastelands:blocks/woodentrapdoor"
+  }
+}

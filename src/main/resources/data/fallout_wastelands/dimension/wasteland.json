@@ -7,28 +7,28 @@
       "type": "minecraft:multi_noise",
       "seed": 1715716591864440983,
       "temperature_noise": {
-        "firstOctave": -5.74,
+        "firstOctave": -6.16,
         "amplitudes": [
           2,
           2
         ]
       },
       "humidity_noise": {
-        "firstOctave": -5.74,
+        "firstOctave": -6.16,
         "amplitudes": [
           2,
           2
         ]
       },
       "altitude_noise": {
-        "firstOctave": -5.74,
+        "firstOctave": -6.16,
         "amplitudes": [
           2,
           2
         ]
       },
       "weirdness_noise": {
-        "firstOctave": -5.74,
+        "firstOctave": -6.16,
         "amplitudes": [
           2,
           2
@@ -46,20 +46,40 @@
           }
         },
         {
-          "biome": "fallout_wastelands:wastlandsanddesert",
+          "biome": "fallout_wastelands:wastelandforest",
           "parameters": {
-            "temperature": 0.333333333334,
-            "humidity": -0.333333333334,
+            "temperature": 0.6,
+            "humidity": -0.6,
             "altitude": -0.75,
             "weirdness": 1.5,
             "offset": 0
           }
         },
         {
+          "biome": "fallout_wastelands:wastlandsanddesert",
+          "parameters": {
+            "temperature": 0.2,
+            "humidity": -0.2,
+            "altitude": 0.75,
+            "weirdness": -1.5,
+            "offset": 0
+          }
+        },
+        {
           "biome": "fallout_wastelands:capitalwasteland",
           "parameters": {
-            "temperature": -0.333333333334,
-            "humidity": 0.333333333334,
+            "temperature": -0.2,
+            "humidity": 0.2,
+            "altitude": -0.75,
+            "weirdness": 1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "fallout_wastelands:theglow",
+          "parameters": {
+            "temperature": -0.6,
+            "humidity": 0.6,
             "altitude": 0.75,
             "weirdness": -1.5,
             "offset": 0

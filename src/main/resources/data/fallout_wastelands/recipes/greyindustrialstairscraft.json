@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:greyindustrialblock"
+    },
+    "3": {
+      "item": "fallout_wastelands:greyindustrialblock"
+    },
+    "4": {
+      "item": "fallout_wastelands:greyindustrialblock"
+    },
+    "6": {
+      "item": "fallout_wastelands:greyindustrialblock"
+    },
+    "7": {
+      "item": "fallout_wastelands:greyindustrialblock"
+    },
+    "8": {
+      "item": "fallout_wastelands:greyindustrialblock"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:greyindustrialblockstairs",
+    "count": 4
+  }
+}

@@ -12,12 +12,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.block.Blocks;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
 import net.mcreator.fallout_wastelands.item.VaultjumpsuitItem;
 import net.mcreator.fallout_wastelands.item.PipboyItem;
 import net.mcreator.fallout_wastelands.item.FemalevaultjumpsuitItem;
+import net.mcreator.fallout_wastelands.item.CombatknifeItem;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
@@ -86,6 +88,16 @@ public class VaultsuitProcedure {
 			}
 			if (entity instanceof PlayerEntity) {
 				ItemStack _setstack = new ItemStack(PipboyItem.block);
+				_setstack.setCount((int) 1);
+				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			}
+			if (entity instanceof PlayerEntity) {
+				ItemStack _setstack = new ItemStack(CombatknifeItem.block);
+				_setstack.setCount((int) 1);
+				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			}
+			if (entity instanceof PlayerEntity) {
+				ItemStack _setstack = new ItemStack(Blocks.STONE_BUTTON);
 				_setstack.setCount((int) 1);
 				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
 			}

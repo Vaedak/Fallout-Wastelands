@@ -43,7 +43,7 @@
     },
     "destroyTool": "shovel",
     "customDrop": {
-      "value": ""
+      "value": "CUSTOM:Wastelanddirt"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -77,7 +77,7 @@
     "isNotColidable": false,
     "isCustomSoundType": false,
     "soundOnStep": {
-      "value": "SOUL_SAND"
+      "value": "GROUND"
     },
     "breakSound": {
       "value": ""
@@ -121,6 +121,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onDestroyedByPlayer": {
+      "name": "RootdirtBlockDestroyedByPlayer"
+    },
     "spawnWorldTypes": [
       "CUSTOM:Wasteland",
       "Surface"
@@ -139,6 +142,9 @@
     "blocksToReplace": [
       {
         "value": "CUSTOM:Wastelanddirt"
+      },
+      {
+        "value": "CUSTOM:Theglowdirt"
       }
     ],
     "generationShape": "UNIFORM",

@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.potion.RadioprotectionPotionEffect;
 import net.mcreator.fallout_wastelands.item.HazmatItem;
+import net.mcreator.fallout_wastelands.item.EnclavehazmatItem;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
@@ -29,6 +30,21 @@ public class HazmatBodyTickEventProcedure {
 						.getItem() == HazmatItem.legs) {
 					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
 							.getItem() == HazmatItem.boots) {
+						if (entity instanceof LivingEntity)
+							((LivingEntity) entity)
+									.addPotionEffect(new EffectInstance(RadioprotectionPotionEffect.potion, (int) 100, (int) 2, (false), (false)));
+					}
+				}
+			}
+		}
+		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
+				.getItem() == EnclavehazmatItem.helmet) {
+			if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
+					.getItem() == EnclavehazmatItem.body) {
+				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
+						.getItem() == EnclavehazmatItem.legs) {
+					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
+							.getItem() == EnclavehazmatItem.boots) {
 						if (entity instanceof LivingEntity)
 							((LivingEntity) entity)
 									.addPotionEffect(new EffectInstance(RadioprotectionPotionEffect.potion, (int) 100, (int) 2, (false), (false)));

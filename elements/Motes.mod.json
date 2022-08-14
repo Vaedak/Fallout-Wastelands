@@ -1,0 +1,21 @@
+{
+  "_fv": 28,
+  "_type": "particle",
+  "definition": {
+    "texture": "mote3.png",
+    "animate": false,
+    "frameDuration": 1,
+    "width": 0.2,
+    "height": 0.2,
+    "scale": 0.19999999999999998,
+    "speedFactor": 0.0,
+    "gravity": 0.0,
+    "maxAge": 25,
+    "maxAgeDiff": 24,
+    "angularVelocity": 0.1,
+    "angularAcceleration": 0.02,
+    "canCollide": true,
+    "alwaysShow": false,
+    "renderType": "TRANSLUCENT"
+  }
+}

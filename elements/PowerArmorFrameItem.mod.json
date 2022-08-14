@@ -3,14 +3,14 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "paf",
+    "texture": "10mm_2",
     "customModelName": "Normal",
-    "name": "Power Armor Frame",
-    "rarity": "RARE",
+    "name": "Power Armor Frame Item",
+    "rarity": "COMMON",
     "creativeTab": {
-      "value": "CUSTOM:Wastelandersitems"
+      "value": "MISC"
     },
-    "stackSize": 1,
+    "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
@@ -29,9 +29,6 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "onRightClickedOnBlock": {
-      "name": "PowerArmorFrameItemRightclickedOnBlock"
-    },
     "hasDispenseBehavior": false,
     "isFood": false,
     "nutritionalValue": 4,

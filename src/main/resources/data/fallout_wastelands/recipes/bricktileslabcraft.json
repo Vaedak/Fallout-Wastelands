@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:bricktile"
+    },
+    "1": {
+      "item": "fallout_wastelands:bricktile"
+    },
+    "2": {
+      "item": "fallout_wastelands:bricktile"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:bricktileslab",
+    "count": 6
+  }
+}

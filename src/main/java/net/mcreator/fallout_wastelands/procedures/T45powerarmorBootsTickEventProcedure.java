@@ -79,6 +79,18 @@ public class T45powerarmorBootsTickEventProcedure {
 		boolean boots = false;
 		boolean helm = false;
 		itemstack.getOrCreateTag().putBoolean("PowerArmorBoots", (true));
+		if (entity instanceof PlayerEntity || entity instanceof ServerPlayerEntity) {
+			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
+				if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power > 0) {
+					if (entity.isInWater()) {
+						if (entity instanceof LivingEntity)
+							((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, (int) 60, (int) 1, (false), (false)));
+					}
+				}
+			}
+		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
 			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -96,7 +108,7 @@ public class T45powerarmorBootsTickEventProcedure {
 					|| (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power == 0) {
 				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 10, (int) 4, (false), (false)));
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, (int) 10, (int) 4, (false), (false)));
 			}
 		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)

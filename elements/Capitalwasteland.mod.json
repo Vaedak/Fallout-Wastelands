@@ -58,7 +58,7 @@
     "spawnBiome": false,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 1000,
+    "biomeWeight": 15,
     "biomeDictionaryTypes": [],
     "grassPerChunk": 1,
     "seagrassPerChunk": 0,
@@ -111,70 +111,6 @@
       "Structures",
       "Ores"
     ],
-    "spawnEntries": [
-      {
-        "entity": {
-          "value": "CUSTOM:Chromeraider"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 1,
-        "spawnType": "creature"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:Chromedraiderfemale"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 1,
-        "spawnType": "creature"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:Chromeraider"
-        },
-        "minGroup": 2,
-        "maxGroup": 2,
-        "weight": 1,
-        "spawnType": "creature"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:Mirelurk"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 3,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:Bloatfly"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 1,
-        "spawnType": "creature"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:Ghoul"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 1,
-        "spawnType": "creature"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:Raidergunner"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 1,
-        "spawnType": "creature"
-      }
-    ]
+    "spawnEntries": []
   }
 }

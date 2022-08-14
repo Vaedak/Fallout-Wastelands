@@ -11,7 +11,7 @@
     "renderType": 2,
     "customModelName": "vaultcellinglightrework:default",
     "rotationMode": 1,
-    "emissiveRendering": false,
+    "emissiveRendering": true,
     "displayFluidOverlay": false,
     "itemTexture": "",
     "particleTexture": "",
@@ -56,8 +56,11 @@
     },
     "tickRate": 10,
     "tickRandomly": false,
-    "isReplaceable": false,
+    "isReplaceable": true,
     "canProvidePower": false,
+    "emittedRedstonePower": {
+      "fixedValue": 15.0
+    },
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
       "value": ""
@@ -76,16 +79,31 @@
     "soundOnStep": {
       "value": "METAL"
     },
-    "luminance": 10,
+    "breakSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "luminance": 15,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": false,
+    "spawnParticles": true,
     "particleToSpawn": {
-      "value": "CUSTOM:Plasma"
+      "value": "CUSTOM:Motes"
     },
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "particleAmount": 20,
     "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
@@ -103,6 +121,21 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "CellinglightsUpdateTick"
+    },
+    "onRandomUpdateEvent": {
+      "name": "CellinglightsClientDisplayRandomTick"
+    },
+    "onDestroyedByPlayer": {
+      "name": "CellinglightsPlayerStartsToDestroy"
+    },
+    "onDestroyedByExplosion": {
+      "name": "CellinglightsPlayerStartsToDestroy"
+    },
+    "onStartToDestroy": {
+      "name": "CellinglightsPlayerStartsToDestroy"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

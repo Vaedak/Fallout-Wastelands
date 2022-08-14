@@ -3,22 +3,8 @@
   "_type": "overlay",
   "definition": {
     "priority": "NORMAL",
-    "components": [
-      {
-        "type": "label",
-        "data": {
-          "text": "PlaceHolderVisor",
-          "color": {
-            "value": -1,
-            "falpha": 0.0
-          },
-          "name": "PlaceHolderVisor",
-          "x": 172,
-          "y": 2
-        }
-      }
-    ],
-    "baseTexture": "sans_titrees.png",
+    "components": [],
+    "baseTexture": "powerarmorb.png",
     "overlayTarget": "Ingame",
     "displayCondition": {
       "name": "PowerArmorVisorDisplayOverlayIngame"

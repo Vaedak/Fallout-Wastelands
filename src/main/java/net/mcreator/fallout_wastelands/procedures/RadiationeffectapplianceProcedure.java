@@ -60,7 +60,7 @@ public class RadiationeffectapplianceProcedure {
 			}
 		}.check(entity))) {
 			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge >= 100) {
+					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge >= 1000) {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(RadiationPotionEffect.potion, (int) 500, (int) 1));
 			}

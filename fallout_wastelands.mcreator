@@ -19620,6 +19620,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -20931,6 +20935,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -21623,193 +21643,6 @@
       "registry_name": "enemylaserweapon"
     },
     {
-      "name": "BrokenFrameItem",
-      "type": "item",
-      "sortid": 1471,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "broken_frame_item"
-    },
-    {
-      "name": "PowerArmorBootsUniversal",
-      "type": "procedure",
-      "sortid": 1469,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_boots_universal",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "BrokenFrameOnEntityTickUpdate",
-      "type": "procedure",
-      "sortid": 1472,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "broken_frame_on_entity_tick_update",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
-      "name": "EnclaveMachingunTurret",
-      "type": "livingentity",
-      "sortid": 1470,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "enclave_machingun_turret"
-    },
-    {
-      "name": "PowerArmorChestUniversal",
-      "type": "procedure",
-      "sortid": 1469,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_chest_universal",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorHelmetUniversal",
-      "type": "procedure",
-      "sortid": 1469,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_helmet_universal",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PowerArmorLegsUniversal",
-      "type": "procedure",
-      "sortid": 1469,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_legs_universal",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "FixFrame",
-      "type": "recipe",
-      "sortid": 1473,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "fix_frame"
-    },
-    {
-      "name": "Geckoslimecraft",
-      "type": "recipe",
-      "sortid": 1472,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "geckoslimecraft"
-    },
-    {
       "name": "Theglowradioactivedirt",
       "type": "block",
       "sortid": 1469,
@@ -21818,20 +21651,12 @@
       "registry_name": "theglowradioactivedirt"
     },
     {
-      "name": "Slimeballcraftgeckoegg",
-      "type": "recipe",
+      "name": "Geckoegg",
+      "type": "item",
       "sortid": 1470,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "slimeballcraftgeckoegg"
-    },
-    {
-      "name": "Antiradclothing",
-      "type": "item",
-      "sortid": 1474,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "antiradclothing"
+      "registry_name": "geckoegg"
     },
     {
       "name": "Geckofriedegg",
@@ -21842,12 +21667,60 @@
       "registry_name": "geckofriedegg"
     },
     {
+      "name": "Slimeballcraftgeckoegg",
+      "type": "recipe",
+      "sortid": 1470,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slimeballcraftgeckoegg"
+    },
+    {
+      "name": "Geckoslimecraft",
+      "type": "recipe",
+      "sortid": 1472,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "geckoslimecraft"
+    },
+    {
       "name": "Geckoslimeleather",
       "type": "recipe",
       "sortid": 1473,
       "compiles": true,
       "locked_code": false,
       "registry_name": "geckoslimeleather"
+    },
+    {
+      "name": "Antiradclothing",
+      "type": "item",
+      "sortid": 1474,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "antiradclothing"
+    },
+    {
+      "name": "FriedeggchicagospecialPlayerFinishesUsingItem",
+      "type": "procedure",
+      "sortid": 1475,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "friedeggchicagospecial_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Friedeggchicagospecial",
+      "type": "item",
+      "sortid": 1475,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "friedeggchicagospecial"
     },
     {
       "name": "GeckoEntityDies",
@@ -21878,282 +21751,144 @@
       }
     },
     {
-      "name": "Geckoegg",
-      "type": "item",
-      "sortid": 1470,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "geckoegg"
-    },
-    {
-      "name": "FriedeggchicagospecialPlayerFinishesUsingItem",
-      "type": "procedure",
-      "sortid": 1475,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "friedeggchicagospecial_player_finishes_using_item",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Friedeggchicagospecial",
-      "type": "item",
-      "sortid": 1475,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "friedeggchicagospecial"
-    },
-    {
-      "name": "RadiationUI4",
-      "type": "procedure",
+      "name": "Antiradclothingcrafting",
+      "type": "recipe",
       "sortid": 1477,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_4",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "antiradclothingcrafting"
     },
     {
-      "name": "RadiationUI5",
-      "type": "procedure",
+      "name": "Antiradhelmetcrafting",
+      "type": "recipe",
       "sortid": 1478,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_5",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "antiradhelmetcrafting"
     },
     {
-      "name": "RadiationUI6",
-      "type": "procedure",
+      "name": "Antiradchestplatecraft",
+      "type": "recipe",
       "sortid": 1479,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_6",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "antiradchestplatecraft"
     },
     {
-      "name": "RadiationUI7",
-      "type": "procedure",
+      "name": "Antiradleggingcraft",
+      "type": "recipe",
       "sortid": 1480,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_7",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "antiradleggingcraft"
     },
     {
-      "name": "RadiationUI8",
-      "type": "procedure",
+      "name": "Antiradbootscraft",
+      "type": "recipe",
       "sortid": 1481,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_8",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "antiradbootscraft"
     },
     {
-      "name": "RadiationUI9",
-      "type": "procedure",
+      "name": "EnclaveARHcraft",
+      "type": "recipe",
       "sortid": 1482,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_9",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "enclave_ar_hcraft"
     },
     {
-      "name": "RadiationUI10",
-      "type": "procedure",
+      "name": "EnclaveARCcraft",
+      "type": "recipe",
       "sortid": 1483,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_10",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "enclave_ar_ccraft"
     },
     {
-      "name": "RadiationUI11",
-      "type": "procedure",
+      "name": "EnclaveARLcraft",
+      "type": "recipe",
       "sortid": 1484,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_11",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "enclave_ar_lcraft"
     },
     {
-      "name": "RadiationUI12",
-      "type": "procedure",
+      "name": "EnclaveARBcraft",
+      "type": "recipe",
       "sortid": 1485,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_12",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "enclave_ar_bcraft"
     },
     {
-      "name": "RadiationUI13",
-      "type": "procedure",
+      "name": "Combathelmetcraft",
+      "type": "recipe",
       "sortid": 1486,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_13",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "combathelmetcraft"
     },
     {
-      "name": "RadiationUI14",
-      "type": "procedure",
+      "name": "Combatarmorchestplatecraft",
+      "type": "recipe",
       "sortid": 1487,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_14",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "combatarmorchestplatecraft"
     },
     {
-      "name": "RadiationUI15",
-      "type": "procedure",
+      "name": "Combatarmorlegging",
+      "type": "recipe",
       "sortid": 1488,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_15",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "combatarmorlegging"
     },
     {
-      "name": "RadiationUI16",
-      "type": "procedure",
+      "name": "Combatarmorboots",
+      "type": "recipe",
       "sortid": 1489,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_16",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "combatarmorboots"
     },
     {
-      "name": "RadiationUI17",
+      "name": "RootdirtBlockDestroyedByPlayer",
       "type": "procedure",
       "sortid": 1490,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_17",
+      "registry_name": "rootdirt_block_destroyed_by_player",
       "metadata": {
-        "return_type": "logic",
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
     },
     {
-      "name": "RadiationUI18",
+      "name": "Radiation4UI",
       "type": "procedure",
       "sortid": 1491,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_18",
+      "registry_name": "radiation_4_ui",
       "metadata": {
         "return_type": "logic",
         "dependencies": [
@@ -22165,116 +21900,835 @@
       }
     },
     {
-      "name": "RadiationUI19",
-      "type": "procedure",
+      "name": "Caravanguard",
+      "type": "livingentity",
       "sortid": 1492,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_19",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "caravanguard"
     },
     {
-      "name": "RadiationUI20",
+      "name": "Paulotradecapsslot0",
       "type": "procedure",
       "sortid": 1493,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_20",
+      "registry_name": "paulotradecapsslot_0",
       "metadata": {
-        "return_type": "logic",
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
           }
         ]
-      }
+      },
+      "path": "~/trades"
     },
     {
-      "name": "RadiationUI21",
+      "name": "Paulotradeantiradslot1",
       "type": "procedure",
       "sortid": 1494,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_21",
+      "registry_name": "paulotradeantiradslot_1",
       "metadata": {
-        "return_type": "logic",
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/trades"
     },
     {
-      "name": "RadiationUI22",
-      "type": "procedure",
+      "name": "Paulotrade",
+      "type": "gui",
+      "sortid": 1493,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotrade",
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulothetrader",
+      "type": "livingentity",
       "sortid": 1495,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_22",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "paulothetrader",
+      "path": "~/trades"
     },
     {
-      "name": "RadiationUI23",
+      "name": "Introduction",
+      "type": "gui",
+      "sortid": 1496,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introductionpaulo",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Opentrade",
       "type": "procedure",
       "sortid": 1496,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "radiation_ui_23",
+      "registry_name": "opentrade",
       "metadata": {
-        "return_type": "logic",
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Paulo_interactions"
     },
     {
-      "name": "RemoveframepotionEffectExpires",
+      "name": "Startingdiscussion",
       "type": "procedure",
       "sortid": 1497,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "removeframepotion_effect_expires",
+      "registry_name": "startingdiscussion",
       "metadata": {
-        "dependencies": []
-      }
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
     },
     {
-      "name": "Removeframepotion",
-      "type": "potioneffect",
-      "sortid": 1497,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "removeframepotion"
-    },
-    {
-      "name": "Displayradiationgreenicon",
+      "name": "Closingtrade",
       "type": "procedure",
       "sortid": 1498,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "displayradiationgreenicon",
+      "registry_name": "closingtrade",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Mexican",
+      "type": "gui",
+      "sortid": 1499,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mexican",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Startingmexican",
+      "type": "procedure",
+      "sortid": 1500,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "startingmexican",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Ifcapsareremoved1",
+      "type": "procedure",
+      "sortid": 1501,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ifcapsareremoved_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulowatchingfortrades",
+      "type": "procedure",
+      "sortid": 1502,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulowatchingfortrades",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Palotradecapsslot4",
+      "type": "procedure",
+      "sortid": 1503,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "palotradecapsslot_4",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradecapsslot2",
+      "type": "procedure",
+      "sortid": 1504,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradecapsslot_2",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradecapsslot67",
+      "type": "procedure",
+      "sortid": 1505,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradecapsslot_67",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradeslot2caps",
+      "type": "procedure",
+      "sortid": 1506,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradeslot_2caps",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradeslot4",
+      "type": "procedure",
+      "sortid": 1507,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradeslot_4",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Paulotradeslot67",
+      "type": "procedure",
+      "sortid": 1508,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paulotradeslot_67",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/trades"
+    },
+    {
+      "name": "Work1",
+      "type": "gui",
+      "sortid": 1509,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "IntroductionC1",
+      "type": "procedure",
+      "sortid": 1510,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introduction_c_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1B",
+      "type": "gui",
+      "sortid": 1511,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1_b",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work2",
+      "type": "gui",
+      "sortid": 1512,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_2",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1next",
+      "type": "procedure",
+      "sortid": 1513,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1next",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1back",
+      "type": "procedure",
+      "sortid": 1514,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1back",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1C1",
+      "type": "procedure",
+      "sortid": 1510,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1_c_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Town",
+      "type": "gui",
+      "sortid": 1515,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "town",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Town1",
+      "type": "procedure",
+      "sortid": 1516,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "town_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1C2",
+      "type": "gui",
+      "sortid": 1517,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1_c_2",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Backtowork1",
+      "type": "procedure",
+      "sortid": 1518,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "backtowork_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Queststartingpaulo",
+      "type": "procedure",
+      "sortid": 1519,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "queststartingpaulo",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Introductionwhilequest",
+      "type": "gui",
+      "sortid": 1520,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introductionwhilequest",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1whilequest",
+      "type": "gui",
+      "sortid": 1521,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1whilequest",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "IntroductionwqC1",
+      "type": "procedure",
+      "sortid": 1522,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introductionwq_c_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work2whilequest",
+      "type": "gui",
+      "sortid": 1523,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_2whilequest",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work2WQaccess",
+      "type": "procedure",
+      "sortid": 1524,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_2_w_qaccess",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Strangeelectroniccards",
+      "type": "item",
+      "sortid": 1525,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "strangeelectroniccards"
+    },
+    {
+      "name": "Raidercarddrop",
+      "type": "procedure",
+      "sortid": 1526,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raidercarddrop",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Showwork2WQC1",
+      "type": "procedure",
+      "sortid": 1525,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "showwork_2_wqc_1",
       "metadata": {
         "return_type": "logic",
         "dependencies": [
@@ -22286,18 +22740,1319 @@
       }
     },
     {
-      "name": "InarmorIsTrue",
-      "type": "procedure",
-      "sortid": 1499,
+      "name": "Work1whilequestrue",
+      "type": "gui",
+      "sortid": 1527,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "inarmor_is_true",
+      "registry_name": "work_1whilequestrue",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Gobacktowork",
+      "type": "gui",
+      "sortid": 1528,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gobacktowork",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Closedialogue",
+      "type": "procedure",
+      "sortid": 1529,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "closedialogue",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Work1WQrefusal",
+      "type": "procedure",
+      "sortid": 1530,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "work_1_w_qrefusal",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Cardsworth",
+      "type": "procedure",
+      "sortid": 1531,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cardsworth",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Mexico",
+      "type": "gui",
+      "sortid": 1532,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mexico",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Shithole",
+      "type": "gui",
+      "sortid": 1533,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shithole",
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Openmexico",
+      "type": "procedure",
+      "sortid": 1534,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "openmexico",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "Openshithole",
+      "type": "procedure",
+      "sortid": 1535,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "openshithole",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paulo_interactions"
+    },
+    {
+      "name": "TradetownOnStructureInstanceGenerated",
+      "type": "procedure",
+      "sortid": 1536,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tradetown_on_structure_instance_generated",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tradetown",
+      "type": "structure",
+      "sortid": 1536,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tradetown"
+    },
+    {
+      "name": "ItemtesttradetownOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 1537,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "itemtesttradetown_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Itemtesttradetown",
+      "type": "block",
+      "sortid": 1537,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "itemtesttradetown"
+    },
+    {
+      "name": "Radiationdeath",
+      "type": "procedure",
+      "sortid": 1538,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiationdeath",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rottenwoodplate",
+      "type": "block",
+      "sortid": 1539,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodplate"
+    },
+    {
+      "name": "Rottenwoodplatenailed",
+      "type": "block",
+      "sortid": 1540,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodplatenailed"
+    },
+    {
+      "name": "Roottenwoodbarricade",
+      "type": "block",
+      "sortid": 1541,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roottenwoodbarricade"
+    },
+    {
+      "name": "Reinforcedwoodplating",
+      "type": "block",
+      "sortid": 1542,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reinforcedwoodplating"
+    },
+    {
+      "name": "Rottenwoodentrap",
+      "type": "block",
+      "sortid": 1543,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodentrap"
+    },
+    {
+      "name": "Undergroungbrick",
+      "type": "block",
+      "sortid": 1544,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undergroundbrick"
+    },
+    {
+      "name": "Barricadewasteland",
+      "type": "block",
+      "sortid": 1545,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "barricadewasteland"
+    },
+    {
+      "name": "Lightsheetmetal",
+      "type": "block",
+      "sortid": 1546,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightsheetmetal"
+    },
+    {
+      "name": "Roofsheetmetal",
+      "type": "block",
+      "sortid": 1547,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roofsheetmetal"
+    },
+    {
+      "name": "Cage",
+      "type": "block",
+      "sortid": 1548,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cage"
+    },
+    {
+      "name": "Picketfence",
+      "type": "block",
+      "sortid": 1549,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "picketfence"
+    },
+    {
+      "name": "Roofsheetmetalstairs",
+      "type": "block",
+      "sortid": 1550,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roofsheetmetalstairs"
+    },
+    {
+      "name": "Roofsheetmetalslab",
+      "type": "block",
+      "sortid": 1551,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roofsheetmetalslab"
+    },
+    {
+      "name": "Roofsheetmetalpannel",
+      "type": "block",
+      "sortid": 1552,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roofsheetmetalpannel"
+    },
+    {
+      "name": "Undergroundbrickstairs",
+      "type": "block",
+      "sortid": 1553,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undergroundbrickstairs"
+    },
+    {
+      "name": "Undergroundbrickslab",
+      "type": "block",
+      "sortid": 1554,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undergroundbrickslab"
+    },
+    {
+      "name": "Undergroundbrickwall",
+      "type": "block",
+      "sortid": 1555,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undergroundbrickwall"
+    },
+    {
+      "name": "Bluerottenwoodplate",
+      "type": "block",
+      "sortid": 1556,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bluerottenwoodplate"
+    },
+    {
+      "name": "Redrottenwoodplating",
+      "type": "block",
+      "sortid": 1557,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redrottenwoodplating"
+    },
+    {
+      "name": "Emeraldplanks",
+      "type": "block",
+      "sortid": 1558,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emeraldplanks"
+    },
+    {
+      "name": "Sledgehammer",
+      "type": "tool",
+      "sortid": 1559,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sledgehammer"
+    },
+    {
+      "name": "Hachet",
+      "type": "tool",
+      "sortid": 1560,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hachet"
+    },
+    {
+      "name": "Industrialshovel",
+      "type": "tool",
+      "sortid": 1561,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "industrialshovel"
+    },
+    {
+      "name": "Rottenwoodplatestairs",
+      "type": "block",
+      "sortid": 1562,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodplatestairs"
+    },
+    {
+      "name": "Rottenwoodnailedplatingslab",
+      "type": "block",
+      "sortid": 1563,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodnailedplatingslab"
+    },
+    {
+      "name": "Rottenwoodbarricadeslab",
+      "type": "block",
+      "sortid": 1564,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodbarricadeslab"
+    },
+    {
+      "name": "Bricktile",
+      "type": "block",
+      "sortid": 1565,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bricktile"
+    },
+    {
+      "name": "Bricktileslab",
+      "type": "block",
+      "sortid": 1566,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bricktileslab"
+    },
+    {
+      "name": "Whitetile",
+      "type": "block",
+      "sortid": 1567,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whitetile"
+    },
+    {
+      "name": "Whitetileslab",
+      "type": "block",
+      "sortid": 1568,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whitetileslab"
+    },
+    {
+      "name": "Blacktile",
+      "type": "block",
+      "sortid": 1569,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blacktile"
+    },
+    {
+      "name": "Blacktileslab",
+      "type": "block",
+      "sortid": 1570,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blacktileslab"
+    },
+    {
+      "name": "Browntile",
+      "type": "block",
+      "sortid": 1571,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "browntile"
+    },
+    {
+      "name": "Browntileslab",
+      "type": "block",
+      "sortid": 1572,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "browntileslab"
+    },
+    {
+      "name": "Greytile",
+      "type": "block",
+      "sortid": 1573,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greytile"
+    },
+    {
+      "name": "Greytileslab",
+      "type": "block",
+      "sortid": 1574,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greytileslab"
+    },
+    {
+      "name": "Sledgehammercraft",
+      "type": "recipe",
+      "sortid": 1575,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sledgehammercraft"
+    },
+    {
+      "name": "Hachetcraft",
+      "type": "recipe",
+      "sortid": 1576,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hachetcraft"
+    },
+    {
+      "name": "Industrialshovelcraft",
+      "type": "recipe",
+      "sortid": 1577,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "industrialshovelcraft"
+    },
+    {
+      "name": "Cagecraft",
+      "type": "recipe",
+      "sortid": 1578,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cagecraft"
+    },
+    {
+      "name": "Roofsheetmetalcraft",
+      "type": "recipe",
+      "sortid": 1579,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roofsheetmetalcraft"
+    },
+    {
+      "name": "Roofsheetmetalplatecraft",
+      "type": "recipe",
+      "sortid": 1580,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roofsheetmetalplatecraft"
+    },
+    {
+      "name": "Roofsheetmetalstairscraft",
+      "type": "recipe",
+      "sortid": 1581,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roofsheetmetalstairscraft"
+    },
+    {
+      "name": "Roofsheetmetalslabcraft",
+      "type": "recipe",
+      "sortid": 1582,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roofsheetmetalslabcraft"
+    },
+    {
+      "name": "Rottenwoodnailedplankscraft",
+      "type": "recipe",
+      "sortid": 1583,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodnailedplankscraft"
+    },
+    {
+      "name": "Bricktilecraft",
+      "type": "recipe",
+      "sortid": 1584,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bricktilecraft"
+    },
+    {
+      "name": "Whitetileslabcraft",
+      "type": "recipe",
+      "sortid": 1585,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whitetileslabcraft"
+    },
+    {
+      "name": "Bricktileslabcraft",
+      "type": "recipe",
+      "sortid": 1586,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bricktileslabcraft"
+    },
+    {
+      "name": "Blacktileslabcraft",
+      "type": "recipe",
+      "sortid": 1587,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blacktileslabcraft"
+    },
+    {
+      "name": "Greytileslabcraft",
+      "type": "recipe",
+      "sortid": 1588,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greytileslabcraft"
+    },
+    {
+      "name": "Browntileslabcraft",
+      "type": "recipe",
+      "sortid": 1589,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "browntileslabcraft"
+    },
+    {
+      "name": "Whitetilecraft",
+      "type": "recipe",
+      "sortid": 1590,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whitetilecraft"
+    },
+    {
+      "name": "Blacktilecraft",
+      "type": "recipe",
+      "sortid": 1591,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blacktilecraft"
+    },
+    {
+      "name": "Browntilecraft",
+      "type": "recipe",
+      "sortid": 1592,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "browntilecraft"
+    },
+    {
+      "name": "Greytilecraft",
+      "type": "recipe",
+      "sortid": 1593,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greytilecraft"
+    },
+    {
+      "name": "Rottenwoodplatecraft",
+      "type": "recipe",
+      "sortid": 1594,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodplatecraft"
+    },
+    {
+      "name": "Rottenwoodrivetplatedcraft",
+      "type": "recipe",
+      "sortid": 1595,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodrivetplatedcraft"
+    },
+    {
+      "name": "Reinforcedwoodplatingcraft",
+      "type": "recipe",
+      "sortid": 1596,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reinforcedwoodplatingcraft"
+    },
+    {
+      "name": "Rottenwoodentrapdoor",
+      "type": "recipe",
+      "sortid": 1597,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodentrapdoor"
+    },
+    {
+      "name": "Rottenwoodbarricadecraft",
+      "type": "recipe",
+      "sortid": 1598,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodbarricadecraft"
+    },
+    {
+      "name": "Rottenwoodbarricadeslabcraft",
+      "type": "recipe",
+      "sortid": 1599,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodbarricadeslabcraft"
+    },
+    {
+      "name": "Redrottenwoodplankscraft",
+      "type": "recipe",
+      "sortid": 1600,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redrottenwoodplankscraft"
+    },
+    {
+      "name": "Bluerottenwoodplankscraft",
+      "type": "recipe",
+      "sortid": 1601,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bluerottenwoodplankscraft"
+    },
+    {
+      "name": "Emeraldplankscraft",
+      "type": "recipe",
+      "sortid": 1602,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emeraldplankscraft"
+    },
+    {
+      "name": "Emeraldplankscrafttwo",
+      "type": "recipe",
+      "sortid": 1603,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emeraldplankscrafttwo"
+    },
+    {
+      "name": "Undergroundbrickcraft",
+      "type": "recipe",
+      "sortid": 1604,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undergroundbrickcraft"
+    },
+    {
+      "name": "Undergroundbrickslabcraft",
+      "type": "recipe",
+      "sortid": 1605,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undergroundbrickslabcraft"
+    },
+    {
+      "name": "Undergroundbrickstairscraft",
+      "type": "recipe",
+      "sortid": 1606,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undergroundbrickstairscraft"
+    },
+    {
+      "name": "Undergroundbrickwallcraft",
+      "type": "recipe",
+      "sortid": 1607,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "undergroundbrickwallcraft"
+    },
+    {
+      "name": "Barricadeblockcraft",
+      "type": "recipe",
+      "sortid": 1608,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "barricadeblockcraft"
+    },
+    {
+      "name": "Rottenwoodnailedplatingstairs",
+      "type": "recipe",
+      "sortid": 1609,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenwoodnailedplatingstairs"
+    },
+    {
+      "name": "Picketfencecraft",
+      "type": "recipe",
+      "sortid": 1610,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "picketfencecraft"
+    },
+    {
+      "name": "Greyindustrialblock",
+      "type": "block",
+      "sortid": 1611,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greyindustrialblock"
+    },
+    {
+      "name": "Greyindustrivetmid",
+      "type": "block",
+      "sortid": 1612,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greyindustrivetmid"
+    },
+    {
+      "name": "Greyindusupperrivet",
+      "type": "block",
+      "sortid": 1613,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greyindusupperrivet"
+    },
+    {
+      "name": "Greyindustrialrivetlow",
+      "type": "block",
+      "sortid": 1614,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greyindustrialrivetlow"
+    },
+    {
+      "name": "Greyindustrialwalkaway",
+      "type": "block",
+      "sortid": 1615,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greyindustrialwalkaway"
+    },
+    {
+      "name": "Greyindustrialblockslab",
+      "type": "block",
+      "sortid": 1616,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greyindustrialblockslab"
+    },
+    {
+      "name": "Greyindustrialblockstairs",
+      "type": "block",
+      "sortid": 1617,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greyindustrialblockstairs"
+    },
+    {
+      "name": "GIC1craft",
+      "type": "recipe",
+      "sortid": 1618,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gic_1craft"
+    },
+    {
+      "name": "GIC2craft",
+      "type": "recipe",
+      "sortid": 1619,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gic_2craft"
+    },
+    {
+      "name": "GIC3craft",
+      "type": "recipe",
+      "sortid": 1620,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gic_3craft"
+    },
+    {
+      "name": "GIC4craft",
+      "type": "recipe",
+      "sortid": 1621,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gic_4craft"
+    },
+    {
+      "name": "GIC5craft",
+      "type": "recipe",
+      "sortid": 1622,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gic_5craft"
+    },
+    {
+      "name": "GIC6craft",
+      "type": "recipe",
+      "sortid": 1623,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gic_6craft"
+    },
+    {
+      "name": "Greyindustrialstairscraft",
+      "type": "recipe",
+      "sortid": 1624,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greyindustrialstairscraft"
+    },
+    {
+      "name": "Greyindustrialslabcraft",
+      "type": "recipe",
+      "sortid": 1625,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "greyindustrialslabcraft"
+    },
+    {
+      "name": "Fusionreactorcraft",
+      "type": "recipe",
+      "sortid": 1626,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fusionreactorcraft"
+    },
+    {
+      "name": "Deadtrunkwall",
+      "type": "block",
+      "sortid": 1627,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deadtrunkwall"
+    },
+    {
+      "name": "Deadtrunkdecraft",
+      "type": "recipe",
+      "sortid": 1628,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deadtrunkdecraft"
+    },
+    {
+      "name": "Rottenplankscraft",
+      "type": "recipe",
+      "sortid": 1629,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rottenplankscraft"
+    },
+    {
+      "name": "BrotherhoodPaladin",
+      "type": "livingentity",
+      "sortid": 1630,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "brotherhood_paladin"
+    },
+    {
+      "name": "Taloncompagnysoldier",
+      "type": "livingentity",
+      "sortid": 1631,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "taloncompagnysoldier"
+    },
+    {
+      "name": "Taloncompagnylieutenant",
+      "type": "livingentity",
+      "sortid": 1632,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "taloncompagnylieutenant"
+    },
+    {
+      "name": "Whitefabricblocks",
+      "type": "block",
+      "sortid": 1633,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whitefabricblocks"
+    },
+    {
+      "name": "Whitefabriccraft",
+      "type": "recipe",
+      "sortid": 1634,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whitefabriccraft"
+    },
+    {
+      "name": "Trueneutronade",
+      "type": "item",
+      "sortid": 1635,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "trueneutronade"
+    },
+    {
+      "name": "Trueneutronadebottle",
+      "type": "item",
+      "sortid": 1636,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "trueneutronadebottle"
+    },
+    {
+      "name": "CellinglightsClientDisplayRandomTick",
+      "type": "procedure",
+      "sortid": 1637,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cellinglights_client_display_random_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChromeraiderOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1638,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chromeraider_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChromeraiderNaturalEntitySpawningCondition",
+      "type": "procedure",
+      "sortid": 1639,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chromeraider_natural_entity_spawning_condition",
       "metadata": {
         "return_type": "logic",
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DeathclawThisEntityKillsAnotherOne",
+      "type": "procedure",
+      "sortid": 1640,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deathclaw_this_entity_kills_another_one",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DeathclawOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1641,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deathclaw_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Deathclawblocbreaker",
+      "type": "procedure",
+      "sortid": 1642,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deathclawblocbreaker",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Motes",
+      "type": "particle",
+      "sortid": 1643,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "motes"
+    },
+    {
+      "name": "InvisiblelightsourceClientDisplayRandomTick",
+      "type": "procedure",
+      "sortid": 1644,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "invisiblelightsource_client_display_random_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CellinglightsUpdateTick",
+      "type": "procedure",
+      "sortid": 1645,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cellinglights_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CellinglightsPlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 1646,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cellinglights_player_starts_to_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -22388,15 +24143,33 @@
       "value": "false"
     },
     {
-      "name": "RADUIToggle",
+      "name": "RADUI4",
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
     },
     {
-      "name": "PaHudToggle",
+      "name": "paulo_quest_in_progress",
       "type": "logic",
-      "scope": "player_lifetime",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "paulo_quest_done",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "are10cardsdropped",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "tencardsaredropped",
+      "type": "logic",
+      "scope": "world",
       "value": "false"
     }
   ],
@@ -22788,27 +24561,27 @@
       "subtitle": ""
     },
     {
-      "name": "machinegunquieter",
+      "name": "cash",
       "files": [
-        "581771__hz37__machine-gun-hza-01-08-2021machinegunquieter"
+        "flowingcaps"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "quest",
+      "files": [
+        "quest"
       ],
       "category": "neutral",
       "subtitle": ""
     },
     {
-      "name": "ninemmquieter",
+      "name": "neontest",
       "files": [
-        "9mmshootquieter"
+        "neontest"
       ],
-      "category": "neutral",
-      "subtitle": ""
-    },
-    {
-      "name": "tenmmquieter",
-      "files": [
-        "tenmmquieter"
-      ],
-      "category": "neutral",
+      "category": "block",
       "subtitle": ""
     }
   ],
@@ -22822,16 +24595,18 @@
       "entity.fallout_wastelands.machinegun_turret": "Machinegun Turret",
       "advancements.itsalive.title": "It\u0027s Alive !",
       "item.fallout_wastelands.uraniumingot": "Uranium Ingot",
+      "block.fallout_wastelands.lightsheetmetal": "Light Sheet metal",
       "block.fallout_wastelands.wastelandcobblestairs": "Wasteland Cobblestone Stairs",
-      "block.fallout_wastelands.copperblock": "Copper Block",
       "block.wastlanders.sheetmetalwall": "Sheet Metal Wall",
+      "block.fallout_wastelands.copperblock": "Copper Block",
+      "block.fallout_wastelands.rottenwoodplatestairs": "Nailed Planks Plating Stairs",
       "block.fallout_wastelands.vaultkitchenblocks": "Vault Kitchen Floor",
       "block.wastlanders.rustbloc": "Fully Rusted Iron",
       "item.fallout_wastelands.ghoul_spawn_egg": "Ghoul Spawn Egg",
+      "item.fallout_wastelands.strangeelectroniccards": "Strange Electronic Cards",
       "item.fallout_wastelands.bluepaintcan": "Blue Paint Can",
       "block.wastlanders.militaryplatingblockhazard": "Military Plating (Hazard)",
       "item.wastlanders.tenmmammo": "10mm Ammunition ",
-      "effect.removeframepotion": "removeframe",
       "item.fallout_wastelands.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
       "item.fallout_wastelands.vaulttecplating": "Vault Tec Plating",
       "item.fallout_wastelands.mobmachinegun": "Mobmachinegun",
@@ -22839,8 +24614,10 @@
       "entity.fallout_wastelands.malewastelander_2": "Wastelander",
       "entity.fallout_wastelands.malewastelander_1": "Wastelander",
       "item.wastlanders.basesupermutant": "Super Mutant Grunt Spawn Egg",
+      "block.fallout_wastelands.greyindustrialblock": "Grey Industrial Block",
       "block.fallout_wastelands.vaultanimation_101hehe": "Vault Door",
       "block.fallout_wastelands.terminal": "Terminal",
+      "block.fallout_wastelands.rottenwoodentrap": "Rotten Plank Trapdoor",
       "biome.wastlanders.wastlandsanddesert": "Wastlandsanddesert",
       "advancements.notyet.descr": "You\u0027ll start your adventure later .",
       "entity.fallout_wastelands.malewastelander_4": "Wastelander",
@@ -22852,8 +24629,10 @@
       "block.fallout_wastelands.wastelandallumiumore": "Wasteland Aluminium Ore",
       "item.fallout_wastelands.enclaveofficierarmor_helmet": "Enclave Officier Armor Cap",
       "item.wastlanders.leadnugget": "Lead Nugget",
+      "block.fallout_wastelands.bricktile": "Brick Tile",
       "block.fallout_wastelands.roadbitumen": "Road Bitumen",
       "entity.fallout_wastelands.ghoul": "Ghoul",
+      "item.fallout_wastelands.trueneutronade": "Neutronade",
       "advancements.thewastelands.title": "The Wasteland",
       "item.wastlanders.femalevaultjumpsuit_helmet": "Femalevaultjumpsuit Helmet",
       "block.fallout_wastelands.rustedwallrusted": "Rusted Ruin Block (more rust)",
@@ -22868,10 +24647,10 @@
       "block.wastlanders.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
       "item.fallout_wastelands.radx": "Rad-X",
-      "block.fallout_wastelands.xander_2": "Xander 2",
       "item.wastlanders.coffee": "Coffee",
-      "block.fallout_wastelands.xander_3": "Xander 3",
+      "block.fallout_wastelands.xander_2": "Xander 2",
       "item.wastlanders.mobmachinegun": "Mobmachinegun",
+      "block.fallout_wastelands.xander_3": "Xander 3",
       "block.fallout_wastelands.xander_1": "Xander 1",
       "item.fallout_wastelands.nailedwrench": "Nailed Wrench",
       "block.fallout_wastelands.xander_4": "Xander 4",
@@ -22879,12 +24658,13 @@
       "item.wastlanders.rotativepart": "Rotary Piece",
       "block.fallout_wastelands.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.highwayman_spawn_egg": "Highwayman Spawn Egg",
-      "item.fallout_wastelands.friedeggchicagospecial": "Fried Egg Chicago Special",
       "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
+      "item.fallout_wastelands.friedeggchicagospecial": "Fried Egg Chicago Special",
       "item.fallout_wastelands.ninemmammo": "9mm Ammo",
+      "entity.fallout_wastelands.taloncompagnylieutenant": "Talon Compagny Lieutenant",
       "block.wastlanders.plaster": "Plaster",
-      "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
       "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
+      "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
       "item.wastlanders.laserriffle": "Laser Rifle",
       "item.wastlanders.breadroller": "Bread Roller",
       "block.fallout_wastelands.redindustrialblocslab": "Red Industrial Block Slab",
@@ -22898,27 +24678,28 @@
       "block.fallout_wastelands.steelblock": "Steel Block",
       "block.fallout_wastelands.dooranimation_149": "Vault Door135",
       "block.fallout_wastelands.closing_114": "Vault Door",
-      "item.wastlanders.bossteelplate": "BoS Steelplate",
-      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
       "block.fallout_wastelands.closing_111": "Vault Door",
-      "block.fallout_wastelands.dooranimation_147": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
+      "item.wastlanders.bossteelplate": "BoS Steelplate",
       "block.fallout_wastelands.closing_112": "Vault Door",
+      "block.fallout_wastelands.dooranimation_147": "Vault Door135",
       "item.fallout_wastelands.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
       "block.fallout_wastelands.closing_110": "Vault Door",
       "block.fallout_wastelands.dooranimation_142": "Vault Door135",
-      "block.fallout_wastelands.dooranimation_141": "Vault Door135",
       "advancements.vaultdweller.title": "Vault Dweller",
-      "block.fallout_wastelands.dooranimation_140": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_141": "Vault Door135",
       "block.fallout_wastelands.closing_119": "Vault Door",
+      "block.fallout_wastelands.dooranimation_140": "Vault Door135",
       "item.fallout_wastelands.ingot_tin": "Tin Ingot",
       "block.fallout_wastelands.dooranimation_146": "Vault Door135",
       "block.fallout_wastelands.closing_117": "Vault Door",
-      "block.fallout_wastelands.lighttub": "Light Tub",
-      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
       "block.fallout_wastelands.closing_118": "Vault Door",
-      "entity.fallout_wastelands.mirelurk": "Mirelurk",
-      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
+      "block.fallout_wastelands.lighttub": "Light Tub",
+      "entity.fallout_wastelands.brotherhood_paladin": "Brotherhood Paladin",
       "block.fallout_wastelands.closing_115": "Vault Door",
+      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "entity.fallout_wastelands.mirelurk": "Mirelurk",
       "block.fallout_wastelands.dooranimation_143": "Vault Door135",
       "block.fallout_wastelands.closing_116": "Vault Door",
       "item.fallout_wastelands.frame_armor_leggings": "Frame Armor Leggings",
@@ -22930,8 +24711,8 @@
       "item.fallout_wastelands.mmpistolnine": "9mm pistol",
       "block.fallout_wastelands.militaryplated": "Military plating",
       "block.fallout_wastelands.barrelbarrel": "Barrel",
-      "block.fallout_wastelands.closing_102": "Vault Door",
       "block.fallout_wastelands.dooranimation_139": "Vault Door135",
+      "block.fallout_wastelands.closing_102": "Vault Door",
       "block.fallout_wastelands.dooranimation_138": "Vault Door135",
       "block.fallout_wastelands.closing_103": "Vault Door 103 boyeee!",
       "block.fallout_wastelands.closing_100": "Vault Door",
@@ -22942,8 +24723,8 @@
       "itemGroup.tabwastelandersitems": "Wastelanders Items",
       "block.fallout_wastelands.closing_108": "Vault Door",
       "block.fallout_wastelands.closing_109": "Vault Door",
-      "item.fallout_wastelands.radaway": "Radaway",
       "block.fallout_wastelands.closing_106": "Vault Door",
+      "item.fallout_wastelands.radaway": "Radaway",
       "block.fallout_wastelands.closing_107": "Vault Door",
       "entity.wastlanders.closecombatsupermutant": "Closecombatsupermutant",
       "block.fallout_wastelands.closing_104": "Vault Door",
@@ -22952,9 +24733,9 @@
       "block.fallout_wastelands.dooranimation_160": "Vault Door135",
       "item.wastlanders.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.wastlanders.plasterwall": "Plaster Wall",
-      "block.wastlanders.bosbasemetalplating": "BoS Metal Plating",
-      "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
       "block.fallout_wastelands.vault_door_animation_0": "Vault Door",
+      "block.fallout_wastelands.rustedironwalls": "Rusted Iron Wall",
+      "block.wastlanders.bosbasemetalplating": "BoS Metal Plating",
       "item.fallout_wastelands.enemylaserweapon": "Enemylaserweapon",
       "item.fallout_wastelands.mirlurksteak": "Mirlurk Steak",
       "item.wastlanders.bulletmobs": "Bulletmobs",
@@ -22975,15 +24756,16 @@
       "block.fallout_wastelands.closing_8": "Vault Door",
       "block.fallout_wastelands.closing_7": "Vault Door",
       "block.fallout_wastelands.closing_6": "Vault Door",
-      "block.fallout_wastelands.redindustrialdoor": "Red Industrial Door",
-      "block.fallout_wastelands.closing_5": "Vault Door",
       "item.fallout_wastelands.geckohide": "Gecko Leather",
+      "block.fallout_wastelands.closing_5": "Vault Door",
+      "block.fallout_wastelands.redindustrialdoor": "Red Industrial Door",
       "item.wastlanders.tinnugget": "Tin Nugget",
       "block.fallout_wastelands.closing_9": "Vault Door",
-      "item.fallout_wastelands.robobrainengine": "Engine",
       "block.wastlanders.rustediron": "Rusted Iron",
+      "item.fallout_wastelands.robobrainengine": "Engine",
       "block.fallout_wastelands.mojaveyucca": "Mojave Yucca",
       "block.wastlanders.bossteelstructurestairs": "BoS Steel Stairs (stairs)",
+      "block.fallout_wastelands.blacktile": "Black Tile",
       "block.fallout_wastelands.closing_4": "Vault Door",
       "block.fallout_wastelands.closing_3": "Vault Door",
       "block.fallout_wastelands.closing_2": "Vault Door",
@@ -23001,15 +24783,16 @@
       "block.fallout_wastelands.dooranimation_156": "Vault Door135",
       "block.fallout_wastelands.dooranimation_155": "Vault Door135",
       "block.fallout_wastelands.dooranimation_154": "Vault Door135",
-      "entity.fallout_wastelands.enclave_machingun_turret": "Enclave Machinegun Turret",
       "block.fallout_wastelands.portalframe": "Portal Frame",
       "block.fallout_wastelands.dooranimation_182": "Vault Door135",
+      "block.fallout_wastelands.roottenwoodbarricade": "Rotten Plank Double Plating ",
       "block.fallout_wastelands.dooranimation_181": "Vault Door135",
       "item.fallout_wastelands.machinegun_turret_spawn_egg": "Machinegun Turret Spawn Egg",
       "block.fallout_wastelands.dooranimation_180": "Vault Door135",
       "block.fallout_wastelands.plasterstairs": "Plaster Stairs",
       "block.wastlanders.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.t_45powerarmor_boots": "T-45 Power Armor Boots",
+      "block.fallout_wastelands.barricadewasteland": "Sheet Metal Barricade",
       "item.wastlanders.highwayman_spawn_egg": "Highwayman Spawn Egg",
       "item.fallout_wastelands.bulletmobs": "Bulletmobs",
       "block.fallout_wastelands.dooranimation_186": "Vault Door135",
@@ -23040,6 +24823,7 @@
       "block.fallout_wastelands.dooranimation_178": "Vault Door135",
       "block.fallout_wastelands.dooranimation_177": "Vault Door135",
       "block.fallout_wastelands.dooranimation_176": "Vault Door135",
+      "block.fallout_wastelands.whitetileslab": "White Tile Slab",
       "block.wastlanders.rottenplanks": "Rotten Plank",
       "block.wastlanders.gore": "Gore",
       "block.wastlanders.militaryplated": "Military plating",
@@ -23054,10 +24838,12 @@
       "item.wastlanders.cannedporkshop": "Canned Porkshop",
       "entity.fallout_wastelands.highwayman": "Highwayman",
       "block.fallout_wastelands.locker": "Locker",
+      "entity.fallout_wastelands.caravanguard": "Caravan Guard",
       "block.fallout_wastelands.dooranimation_193": "Vault Door135",
       "block.fallout_wastelands.dooranimation_192": "Vault Door135",
       "block.fallout_wastelands.dooranimation_191": "Vault Door135",
       "entity.wastlanders.ghoul": "Ghoul",
+      "item.fallout_wastelands.caravanguard_spawn_egg": "Caravan Guard Spawn Egg",
       "block.fallout_wastelands.dooranimation_190": "Vault Door135",
       "entity.fallout_wastelands.friendlybrainbot": "Robot Brain (Hackable)",
       "item.fallout_wastelands.ingotcopper": "Copper ingot",
@@ -23088,18 +24874,24 @@
       "block.wastlanders.aluminiumblock": "Aluminium Block",
       "block.fallout_wastelands.rootdirt": "Root Dirt",
       "item.wastlanders.blackpaintcan": "Black Paint Can",
+      "subtitles.cash": "",
+      "item.fallout_wastelands.industrialshovel": "Industrial Shovel",
       "item.fallout_wastelands.plasmarifle": "Plasma Rifle",
       "block.wastlanders.plasterstairs": "Plaster Stairs",
       "item.fallout_wastelands.broken_frame_spawn_egg": "Broken Frame Spawn Egg",
       "item.fallout_wastelands.enclaveofficierarmor_boots": "Enclave Officier Boots",
+      "block.fallout_wastelands.rottenwoodbarricadeslab": "Rotten Plank Double Plating Slab",
       "block.fallout_wastelands.bo_ssteelplatingstairs": "BoS Steel Plating Stairs",
+      "block.fallout_wastelands.greytile": "Grey Tile",
       "block.fallout_wastelands.trashbin": "Trash Bin",
       "block.wastlanders.landmine": "Landmine",
       "item.wastlanders.ghoul_spawn_egg": "Ghoul Spawn Egg",
       "item.wastlanders.abraxo": "Abraxo ",
       "block.fallout_wastelands.wastelandconcretevent": "Wasteland Concrete Vent",
       "item.fallout_wastelands.pipboy": "Pipboy-3000",
+      "block.fallout_wastelands.roofsheetmetalpannel": "Roof Sheet Metal Pannel",
       "block.fallout_wastelands.fillingcabinet": "Metal Shelf",
+      "block.fallout_wastelands.greyindusupperrivet": "Grey Industrial Block (upper rivet)",
       "advancements.thewastelands.descr": "You entered into the wasteland for the first time .",
       "item.wastlanders.printedchip": "Computer chip ",
       "item.wastlanders.robobrainarm": "Robobrain Arm",
@@ -23109,10 +24901,13 @@
       "subtitles.rbshot": "",
       "item.wastlanders.nails": "Nails",
       "block.fallout_wastelands.concretepattern": "Concrete Pattern",
+      "subtitles.quest": "",
       "item.wastlanders.track": "Track Segment",
       "entity.fallout_wastelands.chromedraiderfemale": "Female Wasteland Raider",
       "block.fallout_wastelands.barbedwire": "Barbed Wire",
+      "block.fallout_wastelands.greyindustrialblockslab": "Grey Industrial Block Slab",
       "block.wastlanders.ammunitionbox": "Ammunition Box",
+      "block.fallout_wastelands.roofsheetmetalstairs": "Roof Sheet Metal Stairs",
       "subtitles.removingfusioncell": "Removing Fusion Cell",
       "block.fallout_wastelands.sheetmetalwall": "Sheet Metal Wall",
       "block.wastlanders.charredplankfence": "Charred Plank Fence",
@@ -23124,6 +24919,7 @@
       "block.wastlanders.wastelandbrickslab": "Wasteland Brick Slab",
       "item.wastlanders.uraniumnugget": "Uranium Nugget",
       "item.fallout_wastelands.laserriffle": "Laser Rifle",
+      "entity.fallout_wastelands.paulothetrader": "Paulo The Trader",
       "block.fallout_wastelands.wastelandgravel": "Wasteland Gravel",
       "item.fallout_wastelands.enclave_x_01pa_chestplate": "Enclave APA Body",
       "block.fallout_wastelands.radioactivwastebarrel": "Radioactive barrel",
@@ -23132,10 +24928,11 @@
       "block.fallout_wastelands.vaultlock": "Vault Air Lock",
       "biome.fallout_wastelands.capitalwasteland": "Capitalwasteland",
       "block.fallout_wastelands.vault_door_top_part": "Vault Door Top Part",
-      "item.fallout_wastelands.taloncombatarmor_chestplate": "Talon Combat Chestplate",
+      "item.fallout_wastelands.taloncombatarmor_chestplate": "Talon Combat Body",
       "block.wastlanders.wastelandcoal": "Wasteland Coal Ore",
       "block.wastlanders.charredplankslab": "Charredplankslab",
       "block.wastlanders.bo_ssteelplatingstairs": "BoS Steel Plating Stairs",
+      "block.fallout_wastelands.browntile": "Brown Tile",
       "block.fallout_wastelands.redindustrialrivetdown": "Red Industrial Block (rivet bottom)",
       "item.wastlanders.rangedsupermutant": "Supermutant Brute Spawn Egg",
       "block.fallout_wastelands.wastelandiron": "Wasteland Iron Ore",
@@ -23148,13 +24945,11 @@
       "block.wastlanders.wastelanddirt": "Wasteland Dirt",
       "block.fallout_wastelands.filler_passable": "Vault Door Filler",
       "block.fallout_wastelands.wastlandconcrete": "Old Concrete",
-      "item.fallout_wastelands.nightkin_spawn_egg": "Close Combat Supermutant Spawn Egg",
+      "item.fallout_wastelands.nightkin_spawn_egg": "Nightkin Supermutant Spawn Egg",
       "block.wastlanders.deadgrass": "Wasteland Dead Grass",
       "entity.fallout_wastelands.broken_frame": "Broken Frame",
-      "subtitles.tenmmquieter": "",
       "item.wastlanders.humanbrain": "Human Brain",
       "item.fallout_wastelands.robobrainhead": "Robobrain Head",
-      "item.fallout_wastelands.enclave_machingun_turret_spawn_egg": "Enclave Machinegun Turret Spawn Egg",
       "block.fallout_wastelands.enclavebunkerblocklogo": "Enclave Bunker Block Logo",
       "block.wastlanders.wastelandtinore": "Wasteland Tin Ore",
       "block.fallout_wastelands.testbunkerdoor": "Military Plated Door",
@@ -23168,9 +24963,10 @@
       "entity.wastlanders.bloatfly": "Bloatfly",
       "biome.fallout_wastelands.wastlandsanddesert": "Wastlandsanddesert",
       "entity.wastlanders.chromeraider": "Wasteland Raider",
-      "subtitles.ninemmquieter": "",
       "block.fallout_wastelands.militaryplatedground": "Military Plating (walk way)",
       "item.fallout_wastelands.enclavehazmat_helmet": "Enclave Hazmat Helmet",
+      "block.fallout_wastelands.bricktileslab": "Brick Tile Slab",
+      "block.fallout_wastelands.reinforcedwoodplating": "Metal Reinforced Rotten Plank ",
       "block.wastlanders.walkwayslab": "Walkway Slab",
       "block.fallout_wastelands.rustedwall": "Rusted Ruin Block",
       "block.fallout_wastelands.deadroots": "Wasteland Dead Roots",
@@ -23206,6 +25002,7 @@
       "block.wastlanders.rustedironstairs": "Rusted Iron Stairs",
       "item.wastlanders.robobraintorso": "Robobrain Torso",
       "block.fallout_wastelands.closing_51": "Vault Door",
+      "item.fallout_wastelands.trueneutronadebottle": "Neutronade Bottle",
       "item.fallout_wastelands.robobraintorso": "Robobrain Torso",
       "block.fallout_wastelands.closing_52": "Vault Door",
       "block.fallout_wastelands.closing_53": "Vault Door",
@@ -23216,6 +25013,7 @@
       "block.fallout_wastelands.closing_49": "Vault Door",
       "block.wastlanders.bo_slights": "BoS Light",
       "item.fallout_wastelands.bossteelplate": "BoS Steelplate",
+      "block.fallout_wastelands.deadtrunkwall": "Charred Log Wall",
       "block.fallout_wastelands.redindustrialblockwarning": "Red Industrial Block (warning)",
       "item.fallout_wastelands.femalevaultjumpsuit_boots": "Vault Jumpsuit Boots (female)",
       "block.fallout_wastelands.oldpapers": "Old Papers",
@@ -23229,12 +25027,14 @@
       "block.fallout_wastelands.closing_41": "Vault Door",
       "entity.fallout_wastelands.basesupermutant": "Super Mutant Grunt",
       "block.fallout_wastelands.closing_42": "Vault Door",
+      "block.fallout_wastelands.greyindustrialblockstairs": "Grey Industrial Stairs",
       "block.fallout_wastelands.militaryplatedstairs": "Military Plated Stairs",
       "block.fallout_wastelands.closing_36": "Vault Door",
       "block.fallout_wastelands.closing_37": "Vault Door",
       "block.fallout_wastelands.closing_38": "Vault Door",
       "block.fallout_wastelands.closing_39": "Vault Door",
       "block.fallout_wastelands.walkwayslab": "Walkway Slab",
+      "block.fallout_wastelands.greytileslab": "Grey Tile Slab",
       "item.wastlanders.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
       "block.fallout_wastelands.scaffolding": "Scaffolding",
       "block.wastlanders.wastelandlapislazuli": "Wasteland Lapis Lazuli Ore",
@@ -23263,6 +25063,7 @@
       "block.wastlanders.redindusrivetmid": "Red Industrial Block (mid rivet)",
       "item.fallout_wastelands.rangedsupermutant_spawn_egg": "Supermutant Brute Spawn Egg",
       "fluid.fallout_wastelands.fevgoo": "Fevgoo",
+      "block.fallout_wastelands.redrottenwoodplating": "Red Rotten Plank Plating",
       "item.minecraft.splash_potion.effect.radiation": "Splash Radiation Poisoning",
       "block.fallout_wastelands.charredplankslab": "Charred Plank Slab",
       "block.fallout_wastelands.closing_90": "Vault Door",
@@ -23302,20 +25103,25 @@
       "block.fallout_wastelands.closing_83": "Vault Door",
       "block.fallout_wastelands.closing_84": "Vault Door",
       "block.fallout_wastelands.closing_85": "Vault Door",
+      "block.fallout_wastelands.emeraldplanks": "Emerald Rotten Plank ",
       "block.fallout_wastelands.closing_86": "Vault Door",
       "item.wastlanders.vaultjumpsuit_leggings": "Vault Jumpsuit Leggings (male)",
       "biome.wastlanders.capitalwastelandeast": "Capitalwastelandeast",
       "block.fallout_wastelands.vaulwall_4": "Vault Wall ",
       "item.wastlanders.tenmm": "10mm Pistol ",
       "item.fallout_wastelands.aluminiumnugget": "Aluminium Nugget",
+      "block.fallout_wastelands.itemtesttradetown": "Itemtesttradetown",
       "block.fallout_wastelands.closing_70": "Vault Door",
       "block.fallout_wastelands.closing_71": "Vault Door",
+      "subtitles.neontest": "",
       "block.fallout_wastelands.closing_76": "Vault Door",
       "block.fallout_wastelands.closing_77": "Vault Door",
       "block.fallout_wastelands.closing_78": "Vault Door",
       "block.fallout_wastelands.closing_79": "Vault Door",
+      "block.fallout_wastelands.rottenwoodplate": "Rotten Plank Plating",
       "block.fallout_wastelands.closing_72": "Vault Door",
       "block.fallout_wastelands.closing_73": "Vault Door",
+      "block.fallout_wastelands.whitetile": "White Tile",
       "block.fallout_wastelands.closing_74": "Vault Door",
       "block.fallout_wastelands.closing_75": "Vault Door",
       "block.wastlanders.moltenironblock": "Molten Iron Block",
@@ -23324,7 +25130,10 @@
       "block.fallout_wastelands.charredplanksstairs": "Charred Plank Stairs",
       "block.fallout_wastelands.closing_69": "Vault Door",
       "item.wastlanders.mirlurksteak": "Mirlurk Steak",
+      "block.fallout_wastelands.undergroundbrickslab": "Wasteland Underground Brick Slab",
+      "block.fallout_wastelands.greyindustrialrivetlow": "Red Industrial Block (rivet bottom)",
       "item.wastlanders.steeldust": "Steel Dust",
+      "item.fallout_wastelands.paulothetrader_spawn_egg": "Paulo The Trader Spawn Egg",
       "block.wastlanders.roadbitumen": "Road Bitumen",
       "item.wastlanders.bluepaintcan": "Blue Paint Can",
       "block.fallout_wastelands.aluminiumblock": "Aluminium Block",
@@ -23342,6 +25151,7 @@
       "block.fallout_wastelands.dooranimation_201": "Vault Door135",
       "block.wastlanders.wastlandsand": "Wasteland Sand",
       "block.fallout_wastelands.dooranimation_200": "Vault Door135",
+      "entity.fallout_wastelands.taloncompagnysoldier": "Talon Compagny Soldier",
       "block.fallout_wastelands.closing_1_ahhhhhhhhhhh": "Vault Door",
       "block.wastlanders.charredplank": "Charred Plank",
       "block.wastlanders.uraniumblock": "Uranium Block",
@@ -23367,6 +25177,7 @@
       "block.fallout_wastelands.rottenplanksslab": "Rotten Plank Slab",
       "item.wastlanders.pipboy": "Pipboy-3000",
       "block.fallout_wastelands.coreunit": "Core Unit Block",
+      "block.fallout_wastelands.picketfence": "Picket Fence",
       "block.fallout_wastelands.vaultanimation_110": "Vault Door",
       "block.fallout_wastelands.vaultanimation_111": "Vault Door",
       "block.fallout_wastelands.vaultanimation_116": "Vault Door",
@@ -23378,9 +25189,10 @@
       "block.fallout_wastelands.vaultanimation_112": "Vault Door",
       "block.fallout_wastelands.vaultanimation_113": "Vault Door",
       "block.fallout_wastelands.vaultanimation_114": "Vault Door",
-      "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame",
+      "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame Item",
       "item.fallout_wastelands.greenpaintcan": "Green Paint Can",
       "block.fallout_wastelands.vaultanimation_115": "Vault Door",
+      "block.fallout_wastelands.undergroundbrick": "Wasteland Underground Brick",
       "block.wastlanders.geck_bo_sbunker": "GECK Bo Sbunker",
       "item.wastlanders.ghoul": "Ghoul Spawn Egg",
       "effect.check_if_exited_marker": "i",
@@ -23423,8 +25235,9 @@
       "block.fallout_wastelands.vaultanimation_36": "Vault Door",
       "block.fallout_wastelands.closing_24": "Vault Door",
       "block.fallout_wastelands.vaultanimation_33": "Vault Door",
-      "entity.fallout_wastelands.nightkin": "Close Combat Supermutant",
+      "entity.fallout_wastelands.nightkin": "Nightkin Supermutant",
       "block.fallout_wastelands.vaultanimation_34": "Vault Door",
+      "item.fallout_wastelands.sledgehammer": "Sledgehammer",
       "block.fallout_wastelands.vaultanimation_31": "Vault Door",
       "block.fallout_wastelands.vaultanimation_32": "Vault Door",
       "block.fallout_wastelands.closing_20": "Vault Door",
@@ -23441,6 +25254,7 @@
       "block.fallout_wastelands.closing_17": "Vault Door",
       "item.fallout_wastelands.combatknife": "Combat Knife",
       "block.fallout_wastelands.vaultblastdoor": "Vaultblastdoor",
+      "block.fallout_wastelands.greyindustrialwalkaway": "Grey Industrial Black (walk way)",
       "item.fallout_wastelands.greysuit_boots": "Grey shoes",
       "block.fallout_wastelands.vaultanimation_40": "Vault Door",
       "block.fallout_wastelands.vaultanimation_41": "Vault Door 41",
@@ -23448,6 +25262,7 @@
       "block.fallout_wastelands.closing_10": "Vault Door",
       "block.fallout_wastelands.vaultanimation_49": "Vault Door",
       "block.fallout_wastelands.closing_11": "Vault Door",
+      "item.fallout_wastelands.taloncompagnysoldier_spawn_egg": "Talon Compagny Soldier Spawn Egg",
       "block.fallout_wastelands.vaultanimation_46": "Vault Door",
       "block.fallout_wastelands.closing_12": "Vault Door",
       "block.fallout_wastelands.vaultanimation_47": "Vault Door",
@@ -23459,6 +25274,7 @@
       "item.wastlanders.bloatfly_spawn_egg": "Bloatfly Spawn Egg",
       "block.fallout_wastelands.vaultanimation_42": "Vault Door",
       "block.fallout_wastelands.vaultanimation_43": "Vault Door",
+      "block.fallout_wastelands.rottenwoodplatenailed": "Nailed Planks Plating",
       "block.fallout_wastelands.closing_201": "Vault Door135",
       "block.fallout_wastelands.closing_202": "Vault Door135",
       "block.fallout_wastelands.closing_200": "Vault Door135",
@@ -23487,11 +25303,13 @@
       "block.fallout_wastelands.vaultanimation_10": "Vault Door",
       "block.wastlanders.tirestack": "Tire Stack",
       "item.minecraft.tipped_arrow.effect.radiation": "Arrow of Radiation Poisoning",
+      "block.fallout_wastelands.roofsheetmetalslab": "Roof Sheet Metal Slab",
       "item.fallout_wastelands.hazmat_leggings": "Hazmat Leggings",
       "item.fallout_wastelands.uraniumnugget": "Uranium Nugget",
       "block.wastlanders.militaryplatedradiationwarrior": "Military plating (radiation)",
       "block.fallout_wastelands.plasterwall": "Plaster Wall",
       "advancements.jointheworld.descr": "Vault tec wish you a good luck ...",
+      "block.fallout_wastelands.bluerottenwoodplate": "Blue Rotten Plank Plating",
       "item.fallout_wastelands.abraxo": "Abraxo ",
       "block.fallout_wastelands.vaultanimation_26": "Vault Door",
       "block.fallout_wastelands.militaryplatingglass": "Military Plating Glass",
@@ -23511,7 +25329,6 @@
       "item.wastlanders.robobraintrack": "Robobrain Track",
       "block.fallout_wastelands.vaultanimation_18": "Vault Door",
       "subtitles.unnaturalglow": "",
-      "subtitles.machinegunquieter": "",
       "block.wastlanders.sheetmetal": "Sheet metal",
       "block.fallout_wastelands.wastelandbrick": "Wasteland Brick",
       "item.fallout_wastelands.hazmat_chestplate": "Hazmat Body",
@@ -23520,6 +25337,7 @@
       "block.fallout_wastelands.vaultanimation_71": "Vault Door",
       "block.fallout_wastelands.vaultanimation_72": "Vault Door",
       "block.fallout_wastelands.vaultanimation_70": "Vault Door",
+      "block.fallout_wastelands.whitefabricblocks": "White Fabric Blocks",
       "block.fallout_wastelands.vaultanimation_79": "Vault Door",
       "block.fallout_wastelands.vaultanimation_77": "Vault Door",
       "item.wastlanders.combatknife": "Combat Knife",
@@ -23585,6 +25403,7 @@
       "block.fallout_wastelands.vaultanimation_68": "Vault Door",
       "block.fallout_wastelands.vaultanimation_69": "Vault Door",
       "block.fallout_wastelands.vaultanimation_66": "Vault Door",
+      "block.fallout_wastelands.undergroundbrickwall": "Wasteland Underground Brick Wall",
       "block.fallout_wastelands.vaultanimation_67": "Vault Door",
       "block.fallout_wastelands.vaultanimation_64": "Vault Door",
       "block.wastlanders.wastlandconcrete": "Old Concrete",
@@ -23592,6 +25411,7 @@
       "subtitles.tenmmshootb": "",
       "item.fallout_wastelands.combatarmor_helmet": "MKICombat Helmet",
       "item.fallout_wastelands.antiradclothing": "Antirad Clothing",
+      "item.fallout_wastelands.hachet": "Hachet",
       "entity.wastlanders.rangedsupermutant": "Supermutant Brute",
       "item.fallout_wastelands.chromedraiderfemale_spawn_egg": "Female Wasteland Raider Spawn Egg",
       "item.wastlanders.frbcannon": "Frbcannon",
@@ -23615,6 +25435,7 @@
       "block.wastlanders.walkwaystairs": "Walkway Stairs",
       "block.fallout_wastelands.deadgrass": "Wasteland Dead Grass",
       "item.wastlanders.robobrainengine": "Engine",
+      "block.fallout_wastelands.undergroundbrickstairs": "Wasteland Underground Brick Stairs",
       "block.fallout_wastelands.vaultanimation_95": "Vault Door",
       "block.fallout_wastelands.vaultanimation_96": "Vault Door",
       "block.fallout_wastelands.vaultanimation_93": "Vault Door",
@@ -23632,7 +25453,9 @@
       "block.fallout_wastelands.vaultanimation_97": "Vault Door",
       "block.fallout_wastelands.vaultanimation_98": "Vault Door",
       "block.fallout_wastelands.wastelanddirt": "Wasteland Dirt",
+      "item.fallout_wastelands.brotherhood_paladin_spawn_egg": "Brotherhood Paladin Spawn Egg",
       "block.fallout_wastelands.wastelandglass_2": "Wasteland Glass",
+      "block.fallout_wastelands.greyindustrivetmid": "Grey Industrial Block (mid rivet)",
       "block.wastlanders.redindustrialrivetdown": "Red Industrial Block (rivet bottom)",
       "item.fallout_wastelands.enclaveplating": "Enclave Plating",
       "block.fallout_wastelands.wastelandconcretewall": "Wasteland Concrete Wall",
@@ -23654,6 +25477,7 @@
       "item.fallout_wastelands.t_45powerarmor_helmet": "T-45 Power Armor Helmet",
       "block.fallout_wastelands.moltencopperblock": "Molten Copper Block",
       "block.fallout_wastelands.wastelandconcretestairs": "Wasteland Concrete Stairs",
+      "item.fallout_wastelands.taloncompagnylieutenant_spawn_egg": "Talon Compagny Lieutenant Spawn Egg",
       "item.fallout_wastelands.greysuit_chestplate": "Grey Suit Body",
       "block.wastlanders.wastelandconcreteslab": "Wasteland Concrete Slab",
       "block.fallout_wastelands.rustbloc": "Fully Rusted Iron",
@@ -23697,6 +25521,7 @@
       "item.fallout_wastelands.enclavehazmat_leggings": "Enclave Hazmat Leggings",
       "item.fallout_wastelands.nuclearwaste": "Nuclear Waste",
       "item.fallout_wastelands.nails": "Nails",
+      "block.fallout_wastelands.cage": "Metal Cage Structure",
       "item.fallout_wastelands.nailgun": "Nailgun",
       "block.fallout_wastelands.door_moving_ani_202": "Vault Door135",
       "block.fallout_wastelands.door_moving_ani_203": "Vault Door135",
@@ -23705,6 +25530,7 @@
       "subtitles.pistol10mmreload": "Reload",
       "block.fallout_wastelands.vault_door_filler": "Vault Door Filler",
       "block.wastlanders.structuralmetalblock": "Structural Metal Block",
+      "block.fallout_wastelands.roofsheetmetal": "Roof Sheet  Metal",
       "item.fallout_wastelands.plasmas": "Plasmas",
       "item.wastlanders.femalevaultjumpsuit_leggings": "Vault Jumpsuit Leggings (female)",
       "item.wastlanders.themachinegun": "Butcher Mk1",
@@ -23715,6 +25541,7 @@
       "item.wastlanders.bloatflyshot": "Bloatflyshot",
       "entity.wastlanders.highwayman": "Highwayman",
       "item.fallout_wastelands.track": "Track Segment",
+      "block.fallout_wastelands.browntileslab": "Brown Tile Slab",
       "item.fallout_wastelands.wasteland": "Wasteland Portal Igniter",
       "item.fallout_wastelands.combatarmor_boots": "MKI Combat Boots",
       "item.fallout_wastelands.cigarettepack": "Cigarette Pack",
@@ -23727,7 +25554,6 @@
       "item.fallout_wastelands.turret_fake_projectile": "Turret Fake Projectile",
       "item.fallout_wastelands.enclave_x_01pa_leggings": "Enclave APA Leggings",
       "block.fallout_wastelands.vault_door_frame": "Vault Door Frame",
-      "item.fallout_wastelands.broken_frame_item": "Broken Power Armor Frame",
       "item.wastlanders.ingot_tin": "Tin Ingot",
       "item.fallout_wastelands.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.fallout_wastelands.wastelandgold": "Wasteland Gold Ore",
@@ -23767,6 +25593,7 @@
       "item.wastlanders.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",
       "block.fallout_wastelands.closing_150": "Vault Door",
       "entity.fallout_wastelands.deathclaw": "Deathclaw",
+      "block.fallout_wastelands.blacktileslab": "Black Tile Slab",
       "block.fallout_wastelands.industrialredwalkway": "Red Industrial Black (walk way)",
       "block.fallout_wastelands.closing_155": "Vault Door",
       "item.fallout_wastelands.deathclaw_spawn_egg": "Deathclaw Spawn Egg",
@@ -23818,6 +25645,7 @@
       "effect.turret_shake_activator": "Shake",
       "block.fallout_wastelands.moltenironblock": "Molten Iron Block",
       "block.fallout_wastelands.closing_165": "Vault Door",
+      "block.fallout_wastelands.rottenwoodnailedplatingslab": "Nailed Planks Plating Slab",
       "block.wastlanders.rottenplankfence": "Rotten Plank Fence",
       "block.fallout_wastelands.blastwindows": "Blast Windows",
       "block.wastlanders.moltensteel": "Molten Steel Block",
@@ -23871,6 +25699,14 @@
       },
       {
         "name": "vault_door",
+        "children": []
+      },
+      {
+        "name": "trades",
+        "children": []
+      },
+      {
+        "name": "Paulo_interactions",
         "children": []
       }
     ]

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/nailedplanks",
+    "top": "fallout_wastelands:blocks/nailedplanks",
+    "side": "fallout_wastelands:blocks/nailedplanks"
+  }
+}

@@ -43,20 +43,16 @@
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
     "maxDamage": 20,
-    "damageValueHelmet": 3,
-    "damageValueBody": 6,
-    "damageValueLeggings": 5,
+    "damageValueHelmet": 2,
+    "damageValueBody": 5,
+    "damageValueLeggings": 4,
     "damageValueBoots": 2,
     "enchantability": 9,
     "toughness": 0.5,
-    "knockbackResistance": 0.1,
+    "knockbackResistance": 0.0,
     "equipSound": {
       "value": "item.armor.equip_iron"
     },
-    "repairItems": [
-      {
-        "value": "CUSTOM:Militaryhull"
-      }
-    ]
+    "repairItems": []
   }
 }

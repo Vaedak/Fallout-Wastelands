@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "fallout_wastelands:blocks/browntile",
+    "up": "fallout_wastelands:blocks/browntile",
+    "north": "fallout_wastelands:blocks/browntile",
+    "east": "fallout_wastelands:blocks/browntile",
+    "south": "fallout_wastelands:blocks/browntile",
+    "west": "fallout_wastelands:blocks/browntile",
+    "particle": "fallout_wastelands:blocks/browntile"
+  }
+}

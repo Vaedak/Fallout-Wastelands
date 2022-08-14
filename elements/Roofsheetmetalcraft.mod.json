@@ -1,0 +1,46 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 16,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Tiningot"
+      },
+      {
+        "value": "Items.IRON_INGOT"
+      },
+      {
+        "value": "CUSTOM:Tiningot"
+      },
+      {
+        "value": "CUSTOM:Tiningot"
+      },
+      {
+        "value": "Items.IRON_INGOT"
+      },
+      {
+        "value": "CUSTOM:Tiningot"
+      },
+      {
+        "value": "CUSTOM:Tiningot"
+      },
+      {
+        "value": "Items.IRON_INGOT"
+      },
+      {
+        "value": "CUSTOM:Tiningot"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Roofsheetmetal"
+    },
+    "name": "roofsheetmetalcraft",
+    "namespace": "mod"
+  }
+}
