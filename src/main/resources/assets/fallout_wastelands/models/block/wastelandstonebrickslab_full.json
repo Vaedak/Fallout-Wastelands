@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/wastelandstonebrick",
+    "top": "fallout_wastelands:blocks/wastelandstonebrick",
+    "side": "fallout_wastelands:blocks/wastelandstonebrick"
+  }
+}

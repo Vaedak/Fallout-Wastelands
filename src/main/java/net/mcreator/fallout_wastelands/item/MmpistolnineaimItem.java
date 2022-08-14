@@ -149,9 +149,8 @@ public class MmpistolnineaimItem extends FalloutWastelandsModElements.ModElement
 			World world = this.world;
 			Entity entity = this.func_234616_v_();
 			Entity immediatesourceentity = this;
-			if (this.inGround) {
+			if (this.inGround)
 				this.remove();
-			}
 		}
 	}
 

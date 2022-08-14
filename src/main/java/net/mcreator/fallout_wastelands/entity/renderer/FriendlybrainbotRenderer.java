@@ -30,7 +30,7 @@ public class FriendlybrainbotRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/craftable_robobrain.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/craftable_robobrain.png");
 					}
 				};
 			});

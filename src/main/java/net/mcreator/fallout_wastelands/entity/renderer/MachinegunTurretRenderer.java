@@ -37,7 +37,7 @@ public class MachinegunTurretRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/turret_second.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/turret_second.png");
 					}
 
 					@Override

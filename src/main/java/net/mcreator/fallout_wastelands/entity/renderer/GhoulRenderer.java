@@ -30,7 +30,7 @@ public class GhoulRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/ghoul.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/ghoul.png");
 					}
 				};
 			});

@@ -36,6 +36,7 @@ public class InvisiblelightsourceClientDisplayRandomTickProcedure {
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
+		world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 		if (Math.random() < 0.4) {
 			if ((((world.getBlockState(new BlockPos(x, y + 1, z)))
 					.getBlock() == CellinglightsBlock.block) != ((world.getBlockState(new BlockPos(x, y + 2, z)))

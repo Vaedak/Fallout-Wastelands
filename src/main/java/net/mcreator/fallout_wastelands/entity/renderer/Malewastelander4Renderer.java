@@ -25,7 +25,7 @@ public class Malewastelander4Renderer {
 				BipedRenderer customRender = new BipedRenderer(renderManager, new BipedModel(0), 0.5f) {
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/wastlanderv4.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/wastlanderv4.png");
 					}
 				};
 				customRender.addLayer(new BipedArmorLayer(customRender, new BipedModel(0.5f), new BipedModel(1)));

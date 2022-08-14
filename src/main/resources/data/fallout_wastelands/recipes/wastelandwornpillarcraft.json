@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:wastelandwornmetalblock"
+    },
+    "1": {
+      "item": "fallout_wastelands:wastelandwornmetalblock"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:wastelandwornpillar",
+    "count": 4
+  }
+}

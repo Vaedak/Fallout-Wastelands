@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "item",
   "definition": {
     "renderType": 0,
@@ -32,7 +32,6 @@
     "onFinishUsingItem": {
       "name": "CoffeeFoodEaten"
     },
-    "hasDispenseBehavior": false,
     "isFood": true,
     "nutritionalValue": 4,
     "saturation": 7.0,

@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "livingentity",
   "definition": {
     "mobName": "Wasteland Raider",
@@ -52,6 +52,7 @@
     "movementSpeed": 0.5,
     "armorBaseValue": 0.5,
     "trackingRange": 100,
+    "followRange": 16,
     "health": 20,
     "xpAmount": 5,
     "waterMob": false,

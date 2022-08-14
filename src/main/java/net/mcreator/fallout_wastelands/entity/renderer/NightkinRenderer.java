@@ -30,7 +30,7 @@ public class NightkinRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/nightkin.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/nightkin.png");
 					}
 				};
 			});

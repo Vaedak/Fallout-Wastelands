@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -22,7 +22,7 @@
         "value": "CUSTOM:Rottenplanks"
       },
       {
-        "value": "CUSTOM:Nuclearwaste"
+        "value": "Items.DYE#19"
       },
       {
         "value": "CUSTOM:Rottenplanks"
@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Emeraldplanks"
+      "value": "CUSTOM:Whiteplanks"
     },
     "name": "emeraldplankscrafttwo",
     "namespace": "mod"

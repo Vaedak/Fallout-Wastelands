@@ -30,7 +30,7 @@ public class ProtectronRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/protectionbasic.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/protectionbasic.png");
 					}
 				};
 			});

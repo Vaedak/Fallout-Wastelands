@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "livingentity",
   "definition": {
     "mobName": "Enclave Officier",
@@ -52,6 +52,7 @@
     "movementSpeed": 0.3,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
+    "followRange": 16,
     "health": 15,
     "xpAmount": 2,
     "waterMob": false,

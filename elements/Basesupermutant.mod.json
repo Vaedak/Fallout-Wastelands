@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "livingentity",
   "definition": {
     "mobName": "Super Mutant Grunt",
@@ -52,6 +52,7 @@
     "movementSpeed": 0.4,
     "armorBaseValue": 0.2,
     "trackingRange": 264,
+    "followRange": 16,
     "health": 30,
     "xpAmount": 2,
     "waterMob": false,

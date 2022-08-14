@@ -40,7 +40,7 @@ public class WastelandspawnchoiceinterfaceGuiWindow extends ContainerScreen<Wast
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/wastelandspawnchoiceinterface.png");
+	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/screens/wastelandspawnchoiceinterface.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -59,7 +59,7 @@ public class WastelandspawnchoiceinterfaceGuiWindow extends ContainerScreen<Wast
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/entering_wastelands.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/entering_wastelands.png"));
 		this.blit(ms, this.guiLeft + -20, this.guiTop + -11, 0, 0, 240, 182, 240, 182);
 
 		RenderSystem.disableBlend();

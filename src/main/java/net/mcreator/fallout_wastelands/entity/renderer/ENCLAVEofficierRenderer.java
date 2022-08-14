@@ -30,7 +30,7 @@ public class ENCLAVEofficierRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/enclaveofficer_2.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/enclaveofficer_2.png");
 					}
 				};
 			});

@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "livingentity",
   "definition": {
     "mobName": "Nightkin Supermutant",
@@ -52,6 +52,7 @@
     "movementSpeed": 0.6,
     "armorBaseValue": 1.0,
     "trackingRange": 200,
+    "followRange": 16,
     "health": 50,
     "xpAmount": 5,
     "waterMob": false,

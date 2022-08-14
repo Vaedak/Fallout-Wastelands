@@ -1,6 +1,6 @@
 {
   "display": {
-    "background": "fallout_wastelands:textures/options_background.png",
+    "background": "fallout_wastelands:textures/screens/options_background.png",
     "icon": {
       "item": "fallout_wastelands:militaryplatedradiationwarrior"
     },

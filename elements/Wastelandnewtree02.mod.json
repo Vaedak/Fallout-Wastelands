@@ -1,0 +1,37 @@
+{
+  "_fv": 33,
+  "_type": "structure",
+  "definition": {
+    "structure": "fallout_wasteland_new_tree_02",
+    "randomlyRotateStructure": true,
+    "surfaceDetectionType": "First motion blocking block",
+    "spawnProbability": 500000,
+    "minCountPerChunk": 3,
+    "maxCountPerChunk": 3,
+    "spawnLocation": "Ground",
+    "spawnHeightOffset": -3,
+    "spawnXOffset": 0,
+    "spawnZOffset": 0,
+    "spawnWorldTypes": [
+      "Surface",
+      "CUSTOM:Wasteland"
+    ],
+    "restrictionBlocks": [
+      {
+        "value": "CUSTOM:Wastelanddirt"
+      },
+      {
+        "value": "CUSTOM:Rootdirt"
+      },
+      {
+        "value": "CUSTOM:Theglowdirt"
+      }
+    ],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:Wastelandforest"
+      }
+    ],
+    "ignoreBlocks": "STRUCTURE_BLOCK"
+  }
+}

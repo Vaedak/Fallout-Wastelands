@@ -89,6 +89,7 @@ public class ProtectronEntity extends FalloutWastelandsModElements.ModElement {
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 20);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 5);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 4);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			ammma = ammma.createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 4);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_KNOCKBACK, 1);
 			event.put(entity, ammma.create());

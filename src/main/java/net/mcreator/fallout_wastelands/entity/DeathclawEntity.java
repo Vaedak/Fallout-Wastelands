@@ -86,6 +86,7 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 100);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 10);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 15);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			ammma = ammma.createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 10);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_KNOCKBACK, 1);
 			event.put(entity, ammma.create());

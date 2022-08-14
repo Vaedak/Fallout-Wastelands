@@ -78,6 +78,11 @@ public class DecorativepipeBlock extends FalloutWastelandsModElements.ModElement
 		}
 
 		@Override
+		public BlockState getStateForPlacement(BlockItemUseContext context) {
+			return this.getDefaultState().with(AXIS, context.getFace().getAxis());
+		}
+
+		@Override
 		public BlockState rotate(BlockState state, Rotation rot) {
 			if (rot == Rotation.CLOCKWISE_90 || rot == Rotation.COUNTERCLOCKWISE_90) {
 				if ((Direction.Axis) state.get(AXIS) == Direction.Axis.X) {
@@ -87,12 +92,6 @@ public class DecorativepipeBlock extends FalloutWastelandsModElements.ModElement
 				}
 			}
 			return state;
-		}
-
-		@Override
-		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			Direction.Axis axis = context.getFace().getAxis();;
-			return this.getDefaultState().with(AXIS, axis);
 		}
 
 		@Override

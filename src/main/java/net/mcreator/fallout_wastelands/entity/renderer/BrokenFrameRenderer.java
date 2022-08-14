@@ -29,7 +29,7 @@ public class BrokenFrameRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/brokenframe.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/brokenframe.png");
 					}
 				};
 			});

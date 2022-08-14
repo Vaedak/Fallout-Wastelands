@@ -19,7 +19,7 @@
       "item": "fallout_wastelands:rottenplanks"
     },
     "4": {
-      "item": "fallout_wastelands:nuclearwaste"
+      "item": "minecraft:white_dye"
     },
     "5": {
       "item": "fallout_wastelands:rottenplanks"
@@ -35,7 +35,7 @@
     }
   },
   "result": {
-    "item": "fallout_wastelands:emeraldplanks",
+    "item": "fallout_wastelands:whiteplanks",
     "count": 16
   }
 }

@@ -59,25 +59,26 @@ public class RadiationUI0Overlay {
 			if (true) {
 				if (Radiation0UIProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/rad_0.png"));
+					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/rad_0.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 117, posY + -112, 0, 0, 80, 16, 80, 16);
 				}
 				if (Radiation0UIProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/rad_1.png"));
+					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/rad_1.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 117, posY + -112, 0, 0, 80, 16, 80, 16);
 				}
 				if (Radiation2UIProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/rad_2.png"));
+					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/rad_2.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 117, posY + -112, 0, 0, 80, 16, 80, 16);
 				}
 				if (Radiation3UIProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
-					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/rad_3.png"));
+					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/rad_3.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 117, posY + -112, 0, 0, 80, 16, 80, 16);
 				}
-				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/radiation_ui_base.png"));
+				Minecraft.getInstance().getTextureManager()
+						.bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/radiation_ui_base.png"));
 				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + 198, posY + -112, 0, 0, 16, 16, 16, 16);
 
 			}

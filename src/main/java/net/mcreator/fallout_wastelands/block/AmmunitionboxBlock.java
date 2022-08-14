@@ -134,27 +134,19 @@ public class AmmunitionboxBlock extends FalloutWastelandsModElements.ModElement 
 			switch ((Direction) state.get(FACING)) {
 				case SOUTH :
 				default :
-					return VoxelShapes.or(makeCuboidShape(9.6, 0, 16, 1.6, 14.4, 0)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(9.6, 0, 16, 1.6, 14.4, 0))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case NORTH :
-					return VoxelShapes.or(makeCuboidShape(6.4, 0, 0, 14.4, 14.4, 16)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(6.4, 0, 0, 14.4, 14.4, 16))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case EAST :
-					return VoxelShapes.or(makeCuboidShape(16, 0, 6.4, 0, 14.4, 14.4)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(16, 0, 6.4, 0, 14.4, 14.4))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case WEST :
-					return VoxelShapes.or(makeCuboidShape(0, 0, 9.6, 16, 14.4, 1.6)
-
-					)
+					return VoxelShapes.or(makeCuboidShape(0, 0, 9.6, 16, 14.4, 1.6))
 
 							.withOffset(offset.x, offset.y, offset.z);
 			}
@@ -165,18 +157,17 @@ public class AmmunitionboxBlock extends FalloutWastelandsModElements.ModElement 
 			builder.add(FACING);
 		}
 
+		@Override
+		public BlockState getStateForPlacement(BlockItemUseContext context) {
+			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
+		}
+
 		public BlockState rotate(BlockState state, Rotation rot) {
 			return state.with(FACING, rot.rotate(state.get(FACING)));
 		}
 
 		public BlockState mirror(BlockState state, Mirror mirrorIn) {
 			return state.rotate(mirrorIn.toRotation(state.get(FACING)));
-		}
-
-		@Override
-		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			;
-			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 
 		@Override

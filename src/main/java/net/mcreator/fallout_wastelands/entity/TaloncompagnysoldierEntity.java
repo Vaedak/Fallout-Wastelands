@@ -90,6 +90,7 @@ public class TaloncompagnysoldierEntity extends FalloutWastelandsModElements.Mod
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 20);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 5);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 6);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			ammma = ammma.createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 0.5);
 			event.put(entity, ammma.create());
 		}

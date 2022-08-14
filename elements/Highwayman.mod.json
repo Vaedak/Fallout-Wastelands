@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "livingentity",
   "definition": {
     "mobName": "Highwayman",
@@ -52,6 +52,7 @@
     "movementSpeed": 0.5,
     "armorBaseValue": 20.0,
     "trackingRange": 1,
+    "followRange": 16,
     "health": 200,
     "xpAmount": 0,
     "waterMob": false,

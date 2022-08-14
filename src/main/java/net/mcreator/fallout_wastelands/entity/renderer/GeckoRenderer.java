@@ -30,7 +30,7 @@ public class GeckoRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/gecko.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/gecko.png");
 					}
 				};
 			});

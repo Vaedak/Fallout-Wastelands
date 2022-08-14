@@ -40,7 +40,7 @@ public class PipboyguiGuiWindow extends ContainerScreen<PipboyguiGui.GuiContaine
 		return true;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/pipboygui.png");
+	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/screens/pipboygui.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

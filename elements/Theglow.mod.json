@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "biome",
   "definition": {
     "name": "The Glow",
@@ -109,25 +109,6 @@
       "Caves",
       "Ores"
     ],
-    "spawnEntries": [
-      {
-        "entity": {
-          "value": "CUSTOM:Ghoul"
-        },
-        "minGroup": 4,
-        "maxGroup": 4,
-        "weight": 20,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:Glowingone"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 6,
-        "spawnType": "monster"
-      }
-    ]
+    "spawnEntries": []
   }
 }

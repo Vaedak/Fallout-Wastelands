@@ -21,11 +21,8 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.particles.ParticleTypes;
-import net.minecraft.entity.EntityClassification;
 import net.minecraft.client.audio.BackgroundMusicSelector;
 
-import net.mcreator.fallout_wastelands.entity.GlowingoneEntity;
-import net.mcreator.fallout_wastelands.entity.GhoulEntity;
 import net.mcreator.fallout_wastelands.block.WastelandgravelBlock;
 import net.mcreator.fallout_wastelands.block.TheglowradioactivedirtBlock;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
@@ -54,8 +51,6 @@ public class TheglowBiome extends FalloutWastelandsModElements.ModElement {
 				DefaultBiomeFeatures.withCavesAndCanyons(biomeGenerationSettings);
 				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
 				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
-				mobSpawnInfo.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(GhoulEntity.entity, 20, 4, 4));
-				mobSpawnInfo.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(GlowingoneEntity.entity, 6, 1, 1));
 				biome = new Biome.Builder().precipitation(Biome.RainType.NONE).category(Biome.Category.NONE).depth(0.1f).scale(0.1f).temperature(0.6f)
 						.downfall(0f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
 						.withGenerationSettings(biomeGenerationSettings.build()).build();

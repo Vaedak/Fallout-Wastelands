@@ -109,6 +109,7 @@ public class FriendlybrainbotEntity extends FalloutWastelandsModElements.ModElem
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 200);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 50);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 3);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			ammma = ammma.createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 100);
 			event.put(entity, ammma.create());
 		}

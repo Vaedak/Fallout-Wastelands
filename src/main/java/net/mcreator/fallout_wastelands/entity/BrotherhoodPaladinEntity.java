@@ -89,6 +89,7 @@ public class BrotherhoodPaladinEntity extends FalloutWastelandsModElements.ModEl
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 20);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 35);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 0);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			event.put(entity, ammma.create());
 		}
 	}

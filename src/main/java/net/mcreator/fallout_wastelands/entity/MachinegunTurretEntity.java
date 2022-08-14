@@ -94,6 +94,7 @@ public class MachinegunTurretEntity extends FalloutWastelandsModElements.ModElem
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 15);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 4);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 0);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			ammma = ammma.createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 10);
 			event.put(entity, ammma.create());
 		}

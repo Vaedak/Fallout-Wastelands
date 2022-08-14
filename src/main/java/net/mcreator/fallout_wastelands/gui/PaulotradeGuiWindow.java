@@ -39,7 +39,7 @@ public class PaulotradeGuiWindow extends ContainerScreen<PaulotradeGui.GuiContai
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/paulotrade.png");
+	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/screens/paulotrade.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -58,76 +58,76 @@ public class PaulotradeGuiWindow extends ContainerScreen<PaulotradeGui.GuiContai
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/trade.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/trade.png"));
 		this.blit(ms, this.guiLeft + -83, this.guiTop + -38, 0, 0, 340, 240, 340, 240);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradeslot.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradeslot.png"));
 		this.blit(ms, this.guiLeft + -11, this.guiTop + 7, 0, 0, 18, 18, 18, 18);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradearrow1.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradearrow1.png"));
 		this.blit(ms, this.guiLeft + 15, this.guiTop + 7, 0, 0, 24, 17, 24, 17);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradeslot.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradeslot.png"));
 		this.blit(ms, this.guiLeft + 51, this.guiTop + 7, 0, 0, 18, 18, 18, 18);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/bottlecaps.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/bottlecaps.png"));
 		this.blit(ms, this.guiLeft + -74, this.guiTop + -29, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/bottlecaps.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/bottlecaps.png"));
 		this.blit(ms, this.guiLeft + -11, this.guiTop + -11, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/radaway.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/radaway.png"));
 		this.blit(ms, this.guiLeft + 51, this.guiTop + -11, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradeslot.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradeslot.png"));
 		this.blit(ms, this.guiLeft + -11, this.guiTop + 43, 0, 0, 18, 18, 18, 18);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradeslot.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradeslot.png"));
 		this.blit(ms, this.guiLeft + 51, this.guiTop + 43, 0, 0, 18, 18, 18, 18);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradearrow1.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradearrow1.png"));
 		this.blit(ms, this.guiLeft + 15, this.guiTop + 43, 0, 0, 24, 17, 24, 17);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradeslot.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradeslot.png"));
 		this.blit(ms, this.guiLeft + 105, this.guiTop + 7, 0, 0, 18, 18, 18, 18);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradearrow1.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradearrow1.png"));
 		this.blit(ms, this.guiLeft + 132, this.guiTop + 7, 0, 0, 24, 17, 24, 17);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradeslot.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradeslot.png"));
 		this.blit(ms, this.guiLeft + 168, this.guiTop + 7, 0, 0, 18, 18, 18, 18);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/bottlecaps.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/bottlecaps.png"));
 		this.blit(ms, this.guiLeft + -11, this.guiTop + 25, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/coffee.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/coffee.png"));
 		this.blit(ms, this.guiLeft + 51, this.guiTop + 25, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/bottlecaps.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/bottlecaps.png"));
 		this.blit(ms, this.guiLeft + 105, this.guiTop + -11, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/reaper.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/reaper.png"));
 		this.blit(ms, this.guiLeft + 168, this.guiTop + -11, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradeslot.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradeslot.png"));
 		this.blit(ms, this.guiLeft + 96, this.guiTop + 43, 0, 0, 18, 18, 18, 18);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/bottlecaps.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/bottlecaps.png"));
 		this.blit(ms, this.guiLeft + 105, this.guiTop + 25, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradeslot.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradeslot.png"));
 		this.blit(ms, this.guiLeft + 114, this.guiTop + 43, 0, 0, 18, 18, 18, 18);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradearrow1.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradearrow1.png"));
 		this.blit(ms, this.guiLeft + 132, this.guiTop + 43, 0, 0, 24, 17, 24, 17);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/tradeslot.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/tradeslot.png"));
 		this.blit(ms, this.guiLeft + 168, this.guiTop + 43, 0, 0, 18, 18, 18, 18);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/fusioncoret.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/fusioncoret.png"));
 		this.blit(ms, this.guiLeft + 168, this.guiTop + 25, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/inventory_tex.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/inventory_tex.png"));
 		this.blit(ms, this.guiLeft + 6, this.guiTop + 83, 0, 0, 162, 76, 162, 76);
 
 		RenderSystem.disableBlend();

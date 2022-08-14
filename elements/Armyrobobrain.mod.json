@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "livingentity",
   "definition": {
     "mobName": "Army Robobrain",
@@ -52,6 +52,7 @@
     "movementSpeed": 0.2,
     "armorBaseValue": 30.0,
     "trackingRange": 100,
+    "followRange": 16,
     "health": 100,
     "xpAmount": 9,
     "waterMob": false,

@@ -40,7 +40,7 @@ public class RootdirtBlockDestroyedByPlayerProcedure {
 		if (Math.random() < 0.5) {
 			if (world instanceof World && !world.isRemote()) {
 				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.STICK));
-				entityToSpawn.setPickupDelay((int) 1000);
+				entityToSpawn.setPickupDelay((int) 1);
 				world.addEntity(entityToSpawn);
 			}
 		}
