@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "brokenframeitem",
     "customModelName": "Normal",
-    "name": "Broken Power Armor Frame",
+    "name": "Damaged Power Armor Frame",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:Wastelandersitems"

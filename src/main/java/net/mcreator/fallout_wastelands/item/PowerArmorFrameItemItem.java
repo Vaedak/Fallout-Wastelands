@@ -40,7 +40,7 @@ public class PowerArmorFrameItemItem extends FalloutWastelandsModElements.ModEle
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(1).rarity(Rarity.RARE));
+			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(1).rarity(Rarity.UNCOMMON));
 			setRegistryName("power_armor_frame_item");
 		}
 
