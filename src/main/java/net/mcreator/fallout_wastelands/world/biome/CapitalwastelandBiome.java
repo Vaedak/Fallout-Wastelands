@@ -23,9 +23,16 @@ import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.fallout_wastelands.entity.RaidergunnerEntity;
+import net.mcreator.fallout_wastelands.entity.MirelurkEntity;
+import net.mcreator.fallout_wastelands.entity.GhoulEntity;
+import net.mcreator.fallout_wastelands.entity.ChromeraiderEntity;
+import net.mcreator.fallout_wastelands.entity.ChromedraiderfemaleEntity;
+import net.mcreator.fallout_wastelands.entity.BloatflyEntity;
 import net.mcreator.fallout_wastelands.block.WastlandstoneBlock;
 import net.mcreator.fallout_wastelands.block.WastelanddirtBlock;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
@@ -66,6 +73,13 @@ public class CapitalwastelandBiome extends FalloutWastelandsModElements.ModEleme
 				DefaultBiomeFeatures.withMonsterRoom(biomeGenerationSettings);
 				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
 				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
+				mobSpawnInfo.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(ChromeraiderEntity.entity, 1, 1, 1));
+				mobSpawnInfo.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(ChromedraiderfemaleEntity.entity, 1, 1, 1));
+				mobSpawnInfo.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(ChromeraiderEntity.entity, 1, 2, 2));
+				mobSpawnInfo.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(MirelurkEntity.entity, 3, 1, 1));
+				mobSpawnInfo.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(BloatflyEntity.entity, 1, 1, 1));
+				mobSpawnInfo.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(GhoulEntity.entity, 1, 1, 1));
+				mobSpawnInfo.withSpawner(EntityClassification.CREATURE, new MobSpawnInfo.Spawners(RaidergunnerEntity.entity, 1, 1, 1));
 				biome = new Biome.Builder().precipitation(Biome.RainType.RAIN).category(Biome.Category.NONE).depth(0f).scale(0f).temperature(1f)
 						.downfall(0.1f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
 						.withGenerationSettings(biomeGenerationSettings.build()).build();

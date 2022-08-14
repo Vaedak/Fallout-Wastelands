@@ -15,9 +15,6 @@
     "useDuration": 28,
     "toolType": 0.0,
     "damageCount": 0,
-    "recipeRemainder": {
-      "value": ""
-    },
     "destroyAnyBlock": false,
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,
@@ -26,15 +23,11 @@
     "damageVsEntity": 0.0,
     "specialInfo": [],
     "hasGlow": false,
-    "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "isFood": true,
     "nutritionalValue": 1,
     "saturation": 0.3,
-    "eatResultItem": {
-      "value": ""
-    },
     "isMeat": true,
     "isAlwaysEdible": false,
     "animation": "eat"

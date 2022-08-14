@@ -1,20 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.container.Slot;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.item.ReaperItem;
-import net.mcreator.fallout_wastelands.item.RadawayItem;
-import net.mcreator.fallout_wastelands.item.FusionCoreItem;
-import net.mcreator.fallout_wastelands.item.CoffeeItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.function.Supplier;
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class PaulowatchingfortradesProcedure {
 
@@ -24,7 +10,9 @@ public class PaulowatchingfortradesProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Paulowatchingfortrades!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if (new Object() {
 			public int getAmount(int sltid) {
 				if (entity instanceof ServerPlayerEntity) {
@@ -213,4 +201,5 @@ public class PaulowatchingfortradesProcedure {
 			}
 		}
 	}
+
 }

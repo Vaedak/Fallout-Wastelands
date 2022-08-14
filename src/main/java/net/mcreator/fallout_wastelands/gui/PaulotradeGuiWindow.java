@@ -1,31 +1,15 @@
 
 package net.mcreator.fallout_wastelands.gui;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
-import net.minecraft.client.Minecraft;
-
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.HashMap;
-
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
 public class PaulotradeGuiWindow extends ContainerScreen<PaulotradeGui.GuiContainerMod> {
+
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
+
 	private final static HashMap guistate = PaulotradeGui.guistate;
 
 	public PaulotradeGuiWindow(PaulotradeGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
@@ -46,6 +30,7 @@ public class PaulotradeGuiWindow extends ContainerScreen<PaulotradeGui.GuiContai
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderHoveredTooltip(ms, mouseX, mouseY);
+
 	}
 
 	@Override
@@ -53,6 +38,7 @@ public class PaulotradeGuiWindow extends ContainerScreen<PaulotradeGui.GuiContai
 		RenderSystem.color4f(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
+
 		Minecraft.getInstance().getTextureManager().bindTexture(texture);
 		int k = (this.width - this.xSize) / 2;
 		int l = (this.height - this.ySize) / 2;
@@ -139,6 +125,7 @@ public class PaulotradeGuiWindow extends ContainerScreen<PaulotradeGui.GuiContai
 			this.minecraft.player.closeScreen();
 			return true;
 		}
+
 		return super.keyPressed(key, b, c);
 	}
 
@@ -165,6 +152,7 @@ public class PaulotradeGuiWindow extends ContainerScreen<PaulotradeGui.GuiContai
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
+
 		this.addButton(new Button(this.guiLeft + 222, this.guiTop + 160, 30, 20, new StringTextComponent("."), e -> {
 			if (true) {
 				FalloutWastelandsMod.PACKET_HANDLER.sendToServer(new PaulotradeGui.ButtonPressedMessage(0, x, y, z));
@@ -172,4 +160,5 @@ public class PaulotradeGuiWindow extends ContainerScreen<PaulotradeGui.GuiContai
 			}
 		}));
 	}
+
 }

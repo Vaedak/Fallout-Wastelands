@@ -61,9 +61,6 @@
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
-    "emittedRedstonePower": {
-      "fixedValue": 15.0
-    },
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
       "value": ""
@@ -81,21 +78,6 @@
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "STONE"
-    },
-    "breakSound": {
-      "value": ""
-    },
-    "fallSound": {
-      "value": ""
-    },
-    "hitSound": {
-      "value": ""
-    },
-    "placeSound": {
-      "value": ""
-    },
-    "stepSound": {
-      "value": ""
     },
     "luminance": 0,
     "unbreakable": false,

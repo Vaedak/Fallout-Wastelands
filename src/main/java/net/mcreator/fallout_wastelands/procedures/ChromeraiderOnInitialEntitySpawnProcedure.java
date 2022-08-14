@@ -1,13 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.block.WastelanddirtBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class ChromeraiderOnInitialEntitySpawnProcedure {
 
@@ -37,11 +30,13 @@ public class ChromeraiderOnInitialEntitySpawnProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure ChromeraiderOnInitialEntitySpawn!");
 			return;
 		}
+
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if (world.getLight(new BlockPos(x, y, z)) <= 1) {
 			if (!((world.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == WastelanddirtBlock.block)) {
 				if (!((world.getBlockState(new BlockPos(x, y - 2, z))).getBlock() == WastelanddirtBlock.block)) {
@@ -55,4 +50,5 @@ public class ChromeraiderOnInitialEntitySpawnProcedure {
 				entity.remove();
 		}
 	}
+
 }

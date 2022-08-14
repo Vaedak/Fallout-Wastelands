@@ -52,7 +52,7 @@
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,
-    "lightOpacity": 10,
+    "lightOpacity": 15,
     "material": {
       "value": "EARTH"
     },
@@ -79,7 +79,7 @@
     "isNotColidable": false,
     "isCustomSoundType": false,
     "soundOnStep": {
-      "value": "GROUND"
+      "value": "SOUL_SAND"
     },
     "breakSound": {
       "value": ""
@@ -96,7 +96,7 @@
     "stepSound": {
       "value": ""
     },
-    "luminance": 0,
+    "luminance": 1,
     "unbreakable": false,
     "breakHarvestLevel": 0,
     "spawnParticles": true,

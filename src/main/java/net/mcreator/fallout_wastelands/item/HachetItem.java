@@ -1,19 +1,11 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.AxeItem;
-
-import net.mcreator.fallout_wastelands.itemgroup.WastelandersitemsItemGroup;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+import net.minecraft.entity.ai.attributes.Attributes;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class HachetItem extends FalloutWastelandsModElements.ModElement {
+
 	@ObjectHolder("fallout_wastelands:hachet")
 	public static final Item block = null;
 
@@ -48,6 +40,8 @@ public class HachetItem extends FalloutWastelandsModElements.ModElement {
 				return Ingredient.fromStacks(new ItemStack(SteelingotItem.block));
 			}
 		}, 1, -3.2000000000000001f, new Item.Properties().group(WastelandersitemsItemGroup.tab)) {
+
 		}.setRegistryName("hachet"));
 	}
+
 }

@@ -1,87 +1,39 @@
 
 package net.mcreator.fallout_wastelands.entity;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-
-import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.DamageSource;
-import net.minecraft.network.IPacket;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.projectile.PotionEntity;
-import net.minecraft.entity.monster.ZombifiedPiglinEntity;
-import net.minecraft.entity.monster.ZombieEntity;
-import net.minecraft.entity.monster.WitherSkeletonEntity;
-import net.minecraft.entity.monster.WitchEntity;
-import net.minecraft.entity.monster.SpiderEntity;
-import net.minecraft.entity.monster.SlimeEntity;
-import net.minecraft.entity.monster.SkeletonEntity;
-import net.minecraft.entity.monster.RavagerEntity;
-import net.minecraft.entity.monster.PillagerEntity;
-import net.minecraft.entity.monster.PhantomEntity;
-import net.minecraft.entity.monster.GhastEntity;
-import net.minecraft.entity.monster.CreeperEntity;
-import net.minecraft.entity.boss.dragon.EnderDragonEntity;
-import net.minecraft.entity.boss.WitherEntity;
-import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
-import net.minecraft.entity.ai.goal.ReturnToVillageGoal;
-import net.minecraft.entity.ai.goal.RangedAttackGoal;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.OpenDoorGoal;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.IRangedAttackMob;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.CreatureEntity;
-import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.entity.AreaEffectCloudEntity;
-
-import net.mcreator.fallout_wastelands.item.T45powerarmorItem;
-import net.mcreator.fallout_wastelands.item.EnemylaserweaponItem;
-import net.mcreator.fallout_wastelands.item.BossteelplateItem;
-import net.mcreator.fallout_wastelands.entity.renderer.BrotherhoodPaladinRenderer;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+import net.minecraft.block.material.Material;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class BrotherhoodPaladinEntity extends FalloutWastelandsModElements.ModElement {
+
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.6f, 1.8f)).build("brotherhood_paladin").setRegistryName("brotherhood_paladin");
 
 	public BrotherhoodPaladinEntity(FalloutWastelandsModElements instance) {
 		super(instance, 1630);
+
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BrotherhoodPaladinRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
+
 	}
 
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
+
 		elements.items.add(() -> new SpawnEggItem(entity, -10066330, -10066177, new Item.Properties().group(ItemGroup.MISC))
 				.setRegistryName("brotherhood_paladin_spawn_egg"));
 	}
 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
+
 	}
 
 	private static class EntityAttributesRegisterHandler {
+
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
 			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
@@ -90,11 +42,14 @@ public class BrotherhoodPaladinEntity extends FalloutWastelandsModElements.ModEl
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 35);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 0);
 			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
+
 			event.put(entity, ammma.create());
 		}
+
 	}
 
 	public static class CustomEntity extends CreatureEntity implements IRangedAttackMob {
+
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
@@ -103,12 +58,15 @@ public class BrotherhoodPaladinEntity extends FalloutWastelandsModElements.ModEl
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
+
 			enablePersistence();
+
 			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(EnemylaserweaponItem.block));
 			this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(T45powerarmorItem.helmet));
 			this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(T45powerarmorItem.body));
 			this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(T45powerarmorItem.legs));
 			this.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(T45powerarmorItem.boots));
+
 		}
 
 		@Override
@@ -119,6 +77,7 @@ public class BrotherhoodPaladinEntity extends FalloutWastelandsModElements.ModEl
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
+
 			this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 0.5));
 			this.goalSelector.addGoal(3, new WaterAvoidingRandomWalkingGoal(this, 0.5));
@@ -157,6 +116,7 @@ public class BrotherhoodPaladinEntity extends FalloutWastelandsModElements.ModEl
 			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, true, true));
 			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, true));
 			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, true));
+
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {
@@ -200,5 +160,7 @@ public class BrotherhoodPaladinEntity extends FalloutWastelandsModElements.ModEl
 		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {
 			EnemylaserweaponItem.shoot(this, target);
 		}
+
 	}
+
 }

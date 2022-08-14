@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "fallout_wastelands:blocks/roofblock",
-    "top": "fallout_wastelands:blocks/roofblock",
-    "side": "fallout_wastelands:blocks/roofblock"
-  }
-}

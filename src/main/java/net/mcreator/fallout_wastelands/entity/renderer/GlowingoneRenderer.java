@@ -1,32 +1,11 @@
 
 package net.mcreator.fallout_wastelands.entity.renderer;
 
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.entity.Entity;
-import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.entity.layers.LayerRenderer;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.IEntityRenderer;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-
-import net.mcreator.fallout_wastelands.entity.GlowingoneEntity;
-
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import com.mojang.blaze3d.matrix.MatrixStack;
-
 @OnlyIn(Dist.CLIENT)
 public class GlowingoneRenderer {
+
 	public static class ModelRegisterHandler {
+
 		@SubscribeEvent
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
@@ -40,13 +19,16 @@ public class GlowingoneRenderer {
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("fallout_wastelands:textures/entities/glowing_one.png");
 					}
+
 				};
 			});
+
 		}
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	private static class GlowingLayer<T extends Entity, M extends EntityModel<T>> extends LayerRenderer<T, M> {
+
 		public GlowingLayer(IEntityRenderer<T, M> er) {
 			super(er);
 		}
@@ -57,11 +39,13 @@ public class GlowingoneRenderer {
 					.getBuffer(RenderType.getEyes(new ResourceLocation("fallout_wastelands:textures/entities/glowing_one_glowing_pattern.png")));
 			this.getEntityModel().render(matrixStackIn, ivertexbuilder, 15728640, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
 		}
+
 	}
 
 	// Made with Blockbench 3.6.3
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
+
 	public static class Modelskeletonterm extends EntityModel<Entity> {
 		private final ModelRenderer waist;
 		private final ModelRenderer body;
@@ -77,38 +61,48 @@ public class GlowingoneRenderer {
 		public Modelskeletonterm() {
 			textureWidth = 64;
 			textureHeight = 32;
+
 			waist = new ModelRenderer(this);
 			waist.setRotationPoint(0.0F, 12.0F, 0.0F);
+
 			body = new ModelRenderer(this);
 			body.setRotationPoint(0.0F, -12.0F, 0.0F);
 			waist.addChild(body);
 			body.setTextureOffset(16, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, 0.0F, false);
+
 			head = new ModelRenderer(this);
 			head.setRotationPoint(0.0F, 0.0F, 0.0F);
 			body.addChild(head);
 			head.setTextureOffset(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.0F, false);
+
 			hat = new ModelRenderer(this);
 			hat.setRotationPoint(0.0F, 0.0F, 0.0F);
 			head.addChild(hat);
 			hat.setTextureOffset(32, 0).addBox(-4.0F, -7.5F, -4.0F, 8.0F, 8.0F, 8.0F, 0.5F, false);
+
 			rightArm = new ModelRenderer(this);
 			rightArm.setRotationPoint(-5.0F, 2.0F, 0.0F);
 			body.addChild(rightArm);
 			rightArm.setTextureOffset(40, 16).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, 0.0F, false);
+
 			rightItem = new ModelRenderer(this);
 			rightItem.setRotationPoint(-1.0F, 7.0F, 1.0F);
 			rightArm.addChild(rightItem);
+
 			leftArm = new ModelRenderer(this);
 			leftArm.setRotationPoint(5.0F, 2.0F, 0.0F);
 			body.addChild(leftArm);
 			leftArm.setTextureOffset(40, 16).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, 0.0F, true);
+
 			leftItem = new ModelRenderer(this);
 			leftItem.setRotationPoint(1.0F, 7.0F, 1.0F);
 			leftArm.addChild(leftItem);
+
 			rightLeg = new ModelRenderer(this);
 			rightLeg.setRotationPoint(-2.0F, 12.0F, 0.0F);
 			body.addChild(rightLeg);
 			rightLeg.setTextureOffset(0, 16).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, 0.0F, false);
+
 			leftLeg = new ModelRenderer(this);
 			leftLeg.setRotationPoint(2.0F, 12.0F, 0.0F);
 			body.addChild(leftLeg);

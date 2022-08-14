@@ -55,7 +55,7 @@ public class WastelandglassblockBlock extends FalloutWastelandsModElements.ModEl
 
 		@Override
 		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return 1;
+			return 15;
 		}
 
 		@Override

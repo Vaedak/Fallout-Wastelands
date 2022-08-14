@@ -1,84 +1,39 @@
 
 package net.mcreator.fallout_wastelands.entity;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-
-import net.minecraft.world.World;
-import net.minecraft.world.IServerWorld;
-import net.minecraft.world.DifficultyInstance;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.DamageSource;
-import net.minecraft.network.IPacket;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.passive.WolfEntity;
-import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.LeapAtTargetGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureAttribute;
-
-import net.mcreator.fallout_wastelands.procedures.DeathclawblocbreakerProcedure;
-import net.mcreator.fallout_wastelands.procedures.DeathclawThisEntityKillsAnotherOneProcedure;
-import net.mcreator.fallout_wastelands.procedures.ChromeraiderOnInitialEntitySpawnProcedure;
-import net.mcreator.fallout_wastelands.entity.renderer.DeathclawRenderer;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
-
-import javax.annotation.Nullable;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import net.minecraft.block.material.Material;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
+
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(2f, 3f))
 			.build("deathclaw").setRegistryName("deathclaw");
 
 	public DeathclawEntity(FalloutWastelandsModElements instance) {
 		super(instance, 1458);
+
 		FMLJavaModLoadingContext.get().getModEventBus().register(new DeathclawRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
+
 	}
 
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
+
 		elements.items.add(() -> new SpawnEggItem(entity, -7771830, -11715796, new Item.Properties().group(ItemGroup.MISC))
 				.setRegistryName("deathclaw_spawn_egg"));
 	}
 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
+
 	}
 
 	private static class EntityAttributesRegisterHandler {
+
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
 			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
@@ -87,13 +42,18 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 10);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 15);
 			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
+
 			ammma = ammma.createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 10);
+
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_KNOCKBACK, 1);
+
 			event.put(entity, ammma.create());
 		}
+
 	}
 
 	public static class CustomEntity extends MonsterEntity {
+
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
@@ -102,6 +62,7 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 			super(type, world);
 			experienceValue = 25;
 			setNoAI(false);
+
 		}
 
 		@Override
@@ -112,11 +73,14 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
+
 			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.7, true) {
+
 				@Override
 				protected double getAttackReachSqr(LivingEntity entity) {
 					return (double) (4.0 + entity.getWidth() * entity.getWidth());
 				}
+
 			});
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 1));
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp());
@@ -155,6 +119,7 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, false, false));
+
 		}
 
 		@Override
@@ -225,5 +190,7 @@ public class DeathclawEntity extends FalloutWastelandsModElements.ModElement {
 							new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
+
 	}
+
 }

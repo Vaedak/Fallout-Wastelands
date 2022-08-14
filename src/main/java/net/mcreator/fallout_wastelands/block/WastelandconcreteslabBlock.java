@@ -38,7 +38,7 @@ public class WastelandconcreteslabBlock extends FalloutWastelandsModElements.Mod
 
 	public static class CustomBlock extends SlabBlock {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(4f, 10f).setLightLevel(s -> 0).harvestLevel(1)
+			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(4f, 10f).setLightLevel(s -> 0).harvestLevel(2)
 					.harvestTool(ToolType.PICKAXE).setRequiresTool());
 			setRegistryName("wastelandconcreteslab");
 		}

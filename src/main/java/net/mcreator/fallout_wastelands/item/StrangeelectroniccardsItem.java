@@ -1,30 +1,17 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.item.UseAction;
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.block.BlockState;
-
-import net.mcreator.fallout_wastelands.itemgroup.WastelandersitemsItemGroup;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
-
-import java.util.List;
+import net.minecraft.entity.ai.attributes.Attributes;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class StrangeelectroniccardsItem extends FalloutWastelandsModElements.ModElement {
+
 	@ObjectHolder("fallout_wastelands:strangeelectroniccards")
 	public static final Item block = null;
 
 	public StrangeelectroniccardsItem(FalloutWastelandsModElements instance) {
 		super(instance, 1525);
+
 	}
 
 	@Override
@@ -33,6 +20,7 @@ public class StrangeelectroniccardsItem extends FalloutWastelandsModElements.Mod
 	}
 
 	public static class ItemCustom extends Item {
+
 		public ItemCustom() {
 			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(10).rarity(Rarity.COMMON));
 			setRegistryName("strangeelectroniccards");
@@ -58,5 +46,7 @@ public class StrangeelectroniccardsItem extends FalloutWastelandsModElements.Mod
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("I wonder where do they come from ..."));
 		}
+
 	}
+
 }

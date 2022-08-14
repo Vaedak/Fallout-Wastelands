@@ -23,9 +23,9 @@
       "name": "FrameArmorTickEventUniversal"
     },
     "creativeTab": {
-      "value": "COMBAT"
+      "value": "No creative tab entry"
     },
-    "armorTextureFile": "paframe_",
+    "armorTextureFile": "paf__",
     "helmetName": "Frame Armor Helmet",
     "bodyName": "Frame Armor Body",
     "leggingsName": "Frame Armor Leggings",

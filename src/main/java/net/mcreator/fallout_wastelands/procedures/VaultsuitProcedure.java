@@ -1,32 +1,9 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
-import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
-
-import net.mcreator.fallout_wastelands.item.VaultjumpsuitItem;
-import net.mcreator.fallout_wastelands.item.PipboyItem;
-import net.mcreator.fallout_wastelands.item.FemalevaultjumpsuitItem;
-import net.mcreator.fallout_wastelands.item.CombatknifeItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
-import java.util.Iterator;
-import java.util.HashMap;
+import net.minecraftforge.eventbus.api.Event;
 
 public class VaultsuitProcedure {
+
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
 		@SubscribeEvent
@@ -49,7 +26,9 @@ public class VaultsuitProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Vaultsuit!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if (!(((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
 				? ((ServerPlayerEntity) entity).getAdvancements()
 						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
@@ -115,4 +94,5 @@ public class VaultsuitProcedure {
 			}
 		}
 	}
+
 }

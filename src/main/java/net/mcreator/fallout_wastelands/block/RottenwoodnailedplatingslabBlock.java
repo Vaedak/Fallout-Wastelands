@@ -1,36 +1,18 @@
 
 package net.mcreator.fallout_wastelands.block;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.common.ToolType;
-
-import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Direction;
-import net.minecraft.state.properties.SlabType;
-import net.minecraft.loot.LootContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.BlockItem;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
-
-import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
-
-import java.util.List;
-import java.util.Collections;
+import net.minecraft.util.SoundEvent;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class RottenwoodnailedplatingslabBlock extends FalloutWastelandsModElements.ModElement {
+
 	@ObjectHolder("fallout_wastelands:rottenwoodnailedplatingslab")
 	public static final Block block = null;
 
 	public RottenwoodnailedplatingslabBlock(FalloutWastelandsModElements instance) {
 		super(instance, 1563);
+
 	}
 
 	@Override
@@ -40,9 +22,11 @@ public class RottenwoodnailedplatingslabBlock extends FalloutWastelandsModElemen
 	}
 
 	public static class CustomBlock extends SlabBlock {
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(4f, 6f).setLightLevel(s -> 0).harvestLevel(0)
 					.harvestTool(ToolType.AXE).setRequiresTool());
+
 			setRegistryName("rottenwoodnailedplatingslab");
 		}
 
@@ -63,5 +47,7 @@ public class RottenwoodnailedplatingslabBlock extends FalloutWastelandsModElemen
 				return dropsOriginal;
 			return Collections.singletonList(new ItemStack(this, state.get(TYPE) == SlabType.DOUBLE ? 2 : 1));
 		}
+
 	}
+
 }

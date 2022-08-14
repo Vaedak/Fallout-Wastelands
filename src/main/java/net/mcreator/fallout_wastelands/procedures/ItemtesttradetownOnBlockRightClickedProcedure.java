@@ -1,13 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.world.IWorld;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import net.minecraftforge.eventbus.api.Event;
 
 public class ItemtesttradetownOnBlockRightClickedProcedure {
 
@@ -32,6 +25,7 @@ public class ItemtesttradetownOnBlockRightClickedProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure ItemtesttradetownOnBlockRightClicked!");
 			return;
 		}
+
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
@@ -42,5 +36,7 @@ public class ItemtesttradetownOnBlockRightClickedProcedure {
 						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
 								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+
 	}
+
 }

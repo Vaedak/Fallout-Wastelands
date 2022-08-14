@@ -63,7 +63,7 @@ public class NailgunItem extends FalloutWastelandsModElements.ModElement {
 
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxDamage(1000));
+			super(new Item.Properties().group(WastelanderscombattabItemGroup.tab).maxDamage(1001));
 			setRegistryName("nailgun");
 		}
 

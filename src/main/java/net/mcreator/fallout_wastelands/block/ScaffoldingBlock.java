@@ -65,7 +65,7 @@ public class ScaffoldingBlock extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return 1;
+			return 15;
 		}
 
 		@Override

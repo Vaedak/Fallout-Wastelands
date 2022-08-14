@@ -19,14 +19,10 @@ public class FriedeggchicagospecialPlayerFinishesUsingItemProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, (int) 120, (int) 1, (false), (false)));
-		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 120, (int) 1, (false), (false)));
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LUCK, (int) 600, (int) 1, (false), (false)));
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.DOLPHINS_GRACE, (int) 600, (int) 1, (false), (false)));
-		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 600, (int) 1, (false), (false)));
 	}
 }

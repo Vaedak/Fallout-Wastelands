@@ -1,10 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class RadiationOnEffectActiveTickProcedure {
 
@@ -14,7 +10,9 @@ public class RadiationOnEffectActiveTickProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure RadiationOnEffectActiveTick!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		{
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -23,4 +21,5 @@ public class RadiationOnEffectActiveTickProcedure {
 			}
 		}
 	}
+
 }

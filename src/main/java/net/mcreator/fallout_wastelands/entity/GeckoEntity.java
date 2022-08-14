@@ -1,80 +1,39 @@
 
 package net.mcreator.fallout_wastelands.entity;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-
-import net.minecraft.world.World;
-import net.minecraft.world.IServerWorld;
-import net.minecraft.world.DifficultyInstance;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.DamageSource;
-import net.minecraft.network.IPacket;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.passive.WolfEntity;
-import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureAttribute;
-
-import net.mcreator.fallout_wastelands.procedures.GeckoEntityDiesProcedure;
-import net.mcreator.fallout_wastelands.procedures.ChromeraiderOnInitialEntitySpawnProcedure;
-import net.mcreator.fallout_wastelands.entity.renderer.GeckoRenderer;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
-
-import javax.annotation.Nullable;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import net.minecraft.block.material.Material;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class GeckoEntity extends FalloutWastelandsModElements.ModElement {
+
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(80).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.6f, 1.8f)).build("gecko").setRegistryName("gecko");
 
 	public GeckoEntity(FalloutWastelandsModElements instance) {
 		super(instance, 1455);
+
 		FMLJavaModLoadingContext.get().getModEventBus().register(new GeckoRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
+
 	}
 
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
+
 		elements.items.add(
 				() -> new SpawnEggItem(entity, -12762275, -12755083, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("gecko_spawn_egg"));
 	}
 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
+
 	}
 
 	private static class EntityAttributesRegisterHandler {
+
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
 			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
@@ -83,11 +42,14 @@ public class GeckoEntity extends FalloutWastelandsModElements.ModElement {
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 1);
 			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
+
 			event.put(entity, ammma.create());
 		}
+
 	}
 
 	public static class CustomEntity extends MonsterEntity {
+
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
@@ -96,6 +58,7 @@ public class GeckoEntity extends FalloutWastelandsModElements.ModElement {
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
+
 		}
 
 		@Override
@@ -106,11 +69,14 @@ public class GeckoEntity extends FalloutWastelandsModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
+
 			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.7, true) {
+
 				@Override
 				protected double getAttackReachSqr(LivingEntity entity) {
 					return (double) (4.0 + entity.getWidth() * entity.getWidth());
 				}
+
 			});
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 1));
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
@@ -144,6 +110,7 @@ public class GeckoEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(31, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(32, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(33, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, false, false));
+
 		}
 
 		@Override
@@ -191,5 +158,7 @@ public class GeckoEntity extends FalloutWastelandsModElements.ModElement {
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
+
 	}
+
 }

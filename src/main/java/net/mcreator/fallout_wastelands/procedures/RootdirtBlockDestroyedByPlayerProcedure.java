@@ -1,14 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.item.ItemEntity;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class RootdirtBlockDestroyedByPlayerProcedure {
 
@@ -33,10 +25,12 @@ public class RootdirtBlockDestroyedByPlayerProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure RootdirtBlockDestroyedByPlayer!");
 			return;
 		}
+
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
+
 		if (Math.random() < 0.5) {
 			if (world instanceof World && !world.isRemote()) {
 				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Items.STICK));
@@ -45,4 +39,5 @@ public class RootdirtBlockDestroyedByPlayerProcedure {
 			}
 		}
 	}
+
 }

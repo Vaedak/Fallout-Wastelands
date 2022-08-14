@@ -28,19 +28,19 @@ public static class Modelsuit extends EntityModel<Entity> {
 		legleft.setTextureOffset(0, 0).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.1F, true);
 
 		body = new ModelRenderer(this);
-		body.setRotationPoint(0.0F, -22.0F, 0.0F);
+		body.setRotationPoint(0.0F, -18.0F, 0.0F);
 		suit.addChild(body);
-		body.setTextureOffset(16, 0).addBox(-4.0F, -2.0F, -2.0F, 8.0F, 13.0F, 4.0F, 0.12F, false);
+		body.setTextureOffset(16, 0).addBox(-4.0F, -6.0F, -2.0F, 8.0F, 13.0F, 4.0F, 0.12F, false);
 
 		armright = new ModelRenderer(this);
-		armright.setRotationPoint(-5.0F, -22.0F, 0.0F);
+		armright.setRotationPoint(-4.0F, -22.0F, 0.0F);
 		suit.addChild(armright);
-		armright.setTextureOffset(40, 0).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.11F, false);
+		armright.setTextureOffset(40, 0).addBox(-4.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.11F, false);
 
 		armleft = new ModelRenderer(this);
-		armleft.setRotationPoint(5.0F, -22.0F, 0.0F);
+		armleft.setRotationPoint(4.0F, -22.0F, 0.0F);
 		suit.addChild(armleft);
-		armleft.setTextureOffset(40, 0).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.11F, true);
+		armleft.setTextureOffset(40, 0).addBox(0.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.11F, true);
 	}
 
 	@Override

@@ -29,24 +29,17 @@ import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.fallout_wastelands.procedures.RootdirtBlockDestroyedByPlayerProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
-import java.util.stream.Stream;
 import java.util.Random;
-import java.util.Map;
 import java.util.List;
-import java.util.HashMap;
 import java.util.Collections;
-import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class RootdirtBlock extends FalloutWastelandsModElements.ModElement {
@@ -67,8 +60,8 @@ public class RootdirtBlock extends FalloutWastelandsModElements.ModElement {
 
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.EARTH).sound(SoundType.GROUND).hardnessAndResistance(4f, 10f).setLightLevel(s -> 0).harvestLevel(0)
-					.harvestTool(ToolType.SHOVEL).setRequiresTool());
+			super(Block.Properties.create(Material.EARTH).sound(SoundType.SOUL_SAND).hardnessAndResistance(4f, 10f).setLightLevel(s -> 0)
+					.harvestLevel(0).harvestTool(ToolType.SHOVEL).setRequiresTool());
 			setRegistryName("rootdirt");
 		}
 
@@ -82,21 +75,7 @@ public class RootdirtBlock extends FalloutWastelandsModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(WastelanddirtBlock.block));
-		}
-
-		@Override
-		public boolean removedByPlayer(BlockState blockstate, World world, BlockPos pos, PlayerEntity entity, boolean willHarvest, FluidState fluid) {
-			boolean retval = super.removedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-
-			RootdirtBlockDestroyedByPlayerProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			return retval;
+			return Collections.singletonList(new ItemStack(this, 1));
 		}
 	}
 
@@ -111,8 +90,6 @@ public class RootdirtBlock extends FalloutWastelandsModElements.ModElement {
 		public boolean test(BlockState blockAt, Random random) {
 			boolean blockCriteria = false;
 			if (blockAt.getBlock() == WastelanddirtBlock.block)
-				blockCriteria = true;
-			if (blockAt.getBlock() == TheglowdirtBlock.block)
 				blockCriteria = true;
 			return blockCriteria;
 		}

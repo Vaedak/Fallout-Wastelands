@@ -17,6 +17,7 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.fallout_wastelands.item.RealTurretProjectileItem;
 import net.mcreator.fallout_wastelands.entity.MachinegunTurretEntity;
+import net.mcreator.fallout_wastelands.entity.EnclaveMachingunTurretEntity;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.Map;
@@ -72,8 +73,24 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
-		if (sourceentity instanceof MachinegunTurretEntity.CustomEntity == true) {
+		if ((sourceentity instanceof MachinegunTurretEntity.CustomEntity
+				|| sourceentity instanceof EnclaveMachingunTurretEntity.CustomEntity) == true) {
+			{
+				Entity _ent = sourceentity;
+				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+							"team join turret @s");
+				}
+			}
+			{
+				Entity _ent = sourceentity;
+				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+							"team add turret 101");
+				}
+			}
 			if (sourceentity.getPersistentData().getDouble("ShootingTimer") == 0) {
+<<<<<<< HEAD
 				{
 					Entity _shootFrom = sourceentity;
 					World projectileLevel = _shootFrom.world;
@@ -93,6 +110,12 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 						_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1, _shootFrom.getPosZ());
 						_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y, _shootFrom.getLookVec().z, 4, 0);
 						projectileLevel.addEntity(_entityToSpawn);
+=======
+				if (sourceentity instanceof LivingEntity) {
+					LivingEntity _ent = (LivingEntity) sourceentity;
+					if (!_ent.world.isRemote()) {
+						RealTurretProjectileItem.shoot(_ent.world, _ent, new Random(), 4, (float) 0.5, 0);
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 					}
 				}
 				{
@@ -115,7 +138,7 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 									.getValue(new ResourceLocation("fallout_wastelands:tenmmshot")),
 							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-				sourceentity.getPersistentData().putDouble("ShootingTimer", 10);
+				sourceentity.getPersistentData().putDouble("ShootingTimer", 7);
 			}
 			if (sourceentity.getPersistentData().getDouble("ShootingTimer") > 0) {
 				sourceentity.getPersistentData().putDouble("ShootingTimer", (sourceentity.getPersistentData().getDouble("ShootingTimer") - 1));

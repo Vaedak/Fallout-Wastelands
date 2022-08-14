@@ -1,11 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class RadioactiveairEntityWalksOnTheBlockProcedure {
 
@@ -15,7 +10,9 @@ public class RadioactiveairEntityWalksOnTheBlockProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure RadioactiveairEntityWalksOnTheBlock!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		{
 			double _setval = ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge + 1);
@@ -25,4 +22,5 @@ public class RadioactiveairEntityWalksOnTheBlockProcedure {
 			});
 		}
 	}
+
 }

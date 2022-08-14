@@ -99,10 +99,6 @@ public class WastelandDimension extends FalloutWastelandsModElements.ModElement 
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:capitalwastelandeast")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
-		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:wastelandforest")).getGenerationSettings()
-				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
-		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:wastelandforest")).getGenerationSettings()
-				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:wastlandsanddesert")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:wastlandsanddesert")).getGenerationSettings()
@@ -110,10 +106,6 @@ public class WastelandDimension extends FalloutWastelandsModElements.ModElement 
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:capitalwasteland")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:capitalwasteland")).getGenerationSettings()
-				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
-		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:theglow")).getGenerationSettings()
-				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
-		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:theglow")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
 		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("fallout_wastelands:desertwastland")).getGenerationSettings()
 				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
@@ -139,7 +131,7 @@ public class WastelandDimension extends FalloutWastelandsModElements.ModElement 
 		DimensionRenderInfo customEffect = new DimensionRenderInfo(128, true, DimensionRenderInfo.FogType.NORMAL, false, false) {
 			@Override
 			public Vector3d func_230494_a_(Vector3d color, float sunHeight) {
-				return new Vector3d(0.243137254902, 0.372549019608, 0.317647058824);
+				return new Vector3d(0.188235294118, 0.317647058824, 0.192156862745);
 			}
 
 			@Override

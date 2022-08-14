@@ -1,34 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
-
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Block;
-
-import net.mcreator.fallout_wastelands.block.WastelandglassblockBlock;
-import net.mcreator.fallout_wastelands.block.RottenwooddoorBlock;
-import net.mcreator.fallout_wastelands.block.RottenwoodbarricadeslabBlock;
-import net.mcreator.fallout_wastelands.block.RottenplanksstairsBlock;
-import net.mcreator.fallout_wastelands.block.RottenplanksslabBlock;
-import net.mcreator.fallout_wastelands.block.RottenplanksBlock;
-import net.mcreator.fallout_wastelands.block.RottenplankfenceBlock;
-import net.mcreator.fallout_wastelands.block.RoottenwoodbarricadeBlock;
-import net.mcreator.fallout_wastelands.block.PlasterwallBlock;
-import net.mcreator.fallout_wastelands.block.PlasterBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class DeathclawOnEntityTickUpdateProcedure {
 
@@ -58,11 +30,13 @@ public class DeathclawOnEntityTickUpdateProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure DeathclawOnEntityTickUpdate!");
 			return;
 		}
+
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1) <= 90) {
 			if (Math.random() < 0.5) {
 				if ((world.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == RoottenwoodbarricadeBlock.block
@@ -91,6 +65,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y - 1), z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -127,6 +102,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y - 1), z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -150,9 +126,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x, y - 1, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -183,6 +162,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y - 2), z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -219,6 +199,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y - 2), z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -242,9 +223,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x, y - 2, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -275,6 +259,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (x - 1), y, z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -311,6 +296,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (x - 1), y, z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -334,9 +320,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x - 1, y, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -367,6 +356,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (x - 2), y, z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -403,6 +393,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (x - 2), y, z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -426,9 +417,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x - 2, y, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -459,6 +453,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, y, (z - 1), (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -495,6 +490,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, y, (z - 1), (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -518,9 +514,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x, y, z - 1), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -551,6 +550,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, y, (z - 2), (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -587,6 +587,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, y, (z - 2), (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -610,9 +611,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x, y, z - 2), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -643,6 +647,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y + 1), z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -679,6 +684,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y + 1), z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -702,9 +708,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x, y + 1, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -735,6 +744,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y + 2), z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -771,6 +781,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y + 2), z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -794,9 +805,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x, y + 2, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -827,6 +841,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (x + 1), y, z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -863,6 +878,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (x + 1), y, z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -886,9 +902,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x + 1, y, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -919,6 +938,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (x + 2), y, z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -955,6 +975,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (x + 2), y, z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -978,9 +999,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x + 2, y, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -1011,6 +1035,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y + 1), z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -1047,6 +1072,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y + 1), z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -1070,9 +1096,12 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x, y + 1, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
@@ -1103,6 +1132,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y + 2), z, (int) 30, 2, 2, 2, 0.5);
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
@@ -1139,6 +1169,7 @@ public class DeathclawOnEntityTickUpdateProcedure {
 								((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, x, (y + 2), z, (int) 30, 2, 2, 2, 0.5);
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
@@ -1162,12 +1193,16 @@ public class DeathclawOnEntityTickUpdateProcedure {
 									world.destroyBlock(new BlockPos(x, y + 2, z), false);
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 100);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 100);
 				}
 			}
 		}
 	}
+
 }

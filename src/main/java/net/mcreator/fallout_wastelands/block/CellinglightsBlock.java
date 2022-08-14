@@ -1,63 +1,18 @@
 
 package net.mcreator.fallout_wastelands.block;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.Explosion;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Rotation;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Direction;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.loot.LootContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.item.BlockItem;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.Minecraft;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.HorizontalBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
-
-import net.mcreator.fallout_wastelands.procedures.CellinglightsUpdateTickProcedure;
-import net.mcreator.fallout_wastelands.procedures.CellinglightsPlayerStartsToDestroyProcedure;
-import net.mcreator.fallout_wastelands.procedures.CellinglightsClientDisplayRandomTickProcedure;
-import net.mcreator.fallout_wastelands.particle.MotesParticle;
-import net.mcreator.fallout_wastelands.itemgroup.BlocsWItemGroup;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
-
-import java.util.stream.Stream;
-import java.util.Random;
-import java.util.Map;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Collections;
-import java.util.AbstractMap;
+import net.minecraft.util.SoundEvent;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class CellinglightsBlock extends FalloutWastelandsModElements.ModElement {
+
 	@ObjectHolder("fallout_wastelands:cellinglights")
 	public static final Block block = null;
 
 	public CellinglightsBlock(FalloutWastelandsModElements instance) {
 		super(instance, 619);
+
 	}
 
 	@Override
@@ -73,12 +28,15 @@ public class CellinglightsBlock extends FalloutWastelandsModElements.ModElement 
 	}
 
 	public static class CustomBlock extends Block {
+
 		public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 5f).setLightLevel(s -> 15).notSolid()
 					.setNeedsPostProcessing((bs, br, bp) -> true).setEmmisiveRendering((bs, br, bp) -> true).setOpaque((bs, br, bp) -> false));
+
 			this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
+
 			setRegistryName("cellinglights");
 		}
 
@@ -141,6 +99,7 @@ public class CellinglightsBlock extends FalloutWastelandsModElements.ModElement 
 
 		@Override
 		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
@@ -167,6 +126,7 @@ public class CellinglightsBlock extends FalloutWastelandsModElements.ModElement 
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+
 			world.getPendingBlockTicks().scheduleTick(pos, this, 10);
 		}
 
@@ -235,5 +195,7 @@ public class CellinglightsBlock extends FalloutWastelandsModElements.ModElement 
 							new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
+
 	}
+
 }

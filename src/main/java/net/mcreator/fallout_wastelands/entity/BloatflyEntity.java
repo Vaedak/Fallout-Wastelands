@@ -10,15 +10,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 
 import net.minecraft.world.World;
-import net.minecraft.world.IServerWorld;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.pathfinding.FlyingPathNavigator;
 import net.minecraft.network.IPacket;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
@@ -41,31 +38,21 @@ import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.controller.FlyingMovementController;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.IRangedAttackMob;
-import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.fallout_wastelands.procedures.ChromeraiderOnInitialEntitySpawnProcedure;
 import net.mcreator.fallout_wastelands.item.BugmeatItem;
 import net.mcreator.fallout_wastelands.item.BloatflyshotItem;
 import net.mcreator.fallout_wastelands.entity.renderer.BloatflyRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
-import javax.annotation.Nullable;
-
-import java.util.stream.Stream;
 import java.util.Random;
-import java.util.Map;
-import java.util.HashMap;
 import java.util.EnumSet;
-import java.util.AbstractMap;
 
 @FalloutWastelandsModElements.ModElement.Tag
 public class BloatflyEntity extends FalloutWastelandsModElements.ModElement {
@@ -201,10 +188,7 @@ public class BloatflyEntity extends FalloutWastelandsModElements.ModElement {
 			this.targetSelector.addGoal(21, new NearestAttackableTargetGoal(this, ClosecombatsupermutantEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(22, new NearestAttackableTargetGoal(this, BasesupermutantEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(23, new NearestAttackableTargetGoal(this, RangedsupermutantEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(24, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(25, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(26, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, false));
-			this.goalSelector.addGoal(28, new ReturnToVillageGoal(this, 0.6, false));
+			this.goalSelector.addGoal(25, new ReturnToVillageGoal(this, 0.6, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {
@@ -241,22 +225,6 @@ public class BloatflyEntity extends FalloutWastelandsModElements.ModElement {
 		@Override
 		public boolean onLivingFall(float l, float d) {
 			return false;
-		}
-
-		@Override
-		public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason,
-				@Nullable ILivingEntityData livingdata, @Nullable CompoundNBT tag) {
-			ILivingEntityData retval = super.onInitialSpawn(world, difficulty, reason, livingdata, tag);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-
-			ChromeraiderOnInitialEntitySpawnProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			return retval;
 		}
 
 		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {

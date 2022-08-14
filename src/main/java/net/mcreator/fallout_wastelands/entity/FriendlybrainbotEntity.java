@@ -182,9 +182,6 @@ public class FriendlybrainbotEntity extends FalloutWastelandsModElements.ModElem
 			this.targetSelector.addGoal(45, new NearestAttackableTargetGoal(this, ZombieVillagerEntity.class, true, false));
 			this.targetSelector.addGoal(46, new NearestAttackableTargetGoal(this, ENCLAVEofficierEntity.CustomEntity.class, true, false));
 			this.targetSelector.addGoal(47, new NearestAttackableTargetGoal(this, EnclavepowerarmorsoldierEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(48, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(49, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, false));
-			this.targetSelector.addGoal(50, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {

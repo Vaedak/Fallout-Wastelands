@@ -38,12 +38,12 @@ public class TaloncombatarmorItem extends FalloutWastelandsModElements.ModElemen
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 20;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 25;
 			}
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{2, 4, 5, 2}[slot.getIndex()];
+				return new int[]{3, 5, 5, 4}[slot.getIndex()];
 			}
 
 			@Override
@@ -53,12 +53,12 @@ public class TaloncombatarmorItem extends FalloutWastelandsModElements.ModElemen
 
 			@Override
 			public net.minecraft.util.SoundEvent getSoundEvent() {
-				return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_iron"));
+				return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal.hit"));
 			}
 
 			@Override
 			public Ingredient getRepairMaterial() {
-				return Ingredient.EMPTY;
+				return Ingredient.fromStacks(new ItemStack(SheetmetalplatingItem.block));
 			}
 
 			@OnlyIn(Dist.CLIENT)
@@ -69,12 +69,12 @@ public class TaloncombatarmorItem extends FalloutWastelandsModElements.ModElemen
 
 			@Override
 			public float getToughness() {
-				return 0.5f;
+				return 1f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0f;
+				return 0.1f;
 			}
 		};
 		elements.items

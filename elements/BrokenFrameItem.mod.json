@@ -1,11 +1,11 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "brokenframeitem",
     "customModelName": "Normal",
-    "name": "Broken Power Armor Frame",
+    "name": "Damaged Power Armor Frame",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:Wastelandersitems"
@@ -29,7 +29,6 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "hasDispenseBehavior": false,
     "isFood": false,
     "nutritionalValue": 4,
     "saturation": 0.3,

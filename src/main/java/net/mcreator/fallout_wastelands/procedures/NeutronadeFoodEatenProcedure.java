@@ -1,13 +1,6 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraftforge.eventbus.api.Event;
 
 public class NeutronadeFoodEatenProcedure {
 
@@ -17,8 +10,11 @@ public class NeutronadeFoodEatenProcedure {
 				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure NeutronadeFoodEaten!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HASTE, (int) 6000, (int) 0, (false), (false)));
 	}
+
 }
