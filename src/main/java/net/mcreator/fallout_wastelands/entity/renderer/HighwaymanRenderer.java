@@ -37,7 +37,7 @@ public class HighwaymanRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/highwaytwo.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/highwaytwo.png");
 					}
 				};
 			});
@@ -53,7 +53,7 @@ public class HighwaymanRenderer {
 		public void render(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn, T entitylivingbaseIn, float limbSwing,
 				float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 			IVertexBuilder ivertexbuilder = bufferIn
-					.getBuffer(RenderType.getEyes(new ResourceLocation("fallout_wastelands:textures/highwaylights.png")));
+					.getBuffer(RenderType.getEyes(new ResourceLocation("fallout_wastelands:textures/entities/highwaylights.png")));
 			this.getEntityModel().render(matrixStackIn, ivertexbuilder, 15728640, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
 		}
 	}

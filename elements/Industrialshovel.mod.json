@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "tool",
   "definition": {
     "renderType": 0,
@@ -12,7 +12,7 @@
     },
     "toolType": "Spade",
     "harvestLevel": 1,
-    "efficiency": 4.5,
+    "efficiency": 10.0,
     "attackSpeed": 1.5,
     "enchantability": 2,
     "damageVsEntity": 1.0,

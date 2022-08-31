@@ -84,31 +84,27 @@ public class FillingcabinetBlock extends FalloutWastelandsModElements.ModElement
 			switch ((Direction) state.get(FACING)) {
 				case SOUTH :
 				default :
-					return VoxelShapes.or(makeCuboidShape(16, 16, 16, 0, 32, 0), makeCuboidShape(32, 0, 16, 0, 16, 0),
-							makeCuboidShape(32, 16, 16, 0, 32, 0), makeCuboidShape(16, 0, 16, 0, 16, 0)
-
-					)
+					return VoxelShapes
+							.or(makeCuboidShape(16, 16, 16, 0, 32, 0), makeCuboidShape(32, 0, 16, 0, 16, 0), makeCuboidShape(32, 16, 16, 0, 32, 0),
+									makeCuboidShape(16, 0, 16, 0, 16, 0))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case NORTH :
-					return VoxelShapes.or(makeCuboidShape(0, 16, 0, 16, 32, 16), makeCuboidShape(-16, 0, 0, 16, 16, 16),
-							makeCuboidShape(-16, 16, 0, 16, 32, 16), makeCuboidShape(0, 0, 0, 16, 16, 16)
-
-					)
+					return VoxelShapes
+							.or(makeCuboidShape(0, 16, 0, 16, 32, 16), makeCuboidShape(-16, 0, 0, 16, 16, 16),
+									makeCuboidShape(-16, 16, 0, 16, 32, 16), makeCuboidShape(0, 0, 0, 16, 16, 16))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case EAST :
-					return VoxelShapes.or(makeCuboidShape(16, 16, 0, 0, 32, 16), makeCuboidShape(16, 0, -16, 0, 16, 16),
-							makeCuboidShape(16, 16, -16, 0, 32, 16), makeCuboidShape(16, 0, 0, 0, 16, 16)
-
-					)
+					return VoxelShapes
+							.or(makeCuboidShape(16, 16, 0, 0, 32, 16), makeCuboidShape(16, 0, -16, 0, 16, 16),
+									makeCuboidShape(16, 16, -16, 0, 32, 16), makeCuboidShape(16, 0, 0, 0, 16, 16))
 
 							.withOffset(offset.x, offset.y, offset.z);
 				case WEST :
-					return VoxelShapes.or(makeCuboidShape(0, 16, 16, 16, 32, 0), makeCuboidShape(0, 0, 32, 16, 16, 0),
-							makeCuboidShape(0, 16, 32, 16, 32, 0), makeCuboidShape(0, 0, 16, 16, 16, 0)
-
-					)
+					return VoxelShapes
+							.or(makeCuboidShape(0, 16, 16, 16, 32, 0), makeCuboidShape(0, 0, 32, 16, 16, 0), makeCuboidShape(0, 16, 32, 16, 32, 0),
+									makeCuboidShape(0, 0, 16, 16, 16, 0))
 
 							.withOffset(offset.x, offset.y, offset.z);
 			}
@@ -119,18 +115,17 @@ public class FillingcabinetBlock extends FalloutWastelandsModElements.ModElement
 			builder.add(FACING);
 		}
 
+		@Override
+		public BlockState getStateForPlacement(BlockItemUseContext context) {
+			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
+		}
+
 		public BlockState rotate(BlockState state, Rotation rot) {
 			return state.with(FACING, rot.rotate(state.get(FACING)));
 		}
 
 		public BlockState mirror(BlockState state, Mirror mirrorIn) {
 			return state.rotate(mirrorIn.toRotation(state.get(FACING)));
-		}
-
-		@Override
-		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			;
-			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 
 		@Override

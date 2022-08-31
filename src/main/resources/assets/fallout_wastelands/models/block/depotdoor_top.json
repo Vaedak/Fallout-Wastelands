@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/depotdoordown",
+    "top": "fallout_wastelands:blocks/depotdooroup"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/button",
+  "textures": {
+    "texture": "fallout_wastelands:blocks/oldmetalblock"
+  }
+}

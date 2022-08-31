@@ -30,7 +30,7 @@ public class MirelurkRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/mirelurk.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/mirelurk.png");
 					}
 				};
 			});

@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "chemical_scrap_pile_texture"
+      },
+      "name": "default"
+    }
+  }
+}

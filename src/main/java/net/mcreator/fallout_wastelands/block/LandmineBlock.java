@@ -83,9 +83,7 @@ public class LandmineBlock extends FalloutWastelandsModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(3.2, 0, 3.2, 12.8, 3.2, 12.8)
-
-			)
+			return VoxelShapes.or(makeCuboidShape(3.2, 0, 3.2, 12.8, 3.2, 12.8))
 
 					.withOffset(offset.x, offset.y, offset.z);
 		}

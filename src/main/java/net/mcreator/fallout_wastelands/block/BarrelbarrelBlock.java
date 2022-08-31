@@ -83,22 +83,20 @@ public class BarrelbarrelBlock extends FalloutWastelandsModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(1.6, 0, 1.6, 14.4, 16, 14.4)
-
-			)
+			return VoxelShapes.or(makeCuboidShape(1.6, 0, 1.6, 14.4, 16, 14.4))
 
 					.withOffset(offset.x, offset.y, offset.z);
+		}
+
+		@Override
+		protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+			builder.add(WATERLOGGED);
 		}
 
 		@Override
 		public BlockState getStateForPlacement(BlockItemUseContext context) {
 			boolean flag = context.getWorld().getFluidState(context.getPos()).getFluid() == Fluids.WATER;
 			return this.getDefaultState().with(WATERLOGGED, flag);
-		}
-
-		@Override
-		protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-			builder.add(WATERLOGGED);
 		}
 
 		@Override

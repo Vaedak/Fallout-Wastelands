@@ -88,6 +88,7 @@ public class MirelurkEntity extends FalloutWastelandsModElements.ModElement {
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 20);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 30);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 8);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			event.put(entity, ammma.create());
 		}
 	}

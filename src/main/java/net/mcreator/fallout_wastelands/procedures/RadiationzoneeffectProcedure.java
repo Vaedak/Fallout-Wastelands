@@ -132,12 +132,12 @@ public class RadiationzoneeffectProcedure {
 								.playSound(null, new BlockPos(x, y, z),
 										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 												.getValue(new ResourceLocation("fallout_wastelands:radiation")),
-										SoundCategory.PLAYERS, (float) 1, (float) 1);
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
 						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("fallout_wastelands:radiation")),
-								SoundCategory.PLAYERS, (float) 1, (float) 1, false);
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			} else {
@@ -161,12 +161,12 @@ public class RadiationzoneeffectProcedure {
 								.playSound(null, new BlockPos(x, y, z),
 										(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 												.getValue(new ResourceLocation("fallout_wastelands:radiation")),
-										SoundCategory.PLAYERS, (float) 1, (float) 1);
+										SoundCategory.NEUTRAL, (float) 1, (float) 1);
 					} else {
 						((World) world).playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 										.getValue(new ResourceLocation("fallout_wastelands:radiation")),
-								SoundCategory.PLAYERS, (float) 1, (float) 1, false);
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 					}
 				}
 			}

@@ -71,9 +71,7 @@ public class OldpapersBlock extends FalloutWastelandsModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 2, 16)
-
-			)
+			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 2, 16))
 
 					.withOffset(offset.x, offset.y, offset.z);
 		}

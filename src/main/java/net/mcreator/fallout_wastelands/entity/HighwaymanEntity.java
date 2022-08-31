@@ -106,6 +106,7 @@ public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 200);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 20);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 1);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			ammma = ammma.createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 50);
 			event.put(entity, ammma.create());
 		}

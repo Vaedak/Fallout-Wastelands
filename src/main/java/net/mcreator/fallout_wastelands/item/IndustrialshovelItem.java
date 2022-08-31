@@ -29,7 +29,7 @@ public class IndustrialshovelItem extends FalloutWastelandsModElements.ModElemen
 			}
 
 			public float getEfficiency() {
-				return 4.5f;
+				return 10f;
 			}
 
 			public float getAttackDamage() {

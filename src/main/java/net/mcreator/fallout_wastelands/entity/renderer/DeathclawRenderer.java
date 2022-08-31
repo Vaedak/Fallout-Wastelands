@@ -38,7 +38,7 @@ public class DeathclawRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/deathclaw.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/deathclaw.png");
 					}
 				};
 			});
@@ -54,7 +54,7 @@ public class DeathclawRenderer {
 		public void render(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn, T entitylivingbaseIn, float limbSwing,
 				float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 			IVertexBuilder ivertexbuilder = bufferIn
-					.getBuffer(RenderType.getEyes(new ResourceLocation("fallout_wastelands:textures/deathclawg.png")));
+					.getBuffer(RenderType.getEyes(new ResourceLocation("fallout_wastelands:textures/entities/deathclawg.png")));
 			this.getEntityModel().render(matrixStackIn, ivertexbuilder, 15728640, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
 		}
 	}

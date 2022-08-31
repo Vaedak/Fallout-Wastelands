@@ -1,41 +1,25 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "01",
+    "23"
   ],
   "key": {
     "0": {
-      "item": "minecraft:string"
+      "item": "fallout_wastelands:cloth"
     },
     "1": {
-      "item": "minecraft:white_dye"
+      "item": "fallout_wastelands:cloth"
     },
     "2": {
-      "item": "minecraft:string"
+      "item": "fallout_wastelands:cloth"
     },
     "3": {
-      "item": "minecraft:white_dye"
-    },
-    "4": {
-      "item": "minecraft:string"
-    },
-    "5": {
-      "item": "minecraft:white_dye"
-    },
-    "6": {
-      "item": "minecraft:string"
-    },
-    "7": {
-      "item": "minecraft:white_dye"
-    },
-    "8": {
-      "item": "minecraft:string"
+      "item": "fallout_wastelands:cloth"
     }
   },
   "result": {
     "item": "fallout_wastelands:whitefabricblocks",
-    "count": 16
+    "count": 8
   }
 }

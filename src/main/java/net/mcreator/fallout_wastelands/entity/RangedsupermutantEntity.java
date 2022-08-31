@@ -95,6 +95,7 @@ public class RangedsupermutantEntity extends FalloutWastelandsModElements.ModEle
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 65);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 1);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 4);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			event.put(entity, ammma.create());
 		}
 	}

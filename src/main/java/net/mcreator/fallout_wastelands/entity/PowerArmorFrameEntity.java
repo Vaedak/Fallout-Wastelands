@@ -104,6 +104,7 @@ public class PowerArmorFrameEntity extends FalloutWastelandsModElements.ModEleme
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 1024);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 3);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			event.put(entity, ammma.create());
 		}
 	}

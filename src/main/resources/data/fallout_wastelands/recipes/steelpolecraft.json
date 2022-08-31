@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:sheetmetalplating"
+    },
+    "1": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "2": {
+      "item": "fallout_wastelands:sheetmetalplating"
+    },
+    "3": {
+      "item": "fallout_wastelands:sheetmetalplating"
+    },
+    "4": {
+      "item": "fallout_wastelands:steelblock"
+    },
+    "5": {
+      "item": "fallout_wastelands:sheetmetalplating"
+    },
+    "6": {
+      "item": "fallout_wastelands:sheetmetalplating"
+    },
+    "7": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "8": {
+      "item": "fallout_wastelands:sheetmetalplating"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:steelpole",
+    "count": 32
+  }
+}

@@ -80,6 +80,12 @@ public class ScaffoldingcrossedBlock extends FalloutWastelandsModElements.ModEle
 		}
 
 		@Override
+		public BlockState getStateForPlacement(BlockItemUseContext context) {
+			boolean flag = context.getWorld().getFluidState(context.getPos()).getFluid() == Fluids.WATER;
+			return this.getDefaultState().with(AXIS, context.getFace().getAxis()).with(WATERLOGGED, flag);
+		}
+
+		@Override
 		public BlockState rotate(BlockState state, Rotation rot) {
 			if (rot == Rotation.CLOCKWISE_90 || rot == Rotation.COUNTERCLOCKWISE_90) {
 				if ((Direction.Axis) state.get(AXIS) == Direction.Axis.X) {
@@ -89,13 +95,6 @@ public class ScaffoldingcrossedBlock extends FalloutWastelandsModElements.ModEle
 				}
 			}
 			return state;
-		}
-
-		@Override
-		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			Direction.Axis axis = context.getFace().getAxis();
-			boolean flag = context.getWorld().getFluidState(context.getPos()).getFluid() == Fluids.WATER;;
-			return this.getDefaultState().with(AXIS, axis).with(WATERLOGGED, flag);
 		}
 
 		@Override

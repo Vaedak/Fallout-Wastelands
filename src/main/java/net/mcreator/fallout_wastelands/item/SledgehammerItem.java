@@ -29,7 +29,7 @@ public class SledgehammerItem extends FalloutWastelandsModElements.ModElement {
 			}
 
 			public float getEfficiency() {
-				return 4.5f;
+				return 10f;
 			}
 
 			public float getAttackDamage() {
@@ -37,7 +37,7 @@ public class SledgehammerItem extends FalloutWastelandsModElements.ModElement {
 			}
 
 			public int getHarvestLevel() {
-				return 1;
+				return 2;
 			}
 
 			public int getEnchantability() {
@@ -47,7 +47,7 @@ public class SledgehammerItem extends FalloutWastelandsModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.fromStacks(new ItemStack(SteelingotItem.block));
 			}
-		}, 1, -3.8f, new Item.Properties().group(WastelandersitemsItemGroup.tab)) {
+		}, 1, -3.3f, new Item.Properties().group(WastelandersitemsItemGroup.tab)) {
 		}.setRegistryName("sledgehammer"));
 	}
 }

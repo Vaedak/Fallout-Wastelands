@@ -35,7 +35,7 @@ public class LaserriffleRenderer {
 
 	@OnlyIn(Dist.CLIENT)
 	public static class CustomRender extends EntityRenderer<LaserriffleItem.ArrowCustomEntity> {
-		private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/laser.png");
+		private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/entities/laser.png");
 
 		public CustomRender(EntityRendererManager renderManager) {
 			super(renderManager);

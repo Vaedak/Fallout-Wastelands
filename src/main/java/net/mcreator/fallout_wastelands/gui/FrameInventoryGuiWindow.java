@@ -39,7 +39,7 @@ public class FrameInventoryGuiWindow extends ContainerScreen<FrameInventoryGui.G
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/frame_inventory.png");
+	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/screens/frame_inventory.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

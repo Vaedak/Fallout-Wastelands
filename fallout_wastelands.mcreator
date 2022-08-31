@@ -3578,14 +3578,6 @@
       "registry_name": "fueljerrican"
     },
     {
-      "name": "Fueljerricanfuel",
-      "type": "fuel",
-      "sortid": 383,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "fueljerricanfuel"
-    },
-    {
       "name": "Moltensteelsmelting",
       "type": "recipe",
       "sortid": 384,
@@ -24056,6 +24048,518 @@
           }
         ]
       }
+    },
+    {
+      "name": "Fueljerricanfuel",
+      "type": "itemextension",
+      "sortid": 1647,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fueljerricanfuel"
+    },
+    {
+      "name": "Depotdoor",
+      "type": "block",
+      "sortid": 1648,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "depotdoor"
+    },
+    {
+      "name": "Stonebrickstairs",
+      "type": "block",
+      "sortid": 1649,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stonebrickstairs"
+    },
+    {
+      "name": "Wastelandstonebrickslab",
+      "type": "block",
+      "sortid": 1650,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandstonebrickslab"
+    },
+    {
+      "name": "Wastelandstonebrickwall",
+      "type": "block",
+      "sortid": 1651,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandstonebrickwall"
+    },
+    {
+      "name": "Wastelandstonebrickstairscraft",
+      "type": "recipe",
+      "sortid": 1652,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandstonebrickstairscraft"
+    },
+    {
+      "name": "Wastelandstonebrickslabcraft",
+      "type": "recipe",
+      "sortid": 1653,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandstonebrickslabcraft"
+    },
+    {
+      "name": "Wastelandstonebrickwallcraft",
+      "type": "recipe",
+      "sortid": 1654,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandstonebrickwallcraft"
+    },
+    {
+      "name": "Chemicalscrappile",
+      "type": "block",
+      "sortid": 1655,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemicalscrappile"
+    },
+    {
+      "name": "SalvagedConcrete",
+      "type": "item",
+      "sortid": 1656,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "salvaged_concrete"
+    },
+    {
+      "name": "Fertilizer",
+      "type": "item",
+      "sortid": 1657,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fertilizer"
+    },
+    {
+      "name": "Acid",
+      "type": "item",
+      "sortid": 1658,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acid"
+    },
+    {
+      "name": "Scrapmetal",
+      "type": "item",
+      "sortid": 1659,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scrapmetal"
+    },
+    {
+      "name": "Asbestos",
+      "type": "item",
+      "sortid": 1660,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "asbestos"
+    },
+    {
+      "name": "Cloth",
+      "type": "item",
+      "sortid": 1661,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cloth"
+    },
+    {
+      "name": "Copperwire",
+      "type": "item",
+      "sortid": 1662,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "copperwire"
+    },
+    {
+      "name": "Fertilizerextension",
+      "type": "itemextension",
+      "sortid": 1663,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fertilizerextension"
+    },
+    {
+      "name": "ChemicalscrappileBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 1664,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemicalscrappile_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChemicalscrappilePlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 1665,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemicalscrappile_player_starts_to_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Wastelandwornmetalpillar",
+      "type": "block",
+      "sortid": 1666,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalpillar"
+    },
+    {
+      "name": "Mechanicalscrappile",
+      "type": "block",
+      "sortid": 1667,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mechanicalscrappile"
+    },
+    {
+      "name": "Mechanicalscrappilebeingbrocken",
+      "type": "procedure",
+      "sortid": 1668,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mechanicalscrappilebeingbrocken",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tato",
+      "type": "item",
+      "sortid": 1669,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tato"
+    },
+    {
+      "name": "Mutlemon",
+      "type": "item",
+      "sortid": 1670,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutlemon"
+    },
+    {
+      "name": "Mutcorn",
+      "type": "item",
+      "sortid": 1671,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutcorn"
+    },
+    {
+      "name": "Wastelandwornmetalstairs",
+      "type": "block",
+      "sortid": 1672,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalstairs"
+    },
+    {
+      "name": "Wastelandwornmetalslab",
+      "type": "block",
+      "sortid": 1673,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalslab"
+    },
+    {
+      "name": "Wastelandwornmetalbarrier",
+      "type": "block",
+      "sortid": 1674,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalbarrier"
+    },
+    {
+      "name": "Wastelandwornmetalwall",
+      "type": "block",
+      "sortid": 1675,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalwall"
+    },
+    {
+      "name": "Wornmetalpillarcraft",
+      "type": "recipe",
+      "sortid": 1676,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wornmetalpillarcraft"
+    },
+    {
+      "name": "Wornmetalstairscraft",
+      "type": "recipe",
+      "sortid": 1677,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wornmetalstairscraft"
+    },
+    {
+      "name": "Wastelandwornmetalslabcraft",
+      "type": "recipe",
+      "sortid": 1678,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalslabcraft"
+    },
+    {
+      "name": "Wastelandwornmetalfencecraft",
+      "type": "recipe",
+      "sortid": 1679,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalfencecraft"
+    },
+    {
+      "name": "Wastelandwornmetalwallcraft",
+      "type": "recipe",
+      "sortid": 1680,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalwallcraft"
+    },
+    {
+      "name": "Wastelandwornmetalbutton",
+      "type": "block",
+      "sortid": 1681,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalbutton"
+    },
+    {
+      "name": "Wornmetalbuttoncraft",
+      "type": "recipe",
+      "sortid": 1682,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wornmetalbuttoncraft"
+    },
+    {
+      "name": "Whiteplanks",
+      "type": "block",
+      "sortid": 1683,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whiteplanks"
+    },
+    {
+      "name": "Whiteplanksstairs",
+      "type": "block",
+      "sortid": 1684,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whiteplanksstairs"
+    },
+    {
+      "name": "Whiteplanksslab",
+      "type": "block",
+      "sortid": 1685,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whiteplanksslab"
+    },
+    {
+      "name": "Whiteplankswall",
+      "type": "block",
+      "sortid": 1686,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "whiteplankswall"
+    },
+    {
+      "name": "Wastelandwhiteplankscraft",
+      "type": "recipe",
+      "sortid": 1687,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwhiteplankscraft"
+    },
+    {
+      "name": "Wastelandwhitestairscraft",
+      "type": "recipe",
+      "sortid": 1688,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwhitestairscraft"
+    },
+    {
+      "name": "Wastelandwhiteslabcraft",
+      "type": "recipe",
+      "sortid": 1689,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwhiteslabcraft"
+    },
+    {
+      "name": "Wastelandwhitewallcraft",
+      "type": "recipe",
+      "sortid": 1690,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwhitewallcraft"
+    },
+    {
+      "name": "Wastelandwornmetalplating",
+      "type": "block",
+      "sortid": 1691,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandwornmetalplating"
+    },
+    {
+      "name": "Wornmetalplatingcraft",
+      "type": "recipe",
+      "sortid": 1692,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wornmetalplatingcraft"
+    },
+    {
+      "name": "Copperwiredecraft",
+      "type": "recipe",
+      "sortid": 1693,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "copperwiredecraft"
+    },
+    {
+      "name": "Scrapmetaldecraft",
+      "type": "recipe",
+      "sortid": 1694,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scrapmetaldecraft"
+    },
+    {
+      "name": "Steelpole",
+      "type": "block",
+      "sortid": 1695,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "steelpole"
+    },
+    {
+      "name": "Wastelandbrickwallcraft",
+      "type": "block",
+      "sortid": 1696,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandbrickwallcraft"
+    },
+    {
+      "name": "Wastelandbrickwallcrafting",
+      "type": "recipe",
+      "sortid": 1697,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wastelandbrickwallcrafting"
+    },
+    {
+      "name": "Steelpolecraft",
+      "type": "recipe",
+      "sortid": 1698,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "steelpolecraft"
+    },
+    {
+      "name": "NukeRedstoneOn",
+      "type": "procedure",
+      "sortid": 1699,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuke_redstone_on",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Nuke",
+      "type": "block",
+      "sortid": 1699,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuke"
     }
   ],
   "variable_elements": [
@@ -24599,12 +25103,14 @@
       "item.fallout_wastelands.t_45powerarmor_leggings": "T-45 Power Armor Leggings",
       "item.fallout_wastelands.vaulttecplating": "Vault Tec Plating",
       "item.fallout_wastelands.mobmachinegun": "Mobmachinegun",
+      "block.fallout_wastelands.whiteplanksslab": "White Rotten Plank Slab",
       "effect.radioprotection": "Radiation protection",
       "entity.fallout_wastelands.malewastelander_2": "Wastelander",
       "entity.fallout_wastelands.malewastelander_1": "Wastelander",
       "item.wastlanders.basesupermutant": "Super Mutant Grunt Spawn Egg",
       "block.fallout_wastelands.greyindustrialblock": "Grey Industrial Block",
       "block.fallout_wastelands.vaultanimation_101hehe": "Vault Door",
+      "block.fallout_wastelands.depotdoor": "Depot Door",
       "block.fallout_wastelands.terminal": "Terminal",
       "block.fallout_wastelands.rottenwoodentrap": "Rotten Plank Trapdoor",
       "biome.wastlanders.wastlandsanddesert": "Wastlandsanddesert",
@@ -24620,11 +25126,13 @@
       "item.wastlanders.leadnugget": "Lead Nugget",
       "block.fallout_wastelands.bricktile": "Brick Tile",
       "block.fallout_wastelands.roadbitumen": "Road Bitumen",
-      "entity.fallout_wastelands.ghoul": "Ghoul",
       "item.fallout_wastelands.trueneutronade": "Neutronade",
+      "entity.fallout_wastelands.ghoul": "Ghoul",
       "advancements.thewastelands.title": "The Wasteland",
       "item.wastlanders.femalevaultjumpsuit_helmet": "Femalevaultjumpsuit Helmet",
       "block.fallout_wastelands.rustedwallrusted": "Rusted Ruin Block (more rust)",
+      "block.fallout_wastelands.chemicalscrappile": "Chemical Scrap Pile",
+      "item.fallout_wastelands.salvaged_concrete": "Salvaged Concrete",
       "item.wastlanders.vaultjumpsuit_boots": "Vault Jumpsuit Boots (male)",
       "block.fallout_wastelands.downruinblock": "Rusted Ruin Block (wall base)",
       "block.fallout_wastelands.wastelandtile": "Wasteland Tile",
@@ -24636,10 +25144,10 @@
       "block.wastlanders.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
       "item.fallout_wastelands.radx": "Rad-X",
-      "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_2": "Xander 2",
-      "item.wastlanders.mobmachinegun": "Mobmachinegun",
+      "item.wastlanders.coffee": "Coffee",
       "block.fallout_wastelands.xander_3": "Xander 3",
+      "item.wastlanders.mobmachinegun": "Mobmachinegun",
       "block.fallout_wastelands.xander_1": "Xander 1",
       "item.fallout_wastelands.nailedwrench": "Nailed Wrench",
       "block.fallout_wastelands.xander_4": "Xander 4",
@@ -24647,13 +25155,13 @@
       "item.wastlanders.rotativepart": "Rotary Piece",
       "block.fallout_wastelands.wastlandstone": "Wasteland Stone",
       "item.fallout_wastelands.highwayman_spawn_egg": "Highwayman Spawn Egg",
-      "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
       "item.fallout_wastelands.friedeggchicagospecial": "Fried Egg Chicago Special",
+      "item.wastlanders.mirelurk": "Mirelurk Spawn Egg",
       "item.fallout_wastelands.ninemmammo": "9mm Ammo",
       "entity.fallout_wastelands.taloncompagnylieutenant": "Talon Compagny Lieutenant",
       "block.wastlanders.plaster": "Plaster",
-      "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
       "block.wastlanders.wastelandwornmetalblock": "Wasteland Worn Metal",
+      "block.fallout_wastelands.coffeemixer": "Coffee Brewer ",
       "item.wastlanders.laserriffle": "Laser Rifle",
       "item.wastlanders.breadroller": "Bread Roller",
       "block.fallout_wastelands.redindustrialblocslab": "Red Industrial Block Slab",
@@ -24667,28 +25175,28 @@
       "block.fallout_wastelands.steelblock": "Steel Block",
       "block.fallout_wastelands.dooranimation_149": "Vault Door135",
       "block.fallout_wastelands.closing_114": "Vault Door",
-      "block.fallout_wastelands.closing_111": "Vault Door",
-      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
       "item.wastlanders.bossteelplate": "BoS Steelplate",
-      "block.fallout_wastelands.closing_112": "Vault Door",
+      "block.fallout_wastelands.dooranimation_148": "Vault Door135",
+      "block.fallout_wastelands.closing_111": "Vault Door",
       "block.fallout_wastelands.dooranimation_147": "Vault Door135",
+      "block.fallout_wastelands.closing_112": "Vault Door",
       "item.fallout_wastelands.vaultjumpsuit_chestplate": "Vault Jumpsuit Body (male)",
       "block.fallout_wastelands.closing_110": "Vault Door",
       "block.fallout_wastelands.dooranimation_142": "Vault Door135",
-      "advancements.vaultdweller.title": "Vault Dweller",
       "block.fallout_wastelands.dooranimation_141": "Vault Door135",
+      "advancements.vaultdweller.title": "Vault Dweller",
       "block.fallout_wastelands.closing_119": "Vault Door",
       "block.fallout_wastelands.dooranimation_140": "Vault Door135",
       "item.fallout_wastelands.ingot_tin": "Tin Ingot",
       "block.fallout_wastelands.dooranimation_146": "Vault Door135",
       "block.fallout_wastelands.closing_117": "Vault Door",
-      "block.fallout_wastelands.closing_118": "Vault Door",
-      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
-      "block.fallout_wastelands.lighttub": "Light Tub",
       "entity.fallout_wastelands.brotherhood_paladin": "Brotherhood Paladin",
-      "block.fallout_wastelands.closing_115": "Vault Door",
-      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "block.fallout_wastelands.lighttub": "Light Tub",
+      "block.fallout_wastelands.dooranimation_145": "Vault Door135",
+      "block.fallout_wastelands.closing_118": "Vault Door",
       "entity.fallout_wastelands.mirelurk": "Mirelurk",
+      "block.fallout_wastelands.dooranimation_144": "Vault Door135",
+      "block.fallout_wastelands.closing_115": "Vault Door",
       "block.fallout_wastelands.dooranimation_143": "Vault Door135",
       "block.fallout_wastelands.closing_116": "Vault Door",
       "item.fallout_wastelands.frame_armor_leggings": "Frame Armor Leggings",
@@ -24710,6 +25218,7 @@
       "subtitles.tenmm": "",
       "block.fallout_wastelands.deadtrunk": "Charred Log",
       "itemGroup.tabwastelandersitems": "Wastelanders Items",
+      "block.fallout_wastelands.wastelandwornmetalplating": "Wasteland Worn Metal Plating",
       "block.fallout_wastelands.closing_108": "Vault Door",
       "block.fallout_wastelands.closing_109": "Vault Door",
       "block.fallout_wastelands.closing_106": "Vault Door",
@@ -24748,6 +25257,7 @@
       "item.fallout_wastelands.geckohide": "Gecko Leather",
       "block.fallout_wastelands.closing_5": "Vault Door",
       "block.fallout_wastelands.redindustrialdoor": "Red Industrial Door",
+      "block.fallout_wastelands.steelpole": "Steel Pole",
       "item.wastlanders.tinnugget": "Tin Nugget",
       "block.fallout_wastelands.closing_9": "Vault Door",
       "block.wastlanders.rustediron": "Rusted Iron",
@@ -24758,6 +25268,7 @@
       "block.fallout_wastelands.closing_4": "Vault Door",
       "block.fallout_wastelands.closing_3": "Vault Door",
       "block.fallout_wastelands.closing_2": "Vault Door",
+      "block.fallout_wastelands.wastelandwornmetalpillar": "Wasteland Worn Metal Pillar",
       "block.fallout_wastelands.bossteelplating": "BoS Metal Plating (light)",
       "block.fallout_wastelands.dooranimation_159": "Vault Door135",
       "block.fallout_wastelands.dooranimation_158": "Vault Door135",
@@ -24800,6 +25311,7 @@
       "block.wastlanders.redindusupperrivet": "Red Industrial Block (upper rivet)",
       "block.fallout_wastelands.vaultfloorstairs": "Vaultfloor",
       "item.fallout_wastelands.friendlybrainbot_spawn_egg": "Robot Brain (Hackable) Spawn Egg",
+      "block.fallout_wastelands.wastelandwornmetalstairs": "Wasteland Worn Metal Stairs",
       "item.fallout_wastelands.frbcannon": "Frbcannon",
       "block.fallout_wastelands.dooranimation_175": "Vault Door135",
       "block.fallout_wastelands.dooranimation_174": "Vault Door135",
@@ -24815,6 +25327,7 @@
       "block.fallout_wastelands.whitetileslab": "White Tile Slab",
       "block.wastlanders.rottenplanks": "Rotten Plank",
       "block.wastlanders.gore": "Gore",
+      "item.fallout_wastelands.mutlemon": "Mutlemon",
       "block.wastlanders.militaryplated": "Military plating",
       "item.fallout_wastelands.blackpaintcan": "Black Paint Can",
       "item.fallout_wastelands.tenmm": "10mm Pistol ",
@@ -24848,6 +25361,7 @@
       "block.wastlanders.metallicwall": "Industrial Metal Plating",
       "item.wastlanders.armyrobobrain_spawn_egg": "Army Robobrain Spawn Egg",
       "item.wastlanders.fevgoo_bucket": "Fevgoo Bucket",
+      "item.fallout_wastelands.scrapmetal": "Scrap Metal",
       "item.fallout_wastelands.falloutwastelands": "Falloutwastelands",
       "item.wastlanders.ingotcopper": "Copper ingot",
       "block.wastlanders.moltencopperblock": "Molten Copper Block",
@@ -24857,10 +25371,12 @@
       "item.fallout_wastelands.power_armor_frame_spawn_egg": "Power Armor Frame Spawn Egg",
       "block.wastlanders.wastelandiron": "Wasteland Iron Ore",
       "subtitles.machinegunreload": "Reload",
+      "block.fallout_wastelands.wastelandbrickwallcraft": "Wasteland Brick Wall",
       "item.fallout_wastelands.crushedcan": "Crushed Can",
       "block.fallout_wastelands.vaultvent": "Vault Vent",
       "item.fallout_wastelands.notyeticon": "Notyeticon",
       "block.wastlanders.aluminiumblock": "Aluminium Block",
+      "block.fallout_wastelands.wastelandwornmetalslab": "Wasteland Worn Metal Slab",
       "block.fallout_wastelands.rootdirt": "Root Dirt",
       "item.wastlanders.blackpaintcan": "Black Paint Can",
       "subtitles.cash": "",
@@ -24879,8 +25395,10 @@
       "block.fallout_wastelands.wastelandconcretevent": "Wasteland Concrete Vent",
       "item.fallout_wastelands.pipboy": "Pipboy-3000",
       "block.fallout_wastelands.roofsheetmetalpannel": "Roof Sheet Metal Pannel",
+      "block.fallout_wastelands.nuke": "Nuke",
       "block.fallout_wastelands.fillingcabinet": "Metal Shelf",
       "block.fallout_wastelands.greyindusupperrivet": "Grey Industrial Block (upper rivet)",
+      "block.fallout_wastelands.whiteplanks": "White Rotten Plank ",
       "advancements.thewastelands.descr": "You entered into the wasteland for the first time .",
       "item.wastlanders.printedchip": "Computer chip ",
       "item.wastlanders.robobrainarm": "Robobrain Arm",
@@ -24913,6 +25431,7 @@
       "item.fallout_wastelands.enclave_x_01pa_chestplate": "Enclave APA Body",
       "block.fallout_wastelands.radioactivwastebarrel": "Radioactive barrel",
       "item.fallout_wastelands.rawmirlurk": "Raw Mirlurk",
+      "item.fallout_wastelands.acid": "Acid",
       "entity.wastlanders.basesupermutant": "Super Mutant Grunt",
       "block.fallout_wastelands.vaultlock": "Vault Air Lock",
       "biome.fallout_wastelands.capitalwasteland": "Capitalwasteland",
@@ -24936,6 +25455,7 @@
       "block.fallout_wastelands.wastlandconcrete": "Old Concrete",
       "item.fallout_wastelands.nightkin_spawn_egg": "Nightkin Supermutant Spawn Egg",
       "block.wastlanders.deadgrass": "Wasteland Dead Grass",
+      "block.fallout_wastelands.whiteplankswall": "White Rotten Plank Wall",
       "entity.fallout_wastelands.broken_frame": "Broken Frame",
       "item.wastlanders.humanbrain": "Human Brain",
       "item.fallout_wastelands.robobrainhead": "Robobrain Head",
@@ -24971,6 +25491,7 @@
       "block.fallout_wastelands.closing_62": "Vault Door",
       "block.fallout_wastelands.closing_63": "Vault Door",
       "block.fallout_wastelands.closing_64": "Vault Door",
+      "block.fallout_wastelands.wastelandwornmetalwall": "Wasteland Worn Metal Wall",
       "block.wastlanders.militaryplatingglass": "Military Plating Glass",
       "block.wastlanders.lighttub": "Light Tub",
       "block.fallout_wastelands.closing_58": "Vault Door",
@@ -25167,6 +25688,7 @@
       "item.wastlanders.pipboy": "Pipboy-3000",
       "block.fallout_wastelands.coreunit": "Core Unit Block",
       "block.fallout_wastelands.picketfence": "Picket Fence",
+      "block.fallout_wastelands.stonebrickstairs": "Wasteland Stonebrick Stairs",
       "block.fallout_wastelands.vaultanimation_110": "Vault Door",
       "block.fallout_wastelands.vaultanimation_111": "Vault Door",
       "block.fallout_wastelands.vaultanimation_116": "Vault Door",
@@ -25206,6 +25728,7 @@
       "block.fallout_wastelands.vaultanimation_123": "Vault Door",
       "block.fallout_wastelands.vaultanimation_124": "Vault Door",
       "block.fallout_wastelands.vaultanimation_125": "Vault Door",
+      "block.fallout_wastelands.wastelandwornmetalbutton": "Wasteland Worn Metal Button",
       "item.wastlanders.uraniumingot": "Uranium Ingot",
       "block.fallout_wastelands.vaultanimation_126": "Vault Door",
       "entity.fallout_wastelands.malevaultdweller_1": "Vault Dweller ",
@@ -25317,10 +25840,12 @@
       "entity.fallout_wastelands.glowingone": "Glowing One",
       "item.wastlanders.robobraintrack": "Robobrain Track",
       "block.fallout_wastelands.vaultanimation_18": "Vault Door",
+      "item.fallout_wastelands.copperwire": "Copper Wire",
       "subtitles.unnaturalglow": "",
       "block.wastlanders.sheetmetal": "Sheet metal",
       "block.fallout_wastelands.wastelandbrick": "Wasteland Brick",
       "item.fallout_wastelands.hazmat_chestplate": "Hazmat Body",
+      "item.fallout_wastelands.cloth": "Cloth",
       "block.fallout_wastelands.vaultanimation_73": "Vault Door",
       "block.fallout_wastelands.vaultanimation_74": "Vault Door",
       "block.fallout_wastelands.vaultanimation_71": "Vault Door",
@@ -25366,6 +25891,7 @@
       "block.fallout_wastelands.vaultanimation_52": "Vault Door",
       "block.fallout_wastelands.openedvaultblastdoor": "Vault Blast Door",
       "block.fallout_wastelands.vaultanimation_50": "Vault Door",
+      "item.fallout_wastelands.tato": "Tato",
       "block.fallout_wastelands.redindustrialblock": "Red Industrial Block",
       "block.fallout_wastelands.vaultanimation_59": "Vault Door",
       "block.fallout_wastelands.walkwaystairs": "Walkway Stairs",
@@ -25377,6 +25903,7 @@
       "block.fallout_wastelands.vaultanimation_53": "Vault Door",
       "block.fallout_wastelands.vaultanimation_54": "Vault Door",
       "item.wastlanders.wrench": "Wrench",
+      "block.fallout_wastelands.wastelandstonebrickslab": "Wasteland Stonebrick Slab",
       "block.fallout_wastelands.vaultfloor_2": "Vault Floor Block",
       "block.fallout_wastelands.enclavebunkerfloor": "Enclave Bunker Floor",
       "item.fallout_wastelands.real_turret_projectile": "Real Turret Projectile",
@@ -25423,6 +25950,7 @@
       "entity.wastlanders.raidergunner": "Raider Gunner",
       "block.wastlanders.walkwaystairs": "Walkway Stairs",
       "block.fallout_wastelands.deadgrass": "Wasteland Dead Grass",
+      "item.fallout_wastelands.asbestos": "Asbestos",
       "item.wastlanders.robobrainengine": "Engine",
       "block.fallout_wastelands.undergroundbrickstairs": "Wasteland Underground Brick Stairs",
       "block.fallout_wastelands.vaultanimation_95": "Vault Door",
@@ -25487,8 +26015,10 @@
       "block.fallout_wastelands.metalchair": "Metal Chair",
       "block.fallout_wastelands.wastelanduraniumore": "Wasteland Uranium Ore",
       "item.wastlanders.rustedcombatweapon": "Junk sword",
+      "item.fallout_wastelands.mutcorn": "Mutlemon",
       "block.fallout_wastelands.vaultfloor": "Vault Floor",
       "item.fallout_wastelands.enclave_x_01pa_helmet": "Enclave APA Helmet",
+      "item.fallout_wastelands.fertilizer": "Fertilizer",
       "item.wastlanders.t_45powerarmor_boots": "T-45 Power Armor Boots",
       "item.fallout_wastelands.bottlecaps": "Bottlecaps",
       "advancements.vaultdweller.descr": "The time have come for you to leave the vault . You should go have a chat with the overseer at the lower level .",
@@ -25530,6 +26060,7 @@
       "item.wastlanders.bloatflyshot": "Bloatflyshot",
       "entity.wastlanders.highwayman": "Highwayman",
       "item.fallout_wastelands.track": "Track Segment",
+      "block.fallout_wastelands.wastelandstonebrickwall": "Wasteland Stonebrick",
       "block.fallout_wastelands.browntileslab": "Brown Tile Slab",
       "item.fallout_wastelands.wasteland": "Wasteland Portal Igniter",
       "item.fallout_wastelands.combatarmor_boots": "MKI Combat Boots",
@@ -25544,6 +26075,7 @@
       "item.fallout_wastelands.enclave_x_01pa_leggings": "Enclave APA Leggings",
       "block.fallout_wastelands.vault_door_frame": "Vault Door Frame",
       "item.wastlanders.ingot_tin": "Tin Ingot",
+      "block.fallout_wastelands.whiteplanksstairs": "White Rotten Plank Stairs",
       "item.fallout_wastelands.mirelurk_spawn_egg": "Mirelurk Spawn Egg",
       "block.fallout_wastelands.wastelandgold": "Wasteland Gold Ore",
       "block.fallout_wastelands.leadblock": "Lead Block",
@@ -25640,8 +26172,10 @@
       "block.wastlanders.moltensteel": "Molten Steel Block",
       "item.fallout_wastelands.whitepaintcan": "White Paint Can",
       "item.fallout_wastelands.enclavehazmat_chestplate": "Enclave Hazmat Body",
+      "block.fallout_wastelands.mechanicalscrappile": "Mechanical Scrap Pile",
       "block.fallout_wastelands.uraniumblock": "Uranium Block",
       "block.wastlanders.redindustrialblockwarning": "Red Industrial Block (warning)",
+      "block.fallout_wastelands.wastelandwornmetalbarrier": "Wasteland Worn Metal fence",
       "block.fallout_wastelands.closing_190": "Vault Door",
       "item.fallout_wastelands.femalevaultjumpsuit_helmet": "Femalevaultjumpsuit Helmet",
       "block.wastlanders.redindustrialblocslab": "Redindustrial Block Slab",
@@ -25720,5 +26254,5 @@
     "modElementsPackage": "net.mcreator.fallout_wastelands",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200120510
+  "mcreatorVersion": 202200234517
 }

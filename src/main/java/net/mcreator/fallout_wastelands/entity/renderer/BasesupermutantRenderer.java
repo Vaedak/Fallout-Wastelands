@@ -30,7 +30,7 @@ public class BasesupermutantRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/supermutantbase.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/supermutantbase.png");
 					}
 				};
 			});

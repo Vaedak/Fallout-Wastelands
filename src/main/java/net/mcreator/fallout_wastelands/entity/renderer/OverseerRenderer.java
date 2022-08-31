@@ -25,7 +25,7 @@ public class OverseerRenderer {
 				BipedRenderer customRender = new BipedRenderer(renderManager, new BipedModel(0), 0.5f) {
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/overseer_johnny_.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/overseer_johnny_.png");
 					}
 				};
 				customRender.addLayer(new BipedArmorLayer(customRender, new BipedModel(0.5f), new BipedModel(1)));

@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:whiteplanks"
+    },
+    "1": {
+      "item": "fallout_wastelands:whiteplanks"
+    },
+    "2": {
+      "item": "fallout_wastelands:whiteplanks"
+    },
+    "3": {
+      "item": "fallout_wastelands:whiteplanks"
+    },
+    "4": {
+      "item": "fallout_wastelands:whiteplanks"
+    },
+    "5": {
+      "item": "fallout_wastelands:whiteplanks"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:whiteplankswall",
+    "count": 6
+  }
+}

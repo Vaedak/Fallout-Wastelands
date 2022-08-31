@@ -4,12 +4,15 @@ package net.mcreator.fallout_wastelands.item;
 import net.minecraftforge.registries.ObjectHolder;
 
 import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.AxeItem;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.client.util.ITooltipFlag;
 
 import net.mcreator.fallout_wastelands.procedures.ReaperLivingEntityIsHitWithToolProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
@@ -17,6 +20,7 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
 import java.util.stream.Stream;
 import java.util.Map;
+import java.util.List;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
@@ -37,15 +41,15 @@ public class ReaperItem extends FalloutWastelandsModElements.ModElement {
 			}
 
 			public float getEfficiency() {
-				return 5f;
+				return 8f;
 			}
 
 			public float getAttackDamage() {
-				return 2.5f;
+				return 4f;
 			}
 
 			public int getHarvestLevel() {
-				return 2;
+				return 1;
 			}
 
 			public int getEnchantability() {
@@ -56,6 +60,12 @@ public class ReaperItem extends FalloutWastelandsModElements.ModElement {
 				return Ingredient.EMPTY;
 			}
 		}, 1, 6f, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
+			@Override
+			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
+				super.addInformation(itemstack, world, list, flag);
+				list.add(new StringTextComponent("*Vrrt Vrrt Vrrt* damn Zombies !"));
+			}
+
 			@Override
 			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 				boolean retval = super.hitEntity(itemstack, entity, sourceentity);

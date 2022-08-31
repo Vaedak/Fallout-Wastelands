@@ -35,7 +35,7 @@ public class AmmunitionboxguiGuiWindow extends ContainerScreen<AmmunitionboxguiG
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/ammunitionboxgui.png");
+	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/screens/ammunitionboxgui.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

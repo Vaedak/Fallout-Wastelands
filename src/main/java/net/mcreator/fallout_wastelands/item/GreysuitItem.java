@@ -102,7 +102,7 @@ public class GreysuitItem extends FalloutWastelandsModElements.ModElement {
 
 					@Override
 					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-						return "fallout_wastelands:textures/greysuittop.png";
+						return "fallout_wastelands:textures/entities/greysuittop.png";
 					}
 				}.setRegistryName("greysuit_chestplate"));
 		elements.items
@@ -121,7 +121,7 @@ public class GreysuitItem extends FalloutWastelandsModElements.ModElement {
 
 					@Override
 					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-						return "fallout_wastelands:textures/greypants.png";
+						return "fallout_wastelands:textures/entities/greypants.png";
 					}
 				}.setRegistryName("greysuit_leggings"));
 		elements.items
@@ -140,7 +140,7 @@ public class GreysuitItem extends FalloutWastelandsModElements.ModElement {
 
 					@Override
 					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-						return "fallout_wastelands:textures/greypants.png";
+						return "fallout_wastelands:textures/entities/greypants.png";
 					}
 				}.setRegistryName("greysuit_boots"));
 	}

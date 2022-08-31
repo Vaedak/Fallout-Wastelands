@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:wastelandwornmetalblock"
+    },
+    "1": {
+      "item": "fallout_wastelands:wastelandwornmetalblock"
+    },
+    "2": {
+      "item": "fallout_wastelands:wastelandwornmetalblock"
+    },
+    "3": {
+      "item": "fallout_wastelands:wastelandwornmetalblock"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:wastelandwornmetalplating",
+    "count": 4
+  }
+}

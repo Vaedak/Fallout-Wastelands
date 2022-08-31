@@ -1,0 +1,15 @@
+{
+  "_fv": 33,
+  "_type": "itemextension",
+  "definition": {
+    "item": {
+      "value": "CUSTOM:Fertilizer"
+    },
+    "enableFuel": true,
+    "fuelPower": {
+      "fixedValue": 1000.0
+    },
+    "hasDispenseBehavior": false,
+    "compostLayerChance": 1.0
+  }
+}

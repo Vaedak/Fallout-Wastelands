@@ -1,21 +1,23 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "tool",
   "definition": {
     "renderType": 0,
     "texture": "reaper",
     "customModelName": "Normal",
     "name": "Ripper",
-    "specialInfo": [],
+    "specialInfo": [
+      "*Vrrt Vrrt Vrrt* damn Zombies !"
+    ],
     "creativeTab": {
       "value": "CUSTOM:Wastelanderscombattab"
     },
     "toolType": "Axe",
-    "harvestLevel": 2,
-    "efficiency": 5.0,
+    "harvestLevel": 1,
+    "efficiency": 8.0,
     "attackSpeed": 10.0,
     "enchantability": 2,
-    "damageVsEntity": 4.5,
+    "damageVsEntity": 6.0,
     "usageCount": 500,
     "blocksAffected": [],
     "hasGlow": false,

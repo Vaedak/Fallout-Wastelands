@@ -35,7 +35,7 @@ public class MedicalboxGUIGuiWindow extends ContainerScreen<MedicalboxGUIGui.Gui
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/medicalbox_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/screens/medicalbox_gui.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

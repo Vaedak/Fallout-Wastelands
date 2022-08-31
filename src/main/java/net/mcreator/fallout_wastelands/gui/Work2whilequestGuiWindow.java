@@ -39,7 +39,7 @@ public class Work2whilequestGuiWindow extends ContainerScreen<Work2whilequestGui
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/work_2whilequest.png");
+	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/screens/work_2whilequest.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -58,7 +58,7 @@ public class Work2whilequestGuiWindow extends ContainerScreen<Work2whilequestGui
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/paulo.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/paulo.png"));
 		this.blit(ms, this.guiLeft + -83, this.guiTop + -38, 0, 0, 340, 240, 340, 240);
 
 		RenderSystem.disableBlend();

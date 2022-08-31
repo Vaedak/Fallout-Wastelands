@@ -30,7 +30,7 @@ public class ChromedraiderfemaleRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/chromedraiderfemaleb.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/chromedraiderfemaleb.png");
 					}
 				};
 			});

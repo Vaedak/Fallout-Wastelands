@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "1": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "2": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "3": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "4": {
+      "item": "fallout_wastelands:wastelandbrick"
+    },
+    "5": {
+      "item": "fallout_wastelands:wastelandbrick"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:wastelandbrickwallcraft",
+    "count": 6
+  }
+}

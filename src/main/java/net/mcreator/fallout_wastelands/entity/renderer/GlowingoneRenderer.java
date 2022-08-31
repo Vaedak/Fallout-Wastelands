@@ -38,7 +38,7 @@ public class GlowingoneRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/glowing_one.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/glowing_one.png");
 					}
 				};
 			});
@@ -54,7 +54,7 @@ public class GlowingoneRenderer {
 		public void render(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn, T entitylivingbaseIn, float limbSwing,
 				float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 			IVertexBuilder ivertexbuilder = bufferIn
-					.getBuffer(RenderType.getEyes(new ResourceLocation("fallout_wastelands:textures/glowing_one_glowing_pattern.png")));
+					.getBuffer(RenderType.getEyes(new ResourceLocation("fallout_wastelands:textures/entities/glowing_one_glowing_pattern.png")));
 			this.getEntityModel().render(matrixStackIn, ivertexbuilder, 15728640, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
 		}
 	}

@@ -88,6 +88,7 @@ public class ChromedraiderfemaleEntity extends FalloutWastelandsModElements.ModE
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 20);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0.3);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 4);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			event.put(entity, ammma.create());
 		}
 	}

@@ -30,7 +30,7 @@ public class ArmyrobobrainRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/robobrainfix.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/robobrainfix.png");
 					}
 				};
 			});

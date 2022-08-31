@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "livingentity",
   "definition": {
     "mobName": "Deathclaw",
@@ -52,6 +52,7 @@
     "movementSpeed": 0.7,
     "armorBaseValue": 10.0,
     "trackingRange": 128,
+    "followRange": 16,
     "health": 100,
     "xpAmount": 25,
     "waterMob": false,

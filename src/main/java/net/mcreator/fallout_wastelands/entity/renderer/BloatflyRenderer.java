@@ -30,7 +30,7 @@ public class BloatflyRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/bloatflytexture.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/bloatflytexture.png");
 					}
 				};
 			});

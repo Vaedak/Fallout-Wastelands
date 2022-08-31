@@ -29,11 +29,11 @@ public class HachetItem extends FalloutWastelandsModElements.ModElement {
 			}
 
 			public float getEfficiency() {
-				return 4.5f;
+				return 10f;
 			}
 
 			public float getAttackDamage() {
-				return 1.5f;
+				return 3f;
 			}
 
 			public int getHarvestLevel() {

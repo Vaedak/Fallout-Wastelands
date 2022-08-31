@@ -30,7 +30,7 @@ public class Femalevaultdweller2Renderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/vaultdwellerfemale2c.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/vaultdwellerfemale2c.png");
 					}
 				};
 			});

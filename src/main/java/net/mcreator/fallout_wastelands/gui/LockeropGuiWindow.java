@@ -35,7 +35,7 @@ public class LockeropGuiWindow extends ContainerScreen<LockeropGui.GuiContainerM
 		this.ySize = 204;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/lockerop.png");
+	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/screens/lockerop.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

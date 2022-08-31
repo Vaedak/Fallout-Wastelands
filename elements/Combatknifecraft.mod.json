@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -22,7 +22,7 @@
         "value": ""
       },
       {
-        "value": "Items.IRON_INGOT"
+        "value": "CUSTOM:Sheetmetalplating"
       },
       {
         "value": ""

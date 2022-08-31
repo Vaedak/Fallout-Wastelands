@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:copperwire"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:coppernugget",
+    "count": 5
+  }
+}

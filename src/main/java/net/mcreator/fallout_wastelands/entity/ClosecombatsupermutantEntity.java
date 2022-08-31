@@ -91,6 +91,7 @@ public class ClosecombatsupermutantEntity extends FalloutWastelandsModElements.M
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 50);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 1);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 10);
+			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
 			event.put(entity, ammma.create());
 		}
 	}

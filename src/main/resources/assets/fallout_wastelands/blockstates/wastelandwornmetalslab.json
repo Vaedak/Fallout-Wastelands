@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fallout_wastelands:block/wastelandwornmetalslab"
+    },
+    "type=top": {
+      "model": "fallout_wastelands:block/wastelandwornmetalslab_top"
+    },
+    "type=double": {
+      "model": "fallout_wastelands:block/wastelandwornmetalslab_full"
+    }
+  }
+}

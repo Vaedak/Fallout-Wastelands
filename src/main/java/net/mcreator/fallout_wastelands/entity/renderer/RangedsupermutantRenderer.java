@@ -30,7 +30,7 @@ public class RangedsupermutantRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/supermutantranged.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/supermutantranged.png");
 					}
 				};
 			});

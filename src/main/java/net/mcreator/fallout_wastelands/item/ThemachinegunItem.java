@@ -254,11 +254,8 @@ public class ThemachinegunItem extends FalloutWastelandsModElements.ModElement {
 			World world = this.world;
 			Entity entity = this.func_234616_v_();
 			Entity immediatesourceentity = this;
-			if (this.inGround) {
-
-				ThemachinegunBulletHitsBlockProcedure.executeProcedure(Collections.emptyMap());
+			if (this.inGround)
 				this.remove();
-			}
 		}
 	}
 

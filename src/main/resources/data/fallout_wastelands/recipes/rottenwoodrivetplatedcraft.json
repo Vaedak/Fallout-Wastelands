@@ -7,13 +7,13 @@
   ],
   "key": {
     "0": {
-      "item": "minecraft:iron_nugget"
+      "item": "fallout_wastelands:nails"
     },
     "1": {
       "item": "fallout_wastelands:rottenwoodplate"
     },
     "2": {
-      "item": "minecraft:iron_nugget"
+      "item": "fallout_wastelands:nails"
     },
     "3": {
       "item": "fallout_wastelands:rottenwoodplate"
@@ -25,13 +25,13 @@
       "item": "fallout_wastelands:rottenwoodplate"
     },
     "6": {
-      "item": "minecraft:iron_nugget"
+      "item": "fallout_wastelands:nails"
     },
     "7": {
       "item": "fallout_wastelands:rottenwoodplate"
     },
     "8": {
-      "item": "minecraft:iron_nugget"
+      "item": "fallout_wastelands:nails"
     }
   },
   "result": {

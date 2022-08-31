@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -10,13 +10,13 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "Items.IRON_NUGGET"
+        "value": "CUSTOM:Nails"
       },
       {
         "value": "CUSTOM:Rottenwoodplatenailed"
       },
       {
-        "value": "Items.IRON_NUGGET"
+        "value": "CUSTOM:Nails"
       },
       {
         "value": "CUSTOM:Rottenwoodplatenailed"
@@ -28,13 +28,13 @@
         "value": "CUSTOM:Rottenwoodplatenailed"
       },
       {
-        "value": "Items.IRON_NUGGET"
+        "value": "CUSTOM:Nails"
       },
       {
         "value": "CUSTOM:Rottenwoodplatenailed"
       },
       {
-        "value": "Items.IRON_NUGGET"
+        "value": "CUSTOM:Nails"
       }
     ],
     "recipeReturnStack": {

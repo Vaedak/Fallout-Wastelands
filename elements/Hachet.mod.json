@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "tool",
   "definition": {
     "renderType": 0,
@@ -12,10 +12,10 @@
     },
     "toolType": "Axe",
     "harvestLevel": 1,
-    "efficiency": 4.5,
+    "efficiency": 10.0,
     "attackSpeed": 0.7999999999999999,
     "enchantability": 2,
-    "damageVsEntity": 3.5,
+    "damageVsEntity": 5.0,
     "usageCount": 200,
     "blocksAffected": [],
     "hasGlow": false,

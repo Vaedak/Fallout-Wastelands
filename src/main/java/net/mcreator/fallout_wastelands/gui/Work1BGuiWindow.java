@@ -39,7 +39,7 @@ public class Work1BGuiWindow extends ContainerScreen<Work1BGui.GuiContainerMod> 
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/work_1_b.png");
+	private static final ResourceLocation texture = new ResourceLocation("fallout_wastelands:textures/screens/work_1_b.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -58,10 +58,10 @@ public class Work1BGuiWindow extends ContainerScreen<Work1BGui.GuiContainerMod> 
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/paulo.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/paulo.png"));
 		this.blit(ms, this.guiLeft + -83, this.guiTop + -38, 0, 0, 340, 240, 340, 240);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/nextarrow.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("fallout_wastelands:textures/screens/nextarrow.png"));
 		this.blit(ms, this.guiLeft + 177, this.guiTop + 88, 0, 0, 24, 17, 24, 17);
 
 		RenderSystem.disableBlend();

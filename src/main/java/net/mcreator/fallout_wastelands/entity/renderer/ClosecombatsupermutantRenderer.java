@@ -30,7 +30,7 @@ public class ClosecombatsupermutantRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("fallout_wastelands:textures/supermutantmelee.png");
+						return new ResourceLocation("fallout_wastelands:textures/entities/supermutantmelee.png");
 					}
 				};
 			});
