@@ -214,8 +214,9 @@ public class PowerArmorTrueFeaturesProcedure {
 				}
 			}
 			{
-				List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-						new AxisAlignedBB(x - (3.5 / 2d), y - (3.5 / 2d), z - (3.5 / 2d), x + (3.5 / 2d), y + (3.5 / 2d), z + (3.5 / 2d)), null)
+				List<Entity> _entfound = world
+						.getEntitiesWithinAABB(Entity.class,
+								new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
 						.stream().sorted(new Object() {
 							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
@@ -266,6 +267,8 @@ public class PowerArmorTrueFeaturesProcedure {
 					((LivingEntity) entity).removePotionEffect(Effects.POISON);
 				}
 			}
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 20, (int) 2, (false), (false)));
 		}
 	}
 }

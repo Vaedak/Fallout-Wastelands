@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "3": {
+      "item": "fallout_wastelands:steelblock"
+    },
+    "4": {
+      "item": "fallout_wastelands:broken_power_armor_frame"
+    },
+    "5": {
+      "item": "fallout_wastelands:steelblock"
+    },
+    "6": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "7": {
+      "item": "fallout_wastelands:aluminiumingot"
+    },
+    "8": {
+      "item": "fallout_wastelands:steelingot"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:power_armor_frame_item",
+    "count": 1
+  }
+}

@@ -21,14 +21,17 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 
-import net.mcreator.fallout_wastelands.procedures.PowerArmorLeggingsTickProcedure;
-import net.mcreator.fallout_wastelands.procedures.PowerArmorHelmetTickProcedure;
-import net.mcreator.fallout_wastelands.procedures.PowerArmorChestTickProcedure;
-import net.mcreator.fallout_wastelands.procedures.PowerArmorBootsTickProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorLeggingsUniversalProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorHelmetUniversalProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorChestUniversalProcedure;
+import net.mcreator.fallout_wastelands.procedures.PowerArmorBootsUniversalProcedure;
 import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 
-import java.util.Collections;
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -117,7 +120,11 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						PowerArmorHelmetTickProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorHelmetUniversalProcedure.executeProcedure(Stream
+								.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+										new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+										new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("enclave_x_01pa_helmet"));
 		elements.items
@@ -146,7 +153,11 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						PowerArmorChestTickProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorChestUniversalProcedure.executeProcedure(Stream
+								.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+										new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+										new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("enclave_x_01pa_chestplate"));
 		elements.items
@@ -174,7 +185,11 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						PowerArmorLeggingsTickProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorLeggingsUniversalProcedure.executeProcedure(Stream
+								.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+										new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+										new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("enclave_x_01pa_leggings"));
 		elements.items
@@ -202,7 +217,11 @@ public class EnclaveX01paItem extends FalloutWastelandsModElements.ModElement {
 						double y = entity.getPosY();
 						double z = entity.getPosZ();
 
-						PowerArmorBootsTickProcedure.executeProcedure(Collections.emptyMap());
+						PowerArmorBootsUniversalProcedure.executeProcedure(Stream
+								.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+										new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+										new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					}
 				}.setRegistryName("enclave_x_01pa_boots"));
 	}

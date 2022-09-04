@@ -93,7 +93,7 @@ public class TenmmItem extends FalloutWastelandsModElements.ModElement {
 
 		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.NONE;
+			return UseAction.BOW;
 		}
 
 		@Override

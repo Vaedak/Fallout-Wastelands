@@ -4,7 +4,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
@@ -77,7 +76,7 @@ public class FallingInArmorProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
-			if ((entity.isOnGround() && entity.isInWater()) == true) {
+			if (entity.isOnGround() == true) {
 				if (entity.getPersistentData().getDouble("fallinginarmor") > 15 && entity.getPersistentData().getDouble("fallinginarmor") < 40) {
 					entity.getPersistentData().putDouble("fallinginarmor", 0);
 					if (world instanceof World && !world.isRemote()) {
@@ -95,50 +94,24 @@ public class FallingInArmorProcedure {
 						((ServerWorld) world).spawnParticle(ParticleTypes.WHITE_ASH, x, (y + 1), z, (int) 20, 0.1, 0.1, 0.1, 0.1);
 					}
 				}
-			}
-			if (entity.getPersistentData().getDouble("fallinginarmor") > 40) {
-				entity.getPersistentData().putDouble("fallinginarmor", 0);
-				if (world instanceof World && !world.isRemote()) {
-					((World) world)
-							.playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1);
-				} else {
-					((World) world).playSound(x, y, z,
-							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-									.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")),
-							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
-				}
-				if (world instanceof ServerWorld) {
-					((ServerWorld) world).spawnParticle(ParticleTypes.WHITE_ASH, x, (y + 1), z, (int) 50, 0.1, 0.1, 0.1, 0.1);
-				}
-			}
-			new Object() {
-				private int ticks = 0;
-				private float waitTicks;
-				private IWorld world;
-
-				public void start(IWorld world, int waitTicks) {
-					this.waitTicks = waitTicks;
-					MinecraftForge.EVENT_BUS.register(this);
-					this.world = world;
-				}
-
-				@SubscribeEvent
-				public void tick(TickEvent.ServerTickEvent event) {
-					if (event.phase == TickEvent.Phase.END) {
-						this.ticks += 1;
-						if (this.ticks >= this.waitTicks)
-							run();
+				if (entity.getPersistentData().getDouble("fallinginarmor") > 40) {
+					entity.getPersistentData().putDouble("fallinginarmor", 0);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world).playSound(null, new BlockPos(x, y, z),
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						((World) world).playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+					if (world instanceof ServerWorld) {
+						((ServerWorld) world).spawnParticle(ParticleTypes.WHITE_ASH, x, (y + 1), z, (int) 50, 0.1, 0.1, 0.1, 0.1);
 					}
 				}
-
-				private void run() {
-					entity.getPersistentData().putDouble("fallinginarmor", 0);
-					MinecraftForge.EVENT_BUS.unregister(this);
-				}
-			}.start(world, (int) 2);
+			}
 			if (entity.isOnGround() == false) {
 				entity.getPersistentData().putDouble("fallinginarmor", (entity.getPersistentData().getDouble("fallinginarmor") + 1));
 			}

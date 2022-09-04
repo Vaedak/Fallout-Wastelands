@@ -115,7 +115,7 @@ public class FrameArmorTickEventUniversalProcedure {
 						}
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
-				}.start(world, (int) 5);
+				}.start(world, (int) 10);
 			}
 			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
 					.getOrCreateTag().getBoolean("PowerArmorChestplate")
@@ -158,7 +158,7 @@ public class FrameArmorTickEventUniversalProcedure {
 						}
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
-				}.start(world, (int) 5);
+				}.start(world, (int) 10);
 			}
 			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
 					.getOrCreateTag().getBoolean("PowerArmorLeggings")
@@ -201,7 +201,7 @@ public class FrameArmorTickEventUniversalProcedure {
 						}
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
-				}.start(world, (int) 5);
+				}.start(world, (int) 10);
 			}
 			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
 					.getOrCreateTag().getBoolean("PowerArmorBoots")
@@ -244,7 +244,7 @@ public class FrameArmorTickEventUniversalProcedure {
 						}
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
-				}.start(world, (int) 5);
+				}.start(world, (int) 10);
 			}
 		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)

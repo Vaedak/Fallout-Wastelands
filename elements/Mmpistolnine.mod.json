@@ -20,7 +20,7 @@
       "value": "CUSTOM:ninemmshotb"
     },
     "hasGlow": false,
-    "animation": "none",
+    "animation": "bow",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "onRangedItemUsed": {

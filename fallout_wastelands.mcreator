@@ -1335,150 +1335,6 @@
       "registry_name": "wastelandruin_4"
     },
     {
-      "name": "T45powerarmorBodyTickEvent",
-      "type": "procedure",
-      "sortid": 170,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "t_45powerarmor_body_tick_event",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "T45powerarmorHelmetTickEvent",
-      "type": "procedure",
-      "sortid": 171,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "t_45powerarmor_helmet_tick_event",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "T45powerarmorLeggingsTickEvent",
-      "type": "procedure",
-      "sortid": 172,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "t_45powerarmor_leggings_tick_event",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "T45powerarmorBootsTickEvent",
-      "type": "procedure",
-      "sortid": 173,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "t_45powerarmor_boots_tick_event",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "Capitalwastlandrock",
       "type": "structure",
       "sortid": 174,
@@ -4918,17 +4774,6 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "enclavepowerarmorsoldier"
-    },
-    {
-      "name": "EnclaveX01paHelmetTickEvent",
-      "type": "procedure",
-      "sortid": 530,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "enclave_x_01pa_helmet_tick_event",
-      "metadata": {
-        "dependencies": []
-      }
     },
     {
       "name": "EnclaveX01paBodyTickEvent",
@@ -20300,7 +20145,7 @@
       "type": "livingentity",
       "sortid": 1410,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "machinegun_turret"
     },
     {
@@ -20315,22 +20160,6 @@
           {
             "name": "sourceentity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       }
@@ -20825,17 +20654,6 @@
       "registry_name": "add_armor_back_boots"
     },
     {
-      "name": "PowerArmorHelmetTick",
-      "type": "procedure",
-      "sortid": 1444,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_helmet_tick",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
       "name": "AddArmorBackBootsEffectExpires",
       "type": "procedure",
       "sortid": 1426,
@@ -21034,17 +20852,6 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "frame_inventory"
-    },
-    {
-      "name": "PowerArmorChestTick",
-      "type": "procedure",
-      "sortid": 1445,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "power_armor_chest_tick",
-      "metadata": {
-        "dependencies": []
-      }
     },
     {
       "name": "AddArmorBackchest",
@@ -24560,6 +24367,597 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "nuke"
+    },
+    {
+      "name": "PowerArmorFrameItemRightclicked",
+      "type": "procedure",
+      "sortid": 1700,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "power_armor_frame_item_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BrokenPowerArmorFrame",
+      "type": "item",
+      "sortid": 1701,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "broken_power_armor_frame"
+    },
+    {
+      "name": "PowerArmorBootsUniversal",
+      "type": "procedure",
+      "sortid": 1702,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "power_armor_boots_universal",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PowerArmorHelmetUniversal",
+      "type": "procedure",
+      "sortid": 1702,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "power_armor_helmet_universal",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PowerArmorChestUniversal",
+      "type": "procedure",
+      "sortid": 1702,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "power_armor_chest_universal",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PowerArmorLeggingsUniversal",
+      "type": "procedure",
+      "sortid": 1702,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "power_armor_leggings_universal",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RepairFrame",
+      "type": "recipe",
+      "sortid": 1704,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "repair_frame"
+    },
+    {
+      "name": "CraftPowerArmorFrame",
+      "type": "recipe",
+      "sortid": 1705,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_power_armor_frame"
+    },
+    {
+      "name": "CraftFrameStickyPiston",
+      "type": "recipe",
+      "sortid": 1706,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_frame_sticky_piston"
+    },
+    {
+      "name": "BrokenFrameOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 1708,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "broken_frame_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MachinegunTurretOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 1709,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "machinegun_turret_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnclaveMachinegunTurret",
+      "type": "livingentity",
+      "sortid": 1710,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "enclave_machinegun_turret"
+    },
+    {
+      "name": "RadiationUI5",
+      "type": "procedure",
+      "sortid": 1711,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_5",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI6",
+      "type": "procedure",
+      "sortid": 1712,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_6",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI7",
+      "type": "procedure",
+      "sortid": 1713,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_7",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI8",
+      "type": "procedure",
+      "sortid": 1714,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_8",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI9",
+      "type": "procedure",
+      "sortid": 1715,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_9",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI10",
+      "type": "procedure",
+      "sortid": 1716,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_10",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI11",
+      "type": "procedure",
+      "sortid": 1717,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_11",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI12",
+      "type": "procedure",
+      "sortid": 1718,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_12",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI13",
+      "type": "procedure",
+      "sortid": 1719,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_13",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI14",
+      "type": "procedure",
+      "sortid": 1720,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_14",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI15",
+      "type": "procedure",
+      "sortid": 1721,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_15",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI16",
+      "type": "procedure",
+      "sortid": 1722,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_16",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI17",
+      "type": "procedure",
+      "sortid": 1723,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_17",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI18",
+      "type": "procedure",
+      "sortid": 1724,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_18",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI19",
+      "type": "procedure",
+      "sortid": 1725,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_19",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI20",
+      "type": "procedure",
+      "sortid": 1726,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_20",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI21",
+      "type": "procedure",
+      "sortid": 1727,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_21",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI22",
+      "type": "procedure",
+      "sortid": 1728,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_22",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RadiationUI23",
+      "type": "procedure",
+      "sortid": 1729,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_ui_23",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -24663,6 +25061,12 @@
       "name": "tencardsaredropped",
       "type": "logic",
       "scope": "world",
+      "value": "false"
+    },
+    {
+      "name": "DisplayRadUI",
+      "type": "logic",
+      "scope": "player_lifetime",
       "value": "false"
     }
   ],
@@ -25141,6 +25545,7 @@
       "item.minecraft.potion.effect.radiation": "Radiation Poisoning",
       "block.wastlanders.wastelandconcretewall": "Wasteland Concrete Wall",
       "itemGroup.tabwastelanderscombattab": "Wastelanders Combat",
+      "entity.fallout_wastelands.enclave_machinegun_turret": "Machinegun Turret",
       "block.wastlanders.plasterslab": "Plaster Slab",
       "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
       "item.fallout_wastelands.radx": "Rad-X",
@@ -25700,7 +26105,7 @@
       "block.fallout_wastelands.vaultanimation_112": "Vault Door",
       "block.fallout_wastelands.vaultanimation_113": "Vault Door",
       "block.fallout_wastelands.vaultanimation_114": "Vault Door",
-      "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame Item",
+      "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame",
       "item.fallout_wastelands.greenpaintcan": "Green Paint Can",
       "block.fallout_wastelands.vaultanimation_115": "Vault Door",
       "block.fallout_wastelands.undergroundbrick": "Wasteland Underground Brick",
@@ -25909,6 +26314,7 @@
       "item.fallout_wastelands.real_turret_projectile": "Real Turret Projectile",
       "block.fallout_wastelands.vaultanimation_62": "Vault Door",
       "block.fallout_wastelands.vaultanimation_63": "Vault Door",
+      "item.fallout_wastelands.broken_power_armor_frame": "Damaged Power Armor Frame",
       "block.wastlanders.blastwindows": "Blast Windows",
       "item.wastlanders.femalevaultjumpsuit_chestplate": "Vault Jumpsuit Body (female)",
       "block.fallout_wastelands.vaultanimation_60": "Vault Door",
@@ -26205,6 +26611,7 @@
       "block.fallout_wastelands.vaultanimation_1": "Vault Door",
       "block.wastlanders.rottenplanksslab": "Rotten Plank Slab",
       "item.fallout_wastelands.femalevaultjumpsuit_leggings": "Vault Jumpsuit Leggings (female)",
+      "item.fallout_wastelands.enclave_machinegun_turret_spawn_egg": "Machinegun Turret Spawn Egg",
       "block.fallout_wastelands.wastelancobblestonewall": "Wasteland Cobblestone Wall",
       "item.fallout_wastelands.bloatfly_spawn_egg": "Bloatfly Spawn Egg"
     }

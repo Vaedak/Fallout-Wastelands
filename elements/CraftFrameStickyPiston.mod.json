@@ -1,0 +1,46 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Aluminiumingot"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Aluminiumingot"
+      },
+      {
+        "value": "Blocks.STICKY_PISTON"
+      },
+      {
+        "value": "CUSTOM:Steelingot"
+      },
+      {
+        "value": "Blocks.STICKY_PISTON"
+      },
+      {
+        "value": "CUSTOM:Steelblock"
+      },
+      {
+        "value": "CUSTOM:Aluminiumingot"
+      },
+      {
+        "value": "CUSTOM:Steelblock"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:PowerArmorFrameItem"
+    },
+    "name": "craft_frame_sticky_piston",
+    "namespace": "mod"
+  }
+}

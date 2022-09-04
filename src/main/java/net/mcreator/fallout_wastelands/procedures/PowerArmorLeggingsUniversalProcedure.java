@@ -35,37 +35,37 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Map;
 
-public class T45powerarmorHelmetTickEventProcedure {
+public class PowerArmorLeggingsUniversalProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure T45powerarmorHelmetTickEvent!");
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure PowerArmorLeggingsUniversal!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure T45powerarmorHelmetTickEvent!");
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure PowerArmorLeggingsUniversal!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency y for procedure T45powerarmorHelmetTickEvent!");
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency y for procedure PowerArmorLeggingsUniversal!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure T45powerarmorHelmetTickEvent!");
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure PowerArmorLeggingsUniversal!");
 			return;
 		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure T45powerarmorHelmetTickEvent!");
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure PowerArmorLeggingsUniversal!");
 			return;
 		}
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure T45powerarmorHelmetTickEvent!");
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure PowerArmorLeggingsUniversal!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");
@@ -78,19 +78,7 @@ public class T45powerarmorHelmetTickEventProcedure {
 		boolean legs = false;
 		boolean boots = false;
 		boolean helm = false;
-		itemstack.getOrCreateTag().putBoolean("PowerArmorHelmet", (true));
-		if (entity instanceof PlayerEntity || entity instanceof ServerPlayerEntity) {
-			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
-				if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power > 0) {
-					if (entity.isInWater()) {
-						if (entity instanceof LivingEntity)
-							((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, (int) 60, (int) 1, (false), (false)));
-					}
-				}
-			}
-		}
+		itemstack.getOrCreateTag().putBoolean("PowerArmorLeggings", (true));
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
 			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -108,7 +96,7 @@ public class T45powerarmorHelmetTickEventProcedure {
 					|| (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power == 0) {
 				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, (int) 10, (int) 4, (false), (false)));
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 10, (int) 4, (false), (false)));
 			}
 		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)

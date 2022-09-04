@@ -233,6 +233,7 @@ public class FalloutWastelandsModVariables {
 			nbt.putBoolean("RADUI4", instance.RADUI4);
 			nbt.putBoolean("paulo_quest_in_progress", instance.paulo_quest_in_progress);
 			nbt.putBoolean("paulo_quest_done", instance.paulo_quest_done);
+			nbt.putBoolean("DisplayRadUI", instance.DisplayRadUI);
 			return nbt;
 		}
 
@@ -254,6 +255,7 @@ public class FalloutWastelandsModVariables {
 			instance.RADUI4 = nbt.getBoolean("RADUI4");
 			instance.paulo_quest_in_progress = nbt.getBoolean("paulo_quest_in_progress");
 			instance.paulo_quest_done = nbt.getBoolean("paulo_quest_done");
+			instance.DisplayRadUI = nbt.getBoolean("DisplayRadUI");
 		}
 	}
 
@@ -273,6 +275,7 @@ public class FalloutWastelandsModVariables {
 		public boolean RADUI4 = false;
 		public boolean paulo_quest_in_progress = false;
 		public boolean paulo_quest_done = false;
+		public boolean DisplayRadUI = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -323,6 +326,7 @@ public class FalloutWastelandsModVariables {
 			clone.RADUI1 = original.RADUI1;
 			clone.RADUI3 = original.RADUI3;
 			clone.RADUI4 = original.RADUI4;
+			clone.DisplayRadUI = original.DisplayRadUI;
 		}
 	}
 
@@ -363,6 +367,7 @@ public class FalloutWastelandsModVariables {
 					variables.RADUI4 = message.data.RADUI4;
 					variables.paulo_quest_in_progress = message.data.paulo_quest_in_progress;
 					variables.paulo_quest_done = message.data.paulo_quest_done;
+					variables.DisplayRadUI = message.data.DisplayRadUI;
 				}
 			});
 			context.setPacketHandled(true);

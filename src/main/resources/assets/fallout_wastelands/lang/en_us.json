@@ -60,6 +60,7 @@
   "item.minecraft.potion.effect.radiation": "Radiation Poisoning",
   "block.wastlanders.wastelandconcretewall": "Wasteland Concrete Wall",
   "itemGroup.tabwastelanderscombattab": "Wastelanders Combat",
+  "entity.fallout_wastelands.enclave_machinegun_turret": "Machinegun Turret",
   "block.wastlanders.plasterslab": "Plaster Slab",
   "item.fallout_wastelands.fevgoo_bucket": "Fevgoo Bucket",
   "item.fallout_wastelands.radx": "Rad-X",
@@ -619,7 +620,7 @@
   "block.fallout_wastelands.vaultanimation_112": "Vault Door",
   "block.fallout_wastelands.vaultanimation_113": "Vault Door",
   "block.fallout_wastelands.vaultanimation_114": "Vault Door",
-  "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame Item",
+  "item.fallout_wastelands.power_armor_frame_item": "Power Armor Frame",
   "item.fallout_wastelands.greenpaintcan": "Green Paint Can",
   "block.fallout_wastelands.vaultanimation_115": "Vault Door",
   "block.fallout_wastelands.undergroundbrick": "Wasteland Underground Brick",
@@ -828,6 +829,7 @@
   "item.fallout_wastelands.real_turret_projectile": "Real Turret Projectile",
   "block.fallout_wastelands.vaultanimation_62": "Vault Door",
   "block.fallout_wastelands.vaultanimation_63": "Vault Door",
+  "item.fallout_wastelands.broken_power_armor_frame": "Damaged Power Armor Frame",
   "block.wastlanders.blastwindows": "Blast Windows",
   "item.wastlanders.femalevaultjumpsuit_chestplate": "Vault Jumpsuit Body (female)",
   "block.fallout_wastelands.vaultanimation_60": "Vault Door",
@@ -1124,6 +1126,7 @@
   "block.fallout_wastelands.vaultanimation_1": "Vault Door",
   "block.wastlanders.rottenplanksslab": "Rotten Plank Slab",
   "item.fallout_wastelands.femalevaultjumpsuit_leggings": "Vault Jumpsuit Leggings (female)",
+  "item.fallout_wastelands.enclave_machinegun_turret_spawn_egg": "Machinegun Turret Spawn Egg",
   "block.fallout_wastelands.wastelancobblestonewall": "Wasteland Cobblestone Wall",
   "item.fallout_wastelands.bloatfly_spawn_egg": "Bloatfly Spawn Egg"
 }

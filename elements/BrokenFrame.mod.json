@@ -4,11 +4,11 @@
   "definition": {
     "mobName": "Broken Frame",
     "mobLabel": "",
-    "mobModelName": "ModelBrokenFrame",
-    "mobModelTexture": "brokenframe.png",
+    "mobModelName": "Modelbrokenpaf",
+    "mobModelTexture": "brokenpaftexture.png",
     "mobModelGlowTexture": "",
-    "modelWidth": 0.5,
-    "modelHeight": 0.5,
+    "modelWidth": 0.7,
+    "modelHeight": 0.4,
     "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
@@ -101,6 +101,9 @@
     "particleAmount": 4,
     "onRightClickedOn": {
       "name": "BrokenFrameRightClickedOnEntity"
+    },
+    "onMobTickUpdate": {
+      "name": "BrokenFrameOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",

@@ -10,9 +10,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 
 import net.minecraft.world.World;
+import net.minecraft.world.IServerWorld;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
@@ -44,19 +47,24 @@ import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.IRangedAttackMob;
+import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.AreaEffectCloudEntity;
 
+import net.mcreator.fallout_wastelands.procedures.MachinegunTurretOnInitialEntitySpawnProcedure;
 import net.mcreator.fallout_wastelands.procedures.MachinegunTurretOnEntityTickUpdatenewProcedure;
-import net.mcreator.fallout_wastelands.item.TurretFakeProjectileItem;
+import net.mcreator.fallout_wastelands.item.RealTurretProjectileItem;
 import net.mcreator.fallout_wastelands.entity.renderer.MachinegunTurretRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+
+import javax.annotation.Nullable;
 
 import java.util.stream.Stream;
 import java.util.Map;
@@ -67,7 +75,7 @@ import java.util.AbstractMap;
 public class MachinegunTurretEntity extends FalloutWastelandsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
-			.size(0.5f, 1.2000000000000002f)).build("machinegun_turret").setRegistryName("machinegun_turret");
+			.size(0.5f, 0.7f)).build("machinegun_turret").setRegistryName("machinegun_turret");
 
 	public MachinegunTurretEntity(FalloutWastelandsModElements instance) {
 		super(instance, 1410);
@@ -162,7 +170,7 @@ public class MachinegunTurretEntity extends FalloutWastelandsModElements.ModElem
 			this.targetSelector.addGoal(36, new NearestAttackableTargetGoal(this, BrotherhoodPaladinEntity.CustomEntity.class, true, true));
 			this.targetSelector.addGoal(37, new NearestAttackableTargetGoal(this, TaloncompagnylieutenantEntity.CustomEntity.class, true, true));
 			this.targetSelector.addGoal(38, new NearestAttackableTargetGoal(this, TaloncompagnysoldierEntity.CustomEntity.class, true, true));
-			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
+			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 5, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {
 					return this.shouldExecute();
@@ -195,6 +203,21 @@ public class MachinegunTurretEntity extends FalloutWastelandsModElements.ModElem
 		}
 
 		@Override
+		public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason,
+				@Nullable ILivingEntityData livingdata, @Nullable CompoundNBT tag) {
+			ILivingEntityData retval = super.onInitialSpawn(world, difficulty, reason, livingdata, tag);
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity entity = this;
+
+			MachinegunTurretOnInitialEntitySpawnProcedure
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			return retval;
+		}
+
+		@Override
 		public void baseTick() {
 			super.baseTick();
 			double x = this.getPosX();
@@ -207,7 +230,7 @@ public class MachinegunTurretEntity extends FalloutWastelandsModElements.ModElem
 		}
 
 		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {
-			TurretFakeProjectileItem.shoot(this, target);
+			RealTurretProjectileItem.shoot(this, target);
 		}
 	}
 }
