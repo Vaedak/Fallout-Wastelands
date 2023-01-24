@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/vaultblock_5",
     "top": "fallout_wastelands:blocks/vaultblock_5",
     "side": "fallout_wastelands:blocks/vaultblock_5"
-  }
+  },
+  "render_type": "solid"
 }

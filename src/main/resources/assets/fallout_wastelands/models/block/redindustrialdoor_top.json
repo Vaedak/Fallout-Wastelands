@@ -1,7 +1,0 @@
-{
-  "parent": "block/door_top",
-  "textures": {
-    "bottom": "fallout_wastelands:blocks/industrialredrivetdoorbottom",
-    "top": "fallout_wastelands:blocks/industrialredrivetdoorup"
-  }
-}

@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/filing_cabinets",
     "particle": "fallout_wastelands:blocks/filing_cabinets",
     "0": "fallout_wastelands:blocks/filing_cabinets"
-  }
+  },
+  "render_type": "solid"
 }

@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/whitetile",
     "top": "fallout_wastelands:blocks/whitetile",
     "side": "fallout_wastelands:blocks/whitetile"
-  }
+  },
+  "render_type": "solid"
 }

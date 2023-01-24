@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "fallout_wastelands:capitalwastelandeast",
+    "fallout_wastelands:capitalwasteland"
+  ],
+  "features": "fallout_wastelands:nuclearbunker_1",
+  "step": "surface_structures"
+}

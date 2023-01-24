@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/metallicstructure1",
     "west": "fallout_wastelands:blocks/metallicstructure1",
     "particle": "fallout_wastelands:blocks/metallicstructure1"
-  }
+  },
+  "render_type": "solid"
 }

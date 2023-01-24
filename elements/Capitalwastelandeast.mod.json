@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "biome",
   "definition": {
     "name": "Capitalwastelandeast",
@@ -50,7 +50,6 @@
       "value": "CUSTOM:Plasma"
     },
     "particlesProbability": 0.0,
-    "biomeCategory": "NONE",
     "rainingPossibility": 0.1,
     "temperature": 0.5,
     "baseHeight": 0.0,
@@ -59,7 +58,6 @@
     "spawnBiomeNether": false,
     "spawnInCaves": false,
     "biomeWeight": 6,
-    "biomeDictionaryTypes": [],
     "grassPerChunk": 1,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 0,

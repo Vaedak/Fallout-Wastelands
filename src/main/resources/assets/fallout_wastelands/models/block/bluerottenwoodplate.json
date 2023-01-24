@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/blueplanks",
     "west": "fallout_wastelands:blocks/blueplanks",
     "particle": "fallout_wastelands:blocks/blueplanks"
-  }
+  },
+  "render_type": "solid"
 }

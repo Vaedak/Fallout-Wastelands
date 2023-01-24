@@ -1,92 +1,48 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.math.vector.Vector2f;
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.command.ICommandSource;
-import net.minecraft.command.CommandSource;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
-import net.mcreator.fallout_wastelands.potion.CheckerIfExitedPotionEffect;
-import net.mcreator.fallout_wastelands.potion.AddArmorBackchestPotionEffect;
-import net.mcreator.fallout_wastelands.potion.AddArmorBackLegsPotionEffect;
-import net.mcreator.fallout_wastelands.potion.AddArmorBackHelmetPotionEffect;
-import net.mcreator.fallout_wastelands.potion.AddArmorBackBootsPotionEffect;
-import net.mcreator.fallout_wastelands.item.FrameArmorItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.network.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModMobEffects;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModItems;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.Map;
 
 public class T45powerarmorLeggingsTickEventProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure T45powerarmorLeggingsTickEvent!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure T45powerarmorLeggingsTickEvent!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency y for procedure T45powerarmorLeggingsTickEvent!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure T45powerarmorLeggingsTickEvent!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure T45powerarmorLeggingsTickEvent!");
-			return;
-		}
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure T45powerarmorLeggingsTickEvent!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		boolean chest = false;
 		boolean legs = false;
 		boolean boots = false;
 		boolean helm = false;
 		itemstack.getOrCreateTag().putBoolean("PowerArmorLeggings", (true));
-		if (entity instanceof PlayerEntity || entity instanceof ServerPlayerEntity) {
+		if (entity instanceof Player || entity instanceof ServerPlayer) {
 			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
 				if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power > 0) {
 					if (entity.isInWater()) {
-						if (entity instanceof LivingEntity)
-							((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, (int) 60, (int) 1, (false), (false)));
+						if (entity instanceof LivingEntity _entity)
+							_entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 60, 1, (false), (false)));
 					}
 				}
 			}
@@ -95,314 +51,215 @@ public class T45powerarmorLeggingsTickEventProcedure {
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
 			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power > 0) {
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 10, (int) 1, (false), (false)));
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity)
-							.addPotionEffect(new EffectInstance(CheckerIfExitedPotionEffect.potion, (int) 10, (int) 1, (false), (false)));
+				if (entity instanceof LivingEntity _entity)
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 10, 1, (false), (false)));
+				if (entity instanceof LivingEntity _entity)
+					_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.CHECKER_IF_EXITED.get(), 10, 1, (false), (false)));
 			}
 		}
-		if (entity instanceof PlayerEntity || entity instanceof ServerPlayerEntity) {
+		if (entity instanceof Player || entity instanceof ServerPlayer) {
 			if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == false
 					|| (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power == 0) {
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, (int) 10, (int) 4, (false), (false)));
+				if (entity instanceof LivingEntity _entity)
+					_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 10, 4, (false), (false)));
 			}
 		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
-					.getOrCreateTag().getBoolean("PowerArmorHelmet")
-					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
-							.getItem() == FrameArmorItem.helmet) == false) {
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private IWorld world;
-
-					public void start(IWorld world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getOrCreateTag()
+					.getBoolean("PowerArmorHelmet")
+					|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
+							.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) == false) {
+				FalloutWastelandsMod.queueServerWork(5, () -> {
+					if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
+							.getOrCreateTag().getBoolean("PowerArmorHelmet")
+							|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
+									.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) == false) {
+						if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
+								.getItem() == Blocks.AIR.asItem()) == false) {
+							if (entity instanceof LivingEntity _entity)
+								_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.ADD_ARMOR_BACK_HELMET.get(), (int) 0.001, 4,
+										(false), (false)));
 						}
 					}
-
-					private void run() {
-						if ((((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorHelmet")
-								|| ((entity instanceof LivingEntity)
-										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-										: ItemStack.EMPTY).getItem() == FrameArmorItem.helmet) == false) {
-							if ((((entity instanceof LivingEntity)
-									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
-								if (entity instanceof LivingEntity)
-									((LivingEntity) entity).addPotionEffect(
-											new EffectInstance(AddArmorBackHelmetPotionEffect.potion, (int) 0.001, (int) 4, (false), (false)));
-							}
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, (int) 5);
+				});
 			}
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
-					.getOrCreateTag().getBoolean("PowerArmorChestplate")
-					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
-							.getItem() == FrameArmorItem.body) == false) {
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private IWorld world;
-
-					public void start(IWorld world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getOrCreateTag()
+					.getBoolean("PowerArmorChestplate")
+					|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+							.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) == false) {
+				FalloutWastelandsMod.queueServerWork(5, () -> {
+					if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+							.getOrCreateTag().getBoolean("PowerArmorChestplate")
+							|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+									.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) == false) {
+						if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+								.getItem() == Blocks.AIR.asItem()) == false) {
+							if (entity instanceof LivingEntity _entity)
+								_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.ADD_ARMOR_BACKCHEST.get(), (int) 0.001, 4,
+										(false), (false)));
 						}
 					}
-
-					private void run() {
-						if ((((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorChestplate")
-								|| ((entity instanceof LivingEntity)
-										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-										: ItemStack.EMPTY).getItem() == FrameArmorItem.body) == false) {
-							if ((((entity instanceof LivingEntity)
-									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
-								if (entity instanceof LivingEntity)
-									((LivingEntity) entity).addPotionEffect(
-											new EffectInstance(AddArmorBackchestPotionEffect.potion, (int) 0.001, (int) 4, (false), (false)));
-							}
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, (int) 5);
+				});
 			}
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
-					.getOrCreateTag().getBoolean("PowerArmorLeggings")
-					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
-							.getItem() == FrameArmorItem.legs) == false) {
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private IWorld world;
-
-					public void start(IWorld world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getOrCreateTag()
+					.getBoolean("PowerArmorLeggings")
+					|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+							.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) == false) {
+				FalloutWastelandsMod.queueServerWork(5, () -> {
+					if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+							.getOrCreateTag().getBoolean("PowerArmorLeggings")
+							|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+									.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) == false) {
+						if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+								.getItem() == Blocks.AIR.asItem()) == false) {
+							if (entity instanceof LivingEntity _entity)
+								_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.ADD_ARMOR_BACK_LEGS.get(), (int) 0.001, 4,
+										(false), (false)));
 						}
 					}
-
-					private void run() {
-						if ((((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS)
-								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorLeggings")
-								|| ((entity instanceof LivingEntity)
-										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS)
-										: ItemStack.EMPTY).getItem() == FrameArmorItem.legs) == false) {
-							if ((((entity instanceof LivingEntity)
-									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS)
-									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
-								if (entity instanceof LivingEntity)
-									((LivingEntity) entity).addPotionEffect(
-											new EffectInstance(AddArmorBackLegsPotionEffect.potion, (int) 0.001, (int) 4, (false), (false)));
-							}
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, (int) 5);
+				});
 			}
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
-					.getOrCreateTag().getBoolean("PowerArmorBoots")
-					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
-							.getItem() == FrameArmorItem.boots) == false) {
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private IWorld world;
-
-					public void start(IWorld world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getOrCreateTag()
+					.getBoolean("PowerArmorBoots")
+					|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
+							.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) == false) {
+				FalloutWastelandsMod.queueServerWork(5, () -> {
+					if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
+							.getOrCreateTag().getBoolean("PowerArmorBoots")
+							|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
+									.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) == false) {
+						if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
+								.getItem() == Blocks.AIR.asItem()) == false) {
+							if (entity instanceof LivingEntity _entity)
+								_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.ADD_ARMOR_BACK_BOOTS.get(), (int) 0.001, 4,
+										(false), (false)));
 						}
 					}
-
-					private void run() {
-						if ((((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
-								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorBoots")
-								|| ((entity instanceof LivingEntity)
-										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
-										: ItemStack.EMPTY).getItem() == FrameArmorItem.boots) == false) {
-							if ((((entity instanceof LivingEntity)
-									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
-									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
-								if (entity instanceof LivingEntity)
-									((LivingEntity) entity).addPotionEffect(
-											new EffectInstance(AddArmorBackBootsPotionEffect.potion, (int) 0.001, (int) 4, (false), (false)));
-							}
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, (int) 5);
+				});
 			}
 		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
 					.getItem() == Blocks.AIR.asItem()) == true) {
 				if (helm == false) {
-					if (entity instanceof PlayerEntity) {
-						ItemStack _stktoremove = new ItemStack(FrameArmorItem.helmet);
-						((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 4,
-								((PlayerEntity) entity).container.func_234641_j_());
+					if (entity instanceof Player _player) {
+						ItemStack _stktoremove = new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get());
+						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 4,
+								_player.inventoryMenu.getCraftSlots());
 					}
-					if (world instanceof ServerWorld) {
-						((World) world).getServer().getCommandManager().handleCommand(
-								new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-										new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performPrefixedCommand(
+								new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""),
+										_level.getServer(), null).withSuppressedOutput(),
 								"/kill @e[type=minecraft:item,name=\"Frame Armor Helmet\"]");
-					}
-					helm = (true);
+					helm = true;
 					if (helm == true) {
-						helm = (false);
+						helm = false;
 						for (int index0 = 0; index0 < (int) (10); index0++) {
-							if (entity instanceof LivingEntity) {
-								if (entity instanceof PlayerEntity)
-									((PlayerEntity) entity).inventory.armorInventory.set((int) 3, new ItemStack(FrameArmorItem.helmet));
-								else
-									((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(FrameArmorItem.helmet));
-								if (entity instanceof ServerPlayerEntity)
-									((ServerPlayerEntity) entity).inventory.markDirty();
+							{
+								Entity _entity = entity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(3, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()));
+								}
 							}
 						}
 					}
 				}
 			}
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
 					.getItem() == Blocks.AIR.asItem()) == true) {
 				if (chest == false) {
-					if (entity instanceof PlayerEntity) {
-						ItemStack _stktoremove = new ItemStack(FrameArmorItem.body);
-						((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 4,
-								((PlayerEntity) entity).container.func_234641_j_());
+					if (entity instanceof Player _player) {
+						ItemStack _stktoremove = new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get());
+						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 4,
+								_player.inventoryMenu.getCraftSlots());
 					}
-					if (world instanceof ServerWorld) {
-						((World) world).getServer().getCommandManager().handleCommand(
-								new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-										new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-								"/kill @e[type=minecraft:item,name=\"Frame Armor Body\"]");
-					}
-					chest = (true);
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""),
+												_level.getServer(), null).withSuppressedOutput(),
+										"/kill @e[type=minecraft:item,name=\"Frame Armor Body\"]");
+					chest = true;
 					if (chest == true) {
-						chest = (false);
+						chest = false;
 						for (int index1 = 0; index1 < (int) (10); index1++) {
-							if (entity instanceof LivingEntity) {
-								if (entity instanceof PlayerEntity)
-									((PlayerEntity) entity).inventory.armorInventory.set((int) 2, new ItemStack(FrameArmorItem.body));
-								else
-									((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(FrameArmorItem.body));
-								if (entity instanceof ServerPlayerEntity)
-									((ServerPlayerEntity) entity).inventory.markDirty();
+							{
+								Entity _entity = entity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(2, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()));
+								}
 							}
 						}
 					}
 				}
 			}
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
 					.getItem() == Blocks.AIR.asItem()) == true) {
 				if (legs == false) {
-					if (entity instanceof PlayerEntity) {
-						ItemStack _stktoremove = new ItemStack(FrameArmorItem.legs);
-						((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 4,
-								((PlayerEntity) entity).container.func_234641_j_());
+					if (entity instanceof Player _player) {
+						ItemStack _stktoremove = new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get());
+						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 4,
+								_player.inventoryMenu.getCraftSlots());
 					}
-					if (world instanceof ServerWorld) {
-						((World) world).getServer().getCommandManager().handleCommand(
-								new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-										new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performPrefixedCommand(
+								new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""),
+										_level.getServer(), null).withSuppressedOutput(),
 								"/kill @e[type=minecraft:item,name=\"Frame Armor Leggings\"]");
-					}
-					legs = (true);
+					legs = true;
 					if (legs == true) {
-						legs = (false);
+						legs = false;
 						for (int index2 = 0; index2 < (int) (10); index2++) {
-							if (entity instanceof LivingEntity) {
-								if (entity instanceof PlayerEntity)
-									((PlayerEntity) entity).inventory.armorInventory.set((int) 1, new ItemStack(FrameArmorItem.legs));
-								else
-									((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(FrameArmorItem.legs));
-								if (entity instanceof ServerPlayerEntity)
-									((ServerPlayerEntity) entity).inventory.markDirty();
+							{
+								Entity _entity = entity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(1, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()));
+								}
 							}
 						}
 					}
 				}
 			}
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
 					.getItem() == Blocks.AIR.asItem()) == true) {
 				if (boots == false) {
-					if (world instanceof ServerWorld) {
-						((World) world).getServer().getCommandManager().handleCommand(
-								new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-										new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-								"/kill @e[type=minecraft:item,name=\"Frame Armor Boots\"]");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""),
+												_level.getServer(), null).withSuppressedOutput(),
+										"/kill @e[type=minecraft:item,name=\"Frame Armor Boots\"]");
+					if (entity instanceof Player _player) {
+						ItemStack _stktoremove = new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get());
+						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 4,
+								_player.inventoryMenu.getCraftSlots());
 					}
-					if (entity instanceof PlayerEntity) {
-						ItemStack _stktoremove = new ItemStack(FrameArmorItem.boots);
-						((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 4,
-								((PlayerEntity) entity).container.func_234641_j_());
-					}
-					boots = (true);
+					boots = true;
 					if (boots == true) {
-						boots = (false);
+						boots = false;
 						for (int index3 = 0; index3 < (int) (10); index3++) {
-							if (entity instanceof LivingEntity) {
-								if (entity instanceof PlayerEntity)
-									((PlayerEntity) entity).inventory.armorInventory.set((int) 0, new ItemStack(FrameArmorItem.boots));
-								else
-									((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(FrameArmorItem.boots));
-								if (entity instanceof ServerPlayerEntity)
-									((ServerPlayerEntity) entity).inventory.markDirty();
+							{
+								Entity _entity = entity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(0, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()));
+								}
 							}
 						}
 					}
@@ -412,3382 +269,3382 @@ public class T45powerarmorLeggingsTickEventProcedure {
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (0), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(0, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (0), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(0, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (1), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(1, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (1), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(1, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (2), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(2, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (2), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(2, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (3), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(3, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (3), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(3, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (4), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(4, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (4), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(4, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (5), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(5, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (5), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(5, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (6), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(6, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (6), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(6, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (7), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(7, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (7), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(7, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (8), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(8, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (8), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(8, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (9), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(9, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (9), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(9, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (10), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(10, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (10), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(10, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (11), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(11, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (11), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(11, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (12), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(12, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (12), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(12, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (13), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(13, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (13), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(13, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (14), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(14, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (14), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(14, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (15), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(15, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (15), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(15, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (16), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(16, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (16), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(16, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (17), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(17, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (17), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(17, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (18), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(18, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (18), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(18, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (19), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(19, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (19), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(19, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (20), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(20, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (20), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(20, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (21), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(21, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (21), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(21, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (22), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(22, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (22), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(22, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (23), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(23, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (23), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(23, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (24), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(24, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (24), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(24, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (25), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(25, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (25), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(25, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (26), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(26, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (26), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(26, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (27), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(27, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (27), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(27, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (28), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(28, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (28), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(28, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (29), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(29, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (29), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(29, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (30), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(30, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (30), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(30, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (31), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(31, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (31), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(31, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (32), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(32, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (32), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(32, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (33), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(33, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (33), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(33, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (34), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(34, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (34), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(34, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (35), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(35, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (35), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(35, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (36), entity)).getItem() == FrameArmorItem.helmet) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(36, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (36), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(36, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (0), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(0, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (0), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(0, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (1), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(1, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (1), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(1, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (2), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(2, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (2), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(2, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (3), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(3, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (3), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(3, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (4), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(4, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (4), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(4, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (5), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(5, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (5), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(5, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (6), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(6, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (6), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(6, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (7), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(7, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (7), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(7, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (8), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(8, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (8), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(8, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (9), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(9, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (9), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(9, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (10), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(10, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (10), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(10, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (11), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(11, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (11), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(11, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (12), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(12, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (12), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(12, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (13), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(13, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (13), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(13, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (14), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(14, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (14), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(14, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (15), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(15, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (15), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(15, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (16), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(16, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (16), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(16, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (17), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(17, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (17), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(17, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (18), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(18, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (18), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(18, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (19), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(19, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (19), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(19, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (20), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(20, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (20), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(20, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (21), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(21, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (21), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(21, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (22), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(22, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (22), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(22, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (23), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(23, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (23), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(23, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (24), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(24, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (24), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(24, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (25), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(25, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (25), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(25, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (26), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(26, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (26), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(26, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (27), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(27, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (27), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(27, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (28), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(28, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (28), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(28, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (29), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(29, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (29), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(29, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (30), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(30, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (30), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(30, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (31), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(31, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (31), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(31, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (32), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(32, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (32), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(32, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (33), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(33, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (33), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(33, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (34), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(34, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (34), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(34, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (35), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(35, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (35), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(35, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (36), entity)).getItem() == FrameArmorItem.body) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(36, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (36), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(36, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (0), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(0, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (0), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(0, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (1), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(1, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (1), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(1, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (2), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(2, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (2), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(2, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (3), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(3, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (3), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(3, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (4), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(4, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (4), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(4, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (5), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(5, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (5), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(5, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (6), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(6, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (6), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(6, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (7), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(7, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (7), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(7, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (8), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(8, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (8), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(8, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (9), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(9, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (9), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(9, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (10), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(10, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (10), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(10, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (11), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(11, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (11), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(11, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (12), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(12, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (12), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(12, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (13), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(13, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (13), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(13, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (14), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(14, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (14), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(14, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (15), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(15, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (15), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(15, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (16), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(16, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (16), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(16, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (17), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(17, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (17), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(17, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (18), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(18, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (18), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(18, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (19), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(19, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (19), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(19, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (20), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(20, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (20), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(20, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (21), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(21, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (21), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(21, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (22), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(22, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (22), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(22, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (23), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(23, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (23), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(23, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (24), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(24, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (24), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(24, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (25), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(25, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (25), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(25, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (26), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(26, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (26), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(26, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (27), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(27, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (27), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(27, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (28), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(28, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (28), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(28, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (29), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(29, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (29), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(29, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (30), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(30, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (30), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(30, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (31), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(31, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (31), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(31, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (32), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(32, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (32), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(32, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (33), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(33, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (33), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(33, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (34), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(34, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (34), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(34, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (35), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(35, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (35), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(35, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (36), entity)).getItem() == FrameArmorItem.legs) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(36, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (36), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(36, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (0), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(0, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (0), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(0, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (1), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(1, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (1), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(1, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (2), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(2, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (2), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(2, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (3), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(3, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (3), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(3, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (4), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(4, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (4), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(4, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (5), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(5, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (5), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(5, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (6), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(6, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (6), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(6, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (7), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(7, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (7), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(7, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (8), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(8, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (8), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(8, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (9), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(9, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (9), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(9, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (10), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(10, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (10), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(10, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (11), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(11, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (11), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(11, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (12), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(12, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (12), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(12, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (13), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(13, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (13), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(13, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (14), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(14, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (14), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(14, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (15), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(15, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (15), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(15, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (16), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(16, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (16), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(16, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (17), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(17, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (17), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(17, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (18), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(18, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (18), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(18, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (19), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(19, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (19), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(19, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (20), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(20, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (20), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(20, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (21), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(21, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (21), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(21, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (22), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(22, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (22), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(22, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (23), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(23, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (23), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(23, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (24), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(24, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (24), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(24, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (25), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(25, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (25), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(25, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (26), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(26, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (26), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(26, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (27), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(27, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (27), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(27, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (28), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(28, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (28), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(28, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (29), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(29, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (29), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(29, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (30), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(30, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (30), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(30, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (31), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(31, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (31), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(31, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (32), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(32, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (32), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(32, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (33), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(33, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (33), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(33, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (34), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(34, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (34), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(34, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid, Entity entity) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					_retval.set(capability.getStackInSlot(sltid).copy());
 				});
 				return _retval.get();
 			}
-		}.getItemStack((int) (35), entity)).getItem() == FrameArmorItem.boots) {
-			if (entity instanceof PlayerEntity) {
+		}.getItemStack(35, entity)).getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) {
+			if (entity instanceof Player _player) {
 				ItemStack _stktoremove = (new Object() {
 					public ItemStack getItemStack(int sltid, Entity entity) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-						entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 							_retval.set(capability.getStackInSlot(sltid).copy());
 						});
 						return _retval.get();
 					}
-				}.getItemStack((int) (35), entity));
-				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
-						((PlayerEntity) entity).container.func_234641_j_());
+				}.getItemStack(35, entity));
+				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
+						_player.inventoryMenu.getCraftSlots());
 			}
 		}
 	}

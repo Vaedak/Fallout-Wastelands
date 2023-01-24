@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/lapisore",
     "west": "fallout_wastelands:blocks/lapisore",
     "particle": "fallout_wastelands:blocks/lapisore"
-  }
+  },
+  "render_type": "solid"
 }

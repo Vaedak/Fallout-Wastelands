@@ -1,0 +1,9 @@
+{
+  "parent": "fallout_wastelands:custom/industrial_scrap_pile",
+  "textures": {
+    "all": "fallout_wastelands:blocks/mechanical_scrap_pile_texture",
+    "particle": "fallout_wastelands:blocks/mechanical_scrap_pile_texture",
+    "0": "fallout_wastelands:blocks/industrial_scrap_pile_texture"
+  },
+  "render_type": "translucent"
+}

@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/vaultvent",
     "west": "fallout_wastelands:blocks/vaultvent",
     "particle": "fallout_wastelands:blocks/vaultblock_2"
-  }
+  },
+  "render_type": "solid"
 }

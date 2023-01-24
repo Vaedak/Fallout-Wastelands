@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/bricktile",
     "top": "fallout_wastelands:blocks/bricktile",
     "side": "fallout_wastelands:blocks/bricktile"
-  }
+  },
+  "render_type": "solid"
 }

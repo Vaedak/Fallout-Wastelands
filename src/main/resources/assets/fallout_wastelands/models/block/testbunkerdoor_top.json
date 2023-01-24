@@ -1,7 +1,0 @@
-{
-  "parent": "block/door_top",
-  "textures": {
-    "bottom": "fallout_wastelands:blocks/greenmetalplatingdoordown",
-    "top": "fallout_wastelands:blocks/greenmetalplatingdoorup"
-  }
-}

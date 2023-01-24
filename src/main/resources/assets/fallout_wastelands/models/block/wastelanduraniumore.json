@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/uraniumwastelandore",
     "west": "fallout_wastelands:blocks/uraniumwastelandore",
     "particle": "fallout_wastelands:blocks/uraniumwastelandore"
-  }
+  },
+  "render_type": "solid"
 }

@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "fallout_wastelands:wastelandgravel"
   },
-  "result": {
-    "item": "fallout_wastelands:roadbitumen"
-  }
+  "result": "fallout_wastelands:roadbitumen"
 }

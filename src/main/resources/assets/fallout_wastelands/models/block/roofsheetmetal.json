@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/roofblock",
     "west": "fallout_wastelands:blocks/roofblock",
     "particle": "fallout_wastelands:blocks/roofblock"
-  }
+  },
+  "render_type": "solid"
 }

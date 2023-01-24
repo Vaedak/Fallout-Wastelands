@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/rivetbottom",
     "west": "fallout_wastelands:blocks/rivetbottom",
     "particle": "fallout_wastelands:blocks/industrialredplain"
-  }
+  },
+  "render_type": "solid"
 }

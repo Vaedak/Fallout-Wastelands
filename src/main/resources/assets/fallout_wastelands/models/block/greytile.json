@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/greytile",
     "west": "fallout_wastelands:blocks/greytile",
     "particle": "fallout_wastelands:blocks/greytile"
-  }
+  },
+  "render_type": "solid"
 }

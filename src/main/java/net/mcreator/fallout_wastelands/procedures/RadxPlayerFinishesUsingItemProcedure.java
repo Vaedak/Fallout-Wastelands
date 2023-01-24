@@ -1,24 +1,16 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 
-import net.mcreator.fallout_wastelands.potion.RadioprotectionPotionEffect;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModMobEffects;
 
 public class RadxPlayerFinishesUsingItemProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure RadxPlayerFinishesUsingItem!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(RadioprotectionPotionEffect.potion, (int) 6000, (int) 1, (false), (false)));
+		if (entity instanceof LivingEntity _entity)
+			_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.RADIOPROTECTION.get(), 6000, 1, (false), (false)));
 	}
 }

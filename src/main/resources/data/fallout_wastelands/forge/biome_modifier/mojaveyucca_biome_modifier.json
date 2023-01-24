@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "fallout_wastelands:desertwastland",
+  "features": "fallout_wastelands:mojaveyucca",
+  "step": "vegetal_decoration"
+}

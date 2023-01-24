@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/robobrainkitblock",
     "west": "fallout_wastelands:blocks/robobrainkitblock",
     "particle": "fallout_wastelands:blocks/robobrainkitblock"
-  }
+  },
+  "render_type": "solid"
 }

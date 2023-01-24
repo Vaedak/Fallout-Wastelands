@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/television_texture",
     "particle": "fallout_wastelands:blocks/television_texture",
     "0": "fallout_wastelands:blocks/television_texture"
-  }
+  },
+  "render_type": "solid"
 }

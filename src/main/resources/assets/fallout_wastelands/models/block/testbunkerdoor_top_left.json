@@ -1,0 +1,8 @@
+{
+  "parent": "block/door_top_left",
+  "textures": {
+    "bottom": "fallout_wastelands:blocks/greenmetalplatingdoordown",
+    "top": "fallout_wastelands:blocks/greenmetalplatingdoorup"
+  },
+  "render_type": "translucent"
+}

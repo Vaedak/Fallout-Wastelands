@@ -1,42 +1,25 @@
 package net.mcreator.fallout_wastelands.procedures;
 
 import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.server.level.ServerPlayer;
 
-import net.mcreator.fallout_wastelands.potion.FrameIdentifierPotionEffect;
-import net.mcreator.fallout_wastelands.potion.CheckerIfExitedPotionEffect;
-import net.mcreator.fallout_wastelands.potion.CheckIfExitedMarkerPotionEffect;
-import net.mcreator.fallout_wastelands.potion.ArmorPlacerPotionEffect;
-import net.mcreator.fallout_wastelands.item.FrameArmorItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
-import java.util.Collection;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModMobEffects;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModItems;
 
 public class PowerArmorFramePlayerCollidesWithThisEntityProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure PowerArmorFramePlayerCollidesWithThisEntity!");
+	public static void execute(Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
 			return;
-		}
-		if (dependencies.get("sourceentity") == null) {
-			if (!dependencies.containsKey("sourceentity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure PowerArmorFramePlayerCollidesWithThisEntity!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		boolean transferer = false;
 		boolean getisframelegs = false;
 		boolean transfer3 = false;
@@ -44,210 +27,187 @@ public class PowerArmorFramePlayerCollidesWithThisEntityProcedure {
 		boolean transfer2 = false;
 		boolean getisframeboots = false;
 		boolean getisframe = false;
-		if (new Object() {
-			boolean check(Entity _entity) {
-				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-					for (EffectInstance effect : effects) {
-						if (effect.getPotion() == FrameIdentifierPotionEffect.potion)
-							return true;
-					}
-				}
-				return false;
-			}
-		}.check(entity)) {
-			if (sourceentity instanceof PlayerEntity || sourceentity instanceof ServerPlayerEntity) {
-				if (new Object() {
-					boolean check(Entity _entity) {
-						if (_entity instanceof LivingEntity) {
-							Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-							for (EffectInstance effect : effects) {
-								if (effect.getPotion() == CheckIfExitedMarkerPotionEffect.potion)
-									return true;
+		if (entity instanceof LivingEntity _livEnt ? _livEnt.hasEffect(FalloutWastelandsModMobEffects.FRAME_IDENTIFIER.get()) : false) {
+			if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
+				if (sourceentity instanceof LivingEntity _livEnt
+						? _livEnt.hasEffect(FalloutWastelandsModMobEffects.CHECK_IF_EXITED_MARKER.get())
+						: false) {
+					transferer = true;
+					if (transferer == true) {
+						{
+							Entity _ent = entity;
+							_ent.setYRot(sourceentity.getYRot());
+							_ent.setXRot(20);
+							_ent.setYBodyRot(_ent.getYRot());
+							_ent.setYHeadRot(_ent.getYRot());
+							_ent.yRotO = _ent.getYRot();
+							_ent.xRotO = _ent.getXRot();
+							if (_ent instanceof LivingEntity _entity) {
+								_entity.yBodyRotO = _entity.getYRot();
+								_entity.yHeadRotO = _entity.getYRot();
 							}
 						}
-						return false;
-					}
-				}.check(sourceentity)) {
-					transferer = (true);
-					if (transferer == true) {
-						entity.rotationYaw = (float) ((sourceentity.rotationYaw));
-						entity.setRenderYawOffset(entity.rotationYaw);
-						entity.prevRotationYaw = entity.rotationYaw;
-						if (entity instanceof LivingEntity) {
-							((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
-							((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
-							((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+						{
+							Entity _ent = sourceentity;
+							_ent.setYRot(sourceentity.getYRot());
+							_ent.setXRot(20);
+							_ent.setYBodyRot(_ent.getYRot());
+							_ent.setYHeadRot(_ent.getYRot());
+							_ent.yRotO = _ent.getYRot();
+							_ent.xRotO = _ent.getXRot();
+							if (_ent instanceof LivingEntity _entity) {
+								_entity.yBodyRotO = _entity.getYRot();
+								_entity.yHeadRotO = _entity.getYRot();
+							}
 						}
-						entity.rotationPitch = (float) (20);
-						sourceentity.rotationYaw = (float) ((sourceentity.rotationYaw));
-						entity.setRenderYawOffset(entity.rotationYaw);
-						entity.prevRotationYaw = entity.rotationYaw;
-						if (entity instanceof LivingEntity) {
-							((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
-							((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
-							((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
-						}
-						sourceentity.rotationPitch = (float) (20);
-						sourceentity.setMotion(0, 0, 0);
-						if ((((sourceentity instanceof LivingEntity)
-								? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-								: ItemStack.EMPTY).getItem() == FrameArmorItem.helmet) == true) {
+						sourceentity.setDeltaMovement(new Vec3(0, 0, 0));
+						if (((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
+								.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()) == true) {
 							{
+								final int _slotid = 0;
 								final ItemStack _setstack = new ItemStack(Blocks.AIR);
-								final int _sltid = (int) (0);
-								_setstack.setCount((int) 1);
-								entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									if (capability instanceof IItemHandlerModifiable) {
-										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-									}
+								_setstack.setCount(1);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									if (capability instanceof IItemHandlerModifiable _modHandler)
+										_modHandler.setStackInSlot(_slotid, _setstack);
 								});
 							}
-							getisframe = (false);
+							getisframe = false;
 						} else if (getisframe == false) {
 							{
-								final ItemStack _setstack = ((sourceentity instanceof LivingEntity)
-										? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.HEAD)
+								final int _slotid = 0;
+								final ItemStack _setstack = (sourceentity instanceof LivingEntity _entGetArmor
+										? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD)
 										: ItemStack.EMPTY);
-								final int _sltid = (int) (0);
-								_setstack.setCount((int) 1);
-								entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									if (capability instanceof IItemHandlerModifiable) {
-										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-									}
+								_setstack.setCount(1);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									if (capability instanceof IItemHandlerModifiable _modHandler)
+										_modHandler.setStackInSlot(_slotid, _setstack);
 								});
 							}
 						}
-						if ((((sourceentity instanceof LivingEntity)
-								? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-								: ItemStack.EMPTY).getItem() == FrameArmorItem.body) == true) {
+						if (((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+								.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()) == true) {
 							{
+								final int _slotid = 1;
 								final ItemStack _setstack = new ItemStack(Blocks.AIR);
-								final int _sltid = (int) (1);
-								_setstack.setCount((int) 1);
-								entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									if (capability instanceof IItemHandlerModifiable) {
-										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-									}
+								_setstack.setCount(1);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									if (capability instanceof IItemHandlerModifiable _modHandler)
+										_modHandler.setStackInSlot(_slotid, _setstack);
 								});
 							}
-							getisframechest = (false);
+							getisframechest = false;
 						} else if (getisframechest == false) {
 							{
-								final ItemStack _setstack = ((sourceentity instanceof LivingEntity)
-										? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.CHEST)
+								final int _slotid = 1;
+								final ItemStack _setstack = (sourceentity instanceof LivingEntity _entGetArmor
+										? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST)
 										: ItemStack.EMPTY);
-								final int _sltid = (int) (1);
-								_setstack.setCount((int) 1);
-								entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									if (capability instanceof IItemHandlerModifiable) {
-										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-									}
+								_setstack.setCount(1);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									if (capability instanceof IItemHandlerModifiable _modHandler)
+										_modHandler.setStackInSlot(_slotid, _setstack);
 								});
 							}
 						}
-						if ((((sourceentity instanceof LivingEntity)
-								? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.LEGS)
-								: ItemStack.EMPTY).getItem() == FrameArmorItem.legs) == true) {
+						if (((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+								.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()) == true) {
 							{
+								final int _slotid = 2;
 								final ItemStack _setstack = new ItemStack(Blocks.AIR);
-								final int _sltid = (int) (2);
-								_setstack.setCount((int) 1);
-								entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									if (capability instanceof IItemHandlerModifiable) {
-										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-									}
+								_setstack.setCount(1);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									if (capability instanceof IItemHandlerModifiable _modHandler)
+										_modHandler.setStackInSlot(_slotid, _setstack);
 								});
 							}
-							getisframelegs = (false);
+							getisframelegs = false;
 						} else if (getisframelegs == false) {
 							{
-								final ItemStack _setstack = ((sourceentity instanceof LivingEntity)
-										? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.LEGS)
+								final int _slotid = 2;
+								final ItemStack _setstack = (sourceentity instanceof LivingEntity _entGetArmor
+										? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS)
 										: ItemStack.EMPTY);
-								final int _sltid = (int) (2);
-								_setstack.setCount((int) 1);
-								entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									if (capability instanceof IItemHandlerModifiable) {
-										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-									}
+								_setstack.setCount(1);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									if (capability instanceof IItemHandlerModifiable _modHandler)
+										_modHandler.setStackInSlot(_slotid, _setstack);
 								});
 							}
 						}
-						if ((((sourceentity instanceof LivingEntity)
-								? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.FEET)
-								: ItemStack.EMPTY).getItem() == FrameArmorItem.boots) == true) {
+						if (((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
+								.getItem() == FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()) == true) {
 							{
+								final int _slotid = 3;
 								final ItemStack _setstack = new ItemStack(Blocks.AIR);
-								final int _sltid = (int) (3);
-								_setstack.setCount((int) 1);
-								entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									if (capability instanceof IItemHandlerModifiable) {
-										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-									}
+								_setstack.setCount(1);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									if (capability instanceof IItemHandlerModifiable _modHandler)
+										_modHandler.setStackInSlot(_slotid, _setstack);
 								});
 							}
-							getisframeboots = (false);
+							getisframeboots = false;
 						} else if (getisframeboots == false) {
 							{
-								final ItemStack _setstack = ((sourceentity instanceof LivingEntity)
-										? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.FEET)
+								final int _slotid = 3;
+								final ItemStack _setstack = (sourceentity instanceof LivingEntity _entGetArmor
+										? _entGetArmor.getItemBySlot(EquipmentSlot.FEET)
 										: ItemStack.EMPTY);
-								final int _sltid = (int) (3);
-								_setstack.setCount((int) 1);
-								entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									if (capability instanceof IItemHandlerModifiable) {
-										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-									}
+								_setstack.setCount(1);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									if (capability instanceof IItemHandlerModifiable _modHandler)
+										_modHandler.setStackInSlot(_slotid, _setstack);
 								});
 							}
 						}
-						transfer2 = (true);
+						transfer2 = true;
 						if (transfer2 == true) {
-							if (entity instanceof LivingEntity) {
-								((LivingEntity) entity).removePotionEffect(FrameIdentifierPotionEffect.potion);
-							}
-							if (sourceentity instanceof LivingEntity) {
-								((LivingEntity) sourceentity).removePotionEffect(CheckerIfExitedPotionEffect.potion);
-							}
-							if (sourceentity instanceof LivingEntity) {
-								((LivingEntity) sourceentity).removePotionEffect(CheckIfExitedMarkerPotionEffect.potion);
-							}
-							transfer2 = (false);
-							transfer3 = (true);
+							if (entity instanceof LivingEntity _entity)
+								_entity.removeEffect(FalloutWastelandsModMobEffects.FRAME_IDENTIFIER.get());
+							if (sourceentity instanceof LivingEntity _entity)
+								_entity.removeEffect(FalloutWastelandsModMobEffects.CHECKER_IF_EXITED.get());
+							if (sourceentity instanceof LivingEntity _entity)
+								_entity.removeEffect(FalloutWastelandsModMobEffects.CHECK_IF_EXITED_MARKER.get());
+							transfer2 = false;
+							transfer3 = true;
 							if (transfer3 == true) {
-								transfer3 = (false);
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 3, new ItemStack(Blocks.AIR));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(Blocks.AIR));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
+								transfer3 = false;
+								{
+									Entity _entity = sourceentity;
+									if (_entity instanceof Player _player) {
+										_player.getInventory().armor.set(3, new ItemStack(Blocks.AIR));
+										_player.getInventory().setChanged();
+									} else if (_entity instanceof LivingEntity _living) {
+										_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Blocks.AIR));
+									}
 								}
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 2, new ItemStack(Blocks.AIR));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(Blocks.AIR));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
+								{
+									Entity _entity = sourceentity;
+									if (_entity instanceof Player _player) {
+										_player.getInventory().armor.set(2, new ItemStack(Blocks.AIR));
+										_player.getInventory().setChanged();
+									} else if (_entity instanceof LivingEntity _living) {
+										_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Blocks.AIR));
+									}
 								}
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 1, new ItemStack(Blocks.AIR));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(Blocks.AIR));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
+								{
+									Entity _entity = sourceentity;
+									if (_entity instanceof Player _player) {
+										_player.getInventory().armor.set(1, new ItemStack(Blocks.AIR));
+										_player.getInventory().setChanged();
+									} else if (_entity instanceof LivingEntity _living) {
+										_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Blocks.AIR));
+									}
 								}
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 0, new ItemStack(Blocks.AIR));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(Blocks.AIR));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
+								{
+									Entity _entity = sourceentity;
+									if (_entity instanceof Player _player) {
+										_player.getInventory().armor.set(0, new ItemStack(Blocks.AIR));
+										_player.getInventory().setChanged();
+									} else if (_entity instanceof LivingEntity _living) {
+										_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(Blocks.AIR));
+									}
 								}
 							}
 						}
@@ -255,10 +215,9 @@ public class PowerArmorFramePlayerCollidesWithThisEntityProcedure {
 				}
 			}
 		}
-		if (sourceentity instanceof LivingEntity)
-			((LivingEntity) sourceentity)
-					.addPotionEffect(new EffectInstance(CheckerIfExitedPotionEffect.potion, (int) 240, (int) 1, (false), (false)));
-		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(ArmorPlacerPotionEffect.potion, (int) 60, (int) 1, (false), (false)));
+		if (sourceentity instanceof LivingEntity _entity)
+			_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.CHECKER_IF_EXITED.get(), 240, 1, (false), (false)));
+		if (entity instanceof LivingEntity _entity)
+			_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.ARMOR_PLACER.get(), 60, 1, (false), (false)));
 	}
 }

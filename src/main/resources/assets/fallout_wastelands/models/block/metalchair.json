@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/metalchair",
     "particle": "fallout_wastelands:blocks/metalchair",
     "0": "fallout_wastelands:blocks/metalchair"
-  }
+  },
+  "render_type": "solid"
 }

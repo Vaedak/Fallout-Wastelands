@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/militmetalplating",
     "top": "fallout_wastelands:blocks/greenmetalplatinggridtop",
     "side": "fallout_wastelands:blocks/greenmetalplatinghazard"
-  }
+  },
+  "render_type": "solid"
 }

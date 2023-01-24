@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastelandstonedde",
     "west": "fallout_wastelands:blocks/wastelandstonedde",
     "particle": "fallout_wastelands:blocks/wastelandstonedde"
-  }
+  },
+  "render_type": "solid"
 }

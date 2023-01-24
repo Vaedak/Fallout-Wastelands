@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/iw",
     "west": "fallout_wastelands:blocks/iw",
     "particle": "fallout_wastelands:blocks/iw"
-  }
+  },
+  "render_type": "solid"
 }

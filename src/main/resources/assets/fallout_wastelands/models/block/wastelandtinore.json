@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastelandtinore",
     "west": "fallout_wastelands:blocks/wastelandtinore",
     "particle": "fallout_wastelands:blocks/wastelandtinore"
-  }
+  },
+  "render_type": "solid"
 }

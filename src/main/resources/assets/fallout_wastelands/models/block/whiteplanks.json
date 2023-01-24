@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/houseplanks",
     "west": "fallout_wastelands:blocks/houseplanks",
     "particle": "fallout_wastelands:blocks/houseplanks"
-  }
+  },
+  "render_type": "solid"
 }

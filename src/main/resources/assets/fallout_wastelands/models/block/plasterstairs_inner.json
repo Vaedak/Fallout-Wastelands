@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/whiteconcrete",
     "top": "fallout_wastelands:blocks/whiteconcrete",
     "side": "fallout_wastelands:blocks/whiteconcrete"
-  }
+  },
+  "render_type": "solid"
 }

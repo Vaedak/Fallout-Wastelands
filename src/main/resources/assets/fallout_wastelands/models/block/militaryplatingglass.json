@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/greenmetalplatingwindow",
     "west": "fallout_wastelands:blocks/greenmetalplatingwindow",
     "particle": "fallout_wastelands:blocks/militmetalplating"
-  }
+  },
+  "render_type": "translucent"
 }

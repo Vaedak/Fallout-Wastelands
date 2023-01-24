@@ -3,5 +3,6 @@
   "textures": {
     "wall": "fallout_wastelands:blocks/militmetalplating",
     "particle": "fallout_wastelands:blocks/militmetalplating"
-  }
+  },
+  "render_type": "solid"
 }

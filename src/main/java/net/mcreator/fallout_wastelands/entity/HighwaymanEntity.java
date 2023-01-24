@@ -2,344 +2,283 @@
 package net.mcreator.fallout_wastelands.entity;
 
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.items.wrapper.EntityHandsInvWrapper;
 import net.minecraftforge.items.wrapper.EntityArmorInvWrapper;
 import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.Capability;
 
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Direction;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.network.IPacket;
-import net.minecraft.nbt.INBT;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.entity.projectile.PotionEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureEntity;
-import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.entity.AreaEffectCloudEntity;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.entity.projectile.ThrownPotion;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.AreaEffectCloud;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
 
+import net.mcreator.fallout_wastelands.world.inventory.HighwaymantrunkMenu;
 import net.mcreator.fallout_wastelands.procedures.HighwaymanPlayerCollidesWithThisEntityProcedure;
 import net.mcreator.fallout_wastelands.procedures.HighwaymanOnEntityTickUpdatetest2Procedure;
 import net.mcreator.fallout_wastelands.procedures.HighwaymanFuelUseTickProcedure;
-import net.mcreator.fallout_wastelands.gui.HighwaymantrunkGui;
-import net.mcreator.fallout_wastelands.entity.renderer.HighwaymanRenderer;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModEntities;
 
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
-import java.util.stream.Stream;
-import java.util.Random;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
-
 import io.netty.buffer.Unpooled;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class HighwaymanEntity extends FalloutWastelandsModElements.ModElement {
-	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
-			.size(3.9999999999999996f, 3f)).build("highwayman").setRegistryName("highwayman");
+public class HighwaymanEntity extends PathfinderMob {
+	public HighwaymanEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(FalloutWastelandsModEntities.HIGHWAYMAN.get(), world);
+	}
 
-	public HighwaymanEntity(FalloutWastelandsModElements instance) {
-		super(instance, 475);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new HighwaymanRenderer.ModelRegisterHandler());
-		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
+	public HighwaymanEntity(EntityType<HighwaymanEntity> type, Level world) {
+		super(type, world);
+		xpReward = 0;
+		setNoAi(false);
+		setPersistenceRequired();
 	}
 
 	@Override
-	public void initElements() {
-		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -13750738, -13094874, new Item.Properties().group(ItemGroup.MISC))
-				.setRegistryName("highwayman_spawn_egg"));
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
-	public void init(FMLCommonSetupEvent event) {
+	protected void registerGoals() {
+		super.registerGoals();
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, ChromeraiderEntity.class, false, false));
 	}
 
-	private static class EntityAttributesRegisterHandler {
-		@SubscribeEvent
-		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
-			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
-			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5);
-			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 200);
-			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 20);
-			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 1);
-			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
-			ammma = ammma.createMutableAttribute(Attributes.KNOCKBACK_RESISTANCE, 50);
-			event.put(entity, ammma.create());
-		}
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
 	}
 
-	public static class CustomEntity extends CreatureEntity {
-		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
-			this(entity, world);
-		}
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
+	}
 
-		public CustomEntity(EntityType<CustomEntity> type, World world) {
-			super(type, world);
-			experienceValue = 0;
-			setNoAI(false);
-			enablePersistence();
-		}
+	@Override
+	public double getPassengersRidingOffset() {
+		return super.getPassengersRidingOffset() + -2;
+	}
 
-		@Override
-		public IPacket<?> createSpawnPacket() {
-			return NetworkHooks.getEntitySpawningPacket(this);
-		}
+	@Override
+	public void playStepSound(BlockPos pos, BlockState blockIn) {
+		this.playSound(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("fallout_wastelands:highwaymanstep")), 0.15f, 1);
+	}
 
-		@Override
-		protected void registerGoals() {
-			super.registerGoals();
-			this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, ChromeraiderEntity.CustomEntity.class, false, false));
-		}
+	@Override
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal.break"));
+	}
 
-		@Override
-		public CreatureAttribute getCreatureAttribute() {
-			return CreatureAttribute.UNDEFINED;
-		}
+	@Override
+	public SoundEvent getDeathSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode"));
+	}
 
-		@Override
-		public boolean canDespawn(double distanceToClosestPlayer) {
+	@Override
+	public boolean hurt(DamageSource source, float amount) {
+		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
-		}
+		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
+			return false;
+		if (source == DamageSource.CACTUS)
+			return false;
+		if (source == DamageSource.DROWN)
+			return false;
+		return super.hurt(source, amount);
+	}
 
+	private final ItemStackHandler inventory = new ItemStackHandler(67) {
 		@Override
-		public double getMountedYOffset() {
-			return super.getMountedYOffset() + -2;
+		public int getSlotLimit(int slot) {
+			return 64;
 		}
+	};
+	private final CombinedInvWrapper combined = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this), new EntityArmorInvWrapper(this));
 
-		@Override
-		public void playStepSound(BlockPos pos, BlockState blockIn) {
-			this.playSound(
-					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("fallout_wastelands:highwaymanstep")),
-					0.15f, 1);
-		}
+	@Override
+	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
+		if (this.isAlive() && capability == ForgeCapabilities.ITEM_HANDLER && side == null)
+			return LazyOptional.of(() -> combined).cast();
+		return super.getCapability(capability, side);
+	}
 
-		@Override
-		public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.metal.break"));
-		}
-
-		@Override
-		public net.minecraft.util.SoundEvent getDeathSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.dragon_fireball.explode"));
-		}
-
-		@Override
-		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof AbstractArrowEntity)
-				return false;
-			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
-				return false;
-			if (source == DamageSource.CACTUS)
-				return false;
-			if (source == DamageSource.DROWN)
-				return false;
-			return super.attackEntityFrom(source, amount);
-		}
-
-		private final ItemStackHandler inventory = new ItemStackHandler(67) {
-			@Override
-			public int getSlotLimit(int slot) {
-				return 64;
-			}
-		};
-		private final CombinedInvWrapper combined = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this),
-				new EntityArmorInvWrapper(this));
-
-		@Override
-		public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
-			if (this.isAlive() && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && side == null)
-				return LazyOptional.of(() -> combined).cast();
-			return super.getCapability(capability, side);
-		}
-
-		@Override
-		protected void dropInventory() {
-			super.dropInventory();
-			for (int i = 0; i < inventory.getSlots(); ++i) {
-				ItemStack itemstack = inventory.getStackInSlot(i);
-				if (!itemstack.isEmpty() && !EnchantmentHelper.hasVanishingCurse(itemstack)) {
-					this.entityDropItem(itemstack);
-				}
+	@Override
+	protected void dropEquipment() {
+		super.dropEquipment();
+		for (int i = 0; i < inventory.getSlots(); ++i) {
+			ItemStack itemstack = inventory.getStackInSlot(i);
+			if (!itemstack.isEmpty() && !EnchantmentHelper.hasVanishingCurse(itemstack)) {
+				this.spawnAtLocation(itemstack);
 			}
 		}
+	}
 
-		@Override
-		public void writeAdditional(CompoundNBT compound) {
-			super.writeAdditional(compound);
-			compound.put("InventoryCustom", inventory.serializeNBT());
-		}
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.put("InventoryCustom", inventory.serializeNBT());
+	}
 
-		@Override
-		public void readAdditional(CompoundNBT compound) {
-			super.readAdditional(compound);
-			INBT inventoryCustom = compound.get("InventoryCustom");
-			if (inventoryCustom instanceof CompoundNBT)
-				inventory.deserializeNBT((CompoundNBT) inventoryCustom);
-		}
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		Tag inventoryCustom = compound.get("InventoryCustom");
+		if (inventoryCustom instanceof CompoundTag inventoryTag)
+			inventory.deserializeNBT(inventoryTag);
+	}
 
-		@Override
-		public ActionResultType func_230254_b_(PlayerEntity sourceentity, Hand hand) {
-			ItemStack itemstack = sourceentity.getHeldItem(hand);
-			ActionResultType retval = ActionResultType.func_233537_a_(this.world.isRemote());
-			if (sourceentity.isSecondaryUseActive()) {
-				if (sourceentity instanceof ServerPlayerEntity) {
-					NetworkHooks.openGui((ServerPlayerEntity) sourceentity, new INamedContainerProvider() {
-						@Override
-						public ITextComponent getDisplayName() {
-							return new StringTextComponent("Highwayman");
-						}
+	@Override
+	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
+		ItemStack itemstack = sourceentity.getItemInHand(hand);
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
+		if (sourceentity.isSecondaryUseActive()) {
+			if (sourceentity instanceof ServerPlayer serverPlayer) {
+				NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
+					@Override
+					public Component getDisplayName() {
+						return Component.literal("Highwayman");
+					}
 
-						@Override
-						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-							PacketBuffer packetBuffer = new PacketBuffer(Unpooled.buffer());
-							packetBuffer.writeBlockPos(new BlockPos(sourceentity.getPosition()));
-							packetBuffer.writeByte(0);
-							packetBuffer.writeVarInt(CustomEntity.this.getEntityId());
-							return new HighwaymantrunkGui.GuiContainerMod(id, inventory, packetBuffer);
-						}
-					}, buf -> {
-						buf.writeBlockPos(new BlockPos(sourceentity.getPosition()));
-						buf.writeByte(0);
-						buf.writeVarInt(this.getEntityId());
-					});
-				}
-				return ActionResultType.func_233537_a_(this.world.isRemote());
+					@Override
+					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+						FriendlyByteBuf packetBuffer = new FriendlyByteBuf(Unpooled.buffer());
+						packetBuffer.writeBlockPos(sourceentity.blockPosition());
+						packetBuffer.writeByte(0);
+						packetBuffer.writeVarInt(HighwaymanEntity.this.getId());
+						return new HighwaymantrunkMenu(id, inventory, packetBuffer);
+					}
+				}, buf -> {
+					buf.writeBlockPos(sourceentity.blockPosition());
+					buf.writeByte(0);
+					buf.writeVarInt(this.getId());
+				});
 			}
-			super.func_230254_b_(sourceentity, hand);
-			sourceentity.startRiding(this);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-
-			HighwaymanOnEntityTickUpdatetest2Procedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			return retval;
+			return InteractionResult.sidedSuccess(this.level.isClientSide());
 		}
+		super.mobInteract(sourceentity, hand);
+		sourceentity.startRiding(this);
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level;
 
-		@Override
-		public void baseTick() {
-			super.baseTick();
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
+		HighwaymanOnEntityTickUpdatetest2Procedure.execute(world, x, y, z, entity);
+		return retval;
+	}
 
-			HighwaymanFuelUseTickProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-		}
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		HighwaymanFuelUseTickProcedure.execute(this);
+	}
 
-		@Override
-		public void onCollideWithPlayer(PlayerEntity sourceentity) {
-			super.onCollideWithPlayer(sourceentity);
-			Entity entity = this;
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
+	@Override
+	public void playerTouch(Player sourceentity) {
+		super.playerTouch(sourceentity);
+		HighwaymanPlayerCollidesWithThisEntityProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), sourceentity);
+	}
 
-			HighwaymanPlayerCollidesWithThisEntityProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-		}
-
-		@Override
-		public void travel(Vector3d dir) {
-			Entity entity = this.getPassengers().isEmpty() ? null : (Entity) this.getPassengers().get(0);
-			if (this.isBeingRidden()) {
-				this.rotationYaw = entity.rotationYaw;
-				this.prevRotationYaw = this.rotationYaw;
-				this.rotationPitch = entity.rotationPitch * 0.5F;
-				this.setRotation(this.rotationYaw, this.rotationPitch);
-				this.jumpMovementFactor = this.getAIMoveSpeed() * 0.15F;
-				this.renderYawOffset = entity.rotationYaw;
-				this.rotationYawHead = entity.rotationYaw;
-				this.stepHeight = 1.0F;
-				if (entity instanceof LivingEntity) {
-					this.setAIMoveSpeed((float) this.getAttributeValue(Attributes.MOVEMENT_SPEED));
-					float forward = ((LivingEntity) entity).moveForward;
-					float strafe = 0;
-					super.travel(new Vector3d(strafe, 0, forward));
-				}
-				this.prevLimbSwingAmount = this.limbSwingAmount;
-				double d1 = this.getPosX() - this.prevPosX;
-				double d0 = this.getPosZ() - this.prevPosZ;
-				float f1 = MathHelper.sqrt(d1 * d1 + d0 * d0) * 4.0F;
-				if (f1 > 1.0F)
-					f1 = 1.0F;
-				this.limbSwingAmount += (f1 - this.limbSwingAmount) * 0.4F;
-				this.limbSwing += this.limbSwingAmount;
-				return;
+	@Override
+	public void travel(Vec3 dir) {
+		Entity entity = this.getPassengers().isEmpty() ? null : (Entity) this.getPassengers().get(0);
+		if (this.isVehicle()) {
+			this.setYRot(entity.getYRot());
+			this.yRotO = this.getYRot();
+			this.setXRot(entity.getXRot() * 0.5F);
+			this.setRot(this.getYRot(), this.getXRot());
+			this.flyingSpeed = this.getSpeed() * 0.15F;
+			this.yBodyRot = entity.getYRot();
+			this.yHeadRot = entity.getYRot();
+			this.maxUpStep = 1.0F;
+			if (entity instanceof LivingEntity passenger) {
+				this.setSpeed((float) this.getAttributeValue(Attributes.MOVEMENT_SPEED));
+				float forward = passenger.zza;
+				float strafe = 0;
+				super.travel(new Vec3(strafe, 0, forward));
 			}
-			this.stepHeight = 0.5F;
-			this.jumpMovementFactor = 0.02F;
-			super.travel(dir);
+			this.animationSpeedOld = this.animationSpeed;
+			double d1 = this.getX() - this.xo;
+			double d0 = this.getZ() - this.zo;
+			float f1 = (float) Math.sqrt(d1 * d1 + d0 * d0) * 4;
+			if (f1 > 1.0F)
+				f1 = 1.0F;
+			this.animationSpeed += (f1 - this.animationSpeed) * 0.4F;
+			this.animationPosition += this.animationSpeed;
+			return;
 		}
+		this.maxUpStep = 0.5F;
+		this.flyingSpeed = 0.02F;
+		super.travel(dir);
+	}
 
-		public void livingTick() {
-			super.livingTick();
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Random random = this.rand;
-			Entity entity = this;
-			if (true)
-				for (int l = 0; l < 2; ++l) {
-					double d0 = (x + random.nextFloat());
-					double d1 = (y + random.nextFloat());
-					double d2 = (z + random.nextFloat());
-					int i1 = random.nextInt(2) * 2 - 1;
-					double d3 = (random.nextFloat() - 0.5D) * 0.0999999985098839D;
-					double d4 = (random.nextFloat() - 0.5D) * 0.0999999985098839D;
-					double d5 = (random.nextFloat() - 0.5D) * 0.0999999985098839D;
-					world.addParticle(ParticleTypes.MYCELIUM, d0, d1, d2, d3, d4, d5);
-				}
+	public void aiStep() {
+		super.aiStep();
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level;
+		for (int l = 0; l < 2; ++l) {
+			double x0 = x + random.nextFloat();
+			double y0 = y + random.nextFloat();
+			double z0 = z + random.nextFloat();
+			double dx = (random.nextFloat() - 0.5D) * 0.0999999985098839D;
+			double dy = (random.nextFloat() - 0.5D) * 0.0999999985098839D;
+			double dz = (random.nextFloat() - 0.5D) * 0.0999999985098839D;
+			world.addParticle(ParticleTypes.MYCELIUM, x0, y0, z0, dx, dy, dz);
 		}
+	}
+
+	public static void init() {
+	}
+
+	public static AttributeSupplier.Builder createAttributes() {
+		AttributeSupplier.Builder builder = Mob.createMobAttributes();
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.5);
+		builder = builder.add(Attributes.MAX_HEALTH, 200);
+		builder = builder.add(Attributes.ARMOR, 20);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 1);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 50);
+		return builder;
 	}
 }

@@ -3,5 +3,6 @@
   "textures": {
     "cross": "fallout_wastelands:blocks/wastelandcharredgrass2",
     "particle": "fallout_wastelands:blocks/wastelandcharredgrass2"
-  }
+  },
+  "render_type": "cutout"
 }

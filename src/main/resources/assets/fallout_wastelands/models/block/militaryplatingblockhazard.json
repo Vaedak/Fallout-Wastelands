@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/greenmetalplatinghazard",
     "west": "fallout_wastelands:blocks/greenmetalplatinghazard",
     "particle": "fallout_wastelands:blocks/greenmetalplatinghazard"
-  }
+  },
+  "render_type": "solid"
 }

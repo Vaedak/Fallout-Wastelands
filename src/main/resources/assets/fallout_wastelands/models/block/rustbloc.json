@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/rustblock",
     "west": "fallout_wastelands:blocks/rustblock",
     "particle": "fallout_wastelands:blocks/rustblock"
-  }
+  },
+  "render_type": "solid"
 }

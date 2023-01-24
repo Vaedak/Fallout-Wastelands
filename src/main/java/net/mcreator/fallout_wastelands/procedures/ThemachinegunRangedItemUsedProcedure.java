@@ -1,58 +1,58 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 public class ThemachinegunRangedItemUsedProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure ThemachinegunRangedItemUsed!");
+	public static void execute(Entity entity, ItemStack itemstack) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure ThemachinegunRangedItemUsed!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		if (itemstack.getOrCreateTag().getBoolean("NewMagLoaded") == true) {
 			if (itemstack.getOrCreateTag().getDouble("BulletCounter") > 0) {
 				itemstack.getOrCreateTag().putDouble("BulletCounter", (itemstack.getOrCreateTag().getDouble("BulletCounter") - 1));
-				(itemstack).setDamage((int) ((itemstack).getDamage() + 100));
+				(itemstack).setDamageValue((int) ((itemstack).getDamageValue() + 100));
 			}
 		}
 		{
 			Entity _ent = entity;
-			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+				_ent.getServer().getCommands().performPrefixedCommand(
+						new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
+								_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+								_ent.getDisplayName(), _ent.level.getServer(), _ent),
 						"execute at @s anchored eyes run particle minecraft:flame ^-0.45 ^-0.38 ^2 ~ ~ 0 0 0 force");
 			}
 		}
 		{
 			Entity _ent = entity;
-			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+				_ent.getServer().getCommands().performPrefixedCommand(
+						new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
+								_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+								_ent.getDisplayName(), _ent.level.getServer(), _ent),
 						"execute at @s anchored eyes run particle minecraft:flame ^-0.45 ^-0.38 ^2 ~ ~ 0 0 0 force");
 			}
 		}
 		{
 			Entity _ent = entity;
-			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+				_ent.getServer().getCommands().performPrefixedCommand(
+						new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
+								_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+								_ent.getDisplayName(), _ent.level.getServer(), _ent),
 						"execute at @s anchored eyes run particle minecraft:smoke ^-0.45 ^-0.38 ^2 ~ ~ 0 0 0 force");
 			}
 		}
 		{
 			Entity _ent = entity;
-			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+			if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+				_ent.getServer().getCommands().performPrefixedCommand(
+						new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
+								_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
+								_ent.getDisplayName(), _ent.level.getServer(), _ent),
 						"execute at @s anchored eyes run particle minecraft:smoke ^-0.45 ^-0.38 ^2 ~ ~ 0 0 0 force");
 			}
 		}

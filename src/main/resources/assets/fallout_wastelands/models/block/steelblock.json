@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/steelblock",
     "west": "fallout_wastelands:blocks/steelblock",
     "particle": "fallout_wastelands:blocks/steelblock"
-  }
+  },
+  "render_type": "solid"
 }

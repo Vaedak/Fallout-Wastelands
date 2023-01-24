@@ -1,0 +1,37 @@
+{
+  "_fv": 34,
+  "_type": "rangeditem",
+  "definition": {
+    "renderType": 1,
+    "texture": "spear",
+    "customModelName": "spear:default",
+    "name": "Spear",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:Spear"
+    },
+    "shootConstantly": false,
+    "usageCount": 50,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "hasGlow": false,
+    "animation": "spear",
+    "enableMeleeDamage": true,
+    "damageVsEntity": 4.5,
+    "bulletPower": 1.0,
+    "bulletDamage": 3.9999999999999996,
+    "bulletKnockback": 1,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "CUSTOM:Spear"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": ""
+  }
+}

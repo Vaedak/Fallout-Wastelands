@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/bossteelblock",
     "west": "fallout_wastelands:blocks/bossteelblock",
     "particle": "fallout_wastelands:blocks/bossteelblock"
-  }
+  },
+  "render_type": "solid"
 }

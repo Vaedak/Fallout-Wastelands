@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/cellinglight",
     "particle": "fallout_wastelands:blocks/cellinglight",
     "0": "fallout_wastelands:blocks/cellinglight"
-  }
+  },
+  "render_type": "solid"
 }

@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "fallout_wastelands:wastelandallumiumore"
   },
-  "result": {
-    "item": "fallout_wastelands:aluminiumingot"
-  }
+  "result": "fallout_wastelands:aluminiumingot"
 }

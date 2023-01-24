@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/theglow_dirt",
     "west": "fallout_wastelands:blocks/theglow_dirt",
     "particle": "fallout_wastelands:blocks/theglow_dirt"
-  }
+  },
+  "render_type": "solid"
 }

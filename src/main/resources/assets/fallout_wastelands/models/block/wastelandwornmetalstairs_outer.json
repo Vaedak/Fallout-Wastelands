@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/oldmetalblock",
     "top": "fallout_wastelands:blocks/oldmetalblock",
     "side": "fallout_wastelands:blocks/oldmetalblock"
-  }
+  },
+  "render_type": "solid"
 }

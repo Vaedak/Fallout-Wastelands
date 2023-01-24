@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/openblastdoor",
     "particle": "fallout_wastelands:blocks/openblastdoor",
     "1": "fallout_wastelands:blocks/openblastdoor"
-  }
+  },
+  "render_type": "solid"
 }

@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/blacktile",
     "west": "fallout_wastelands:blocks/blacktile",
     "particle": "fallout_wastelands:blocks/blacktile"
-  }
+  },
+  "render_type": "solid"
 }

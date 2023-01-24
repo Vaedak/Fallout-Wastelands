@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "fallout_wastelands:moltencopperblock"
   },
-  "result": {
-    "item": "fallout_wastelands:ingotcopper"
-  }
+  "result": "fallout_wastelands:ingotcopper"
 }

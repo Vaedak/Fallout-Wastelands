@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/bossteelblock",
     "top": "fallout_wastelands:blocks/bossteelblock",
     "side": "fallout_wastelands:blocks/bossteelblock"
-  }
+  },
+  "render_type": "solid"
 }

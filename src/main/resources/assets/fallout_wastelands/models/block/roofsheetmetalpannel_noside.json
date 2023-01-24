@@ -2,5 +2,6 @@
   "parent": "block/template_glass_pane_noside",
   "textures": {
     "pane": "fallout_wastelands:blocks/roofblock"
-  }
+  },
+  "render_type": "solid"
 }

@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/portalframe",
     "west": "fallout_wastelands:blocks/portalframe",
     "particle": "fallout_wastelands:blocks/portalframe"
-  }
+  },
+  "render_type": "solid"
 }

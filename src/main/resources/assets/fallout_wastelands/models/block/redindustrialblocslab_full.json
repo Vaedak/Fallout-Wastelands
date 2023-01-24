@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/industrialredplain",
     "top": "fallout_wastelands:blocks/industrialredplain",
     "side": "fallout_wastelands:blocks/liftarm"
-  }
+  },
+  "render_type": "solid"
 }

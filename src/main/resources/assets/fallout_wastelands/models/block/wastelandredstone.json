@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastelandrestoneore",
     "west": "fallout_wastelands:blocks/wastelandrestoneore",
     "particle": "fallout_wastelands:blocks/wastelandrestoneore"
-  }
+  },
+  "render_type": "solid"
 }

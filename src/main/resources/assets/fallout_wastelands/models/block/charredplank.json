@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastelandplankscharred",
     "west": "fallout_wastelands:blocks/wastelandplankscharred",
     "particle": "fallout_wastelands:blocks/wastelandplankscharred"
-  }
+  },
+  "render_type": "solid"
 }

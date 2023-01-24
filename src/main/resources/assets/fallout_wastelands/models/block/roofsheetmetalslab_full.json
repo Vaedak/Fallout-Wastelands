@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/roofblock",
     "top": "fallout_wastelands:blocks/roofblock",
     "side": "fallout_wastelands:blocks/roofblock"
-  }
+  },
+  "render_type": "solid"
 }

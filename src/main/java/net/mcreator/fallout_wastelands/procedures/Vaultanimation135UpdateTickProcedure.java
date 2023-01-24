@@ -1,301 +1,230 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Direction;
-import net.minecraft.state.EnumProperty;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
-
-import net.mcreator.fallout_wastelands.block.VaultdooranimationCytokenisisBlock;
-import net.mcreator.fallout_wastelands.block.Vaultanimation135Block;
-import net.mcreator.fallout_wastelands.block.VaultDoorFrameBlock;
-import net.mcreator.fallout_wastelands.block.DoorDirectionControllerBlock;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModBlocks;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
-import java.util.Map;
-
 public class Vaultanimation135UpdateTickProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure Vaultanimation135UpdateTick!");
-			return;
+	public static void execute(LevelAccessor world, double x, double y, double z) {
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == FalloutWastelandsModBlocks.VAULTANIMATION_135.get()) {
+			world.setBlock(new BlockPos(x, y, z), FalloutWastelandsModBlocks.VAULT_DOOR_FRAME.get().defaultBlockState(), 3);
 		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure Vaultanimation135UpdateTick!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency y for procedure Vaultanimation135UpdateTick!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure Vaultanimation135UpdateTick!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Vaultanimation135Block.block) {
-			world.setBlockState(new BlockPos(x, y, z), VaultDoorFrameBlock.block.getDefaultState(), 3);
-		}
-		try {
-			BlockState _bs = world.getBlockState(new BlockPos(x, y, z));
-			DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-			if (_property != null) {
-				world.setBlockState(new BlockPos(x, y, z), _bs.with(_property, (new Object() {
-					public Direction getDirection(BlockPos pos) {
-						try {
-							BlockState _bs = world.getBlockState(pos);
-							DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-							if (property != null)
-								return _bs.get(property);
-							return Direction.getFacingFromAxisDirection(
-									_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-									Direction.AxisDirection.POSITIVE);
-						} catch (Exception e) {
-							return Direction.NORTH;
-						}
-					}
-				}.getDirection(new BlockPos(x, y - 1, z)))), 3);
+		{
+			Direction _dir = (new Object() {
+				public Direction getDirection(BlockPos pos) {
+					BlockState _bs = world.getBlockState(pos);
+					Property<?> property = _bs.getBlock().getStateDefinition().getProperty("facing");
+					if (property != null && _bs.getValue(property) instanceof Direction _dir)
+						return _dir;
+					property = _bs.getBlock().getStateDefinition().getProperty("axis");
+					if (property != null && _bs.getValue(property) instanceof Direction.Axis _axis)
+						return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
+					return Direction.NORTH;
+				}
+			}.getDirection(new BlockPos(x, y - 1, z)));
+			BlockPos _pos = new BlockPos(x, y, z);
+			BlockState _bs = world.getBlockState(_pos);
+			Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+			if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+				world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
 			} else {
-				world.setBlockState(new BlockPos(x, y, z),
-						_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), (new Object() {
-							public Direction getDirection(BlockPos pos) {
-								try {
-									BlockState _bs = world.getBlockState(pos);
-									DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-									if (property != null)
-										return _bs.get(property);
-									return Direction.getFacingFromAxisDirection(
-											_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-											Direction.AxisDirection.POSITIVE);
-								} catch (Exception e) {
-									return Direction.NORTH;
-								}
-							}
-						}.getDirection(new BlockPos(x, y - 1, z))).getAxis()), 3);
+				_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+				if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+					world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 			}
-		} catch (Exception e) {
 		}
 		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
-				try {
-					BlockState _bs = world.getBlockState(pos);
-					DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (property != null)
-						return _bs.get(property);
-					return Direction.getFacingFromAxisDirection(
-							_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-							Direction.AxisDirection.POSITIVE);
-				} catch (Exception e) {
-					return Direction.NORTH;
-				}
+				BlockState _bs = world.getBlockState(pos);
+				Property<?> property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (property != null && _bs.getValue(property) instanceof Direction _dir)
+					return _dir;
+				property = _bs.getBlock().getStateDefinition().getProperty("axis");
+				if (property != null && _bs.getValue(property) instanceof Direction.Axis _axis)
+					return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
+				return Direction.NORTH;
 			}
 		}.getDirection(new BlockPos(x, y, z))) == Direction.NORTH) {
-			if (world instanceof World) {
-				Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z + 1)), (World) world, new BlockPos(x, y, z + 1));
-				world.destroyBlock(new BlockPos(x, y, z + 1), false);
+			{
+				BlockPos _pos = new BlockPos(x, y, z + 1);
+				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x, y, z + 1), null);
+				world.destroyBlock(_pos, false);
 			}
-			world.setBlockState(new BlockPos(x, y, z + 1), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
-			try {
-				BlockState _bs = world.getBlockState(new BlockPos(x, y, z + 1));
-				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-				if (_property != null) {
-					world.setBlockState(new BlockPos(x, y, z + 1), _bs.with(_property, Direction.NORTH), 3);
+			world.setBlock(new BlockPos(x, y, z + 1), FalloutWastelandsModBlocks.VAULTDOORANIMATION_CYTOKENISIS.get().defaultBlockState(), 3);
+			{
+				Direction _dir = Direction.NORTH;
+				BlockPos _pos = new BlockPos(x, y, z + 1);
+				BlockState _bs = world.getBlockState(_pos);
+				Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+					world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
 				} else {
-					world.setBlockState(new BlockPos(x, y, z + 1), _bs.with(
-							(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
+					_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+					if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+						world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 				}
-			} catch (Exception e) {
 			}
-			try {
-				BlockState _bs = world.getBlockState(new BlockPos(x, y - 1, z + 1));
-				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-				if (_property != null) {
-					world.setBlockState(new BlockPos(x, y - 1, z + 1), _bs.with(_property, Direction.NORTH), 3);
+			{
+				Direction _dir = Direction.NORTH;
+				BlockPos _pos = new BlockPos(x, y - 1, z + 1);
+				BlockState _bs = world.getBlockState(_pos);
+				Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+					world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
 				} else {
-					world.setBlockState(new BlockPos(x, y - 1, z + 1), _bs.with(
-							(EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.NORTH.getAxis()), 3);
+					_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+					if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+						world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 				}
-			} catch (Exception e) {
 			}
-			world.setBlockState(new BlockPos(x, y - 1, z + 1), DoorDirectionControllerBlock.block.getDefaultState(), 3);
+			world.setBlock(new BlockPos(x, y - 1, z + 1), FalloutWastelandsModBlocks.DOOR_DIRECTION_CONTROLLER.get().defaultBlockState(), 3);
 		}
 		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
-				try {
-					BlockState _bs = world.getBlockState(pos);
-					DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (property != null)
-						return _bs.get(property);
-					return Direction.getFacingFromAxisDirection(
-							_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-							Direction.AxisDirection.POSITIVE);
-				} catch (Exception e) {
-					return Direction.NORTH;
-				}
+				BlockState _bs = world.getBlockState(pos);
+				Property<?> property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (property != null && _bs.getValue(property) instanceof Direction _dir)
+					return _dir;
+				property = _bs.getBlock().getStateDefinition().getProperty("axis");
+				if (property != null && _bs.getValue(property) instanceof Direction.Axis _axis)
+					return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
+				return Direction.NORTH;
 			}
 		}.getDirection(new BlockPos(x, y, z))) == Direction.SOUTH) {
-			if (world instanceof World) {
-				Block.spawnDrops(world.getBlockState(new BlockPos(x, y, z - 1)), (World) world, new BlockPos(x, y, z - 1));
-				world.destroyBlock(new BlockPos(x, y, z - 1), false);
+			{
+				BlockPos _pos = new BlockPos(x, y, z - 1);
+				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x, y, z - 1), null);
+				world.destroyBlock(_pos, false);
 			}
-			new Object() {
-				private int ticks = 0;
-				private float waitTicks;
-				private IWorld world;
-
-				public void start(IWorld world, int waitTicks) {
-					this.waitTicks = waitTicks;
-					MinecraftForge.EVENT_BUS.register(this);
-					this.world = world;
-				}
-
-				@SubscribeEvent
-				public void tick(TickEvent.ServerTickEvent event) {
-					if (event.phase == TickEvent.Phase.END) {
-						this.ticks += 1;
-						if (this.ticks >= this.waitTicks)
-							run();
+			FalloutWastelandsMod.queueServerWork(1, () -> {
+				world.setBlock(new BlockPos(x, y, z - 1), FalloutWastelandsModBlocks.VAULTDOORANIMATION_CYTOKENISIS.get().defaultBlockState(), 3);
+				{
+					Direction _dir = Direction.SOUTH;
+					BlockPos _pos = new BlockPos(x, y, z - 1);
+					BlockState _bs = world.getBlockState(_pos);
+					Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+					if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+						world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
+					} else {
+						_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+						if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+							world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 					}
 				}
-
-				private void run() {
-					world.setBlockState(new BlockPos(x, y, z - 1), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
-					try {
-						BlockState _bs = world.getBlockState(new BlockPos(x, y, z - 1));
-						DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-						if (_property != null) {
-							world.setBlockState(new BlockPos(x, y, z - 1), _bs.with(_property, Direction.SOUTH), 3);
-						} else {
-							world.setBlockState(new BlockPos(x, y, z - 1),
-									_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"),
-											Direction.SOUTH.getAxis()),
-									3);
-						}
-					} catch (Exception e) {
+				{
+					Direction _dir = Direction.SOUTH;
+					BlockPos _pos = new BlockPos(x, y - 1, z - 1);
+					BlockState _bs = world.getBlockState(_pos);
+					Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+					if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+						world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
+					} else {
+						_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+						if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+							world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 					}
-					try {
-						BlockState _bs = world.getBlockState(new BlockPos(x, y - 1, z - 1));
-						DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-						if (_property != null) {
-							world.setBlockState(new BlockPos(x, y - 1, z - 1), _bs.with(_property, Direction.SOUTH), 3);
-						} else {
-							world.setBlockState(new BlockPos(x, y - 1, z - 1),
-									_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"),
-											Direction.SOUTH.getAxis()),
-									3);
-						}
-					} catch (Exception e) {
-					}
-					MinecraftForge.EVENT_BUS.unregister(this);
 				}
-			}.start(world, (int) 1);
-			world.setBlockState(new BlockPos(x, y - 1, z - 1), DoorDirectionControllerBlock.block.getDefaultState(), 3);
+			});
+			world.setBlock(new BlockPos(x, y - 1, z - 1), FalloutWastelandsModBlocks.DOOR_DIRECTION_CONTROLLER.get().defaultBlockState(), 3);
 		}
 		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
-				try {
-					BlockState _bs = world.getBlockState(pos);
-					DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (property != null)
-						return _bs.get(property);
-					return Direction.getFacingFromAxisDirection(
-							_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-							Direction.AxisDirection.POSITIVE);
-				} catch (Exception e) {
-					return Direction.NORTH;
-				}
+				BlockState _bs = world.getBlockState(pos);
+				Property<?> property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (property != null && _bs.getValue(property) instanceof Direction _dir)
+					return _dir;
+				property = _bs.getBlock().getStateDefinition().getProperty("axis");
+				if (property != null && _bs.getValue(property) instanceof Direction.Axis _axis)
+					return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
+				return Direction.NORTH;
 			}
 		}.getDirection(new BlockPos(x, y, z))) == Direction.WEST) {
-			if (world instanceof World) {
-				Block.spawnDrops(world.getBlockState(new BlockPos(x + 1, y, z)), (World) world, new BlockPos(x + 1, y, z));
-				world.destroyBlock(new BlockPos(x + 1, y, z), false);
+			{
+				BlockPos _pos = new BlockPos(x + 1, y, z);
+				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x + 1, y, z), null);
+				world.destroyBlock(_pos, false);
 			}
-			world.setBlockState(new BlockPos(x + 1, y, z), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
-			try {
-				BlockState _bs = world.getBlockState(new BlockPos(x + 1, y, z));
-				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-				if (_property != null) {
-					world.setBlockState(new BlockPos(x + 1, y, z), _bs.with(_property, Direction.WEST), 3);
+			world.setBlock(new BlockPos(x + 1, y, z), FalloutWastelandsModBlocks.VAULTDOORANIMATION_CYTOKENISIS.get().defaultBlockState(), 3);
+			{
+				Direction _dir = Direction.WEST;
+				BlockPos _pos = new BlockPos(x + 1, y, z);
+				BlockState _bs = world.getBlockState(_pos);
+				Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+					world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
 				} else {
-					world.setBlockState(new BlockPos(x + 1, y, z),
-							_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()),
-							3);
+					_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+					if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+						world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 				}
-			} catch (Exception e) {
 			}
-			world.setBlockState(new BlockPos(x + 1, y - 1, z), DoorDirectionControllerBlock.block.getDefaultState(), 3);
-			try {
-				BlockState _bs = world.getBlockState(new BlockPos(x + 1, y - 1, z));
-				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-				if (_property != null) {
-					world.setBlockState(new BlockPos(x + 1, y - 1, z), _bs.with(_property, Direction.WEST), 3);
+			world.setBlock(new BlockPos(x + 1, y - 1, z), FalloutWastelandsModBlocks.DOOR_DIRECTION_CONTROLLER.get().defaultBlockState(), 3);
+			{
+				Direction _dir = Direction.WEST;
+				BlockPos _pos = new BlockPos(x + 1, y - 1, z);
+				BlockState _bs = world.getBlockState(_pos);
+				Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+					world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
 				} else {
-					world.setBlockState(new BlockPos(x + 1, y - 1, z),
-							_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.WEST.getAxis()),
-							3);
+					_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+					if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+						world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 				}
-			} catch (Exception e) {
 			}
 		}
 		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
-				try {
-					BlockState _bs = world.getBlockState(pos);
-					DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-					if (property != null)
-						return _bs.get(property);
-					return Direction.getFacingFromAxisDirection(
-							_bs.get((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis")),
-							Direction.AxisDirection.POSITIVE);
-				} catch (Exception e) {
-					return Direction.NORTH;
-				}
+				BlockState _bs = world.getBlockState(pos);
+				Property<?> property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (property != null && _bs.getValue(property) instanceof Direction _dir)
+					return _dir;
+				property = _bs.getBlock().getStateDefinition().getProperty("axis");
+				if (property != null && _bs.getValue(property) instanceof Direction.Axis _axis)
+					return Direction.fromAxisAndDirection(_axis, Direction.AxisDirection.POSITIVE);
+				return Direction.NORTH;
 			}
 		}.getDirection(new BlockPos(x, y, z))) == Direction.EAST) {
-			if (world instanceof World) {
-				Block.spawnDrops(world.getBlockState(new BlockPos(x - 1, y, z)), (World) world, new BlockPos(x - 1, y, z));
-				world.destroyBlock(new BlockPos(x - 1, y, z), false);
+			{
+				BlockPos _pos = new BlockPos(x - 1, y, z);
+				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x - 1, y, z), null);
+				world.destroyBlock(_pos, false);
 			}
-			world.setBlockState(new BlockPos(x - 1, y, z), VaultdooranimationCytokenisisBlock.block.getDefaultState(), 3);
-			try {
-				BlockState _bs = world.getBlockState(new BlockPos(x - 1, y, z));
-				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-				if (_property != null) {
-					world.setBlockState(new BlockPos(x - 1, y, z), _bs.with(_property, Direction.EAST), 3);
+			world.setBlock(new BlockPos(x - 1, y, z), FalloutWastelandsModBlocks.VAULTDOORANIMATION_CYTOKENISIS.get().defaultBlockState(), 3);
+			{
+				Direction _dir = Direction.EAST;
+				BlockPos _pos = new BlockPos(x - 1, y, z);
+				BlockState _bs = world.getBlockState(_pos);
+				Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+					world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
 				} else {
-					world.setBlockState(new BlockPos(x - 1, y, z),
-							_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()),
-							3);
+					_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+					if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+						world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 				}
-			} catch (Exception e) {
 			}
-			world.setBlockState(new BlockPos(x - 1, y - 1, z), DoorDirectionControllerBlock.block.getDefaultState(), 3);
-			try {
-				BlockState _bs = world.getBlockState(new BlockPos(x - 1, y - 1, z));
-				DirectionProperty _property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-				if (_property != null) {
-					world.setBlockState(new BlockPos(x - 1, y - 1, z), _bs.with(_property, Direction.EAST), 3);
+			world.setBlock(new BlockPos(x - 1, y - 1, z), FalloutWastelandsModBlocks.DOOR_DIRECTION_CONTROLLER.get().defaultBlockState(), 3);
+			{
+				Direction _dir = Direction.EAST;
+				BlockPos _pos = new BlockPos(x - 1, y - 1, z);
+				BlockState _bs = world.getBlockState(_pos);
+				Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+				if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+					world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
 				} else {
-					world.setBlockState(new BlockPos(x - 1, y - 1, z),
-							_bs.with((EnumProperty<Direction.Axis>) _bs.getBlock().getStateContainer().getProperty("axis"), Direction.EAST.getAxis()),
-							3);
+					_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+					if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+						world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 				}
-			} catch (Exception e) {
 			}
 		}
 	}

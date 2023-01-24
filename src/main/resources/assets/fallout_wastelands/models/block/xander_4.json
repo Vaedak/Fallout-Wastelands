@@ -3,5 +3,6 @@
   "textures": {
     "cross": "fallout_wastelands:blocks/xander_4",
     "particle": "fallout_wastelands:blocks/xander_4"
-  }
+  },
+  "render_type": "cutout"
 }

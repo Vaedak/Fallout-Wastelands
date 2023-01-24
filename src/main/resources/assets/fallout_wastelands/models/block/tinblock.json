@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/tinblock",
     "west": "fallout_wastelands:blocks/tinblock",
     "particle": "fallout_wastelands:blocks/tinblock"
-  }
+  },
+  "render_type": "solid"
 }

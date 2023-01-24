@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/cage",
     "west": "fallout_wastelands:blocks/cage",
     "particle": "fallout_wastelands:blocks/cage"
-  }
+  },
+  "render_type": "cutout"
 }

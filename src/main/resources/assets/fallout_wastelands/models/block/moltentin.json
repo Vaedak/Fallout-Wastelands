@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/moltentin",
     "west": "fallout_wastelands:blocks/moltentin",
     "particle": "fallout_wastelands:blocks/moltentin"
-  }
+  },
+  "render_type": "solid"
 }

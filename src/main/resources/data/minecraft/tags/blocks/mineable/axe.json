@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "fallout_wastelands:rottenplanks",
+    "fallout_wastelands:rottenplanksstairs",
+    "fallout_wastelands:rottenplanksslab",
+    "fallout_wastelands:rottenplankfence",
+    "fallout_wastelands:charredplank",
+    "fallout_wastelands:charredplanksstairs",
+    "fallout_wastelands:charredplankslab",
+    "fallout_wastelands:charredplankfence",
+    "fallout_wastelands:rottenwooddoor",
+    "fallout_wastelands:rottenwoodplate",
+    "fallout_wastelands:rottenwoodplatenailed",
+    "fallout_wastelands:roottenwoodbarricade",
+    "fallout_wastelands:reinforcedwoodplating",
+    "fallout_wastelands:rottenwoodentrap",
+    "fallout_wastelands:picketfence",
+    "fallout_wastelands:bluerottenwoodplate",
+    "fallout_wastelands:redrottenwoodplating",
+    "fallout_wastelands:emeraldplanks",
+    "fallout_wastelands:rottenwoodplatestairs",
+    "fallout_wastelands:rottenwoodnailedplatingslab",
+    "fallout_wastelands:rottenwoodbarricadeslab",
+    "fallout_wastelands:depotdoor",
+    "fallout_wastelands:whiteplanks",
+    "fallout_wastelands:whiteplanksstairs",
+    "fallout_wastelands:whiteplanksslab",
+    "fallout_wastelands:whiteplankswall"
+  ]
+}

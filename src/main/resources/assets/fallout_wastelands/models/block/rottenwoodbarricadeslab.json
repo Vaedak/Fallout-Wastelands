@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/spacedplanks",
     "top": "fallout_wastelands:blocks/spacedplanks",
     "side": "fallout_wastelands:blocks/spacedplanks"
-  }
+  },
+  "render_type": "cutout"
 }

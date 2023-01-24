@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/gore",
     "west": "fallout_wastelands:blocks/gore",
     "particle": "fallout_wastelands:blocks/gore"
-  }
+  },
+  "render_type": "solid"
 }

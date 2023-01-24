@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/vaultblock_2",
     "particle": "fallout_wastelands:blocks/vaultblock_2",
     "0": "fallout_wastelands:blocks/vaultgeardoorout"
-  }
+  },
+  "render_type": "cutout_mipped"
 }

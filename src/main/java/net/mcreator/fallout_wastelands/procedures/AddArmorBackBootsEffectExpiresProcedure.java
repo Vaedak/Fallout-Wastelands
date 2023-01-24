@@ -2,46 +2,35 @@ package net.mcreator.fallout_wastelands.procedures;
 
 import net.minecraftforge.items.ItemHandlerHelper;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
 
 public class AddArmorBackBootsEffectExpiresProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure AddArmorBackBootsEffectExpires!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
 		boolean waiter4 = false;
-		if (entity instanceof PlayerEntity) {
-			ItemStack _setstack = ((entity instanceof LivingEntity)
-					? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
-					: ItemStack.EMPTY);
-			_setstack.setCount((int) 1);
-			ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+		if (entity instanceof Player _player) {
+			ItemStack _setstack = (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY);
+			_setstack.setCount(1);
+			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 		}
-		waiter4 = (true);
+		waiter4 = true;
 		if (waiter4 == true) {
-			if (entity instanceof LivingEntity) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory.armorInventory.set((int) 0, new ItemStack(Blocks.AIR));
-				else
-					((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(Blocks.AIR));
-				if (entity instanceof ServerPlayerEntity)
-					((ServerPlayerEntity) entity).inventory.markDirty();
+			{
+				Entity _entity = entity;
+				if (_entity instanceof Player _player) {
+					_player.getInventory().armor.set(0, new ItemStack(Blocks.AIR));
+					_player.getInventory().setChanged();
+				} else if (_entity instanceof LivingEntity _living) {
+					_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(Blocks.AIR));
+				}
 			}
-			waiter4 = (true);
+			waiter4 = true;
 		}
 	}
 }

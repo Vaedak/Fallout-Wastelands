@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/iwbrust",
     "west": "fallout_wastelands:blocks/iwbrust",
     "particle": "fallout_wastelands:blocks/igside"
-  }
+  },
+  "render_type": "solid"
 }

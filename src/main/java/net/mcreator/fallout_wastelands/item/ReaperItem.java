@@ -1,86 +1,60 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.AxeItem;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.network.chat.Component;
 
 import net.mcreator.fallout_wastelands.procedures.ReaperLivingEntityIsHitWithToolProcedure;
-import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModTabs;
 
-import java.util.stream.Stream;
-import java.util.Map;
 import java.util.List;
-import java.util.HashMap;
-import java.util.AbstractMap;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class ReaperItem extends FalloutWastelandsModElements.ModElement {
-	@ObjectHolder("fallout_wastelands:reaper")
-	public static final Item block = null;
-
-	public ReaperItem(FalloutWastelandsModElements instance) {
-		super(instance, 310);
-	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new AxeItem(new IItemTier() {
-			public int getMaxUses() {
+public class ReaperItem extends AxeItem {
+	public ReaperItem() {
+		super(new Tier() {
+			public int getUses() {
 				return 500;
 			}
 
-			public float getEfficiency() {
+			public float getSpeed() {
 				return 8f;
 			}
 
-			public float getAttackDamage() {
+			public float getAttackDamageBonus() {
 				return 4f;
 			}
 
-			public int getHarvestLevel() {
+			public int getLevel() {
 				return 1;
 			}
 
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 2;
 			}
 
-			public Ingredient getRepairMaterial() {
+			public Ingredient getRepairIngredient() {
 				return Ingredient.EMPTY;
 			}
-		}, 1, 6f, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
-			@Override
-			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-				super.addInformation(itemstack, world, list, flag);
-				list.add(new StringTextComponent("*Vrrt Vrrt Vrrt* damn Zombies !"));
-			}
+		}, 1, 6f, new Item.Properties().tab(FalloutWastelandsModTabs.TAB_WASTELANDERSCOMBATTAB));
+	}
 
-			@Override
-			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-				boolean retval = super.hitEntity(itemstack, entity, sourceentity);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-				World world = entity.world;
+	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
+		ReaperLivingEntityIsHitWithToolProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		return retval;
+	}
 
-				ReaperLivingEntityIsHitWithToolProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-				return retval;
-			}
-		}.setRegistryName("reaper"));
+	@Override
+	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, world, list, flag);
+		list.add(Component.literal("*Vrrt Vrrt Vrrt* damn Zombies !"));
 	}
 }

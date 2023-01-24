@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/emeralwastelandore",
     "west": "fallout_wastelands:blocks/emeralwastelandore",
     "particle": "fallout_wastelands:blocks/emeralwastelandore"
-  }
+  },
+  "render_type": "solid"
 }

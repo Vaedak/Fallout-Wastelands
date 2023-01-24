@@ -1,11 +1,11 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "wastecrorn",
     "customModelName": "Normal",
-    "name": "Mutlemon",
+    "name": "Mutcorn",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:Wastelandersitems"

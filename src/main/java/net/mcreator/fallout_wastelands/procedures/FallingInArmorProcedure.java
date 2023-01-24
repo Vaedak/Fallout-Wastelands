@@ -3,142 +3,77 @@ package net.mcreator.fallout_wastelands.procedures;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.network.FalloutWastelandsModVariables;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
-import java.util.Map;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
+@Mod.EventBusSubscriber
 public class FallingInArmorProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-			if (event.phase == TickEvent.Phase.END) {
-				Entity entity = event.player;
-				World world = entity.world;
-				double i = entity.getPosX();
-				double j = entity.getPosY();
-				double k = entity.getPosZ();
-				Map<String, Object> dependencies = new HashMap<>();
-				dependencies.put("x", i);
-				dependencies.put("y", j);
-				dependencies.put("z", k);
-				dependencies.put("world", world);
-				dependencies.put("entity", entity);
-				dependencies.put("event", event);
-				executeProcedure(dependencies);
-			}
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level, event.player.getX(), event.player.getY(), event.player.getZ(), event.player);
 		}
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure FallingInArmor!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		execute(null, world, x, y, z, entity);
+	}
+
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure FallingInArmor!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency y for procedure FallingInArmor!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure FallingInArmor!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure FallingInArmor!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
 			if ((entity.isOnGround() && entity.isInWater()) == true) {
 				if (entity.getPersistentData().getDouble("fallinginarmor") > 15 && entity.getPersistentData().getDouble("fallinginarmor") < 40) {
 					entity.getPersistentData().putDouble("fallinginarmor", 0);
-					if (world instanceof World && !world.isRemote()) {
-						((World) world).playSound(null, new BlockPos(x, y, z),
-								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-										.getValue(new ResourceLocation("fallout_wastelands:smallfallboom")),
-								SoundCategory.NEUTRAL, (float) 1, (float) 1);
-					} else {
-						((World) world).playSound(x, y, z,
-								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-										.getValue(new ResourceLocation("fallout_wastelands:smallfallboom")),
-								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("fallout_wastelands:smallfallboom")),
+									SoundSource.NEUTRAL, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z,
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("fallout_wastelands:smallfallboom")),
+									SoundSource.NEUTRAL, 1, 1, false);
+						}
 					}
-					if (world instanceof ServerWorld) {
-						((ServerWorld) world).spawnParticle(ParticleTypes.WHITE_ASH, x, (y + 1), z, (int) 20, 0.1, 0.1, 0.1, 0.1);
-					}
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles(ParticleTypes.WHITE_ASH, x, (y + 1), z, 20, 0.1, 0.1, 0.1, 0.1);
 				}
 			}
 			if (entity.getPersistentData().getDouble("fallinginarmor") > 40) {
 				entity.getPersistentData().putDouble("fallinginarmor", 0);
-				if (world instanceof World && !world.isRemote()) {
-					((World) world)
-							.playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1);
-				} else {
-					((World) world).playSound(x, y, z,
-							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-									.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")),
-							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
-				}
-				if (world instanceof ServerWorld) {
-					((ServerWorld) world).spawnParticle(ParticleTypes.WHITE_ASH, x, (y + 1), z, (int) 50, 0.1, 0.1, 0.1, 0.1);
-				}
-			}
-			new Object() {
-				private int ticks = 0;
-				private float waitTicks;
-				private IWorld world;
-
-				public void start(IWorld world, int waitTicks) {
-					this.waitTicks = waitTicks;
-					MinecraftForge.EVENT_BUS.register(this);
-					this.world = world;
-				}
-
-				@SubscribeEvent
-				public void tick(TickEvent.ServerTickEvent event) {
-					if (event.phase == TickEvent.Phase.END) {
-						this.ticks += 1;
-						if (this.ticks >= this.waitTicks)
-							run();
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, new BlockPos(x, y, z),
+								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")), SoundSource.NEUTRAL, 1,
+								1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")),
+								SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
-
-				private void run() {
-					entity.getPersistentData().putDouble("fallinginarmor", 0);
-					MinecraftForge.EVENT_BUS.unregister(this);
-				}
-			}.start(world, (int) 2);
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.WHITE_ASH, x, (y + 1), z, 50, 0.1, 0.1, 0.1, 0.1);
+			}
+			FalloutWastelandsMod.queueServerWork(2, () -> {
+				entity.getPersistentData().putDouble("fallinginarmor", 0);
+			});
 			if (entity.isOnGround() == false) {
 				entity.getPersistentData().putDouble("fallinginarmor", (entity.getPersistentData().getDouble("fallinginarmor") + 1));
 			}

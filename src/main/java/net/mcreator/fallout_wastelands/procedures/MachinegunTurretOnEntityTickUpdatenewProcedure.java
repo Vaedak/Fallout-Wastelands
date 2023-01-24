@@ -1,32 +1,23 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
 
-import net.mcreator.fallout_wastelands.potion.RadioprotectionPotionEffect;
-import net.mcreator.fallout_wastelands.potion.RadiationPotionEffect;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModMobEffects;
 
 public class MachinegunTurretOnEntityTickUpdatenewProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure MachinegunTurretOnEntityTickUpdatenew!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		entity.setMotion(0, (entity.getMotion().getY()), 0);
-		if (entity instanceof LivingEntity) {
-			((LivingEntity) entity).removePotionEffect(RadiationPotionEffect.potion);
-		}
-		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(RadioprotectionPotionEffect.potion, (int) 10, (int) 1, (false), (false)));
-		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 40, (int) 100, (false), (false)));
+		entity.setDeltaMovement(new Vec3(0, (entity.getDeltaMovement().y()), 0));
+		if (entity instanceof LivingEntity _entity)
+			_entity.removeEffect(FalloutWastelandsModMobEffects.RADIATION.get());
+		if (entity instanceof LivingEntity _entity)
+			_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.RADIOPROTECTION.get(), 10, 1, (false), (false)));
+		if (entity instanceof LivingEntity _entity)
+			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 100, (false), (false)));
 	}
 }

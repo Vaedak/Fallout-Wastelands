@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/tiretexture",
     "particle": "fallout_wastelands:blocks/tiretexture",
     "0": "fallout_wastelands:blocks/tiretexture"
-  }
+  },
+  "render_type": "translucent"
 }

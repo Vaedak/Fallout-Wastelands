@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/nailedplanks",
     "top": "fallout_wastelands:blocks/nailedplanks",
     "side": "fallout_wastelands:blocks/nailedplanks"
-  }
+  },
+  "render_type": "solid"
 }

@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/locker",
     "particle": "fallout_wastelands:blocks/locker",
     "0": "fallout_wastelands:blocks/locker"
-  }
+  },
+  "render_type": "solid"
 }

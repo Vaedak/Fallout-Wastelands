@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastelandstonebrick",
     "west": "fallout_wastelands:blocks/wastelandstonebrick",
     "particle": "fallout_wastelands:blocks/wastelandstonebrick"
-  }
+  },
+  "render_type": "solid"
 }

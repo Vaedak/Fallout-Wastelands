@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "biome",
   "definition": {
     "name": "Desertwastland",
@@ -39,7 +39,7 @@
       "value": ""
     },
     "music": {
-      "value": ""
+      "value": "CUSTOM:wastelandwind"
     },
     "moodSound": {
       "value": ""
@@ -50,16 +50,14 @@
       "value": "CUSTOM:Plasma"
     },
     "particlesProbability": 0.0,
-    "biomeCategory": "DESERT",
     "rainingPossibility": 0.0,
     "temperature": 2.0,
     "baseHeight": 0.1,
-    "heightVariation": 0.30000000000000004,
+    "heightVariation": 0.19999999999999998,
     "spawnBiome": false,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 10,
-    "biomeDictionaryTypes": [],
+    "biomeWeight": 15,
     "grassPerChunk": 6,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 0,

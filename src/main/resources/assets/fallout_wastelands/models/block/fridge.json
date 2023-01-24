@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/frigde",
     "particle": "fallout_wastelands:blocks/frigde",
     "0": "fallout_wastelands:blocks/frigde"
-  }
+  },
+  "render_type": "solid"
 }

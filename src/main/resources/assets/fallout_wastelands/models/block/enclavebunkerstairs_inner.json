@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/enclavemetalplating1",
     "top": "fallout_wastelands:blocks/enclavemetalplatingfloortop",
     "side": "fallout_wastelands:blocks/enclavemetalplating1"
-  }
+  },
+  "render_type": "solid"
 }

@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/terminal",
     "particle": "fallout_wastelands:blocks/terminal",
     "0": "fallout_wastelands:blocks/terminal"
-  }
+  },
+  "render_type": "solid"
 }

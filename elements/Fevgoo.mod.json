@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "fluid",
   "definition": {
     "name": "Fevgoo",
@@ -16,7 +16,6 @@
     "luminosity": 100,
     "density": 500,
     "viscosity": 100000,
-    "isGas": false,
     "temperature": 300,
     "type": "WATER",
     "generateBucket": true,

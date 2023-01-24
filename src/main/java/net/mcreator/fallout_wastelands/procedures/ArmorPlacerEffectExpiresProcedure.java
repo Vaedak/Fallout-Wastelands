@@ -1,130 +1,125 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
 
-import net.mcreator.fallout_wastelands.potion.ArmorPlacerPotionEffect;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModMobEffects;
 import net.mcreator.fallout_wastelands.entity.PowerArmorFrameEntity;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.Map;
 
 public class ArmorPlacerEffectExpiresProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure ArmorPlacerEffectExpires!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		if (entity instanceof PowerArmorFrameEntity.CustomEntity) {
-			if (entity instanceof LivingEntity) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory.armorInventory.set((int) 3, (new Object() {
+		if (entity instanceof PowerArmorFrameEntity) {
+			{
+				Entity _entity = entity;
+				if (_entity instanceof Player _player) {
+					_player.getInventory().armor.set(3, (new Object() {
 						public ItemStack getItemStack(int sltid, Entity entity) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 								_retval.set(capability.getStackInSlot(sltid).copy());
 							});
 							return _retval.get();
 						}
-					}.getItemStack((int) (0), entity)));
-				else
-					((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.HEAD, (new Object() {
+					}.getItemStack(0, entity)));
+					_player.getInventory().setChanged();
+				} else if (_entity instanceof LivingEntity _living) {
+					_living.setItemSlot(EquipmentSlot.HEAD, (new Object() {
 						public ItemStack getItemStack(int sltid, Entity entity) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 								_retval.set(capability.getStackInSlot(sltid).copy());
 							});
 							return _retval.get();
 						}
-					}.getItemStack((int) (0), entity)));
-				if (entity instanceof ServerPlayerEntity)
-					((ServerPlayerEntity) entity).inventory.markDirty();
+					}.getItemStack(0, entity)));
+				}
 			}
-			if (entity instanceof LivingEntity) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory.armorInventory.set((int) 0, (new Object() {
+			{
+				Entity _entity = entity;
+				if (_entity instanceof Player _player) {
+					_player.getInventory().armor.set(0, (new Object() {
 						public ItemStack getItemStack(int sltid, Entity entity) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 								_retval.set(capability.getStackInSlot(sltid).copy());
 							});
 							return _retval.get();
 						}
-					}.getItemStack((int) (3), entity)));
-				else
-					((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.FEET, (new Object() {
+					}.getItemStack(3, entity)));
+					_player.getInventory().setChanged();
+				} else if (_entity instanceof LivingEntity _living) {
+					_living.setItemSlot(EquipmentSlot.FEET, (new Object() {
 						public ItemStack getItemStack(int sltid, Entity entity) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 								_retval.set(capability.getStackInSlot(sltid).copy());
 							});
 							return _retval.get();
 						}
-					}.getItemStack((int) (3), entity)));
-				if (entity instanceof ServerPlayerEntity)
-					((ServerPlayerEntity) entity).inventory.markDirty();
+					}.getItemStack(3, entity)));
+				}
 			}
-			if (entity instanceof LivingEntity) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory.armorInventory.set((int) 1, (new Object() {
+			{
+				Entity _entity = entity;
+				if (_entity instanceof Player _player) {
+					_player.getInventory().armor.set(1, (new Object() {
 						public ItemStack getItemStack(int sltid, Entity entity) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 								_retval.set(capability.getStackInSlot(sltid).copy());
 							});
 							return _retval.get();
 						}
-					}.getItemStack((int) (2), entity)));
-				else
-					((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.LEGS, (new Object() {
+					}.getItemStack(2, entity)));
+					_player.getInventory().setChanged();
+				} else if (_entity instanceof LivingEntity _living) {
+					_living.setItemSlot(EquipmentSlot.LEGS, (new Object() {
 						public ItemStack getItemStack(int sltid, Entity entity) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 								_retval.set(capability.getStackInSlot(sltid).copy());
 							});
 							return _retval.get();
 						}
-					}.getItemStack((int) (2), entity)));
-				if (entity instanceof ServerPlayerEntity)
-					((ServerPlayerEntity) entity).inventory.markDirty();
+					}.getItemStack(2, entity)));
+				}
 			}
-			if (entity instanceof LivingEntity) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory.armorInventory.set((int) 2, (new Object() {
+			{
+				Entity _entity = entity;
+				if (_entity instanceof Player _player) {
+					_player.getInventory().armor.set(2, (new Object() {
 						public ItemStack getItemStack(int sltid, Entity entity) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 								_retval.set(capability.getStackInSlot(sltid).copy());
 							});
 							return _retval.get();
 						}
-					}.getItemStack((int) (1), entity)));
-				else
-					((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.CHEST, (new Object() {
+					}.getItemStack(1, entity)));
+					_player.getInventory().setChanged();
+				} else if (_entity instanceof LivingEntity _living) {
+					_living.setItemSlot(EquipmentSlot.CHEST, (new Object() {
 						public ItemStack getItemStack(int sltid, Entity entity) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 								_retval.set(capability.getStackInSlot(sltid).copy());
 							});
 							return _retval.get();
 						}
-					}.getItemStack((int) (1), entity)));
-				if (entity instanceof ServerPlayerEntity)
-					((ServerPlayerEntity) entity).inventory.markDirty();
+					}.getItemStack(1, entity)));
+				}
 			}
-			if (entity instanceof LivingEntity) {
-				((LivingEntity) entity).removePotionEffect(ArmorPlacerPotionEffect.potion);
-			}
+			if (entity instanceof LivingEntity _entity)
+				_entity.removeEffect(FalloutWastelandsModMobEffects.ARMOR_PLACER.get());
 		}
 	}
 }

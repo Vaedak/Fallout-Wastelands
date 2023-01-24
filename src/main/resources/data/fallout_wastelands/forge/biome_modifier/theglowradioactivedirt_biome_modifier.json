@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "fallout_wastelands:capitalwastelandeast",
+    "fallout_wastelands:capitalwasteland",
+    "fallout_wastelands:desertwastland"
+  ],
+  "features": "fallout_wastelands:theglowradioactivedirt",
+  "step": "underground_ores"
+}

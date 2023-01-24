@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/undergroundbricks",
     "top": "fallout_wastelands:blocks/undergroundbricks",
     "side": "fallout_wastelands:blocks/undergroundbricks"
-  }
+  },
+  "render_type": "solid"
 }

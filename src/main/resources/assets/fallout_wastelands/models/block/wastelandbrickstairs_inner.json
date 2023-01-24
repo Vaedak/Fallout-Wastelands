@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/cbrick",
     "top": "fallout_wastelands:blocks/cbrick",
     "side": "fallout_wastelands:blocks/cbrick"
-  }
+  },
+  "render_type": "translucent"
 }

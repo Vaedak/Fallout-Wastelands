@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/mixer",
     "particle": "fallout_wastelands:blocks/mixer",
     "0": "fallout_wastelands:blocks/mixer"
-  }
+  },
+  "render_type": "translucent"
 }

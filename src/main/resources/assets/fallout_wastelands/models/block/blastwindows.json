@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/blastwindows",
     "west": "fallout_wastelands:blocks/blastwindows",
     "particle": "fallout_wastelands:blocks/blastwindows"
-  }
+  },
+  "render_type": "translucent"
 }

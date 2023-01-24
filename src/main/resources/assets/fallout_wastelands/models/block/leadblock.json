@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/lead_block",
     "west": "fallout_wastelands:blocks/lead_block",
     "particle": "fallout_wastelands:blocks/lead_block"
-  }
+  },
+  "render_type": "solid"
 }

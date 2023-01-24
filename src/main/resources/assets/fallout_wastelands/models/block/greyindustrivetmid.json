@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/rivet",
     "west": "fallout_wastelands:blocks/rivet",
     "particle": "fallout_wastelands:blocks/greypplain"
-  }
+  },
+  "render_type": "solid"
 }

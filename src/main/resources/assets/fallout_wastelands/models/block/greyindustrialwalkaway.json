@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/grey",
     "west": "fallout_wastelands:blocks/grey",
     "particle": "fallout_wastelands:blocks/greypplain"
-  }
+  },
+  "render_type": "solid"
 }

@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/greenmetalplatingradiation",
     "west": "fallout_wastelands:blocks/greenmetalplatingradiation",
     "particle": "fallout_wastelands:blocks/greenmetalplatingradiation"
-  }
+  },
+  "render_type": "solid"
 }

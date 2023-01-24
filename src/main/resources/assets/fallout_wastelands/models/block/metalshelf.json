@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/etagere",
     "particle": "fallout_wastelands:blocks/etagere",
     "0": "fallout_wastelands:blocks/etagere"
-  }
+  },
+  "render_type": "solid"
 }

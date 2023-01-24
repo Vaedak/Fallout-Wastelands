@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/cbrick_crached",
     "west": "fallout_wastelands:blocks/cbrick_crached",
     "particle": "fallout_wastelands:blocks/cbrick_crached"
-  }
+  },
+  "render_type": "solid"
 }

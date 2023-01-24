@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/greyrivetbottom",
     "west": "fallout_wastelands:blocks/greyrivetbottom",
     "particle": "fallout_wastelands:blocks/greypplain"
-  }
+  },
+  "render_type": "solid"
 }

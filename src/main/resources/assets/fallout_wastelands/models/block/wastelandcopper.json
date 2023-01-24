@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/copperore",
     "west": "fallout_wastelands:blocks/copperore",
     "particle": "fallout_wastelands:blocks/copperore"
-  }
+  },
+  "render_type": "solid"
 }

@@ -3,5 +3,6 @@
   "textures": {
     "edge": "fallout_wastelands:blocks/picketfence",
     "pane": "fallout_wastelands:blocks/picketfence"
-  }
+  },
+  "render_type": "solid"
 }

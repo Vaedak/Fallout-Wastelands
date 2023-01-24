@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "biome",
   "definition": {
     "name": "Wastlandsanddesert",
@@ -50,18 +50,14 @@
       "value": "CUSTOM:Plasma"
     },
     "particlesProbability": 0.0,
-    "biomeCategory": "DESERT",
     "rainingPossibility": 0.0,
     "temperature": 2.0,
-    "baseHeight": 0.30000000000000004,
-    "heightVariation": 0.30000000000000004,
-    "spawnBiome": false,
+    "baseHeight": 0.1,
+    "heightVariation": 0.1,
+    "spawnBiome": true,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 1,
-    "biomeDictionaryTypes": [
-      "WASTELAND"
-    ],
+    "biomeWeight": 3,
     "grassPerChunk": 0,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 0,

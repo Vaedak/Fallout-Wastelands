@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/bricktile",
     "west": "fallout_wastelands:blocks/bricktile",
     "particle": "fallout_wastelands:blocks/bricktile"
-  }
+  },
+  "render_type": "solid"
 }

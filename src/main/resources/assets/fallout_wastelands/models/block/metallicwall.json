@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/ironwallsb",
     "west": "fallout_wastelands:blocks/ironwallsb",
     "particle": "fallout_wastelands:blocks/ironwallsb"
-  }
+  },
+  "render_type": "solid"
 }

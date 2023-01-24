@@ -1,0 +1,37 @@
+{
+  "_fv": 34,
+  "_type": "rangeditem",
+  "definition": {
+    "renderType": 1,
+    "texture": "tikispear",
+    "customModelName": "tikispear:default",
+    "name": "Spear",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Wastelanderscombattab"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:TribalSpear"
+    },
+    "shootConstantly": false,
+    "usageCount": 50,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "hasGlow": false,
+    "animation": "spear",
+    "enableMeleeDamage": true,
+    "damageVsEntity": 5.5,
+    "bulletPower": 1.0,
+    "bulletDamage": 6.0,
+    "bulletKnockback": 1,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "CUSTOM:TribalSpear"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": ""
+  }
+}

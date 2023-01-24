@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/vconcrete",
     "top": "fallout_wastelands:blocks/vconcrete",
     "side": "fallout_wastelands:blocks/vconcrete"
-  }
+  },
+  "render_type": "solid"
 }

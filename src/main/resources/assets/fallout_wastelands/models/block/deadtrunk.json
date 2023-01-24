@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/dead_trunk",
     "west": "fallout_wastelands:blocks/dead_trunk",
     "particle": "fallout_wastelands:blocks/dead_trunk"
-  }
+  },
+  "render_type": "solid"
 }

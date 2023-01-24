@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/redrivet",
     "west": "fallout_wastelands:blocks/redrivet",
     "particle": "fallout_wastelands:blocks/industrialredplain"
-  }
+  },
+  "render_type": "solid"
 }

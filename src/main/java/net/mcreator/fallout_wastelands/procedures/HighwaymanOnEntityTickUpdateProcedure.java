@@ -1,73 +1,37 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
+import net.minecraft.core.particles.ParticleTypes;
 
-import net.mcreator.fallout_wastelands.item.FueljerricanItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Random;
-import java.util.Map;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModItems;
 
 public class HighwaymanOnEntityTickUpdateProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure HighwaymanOnEntityTickUpdate!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure HighwaymanOnEntityTickUpdate!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency y for procedure HighwaymanOnEntityTickUpdate!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure HighwaymanOnEntityTickUpdate!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure HighwaymanOnEntityTickUpdate!");
-			return;
-		}
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure HighwaymanOnEntityTickUpdate!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		world.addParticle(ParticleTypes.MYCELIUM, x, y, z, 0, 1, 0);
-		if ((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(FueljerricanItem.block)) : false) {
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).clearActivePotions();
+		if (entity instanceof Player _playerHasItem
+				? _playerHasItem.getInventory().contains(new ItemStack(FalloutWastelandsModItems.FUELJERRICAN.get()))
+				: false) {
+			if (entity instanceof LivingEntity _entity)
+				_entity.removeAllEffects();
 			{
 				ItemStack _ist = itemstack;
-				if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+				if (_ist.hurt(1, RandomSource.create(), null)) {
 					_ist.shrink(1);
-					_ist.setDamage(0);
+					_ist.setDamageValue(0);
 				}
 			}
 		} else {
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 60, (int) 5, (false), (false)));
+			if (entity instanceof LivingEntity _entity)
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 5, (false), (false)));
 		}
 	}
 }

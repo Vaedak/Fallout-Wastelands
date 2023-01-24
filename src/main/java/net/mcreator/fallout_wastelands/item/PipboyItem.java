@@ -1,196 +1,108 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.item.ItemTossEvent;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ActionResult;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.UseAction;
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.client.Minecraft;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.nbt.CompoundTag;
 
-import net.mcreator.fallout_wastelands.itemgroup.WastelandersitemsItemGroup;
-import net.mcreator.fallout_wastelands.gui.PipboyguiGuiWindow;
-import net.mcreator.fallout_wastelands.gui.PipboyguiGui;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+import net.mcreator.fallout_wastelands.world.inventory.PipboyguiMenu;
+import net.mcreator.fallout_wastelands.item.inventory.PipboyInventoryCapability;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModTabs;
 
 import javax.annotation.Nullable;
-import javax.annotation.Nonnull;
 
 import java.util.List;
 
 import io.netty.buffer.Unpooled;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class PipboyItem extends FalloutWastelandsModElements.ModElement {
-	@ObjectHolder("fallout_wastelands:pipboy")
-	public static final Item block = null;
-
-	public PipboyItem(FalloutWastelandsModElements instance) {
-		super(instance, 303);
-		MinecraftForge.EVENT_BUS.register(this);
-	}
-
-	@SubscribeEvent
-	@OnlyIn(Dist.CLIENT)
-	public void onItemDropped(ItemTossEvent event) {
-		if (event.getEntityItem().getItem().getItem() == block) {
-			if (Minecraft.getInstance().currentScreen instanceof PipboyguiGuiWindow) {
-				Minecraft.getInstance().player.closeScreen();
-			}
-		}
+public class PipboyItem extends Item {
+	public PipboyItem() {
+		super(new Item.Properties().tab(FalloutWastelandsModTabs.TAB_WASTELANDERSITEMS).stacksTo(1).rarity(Rarity.COMMON));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
+	public UseAnim getUseAnimation(ItemStack itemstack) {
+		return UseAnim.EAT;
 	}
 
-	public static class ItemCustom extends Item {
-		public ItemCustom() {
-			super(new Item.Properties().group(WastelandersitemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
-			setRegistryName("pipboy");
-		}
-
-		@Override
-		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.EAT;
-		}
-
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 3F;
-		}
-
-		@Override
-		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("You personal computer"));
-		}
-
-		@Override
-		public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
-			ActionResult<ItemStack> ar = super.onItemRightClick(world, entity, hand);
-			ItemStack itemstack = ar.getResult();
-			double x = entity.getPosX();
-			double y = entity.getPosY();
-			double z = entity.getPosZ();
-			if (entity instanceof ServerPlayerEntity) {
-				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
-					@Override
-					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Pipboy-3000");
-					}
-
-					@Override
-					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						PacketBuffer packetBuffer = new PacketBuffer(Unpooled.buffer());
-						packetBuffer.writeBlockPos(new BlockPos(x, y, z));
-						packetBuffer.writeByte(hand == Hand.MAIN_HAND ? 0 : 1);
-						return new PipboyguiGui.GuiContainerMod(id, inventory, packetBuffer);
-					}
-				}, buf -> {
-					buf.writeBlockPos(new BlockPos(x, y, z));
-					buf.writeByte(hand == Hand.MAIN_HAND ? 0 : 1);
-				});
-			}
-			return ar;
-		}
-
-		@Override
-		public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundNBT compound) {
-			return new InventoryCapability();
-		}
-
-		@Override
-		public CompoundNBT getShareTag(ItemStack stack) {
-			CompoundNBT nbt = super.getShareTag(stack);
-			if (nbt != null)
-				stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-						.ifPresent(capability -> nbt.put("Inventory", ((ItemStackHandler) capability).serializeNBT()));
-			return nbt;
-		}
-
-		@Override
-		public void readShareTag(ItemStack stack, @Nullable CompoundNBT nbt) {
-			super.readShareTag(stack, nbt);
-			if (nbt != null)
-				stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-						.ifPresent(capability -> ((ItemStackHandler) capability).deserializeNBT((CompoundNBT) nbt.get("Inventory")));
-		}
+	@Override
+	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
+		return 3F;
 	}
 
-	private static class InventoryCapability implements ICapabilitySerializable<CompoundNBT> {
-		private final LazyOptional<ItemStackHandler> inventory = LazyOptional.of(this::createItemHandler);
+	@Override
+	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, world, list, flag);
+		list.add(Component.literal("You personal computer"));
+	}
 
-		@Override
-		public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
-			return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? this.inventory.cast() : LazyOptional.empty();
-		}
-
-		@Override
-		public CompoundNBT serializeNBT() {
-			return getItemHandler().serializeNBT();
-		}
-
-		@Override
-		public void deserializeNBT(CompoundNBT nbt) {
-			getItemHandler().deserializeNBT(nbt);
-		}
-
-		private ItemStackHandler createItemHandler() {
-			return new ItemStackHandler(45) {
+	@Override
+	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
+		ItemStack itemstack = ar.getObject();
+		double x = entity.getX();
+		double y = entity.getY();
+		double z = entity.getZ();
+		if (entity instanceof ServerPlayer serverPlayer) {
+			NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
 				@Override
-				public int getSlotLimit(int slot) {
-					return 64;
+				public Component getDisplayName() {
+					return Component.literal("Pipboy-3000");
 				}
 
 				@Override
-				public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-					return stack.getItem() != block;
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					FriendlyByteBuf packetBuffer = new FriendlyByteBuf(Unpooled.buffer());
+					packetBuffer.writeBlockPos(entity.blockPosition());
+					packetBuffer.writeByte(hand == InteractionHand.MAIN_HAND ? 0 : 1);
+					return new PipboyguiMenu(id, inventory, packetBuffer);
 				}
-
-				@Override
-				public void setSize(int size) {
-				}
-			};
+			}, buf -> {
+				buf.writeBlockPos(entity.blockPosition());
+				buf.writeByte(hand == InteractionHand.MAIN_HAND ? 0 : 1);
+			});
 		}
+		return ar;
+	}
 
-		private ItemStackHandler getItemHandler() {
-			return inventory.orElseThrow(RuntimeException::new);
-		}
+	@Override
+	public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag compound) {
+		return new PipboyInventoryCapability();
+	}
+
+	@Override
+	public CompoundTag getShareTag(ItemStack stack) {
+		CompoundTag nbt = super.getShareTag(stack);
+		if (nbt != null)
+			stack.getCapability(ForgeCapabilities.ITEM_HANDLER, null)
+					.ifPresent(capability -> nbt.put("Inventory", ((ItemStackHandler) capability).serializeNBT()));
+		return nbt;
+	}
+
+	@Override
+	public void readShareTag(ItemStack stack, @Nullable CompoundTag nbt) {
+		super.readShareTag(stack, nbt);
+		if (nbt != null)
+			stack.getCapability(ForgeCapabilities.ITEM_HANDLER, null)
+					.ifPresent(capability -> ((ItemStackHandler) capability).deserializeNBT((CompoundTag) nbt.get("Inventory")));
 	}
 }

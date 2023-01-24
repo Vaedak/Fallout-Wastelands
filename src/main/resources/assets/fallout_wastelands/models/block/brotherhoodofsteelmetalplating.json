@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/bosmetalplatingside",
     "west": "fallout_wastelands:blocks/bosmetalplatingside",
     "particle": "fallout_wastelands:blocks/bosmetalplatingtop"
-  }
+  },
+  "render_type": "solid"
 }

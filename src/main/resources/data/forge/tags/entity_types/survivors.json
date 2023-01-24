@@ -1,14 +1,14 @@
 {
   "replace": false,
   "values": [
-    "fallout_wastelands:femalevaultdweller_1",
     "fallout_wastelands:femalevaultdweller_2",
     "fallout_wastelands:malevaultdweller_2",
-    "fallout_wastelands:malewastelander_1",
-    "fallout_wastelands:malewastelander_2",
+    "fallout_wastelands:malewastelander_4",
     "fallout_wastelands:overseer",
-    "fallout_wastelands:malewastelander_3",
+    "fallout_wastelands:malewastelander_2",
     "fallout_wastelands:malevaultdweller_1",
-    "fallout_wastelands:malewastelander_4"
+    "fallout_wastelands:femalevaultdweller_1",
+    "fallout_wastelands:malewastelander_1",
+    "fallout_wastelands:malewastelander_3"
   ]
 }

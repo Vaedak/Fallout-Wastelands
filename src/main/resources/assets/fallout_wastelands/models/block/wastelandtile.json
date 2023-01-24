@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/tile",
     "west": "fallout_wastelands:blocks/tile",
     "particle": "fallout_wastelands:blocks/tile"
-  }
+  },
+  "render_type": "solid"
 }

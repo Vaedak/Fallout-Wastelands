@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/ammobox",
     "particle": "fallout_wastelands:blocks/ammobox",
     "0": "fallout_wastelands:blocks/ammobox"
-  }
+  },
+  "render_type": "translucent"
 }

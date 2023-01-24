@@ -3,5 +3,6 @@
   "textures": {
     "texture": "fallout_wastelands:blocks/woodentrapdoor",
     "particle": "fallout_wastelands:blocks/woodentrapdoor"
-  }
+  },
+  "render_type": "cutout"
 }

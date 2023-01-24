@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/nuclearbombside",
     "west": "fallout_wastelands:blocks/nuclearbombside",
     "particle": "fallout_wastelands:blocks/nuclearbombbottom"
-  }
+  },
+  "render_type": "solid"
 }

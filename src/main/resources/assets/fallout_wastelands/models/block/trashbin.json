@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/trash_bin_texture",
     "particle": "fallout_wastelands:blocks/trash_bin_texture",
     "0": "fallout_wastelands:blocks/trash_bin_texture"
-  }
+  },
+  "render_type": "solid"
 }

@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/cconcretevent",
     "west": "fallout_wastelands:blocks/cconcretevent",
     "particle": "fallout_wastelands:blocks/vconcrete"
-  }
+  },
+  "render_type": "solid"
 }

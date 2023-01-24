@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/barrel",
     "particle": "fallout_wastelands:blocks/barrel",
     "0": "fallout_wastelands:blocks/barrel"
-  }
+  },
+  "render_type": "translucent"
 }

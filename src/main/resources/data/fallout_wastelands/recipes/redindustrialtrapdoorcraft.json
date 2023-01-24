@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "1": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "2": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "3": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "4": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "5": {
+      "item": "fallout_wastelands:redindustrialblock"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:redindustrialtrapdoor",
+    "count": 3
+  }
+}

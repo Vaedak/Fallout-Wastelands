@@ -2,304 +2,242 @@
 package net.mcreator.fallout_wastelands.entity;
 
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.items.wrapper.EntityHandsInvWrapper;
 import net.minecraftforge.items.wrapper.EntityArmorInvWrapper;
 import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.Capability;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IServerWorld;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.entity.projectile.ThrownPotion;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.AreaEffectCloud;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Direction;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.network.IPacket;
-import net.minecraft.nbt.INBT;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.entity.projectile.PotionEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureEntity;
-import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.entity.AreaEffectCloudEntity;
-import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.Direction;
 
+import net.mcreator.fallout_wastelands.world.inventory.FrameInventoryMenu;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameRightClickedOnEntityProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFramePlayerCollidesWithThisEntityProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameOnInitialEntitySpawnProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameOnEntityTickUpdateProcedure;
-import net.mcreator.fallout_wastelands.gui.FrameInventoryGui;
-import net.mcreator.fallout_wastelands.entity.renderer.PowerArmorFrameRenderer;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModEntities;
 
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
-
 import io.netty.buffer.Unpooled;
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class PowerArmorFrameEntity extends FalloutWastelandsModElements.ModElement {
-	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
-			.size(0.6f, 1.8f)).build("power_armor_frame").setRegistryName("power_armor_frame");
+public class PowerArmorFrameEntity extends PathfinderMob {
+	public PowerArmorFrameEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(FalloutWastelandsModEntities.POWER_ARMOR_FRAME.get(), world);
+	}
 
-	public PowerArmorFrameEntity(FalloutWastelandsModElements instance) {
-		super(instance, 1431);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new PowerArmorFrameRenderer.ModelRegisterHandler());
-		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
+	public PowerArmorFrameEntity(EntityType<PowerArmorFrameEntity> type, Level world) {
+		super(type, world);
+		xpReward = 0;
+		setNoAi(false);
+		setPersistenceRequired();
 	}
 
 	@Override
-	public void initElements() {
-		elements.entities.add(() -> entity);
-		elements.items.add(
-				() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("power_armor_frame_spawn_egg"));
+	public Packet<?> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
-	public void init(FMLCommonSetupEvent event) {
+	protected void registerGoals() {
+		super.registerGoals();
+
 	}
 
-	private static class EntityAttributesRegisterHandler {
-		@SubscribeEvent
-		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
-			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
-			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3);
-			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 1024);
-			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0);
-			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 3);
-			ammma = ammma.createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
-			event.put(entity, ammma.create());
-		}
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEFINED;
 	}
 
-	public static class CustomEntity extends CreatureEntity {
-		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
-			this(entity, world);
-		}
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
+	}
 
-		public CustomEntity(EntityType<CustomEntity> type, World world) {
-			super(type, world);
-			experienceValue = 0;
-			setNoAI(false);
-			enablePersistence();
-		}
+	@Override
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+	}
 
-		@Override
-		public IPacket<?> createSpawnPacket() {
-			return NetworkHooks.getEntitySpawningPacket(this);
-		}
+	@Override
+	public SoundEvent getDeathSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+	}
 
-		@Override
-		protected void registerGoals() {
-			super.registerGoals();
-
-		}
-
-		@Override
-		public CreatureAttribute getCreatureAttribute() {
-			return CreatureAttribute.UNDEFINED;
-		}
-
-		@Override
-		public boolean canDespawn(double distanceToClosestPlayer) {
+	@Override
+	public boolean hurt(DamageSource source, float amount) {
+		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
-		}
+		if (source.getDirectEntity() instanceof Player)
+			return false;
+		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
+			return false;
+		if (source == DamageSource.FALL)
+			return false;
+		if (source == DamageSource.CACTUS)
+			return false;
+		if (source == DamageSource.DROWN)
+			return false;
+		if (source == DamageSource.LIGHTNING_BOLT)
+			return false;
+		if (source.isExplosion())
+			return false;
+		if (source.getMsgId().equals("trident"))
+			return false;
+		if (source == DamageSource.ANVIL)
+			return false;
+		if (source == DamageSource.DRAGON_BREATH)
+			return false;
+		if (source == DamageSource.WITHER)
+			return false;
+		if (source.getMsgId().equals("witherSkull"))
+			return false;
+		return super.hurt(source, amount);
+	}
 
+	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason,
+			@Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
+		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
+		PowerArmorFrameOnInitialEntitySpawnProcedure.execute(this);
+		return retval;
+	}
+
+	private final ItemStackHandler inventory = new ItemStackHandler(9) {
 		@Override
-		public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+		public int getSlotLimit(int slot) {
+			return 64;
 		}
+	};
+	private final CombinedInvWrapper combined = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this), new EntityArmorInvWrapper(this));
 
-		@Override
-		public net.minecraft.util.SoundEvent getDeathSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
-		}
+	@Override
+	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
+		if (this.isAlive() && capability == ForgeCapabilities.ITEM_HANDLER && side == null)
+			return LazyOptional.of(() -> combined).cast();
+		return super.getCapability(capability, side);
+	}
 
-		@Override
-		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof AbstractArrowEntity)
-				return false;
-			if (source.getImmediateSource() instanceof PlayerEntity)
-				return false;
-			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
-				return false;
-			if (source == DamageSource.FALL)
-				return false;
-			if (source == DamageSource.CACTUS)
-				return false;
-			if (source == DamageSource.DROWN)
-				return false;
-			if (source == DamageSource.LIGHTNING_BOLT)
-				return false;
-			if (source.isExplosion())
-				return false;
-			if (source.getDamageType().equals("trident"))
-				return false;
-			if (source == DamageSource.ANVIL)
-				return false;
-			if (source == DamageSource.DRAGON_BREATH)
-				return false;
-			if (source == DamageSource.WITHER)
-				return false;
-			if (source.getDamageType().equals("witherSkull"))
-				return false;
-			return super.attackEntityFrom(source, amount);
-		}
-
-		@Override
-		public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason,
-				@Nullable ILivingEntityData livingdata, @Nullable CompoundNBT tag) {
-			ILivingEntityData retval = super.onInitialSpawn(world, difficulty, reason, livingdata, tag);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-
-			PowerArmorFrameOnInitialEntitySpawnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			return retval;
-		}
-
-		private final ItemStackHandler inventory = new ItemStackHandler(9) {
-			@Override
-			public int getSlotLimit(int slot) {
-				return 64;
+	@Override
+	protected void dropEquipment() {
+		super.dropEquipment();
+		for (int i = 0; i < inventory.getSlots(); ++i) {
+			ItemStack itemstack = inventory.getStackInSlot(i);
+			if (!itemstack.isEmpty() && !EnchantmentHelper.hasVanishingCurse(itemstack)) {
+				this.spawnAtLocation(itemstack);
 			}
-		};
-		private final CombinedInvWrapper combined = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this),
-				new EntityArmorInvWrapper(this));
-
-		@Override
-		public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
-			if (this.isAlive() && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && side == null)
-				return LazyOptional.of(() -> combined).cast();
-			return super.getCapability(capability, side);
 		}
+	}
 
-		@Override
-		protected void dropInventory() {
-			super.dropInventory();
-			for (int i = 0; i < inventory.getSlots(); ++i) {
-				ItemStack itemstack = inventory.getStackInSlot(i);
-				if (!itemstack.isEmpty() && !EnchantmentHelper.hasVanishingCurse(itemstack)) {
-					this.entityDropItem(itemstack);
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.put("InventoryCustom", inventory.serializeNBT());
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		Tag inventoryCustom = compound.get("InventoryCustom");
+		if (inventoryCustom instanceof CompoundTag inventoryTag)
+			inventory.deserializeNBT(inventoryTag);
+	}
+
+	@Override
+	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
+		ItemStack itemstack = sourceentity.getItemInHand(hand);
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level.isClientSide());
+		if (sourceentity instanceof ServerPlayer serverPlayer) {
+			NetworkHooks.openScreen(serverPlayer, new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return Component.literal("Power Armor Frame");
 				}
-			}
+
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					FriendlyByteBuf packetBuffer = new FriendlyByteBuf(Unpooled.buffer());
+					packetBuffer.writeBlockPos(sourceentity.blockPosition());
+					packetBuffer.writeByte(0);
+					packetBuffer.writeVarInt(PowerArmorFrameEntity.this.getId());
+					return new FrameInventoryMenu(id, inventory, packetBuffer);
+				}
+			}, buf -> {
+				buf.writeBlockPos(sourceentity.blockPosition());
+				buf.writeByte(0);
+				buf.writeVarInt(this.getId());
+			});
 		}
+		super.mobInteract(sourceentity, hand);
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level;
 
-		@Override
-		public void writeAdditional(CompoundNBT compound) {
-			super.writeAdditional(compound);
-			compound.put("InventoryCustom", inventory.serializeNBT());
-		}
+		PowerArmorFrameRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
+		return retval;
+	}
 
-		@Override
-		public void readAdditional(CompoundNBT compound) {
-			super.readAdditional(compound);
-			INBT inventoryCustom = compound.get("InventoryCustom");
-			if (inventoryCustom instanceof CompoundNBT)
-				inventory.deserializeNBT((CompoundNBT) inventoryCustom);
-		}
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		PowerArmorFrameOnEntityTickUpdateProcedure.execute(this);
+	}
 
-		@Override
-		public ActionResultType func_230254_b_(PlayerEntity sourceentity, Hand hand) {
-			ItemStack itemstack = sourceentity.getHeldItem(hand);
-			ActionResultType retval = ActionResultType.func_233537_a_(this.world.isRemote());
-			if (sourceentity instanceof ServerPlayerEntity) {
-				NetworkHooks.openGui((ServerPlayerEntity) sourceentity, new INamedContainerProvider() {
-					@Override
-					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Power Armor Frame");
-					}
+	@Override
+	public void playerTouch(Player sourceentity) {
+		super.playerTouch(sourceentity);
+		PowerArmorFramePlayerCollidesWithThisEntityProcedure.execute(this, sourceentity);
+	}
 
-					@Override
-					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						PacketBuffer packetBuffer = new PacketBuffer(Unpooled.buffer());
-						packetBuffer.writeBlockPos(new BlockPos(sourceentity.getPosition()));
-						packetBuffer.writeByte(0);
-						packetBuffer.writeVarInt(CustomEntity.this.getEntityId());
-						return new FrameInventoryGui.GuiContainerMod(id, inventory, packetBuffer);
-					}
-				}, buf -> {
-					buf.writeBlockPos(new BlockPos(sourceentity.getPosition()));
-					buf.writeByte(0);
-					buf.writeVarInt(this.getEntityId());
-				});
-			}
-			super.func_230254_b_(sourceentity, hand);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
+	public static void init() {
+	}
 
-			PowerArmorFrameRightClickedOnEntityProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity),
-							new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			return retval;
-		}
-
-		@Override
-		public void baseTick() {
-			super.baseTick();
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-
-			PowerArmorFrameOnEntityTickUpdateProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-		}
-
-		@Override
-		public void onCollideWithPlayer(PlayerEntity sourceentity) {
-			super.onCollideWithPlayer(sourceentity);
-			Entity entity = this;
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-
-			PowerArmorFramePlayerCollidesWithThisEntityProcedure.executeProcedure(
-					Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-		}
+	public static AttributeSupplier.Builder createAttributes() {
+		AttributeSupplier.Builder builder = Mob.createMobAttributes();
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MAX_HEALTH, 1024);
+		builder = builder.add(Attributes.ARMOR, 0);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		return builder;
 	}
 }

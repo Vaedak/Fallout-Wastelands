@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/industrialredplain",
     "west": "fallout_wastelands:blocks/industrialredplain",
     "particle": "fallout_wastelands:blocks/industrialredplain"
-  }
+  },
+  "render_type": "solid"
 }

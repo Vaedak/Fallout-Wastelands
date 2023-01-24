@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/concretepattern",
     "west": "fallout_wastelands:blocks/concretepattern",
     "particle": "fallout_wastelands:blocks/concretepattern"
-  }
+  },
+  "render_type": "solid"
 }

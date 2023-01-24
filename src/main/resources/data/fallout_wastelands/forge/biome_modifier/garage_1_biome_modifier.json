@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "fallout_wastelands:desertwastland",
+  "features": "fallout_wastelands:garage_1",
+  "step": "surface_structures"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "fallout_wastelands:wastlandsanddesert",
+  "features": "fallout_wastelands:desertstructurethree",
+  "step": "surface_structures"
+}

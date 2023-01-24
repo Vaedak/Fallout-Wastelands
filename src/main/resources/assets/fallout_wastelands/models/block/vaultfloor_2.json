@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/vaultfloora",
     "west": "fallout_wastelands:blocks/vaultfloora",
     "particle": "fallout_wastelands:blocks/vaultfloora"
-  }
+  },
+  "render_type": "solid"
 }

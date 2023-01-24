@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/blank_fabric",
     "west": "fallout_wastelands:blocks/blank_fabric",
     "particle": "fallout_wastelands:blocks/blank_fabric"
-  }
+  },
+  "render_type": "solid"
 }

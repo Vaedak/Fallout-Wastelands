@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/barreluran",
     "particle": "fallout_wastelands:blocks/barreluran",
     "0": "fallout_wastelands:blocks/barreluran"
-  }
+  },
+  "render_type": "translucent"
 }

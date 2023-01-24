@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/wastelandstonebrick",
     "top": "fallout_wastelands:blocks/wastelandstonebrick",
     "side": "fallout_wastelands:blocks/wastelandstonebrick"
-  }
+  },
+  "render_type": "solid"
 }

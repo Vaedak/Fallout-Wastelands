@@ -3,5 +3,6 @@
   "textures": {
     "wall": "fallout_wastelands:blocks/whiteconcrete",
     "particle": "fallout_wastelands:blocks/whiteconcrete"
-  }
+  },
+  "render_type": "solid"
 }

@@ -3,5 +3,6 @@
   "textures": {
     "wall": "fallout_wastelands:blocks/wastelandstonebrick",
     "particle": "fallout_wastelands:blocks/wastelandstonebrick"
-  }
+  },
+  "render_type": "solid"
 }

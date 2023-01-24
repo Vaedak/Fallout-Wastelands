@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastelanddiamondore",
     "west": "fallout_wastelands:blocks/wastelanddiamondore",
     "particle": "fallout_wastelands:blocks/wastelanddiamondore"
-  }
+  },
+  "render_type": "solid"
 }

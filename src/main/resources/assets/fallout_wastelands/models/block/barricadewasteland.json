@@ -3,5 +3,6 @@
   "textures": {
     "wall": "fallout_wastelands:blocks/barricadeblock",
     "particle": "fallout_wastelands:blocks/barricadeblock"
-  }
+  },
+  "render_type": "solid"
 }

@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/scaffoldside2",
     "west": "fallout_wastelands:blocks/scaffoldside2",
     "particle": "fallout_wastelands:blocks/scaffoldtop"
-  }
+  },
+  "render_type": "translucent"
 }

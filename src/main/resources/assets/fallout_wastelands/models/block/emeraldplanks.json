@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/emeraldhouseplanks",
     "west": "fallout_wastelands:blocks/emeraldhouseplanks",
     "particle": "fallout_wastelands:blocks/emeraldhouseplanks"
-  }
+  },
+  "render_type": "solid"
 }

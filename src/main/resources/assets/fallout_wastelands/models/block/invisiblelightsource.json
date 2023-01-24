@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/radioactiveair",
     "west": "fallout_wastelands:blocks/radioactiveair",
     "particle": "fallout_wastelands:blocks/radioactiveair"
-  }
+  },
+  "render_type": "translucent"
 }

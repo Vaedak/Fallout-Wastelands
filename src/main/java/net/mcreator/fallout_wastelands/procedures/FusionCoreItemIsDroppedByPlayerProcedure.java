@@ -1,28 +1,14 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.Entity;
 
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.mcreator.fallout_wastelands.network.FalloutWastelandsModVariables;
 
 public class FusionCoreItemIsDroppedByPlayerProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure FusionCoreItemIsDroppedByPlayer!");
+	public static void execute(Entity entity, ItemStack itemstack) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure FusionCoreItemIsDroppedByPlayer!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		entity.getPersistentData().putBoolean("coreassigned", (false));
 		itemstack.getOrCreateTag().putBoolean("CoreInUse", (false));
 		{

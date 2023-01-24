@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "fallout_wastelands:wastelandtinore"
   },
-  "result": {
-    "item": "fallout_wastelands:ingot_tin"
-  }
+  "result": "fallout_wastelands:ingot_tin"
 }

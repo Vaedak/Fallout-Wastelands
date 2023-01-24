@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/blacktile",
     "top": "fallout_wastelands:blocks/blacktile",
     "side": "fallout_wastelands:blocks/blacktile"
-  }
+  },
+  "render_type": "solid"
 }

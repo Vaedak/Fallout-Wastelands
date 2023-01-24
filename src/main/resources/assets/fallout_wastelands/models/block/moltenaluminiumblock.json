@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/moltenboxite",
     "west": "fallout_wastelands:blocks/moltenboxite",
     "particle": "fallout_wastelands:blocks/moltenboxite"
-  }
+  },
+  "render_type": "solid"
 }

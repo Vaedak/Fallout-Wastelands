@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  2",
+    " 4 ",
+    "6  "
+  ],
+  "key": {
+    "2": {
+      "item": "minecraft:iron_nugget"
+    },
+    "4": {
+      "item": "fallout_wastelands:aluminiumnugget"
+    },
+    "6": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:ironstick",
+    "count": 3
+  }
+}

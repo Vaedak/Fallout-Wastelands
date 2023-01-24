@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/militmetalplating",
     "west": "fallout_wastelands:blocks/militmetalplating",
     "particle": "fallout_wastelands:blocks/militmetalplating"
-  }
+  },
+  "render_type": "solid"
 }

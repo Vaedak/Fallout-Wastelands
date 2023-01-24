@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "fallout_wastelands:rawmirlurk"
   },
-  "result": {
-    "item": "fallout_wastelands:mirlurksteak"
-  }
+  "result": "fallout_wastelands:mirlurksteak"
 }

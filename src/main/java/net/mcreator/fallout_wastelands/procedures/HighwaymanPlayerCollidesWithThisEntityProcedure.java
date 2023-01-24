@@ -1,62 +1,28 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
 
 import net.mcreator.fallout_wastelands.entity.HighwaymanEntity;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
-import java.util.function.Function;
-import java.util.Map;
 import java.util.Comparator;
 
 public class HighwaymanPlayerCollidesWithThisEntityProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure HighwaymanPlayerCollidesWithThisEntity!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity sourceentity) {
+		if (sourceentity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure HighwaymanPlayerCollidesWithThisEntity!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency y for procedure HighwaymanPlayerCollidesWithThisEntity!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure HighwaymanPlayerCollidesWithThisEntity!");
-			return;
-		}
-		if (dependencies.get("sourceentity") == null) {
-			if (!dependencies.containsKey("sourceentity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure HighwaymanPlayerCollidesWithThisEntity!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		if (sourceentity.isPassenger()) {
-			if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-				((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent(("Fuel " + ((Entity) world
-						.getEntitiesWithinAABB(HighwaymanEntity.CustomEntity.class,
-								new AxisAlignedBB(x - (1 / 2d), y - (1 / 2d), z - (1 / 2d), x + (1 / 2d), y + (1 / 2d), z + (1 / 2d)), null)
-						.stream().sorted(new Object() {
+			if (sourceentity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal(("Fuel " + ((Entity) world
+						.getEntitiesOfClass(HighwaymanEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).stream().sorted(new Object() {
 							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 							}
 						}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPersistentData().getDouble("Fuel"))), (true));
-			}
 		}
 	}
 }

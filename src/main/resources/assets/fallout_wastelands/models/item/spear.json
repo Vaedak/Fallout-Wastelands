@@ -1,0 +1,7 @@
+{
+  "parent": "fallout_wastelands:custom/spear",
+  "textures": {
+    "0": "fallout_wastelands:blocks/spear",
+    "particle": "fallout_wastelands:items/spear"
+  }
+}

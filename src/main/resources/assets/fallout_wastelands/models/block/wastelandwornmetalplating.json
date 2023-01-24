@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastelandwornmetaltop",
     "west": "fallout_wastelands:blocks/wastelandwornmetaltop",
     "particle": "fallout_wastelands:blocks/wastelandwornmetaltop"
-  }
+  },
+  "render_type": "solid"
 }

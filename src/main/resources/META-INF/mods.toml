@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[43,)"
 license="Not specified"
 
 [[mods]]
 modId="fallout_wastelands"
-version="0.5.8"
+version="0.8"
 displayName="Fallout Wastelands"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
@@ -17,7 +17,7 @@ A Fallout game serie mod for minecraft , with vault-craft we assure you a calm a
 [[dependencies.fallout_wastelands]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5]"
+    versionRange="[1.19.2]"
     ordering="NONE"
     side="BOTH"
 

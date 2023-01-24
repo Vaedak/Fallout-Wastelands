@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/lighttub",
     "particle": "fallout_wastelands:blocks/lighttub",
     "1": "fallout_wastelands:blocks/lighttub"
-  }
+  },
+  "render_type": "solid"
 }

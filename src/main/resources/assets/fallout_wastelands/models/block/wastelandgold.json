@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastelandgoldore",
     "west": "fallout_wastelands:blocks/wastelandgoldore",
     "particle": "fallout_wastelands:blocks/wastelandgoldore"
-  }
+  },
+  "render_type": "solid"
 }

@@ -1,52 +1,39 @@
 
 package net.mcreator.fallout_wastelands.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Item;
 
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModTabs;
 
-import net.mcreator.fallout_wastelands.itemgroup.WastelanderscombattabItemGroup;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
-
-@FalloutWastelandsModElements.ModElement.Tag
-public class CombatknifeItem extends FalloutWastelandsModElements.ModElement {
-	@ObjectHolder("fallout_wastelands:combatknife")
-	public static final Item block = null;
-
-	public CombatknifeItem(FalloutWastelandsModElements instance) {
-		super(instance, 309);
-	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new SwordItem(new IItemTier() {
-			public int getMaxUses() {
+public class CombatknifeItem extends SwordItem {
+	public CombatknifeItem() {
+		super(new Tier() {
+			public int getUses() {
 				return 100;
 			}
 
-			public float getEfficiency() {
+			public float getSpeed() {
 				return 4f;
 			}
 
-			public float getAttackDamage() {
+			public float getAttackDamageBonus() {
 				return 0.5f;
 			}
 
-			public int getHarvestLevel() {
+			public int getLevel() {
 				return 1;
 			}
 
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 2;
 			}
 
-			public Ingredient getRepairMaterial() {
+			public Ingredient getRepairIngredient() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, 3f, new Item.Properties().group(WastelanderscombattabItemGroup.tab)) {
-		}.setRegistryName("combatknife"));
+		}, 3, 3f, new Item.Properties().tab(FalloutWastelandsModTabs.TAB_WASTELANDERSCOMBATTAB));
 	}
 }

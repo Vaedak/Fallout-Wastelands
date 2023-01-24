@@ -3,5 +3,6 @@
   "textures": {
     "edge": "fallout_wastelands:blocks/roofblock",
     "pane": "fallout_wastelands:blocks/roofblock"
-  }
+  },
+  "render_type": "solid"
 }

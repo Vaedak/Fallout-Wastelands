@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/moltensteelfix3",
     "west": "fallout_wastelands:blocks/moltensteelfix3",
     "particle": "fallout_wastelands:blocks/moltensteelfix3"
-  }
+  },
+  "render_type": "solid"
 }

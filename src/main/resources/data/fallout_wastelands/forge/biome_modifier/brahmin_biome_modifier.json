@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "fallout_wastelands:capitalwastelandeast",
+    "fallout_wastelands:capitalwasteland",
+    "fallout_wastelands:desertwastland"
+  ],
+  "spawners": {
+    "type": "fallout_wastelands:brahmin",
+    "weight": 2,
+    "minCount": 2,
+    "maxCount": 4
+  }
+}

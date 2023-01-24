@@ -1,30 +1,26 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 
 public class PowerArmorFrameOnEntityTickUpdateProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure PowerArmorFrameOnEntityTickUpdate!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
+		{
+			Entity _ent = entity;
+			_ent.setYRot(entity.getYRot());
+			_ent.setXRot(20);
+			_ent.setYBodyRot(_ent.getYRot());
+			_ent.setYHeadRot(_ent.getYRot());
+			_ent.yRotO = _ent.getYRot();
+			_ent.xRotO = _ent.getXRot();
+			if (_ent instanceof LivingEntity _entity) {
+				_entity.yBodyRotO = _entity.getYRot();
+				_entity.yHeadRotO = _entity.getYRot();
+			}
 		}
-		Entity entity = (Entity) dependencies.get("entity");
-		entity.rotationYaw = (float) ((entity.rotationYaw));
-		entity.setRenderYawOffset(entity.rotationYaw);
-		entity.prevRotationYaw = entity.rotationYaw;
-		if (entity instanceof LivingEntity) {
-			((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
-			((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
-			((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
-		}
-		entity.rotationPitch = (float) (20);
-		entity.setMotion(0, 0, 0);
+		entity.setDeltaMovement(new Vec3(0, 0, 0));
 	}
 }

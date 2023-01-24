@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "fallout_wastelands:wastlandsand"
   },
-  "result": {
-    "item": "minecraft:glass"
-  }
+  "result": "minecraft:glass"
 }

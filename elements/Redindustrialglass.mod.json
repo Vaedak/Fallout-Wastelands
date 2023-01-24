@@ -1,0 +1,46 @@
+{
+  "_fv": 34,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 16,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Redindustrialblock"
+      },
+      {
+        "value": "CUSTOM:Redindustrialblock"
+      },
+      {
+        "value": "CUSTOM:Redindustrialblock"
+      },
+      {
+        "value": "CUSTOM:Redindustrialblock"
+      },
+      {
+        "value": "CUSTOM:Steelingot"
+      },
+      {
+        "value": "CUSTOM:Redindustrialblock"
+      },
+      {
+        "value": "CUSTOM:Redindustrialblock"
+      },
+      {
+        "value": "CUSTOM:Redindustrialblock"
+      },
+      {
+        "value": "CUSTOM:Redindustrialblock"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Redindustrialwindow"
+    },
+    "name": "redindustrialglass",
+    "namespace": "mod"
+  }
+}

@@ -1,96 +1,51 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
-
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.RegistryKey;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.network.play.server.SPlayerAbilitiesPacket;
-import net.minecraft.network.play.server.SPlaySoundEventPacket;
-import net.minecraft.network.play.server.SPlayEntityEffectPacket;
-import net.minecraft.network.play.server.SChangeGameStatePacket;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket;
+import net.minecraft.network.protocol.game.ClientboundPlayerAbilitiesPacket;
+import net.minecraft.network.protocol.game.ClientboundLevelEventPacket;
+import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
+import net.minecraft.core.Registry;
+import net.minecraft.core.BlockPos;
 
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
-import java.util.Map;
-import java.util.Collections;
-
 public class YestothewastelandtelepProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure Yestothewastelandtelep!");
+	public static void execute(LevelAccessor world, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure Yestothewastelandtelep!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		Entity entity = (Entity) dependencies.get("entity");
-		if (entity instanceof PlayerEntity)
-			((PlayerEntity) entity).closeScreen();
-		{
-			Entity _ent = entity;
-			if (!_ent.world.isRemote && _ent instanceof ServerPlayerEntity) {
-				RegistryKey<World> destinationType = RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
-						new ResourceLocation("fallout_wastelands:wasteland"));
-				ServerWorld nextWorld = _ent.getServer().getWorld(destinationType);
-				if (nextWorld != null) {
-					((ServerPlayerEntity) _ent).connection.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field_241768_e_, 0));
-					((ServerPlayerEntity) _ent).teleport(nextWorld, nextWorld.getSpawnPoint().getX(), nextWorld.getSpawnPoint().getY() + 1,
-							nextWorld.getSpawnPoint().getZ(), _ent.rotationYaw, _ent.rotationPitch);
-					((ServerPlayerEntity) _ent).connection.sendPacket(new SPlayerAbilitiesPacket(((ServerPlayerEntity) _ent).abilities));
-					for (EffectInstance effectinstance : ((ServerPlayerEntity) _ent).getActivePotionEffects()) {
-						((ServerPlayerEntity) _ent).connection.sendPacket(new SPlayEntityEffectPacket(_ent.getEntityId(), effectinstance));
-					}
-					((ServerPlayerEntity) _ent).connection.sendPacket(new SPlaySoundEventPacket(1032, BlockPos.ZERO, 0, false));
-				}
+		if (entity instanceof Player _player)
+			_player.closeContainer();
+		if (entity instanceof ServerPlayer _player && !_player.level.isClientSide()) {
+			ResourceKey<Level> destinationType = ResourceKey.create(Registry.DIMENSION_REGISTRY,
+					new ResourceLocation("fallout_wastelands:wasteland"));
+			if (_player.level.dimension() == destinationType)
+				return;
+			ServerLevel nextLevel = _player.server.getLevel(destinationType);
+			if (nextLevel != null) {
+				_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
+				_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
+				_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
+				for (MobEffectInstance _effectinstance : _player.getActiveEffects())
+					_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
+				_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
 			}
 		}
-		new Object() {
-			private int ticks = 0;
-			private float waitTicks;
-			private IWorld world;
-
-			public void start(IWorld world, int waitTicks) {
-				this.waitTicks = waitTicks;
-				MinecraftForge.EVENT_BUS.register(this);
-				this.world = world;
+		FalloutWastelandsMod.queueServerWork(20, () -> {
+			{
+				Entity _ent = entity;
+				_ent.teleportTo(38, 29, 1);
+				if (_ent instanceof ServerPlayer _serverPlayer)
+					_serverPlayer.connection.teleport(38, 29, 1, _ent.getYRot(), _ent.getXRot());
 			}
-
-			@SubscribeEvent
-			public void tick(TickEvent.ServerTickEvent event) {
-				if (event.phase == TickEvent.Phase.END) {
-					this.ticks += 1;
-					if (this.ticks >= this.waitTicks)
-						run();
-				}
-			}
-
-			private void run() {
-				{
-					Entity _ent = entity;
-					_ent.setPositionAndUpdate(38, 29, 1);
-					if (_ent instanceof ServerPlayerEntity) {
-						((ServerPlayerEntity) _ent).connection.setPlayerLocation(38, 29, 1, _ent.rotationYaw, _ent.rotationPitch,
-								Collections.emptySet());
-					}
-				}
-				MinecraftForge.EVENT_BUS.unregister(this);
-			}
-		}.start(world, (int) 20);
+		});
 	}
 }

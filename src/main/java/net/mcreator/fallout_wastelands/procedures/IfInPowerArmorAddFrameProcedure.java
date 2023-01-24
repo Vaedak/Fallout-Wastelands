@@ -2,98 +2,85 @@ package net.mcreator.fallout_wastelands.procedures;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
-import net.minecraft.world.World;
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
 
-import net.mcreator.fallout_wastelands.item.FrameArmorItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+import net.mcreator.fallout_wastelands.network.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModItems;
 
-import java.util.Map;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
+@Mod.EventBusSubscriber
 public class IfInPowerArmorAddFrameProcedure {
-	@Mod.EventBusSubscriber
-	private static class GlobalTrigger {
-		@SubscribeEvent
-		public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-			if (event.phase == TickEvent.Phase.END) {
-				Entity entity = event.player;
-				World world = entity.world;
-				double i = entity.getPosX();
-				double j = entity.getPosY();
-				double k = entity.getPosZ();
-				Map<String, Object> dependencies = new HashMap<>();
-				dependencies.put("x", i);
-				dependencies.put("y", j);
-				dependencies.put("z", k);
-				dependencies.put("world", world);
-				dependencies.put("entity", entity);
-				dependencies.put("event", event);
-				executeProcedure(dependencies);
-			}
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player);
 		}
 	}
 
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure IfInPowerArmorAddFrame!");
+	public static void execute(Entity entity) {
+		execute(null, entity);
+	}
+
+	private static void execute(@Nullable Event event, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
 					.getItem() == Blocks.AIR.asItem()) == true) {
-				if (entity instanceof LivingEntity) {
-					if (entity instanceof PlayerEntity)
-						((PlayerEntity) entity).inventory.armorInventory.set((int) 3, new ItemStack(FrameArmorItem.helmet));
-					else
-						((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(FrameArmorItem.helmet));
-					if (entity instanceof ServerPlayerEntity)
-						((ServerPlayerEntity) entity).inventory.markDirty();
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(3, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()));
+					}
 				}
 			}
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
 					.getItem() == Blocks.AIR.asItem()) == true) {
-				if (entity instanceof LivingEntity) {
-					if (entity instanceof PlayerEntity)
-						((PlayerEntity) entity).inventory.armorInventory.set((int) 2, new ItemStack(FrameArmorItem.body));
-					else
-						((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(FrameArmorItem.body));
-					if (entity instanceof ServerPlayerEntity)
-						((ServerPlayerEntity) entity).inventory.markDirty();
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(2, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()));
+					}
 				}
 			}
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
 					.getItem() == Blocks.AIR.asItem()) == true) {
-				if (entity instanceof LivingEntity) {
-					if (entity instanceof PlayerEntity)
-						((PlayerEntity) entity).inventory.armorInventory.set((int) 1, new ItemStack(FrameArmorItem.legs));
-					else
-						((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(FrameArmorItem.legs));
-					if (entity instanceof ServerPlayerEntity)
-						((ServerPlayerEntity) entity).inventory.markDirty();
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(1, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()));
+					}
 				}
 			}
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
+			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
 					.getItem() == Blocks.AIR.asItem()) == true) {
-				if (entity instanceof LivingEntity) {
-					if (entity instanceof PlayerEntity)
-						((PlayerEntity) entity).inventory.armorInventory.set((int) 0, new ItemStack(FrameArmorItem.boots));
-					else
-						((LivingEntity) entity).setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(FrameArmorItem.boots));
-					if (entity instanceof ServerPlayerEntity)
-						((ServerPlayerEntity) entity).inventory.markDirty();
+				{
+					Entity _entity = entity;
+					if (_entity instanceof Player _player) {
+						_player.getInventory().armor.set(0, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()));
+						_player.getInventory().setChanged();
+					} else if (_entity instanceof LivingEntity _living) {
+						_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()));
+					}
 				}
 			}
 		}

@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/vaultblock_3",
     "west": "fallout_wastelands:blocks/vaultblock_3",
     "particle": "fallout_wastelands:blocks/vaultblock_2"
-  }
+  },
+  "render_type": "solid"
 }

@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/greypplain",
     "west": "fallout_wastelands:blocks/greypplain",
     "particle": "fallout_wastelands:blocks/greypplain"
-  }
+  },
+  "render_type": "solid"
 }

@@ -1,69 +1,31 @@
 package net.mcreator.fallout_wastelands.procedures;
 
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.effect.LightningBoltEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 
-import net.mcreator.fallout_wastelands.item.FusionCoreItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
+import net.mcreator.fallout_wastelands.network.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModItems;
 
-import java.util.function.Function;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.Random;
-import java.util.Map;
-import java.util.Comparator;
 
 public class FusionCoreItemInInventoryTickProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure FusionCoreItemInInventoryTick!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure FusionCoreItemInInventoryTick!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency y for procedure FusionCoreItemInInventoryTick!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure FusionCoreItemInInventoryTick!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure FusionCoreItemInInventoryTick!");
-			return;
-		}
-		if (dependencies.get("itemstack") == null) {
-			if (!dependencies.containsKey("itemstack"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency itemstack for procedure FusionCoreItemInInventoryTick!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		boolean dontstop = false;
 		double cores = 0;
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).InPowerArmor == true) {
 			if (itemstack.getOrCreateTag().getBoolean("Unusable") == false) {
-				if ((itemstack).getDamage() < 100) {
+				if ((itemstack).getDamageValue() < 100) {
 					if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new FalloutWastelandsModVariables.PlayerVariables())).Power == 0) {
 						if (entity.getPersistentData().getBoolean("coreassigned") == false) {
@@ -76,7 +38,7 @@ public class FusionCoreItemInInventoryTickProcedure {
 					if (itemstack.getOrCreateTag().getBoolean("CoreInUse") == true) {
 						for (int index0 = 0; index0 < (int) (4); index0++) {
 							{
-								double _setval = (100 - (itemstack).getDamage());
+								double _setval = 100 - (itemstack).getDamageValue();
 								entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.Power = _setval;
 									capability.syncPlayerVariables(entity);
@@ -84,7 +46,7 @@ public class FusionCoreItemInInventoryTickProcedure {
 							}
 						}
 					}
-					if ((itemstack).getDamage() > 99) {
+					if ((itemstack).getDamageValue() > 99) {
 						entity.getPersistentData().putBoolean("coreassigned", (false));
 						itemstack.getOrCreateTag().putBoolean("CoreInUse", (false));
 						itemstack.getOrCreateTag().putBoolean("Unusable", (true));
@@ -97,12 +59,12 @@ public class FusionCoreItemInInventoryTickProcedure {
 						}
 					}
 					if (entity.getPersistentData().getDouble("counter") == 0) {
-						if ((itemstack).getDamage() < 99) {
+						if ((itemstack).getDamageValue() < 99) {
 							{
 								ItemStack _ist = itemstack;
-								if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+								if (_ist.hurt(1, RandomSource.create(), null)) {
 									_ist.shrink(1);
-									_ist.setDamage(0);
+									_ist.setDamageValue(0);
 								}
 							}
 							entity.getPersistentData().putDouble("counter", 480);
@@ -120,30 +82,23 @@ public class FusionCoreItemInInventoryTickProcedure {
 					}
 				}
 			}
-			if ((((Entity) world
-					.getEntitiesWithinAABB(LightningBoltEntity.class,
-							new AxisAlignedBB(x - (1 / 2d), y - (1 / 2d), z - (1 / 2d), x + (1 / 2d), y + (1 / 2d), z + (1 / 2d)), null)
-					.stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) != null) == true) {
-				(itemstack).setDamage((int) (-1000 + (itemstack).getDamage()));
+			if (!world.getEntitiesOfClass(LightningBolt.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).isEmpty() == true) {
+				(itemstack).setDamageValue((int) (-1000 + (itemstack).getDamageValue()));
 			}
-			if ((itemstack).getDamage() < 99) {
+			if ((itemstack).getDamageValue() < 99) {
 				itemstack.getOrCreateTag().putBoolean("Unusable", (false));
 			}
 		}
 		cores = 0;
 		{
 			AtomicReference<IItemHandler> _iitemhandlerref = new AtomicReference<>();
-			entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> _iitemhandlerref.set(capability));
+			entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _iitemhandlerref.set(capability));
 			if (_iitemhandlerref.get() != null) {
 				for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 					ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-					if (FusionCoreItem.block == itemstackiterator.getItem()) {
+					if (FalloutWastelandsModItems.FUSION_CORE.get() == itemstackiterator.getItem()) {
 						if (itemstackiterator.getOrCreateTag().getBoolean("CoreInUse") == true) {
-							cores = (cores + (itemstackiterator).getCount());
+							cores = cores + (itemstackiterator).getCount();
 						}
 					}
 				}

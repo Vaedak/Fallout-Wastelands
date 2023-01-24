@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/wastelandplanks",
     "top": "fallout_wastelands:blocks/wastelandplanks",
     "side": "fallout_wastelands:blocks/wastelandplanks"
-  }
+  },
+  "render_type": "solid"
 }

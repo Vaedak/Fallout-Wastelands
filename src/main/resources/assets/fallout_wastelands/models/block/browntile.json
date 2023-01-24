@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/browntile",
     "west": "fallout_wastelands:blocks/browntile",
     "particle": "fallout_wastelands:blocks/browntile"
-  }
+  },
+  "render_type": "solid"
 }

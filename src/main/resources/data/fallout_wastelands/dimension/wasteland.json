@@ -5,93 +5,166 @@
     "seed": 1715716591864440983,
     "biome_source": {
       "type": "minecraft:multi_noise",
-      "seed": 1715716591864440983,
-      "temperature_noise": {
-        "firstOctave": -6.16,
-        "amplitudes": [
-          2,
-          2
-        ]
-      },
-      "humidity_noise": {
-        "firstOctave": -6.16,
-        "amplitudes": [
-          2,
-          2
-        ]
-      },
-      "altitude_noise": {
-        "firstOctave": -6.16,
-        "amplitudes": [
-          2,
-          2
-        ]
-      },
-      "weirdness_noise": {
-        "firstOctave": -6.16,
-        "amplitudes": [
-          2,
-          2
-        ]
-      },
       "biomes": [
         {
           "biome": "fallout_wastelands:capitalwastelandeast",
           "parameters": {
-            "temperature": 1,
-            "humidity": -1,
-            "altitude": 0.75,
-            "weirdness": -1.5,
+            "temperature": [
+              -0.1,
+              0.1
+            ],
+            "humidity": [
+              -0.9,
+              -0.7
+            ],
+            "continentalness": [
+              0.4,
+              0.6
+            ],
+            "weirdness": [
+              -0.913981639999,
+              -0.713981639999
+            ],
+            "erosion": [
+              0.9,
+              1.1
+            ],
+            "depth": 0,
             "offset": 0
           }
         },
         {
           "biome": "fallout_wastelands:wastelandforest",
           "parameters": {
-            "temperature": 0.6,
-            "humidity": -0.6,
-            "altitude": -0.75,
-            "weirdness": 1.5,
+            "temperature": [
+              0.000000000001,
+              0.266666666667
+            ],
+            "humidity": [
+              0.266666666667,
+              0.533333333333
+            ],
+            "continentalness": [
+              0.376666666667,
+              0.643333333333
+            ],
+            "weirdness": [
+              -0.947314973332,
+              -0.680648306666
+            ],
+            "erosion": [
+              0.666666666667,
+              0.933333333333
+            ],
+            "depth": 0,
             "offset": 0
           }
         },
         {
           "biome": "fallout_wastelands:wastlandsanddesert",
           "parameters": {
-            "temperature": 0.2,
-            "humidity": -0.2,
-            "altitude": 0.75,
-            "weirdness": -1.5,
+            "temperature": [
+              0.95,
+              1.05
+            ],
+            "humidity": [
+              -1.05,
+              -0.95
+            ],
+            "continentalness": [
+              0.46,
+              0.56
+            ],
+            "weirdness": [
+              -0.863981639999,
+              -0.763981639999
+            ],
+            "erosion": [
+              0.85,
+              0.95
+            ],
+            "depth": 0,
             "offset": 0
           }
         },
         {
           "biome": "fallout_wastelands:capitalwasteland",
           "parameters": {
-            "temperature": -0.2,
-            "humidity": 0.2,
-            "altitude": -0.75,
-            "weirdness": 1.5,
+            "temperature": [
+              0.083333333334,
+              0.583333333334
+            ],
+            "humidity": [
+              -1.05,
+              -0.55
+            ],
+            "continentalness": [
+              0.25,
+              0.75
+            ],
+            "weirdness": [
+              -1.063981639999,
+              -0.563981639999
+            ],
+            "erosion": [
+              0.75,
+              1.25
+            ],
+            "depth": 0,
             "offset": 0
           }
         },
         {
           "biome": "fallout_wastelands:theglow",
           "parameters": {
-            "temperature": -0.6,
-            "humidity": 0.6,
-            "altitude": 0.75,
-            "weirdness": -1.5,
+            "temperature": [
+              0.033333333333,
+              0.099999999999
+            ],
+            "humidity": [
+              -1.033333333333,
+              -0.966666666667
+            ],
+            "continentalness": [
+              0.476666666667,
+              0.543333333333
+            ],
+            "weirdness": [
+              -0.847314973332,
+              -0.780648306666
+            ],
+            "erosion": [
+              0.866666666667,
+              0.933333333333
+            ],
+            "depth": 0,
             "offset": 0
           }
         },
         {
           "biome": "fallout_wastelands:desertwastland",
           "parameters": {
-            "temperature": -1,
-            "humidity": 1,
-            "altitude": -0.75,
-            "weirdness": 1.5,
+            "temperature": [
+              0.75,
+              1.25
+            ],
+            "humidity": [
+              -1.25,
+              -0.75
+            ],
+            "continentalness": [
+              0.26,
+              0.76
+            ],
+            "weirdness": [
+              -1.063981639999,
+              -0.563981639999
+            ],
+            "erosion": [
+              0.55,
+              1.05
+            ],
+            "depth": 0,
             "offset": 0
           }
         }
@@ -99,10 +172,14 @@
     },
     "settings": {
       "name": "fallout_wastelands:wasteland",
-      "bedrock_roof_position": -10,
-      "bedrock_floor_position": 0,
       "sea_level": 63,
+      "legacy_random_source": false,
       "disable_mob_generation": false,
+      "noodle_caves_enabled": true,
+      "noise_caves_enabled": true,
+      "aquifers_enabled": true,
+      "deepslate_enabled": true,
+      "ore_veins_enabled": true,
       "default_block": {
         "Name": "fallout_wastelands:wastlandstone"
       },
@@ -112,33 +189,782 @@
           "level": "0"
         }
       },
+      "spawn_target": [],
       "noise": {
-        "min_y": 0,
-        "height": 256,
-        "density_factor": 1,
-        "density_offset": -0.46875,
+        "min_y": -64,
+        "height": 384,
         "size_horizontal": 1,
-        "size_vertical": 2,
-        "simplex_surface_noise": true,
-        "random_density_offset": true,
-        "island_noise_override": false,
-        "amplified": false,
-        "sampling": {
+        "size_vertical": 2
+      },
+      "noise_router": {
+        "barrier": {
+          "type": "minecraft:noise",
+          "noise": "minecraft:aquifer_barrier",
           "xz_scale": 1,
-          "y_scale": 1,
-          "xz_factor": 80,
-          "y_factor": 160
+          "y_scale": 0.5
         },
-        "bottom_slide": {
-          "target": -30,
-          "size": 0,
-          "offset": 0
+        "fluid_level_floodedness": {
+          "type": "minecraft:noise",
+          "noise": "minecraft:aquifer_fluid_level_floodedness",
+          "xz_scale": 1,
+          "y_scale": 0.67
         },
-        "top_slide": {
-          "target": -10,
-          "size": 3,
-          "offset": 0
+        "fluid_level_spread": {
+          "type": "minecraft:noise",
+          "noise": "minecraft:aquifer_fluid_level_spread",
+          "xz_scale": 1,
+          "y_scale": 0.7142857142857143
+        },
+        "lava": {
+          "type": "minecraft:noise",
+          "noise": "minecraft:aquifer_lava",
+          "xz_scale": 1,
+          "y_scale": 1
+        },
+        "temperature": {
+          "type": "minecraft:shifted_noise",
+          "noise": "minecraft:temperature",
+          "xz_scale": 0.25,
+          "y_scale": 0,
+          "shift_x": "minecraft:shift_x",
+          "shift_y": 0,
+          "shift_z": "minecraft:shift_z"
+        },
+        "vegetation": {
+          "type": "minecraft:shifted_noise",
+          "noise": "minecraft:vegetation",
+          "xz_scale": 0.25,
+          "y_scale": 0,
+          "shift_x": "minecraft:shift_x",
+          "shift_y": 0,
+          "shift_z": "minecraft:shift_z"
+        },
+        "continents": "minecraft:overworld/continents",
+        "erosion": "minecraft:overworld/erosion",
+        "depth": "minecraft:overworld/depth",
+        "ridges": "minecraft:overworld/ridges",
+        "initial_density_without_jaggedness": {
+          "type": "minecraft:add",
+          "argument1": 0.1171875,
+          "argument2": {
+            "type": "minecraft:mul",
+            "argument1": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": -64,
+              "to_y": -40,
+              "from_value": 0,
+              "to_value": 1
+            },
+            "argument2": {
+              "type": "minecraft:add",
+              "argument1": -0.1171875,
+              "argument2": {
+                "type": "minecraft:add",
+                "argument1": -0.078125,
+                "argument2": {
+                  "type": "minecraft:mul",
+                  "argument1": {
+                    "type": "minecraft:y_clamped_gradient",
+                    "from_y": 240,
+                    "to_y": 256,
+                    "from_value": 1,
+                    "to_value": 0
+                  },
+                  "argument2": {
+                    "type": "minecraft:add",
+                    "argument1": 0.078125,
+                    "argument2": {
+                      "type": "minecraft:clamp",
+                      "input": {
+                        "type": "minecraft:add",
+                        "argument1": -0.703125,
+                        "argument2": {
+                          "type": "minecraft:mul",
+                          "argument1": 4,
+                          "argument2": {
+                            "type": "minecraft:quarter_negative",
+                            "argument": {
+                              "type": "minecraft:mul",
+                              "argument1": "minecraft:overworld/depth",
+                              "argument2": {
+                                "type": "minecraft:cache_2d",
+                                "argument": "minecraft:overworld/factor"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "min": -64,
+                      "max": 64
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "final_density": {
+          "type": "minecraft:min",
+          "argument1": {
+            "type": "minecraft:squeeze",
+            "argument": {
+              "type": "minecraft:mul",
+              "argument1": 0.64,
+              "argument2": {
+                "type": "minecraft:interpolated",
+                "argument": {
+                  "type": "minecraft:blend_density",
+                  "argument": {
+                    "type": "minecraft:add",
+                    "argument1": 0.1171875,
+                    "argument2": {
+                      "type": "minecraft:mul",
+                      "argument1": {
+                        "type": "minecraft:y_clamped_gradient",
+                        "from_y": -64,
+                        "to_y": -40,
+                        "from_value": 0,
+                        "to_value": 1
+                      },
+                      "argument2": {
+                        "type": "minecraft:add",
+                        "argument1": -0.1171875,
+                        "argument2": {
+                          "type": "minecraft:add",
+                          "argument1": -0.078125,
+                          "argument2": {
+                            "type": "minecraft:mul",
+                            "argument1": {
+                              "type": "minecraft:y_clamped_gradient",
+                              "from_y": 240,
+                              "to_y": 256,
+                              "from_value": 1,
+                              "to_value": 0
+                            },
+                            "argument2": {
+                              "type": "minecraft:add",
+                              "argument1": 0.078125,
+                              "argument2": {
+                                "type": "minecraft:range_choice",
+                                "input": "minecraft:overworld/sloped_cheese",
+                                "min_inclusive": -1000000,
+                                "max_exclusive": 1.5625,
+                                "when_in_range": {
+                                  "type": "minecraft:min",
+                                  "argument1": "minecraft:overworld/sloped_cheese",
+                                  "argument2": {
+                                    "type": "minecraft:mul",
+                                    "argument1": 5,
+                                    "argument2": "minecraft:overworld/caves/entrances"
+                                  }
+                                },
+                                "when_out_of_range": {
+                                  "type": "minecraft:max",
+                                  "argument1": {
+                                    "type": "minecraft:min",
+                                    "argument1": {
+                                      "type": "minecraft:min",
+                                      "argument1": {
+                                        "type": "minecraft:add",
+                                        "argument1": {
+                                          "type": "minecraft:mul",
+                                          "argument1": 4,
+                                          "argument2": {
+                                            "type": "minecraft:square",
+                                            "argument": {
+                                              "type": "minecraft:noise",
+                                              "noise": "minecraft:cave_layer",
+                                              "xz_scale": 1,
+                                              "y_scale": 8
+                                            }
+                                          }
+                                        },
+                                        "argument2": {
+                                          "type": "minecraft:add",
+                                          "argument1": {
+                                            "type": "minecraft:clamp",
+                                            "input": {
+                                              "type": "minecraft:add",
+                                              "argument1": 0.27,
+                                              "argument2": {
+                                                "type": "minecraft:noise",
+                                                "noise": "minecraft:cave_cheese",
+                                                "xz_scale": 1,
+                                                "y_scale": 0.6666666666666666
+                                              }
+                                            },
+                                            "min": -1,
+                                            "max": 1
+                                          },
+                                          "argument2": {
+                                            "type": "minecraft:clamp",
+                                            "input": {
+                                              "type": "minecraft:add",
+                                              "argument1": 1.5,
+                                              "argument2": {
+                                                "type": "minecraft:mul",
+                                                "argument1": -0.64,
+                                                "argument2": "minecraft:overworld/sloped_cheese"
+                                              }
+                                            },
+                                            "min": 0,
+                                            "max": 0.5
+                                          }
+                                        }
+                                      },
+                                      "argument2": "minecraft:overworld/caves/entrances"
+                                    },
+                                    "argument2": {
+                                      "type": "minecraft:add",
+                                      "argument1": "minecraft:overworld/caves/spaghetti_2d",
+                                      "argument2": "minecraft:overworld/caves/spaghetti_roughness_function"
+                                    }
+                                  },
+                                  "argument2": {
+                                    "type": "minecraft:range_choice",
+                                    "input": "minecraft:overworld/caves/pillars",
+                                    "min_inclusive": -1000000,
+                                    "max_exclusive": 0.03,
+                                    "when_in_range": -1000000,
+                                    "when_out_of_range": "minecraft:overworld/caves/pillars"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "argument2": "minecraft:overworld/caves/noodle"
+        },
+        "vein_toggle": {
+          "type": "minecraft:interpolated",
+          "argument": {
+            "type": "minecraft:range_choice",
+            "input": "minecraft:y",
+            "min_inclusive": -60,
+            "max_exclusive": 51,
+            "when_in_range": {
+              "type": "minecraft:noise",
+              "noise": "minecraft:ore_veininess",
+              "xz_scale": 1.5,
+              "y_scale": 1.5
+            },
+            "when_out_of_range": 0
+          }
+        },
+        "vein_ridged": {
+          "type": "minecraft:add",
+          "argument1": -0.07999999821186066,
+          "argument2": {
+            "type": "minecraft:max",
+            "argument1": {
+              "type": "minecraft:abs",
+              "argument": {
+                "type": "minecraft:interpolated",
+                "argument": {
+                  "type": "minecraft:range_choice",
+                  "input": "minecraft:y",
+                  "min_inclusive": -60,
+                  "max_exclusive": 51,
+                  "when_in_range": {
+                    "type": "minecraft:noise",
+                    "noise": "minecraft:ore_vein_a",
+                    "xz_scale": 4,
+                    "y_scale": 4
+                  },
+                  "when_out_of_range": 0
+                }
+              }
+            },
+            "argument2": {
+              "type": "minecraft:abs",
+              "argument": {
+                "type": "minecraft:interpolated",
+                "argument": {
+                  "type": "minecraft:range_choice",
+                  "input": "minecraft:y",
+                  "min_inclusive": -60,
+                  "max_exclusive": 51,
+                  "when_in_range": {
+                    "type": "minecraft:noise",
+                    "noise": "minecraft:ore_vein_b",
+                    "xz_scale": 4,
+                    "y_scale": 4
+                  },
+                  "when_out_of_range": 0
+                }
+              }
+            }
+          }
+        },
+        "vein_gap": {
+          "type": "minecraft:noise",
+          "noise": "minecraft:ore_gap",
+          "xz_scale": 1,
+          "y_scale": 1
         }
+      },
+      "surface_rule": {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:vertical_gradient",
+              "random_name": "minecraft:bedrock_floor",
+              "true_at_and_below": {
+                "above_bottom": 0
+              },
+              "false_at_and_above": {
+                "above_bottom": 5
+              }
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:bedrock"
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "fallout_wastelands:capitalwastelandeast"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:above_preliminary_surface"
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "offset": -1,
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "fallout_wastelands:wastelanddirt"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "fallout_wastelands:wastlandstone"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "fallout_wastelands:wastlandstone"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "fallout_wastelands:wastelandforest"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:above_preliminary_surface"
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "offset": -1,
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "fallout_wastelands:rootdirt"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "fallout_wastelands:wastlandsand"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "fallout_wastelands:wastelanddirt"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "fallout_wastelands:wastlandsanddesert"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:above_preliminary_surface"
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "offset": -1,
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "fallout_wastelands:wastlandsand"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "fallout_wastelands:wastlandsand"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "fallout_wastelands:wastlandsand"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "fallout_wastelands:capitalwasteland"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:above_preliminary_surface"
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "offset": -1,
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "fallout_wastelands:wastelanddirt"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "fallout_wastelands:wastlandstone"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "fallout_wastelands:wastlandstone"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "fallout_wastelands:theglow"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:above_preliminary_surface"
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "offset": -1,
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "fallout_wastelands:theglowradioactivedirt"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "fallout_wastelands:wastelandgravel"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "fallout_wastelands:theglowradioactivedirt"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "fallout_wastelands:desertwastland"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:above_preliminary_surface"
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "offset": -1,
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "fallout_wastelands:wastelanddirt"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "fallout_wastelands:wastelanddirt"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "fallout_wastelands:wastelanddirt"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
       },
       "structures": {
         "structures": {
@@ -228,7 +1054,7 @@
             "salt": 14357620
           },
           "minecraft:village": {
-            "spacing": 32,
+            "spacing": 34,
             "separation": 8,
             "salt": 10387312
           }

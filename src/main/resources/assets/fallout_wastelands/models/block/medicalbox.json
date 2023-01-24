@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/medibox",
     "particle": "fallout_wastelands:blocks/medibox",
     "0": "fallout_wastelands:blocks/medibox"
-  }
+  },
+  "render_type": "solid"
 }

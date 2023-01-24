@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/spacedplanks",
     "west": "fallout_wastelands:blocks/spacedplanks",
     "particle": "fallout_wastelands:blocks/spacedplanks"
-  }
+  },
+  "render_type": "cutout"
 }

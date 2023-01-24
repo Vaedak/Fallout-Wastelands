@@ -1,72 +1,39 @@
 
 package net.mcreator.fallout_wastelands.world.biome;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.common.BiomeManager;
+import net.minecraft.world.level.biome.MobSpawnSettings;
+import net.minecraft.world.level.biome.Climate;
+import net.minecraft.world.level.biome.BiomeSpecialEffects;
+import net.minecraft.world.level.biome.BiomeGenerationSettings;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.AmbientParticleSettings;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.Music;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.core.particles.ParticleTypes;
 
-import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
-import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
-import net.minecraft.world.biome.ParticleEffectAmbience;
-import net.minecraft.world.biome.MobSpawnInfo;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
-import net.minecraft.world.biome.BiomeGenerationSettings;
-import net.minecraft.world.biome.BiomeAmbience;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.util.registry.WorldGenRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.RegistryKey;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.client.audio.BackgroundMusicSelector;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModEntities;
 
-import net.mcreator.fallout_wastelands.entity.GlowingoneEntity;
-import net.mcreator.fallout_wastelands.entity.GhoulEntity;
-import net.mcreator.fallout_wastelands.block.WastelandgravelBlock;
-import net.mcreator.fallout_wastelands.block.TheglowradioactivedirtBlock;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
+public class TheglowBiome {
+	public static final Climate.ParameterPoint PARAMETER_POINT = new Climate.ParameterPoint(Climate.Parameter.span(0.033333333333f, 0.099999999999f),
+			Climate.Parameter.span(-1.033333333333f, -0.966666666667f), Climate.Parameter.span(0.476666666667f, 0.543333333333f),
+			Climate.Parameter.span(0.866666666667f, 0.933333333333f), Climate.Parameter.point(0),
+			Climate.Parameter.span(-0.767498107115f, -0.700831440449f), 0);
 
-@FalloutWastelandsModElements.ModElement.Tag
-public class TheglowBiome extends FalloutWastelandsModElements.ModElement {
-	public static Biome biome;
-
-	public TheglowBiome(FalloutWastelandsModElements instance) {
-		super(instance, 1423);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
-	}
-
-	private static class BiomeRegisterHandler {
-		@SubscribeEvent
-		public void registerBiomes(RegistryEvent.Register<Biome> event) {
-			if (biome == null) {
-				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-8213437).setWaterColor(-12626896).setWaterFogColor(-14404839)
-						.withSkyColor(-8213437).withFoliageColor(-10202046).withGrassColor(-10202046)
-						.setMusic(new BackgroundMusicSelector((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-								.getValue(new ResourceLocation("fallout_wastelands:unnaturalglow")), 12000, 24000, true))
-						.setParticle(new ParticleEffectAmbience(ParticleTypes.UNDERWATER, 0.003f)).build();
-				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder().withSurfaceBuilder(
-						SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(TheglowradioactivedirtBlock.block.getDefaultState(),
-								TheglowradioactivedirtBlock.block.getDefaultState(), WastelandgravelBlock.block.getDefaultState())));
-				DefaultBiomeFeatures.withCavesAndCanyons(biomeGenerationSettings);
-				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
-				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
-				mobSpawnInfo.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(GhoulEntity.entity, 20, 4, 4));
-				mobSpawnInfo.withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(GlowingoneEntity.entity, 6, 1, 1));
-				biome = new Biome.Builder().precipitation(Biome.RainType.NONE).category(Biome.Category.NONE).depth(0.1f).scale(0.1f).temperature(0.6f)
-						.downfall(0f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
-						.withGenerationSettings(biomeGenerationSettings.build()).build();
-				event.getRegistry().register(biome.setRegistryName("fallout_wastelands:theglow"));
-			}
-		}
-	}
-
-	@Override
-	public void init(FMLCommonSetupEvent event) {
-		BiomeManager.addBiome(BiomeManager.BiomeType.WARM,
-				new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, WorldGenRegistries.BIOME.getKey(biome)), 1));
+	public static Biome createBiome() {
+		BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder().fogColor(-8213437).waterColor(-12626896).waterFogColor(-14404839)
+				.skyColor(-8213437).foliageColorOverride(-10202046).grassColorOverride(-10202046)
+				.backgroundMusic(new Music(new SoundEvent(new ResourceLocation("fallout_wastelands:unnaturalglow")), 12000, 24000, true))
+				.ambientParticle(new AmbientParticleSettings(ParticleTypes.UNDERWATER, 0.003f)).build();
+		BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder();
+		BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeGenerationSettings);
+		BiomeDefaultFeatures.addDefaultOres(biomeGenerationSettings);
+		MobSpawnSettings.Builder mobSpawnInfo = new MobSpawnSettings.Builder();
+		mobSpawnInfo.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(FalloutWastelandsModEntities.GHOUL.get(), 20, 4, 4));
+		mobSpawnInfo.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(FalloutWastelandsModEntities.GLOWINGONE.get(), 6, 1, 1));
+		return new Biome.BiomeBuilder().precipitation(Biome.Precipitation.NONE).temperature(0.6f).downfall(0f).specialEffects(effects)
+				.mobSpawnSettings(mobSpawnInfo.build()).generationSettings(biomeGenerationSettings.build()).build();
 	}
 }

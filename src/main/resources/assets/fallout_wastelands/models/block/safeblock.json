@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/cconcrete",
     "west": "fallout_wastelands:blocks/cconcrete",
     "particle": "fallout_wastelands:blocks/cconcrete"
-  }
+  },
+  "render_type": "solid"
 }

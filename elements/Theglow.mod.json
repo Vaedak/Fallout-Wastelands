@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "biome",
   "definition": {
     "name": "The Glow",
@@ -50,7 +50,6 @@
       "value": "SUSPENDED_DEPTH"
     },
     "particlesProbability": 0.30000000000000004,
-    "biomeCategory": "NONE",
     "rainingPossibility": 0.0,
     "temperature": 0.6,
     "baseHeight": 0.1,
@@ -58,8 +57,7 @@
     "spawnBiome": true,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 1,
-    "biomeDictionaryTypes": [],
+    "biomeWeight": 2,
     "grassPerChunk": 0,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 0,

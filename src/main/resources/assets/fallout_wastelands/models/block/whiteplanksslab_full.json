@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/houseplanks",
     "top": "fallout_wastelands:blocks/houseplanks",
     "side": "fallout_wastelands:blocks/houseplanks"
-  }
+  },
+  "render_type": "solid"
 }

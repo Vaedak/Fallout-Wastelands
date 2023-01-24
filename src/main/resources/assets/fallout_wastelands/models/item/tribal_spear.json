@@ -1,0 +1,7 @@
+{
+  "parent": "fallout_wastelands:custom/tikispear",
+  "textures": {
+    "0": "fallout_wastelands:blocks/tikispear",
+    "particle": "fallout_wastelands:items/tikispear"
+  }
+}

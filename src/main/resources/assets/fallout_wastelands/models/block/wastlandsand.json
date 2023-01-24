@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastesandfix",
     "west": "fallout_wastelands:blocks/wastesandfix",
     "particle": "fallout_wastelands:blocks/wastesandfix"
-  }
+  },
+  "render_type": "solid"
 }

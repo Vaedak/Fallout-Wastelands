@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/browntile",
     "top": "fallout_wastelands:blocks/browntile",
     "side": "fallout_wastelands:blocks/browntile"
-  }
+  },
+  "render_type": "solid"
 }

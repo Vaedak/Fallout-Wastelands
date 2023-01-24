@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/greypplain",
     "top": "fallout_wastelands:blocks/greypplain",
     "side": "fallout_wastelands:blocks/rivet"
-  }
+  },
+  "render_type": "translucent"
 }

@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/geck",
     "west": "fallout_wastelands:blocks/geck",
     "particle": "fallout_wastelands:blocks/geck"
-  }
+  },
+  "render_type": "solid"
 }

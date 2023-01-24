@@ -3,5 +3,6 @@
   "textures": {
     "texture": "fallout_wastelands:blocks/wastelandplanks",
     "particle": "fallout_wastelands:blocks/wastelandplanks"
-  }
+  },
+  "render_type": "solid"
 }

@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "fallout_wastelands:chromeraider",
-    "fallout_wastelands:raidergunner",
-    "fallout_wastelands:chromedraiderfemale"
+    "fallout_wastelands:chromedraiderfemale",
+    "fallout_wastelands:raidergunner"
   ]
 }

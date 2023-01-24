@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "biome",
   "definition": {
     "name": "Wastelandforest",
@@ -50,7 +50,6 @@
       "value": "CUSTOM:Plasma"
     },
     "particlesProbability": 0.5,
-    "biomeCategory": "FOREST",
     "rainingPossibility": 0.7000000000000001,
     "temperature": 0.7,
     "baseHeight": 0.1,
@@ -58,17 +57,14 @@
     "spawnBiome": true,
     "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 4,
-    "biomeDictionaryTypes": [
-      "FOREST"
-    ],
+    "biomeWeight": 8,
     "grassPerChunk": 10,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 0,
     "mushroomsPerChunk": 2,
     "bigMushroomsChunk": 0,
     "sandPatchesPerChunk": 0,
-    "gravelPatchesPerChunk": 10,
+    "gravelPatchesPerChunk": 0,
     "reedsPerChunk": 0,
     "cactiPerChunk": 0,
     "treesPerChunk": 11,

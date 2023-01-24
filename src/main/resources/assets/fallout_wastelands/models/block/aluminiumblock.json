@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/aluminum_block",
     "west": "fallout_wastelands:blocks/aluminum_block",
     "particle": "fallout_wastelands:blocks/aluminum_block"
-  }
+  },
+  "render_type": "solid"
 }

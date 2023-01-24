@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "fallout_wastelands:wastlandsanddesert",
+  "spawners": {
+    "type": "fallout_wastelands:gecko",
+    "weight": 1,
+    "minCount": 6,
+    "maxCount": 6
+  }
+}

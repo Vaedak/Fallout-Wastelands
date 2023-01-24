@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "1": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "2": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "3": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "4": {
+      "item": "fallout_wastelands:steelingot"
+    },
+    "5": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "6": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "7": {
+      "item": "fallout_wastelands:redindustrialblock"
+    },
+    "8": {
+      "item": "fallout_wastelands:redindustrialblock"
+    }
+  },
+  "result": {
+    "item": "fallout_wastelands:redindustrialwindow",
+    "count": 16
+  }
+}

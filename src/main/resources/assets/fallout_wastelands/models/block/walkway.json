@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/walkwaysidetwo",
     "west": "fallout_wastelands:blocks/walkwaysideone",
     "particle": "fallout_wastelands:blocks/walkwaysidedown"
-  }
+  },
+  "render_type": "translucent"
 }

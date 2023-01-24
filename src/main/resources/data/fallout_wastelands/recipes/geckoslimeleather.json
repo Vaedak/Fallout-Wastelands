@@ -5,7 +5,5 @@
   "ingredient": {
     "item": "fallout_wastelands:geckohide"
   },
-  "result": {
-    "item": "minecraft:slime_ball"
-  }
+  "result": "minecraft:slime_ball"
 }

@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/landmine",
     "particle": "fallout_wastelands:blocks/landmine",
     "0": "fallout_wastelands:blocks/landmine"
-  }
+  },
+  "render_type": "translucent"
 }

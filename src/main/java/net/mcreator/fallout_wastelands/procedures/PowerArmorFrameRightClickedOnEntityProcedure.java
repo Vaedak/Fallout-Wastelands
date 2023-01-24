@@ -1,500 +1,413 @@
 package net.mcreator.fallout_wastelands.procedures;
 
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.core.BlockPos;
 
-import net.mcreator.fallout_wastelands.potion.DontMovePotionEffect;
-import net.mcreator.fallout_wastelands.potion.CheckerIfExitedPotionEffect;
-import net.mcreator.fallout_wastelands.item.FrameArmorItem;
-import net.mcreator.fallout_wastelands.gui.FrameInventoryGui;
-import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.world.inventory.FrameInventoryMenu;
+import net.mcreator.fallout_wastelands.network.FalloutWastelandsModVariables;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModMobEffects;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModItems;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.Map;
-import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
 public class PowerArmorFrameRightClickedOnEntityProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency world for procedure PowerArmorFrameRightClickedOnEntity!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency x for procedure PowerArmorFrameRightClickedOnEntity!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency y for procedure PowerArmorFrameRightClickedOnEntity!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency z for procedure PowerArmorFrameRightClickedOnEntity!");
-			return;
-		}
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure PowerArmorFrameRightClickedOnEntity!");
-			return;
-		}
-		if (dependencies.get("sourceentity") == null) {
-			if (!dependencies.containsKey("sourceentity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure PowerArmorFrameRightClickedOnEntity!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		Entity entity = (Entity) dependencies.get("entity");
-		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		boolean PartOne = false;
 		boolean PartThree = false;
 		boolean PartTwo = false;
-		if (sourceentity.isSneaking()) {
-			if (sourceentity instanceof LivingEntity)
-				((LivingEntity) sourceentity).addPotionEffect(new EffectInstance(DontMovePotionEffect.potion, (int) 1000, (int) 1, (false), (false)));
+		if (sourceentity.isShiftKeyDown()) {
+			if (sourceentity instanceof LivingEntity _entity)
+				_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.DONT_MOVE.get(), 1000, 1, (false), (false)));
 			{
 				Entity _ent = sourceentity;
-				_ent.setPositionAndUpdate(x, y, z);
-				if (_ent instanceof ServerPlayerEntity) {
-					((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
-				}
+				_ent.teleportTo(x, y, z);
+				if (_ent instanceof ServerPlayer _serverPlayer)
+					_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
 			}
 			{
-				Entity _ent = entity;
-				if (_ent instanceof ServerPlayerEntity) {
+				if (entity instanceof ServerPlayer _ent) {
 					BlockPos _bpos = new BlockPos(x, y, z);
-					NetworkHooks.openGui((ServerPlayerEntity) _ent, new INamedContainerProvider() {
+					NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 						@Override
-						public ITextComponent getDisplayName() {
-							return new StringTextComponent("FrameInventory");
+						public Component getDisplayName() {
+							return Component.literal("FrameInventory");
 						}
 
 						@Override
-						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-							return new FrameInventoryGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
+						public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+							return new FrameInventoryMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 						}
 					}, _bpos);
 				}
 			}
 		} else {
-			if (sourceentity instanceof PlayerEntity)
-				((PlayerEntity) sourceentity).closeScreen();
+			if (sourceentity instanceof Player _player)
+				_player.closeContainer();
 			if (PartOne == true) {
-				if (sourceentity instanceof PlayerEntity && !sourceentity.world.isRemote()) {
-					((PlayerEntity) sourceentity).sendStatusMessage(new StringTextComponent("You are already in power armor"), (false));
-				}
+				if (sourceentity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("You are already in power armor"), (false));
 			}
-			if (entity instanceof LivingEntity) {
-				((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
-			}
-			if (entity instanceof LivingEntity) {
-				((LivingEntity) entity).removePotionEffect(Effects.SLOWNESS);
-			}
+			if (entity instanceof LivingEntity _entity)
+				_entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+			if (entity instanceof LivingEntity _entity)
+				_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
 			if (PartOne == false) {
 				{
-					boolean _setval = (true);
+					boolean _setval = true;
 					sourceentity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.InPowerArmor = _setval;
 						capability.syncPlayerVariables(sourceentity);
 					});
 				}
-				if (sourceentity instanceof LivingEntity)
-					((LivingEntity) sourceentity)
-							.addPotionEffect(new EffectInstance(CheckerIfExitedPotionEffect.potion, (int) 120, (int) 1, (false), (false)));
-				PartOne = (true);
+				if (sourceentity instanceof LivingEntity _entity)
+					_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.CHECKER_IF_EXITED.get(), 120, 1, (false), (false)));
+				PartOne = true;
 				{
 					Entity _ent = sourceentity;
-					_ent.setPositionAndUpdate(x, y, z);
-					if (_ent instanceof ServerPlayerEntity) {
-						((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw, _ent.rotationPitch,
-								Collections.emptySet());
+					_ent.teleportTo(x, y, z);
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
+				}
+				{
+					Entity _ent = sourceentity;
+					_ent.setYRot(entity.getYRot());
+					_ent.setXRot(20);
+					_ent.setYBodyRot(_ent.getYRot());
+					_ent.setYHeadRot(_ent.getYRot());
+					_ent.yRotO = _ent.getYRot();
+					_ent.xRotO = _ent.getXRot();
+					if (_ent instanceof LivingEntity _entity) {
+						_entity.yBodyRotO = _entity.getYRot();
+						_entity.yHeadRotO = _entity.getYRot();
 					}
 				}
-				sourceentity.rotationYaw = (float) ((entity.rotationYaw));
-				entity.setRenderYawOffset(entity.rotationYaw);
-				entity.prevRotationYaw = entity.rotationYaw;
-				if (entity instanceof LivingEntity) {
-					((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
-					((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
-					((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
-				}
-				sourceentity.rotationPitch = (float) (20);
-				if (entity instanceof LivingEntity) {
-					((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
-				}
-				if (entity instanceof LivingEntity) {
-					((LivingEntity) entity).removePotionEffect(Effects.SLOWNESS);
-				}
+				if (entity instanceof LivingEntity _entity)
+					_entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+				if (entity instanceof LivingEntity _entity)
+					_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
 				if (PartOne == true) {
-					if (sourceentity instanceof PlayerEntity) {
-						ItemStack _setstack = ((sourceentity instanceof LivingEntity)
-								? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.FEET)
+					if (sourceentity instanceof Player _player) {
+						ItemStack _setstack = (sourceentity instanceof LivingEntity _entGetArmor
+								? _entGetArmor.getItemBySlot(EquipmentSlot.FEET)
 								: ItemStack.EMPTY);
-						_setstack.setCount((int) 1);
-						ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+						_setstack.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
-					if (sourceentity instanceof PlayerEntity) {
-						ItemStack _setstack = ((sourceentity instanceof LivingEntity)
-								? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.LEGS)
+					if (sourceentity instanceof Player _player) {
+						ItemStack _setstack = (sourceentity instanceof LivingEntity _entGetArmor
+								? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS)
 								: ItemStack.EMPTY);
-						_setstack.setCount((int) 1);
-						ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+						_setstack.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
-					if (sourceentity instanceof PlayerEntity) {
-						ItemStack _setstack = ((sourceentity instanceof LivingEntity)
-								? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.CHEST)
+					if (sourceentity instanceof Player _player) {
+						ItemStack _setstack = (sourceentity instanceof LivingEntity _entGetArmor
+								? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST)
 								: ItemStack.EMPTY);
-						_setstack.setCount((int) 1);
-						ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+						_setstack.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
-					if (sourceentity instanceof PlayerEntity) {
-						ItemStack _setstack = ((sourceentity instanceof LivingEntity)
-								? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.HEAD)
+					if (sourceentity instanceof Player _player) {
+						ItemStack _setstack = (sourceentity instanceof LivingEntity _entGetArmor
+								? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD)
 								: ItemStack.EMPTY);
-						_setstack.setCount((int) 1);
-						ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) sourceentity), _setstack);
+						_setstack.setCount(1);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
-					PartOne = (false);
-					PartTwo = (true);
+					PartOne = false;
+					PartTwo = true;
 					{
 						Entity _ent = sourceentity;
-						_ent.setPositionAndUpdate(x, y, z);
-						if (_ent instanceof ServerPlayerEntity) {
-							((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw, _ent.rotationPitch,
-									Collections.emptySet());
+						_ent.teleportTo(x, y, z);
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
+					}
+					{
+						Entity _ent = sourceentity;
+						_ent.setYRot(entity.getYRot());
+						_ent.setXRot(30);
+						_ent.setYBodyRot(_ent.getYRot());
+						_ent.setYHeadRot(_ent.getYRot());
+						_ent.yRotO = _ent.getYRot();
+						_ent.xRotO = _ent.getXRot();
+						if (_ent instanceof LivingEntity _entity) {
+							_entity.yBodyRotO = _entity.getYRot();
+							_entity.yHeadRotO = _entity.getYRot();
 						}
 					}
-					sourceentity.rotationYaw = (float) ((entity.rotationYaw));
-					entity.setRenderYawOffset(entity.rotationYaw);
-					entity.prevRotationYaw = entity.rotationYaw;
-					if (entity instanceof LivingEntity) {
-						((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
-						((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
-						((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
-					}
-					sourceentity.rotationPitch = (float) (30);
-					if (entity instanceof LivingEntity) {
-						((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
-					}
-					if (entity instanceof LivingEntity) {
-						((LivingEntity) entity).removePotionEffect(Effects.SLOWNESS);
-					}
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private IWorld world;
-
-						public void start(IWorld world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+					FalloutWastelandsMod.queueServerWork(1, () -> {
+						if (((new Object() {
+							public ItemStack getItemStack(int sltid, Entity entity) {
+								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).copy());
+								});
+								return _retval.get();
+							}
+						}.getItemStack(0, entity)).getItem() == Blocks.AIR.asItem()) == true) {
+							{
+								Entity _entity = sourceentity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(3, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.HEAD, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_HELMET.get()));
+								}
+							}
+						} else {
+							{
+								Entity _entity = sourceentity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(3, (new Object() {
+										public ItemStack getItemStack(int sltid, Entity entity) {
+											AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+											entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+											return _retval.get();
+										}
+									}.getItemStack(0, entity)));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.HEAD, (new Object() {
+										public ItemStack getItemStack(int sltid, Entity entity) {
+											AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+											entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+											return _retval.get();
+										}
+									}.getItemStack(0, entity)));
+								}
 							}
 						}
-
-						private void run() {
-							if (((new Object() {
-								public ItemStack getItemStack(int sltid, Entity entity) {
-									AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-									entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-										_retval.set(capability.getStackInSlot(sltid).copy());
-									});
-									return _retval.get();
-								}
-							}.getItemStack((int) (0), entity)).getItem() == Blocks.AIR.asItem()) == true) {
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 3, new ItemStack(FrameArmorItem.helmet));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.HEAD,
-												new ItemStack(FrameArmorItem.helmet));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
-								}
-							} else {
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 3, (new Object() {
-											public ItemStack getItemStack(int sltid, Entity entity) {
-												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-												entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-													_retval.set(capability.getStackInSlot(sltid).copy());
-												});
-												return _retval.get();
-											}
-										}.getItemStack((int) (0), entity)));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.HEAD, (new Object() {
-											public ItemStack getItemStack(int sltid, Entity entity) {
-												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-												entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-													_retval.set(capability.getStackInSlot(sltid).copy());
-												});
-												return _retval.get();
-											}
-										}.getItemStack((int) (0), entity)));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
+						if (((new Object() {
+							public ItemStack getItemStack(int sltid, Entity entity) {
+								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).copy());
+								});
+								return _retval.get();
+							}
+						}.getItemStack(1, entity)).getItem() == Blocks.AIR.asItem()) == true) {
+							{
+								Entity _entity = sourceentity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(2, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.CHEST, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_CHESTPLATE.get()));
 								}
 							}
-							if (((new Object() {
-								public ItemStack getItemStack(int sltid, Entity entity) {
-									AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-									entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-										_retval.set(capability.getStackInSlot(sltid).copy());
-									});
-									return _retval.get();
-								}
-							}.getItemStack((int) (1), entity)).getItem() == Blocks.AIR.asItem()) == true) {
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 2, new ItemStack(FrameArmorItem.body));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(FrameArmorItem.body));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
-								}
-							} else {
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 2, (new Object() {
-											public ItemStack getItemStack(int sltid, Entity entity) {
-												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-												entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-													_retval.set(capability.getStackInSlot(sltid).copy());
-												});
-												return _retval.get();
-											}
-										}.getItemStack((int) (1), entity)));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.CHEST, (new Object() {
-											public ItemStack getItemStack(int sltid, Entity entity) {
-												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-												entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-													_retval.set(capability.getStackInSlot(sltid).copy());
-												});
-												return _retval.get();
-											}
-										}.getItemStack((int) (1), entity)));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
+						} else {
+							{
+								Entity _entity = sourceentity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(2, (new Object() {
+										public ItemStack getItemStack(int sltid, Entity entity) {
+											AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+											entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+											return _retval.get();
+										}
+									}.getItemStack(1, entity)));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.CHEST, (new Object() {
+										public ItemStack getItemStack(int sltid, Entity entity) {
+											AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+											entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+											return _retval.get();
+										}
+									}.getItemStack(1, entity)));
 								}
 							}
-							if (((new Object() {
-								public ItemStack getItemStack(int sltid, Entity entity) {
-									AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-									entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-										_retval.set(capability.getStackInSlot(sltid).copy());
-									});
-									return _retval.get();
-								}
-							}.getItemStack((int) (2), entity)).getItem() == Blocks.AIR.asItem()) == true) {
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 1, new ItemStack(FrameArmorItem.legs));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(FrameArmorItem.legs));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
-								}
-							} else {
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 1, (new Object() {
-											public ItemStack getItemStack(int sltid, Entity entity) {
-												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-												entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-													_retval.set(capability.getStackInSlot(sltid).copy());
-												});
-												return _retval.get();
-											}
-										}.getItemStack((int) (2), entity)));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.LEGS, (new Object() {
-											public ItemStack getItemStack(int sltid, Entity entity) {
-												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-												entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-													_retval.set(capability.getStackInSlot(sltid).copy());
-												});
-												return _retval.get();
-											}
-										}.getItemStack((int) (2), entity)));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
-								}
-							}
-							if (((new Object() {
-								public ItemStack getItemStack(int sltid, Entity entity) {
-									AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-									entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-										_retval.set(capability.getStackInSlot(sltid).copy());
-									});
-									return _retval.get();
-								}
-							}.getItemStack((int) (3), entity)).getItem() == Blocks.AIR.asItem()) == true) {
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 0, new ItemStack(FrameArmorItem.boots));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(FrameArmorItem.boots));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
-								}
-							} else {
-								if (sourceentity instanceof LivingEntity) {
-									if (sourceentity instanceof PlayerEntity)
-										((PlayerEntity) sourceentity).inventory.armorInventory.set((int) 0, (new Object() {
-											public ItemStack getItemStack(int sltid, Entity entity) {
-												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-												entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-													_retval.set(capability.getStackInSlot(sltid).copy());
-												});
-												return _retval.get();
-											}
-										}.getItemStack((int) (3), entity)));
-									else
-										((LivingEntity) sourceentity).setItemStackToSlot(EquipmentSlotType.FEET, (new Object() {
-											public ItemStack getItemStack(int sltid, Entity entity) {
-												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-												entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-													_retval.set(capability.getStackInSlot(sltid).copy());
-												});
-												return _retval.get();
-											}
-										}.getItemStack((int) (3), entity)));
-									if (sourceentity instanceof ServerPlayerEntity)
-										((ServerPlayerEntity) sourceentity).inventory.markDirty();
-								}
-							}
-							if (entity instanceof LivingEntity) {
-								((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
-							}
-							if (entity instanceof LivingEntity) {
-								((LivingEntity) entity).removePotionEffect(Effects.SLOWNESS);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
 						}
-					}.start(world, (int) 1);
+						if (((new Object() {
+							public ItemStack getItemStack(int sltid, Entity entity) {
+								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).copy());
+								});
+								return _retval.get();
+							}
+						}.getItemStack(2, entity)).getItem() == Blocks.AIR.asItem()) == true) {
+							{
+								Entity _entity = sourceentity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(1, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.LEGS, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_LEGGINGS.get()));
+								}
+							}
+						} else {
+							{
+								Entity _entity = sourceentity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(1, (new Object() {
+										public ItemStack getItemStack(int sltid, Entity entity) {
+											AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+											entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+											return _retval.get();
+										}
+									}.getItemStack(2, entity)));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.LEGS, (new Object() {
+										public ItemStack getItemStack(int sltid, Entity entity) {
+											AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+											entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+											return _retval.get();
+										}
+									}.getItemStack(2, entity)));
+								}
+							}
+						}
+						if (((new Object() {
+							public ItemStack getItemStack(int sltid, Entity entity) {
+								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+								entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).copy());
+								});
+								return _retval.get();
+							}
+						}.getItemStack(3, entity)).getItem() == Blocks.AIR.asItem()) == true) {
+							{
+								Entity _entity = sourceentity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(0, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.FEET, new ItemStack(FalloutWastelandsModItems.FRAME_ARMOR_BOOTS.get()));
+								}
+							}
+						} else {
+							{
+								Entity _entity = sourceentity;
+								if (_entity instanceof Player _player) {
+									_player.getInventory().armor.set(0, (new Object() {
+										public ItemStack getItemStack(int sltid, Entity entity) {
+											AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+											entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+											return _retval.get();
+										}
+									}.getItemStack(3, entity)));
+									_player.getInventory().setChanged();
+								} else if (_entity instanceof LivingEntity _living) {
+									_living.setItemSlot(EquipmentSlot.FEET, (new Object() {
+										public ItemStack getItemStack(int sltid, Entity entity) {
+											AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+											entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+											return _retval.get();
+										}
+									}.getItemStack(3, entity)));
+								}
+							}
+						}
+						if (entity instanceof LivingEntity _entity)
+							_entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+						if (entity instanceof LivingEntity _entity)
+							_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+					});
 					if (PartTwo == true) {
-						PartTwo = (false);
-						PartThree = (true);
+						PartTwo = false;
+						PartThree = true;
 						if (PartThree == true) {
-							PartThree = (false);
+							PartThree = false;
 							{
 								Entity _ent = sourceentity;
-								_ent.setPositionAndUpdate(x, y, z);
-								if (_ent instanceof ServerPlayerEntity) {
-									((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw, _ent.rotationPitch,
-											Collections.emptySet());
+								_ent.teleportTo(x, y, z);
+								if (_ent instanceof ServerPlayer _serverPlayer)
+									_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
+							}
+							{
+								Entity _ent = sourceentity;
+								_ent.setYRot(entity.getYRot());
+								_ent.setXRot(30);
+								_ent.setYBodyRot(_ent.getYRot());
+								_ent.setYHeadRot(_ent.getYRot());
+								_ent.yRotO = _ent.getYRot();
+								_ent.xRotO = _ent.getXRot();
+								if (_ent instanceof LivingEntity _entity) {
+									_entity.yBodyRotO = _entity.getYRot();
+									_entity.yHeadRotO = _entity.getYRot();
 								}
 							}
-							sourceentity.rotationYaw = (float) ((entity.rotationYaw));
-							entity.setRenderYawOffset(entity.rotationYaw);
-							entity.prevRotationYaw = entity.rotationYaw;
-							if (entity instanceof LivingEntity) {
-								((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
-								((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
-								((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
-							}
-							sourceentity.rotationPitch = (float) (30);
-							new Object() {
-								private int ticks = 0;
-								private float waitTicks;
-								private IWorld world;
-
-								public void start(IWorld world, int waitTicks) {
-									this.waitTicks = waitTicks;
-									MinecraftForge.EVENT_BUS.register(this);
-									this.world = world;
-								}
-
-								@SubscribeEvent
-								public void tick(TickEvent.ServerTickEvent event) {
-									if (event.phase == TickEvent.Phase.END) {
-										this.ticks += 1;
-										if (this.ticks >= this.waitTicks)
-											run();
-									}
-								}
-
-								private void run() {
-									if (!entity.world.isRemote())
-										entity.remove();
-									MinecraftForge.EVENT_BUS.unregister(this);
-								}
-							}.start(world, (int) 2);
-							if (entity instanceof LivingEntity) {
-								((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
-							}
-							if (entity instanceof LivingEntity) {
-								((LivingEntity) entity).removePotionEffect(Effects.SLOWNESS);
-							}
+							FalloutWastelandsMod.queueServerWork(2, () -> {
+								if (!entity.level.isClientSide())
+									entity.discard();
+							});
+							if (entity instanceof LivingEntity _entity)
+								_entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+							if (entity instanceof LivingEntity _entity)
+								_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
 						}
 					}
 				}
-				if (sourceentity instanceof ServerPlayerEntity) {
-					PartOne = (true);
+				if (sourceentity instanceof ServerPlayer) {
+					PartOne = true;
 					{
 						Entity _ent = sourceentity;
-						_ent.setPositionAndUpdate(x, y, z);
-						if (_ent instanceof ServerPlayerEntity) {
-							((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw, _ent.rotationPitch,
-									Collections.emptySet());
+						_ent.teleportTo(x, y, z);
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
+					}
+					{
+						Entity _ent = sourceentity;
+						_ent.setYRot(entity.getYRot());
+						_ent.setXRot(30);
+						_ent.setYBodyRot(_ent.getYRot());
+						_ent.setYHeadRot(_ent.getYRot());
+						_ent.yRotO = _ent.getYRot();
+						_ent.xRotO = _ent.getXRot();
+						if (_ent instanceof LivingEntity _entity) {
+							_entity.yBodyRotO = _entity.getYRot();
+							_entity.yHeadRotO = _entity.getYRot();
 						}
 					}
-					sourceentity.rotationYaw = (float) ((entity.rotationYaw));
-					entity.setRenderYawOffset(entity.rotationYaw);
-					entity.prevRotationYaw = entity.rotationYaw;
-					if (entity instanceof LivingEntity) {
-						((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
-						((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
-						((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
-					}
-					sourceentity.rotationPitch = (float) (30);
-					if (entity instanceof LivingEntity) {
-						((LivingEntity) entity).removePotionEffect(Effects.MINING_FATIGUE);
-					}
-					if (entity instanceof LivingEntity) {
-						((LivingEntity) entity).removePotionEffect(Effects.SLOWNESS);
-					}
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
 				}
 			}
 		}

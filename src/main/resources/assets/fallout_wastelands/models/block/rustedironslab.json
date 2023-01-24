@@ -4,5 +4,6 @@
     "bottom": "fallout_wastelands:blocks/oxydedmetal",
     "top": "fallout_wastelands:blocks/oxydedmetal",
     "side": "fallout_wastelands:blocks/oxydedmetal"
-  }
+  },
+  "render_type": "solid"
 }

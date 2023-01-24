@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/wastelandgravel",
     "west": "fallout_wastelands:blocks/wastelandgravel",
     "particle": "fallout_wastelands:blocks/wastelandgravel"
-  }
+  },
+  "render_type": "solid"
 }

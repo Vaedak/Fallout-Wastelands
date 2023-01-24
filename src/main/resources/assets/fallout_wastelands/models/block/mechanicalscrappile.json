@@ -4,5 +4,6 @@
     "all": "fallout_wastelands:blocks/mechanical_scrap_pile_texture",
     "particle": "fallout_wastelands:blocks/mechanical_scrap_pile_texture",
     "0": "fallout_wastelands:blocks/mechanical_scrap_pile_texture"
-  }
+  },
+  "render_type": "solid"
 }

@@ -1,53 +1,42 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 
-import net.mcreator.fallout_wastelands.potion.RadioprotectionPotionEffect;
-import net.mcreator.fallout_wastelands.item.HazmatItem;
-import net.mcreator.fallout_wastelands.item.EnclavehazmatItem;
-import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
-
-import java.util.Map;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModMobEffects;
+import net.mcreator.fallout_wastelands.init.FalloutWastelandsModItems;
 
 public class HazmatBodyTickEventProcedure {
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency entity for procedure HazmatBodyTickEvent!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
-				.getItem() == HazmatItem.helmet) {
-			if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
-					.getItem() == HazmatItem.body) {
-				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
-						.getItem() == HazmatItem.legs) {
-					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
-							.getItem() == HazmatItem.boots) {
-						if (entity instanceof LivingEntity)
-							((LivingEntity) entity)
-									.addPotionEffect(new EffectInstance(RadioprotectionPotionEffect.potion, (int) 100, (int) 2, (false), (false)));
+		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
+				.getItem() == FalloutWastelandsModItems.HAZMAT_HELMET.get()) {
+			if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+					.getItem() == FalloutWastelandsModItems.HAZMAT_CHESTPLATE.get()) {
+				if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+						.getItem() == FalloutWastelandsModItems.HAZMAT_LEGGINGS.get()) {
+					if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
+							.getItem() == FalloutWastelandsModItems.HAZMAT_BOOTS.get()) {
+						if (entity instanceof LivingEntity _entity)
+							_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.RADIOPROTECTION.get(), 100, 2, (false), (false)));
 					}
 				}
 			}
 		}
-		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)
-				.getItem() == EnclavehazmatItem.helmet) {
-			if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)
-					.getItem() == EnclavehazmatItem.body) {
-				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)
-						.getItem() == EnclavehazmatItem.legs) {
-					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
-							.getItem() == EnclavehazmatItem.boots) {
-						if (entity instanceof LivingEntity)
-							((LivingEntity) entity)
-									.addPotionEffect(new EffectInstance(RadioprotectionPotionEffect.potion, (int) 100, (int) 2, (false), (false)));
+		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
+				.getItem() == FalloutWastelandsModItems.ENCLAVEHAZMAT_HELMET.get()) {
+			if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+					.getItem() == FalloutWastelandsModItems.ENCLAVEHAZMAT_CHESTPLATE.get()) {
+				if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+						.getItem() == FalloutWastelandsModItems.ENCLAVEHAZMAT_LEGGINGS.get()) {
+					if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
+							.getItem() == FalloutWastelandsModItems.ENCLAVEHAZMAT_BOOTS.get()) {
+						if (entity instanceof LivingEntity _entity)
+							_entity.addEffect(new MobEffectInstance(FalloutWastelandsModMobEffects.RADIOPROTECTION.get(), 100, 2, (false), (false)));
 					}
 				}
 			}

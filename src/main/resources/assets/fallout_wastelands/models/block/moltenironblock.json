@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/molteniron",
     "west": "fallout_wastelands:blocks/molteniron",
     "particle": "fallout_wastelands:blocks/molteniron"
-  }
+  },
+  "render_type": "solid"
 }

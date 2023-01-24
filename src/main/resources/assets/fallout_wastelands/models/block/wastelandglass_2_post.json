@@ -3,5 +3,6 @@
   "textures": {
     "edge": "fallout_wastelands:blocks/wastelandglass1",
     "pane": "fallout_wastelands:blocks/wastelandglass1"
-  }
+  },
+  "render_type": "translucent"
 }

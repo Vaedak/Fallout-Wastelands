@@ -8,5 +8,6 @@
     "south": "fallout_wastelands:blocks/igside",
     "west": "fallout_wastelands:blocks/igside",
     "particle": "fallout_wastelands:blocks/igground"
-  }
+  },
+  "render_type": "solid"
 }
