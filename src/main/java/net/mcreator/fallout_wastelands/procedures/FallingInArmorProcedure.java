@@ -87,6 +87,7 @@ public class FallingInArmorProcedure {
 					}
 				}
 <<<<<<< HEAD
+<<<<<<< HEAD
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.WHITE_ASH, x, (y + 1), z, 50, 0.1, 0.1, 0.1, 0.1);
 			}
@@ -94,6 +95,26 @@ public class FallingInArmorProcedure {
 				entity.getPersistentData().putDouble("fallinginarmor", 0);
 			});
 =======
+			}
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+=======
+				if (entity.getPersistentData().getDouble("fallinginarmor") > 40) {
+					entity.getPersistentData().putDouble("fallinginarmor", 0);
+					if (world instanceof World && !world.isRemote()) {
+						((World) world).playSound(null, new BlockPos(x, y, z),
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1);
+					} else {
+						((World) world).playSound(x, y, z,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+										.getValue(new ResourceLocation("fallout_wastelands:bigfallboom")),
+								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+					}
+					if (world instanceof ServerWorld) {
+						((ServerWorld) world).spawnParticle(ParticleTypes.WHITE_ASH, x, (y + 1), z, (int) 50, 0.1, 0.1, 0.1, 0.1);
+					}
+				}
 			}
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			if (entity.isOnGround() == false) {

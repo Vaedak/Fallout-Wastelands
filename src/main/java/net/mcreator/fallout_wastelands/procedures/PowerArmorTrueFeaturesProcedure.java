@@ -163,10 +163,13 @@ public class PowerArmorTrueFeaturesProcedure {
 			}
 			{
 <<<<<<< HEAD
+<<<<<<< HEAD
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3.5 / 2d), e -> true).stream()
 						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 				List<Entity> _entfound = world
 						.getEntitiesWithinAABB(Entity.class,
 								new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)

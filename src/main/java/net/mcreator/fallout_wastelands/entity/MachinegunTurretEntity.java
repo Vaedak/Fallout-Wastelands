@@ -99,8 +99,11 @@ import net.minecraft.entity.AreaEffectCloudEntity;
 import net.mcreator.fallout_wastelands.procedures.MachinegunTurretOnInitialEntitySpawnProcedure;
 import net.mcreator.fallout_wastelands.procedures.MachinegunTurretOnEntityTickUpdatenewProcedure;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.mcreator.fallout_wastelands.init.FalloutWastelandsModEntities;
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 import net.mcreator.fallout_wastelands.item.RealTurretProjectileItem;
 import net.mcreator.fallout_wastelands.entity.renderer.MachinegunTurretRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
@@ -112,6 +115,8 @@ public class MachinegunTurretEntity extends Monster implements RangedAttackMob {
 		this(FalloutWastelandsModEntities.MACHINEGUN_TURRET.get(), world);
 	}
 =======
+import javax.annotation.Nullable;
+
 import javax.annotation.Nullable;
 
 import java.util.stream.Stream;

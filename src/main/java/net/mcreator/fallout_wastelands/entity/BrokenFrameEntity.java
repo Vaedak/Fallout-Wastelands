@@ -27,8 +27,11 @@ import net.minecraft.network.protocol.Packet;
 
 import net.mcreator.fallout_wastelands.procedures.BrokenFrameRightClickedOnEntityProcedure;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.mcreator.fallout_wastelands.init.FalloutWastelandsModEntities;
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 import net.mcreator.fallout_wastelands.procedures.BrokenFrameOnEntityTickUpdateProcedure;
 import net.mcreator.fallout_wastelands.entity.renderer.BrokenFrameRenderer;
 import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
@@ -179,6 +182,9 @@ public class BrokenFrameEntity extends FalloutWastelandsModElements.ModElement {
 							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+=======
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 	}
 }

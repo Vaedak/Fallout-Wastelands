@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -18,13 +19,18 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.mcreator.fallout_wastelands.init.FalloutWastelandsModEntities;
 import net.mcreator.fallout_wastelands.entity.RealTurretProjectileEntity;
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 =======
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 import net.mcreator.fallout_wastelands.entity.MachinegunTurretEntity;
@@ -59,6 +65,7 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			if (sourceentity.getPersistentData().getDouble("ShootingTimer") == 0) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				{
 					Entity _shootFrom = sourceentity;
 					Level projectileLevel = _shootFrom.level;
@@ -82,6 +89,9 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 =======
 				sourceentity.getPersistentData().putDouble("ShootingTimer", 10);
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+=======
+				sourceentity.getPersistentData().putDouble("ShootingTimer", 10);
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 				{
 					Entity _ent = sourceentity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -92,6 +102,7 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 								"execute at @s anchored eyes run particle minecraft:flame ^-0.45 ^-0.38 ^1.5 ~ ~ 0 0 0 force");
 					}
 				}
+<<<<<<< HEAD
 <<<<<<< HEAD
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
@@ -104,6 +115,8 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 					}
 				}
 				sourceentity.getPersistentData().putDouble("ShootingTimer", 10);
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 =======
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}

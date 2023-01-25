@@ -115,6 +115,9 @@ public class PowerArmorFrameEntity extends PathfinderMob {
 	public void initElements() {
 		elements.entities.add(() -> entity);
 		elements.items.add(() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(null)).setRegistryName("power_armor_frame_spawn_egg"));
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+=======
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 	}
 

@@ -16,6 +16,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.mcreator.fallout_wastelands.procedures.PowerArmorLeggingsTickProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorHelmetTickProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorChestTickProcedure;
@@ -23,6 +24,8 @@ import net.mcreator.fallout_wastelands.procedures.PowerArmorBootsTickProcedure;
 import net.mcreator.fallout_wastelands.init.FalloutWastelandsModTabs;
 import net.mcreator.fallout_wastelands.init.FalloutWastelandsModItems;
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 import net.mcreator.fallout_wastelands.procedures.PowerArmorLeggingsUniversalProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorHelmetUniversalProcedure;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorChestUniversalProcedure;
@@ -32,10 +35,13 @@ import net.mcreator.fallout_wastelands.FalloutWastelandsModElements;
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public abstract class EnclaveX01paItem extends ArmorItem {
 	public EnclaveX01paItem(EquipmentSlot slot, Item.Properties properties) {
 		super(new ArmorMaterial() {
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;

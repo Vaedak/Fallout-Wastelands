@@ -73,6 +73,9 @@ public class FrameArmorTickEventUniversalProcedure {
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
 				}.start(world, (int) 10);
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+=======
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}
 			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getOrCreateTag()
@@ -113,6 +116,9 @@ public class FrameArmorTickEventUniversalProcedure {
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
 				}.start(world, (int) 10);
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+=======
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}
 			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getOrCreateTag()
@@ -153,6 +159,9 @@ public class FrameArmorTickEventUniversalProcedure {
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
 				}.start(world, (int) 10);
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+=======
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}
 			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getOrCreateTag()
@@ -193,6 +202,9 @@ public class FrameArmorTickEventUniversalProcedure {
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
 				}.start(world, (int) 10);
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+=======
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}
 		}

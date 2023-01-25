@@ -8,10 +8,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class PowerArmorFrameItemItem extends Item {
 	public PowerArmorFrameItemItem() {
 		super(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(64).rarity(Rarity.COMMON));
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 import net.minecraft.world.World;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ActionResult;
@@ -85,6 +88,9 @@ public class PowerArmorFrameItemItem extends FalloutWastelandsModElements.ModEle
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ar;
 		}
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+=======
 >>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 	}
 }

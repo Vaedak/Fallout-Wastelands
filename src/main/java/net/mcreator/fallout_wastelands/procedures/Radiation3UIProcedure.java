@@ -9,8 +9,15 @@ public class Radiation3UIProcedure {
 		if (entity == null)
 			return false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge < 200
+=======
+		}
+		Entity entity = (Entity) dependencies.get("entity");
+		return ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge > 300
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 =======
 		}
 		Entity entity = (Entity) dependencies.get("entity");

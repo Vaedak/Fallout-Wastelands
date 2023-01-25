@@ -7,8 +7,11 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.Entity;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.mcreator.fallout_wastelands.init.FalloutWastelandsModItems;
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 import net.mcreator.fallout_wastelands.item.BrokenPowerArmorFrameItem;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
