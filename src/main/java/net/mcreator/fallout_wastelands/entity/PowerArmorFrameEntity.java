@@ -36,6 +36,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
+<<<<<<< HEAD
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
@@ -45,6 +46,42 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.Tag;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.Direction;
+=======
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Hand;
+import net.minecraft.util.Direction;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.network.PacketBuffer;
+import net.minecraft.network.IPacket;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.inventory.container.INamedContainerProvider;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.entity.projectile.PotionEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.ILivingEntityData;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.CreatureEntity;
+import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AreaEffectCloudEntity;
+import net.minecraft.enchantment.EnchantmentHelper;
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 
 import net.mcreator.fallout_wastelands.world.inventory.FrameInventoryMenu;
 import net.mcreator.fallout_wastelands.procedures.PowerArmorFrameRightClickedOnEntityProcedure;
@@ -71,8 +108,14 @@ public class PowerArmorFrameEntity extends PathfinderMob {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public Packet<?> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+=======
+	public void initElements() {
+		elements.entities.add(() -> entity);
+		elements.items.add(() -> new SpawnEggItem(entity, -1, -1, new Item.Properties().group(null)).setRegistryName("power_armor_frame_spawn_egg"));
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 	}
 
 	@Override

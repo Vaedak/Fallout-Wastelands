@@ -1,11 +1,11 @@
 package net.mcreator.fallout_wastelands.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 
+<<<<<<< HEAD
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -17,9 +17,16 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
+=======
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 
+<<<<<<< HEAD
 import net.mcreator.fallout_wastelands.init.FalloutWastelandsModEntities;
 import net.mcreator.fallout_wastelands.entity.RealTurretProjectileEntity;
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 import net.mcreator.fallout_wastelands.entity.MachinegunTurretEntity;
 
 import javax.annotation.Nullable;
@@ -31,6 +38,7 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 		execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 	}
 
+<<<<<<< HEAD
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity sourceentity) {
 		execute(null, world, x, y, z, sourceentity);
 	}
@@ -39,7 +47,18 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 		if (sourceentity == null)
 			return;
 		if (sourceentity instanceof MachinegunTurretEntity == true) {
+=======
+	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("sourceentity") == null) {
+			if (!dependencies.containsKey("sourceentity"))
+				FalloutWastelandsMod.LOGGER.warn("Failed to load dependency sourceentity for procedure MachinegunTurretOnEntityTickUpdate!");
+			return;
+		}
+		Entity sourceentity = (Entity) dependencies.get("sourceentity");
+		if (sourceentity instanceof MachinegunTurretEntity.CustomEntity == true) {
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			if (sourceentity.getPersistentData().getDouble("ShootingTimer") == 0) {
+<<<<<<< HEAD
 				{
 					Entity _shootFrom = sourceentity;
 					Level projectileLevel = _shootFrom.level;
@@ -60,6 +79,9 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 						projectileLevel.addFreshEntity(_entityToSpawn);
 					}
 				}
+=======
+				sourceentity.getPersistentData().putDouble("ShootingTimer", 10);
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 				{
 					Entity _ent = sourceentity;
 					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -70,6 +92,7 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 								"execute at @s anchored eyes run particle minecraft:flame ^-0.45 ^-0.38 ^1.5 ~ ~ 0 0 0 force");
 					}
 				}
+<<<<<<< HEAD
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, new BlockPos(x, y, z),
@@ -81,6 +104,8 @@ public class MachinegunTurretOnEntityTickUpdateProcedure {
 					}
 				}
 				sourceentity.getPersistentData().putDouble("ShootingTimer", 10);
+=======
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}
 			if (sourceentity.getPersistentData().getDouble("ShootingTimer") > 0) {
 				sourceentity.getPersistentData().putDouble("ShootingTimer", (sourceentity.getPersistentData().getDouble("ShootingTimer") - 1));

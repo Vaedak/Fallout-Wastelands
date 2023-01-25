@@ -30,6 +30,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.Direction;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.fallout_wastelands.FalloutWastelandsModVariables;
 import net.mcreator.fallout_wastelands.FalloutWastelandsMod;
 
 import java.util.function.Supplier;

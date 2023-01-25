@@ -162,9 +162,20 @@ public class PowerArmorTrueFeaturesProcedure {
 				}
 			}
 			{
+<<<<<<< HEAD
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3.5 / 2d), e -> true).stream()
 						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+=======
+				List<Entity> _entfound = world
+						.getEntitiesWithinAABB(Entity.class,
+								new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
+						.stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+							}
+						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof Arrow) {
 						if ((entityiterator.getDeltaMovement().x() < 0 && entityiterator.getDeltaMovement().x() > 0
@@ -211,6 +222,8 @@ public class PowerArmorTrueFeaturesProcedure {
 				if (entity instanceof LivingEntity _entity)
 					_entity.removeEffect(MobEffects.POISON);
 			}
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 20, (int) 2, (false), (false)));
 		}
 	}
 }

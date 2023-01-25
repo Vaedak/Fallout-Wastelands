@@ -233,8 +233,7 @@ public class FalloutWastelandsModEntities {
 					.setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<MachinegunTurretEntity>> MACHINEGUN_TURRET = register("machinegun_turret",
 			EntityType.Builder.<MachinegunTurretEntity>of(MachinegunTurretEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MachinegunTurretEntity::new).fireImmune()
-					.sized(0.5f, 1.2000000000000002f));
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MachinegunTurretEntity::new).fireImmune().sized(0.5f, 0.7f));
 	public static final RegistryObject<EntityType<TurretFakeProjectileEntity>> TURRET_FAKE_PROJECTILE = register("projectile_turret_fake_projectile",
 			EntityType.Builder.<TurretFakeProjectileEntity>of(TurretFakeProjectileEntity::new, MobCategory.MISC)
 					.setCustomClientFactory(TurretFakeProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
@@ -248,7 +247,7 @@ public class FalloutWastelandsModEntities {
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PowerArmorFrameEntity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<BrokenFrameEntity>> BROKEN_FRAME = register("broken_frame",
 			EntityType.Builder.<BrokenFrameEntity>of(BrokenFrameEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BrokenFrameEntity::new).fireImmune().sized(0.5f, 0.5f));
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BrokenFrameEntity::new).fireImmune().sized(0.7f, 0.4f));
 	public static final RegistryObject<EntityType<GeckoEntity>> GECKO = register("gecko",
 			EntityType.Builder.<GeckoEntity>of(GeckoEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(80)
 					.setUpdateInterval(3).setCustomClientFactory(GeckoEntity::new)

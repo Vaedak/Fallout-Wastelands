@@ -51,7 +51,29 @@ public class FrameArmorTickEventUniversalProcedure {
 										(false), (false)));
 						}
 					}
+<<<<<<< HEAD
 				});
+=======
+
+					private void run() {
+						if ((((entity instanceof LivingEntity)
+								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
+								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorHelmet")
+								|| ((entity instanceof LivingEntity)
+										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
+										: ItemStack.EMPTY).getItem() == FrameArmorItem.helmet) == false) {
+							if ((((entity instanceof LivingEntity)
+									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
+									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
+								if (entity instanceof LivingEntity)
+									((LivingEntity) entity).addPotionEffect(
+											new EffectInstance(AddArmorBackHelmetPotionEffect.potion, (int) 0.001, (int) 4, (false), (false)));
+							}
+						}
+						MinecraftForge.EVENT_BUS.unregister(this);
+					}
+				}.start(world, (int) 10);
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}
 			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getOrCreateTag()
 					.getBoolean("PowerArmorChestplate")
@@ -69,7 +91,29 @@ public class FrameArmorTickEventUniversalProcedure {
 										(false), (false)));
 						}
 					}
+<<<<<<< HEAD
 				});
+=======
+
+					private void run() {
+						if ((((entity instanceof LivingEntity)
+								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
+								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorChestplate")
+								|| ((entity instanceof LivingEntity)
+										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
+										: ItemStack.EMPTY).getItem() == FrameArmorItem.body) == false) {
+							if ((((entity instanceof LivingEntity)
+									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
+									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
+								if (entity instanceof LivingEntity)
+									((LivingEntity) entity).addPotionEffect(
+											new EffectInstance(AddArmorBackchestPotionEffect.potion, (int) 0.001, (int) 4, (false), (false)));
+							}
+						}
+						MinecraftForge.EVENT_BUS.unregister(this);
+					}
+				}.start(world, (int) 10);
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}
 			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getOrCreateTag()
 					.getBoolean("PowerArmorLeggings")
@@ -87,7 +131,29 @@ public class FrameArmorTickEventUniversalProcedure {
 										(false), (false)));
 						}
 					}
+<<<<<<< HEAD
 				});
+=======
+
+					private void run() {
+						if ((((entity instanceof LivingEntity)
+								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS)
+								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorLeggings")
+								|| ((entity instanceof LivingEntity)
+										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS)
+										: ItemStack.EMPTY).getItem() == FrameArmorItem.legs) == false) {
+							if ((((entity instanceof LivingEntity)
+									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS)
+									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
+								if (entity instanceof LivingEntity)
+									((LivingEntity) entity).addPotionEffect(
+											new EffectInstance(AddArmorBackLegsPotionEffect.potion, (int) 0.001, (int) 4, (false), (false)));
+							}
+						}
+						MinecraftForge.EVENT_BUS.unregister(this);
+					}
+				}.start(world, (int) 10);
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}
 			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getOrCreateTag()
 					.getBoolean("PowerArmorBoots")
@@ -105,7 +171,29 @@ public class FrameArmorTickEventUniversalProcedure {
 										(false), (false)));
 						}
 					}
+<<<<<<< HEAD
 				});
+=======
+
+					private void run() {
+						if ((((entity instanceof LivingEntity)
+								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
+								: ItemStack.EMPTY).getOrCreateTag().getBoolean("PowerArmorBoots")
+								|| ((entity instanceof LivingEntity)
+										? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
+										: ItemStack.EMPTY).getItem() == FrameArmorItem.boots) == false) {
+							if ((((entity instanceof LivingEntity)
+									? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
+									: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) == false) {
+								if (entity instanceof LivingEntity)
+									((LivingEntity) entity).addPotionEffect(
+											new EffectInstance(AddArmorBackBootsPotionEffect.potion, (int) 0.001, (int) 4, (false), (false)));
+							}
+						}
+						MinecraftForge.EVENT_BUS.unregister(this);
+					}
+				}.start(world, (int) 10);
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
 			}
 		}
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)

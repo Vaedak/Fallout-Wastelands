@@ -1,0 +1,46 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Aluminiumingot"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Steelblock"
+      },
+      {
+        "value": "CUSTOM:BrokenPowerArmorFrame"
+      },
+      {
+        "value": "CUSTOM:Steelblock"
+      },
+      {
+        "value": "CUSTOM:Steelingot"
+      },
+      {
+        "value": "CUSTOM:Aluminiumingot"
+      },
+      {
+        "value": "CUSTOM:Steelingot"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:PowerArmorFrameItem"
+    },
+    "name": "repair_frame",
+    "namespace": "mod"
+  }
+}

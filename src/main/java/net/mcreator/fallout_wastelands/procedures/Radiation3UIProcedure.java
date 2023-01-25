@@ -8,14 +8,18 @@ public class Radiation3UIProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
+<<<<<<< HEAD
 		if ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge < 200
-				&& (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge >= 100) {
-			return (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new FalloutWastelandsModVariables.PlayerVariables())).RADUI3 == true;
+=======
 		}
-		return (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).RADUI1 == false;
+		Entity entity = (Entity) dependencies.get("entity");
+		return ((entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge > 300
+>>>>>>> branch 'master' of https://github.com/Vaedak/Fallout-Wastelands
+				&& (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).radioactivity_gauge < 400
+				&& (entity.getCapability(FalloutWastelandsModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new FalloutWastelandsModVariables.PlayerVariables())).DisplayRadUI == false) == true;
 	}
 }

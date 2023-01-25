@@ -11,6 +11,13 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
+import net.mcreator.fallout_wastelands.entity.renderer.TaloncompagnysoldierRenderer;
+import net.mcreator.fallout_wastelands.entity.renderer.TaloncompagnylieutenantRenderer;
+import net.mcreator.fallout_wastelands.entity.renderer.PaulothetraderRenderer;
+import net.mcreator.fallout_wastelands.entity.renderer.MachinegunTurretRenderer;
+import net.mcreator.fallout_wastelands.entity.renderer.CaravanguardRenderer;
+import net.mcreator.fallout_wastelands.entity.renderer.BrotherhoodPaladinRenderer;
+import net.mcreator.fallout_wastelands.entity.renderer.BrokenFrameRenderer;
 import net.mcreator.fallout_wastelands.client.renderer.TaloncompagnysoldierRenderer;
 import net.mcreator.fallout_wastelands.client.renderer.TaloncompagnylieutenantRenderer;
 import net.mcreator.fallout_wastelands.client.renderer.RangedsupermutantRenderer;

@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.mcreator.fallout_wastelands.particle.MotesParticle;
 import net.mcreator.fallout_wastelands.client.particle.PlasmaParticle;
 import net.mcreator.fallout_wastelands.client.particle.MotesParticle;
 

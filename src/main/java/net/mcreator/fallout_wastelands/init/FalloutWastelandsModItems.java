@@ -970,7 +970,7 @@ public class FalloutWastelandsModItems {
 	public static final RegistryObject<Item> FRAME_ARMOR_LEGGINGS = REGISTRY.register("frame_armor_leggings", () -> new FrameArmorItem.Leggings());
 	public static final RegistryObject<Item> FRAME_ARMOR_BOOTS = REGISTRY.register("frame_armor_boots", () -> new FrameArmorItem.Boots());
 	public static final RegistryObject<Item> POWER_ARMOR_FRAME = REGISTRY.register("power_armor_frame_spawn_egg",
-			() -> new ForgeSpawnEggItem(FalloutWastelandsModEntities.POWER_ARMOR_FRAME, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+			() -> new ForgeSpawnEggItem(FalloutWastelandsModEntities.POWER_ARMOR_FRAME, -1, -1, new Item.Properties().tab(null)));
 	public static final RegistryObject<Item> POWER_ARMOR_FRAME_ITEM = REGISTRY.register("power_armor_frame_item",
 			() -> new PowerArmorFrameItemItem());
 	public static final RegistryObject<Item> BROKEN_FRAME = REGISTRY.register("broken_frame_spawn_egg",
